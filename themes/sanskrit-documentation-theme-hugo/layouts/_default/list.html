@@ -1,0 +1,13 @@
+{{ define "main" }}
+<main>
+    {{partial "default-content" .}}
+    <ul>
+        <!-- Ranges through content/posts/*.md -->
+        {{ range .Pages.ByDate.Reverse}}
+        <li>
+            <a href="{{.Permalink}}">{{ if not .Date.IsZero }}{{.Date.Format "2006-01-02"}} {{ end }}| {{.Title}}</a>
+        </li>
+        {{ end }}
+    </ul>
+</main>
+{{ end }}
