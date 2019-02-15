@@ -4,6 +4,40 @@ title: Parts
 contents:
   - title: Home - Intro
     url: /
+  - title: Projects
+    contents:
+      - title: Home - Intro
+        url: /index.html
+      - title: Audio
+        contents:
+          - title: Intro
+            url: /audio/
+          - title: Reciting and Recording
+            url: /audio/tips/
+          - title: Mahabharata audio
+            contents:
+              - title: Home - Intro
+                url: /audio/mbh-audio/
+              - title: How?
+                url: /audio/mbh-audio/how/
+          - title: Ramayana audio
+            url: /audio/ramayana-audio/index.html
+          - title: kAvya audio
+            url: /audio/kAvya-audio/index.html
+          - title: Kannada audio
+            url: /audio/kannada-audio/index.html
+      - title: Data
+        url: /data/
+      - title: Code
+        url: https://sanskrit-coders.github.io/site/
+      - title: Blog
+        url: /assets/blog/index.html
+      - title: Archive
+        contents:
+          - title: संस्कृतशाला-प्रस्तावः
+            url: /schools/bay-area-sanskrit-school-dream/
+          - title: चित्रवेदाः
+            url: /image/chitraveda/
   - title: यूथाः
     contents:
       - title: पद्यधारा
