@@ -4,7 +4,7 @@ title: जालक्षेत्रमिदमन्विष्यताम�
 <div>
 <script>
   (function() {
-    var cx = '003441740804712584864:omkvhozupxs';
+    var cx = '003441740804712584864:ksacm50zxuq';
     var gcse = document.createElement('script');
     gcse.type = 'text/javascript';
     gcse.async = true;
