@@ -9,12 +9,14 @@ tags: [getting_started]
 We aim to freely (Creative Commons Attribution-ShareAlike 4.0 International License) publish and distribute the popular and inspiring Kannada books as audio books on the internet.
 
 ### Quality
-Though there are some flaws here and there (especially when it comes to reading sanskrit shloka-s, plus rare noises), it is overall a great boon, in my experience of listening to them during my long walks. The recordings were mechanically normalized, renamed according to chapter-title, sped up 1.5x and curated at the below locations.
+These files are not to be considered "official" representatives of the corresponding books - just best-effort productions for the enjoyment of those who would *never* otherwise have read the corresponding books. एता ध्वनिसञ्चिका ग्रन्थस्यौपचारिकाः प्रतिनिधय इति न। For some people, reading the books directly might yield much greater enjoyment.
+
+Though there are some flaws here and there (especially when it comes to reading sanskrit shloka-s, plus rare noises), it is overall a great boon, in my experience of listening to them during my long walks. The recordings were mechanically normalized, renamed according to chapter-title, sped up 1.5x and curated at the below locations. (Files are also available at 1x speed.)
 
 ## Where?
 It is important to note that at any point in time, the output(in the form of audio files) of our efforts up to then will be available publicly and freely on the internet at archive.org. We will constantly publish a summary of project status online. So, connoiseurs will be able to enjoy the fruits of our labor even as the project progresses to increasingly higher levels of completion and quality.
 
-Example archive items-
+Example archive items (If you remove the final 1.5x from the URL, you get the 1x speed version)-
 Some examples of books read:
 
 - ಭಾರತೀಯ ಹಬ್ಬ ಹರಿದಿನಗಳು by ರಂಗಪ್ರಿಯ-ಸ್ವಾಮೀ, read by ನಾಗರತ್ನಾ - [1.5x](https://archive.org/details/bhAratIya-habba-AcharaNegaLu-rangapriya-swamy-1.5x)
