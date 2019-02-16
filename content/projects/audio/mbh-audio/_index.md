@@ -26,6 +26,7 @@ Listen or download here:
 - Podcast
   - [RSS feed](https://raw.githubusercontent.com/sanskrit-coders/rss-feeds/auto-built-feeds/sa/mahAbhArata-mUla-paThanam.rss) based on the Archive item described above.
   - Also see [Podcast list](https://docs.google.com/spreadsheets/d/1KMhtMaHCQpucqxH3aVcmYmPvQyV9vmunvckV2ARvD4M/edit#gid=0)
+- Follow us on twitter [here](https://twitter.com/hindu_audio/status/1096919231889723392) and retweet. All uploaded recordings will automatically be advertised there.
 
 ## Why?
 
