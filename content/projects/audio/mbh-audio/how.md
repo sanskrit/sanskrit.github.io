@@ -30,10 +30,10 @@ Are you interested in helping us? Please contact us via whatsapp (+1 650 567 653
 ### Workflow
 दोषनिवारणाय चोदिताः‌ खलु जनाः कदाचिन् निराशतां यन्ति, द्रुतं च न शोधयन्ति। किञ्च *निर्दुष्टा एव ध्वनिसञ्चिका इष्टाः शीघ्रतरकार्यगतिर् अह्रसमानोत्साहश्च। अस्य साधनार्थं काचिद् व्यवस्था कल्पनीयेत्यस्माकं धीः।*
 
-- Set up recording apps, go over instructions mentioned in the [Reciting and Recording: tips page](../tips.md) page.
+- Set up recording apps, go over instructions mentioned in the [Reciting and Recording: tips page](../../tips/) page.
 - Identify assigned portions from this sheet - [http://bit.ly/mbh-tasks ](https://docs.google.com/spreadsheets/d/1sNH1AWhhoa5VATqMdLbF652s7srTG0Raa6K-sCwDR-8/edit#gid=0). अनुवादः - पाठ्यांशान् [http://bit.ly/mbh-tasks ](https://docs.google.com/spreadsheets/d/1sNH1AWhhoa5VATqMdLbF652s7srTG0Raa6K-sCwDR-8/edit#gid=0) इति जालपुटाद् अवगच्छतु। "001-076" नाम प्रथमपर्वणः (नाम - आदिपर्वणः) ७६-तमो ऽध्यायः।
   - If you have not submitted an expected recording for a long time, it is possible that the recording task has been assigned to someone else. Hence, please "refresh" the sheet and confirm that the adhyAyais indeed assigned to you. अनुवादः - आ बहोः‌ कालाद् अलब्धायां सञ्चिकायाम्, पाठकान्तरेण पाठितस् स्याद् अध्यायः। अतस्ताद्दृशेषु सन्दर्भेषु पठननिर्देशपृष्ठं पुनः‌ "refresh" कृत्वोररीकृत्य पठने ऽनुवर्तताम्।
-- Make mp3 recordings you're satisfied with. Especially, please follow the technique described in the [Reciting and Recording: tips page](../tips.md) page and create separate mp3 files for each 10-shloka segment. अनुवादः - तृप्तिकरा mp3-सञ्चिकास् सृजतु। विशिष्य [Reciting and Recording: tips page](../tips.md) इत्यत्रोक्तया रीत्या प्रतिदशकम् एकां mp3 सञ्चिकां सृजन्तु। 
+- Make mp3 recordings you're satisfied with. Especially, please follow the technique described in the [Reciting and Recording: tips page](../../tips/) page and create separate mp3 files for each 10-shloka segment. अनुवादः - तृप्तिकरा mp3-सञ्चिकास् सृजतु। विशिष्य [Reciting and Recording: tips page](../../tips/) इत्यत्रोक्तया रीत्या प्रतिदशकम् एकां mp3 सञ्चिकां सृजन्तु। 
 - Rename the mp3 based on the parva and adhyAya recorded in this way: 001-045.mp3 (or 001-045p01.mp3 001-045p02.mp3 .. if multi-part recording.)
 - Upload the mp3 to this google drive location - [http://bit.ly/mbh-submit](https://drive.google.com/drive/folders/0B1_QBT-hoqqVMUNSLVlyMlJqZDA?usp=sharing) (but keep a copy for some time) - under a subfolder named after you.
 - Solicit and provide feedback on whatsapp forum (Especially in the beginning)
@@ -46,7 +46,7 @@ The daxiṇā will be dispatched periodically (monthly at the latest, subject to
 
 ## For coordinators
 - Induct recording volunteers, and gather payment details (agreement pdf - [http://bit.ly/mbh-audio-sandhi-html](http://bit.ly/mbh-audio-sandhi-html), source [here](https://drive.google.com/drive/folders/1kqnLzqgQqWx4KUE5ZoS-H6yGv2TT7xf2)).
-- See general curation tips [here](../tips.md).
+- See general curation tips [here](../../tips/).
 
 ### Feedback
 - Listen to recordings via archive item/ podcast/ google drive 
