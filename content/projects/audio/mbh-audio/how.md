@@ -5,6 +5,8 @@ sidebar: home_sidebar
 summary: How?
 ---
 
+Short url: https://rebrand.ly/mbh-audio-how
+
 ## Overview
 The task at hand is enormous, since Mahābhārata, together with accessory texts comes up to roughly 150,000 shloka-s. At the hands of expert reciters, assuming a rate of about 60 shloka-s an hour (including time required for rehearsal before recording), this would require a 2,450.25 hours of recording effort. Beyond that, we expect roughly the same effort for closely examining and editing the recordings. Past experience with other audio products suggest that a couple of iterations of recording, checking, rerecording might be required to remove errors.
 
@@ -30,7 +32,7 @@ Are you interested in helping us? Please contact us via whatsapp (+1 650 567 653
 ### Workflow
 दोषनिवारणाय चोदिताः‌ खलु जनाः कदाचिन् निराशतां यन्ति, द्रुतं च न शोधयन्ति। किञ्च *निर्दुष्टा एव ध्वनिसञ्चिका इष्टाः शीघ्रतरकार्यगतिर् अह्रसमानोत्साहश्च। अस्य साधनार्थं काचिद् व्यवस्था कल्पनीयेत्यस्माकं धीः।*
 
-- Set up recording apps, go over instructions mentioned in the [Reciting and Recording: tips page](../../tips/) page.
+- Set up recording apps, go over instructions mentioned in the [Reciting and Recording: tips page https://rebrand.ly/mbh-recording-standards](../../tips/) page.
 - Identify assigned portions from this sheet - [http://bit.ly/mbh-tasks ](https://docs.google.com/spreadsheets/d/1sNH1AWhhoa5VATqMdLbF652s7srTG0Raa6K-sCwDR-8/edit#gid=0). अनुवादः - पाठ्यांशान् [http://bit.ly/mbh-tasks ](https://docs.google.com/spreadsheets/d/1sNH1AWhhoa5VATqMdLbF652s7srTG0Raa6K-sCwDR-8/edit#gid=0) इति जालपुटाद् अवगच्छतु। "001-076" नाम प्रथमपर्वणः (नाम - आदिपर्वणः) ७६-तमो ऽध्यायः।
   - If you have not submitted an expected recording for a long time, it is possible that the recording task has been assigned to someone else. Hence, please "refresh" the sheet and confirm that the adhyAyais indeed assigned to you. अनुवादः - आ बहोः‌ कालाद् अलब्धायां सञ्चिकायाम्, पाठकान्तरेण पाठितस् स्याद् अध्यायः। अतस्ताद्दृशेषु सन्दर्भेषु पठननिर्देशपृष्ठं पुनः‌ "refresh" कृत्वोररीकृत्य पठने ऽनुवर्तताम्।
 - Make mp3 recordings you're satisfied with. Especially, please follow the technique described in the [Reciting and Recording: tips page](../../tips/) page and create separate mp3 files for each 10-shloka segment. अनुवादः - तृप्तिकरा mp3-सञ्चिकास् सृजतु। विशिष्य [Reciting and Recording: tips page](../../tips/) इत्यत्रोक्तया रीत्या प्रतिदशकम् एकां mp3 सञ्चिकां सृजन्तु। 

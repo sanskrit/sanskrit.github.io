@@ -2,6 +2,8 @@
 title: शिक्षा - उच्चारणे ध्वनिरक्षणे च सूचनाः Reciting and Recording- tips 
 ---
 
+Short url : https://rebrand.ly/mbh-recording-standards
+
 ## Good pronunciation: Most important
 
 ### varNa-level pronunciation
