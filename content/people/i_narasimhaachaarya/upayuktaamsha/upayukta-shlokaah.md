@@ -1,9 +1,9 @@
----  
+---
 title: "नरसिंहाचार्यः - परिचयः"  
 tags: [getting_started]  
 sidebar: home_sidebar  
 unicode_script: devanagari    
----  
+---
 ## पत्त्रम् १  
 १. सदृशं त्रिषु लिङ्गेषु सर्वासु च विभक्तिषु।  
  वचनेषु च सर्वेषु यन्नव्येति तदव्ययम्॥  

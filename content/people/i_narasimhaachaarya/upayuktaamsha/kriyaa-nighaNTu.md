@@ -1,9 +1,9 @@
----  
+---
 title: "वीरपाण्ड्यभूपालविरचित-क्रियानिघण्टुः"  
 tags: [getting_started]  
 sidebar: home_sidebar  
 unicode_script: devanagari  
----  
+---
 श्री वीरपाण्ड्यभूपालविरचित-क्रियानिघण्टु-प्रारम्भः  
 श्लोकेषु यथा-  
   
