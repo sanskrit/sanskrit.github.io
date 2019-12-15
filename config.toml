@@ -4,8 +4,12 @@ title = "संस्कृतजालक्षेत्रम्"
 theme = "sanskrit-documentation-theme-hugo"
 publishDir = "build_github"
 disablePathToLower = true
+
 [params]
   githubEditMePathBase = "https://github.com/sanskrit/sanskrit.github.io/edit/master/content/"
   contactLink = "https://github.com/sanskrit/sanskrit.github.io/issues/new"
   env = "production"
   disqusShortcode = "sanskrit-projects-site"
+
+[markup.goldmark.renderer]
+  unsafe= true
