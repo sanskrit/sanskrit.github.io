@@ -4,6 +4,9 @@ sidebar: dyuganga_sidebar
 summary: Welcome page.
 ---
 
+{{< figure src="../images/ashmanvatI.jpg" title="Dyugangā banner" >}}
+
+
 ## Goals ध्येयानि
 Dyugangā is a work group dedicated to the promotion of ever-victorious Hindu ideals and arts. It's current focus is in presenting important texts for easy study.
 
