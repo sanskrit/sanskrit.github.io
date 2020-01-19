@@ -4,7 +4,7 @@ sidebar: dyuganga_sidebar
 summary: Welcome page.
 ---
 
-{{< figure src="../images/ashmanvatI.jpg" title="Dyugangā banner" >}}
+{{< figure src="images/ashmanvatI.jpg" title="Dyugangā banner" >}}
 
 
 ## Goals ध्येयानि
