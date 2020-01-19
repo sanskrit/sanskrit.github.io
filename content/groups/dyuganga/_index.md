@@ -1,6 +1,6 @@
 ---
 title: "Dyugangā द्युगङ्गा"
-sidebar: home_sidebar
+sidebar: dyuganga_sidebar
 summary: Welcome page.
 ---
 

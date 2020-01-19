@@ -6,3 +6,11 @@
     comments: true
     search: true
     sidebar: home_sidebar
+-
+  scope:
+    pathPrefix: "dyuganga"
+  values:
+    layout: "page"
+    comments: true
+    search: true
+    sidebar: dyuganga_sidebar
