@@ -1,5 +1,5 @@
 ---
-title: "प्रवेशः!"
+title: +Projects उद्यमाः
 tags: [getting_started]
 summary: Welcome page.
 ---
