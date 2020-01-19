@@ -12,4 +12,4 @@ The texts may be presented as audio files (eg: [MahAbhArata audio book project](
 The choice of material is heavily depends on the special interests of its current director (vedas, kalpa, purANa-s).
 
 ## Establishment संस्थापनम्
-The group is hosted under the aegis of shrI manjunath's [Cleverkare](http://cleverkare.com), an entirely unrelated business.
+The group is hosted under the aegis of shrI manjunath's [Cleverkare](http://cleverkare.com), an entirely unrelated business. Donations and sponsorship are welcome (use [contact page](contact/)) - they help offset operating costs and plan further projects.
