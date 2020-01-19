@@ -8,7 +8,7 @@
     sidebar: home_sidebar
 -
   scope:
-    pathPrefix: "dyuganga"
+    pathPrefix: "groups/dyuganga"
   values:
     layout: "page"
     comments: true
