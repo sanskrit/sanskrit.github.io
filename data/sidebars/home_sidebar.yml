@@ -6,7 +6,7 @@ contents:
     url: /
   - title: Projects
     contents:
-      - url: recdir://projects/index.html
+      - url: recdir://projects/
       - title: Blog
         url: /assets/blog/index.html
   - title: यूथाः
