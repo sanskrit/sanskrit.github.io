@@ -6,70 +6,14 @@ contents:
     url: /
   - title: Projects
     contents:
-      - title: Home - Intro
-        url: /projects/index.html
-      - title: Audio
-        contents:
-          - title: Intro
-            url: /projects/audio/
-          - title: Reciting and Recording
-            url: /projects/audio/tips/
-          - title: Mahabharata audio
-            contents:
-              - title: Home - Intro
-                url: /projects/audio/mbh-audio/
-              - title: How?
-                url: /projects/audio/mbh-audio/how/
-          - title: Ramayana audio
-            url: /projects/audio/ramayana-audio/index.html
-          - title: kAvya audio
-            url: /projects/audio/kAvya-audio/index.html
-          - title: Kannada audio
-            url: /projects/audio/kannada-audio/index.html
-      - title: Data
-        url: /projects/data/
-      - title: Code
-        url: https://sanskrit-coders.github.io/
+      - url: recdir://projects/index.html
       - title: Blog
         url: /assets/blog/index.html
-      - title: Archive
-        contents:
-          - title: संस्कृतशाला-प्रस्तावः
-            url: /projects/schools/bay-area-sanskrit-school-dream/
-          - title: चित्रवेदाः
-            url: /projects/image/chitraveda/
   - title: यूथाः
     contents:
-      - title: पद्यधारा
-        url: /groups/padyadhaaraa/
-      - title: Matturu
-        contents:
-          - title: Intro
-            url: /groups/matturu/
-          - title: Contribute
-            contents:
-              - title: Motivation
-                url: /groups/matturu/contribute/
-              - title: Matturu Veda Shālā मत्तूरु-ग्राम-वेद-पाठशाला
-                url: /groups/matturu/contribute/veda-shaalaa/
-          - title: History
-            url: /groups/matturu/history/
+      - url: recdir://groups/
   - title: जनाः
     contents:
-      - title: नरसिंहाचार्यः
-        contents:
-            - title: नरसिंहाचार्यः - परिचयः
-              url: /people/i_narasimhaachaarya/
-            - title: उपयुक्तांश-सङ्ग्रहः
-              contents:
-                - url: dir://people/i_narasimhaachaarya/upayuktaamsha/
-            - title: श्रीहर्षकोशः
-              contents:
-                - url: dir://people/i_narasimhaachaarya/shriiharshakosha/
-            - title: शिशुपालवधम्
-              contents:
-                - url: dir://people/i_narasimhaachaarya/shishupaalavadha/
-      - title: नरेशः - पद्यानि
-        url: /people/naresha/
+      - url: recdir://people/
   - title: <i class="fas fa-hand-holding-heart"></i>Donate Via Vishvas
     url: https://vvasuki.github.io/interests/dharma-via-vishvas/

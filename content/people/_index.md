@@ -1,5 +1,5 @@
 ---
-title: "ससंस्कृताः सुसंस्कृताः"
+title: +"ससंस्कृताः सुसंस्कृताः"
 tags: [getting_started]
 sidebar: home_sidebar
 summary: Welcome page.

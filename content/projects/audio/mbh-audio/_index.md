@@ -1,5 +1,5 @@
 ---
-title: "Mahabharata audio project महाभारत-ध्वनि-प्राप्तिः"
+title: +Mahabharata audio महाभारत-ध्वनि-प्राप्तिः
 tags: [getting_started]
 summary: Welcome page.
 ---

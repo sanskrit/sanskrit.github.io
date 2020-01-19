@@ -1,5 +1,5 @@
 ---
-title: "उपयुक्तांशसङ्ग्रहः - परिचयः"
+title: +उपयुक्तांशसङ्ग्रहः - परिचयः
 tags: [getting_started]
 sidebar: home_sidebar
 unicode_script: devanagari  

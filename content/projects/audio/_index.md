@@ -1,5 +1,5 @@
 ---
-title: "Audio projects"
+title: +Audio
 tags: [getting_started]
 ---
 

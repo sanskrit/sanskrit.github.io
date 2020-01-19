@@ -1,5 +1,5 @@
 ---
-title: Data curation
+title: +Data curation
 ---
 
 - AShTadhyayi

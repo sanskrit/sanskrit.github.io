@@ -1,5 +1,5 @@
 ---
-title: "नरसिंहाचार्यः - परिचयः"
+title: +नरसिंहाचार्यः - परिचयः
 tags: [getting_started]
 sidebar: home_sidebar
 unicode_script: devanagari  
