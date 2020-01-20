@@ -12,7 +12,7 @@ Dyugangā is a work group dedicated to the promotion of ever-victorious Hindu id
 
 The texts may be presented as audio files (eg: [MahAbhArata audio book project](../../projects/audio/mbh-audio/)), as web pages (eg: [Vishvas's mantra notes](https://vvasuki.github.io/saMskAra/mantra/agni/paravastu-saama/mahAvaishvAnara-vratam/), [EkAgnikANDa commentary on wikisource](https://sa.wikisource.org/s/1vnh)), as dictionaries (eg: [stardict](https://sanskrit-coders.github.io/dictionaries/offline/)). 
 
-The choice of material is heavily depends on the special interests of its current director (vedas, kalpa, purANa-s).
+The choice of material is heavily depends on the special interests of its current lead (vedas, kalpa, purANa-s).
 
 ### संस्कृतानुवादः
 द्युगङ्गा नाम कार्यसंस्था ऽजेयानां भारतीयपुरुषार्थपरिकल्पनानाञ्च हिन्दुककलानाञ्च प्रसारणाय वर्तते। तदीयस् स्थूलोद्देशोऽधुना प्रमुखग्रन्थानाम् अध्ययनसौकर्याय प्रस्तुतिः।
