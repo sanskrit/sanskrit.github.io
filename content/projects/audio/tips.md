@@ -6,17 +6,22 @@ Short url : https://rebrand.ly/mbh-recording-standards
 
 ## Good pronunciation: Most important
 
-### varNa-level pronunciation
+### varNa-level pronunciation (English)
 - Clearly distinguish न vs ण, स vs श vs ष, अल्पप्राण (त) vs महाप्राण (थ), थ vs ध, आ vs अ (esp in the end, like in उवाच), etc.. But don't overcompensate! Overemphasis on mahAprANa-s etc.. harms the natural melody.
 - Don't elongate final vyanjana-s. "इदम् अन्यत्तु भगवन्" इत्यत्रान्तिमनकारो "भगवन्न्अ(३)" इतिवन् न श्रूयेत।
-- विसर्गस्योच्चारणे कर्णाटप्रदेशे वर्तमाना काचन रूढिर् दुर्निवारा दृश्यते - यथा "पराक्रमः" इति वचनस्य स्थाने "पराक्रमहा", "विक्रमः" इति वचनस्य स्थाने "विक्रमहा" इत्येवं श्रूयते - तच्च विपरीरार्थसूचकत्वात् (पराक्रमं हन्तीति पराक्रमहा, विक्रमं‌ हन्तीति विक्रमहा) केषुचिद् वैरस्यम् उत्पादयेत्। अतो ऽन्तिमहकारसदृशं विसर्गस्थानीयं शब्दं‌ यथासम्भवम् अव्यक्ततरं‌ कर्तुं यतताम्। 
-- use उपध्मानीय where विसर्ग appears before पवर्ग, and jihvAmUlIya where it appears before कवर्ग
+- There is a pervasive practice of Visarga pronunciation in Karnataka state, as like in the place of pronunciation of the words “पराक्रमः” and “विक्रमः”, it sounds like “पराक्रमहा” “विक्रमहा” which gives opposite meaning (like one who destroyes valour is “पराक्रमहा” and one who destroys the courage is “विक्रमहा”) to the listeners. Therefore it should be tried to be silent as much as possible while pronouncing the end Visarga.
+- use उपध्मानीय where विसर्ग appears before प/फ, and jihvAmUlIya where it appears before क/ख
 - try to replace terminal anusvAra in a word with the appropriate anunAsika. Example: शङ्करं किञ्चित् -> शङ्करङ्किञ्चित्, रामं वीक्ष्य ->‌ रामव्ँ वीक्ष्य, रामं लक्ष्मणम् -> रामल्ँ लक्ष्मणम्।
+
+### वर्णस्तरीयोच्चारणम्
+
 
 ### Pauses and tune
   - In case of verses - adapt a melody or tune appropriate for the meter. 
   - Read without breaking sandhi-s or adding excess gaps (eg. in the end of odd pAda-s). अनेन च्छन्दःशास्त्रनियमः पाल्यते, पादे पादे कटुविसर्गोच्चारनादिदोषा वार्यन्ते। 
   - With prose sections, where the punctuation marks ought to be, plan where you will pause for breath and how it 
+
+
 
 ### Miscellania
 - Bonus: Verse or prose: Try to render appropriate bhAva (especially in emotional spots).
