@@ -3,6 +3,9 @@ title: विरामदिनानि
 unicode_script: devanagari
 ---
 
+## कार्यदिनसूचना Attendance 
+- [zoho people](https://people.zoho.com/dyuganga/zp#attendance/entry/listview)
+
 ## कार्यवेला/ Work days
 - सप्ताहे ५ दिनानीति मानेन कार्यदिनानि स्युः। दिने च ८ होराणां कार्यवेला। 
 
