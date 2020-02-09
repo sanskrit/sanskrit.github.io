@@ -11,21 +11,31 @@ Short url : https://rebrand.ly/mbh-recording-standards
 - Don't elongate final vyanjana-s. "इदम् अन्यत्तु भगवन्" इत्यत्रान्तिमनकारो "भगवन्न्अ(३)" इतिवन् न श्रूयेत।
 - There is a pervasive practice of Visarga pronunciation in Karnataka state, as like in the place of pronunciation of the words “पराक्रमः” and “विक्रमः”, it sounds like “पराक्रमहा” “विक्रमहा” which gives opposite meaning (like one who destroyes valour is “पराक्रमहा” and one who destroys the courage is “विक्रमहा”) to the listeners. Therefore it should be tried to be silent as much as possible while pronouncing the end Visarga.
 - use उपध्मानीय where विसर्ग appears before प/फ, and jihvAmUlIya where it appears before क/ख
-- try to replace terminal anusvAra in a word with the appropriate anunAsika. Example: शङ्करं किञ्चित् -> शङ्करङ्किञ्चित्, रामं वीक्ष्य ->‌ रामव्ँ वीक्ष्य, रामं लक्ष्मणम् -> रामल्ँ लक्ष्मणम्।
+- Optionally ("अनुस्वारस्य ययि परसवर्णः, वा पदान्तस्य"), try to replace terminal anusvAra in a word with the appropriate anunAsika. Example: शङ्करं किञ्चित् -> शङ्करङ्किञ्चित्, रामं वीक्ष्य ->‌ रामव्ँ वीक्ष्य, रामं लक्ष्मणम् -> रामल्ँ लक्ष्मणम्।
 
 ### वर्णस्तरीयोच्चारणम्
+- परिशुद्धतया +उच्चारणीयः - विशिष्य - “न”कार“ण”कारौ, “स”कार”श”कार”ष”काराः, अल्पप्राणमहाप्राणाः(त/थ यथा), “थ”कार“ध”कारौ, “आ”कार”अ”कारौ (विशेषतया उच्चारणान्तसमये यथा “उवाच”)।
+- पदान्तव्यञ्जनानि दीर्घस्वरेण प्लुतेन वा नोच्चारणीयनि - यथा “इदम् अन्यत्तु भगवन्” इत्यत्रान्तिमनकारो “भगवन्न्अ(३)” इतिवन् न श्रूयेत। कदाचिद् वाचनशैलीम् अभिलक्ष्य सोढुं शक्यम्।
+- विसर्गस्योच्चारणे कर्णाटप्रदेशे वर्तमाना काचन रूढिर् दुर्निवारा दृश्यते - यथा "पराक्रमः" इति वचनस्य स्थाने "पराक्रमहा", "विक्रमः" इति वचनस्य स्थाने "विक्रमहा" इत्येवं श्रूयते - तच्च विपरीतार्थसूचकत्वात् (पराक्रमं हन्तीति पराक्रमहा, विक्रमं‌ हन्तीति विक्रमहा) केषुचिद् वैरस्यम् उत्पादयेत्। अतो ऽन्तिमहकारसदृशं विसर्गस्थानीयं शब्दं‌ यथासम्भवम् अव्यक्ततरं‌ कर्तुं यतताम्।
+- “क””ख” वर्णयोः पूर्वं विसर्गस्य(ः) संयोगो भवति चेत्, जिह्वामूलीयस्य, तथा  “प””फ” वर्णयोः पूर्वं विसर्गस्य संयोगो भवति चेत् उपध्मानीयस्य उपयोगः कर्तव्यः । उदाहरणम् - अन्तःकरणम् -> अन्तᳵकरणम्, बहिः पश्य -> बहिᳶपश्य। 
+- विकल्पेन पदान्तानुस्वारस्य स्थाने पुरो वर्तमानस्य व्यञ्जनस्य अनुनासिकवर्णमेव उच्चार्यताम् - यथा “शङ्करं किञ्चित्  → शङ्करङ्किञ्चित्, रामं वीक्ष्य → रामव्ँ वीक्ष्य, रामं लक्ष्मणम् → रामल्ँ लक्ष्मणम् । ("अनुस्वारस्य ययि परसवर्णः, वा पदान्तस्य")
 
 
-### Pauses and tune
-  - In case of verses - adapt a melody or tune appropriate for the meter. 
-  - Read without breaking sandhi-s or adding excess gaps (eg. in the end of odd pAda-s). अनेन च्छन्दःशास्त्रनियमः पाल्यते, पादे पादे कटुविसर्गोच्चारनादिदोषा वार्यन्ते। 
-  - With prose sections, where the punctuation marks ought to be, plan where you will pause for breath and how it 
+### Pauses and tune (English)
+- In case of verses - adapt a melody or tune appropriate for the meter. 
+- Read without breaking sandhi-s or adding excess gaps (eg. in the end of odd pAda-s). By doing this, the rules of Prosody would be followed, and the issues like wrong pronunciation of Visarga can be avoided. 
+- With prose sections, where the punctuation marks ought to be, plan where you will pause for breath.
 
-
+### यतयश्च गतयश्च
+- श्लोकोच्चारणसमये - छन्दोनुगुण्येन रागो योजनीयः।
+- सन्धीन् अविभज्य, अधिकविरामं वा न दत्वा पठनीयः (विशिष्य विषमपादान्ते)। अनेन च्छन्दःशास्त्रनियमः पाल्यते, पादे पादे कटुविसर्गोच्चारणादिदोषा वार्यन्ते।
+- गद्यभागोच्चारणे, कुत्र विरामचिह्नानि वर्तेरन्न् इति विचिन्त्य पथेत्।
 
 ### Miscellania
 - Bonus: Verse or prose: Try to render appropriate bhAva (especially in emotional spots).
-ought to sound to convey the "conversational" bhAva.
+For example, convey the "conversational" bhAva.
+- छन्दो वा गद्यम् - उचितेन भावेन सह पठ्यताम् (विशेषतः भावपूर्णसन्दर्भेषु) उचितं भावम् अनुसृत्य ध्वन्यताम् ।
+
 
 ## Good recording
 ### Expectations
