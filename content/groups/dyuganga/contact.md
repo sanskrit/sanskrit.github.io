@@ -2,6 +2,7 @@
 title: Contact सम्पर्कः
 ---
 
+- Get updates [here](https://groups.google.com/forum/#!forum/dyuganga). द्युगङ्गा-कार्यगणस्य वार्ता [अत्र](https://groups.google.com/forum/#!forum/dyuganga)।
 - Please contact [Vishvas / विश्वासो वासुकिजः](https://vvasuki.github.io/) for more info.
 - We are located in [C Block, sahakAra nagara](https://goo.gl/maps/QrXL5uobRpCgW1W7A).
 
