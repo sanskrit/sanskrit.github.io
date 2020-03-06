@@ -11,12 +11,16 @@ unicode_script: devanagari
 ## लेखास् स्रष्टव्याः
 - सङ्गणकयन्त्रे
 - [github](https://github.com/)
-- [zoho people](https://people.zoho.com/dyuganga/zp#attendance/entry/listview)
 - [trello](https://trello.com/b/d4dANdrD/%E0%A4%A6%E0%A5%8D%E0%A4%AF%E0%A5%81%E0%A4%97%E0%A4%99%E0%A5%8D%E0%A4%97%E0%A4%BE-dyuganga)
 - [telegram](https://t.me/joinchat/IJu_Tkpqm1qdMjEPhCy8Dg)
+- zoom
 
 ## सङ्गणकापेक्षा
+- 8GB RAM, Intel I5 or better.
 
+## सङ्गणकतन्त्रांशाः (Linux)
+- Install Manjaro via Architect installer
+- `yay -S dyuganga`
 
 ## साङ्गणकतन्त्रांशाः (Windows)
 ### Editing tools
@@ -34,7 +38,7 @@ unicode_script: devanagari
 - Zip extractor
 - [Telegram desktop](https://desktop.telegram.org/)
 
-### Repositories
+## Repositories
 - [संस्कारः](https://github.com/vvasuki/saMskAra/) - Fork and clone.
 - [काव्यम्](https://github.com/vvasuki/kAvya/) - Fork and clone.
 - [Raw etexts](https://github.com/sanskrit/raw_etexts/) - clone.
