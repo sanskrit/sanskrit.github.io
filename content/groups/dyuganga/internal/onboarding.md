@@ -16,29 +16,29 @@ unicode_script: devanagari
 - zoom
 
 ## सङ्गणकापेक्षा
-- 8GB RAM, Intel I5 or better.
+- 8GB RAM, fast processor (i5 or later) and laptop preferred
 
-## सङ्गणकतन्त्रांशाः (Linux)
+### Repositories
+- [संस्कारः](https://github.com/vvasuki/saMskAra/) - Fork and clone.
+- [काव्यम्](https://github.com/vvasuki/kAvya/) - Fork and clone.
+- [Raw etexts](https://github.com/sanskrit/raw_etexts/) - clone.
+
+### सङ्गणकतन्त्रांशाः (Linux)
 - Install Manjaro via Architect installer
 - `yay -S dyuganga`
 
-## साङ्गणकतन्त्रांशाः (Windows)
-### Editing tools
+### साङ्गणकतन्त्रांशाः (Windows)
+#### Editing tools
 - [Bhasha IME](https://sites.google.com/site/bhashaime/) - C:\Program Files\ इत्यस्मिन् स्थाप्यन्ताम्।
 - [Git for windows](https://gitforwindows.org/)
 - [Intellij IDE Community edition](https://www.jetbrains.com/idea/download/#section=linux) ।
     - Setup theme, font size, font.
 
-### Multimedia
+#### Multimedia
 - [Audacity](https://www.audacityteam.org/)
 - [VLC](https://www.videolan.org/index.html)
 
-### Misc
+#### Misc
 - Chrome, MS Word 
 - Zip extractor
 - [Telegram desktop](https://desktop.telegram.org/)
-
-## Repositories
-- [संस्कारः](https://github.com/vvasuki/saMskAra/) - Fork and clone.
-- [काव्यम्](https://github.com/vvasuki/kAvya/) - Fork and clone.
-- [Raw etexts](https://github.com/sanskrit/raw_etexts/) - clone.
