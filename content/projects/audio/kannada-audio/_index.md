@@ -10,7 +10,7 @@ We aim to freely (Creative Commons Attribution-ShareAlike 4.0 International Lice
 
 ### Copyright
 - We will target classics which are out of copyright and in the public domain.
-- For audio books uploaded prior to 20190215, we had neglected to consider the copyright status - we will remove those books or keep them depending on whether we succeed at getting permissions from copyright-holders.
+- For audio books uploaded prior to 2019-02-15, we had neglected to consider the copyright status - we will remove those books or keep them depending on whether we succeed at getting permissions from copyright-holders.
 
 ### Quality
 These files are not to be considered "official" representatives of the corresponding books - just best-effort productions for the enjoyment of those who would *never* otherwise have read the corresponding books. एता ध्वनिसञ्चिका ग्रन्थस्यौपचारिकाः प्रतिनिधय इति न। For some people, reading the books directly might yield much greater enjoyment.
