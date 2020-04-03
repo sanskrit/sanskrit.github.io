@@ -15,11 +15,17 @@ It is important to note that at any point in time, the output(in the form of au
 Listen or download here:
 - [Github staging repositories](https://github.com/kAvya-audio/) - this is where audio file contributions are primarily and securely collected.
 - Archive items where audio file contributions are primarily presented for listening.
-  - Ongoing
+  - Ready
     - [raghuvamsha](https://archive.org/details/Raghuvamsha-mUlam-vedabhoomi.org)
     - [मेघदूतम्](https://archive.org/details/meghadUta-dhvaniH)
+  - Ongoing
     - [kathAsaritsAgara](https://archive.org/details/kathAsaritsAgara-shrAvaNam)
     - [champU-rAmAyaNa-mUlam](https://archive.org/details/champU-rAmAyaNa-mUlam) (Requires much correction.)
+- Archive items where audio file contributions are primarily presented for listening are linked in [this spreadsheet](https://docs.google.com/spreadsheets/d/1YTU1e2CIeUXqsu06z_pfugpt3lkMeXeZLbLauOtksCQ/edit#gid=556879388).
 - Podcast
   - [kathAsaritsAgara RSS feed](https://api.vedavaapi.org/scala/podcasts/v1/archiveItems/kathAsaritsAgara-shrAvaNam?publisherEmail=podcast-bhaaratii%40googlegroups.com&languageCode=sa&categoriesCsv=Society%20%26%20Culture&imageUrl=https%3A%2F%2Fi.imgur.com%2FdQjPQYi.jpg&isExplicitYesNo=no).
   - Also see [Podcast list](https://docs.google.com/spreadsheets/d/1KMhtMaHCQpucqxH3aVcmYmPvQyV9vmunvckV2ARvD4M/edit#gid=0)
+
+## Contribute!
+
+If you would like to contribute to this effort, or if you want to suggest books of similar calibre for future reading, please [let us know offline](https://github.com/sanskrit/projects/issues/new). One doesn't need to be tech-savvy - and all one needs is some time for pleasure, discipline and a mobile phone with an internet connection for uploading (see [video here](https://www.youtube.com/watch?v=FpwDrXkW1zo)). Even aged retired people have contributed recordings without any trouble.
