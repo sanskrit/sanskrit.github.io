@@ -39,7 +39,7 @@ See [here](https://docs.google.com/spreadsheets/d/10yfI7hntiJ1NudQbFBFtQYGntiMds
 
 ### How to contribute?
 
-"I’m interested in being a sketcher (or storyboard maker), and I think I have the skills involved. How do I start?" -> Welcome and thanks!! We’re excited. Please apply to join [this mailing list](https://groups.google.com/forum/#!forum/chitraveda-kk) (be sure to answer the [questions we list](https://docs.google.com/forms/d/1mRPOWOHbGkrUYxSXbxXArGJ5eL3f-lS2wnwrTEUoGsU/viewform?c=0&w=1)). More details in the [FAQ](https://docs.google.com/document/d/1z36PFiclgS9jHoAXh_7-Ok-a6x4NSxYSwp8CAHJy_hs/edit).
+"I’m interested in being a sketcher (or storyboard maker), and I think I have the skills involved. How do I start?" → Welcome and thanks!! We’re excited. Please apply to join [this mailing list](https://groups.google.com/forum/#!forum/chitraveda-kk) (be sure to answer the [questions we list](https://docs.google.com/forms/d/1mRPOWOHbGkrUYxSXbxXArGJ5eL3f-lS2wnwrTEUoGsU/viewform?c=0&w=1)). More details in the [FAQ](https://docs.google.com/document/d/1z36PFiclgS9jHoAXh_7-Ok-a6x4NSxYSwp8CAHJy_hs/edit).
 
 ## Frequently asked questions
 
