@@ -14,7 +14,7 @@ unicode_script: devanagari
 - [trello team](https://trello.com/vidvanmantrinah), [trello board](https://trello.com/b/d4dANdrD/%E0%A4%A6%E0%A5%8D%E0%A4%AF%E0%A5%81%E0%A4%97%E0%A4%99%E0%A5%8D%E0%A4%97%E0%A4%BE-dyuganga)
 - jibble: नियामक [आमन्त्रयति](https://app.jibble.io/#people)।
 - [telegram](https://t.me/joinchat/IJu_Tkpqm1qdMjEPhCy8Dg)
-- zoom.us
+
 
 ## सङ्गणकापेक्षा
 - 8GB RAM, fast processor (i5 or later) and laptop preferred

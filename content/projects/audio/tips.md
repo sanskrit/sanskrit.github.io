@@ -59,7 +59,7 @@ For example, convey the "conversational" bhAva.
 - If despite efforts, there are shortcomings, don't worry - we can fix or replace later.
 
 ### Technical instructions
-- युष्मासु तान्त्रिकविषयेषु सन्देहास् सन्ति चेत् सूचयन्तु - दूरस्थोऽपि तत्समाधाने यतिष्ये। [zoom.us](https://play.google.com/store/apps/details?id=us.zoom.videomeetings) इति तन्त्रांशस्तु स्थापनीयः, येन "mobile phone screen sharing" इति सम्भवति।
+- युष्मासु तान्त्रिकविषयेषु सन्देहास् सन्ति चेत् सूचयन्तु - दूरस्थोऽपि तत्समाधाने यतिष्ये। Google meet इति तन्त्रांशस्तु स्थापनीयः, येन "mobile phone screen sharing" इति सम्भवति।
 
 #### Android setup and usage
 - Install [ASR App](https://play.google.com/store/apps/details?id=com.nll.asr&hl=en)
