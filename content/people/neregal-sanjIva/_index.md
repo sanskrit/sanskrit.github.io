@@ -3,7 +3,7 @@ title: सञ्जीवो नॆरॆगलभिजनः
 unicode_script: devanagari
 ---
 
-{{< figure src="mugshot.png" attributionclass="thumbnail">}}
+{{< figure src="mugshot.png"  class="thumbnail">}}
 
 
 ## परिचयः
