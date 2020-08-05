@@ -5,6 +5,10 @@ theme = "sanskrit-documentation-theme-hugo"
 publishDir = "build_github"
 disablePathToLower = true
 
+[outputs]
+  home = ["HTML", "RSS", "JSON", "CSV"]
+  section = ["HTML", "RSS", "JSON"]
+
 [params]
   githubEditMePathBase = "https://github.com/sanskrit/sanskrit.github.io/edit/master/content/"
   contactLink = "https://github.com/sanskrit/sanskrit.github.io/issues/new"
