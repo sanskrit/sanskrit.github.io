@@ -20,15 +20,13 @@ They remain pertinent with regards to marriage (and to a lesser extant adaption)
 
 ## How to participate?
 - Contact details can be found below.
-- If you are male and have sequenced your genome (example with [23andme USD$79](https://www.23andme.com/en-int/) or [mapmygenome.in Rs 3.5k](https://mapmygenome.in/raw-data-request)), send us the following: 
-  - your raw data, 
-  - your gotra and pravara
-  - name of your paternal v1 community (eg. sanketi/ vaDama / hebbar iyengar etc..)
-  - geographical region of your paternal ancestors.
-  - your veda shAkhA and sutra 
+- If you are male and have sequenced your genome (example with [23andme USD$79](https://www.23andme.com/en-int/) or [mapmygenome.in Rs 3.5k](https://mapmygenome.in/raw-data-request)), send us some basic information (see [example file](https://github.com/sanskrit/gotra-haplogroup/blob/master/shriivatsa/KA/south_east/aapastamba/1.toml)) as well as your raw data (see tips below for accessing raw data from various services).
 - If you can sponsor our data collection effort to some extant (eg: "I can sponsor n samples"); please send us the money and/ or data.
 - Or, you can just propagate this message:
   > Anyone interested in participating in this "V1 Gotra-haplogroup correlation" project please do so (details in the web page https://sanskrit.github.io/projects/data/genetic/v1-gotra-haplogroup/ ).
+
+### Accessing raw data
+- 23andme - Follow instructions [here](https://customercare.23andme.com/hc/en-us/articles/212196868-Accessing-Your-Raw-Genetic-Data).
 
 ## Data privacy
 - We will not publish your name or contact details. 
