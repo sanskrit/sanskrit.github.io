@@ -6,7 +6,7 @@ title = "V1 Gotra-haplogroup correlation"
 With this project, we propose to gather data to deduce correlations between Gotra/ pravara and Y-Haplogroup. We describe our motivations below.
 
 ### Gotra and pravara
-Gotra and pravara among brAhmaNa-s (v1-s for short) records claims of descent from a line of ancient sages. V1-s carefully preserve gotra-pravara information accross generations. This has been the case since ancient Vedic times. One finds clear references to gotra-s in inscriptions and texts accross India (and beyond).
+Gotra and pravara among brAhmaNa-s (V1-s for short) records claims of descent from a line of ancient sages. V1-s carefully preserve gotra-pravara information accross generations. This has been the case since ancient Vedic times. One finds clear references to gotra-s in inscriptions and texts accross India (and beyond).
 
 ### Historical understanding
 These gotra-s are patrilenial (father to son). Today, we are able to sequence the human genome (Y chromosome in particular) and discern rich information about ancestry and population migration. This story can be made all the more richer if correlated with gotra-pravara information.
