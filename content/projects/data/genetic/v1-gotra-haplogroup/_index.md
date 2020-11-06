@@ -20,7 +20,7 @@ They remain pertinent with regards to marriage (and to a lesser extant adaption)
 
 ## How to participate?
 - Contact details can be found below.
-- If you are male and have sequenced your genome (example with [23andme USD$79](https://www.23andme.com/en-int/) or [mapmygenome.in Rs5k](https://mapmygenome.in/genomepatri-heritage-dna-ancestry-test)), send us the following: 
+- If you are male and have sequenced your genome (example with [23andme USD$79](https://www.23andme.com/en-int/) or [mapmygenome.in Rs 5k](https://mapmygenome.in/genomepatri-heritage-dna-ancestry-test)), send us the following: 
   - your raw data, 
   - your gotra and pravara
   - name of your paternal v1 community (eg. sanketi/ vaDama / hebbar iyengar etc..)
