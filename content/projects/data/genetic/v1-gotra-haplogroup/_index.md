@@ -32,7 +32,7 @@ They remain pertinent with regards to marriage (and to a lesser extant adaption)
 - We will ONLY make your anonymized Y haplogroup data (connected to gross details such as gotra/ pravara/ community/ region) part of our public sample set.
 
 ## Collaborators
-- ShrI [Vagheesh Narasimhan](https://vagheesh.cns.utexas.edu), a leading population genetisist at UT Austin has shown interest in analysing the data when available.
+- ShrI [Vagheesh Narasimhan](https://www.vagheesh.com/), a leading population genetisist at UT Austin has shown interest in analysing the data when available.
 
 ## Contact
 - Contact details: firstname.lastname ATT gmail.com where ([firstName] = vishvas, [lastName] = vasuki)
