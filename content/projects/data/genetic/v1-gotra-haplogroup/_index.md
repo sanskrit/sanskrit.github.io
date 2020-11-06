@@ -25,6 +25,7 @@ They remain pertinent with regards to marriage (and to a lesser extant adaption)
   - your gotra and pravara
   - name of your paternal v1 community (eg. sanketi/ vaDama / hebbar iyengar etc..)
   - geographical region of your paternal ancestors.
+  - your veda shAkhA and sutra 
 - If you can sponsor our data collection effort to some extant (eg: "I can sponsor n samples"); please send us the money and/ or data.
 - Or, you can just propagate this message:
   > Anyone interested in participating in this "V1 Gotra-haplogroup correlation" project please do so (details in the web page https://sanskrit.github.io/projects/data/genetic/v1-gotra-haplogroup/ ).
