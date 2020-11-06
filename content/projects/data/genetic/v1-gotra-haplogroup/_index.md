@@ -27,7 +27,7 @@ They remain pertinent with regards to marriage (and to a lesser extant adaption)
   - geographical region of your paternal ancestors.
 - If you can sponsor our data collection effort to some extant (eg: "I can sponsor n samples"); please send us the money and/ or data.
 - Or, you can just propagate this message:
-  - Anyone interested in participating in this "V1 Gotra-haplogroup correlation" project  https://sanskrit.github.io/projects/data/genetic/v1-gotra-haplogroup/ may do so (details in the page).
+  > Anyone interested in participating in this "V1 Gotra-haplogroup correlation" project please do so (details in the web page https://sanskrit.github.io/projects/data/genetic/v1-gotra-haplogroup/ ).
 
 ## Data privacy
 - We will not publish your name or contact details. 
