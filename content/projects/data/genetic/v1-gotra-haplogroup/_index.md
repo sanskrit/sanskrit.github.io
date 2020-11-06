@@ -25,7 +25,7 @@ They remain pertinent with regards to marriage (and to a lesser extant adaption)
   - your gotra and pravara
   - name of your paternal v1 community (eg. sanketi/ vaDama / hebbar iyengar etc..)
   - geographical region of your paternal ancestors.
-- If you can sponsor our data collection effort to some extant (eg: "I can sponsor n samples"); please send us the money or data.
+- If you can sponsor our data collection effort to some extant (eg: "I can sponsor n samples"); please send us the money and/ or data.
 
 ## Data privacy
 - We will not publish your name or contact details. 
