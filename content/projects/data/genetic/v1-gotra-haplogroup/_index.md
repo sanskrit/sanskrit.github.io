@@ -35,5 +35,11 @@ They remain pertinent with regards to marriage (and to a lesser extant adaption)
 ## Collaborators
 - ShrI [Vagheesh Narasimhan](https://www.vagheesh.com/), a leading population genetisist at UT Austin has shown interest in analysing the data when available.
 
+## FAQ
+- Does providing haplogroup suffice? Why raw data?
+  - Haplogroup assignments may not be fine-grained enough.
+  - Skipping Y chromosome Raw data not seem to guarantee significantly more privacy relative to just the haplogroup. 
+  - If very paranoid, can still provide just haplogroup data.
+
 ## Contact
 - Contact details: firstname.lastname ATT gmail.com where ([firstName] = vishvas, [lastName] = vasuki)
