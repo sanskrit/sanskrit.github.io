@@ -16,7 +16,7 @@ It is natural for V1s to wonder "Where did our ancestors come from? Who were the
 Currently, several studies make do with deducing migration patterns based on text similarity and such; and the granularity of genetic studies stops at caste/ jAti/ varNa level.
 
 ### Marriage and adaption decisions
-They remain pertinent with regards to marriage (and to a lesser extant adaption) decisions in the v1 community. With the proposed gotra-haplogroup correlation in place, genetic testing can help resolve ambiguities.
+Gotra and pravara remain pertinent with regards to marriage (and to a lesser extant adaption) decisions in the v1 community. With the proposed gotra-haplogroup correlation in place, genetic testing can help resolve ambiguities.
 
 ## How to participate?
 - Contact details can be found below.
@@ -33,6 +33,7 @@ They remain pertinent with regards to marriage (and to a lesser extant adaption)
 - We will ONLY make your anonymized Y haplogroup data (connected to gross details such as gotra/ pravara/ community/ region) part of our public sample set [here](https://github.com/sanskrit/gotra-haplogroup).
 
 ## Collaborators
+- Anyone interested is welcome to use and analyze the data. 
 - ShrI [Vagheesh Narasimhan](https://www.vagheesh.com/), a leading population genetisist at UT Austin has shown interest in analysing the data when available.
 
 ## FAQ
