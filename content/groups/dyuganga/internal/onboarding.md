@@ -21,7 +21,7 @@ unicode_script: devanagari
 
 ### Repositories
 - [संस्कारः](https://github.com/vvasuki/saMskAra/) - Fork and clone.
-- [काव्यम्](https://github.com/vvasuki/kAvya/) - Fork and clone.
+- [काव्यम्](https://github.com/vvasuki/kAvyam/) - Fork and clone.
 - [Raw etexts](https://github.com/sanskrit/raw_etexts/) - clone.
 
 ### सङ्गणकतन्त्रांशाः (Linux)
