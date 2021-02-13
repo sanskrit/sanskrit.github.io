@@ -10,7 +10,7 @@ summary: Welcome page.
 ## Goals ध्येयानि
 Dyugangā is a work group dedicated to the promotion of ever-victorious Hindu ideals and arts. It's current focus is in presenting important texts for easy study.
 
-The texts may be presented as audio files (eg: [MahAbhArata audio book project](../../projects/audio/mbh-audio/)), as web pages (eg: [V's mantra notes](https://vvasuki.github.io/saMskAra/mantra/agniH/paravastu-saama/mahAvaishvAnara-vratam/), [EkAgnikANDa commentary on wikisource](https://sa.wikisource.org/s/1vnh)), as dictionaries (eg: [stardict](https://sanskrit-coders.github.io/dictionaries/offline/)). 
+The texts may be presented as audio files (eg: [MahAbhArata audio book project](../../projects/audio/mbh-audio/)), as web pages (eg: [V's mantra notes](https://vvasuki.github.io/saMskAra/mantraH/misc-devas/paravastu-saama/Aruhan/?debugInfo=%22urlWeight=1&totalWeight=67%22), [EkAgnikANDa commentary](https://vvasuki.github.io/vedAH/taittirIyam/ekAgnikANDam/haradatta-TIkA/)), as dictionaries (eg: [stardict](https://sanskrit-coders.github.io/dictionaries/offline/)). 
 
 The choice of material is heavily depends on the special interests of its current lead (vedas, kalpa, purANa-s).
 
