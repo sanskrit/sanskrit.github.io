@@ -2,7 +2,7 @@
 title: Contact सम्पर्कः
 ---
 
-
+- Short URL: https://rebrand.ly/dyugangA 
 - Please contact [Vishvas / विश्वासो वासुकिजः](https://vvasuki.github.io/) for more info. Especially, please see [Dharma via Vishvas page](https://vvasuki.github.io/interests/dharma-via-vishvas/). 
 
 ## Social web (Updates and sponsorship opportunities)
