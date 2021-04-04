@@ -22,7 +22,7 @@ The choice of material is heavily depends on the special interests of its curren
 सद्यश्च ग्रन्थाः संस्थाग्रण्या रुचिविशेषम् अनुसृत्य चिताः - वेदाः, इतिहासपुराणानि, कल्पवेदाङ्गग्रन्थाश् चेति।
 
 ## Establishment संस्थापनम्
-The group started in Feb 2020. It was hosted for a couple of months before the Wuhan pandemic under the aegis of shrI manjunath's [Cleverkare](http://cleverkare.com), an entirely unrelated business. Since then it has been running mostly on Vishvas family funds. 
+The group started semi-formally in Feb 2020. It was hosted for a couple of months before the Wuhan pandemic under the aegis of shrI manjunath's [Cleverkare](http://cleverkare.com), an entirely unrelated business. Since then it has been running mostly on Vishvas family funds. 
 
 ### Contribution दानम्
 Donations and sponsorship are welcome (use [contact page](contact/)) - they help offset operating costs (worker payments mainly ~1L/mo) and plan further projects. Project-specific sponsorship opportunities are advertised on our social media accounts and on certain mailing lists.
