@@ -3,8 +3,5 @@
 title: Parts
 contents:
   - url: recdir://groups/dyuganga/
-  - title: Projects
-    contents:
-      - url: /projects/
-      - title: Code
-        url: https://sanskrit-coders.github.io/
+  - title: Code
+    url: https://sanskrit-coders.github.io/
