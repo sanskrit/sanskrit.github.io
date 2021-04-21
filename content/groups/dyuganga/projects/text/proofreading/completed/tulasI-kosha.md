@@ -3,9 +3,11 @@ title: तिलसी-कोश-शोधन-क्रिया
 unicode_script: devanagari
 ---
 
+## Status
+Completed in 2020.
 
 ## नियन्ता
-- विश्वास - 95912 68506 (telegram/ whatsapp)। gmail-मेँ - vishvas.vasuki । 
+- विश्वास - 95912 68506 (telegram/ whatsapp)। gmail-मेँ - vishvas.vasuki ।
 
 ## अपेक्षा और क्रम
 - तुलसीशब्दकोश के निर्वाच्य-शब्दोँ का संस्करण। (शब्दनिर्वचन का संस्करण अनपेक्षित है। पर प्रतिपङ्क्ति एक शब्द और एक निर्वचन हि हो - ऐसा प्रयास हो।)
