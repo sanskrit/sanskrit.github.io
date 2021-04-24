@@ -6,7 +6,7 @@ title: Contact सम्पर्कः
 - Please contact [Vishvas / विश्वासो वासुकिजः](https://vvasuki.github.io/) for more info. Especially, please see [Dharma via Vishvas page](https://vvasuki.github.io/interests/dharma-via-vishvas/). 
 
 ## Social web (Updates and sponsorship opportunities)
-- Google groups [here](https://groups.google.com/forum/#!forum/dyuganga). द्युगङ्गा-कार्यगणस्य वार्ता [अत्र](https://groups.google.com/forum/#!forum/dyuganga) ।
+- Google groups/ email [https://groups.google.com/g/dyuganga](https://groups.google.com/forum/#!forum/dyuganga). द्युगङ्गा-कार्यगणस्य वार्ता [अत्र](https://groups.google.com/forum/#!forum/dyuganga) ।
 - Twitter: [https://twitter.com/dyugangaa](https://twitter.com/dyugangaa)
 - Facebook: [https://www.facebook.com/dyugangA](https://www.facebook.com/dyugangA)
 - Telegram supporters channel: [https://t.me/dyugangA_supporters](https://t.me/dyugangA_supporters)
