@@ -8,7 +8,7 @@ script: devanagari
 - अस्माकं‌ [विपत्त्रधारिणीम्](https://groups.google.com/forum/#!forum/padyadhaaraa) ईक्षताम् अत्र।
 - Facebook मुखपुस्तके "[कवयो वयममी](https://www.facebook.com/groups/padyadhaaraa)" :-)। गद्यकाव्य-विभागो [ऽत्र](https://www.facebook.com/groups/gadyadhaaraa/)।
 - whatsapp-तन्त्रांशे सरस-छन्दोभाषणम्? प्रविश्यताम् [अत्र](https://chat.whatsapp.com/1aWrHDRwAGCAcWHvNmc65G)।
-- संस्कृतपद्यं नाम छन्दोबद्धं स्यात्। (अधः‌ विशिष्टवर्णयुक्तपदान् नुदेत्।)
+- संस्कृतपद्यं नाम छन्दोबद्धं स्यात्।
 
 - छन्दसः परिचयः, अपेक्षा, परीक्षणयन्त्राणि इत्यादिकम् [अत्र](http://vvasuki.github.io/kAvyam/shAstram/ChandaH) सूचितम्।
 
