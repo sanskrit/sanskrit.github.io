@@ -10,7 +10,7 @@ summary: Welcome page.
 ## Goals ध्येयानि
 Dyugangā is a work group dedicated to the promotion of ever-victorious Hindu ideals and arts. It's current focus is in presenting important texts for easy study.
 
-The texts may be presented as audio files (eg: [MahAbhArata audio book project](../../projects/audio/mbh-audio/)), as web pages (eg: [V's mantra notes](https://vvasuki.github.io/saMskAra/mantraH/misc-devas/paravastu-saama/Aruhan/?debugInfo=%22urlWeight=1&totalWeight=67%22), [EkAgnikANDa commentary](https://vvasuki.github.io/vedAH/taittirIyam/ekAgnikANDam/haradatta-TIkA/)), as dictionaries (eg: [stardict](https://sanskrit-coders.github.io/dictionaries/offline/)). Check out our [trello board](https://trello.com/b/d4dANdrD/%E0%A4%A6%E0%A5%8D%E0%A4%AF%E0%A5%81%E0%A4%97%E0%A4%99%E0%A5%8D%E0%A4%97%E0%A4%BE-dyuganga) for a more fine grained listing.
+The texts may be presented as audio files (eg: [MahAbhArata audio book project](../../projects/audio/mbh-audio/)), as web pages (eg: [V's mantra notes](https://vvasuki.github.io/saMskAra/mantraH/misc-devas/paravastu-saama/Aruhan/?debugInfo=%22urlWeight=1&totalWeight=67%22), [EkAgnikANDa commentary](https://vvasuki.github.io/vedAH/taittirIyam/sUtram/ApastambaH/gRhyam/ekAgnikANDam/haradatta-TIkA/)), as dictionaries (eg: [stardict](https://sanskrit-coders.github.io/dictionaries/offline/)). Check out our [trello board](https://trello.com/b/d4dANdrD/%E0%A4%A6%E0%A5%8D%E0%A4%AF%E0%A5%81%E0%A4%97%E0%A4%99%E0%A5%8D%E0%A4%97%E0%A4%BE-dyuganga) for a more fine grained listing.
 
 The choice of material is heavily depends on the special interests of its current lead (vedas, kalpa, purANa-s).
 
