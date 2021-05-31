@@ -18,7 +18,7 @@ These files are not to be considered "official" representatives of the correspon
 Though there are some flaws here and there (especially when it comes to reading sanskrit shloka-s, plus rare noises), it is overall a great boon, in my experience of listening to them during my long walks. The recordings were mechanically normalized, renamed according to chapter-title, sped up 1.5x and curated at the below locations. (Files are also available at 1x speed.)
 
 ## Where?
-It is important to note that at any point in time, the output(in the form of audio files) of our efforts up to then will be available publicly and freely on the internet at archive.org. We will constantly publish a summary of project status online. So, connoiseurs will be able to enjoy the fruits of our labor even as the project progresses to increasingly higher levels of completion and quality.
+It is important to note that at any point in time, the output(in the form of audio files) of our efforts up to then will be available publicly and freely on the internet at archive.org. We will constantly publish a summary of project status online. So, connoiseurs will be able to enjoy the fruits of our labor even as the project progresses to increasingly higher levels of completion and quality.
 
 Example archive items (If you remove the final 1.5x from the URL, you get the 1x speed version)-
 Some examples of books read:
