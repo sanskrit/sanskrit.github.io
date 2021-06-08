@@ -34,6 +34,8 @@ Do learned vaidika-s from other regions invite your neighbors for conferences wh
 ![Books](https://i.imgur.com/w43ztkg.jpg)
 
 
+- मत्तूरु-श्रौत-ग्रन्था मुक्तम् [अत्रोपलभ्यन्ते](https://sanskrit.github.io/mattUru-shrauta-book/) ।
+
 ### Hapiness and the arts
 ![Cows and the street](https://i.imgur.com/CWNQub8.jpg)
 
