@@ -40,7 +40,7 @@ For example, convey the "conversational" bhAva.
 ## Good recording
 ### Expectations
 - Pronunciation should be excellent. See "Good pronunciation" section above.
-  - We can coach you a bit. [Video demos](https://goo.gl/htvxdN), [शिक्षाभिप्रायः](http://vvasuki.github.io/sanskrit/shixaa/)
+  - We can coach you a bit. [Video demos](https://goo.gl/htvxdN), [शिक्षाभिप्रायः](http://vishvAsa.github.io/sanskrit/shixaa/)
 - Recording should have no notification sounds, no phone call sounds.
 - Recording should have no "correction sounds" - ie "रामो गच्छति काक्...काकुत्स्थः" or "रामो गच्छति काक्... पुनः ... रामो गच्छति काकुत्स्थः"
 - गणेश-सरस्वती-व्यासादीनां नमनम् प्रतिसर्गं ध्वनिमुद्रणे न स्यात् - कामम् ध्वनिमुद्रणात् पुर्वं श्रद्धया स्वतृप्त्यै कुर्यात्।

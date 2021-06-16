@@ -7,12 +7,12 @@ Digitize and present the text of the mahAbhArata edition so laboriously and wond
 
 
 
-- rAmAyaNa [https://vvasuki.github.io/purANam/rAmAyaNam/AndhrapAThaH/1_bAlakANDam/01-kathAmukham/001_sanxepa/](https://vvasuki.github.io/purANam/rAmAyaNam/AndhrapAThaH/1_bAlakANDam/01-kathAmukham/001_sanxepa/)
-- raghuvaMsha [https://vvasuki.github.io/kAvyam/TIkA/padyam/kAlidAsaH/raghuvaMsham/01/](https://vvasuki.github.io/kAvyam/TIkA/padyam/kAlidAsaH/raghuvaMsham/01/)
-- kumArasambhava [https://vvasuki.github.io/kAvyam/TIkA/padyam/kAlidAsaH/kumArasambhavam/02/](https://vvasuki.github.io/kAvyam/TIkA/padyam/kAlidAsaH/kumArasambhavam/02/)
-- durgA saptashatI [https://vvasuki.github.io/purANam/durgA-saptashatI/01-prathama-charitam/](https://vvasuki.github.io/purANam/durgA-saptashatI/01-prathama-charitam/)
-- rAmacharitamAnasa [https://vvasuki.github.io/kAvyam/TIkA/padyam/purANam/rAmacharitamAnasa-TIkA/02_ayodhyAkANDa/](https://vvasuki.github.io/kAvyam/TIkA/padyam/purANam/rAmacharitamAnasa-TIkA/02_ayodhyAkANDa/)
-- nArAyaNIyam [https://vvasuki.github.io/kAvyam/TIkA/padyam/purANam/nArAyaNIyam/003/](https://vvasuki.github.io/kAvyam/TIkA/padyam/purANam/nArAyaNIyam/003/)
+- rAmAyaNa [https://vishvAsa.github.io/purANam/rAmAyaNam/AndhrapAThaH/1_bAlakANDam/01-kathAmukham/001_sanxepa/](https://vishvAsa.github.io/purANam/rAmAyaNam/AndhrapAThaH/1_bAlakANDam/01-kathAmukham/001_sanxepa/)
+- raghuvaMsha [https://vishvAsa.github.io/kAvyam/TIkA/padyam/kAlidAsaH/raghuvaMsham/01/](https://vishvAsa.github.io/kAvyam/TIkA/padyam/kAlidAsaH/raghuvaMsham/01/)
+- kumArasambhava [https://vishvAsa.github.io/kAvyam/TIkA/padyam/kAlidAsaH/kumArasambhavam/02/](https://vishvAsa.github.io/kAvyam/TIkA/padyam/kAlidAsaH/kumArasambhavam/02/)
+- durgA saptashatI [https://vishvAsa.github.io/purANam/durgA-saptashatI/01-prathama-charitam/](https://vishvAsa.github.io/purANam/durgA-saptashatI/01-prathama-charitam/)
+- rAmacharitamAnasa [https://vishvAsa.github.io/kAvyam/TIkA/padyam/purANam/rAmacharitamAnasa-TIkA/02_ayodhyAkANDa/](https://vishvAsa.github.io/kAvyam/TIkA/padyam/purANam/rAmacharitamAnasa-TIkA/02_ayodhyAkANDa/)
+- nArAyaNIyam [https://vishvAsa.github.io/kAvyam/TIkA/padyam/purANam/nArAyaNIyam/003/](https://vishvAsa.github.io/kAvyam/TIkA/padyam/purANam/nArAyaNIyam/003/)
 - several sAmans etc..
 
 
