@@ -34,6 +34,8 @@ unicode_script: devanagari
 - [Git for windows](https://gitforwindows.org/)
 - [Intellij IDE Community edition](https://www.jetbrains.com/idea/download/#section=linux) ।
     - Setup theme, font size, font.
+- [hugo](https://github.com/gohugoio/hugo/releases) इत्यस्मात् hugo_0.xx.x_Windows-64bit.zip
+इत्यादिकं स्थापयेत्।
 
 #### Multimedia
 - [Audacity](https://www.audacityteam.org/)
