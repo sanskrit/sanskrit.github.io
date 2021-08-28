@@ -1,5 +1,5 @@
 +++
-title = "Hindu-vidyA"
+title = "+Hindu-vidyA"
 +++
 
 ## Intro
@@ -13,7 +13,12 @@ title = "Hindu-vidyA"
 - Natural diversity in personality profiles and accepted norms lead to conflict and inefficiency in large groups (BVP Examples - [Unsuccessful demands](https://groups.google.com/g/bvparishat/c/m0WsHOqu39M/m/o_4SEVlVAAAJ) for expulsion of members, [complaints about "language"](https://groups.google.com/g/bvparishat/c/m0WsHOqu39M/m/cA7bwBJUAAAJ), [moderation and inconvenience](https://groups.google.com/g/bvparishat/c/Oa1JM_7ppE4/m/n9GxUBjfAAAJ) of members with certain codes for politeness).
 
 ## Posting rules
+No spam. Don't keep sending essentially the same message repeatedly in different threads. (BVP examples: [BVK's vAk yoga](https://groups.google.com/g/bvparishat/search?q=vAk%20yoga), [Achyut's mAheshwara sUtras](https://groups.google.com/g/bvparishat/search?q=Maheshwara%20sutras))
+
 Polite communication with a couple of caveats:
 
-- If someone crosses the line, one should not be blamed for responding in the same manner. ("No first strike" principle.)
-- One should be free to harshly and clearly criticize bad ideas - without getting to the person proposing them. (There is no shortage of almost spam-level nonsensical posts by certain people where credibility is attached to the said idea merely by not being clearly opposed here.)
+- **"No first strike"** principle. If someone crosses the line, one should not be blamed for responding in the same manner.
+- One should be free to **harshly and clearly criticize ideas** - without getting to the person proposing them. No need to take this personally.
+
+## Stock welcome messages
+नमस्काराः! हिन्दुपर-विद्योपासनायै काचिद् इयं धारा सृष्टा ([google groups](https://groups.google.com/g/hindu-vidya)) । व्यक्तित्व-वैध्याद् ध्येय-वैविध्याच् च नालं समूहेनैकेन वर्तयितुम् बहुमुखं विद्योपासनम् इति। अग्रे कथं वर्धेतेति न जाने - सद्यस् तु निर्बाधं स्वस्य प्रश्नान् प्रष्टुम् उपयोगाय भवति - ननु युष्मादृशैः पूर्वम् अपि मम ज्ञानं वर्धितम्। यावद् युष्माकम् भाराय न भविष्यति, तावद् इतः सन्देशान् लभध्वम् , यथावकाशं यथाज्ञानं चोत्तरैर् अनुगृह्णन्तु च।
