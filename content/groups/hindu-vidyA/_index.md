@@ -3,7 +3,7 @@ title = "+Hindu-vidyA"
 +++
 
 ## Intro
-- Hindu vidyA is an [email stream](https://groups.google.com/g/hindu-vidya/) to facilitate scholarship which aims to further Hindu interests. 
+- Hindu vidyA is an [email stream](https://groups.google.com/g/hindu-vidya/) to facilitate scholarship which aims to further Hindu interests (including Hindu dominance in India). 
 - Target engagement:
   - People who profess to further Hindu interests - whatever their views.
   - Other people - so long as they eschew anti-hindu activities here (in favor of areas of common interest).
