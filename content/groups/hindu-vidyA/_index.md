@@ -13,7 +13,7 @@ title = "+Hindu-vidyA"
 - Natural diversity in personality profiles and accepted norms lead to conflict and inefficiency in large groups (BVP Examples - Unsuccessful demands [1](https://groups.google.com/g/bvparishat/c/m0WsHOqu39M/m/o_4SEVlVAAAJ), [2](https://groups.google.com/g/bvparishat/c/n-E8zXKBnNM/m/Y3HwjYZqAAAJ) for expulsion of members, [complaints about "language"](https://groups.google.com/g/bvparishat/c/m0WsHOqu39M/m/cA7bwBJUAAAJ), [moderation and inconvenience](https://groups.google.com/g/bvparishat/c/Oa1JM_7ppE4/m/n9GxUBjfAAAJ) of members with certain codes for politeness, [burden of moderating large groups](https://groups.google.com/g/bvparishat/c/m0WsHOqu39M/m/eJIri-u7AwAJ)).
 
 ## Posting rules
-No spam. Don't keep sending essentially the same message repeatedly in different threads. (BVP examples: [BVK's vAk yoga](https://groups.google.com/g/bvparishat/search?q=vAk%20yoga), [Achyut's mAheshwara sUtras](https://groups.google.com/g/bvparishat/search?q=Maheshwara%20sutras))
+No spam. Don't keep sending essentially the same message repeatedly in different threads. (BVP examples: [BVK's vAk yoga](https://groups.google.com/g/bvparishat/search?q=vAk%20yoga), [Achyut's mAheshwara sUtras](https://groups.google.com/g/bvparishat/search?q=Maheshwara%20sutras)), [Bijoy's neurology](https://groups.google.com/g/bvparishat/search?q=neurology)
 
 Polite communication with a couple of caveats:
 
