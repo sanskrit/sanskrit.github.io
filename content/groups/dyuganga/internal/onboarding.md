@@ -32,6 +32,7 @@ unicode_script: devanagari
 #### Editing tools
 - [Bhasha IME](https://sites.google.com/site/bhashaime/) - C:\Program Files\ इत्यस्मिन् स्थाप्यन्ताम्।
 - [Git for windows](https://gitforwindows.org/)
+- [Atom editor](https://atom.io/)
 - [Intellij IDE Community edition](https://www.jetbrains.com/idea/download/#section=linux) ।
     - Setup theme, font size, font.
 - [hugo](https://github.com/gohugoio/hugo/releases) इत्यस्मात् hugo_0.xx.x_Windows-64bit.zip
