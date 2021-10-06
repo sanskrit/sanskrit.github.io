@@ -18,4 +18,4 @@ Digitize and present the text of the mahAbhArata edition so laboriously and wond
 
 
 ## Estimated cost
-I'll get it done by a learned gentleman I've been employing for much of the past year (for fixing taittirIya saMhitA commentary and such). He's very capable (I will supervise). I pay him by the hour (227.27 Rs) \- I can keep track of the time he spends and let you know - so that you can transfer the money directly. Off the top of my head, I estimate that it will him a month or two to accomplish the task (utilizing OCR, other digitized versions of the text).
+I'll get it done by a learned gentleman I've been employing for much of the past year (for fixing taittirIya saMhitA commentary and such). He's very capable (I will supervise). I pay him by the hour \- I can keep track of the time he spends and let you know - so that you can transfer the money directly. Off the top of my head, I estimate that it will him a month or two to accomplish the task (utilizing OCR, other digitized versions of the text).
