@@ -16,7 +16,7 @@ Our expectation: when we read the corrected text, we expect to have atleast the 
 ### Special characters
 If you cannot type unusual unicode characters, copy them from here and paste.
 
-- IAST
+- IAST diacritics
   - ā Ā ī Ī ū Ū ṛ Ṛ ṝ Ṝ ḷ	Ḷ ḹ	Ḹ 
   - ṃ Ṃ ḥ Ḥ  
   - ṅ  Ṅ ñ Ñ 
