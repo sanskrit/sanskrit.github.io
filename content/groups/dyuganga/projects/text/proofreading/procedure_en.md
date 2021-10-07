@@ -66,7 +66,7 @@ conent
   - We're NOT OK with the "bad" punctuation, but ok with "better" and prefer "best" above.
 
 ### Footnotes
-Often, footnotes which appear in the bottom of the page in a book, appear without separation in raw OCR text. This confuses the reader. Hence, it should be properly formatted.
+Often, footnotes which appear in the bottom of the page in a physical book, appear without separation in raw OCR text on screen. This confuses the reader. Hence, it should be properly formatted.
 
 Consider the footnote in the image below (right click and open it in a new window for clearer view):
 
@@ -92,12 +92,25 @@ Observe:
 
 - Footnote numbers have been formatted specially - `[^1698]` etc.
 - Footnote definitions can be of two styles. Indenting is important in the second style, which can accommodate multiple paragraphs. ([MD Guide](https://www.markdownguide.org/extended-syntax/#footnotes).)
-- We _may_ choose to break paragraphs, but not sentences, so as to define footnotes near their place of use.
+- We _may_ choose to break paragraphs, but not sentences, so as to define footnotes near their place of use. It is ok to place footnotes at the nearest logical place - example at the end of the paragraph or list.
 
 ### Tables and charts
 - Please generate tables using [this online tool](https://www.tablesgenerator.com/markdown_tables).
 - Consider ditto marks or identical text associated with other text in a list (example [here](https://archive.org/details/ashtadhyayi/ashtadhyayi2?view=theater#page/n31/mode/1up)): Just repeat the text.
 - In case of other cases/ confusion, please contact us with a link to the page with the table/ chart/ figure. Don’t hesitate to ask.
+
+
+### Long quotes
+Example:
+```
+… यथाऽऽहुः —
+
+> (२) सुगतो यदि धर्मज्ञः कपिलो नेति का प्रमा।
+> तावुभौ यदि धर्मज्ञौ मतभेदः कथं तयोः ॥ 
+
+इति ।
+
+```
 
 ## Things to ignore
 - Quotation mark placement which is not ‘bad’ as described in examples above - ie. don’t spend time trying to make it ‘best’.
