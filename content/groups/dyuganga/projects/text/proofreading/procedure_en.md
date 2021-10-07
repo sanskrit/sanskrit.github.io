@@ -2,7 +2,13 @@
 title = "Procedure (EN)"
 +++
 
-Our expectation: when we read the corrected text, we expect to have atleast the same experience as reading the original pdf (if not better).
+## Contribution levels
+Our expectation: when we read the corrected text, we expect to have atleast the same experience as reading the original pdf (if not better). <u>Even otherwise, if you leave the text in a significantly better state than earlier, it is valuable.</u> 
+
+- Top level: Perfect text and formatting.
+- Next level: Perfect text, with basic formatting (described below). Reader won't feel particular urge to consult the source most of the time.
+- Next level: Almost perfect text (possibly missing diacritics and accents), with basic formatting (contiguous paragraphs, footnotes etc.).
+- And so on.
 
 ## Typing correct symbols
 - Please use the correct symbols. Common mistakes: |(pipe) instead of ।(daNDa), :(colon) instead of visarga(ः).
