@@ -2,7 +2,11 @@
 title = "OCR on request"
 +++
 
-## What is the workflow for an OCR volunteer?
+## For requesters
+File a request [here](https://github.com/sanskrit/raw_etexts/issues/new?assignees=&labels=OCR&template=OCR.yaml&title=%5BOCR%5D+%3Ctitle%3E).
+
+## For volunteers
+### What is the workflow for an OCR volunteer?
 - First off - you should have access to OCR technology, and you should be willing to (learn to) use it.
 - Look for requests on [the issues page](https://github.com/sanskrit/raw_etexts/issues).
 - Assign a request to yourself and work on it.
@@ -13,7 +17,7 @@ title = "OCR on request"
         - Use '-' to separate terms in a samAsa. Eg. कुलार्णव-तन्त्रम् kulArNava-tantram
 - Announce the fact that you've OCR-ed the file on places such as samskrita@googlegroups and sanskrit-ocr@googlegroups.
 
-## Why be an OCR volunteer?
+### Why be an OCR volunteer?
 
 - You will be helping many other knowledge-lovers. (see "[why digitize]()?" section here.)
 - You will have the satisfaction of putting your technical skills and time to good use.
