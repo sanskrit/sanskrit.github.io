@@ -30,4 +30,4 @@ Listen or download here:
 
 ## Contribute!
 
-If you would like to contribute to this effort, or if you want to suggest books of similar calibre for future reading, please [let us know offline](https://github.com/sanskrit/projects/issues/new). One doesn't need to be tech-savvy - and all one needs is some time for pleasure, discipline and a mobile phone with an internet connection for uploading (see [video here](https://www.youtube.com/watch?v=FpwDrXkW1zo)). Even aged retired people have contributed recordings without any trouble.
+If you would like to contribute to this effort, or if you want to suggest books of similar calibre for future reading, please [let us know offline](https://github.com/sanskrit/issues/new). One doesn't need to be tech-savvy - and all one needs is some time for pleasure, discipline and a mobile phone with an internet connection for uploading (see [video here](https://www.youtube.com/watch?v=FpwDrXkW1zo)). Even aged retired people have contributed recordings without any trouble.
