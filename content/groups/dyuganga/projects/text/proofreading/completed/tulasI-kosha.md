@@ -6,6 +6,9 @@ unicode_script: devanagari
 ## Status
 Completed in 2020.
 
+### Sponsors
+- Vishvas family funds
+
 ## नियन्ता
 - विश्वास - 95912 68506 (telegram/ whatsapp)। gmail-मेँ - vishvas.vasuki ।
 

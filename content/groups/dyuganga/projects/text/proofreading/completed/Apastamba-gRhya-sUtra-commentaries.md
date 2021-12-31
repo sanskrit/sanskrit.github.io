@@ -3,7 +3,11 @@ title = "Apastamba gRhya sUtra commentaries"
 +++
 
 ## Status
-Completed, with partial support from shrI harikiraN of Indic academy.
+Completed.
+
+### Sonsors
+- Partial support (40k Rs) from shrI harikiraN of Indic academy.
+- Vishvas family funds
 
 ## Proposed work
 
@@ -16,10 +20,9 @@ I'll get it done by a learned gentleman I've been employing for much of the past
 
 
 
-## Past experience
-examples:  
-\- [https://vishvAsa.github.io/vedAH/taittirIyam/sUtram/hiraNyakeshI/paddhatiH/saMskAraratnamAlA/](https://vishvAsa.github.io/vedAH/taittirIyam/sUtram/hiraNyakeshI/paddhatiH/saMskAraratnamAlA/)  \- saMskAraratnamAlA, an excellent KYV paddhati text especially popular in mahArAShTra (albeit belonging to the closely related hiraNyakeshI sUtra). This was executed by saMskRtabhAratI people (at their expense) after I suggested the text to them.
-\- Ongoing work pertaining to SC Vasu's commentary on aShTAdhyAyI ( example [here](https://ashtadhyayi.github.io/sutra-details/?sutra=1.1.6) ), sponsored by shrI nIlesh of [ashyadhyayi.com](http://ashyadhyayi.com) .
+## Past experience / examples:  
+- [https://vishvAsa.github.io/vedAH/taittirIyam/sUtram/hiraNyakeshI/paddhatiH/saMskAraratnamAlA/](https://vishvAsa.github.io/vedAH/taittirIyam/sUtram/hiraNyakeshI/paddhatiH/saMskAraratnamAlA/)  \- saMskAraratnamAlA, an excellent KYV paddhati text especially popular in mahArAShTra (albeit belonging to the closely related hiraNyakeshI sUtra). This was executed by saMskRtabhAratI people (at their expense) after I suggested the text to them.
+- Ongoing work pertaining to SC Vasu's commentary on aShTAdhyAyI ( example [here](https://ashtadhyayi.github.io/sutra-details/?sutra=1.1.6) ), sponsored by shrI nIlesh of [ashyadhyayi.com](http://ashyadhyayi.com) .
 
 
 

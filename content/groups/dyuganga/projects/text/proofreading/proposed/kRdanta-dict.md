@@ -13,7 +13,7 @@ Standard dictionaries mostly don't provide this information (Just as simple Engl
 Knowing this, our predecessors have produced works such as kRdanta-rUpamAla - albeit they were designed for use as reference texts, before the advent of smart-phones and computers - so they had indirection like: "Same forms as in the case of this other root", and table structure (defined just once in the beginning of the book). Now, it is far easier to look words up on the phone - but one has to fix the aforementioned shortcomings.
 
 ## Resources needed
-Each verbal root gives rise to around 60 forms in the text. There are 2062 roots. Allotting 10 minutes attention per root, one arrives at 343 hours. I'll get it done by a learned gentleman I've been employing for much of the past year. He's very capable (I will supervise).
+Each verbal root gives rise to around 60 forms in the text. There are 2062 roots. Allotting 30 minutes attention per root, one arrives at 1031 hours. I'll get it done by a learned gentleman I've been employing for much of the past year. He's very capable (I will supervise).
 
 ## Prior experience
 We've published and distributed hundreds of dictionaries (including a primitive form of this kRdanta rUpa mAla) as part of the https://github.com/indic-dict/ repositories.
