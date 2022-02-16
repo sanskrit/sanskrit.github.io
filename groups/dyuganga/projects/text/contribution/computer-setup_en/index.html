@@ -30,7 +30,7 @@ Common setup  Below, replace &lsquo;XYZ&rsquo; with your github username.  Or us
 <meta itemprop="description" content="संस्कृतेन सूचना द्रष्टुम् अत्र गम्यताम् ।
 Common setup  Below, replace &lsquo;XYZ&rsquo; with your github username.  Or use this machine: Replace   If https://github.com/XYZ/REPO exists beforehand, please delete it by going to settings using your browser. Go to https://github.com/vishvAsa/REPO and fork (there should be a Fork button in the top-right). Thence, you will get https://github.com/XYZ/REPO .  Going to the right place in your computer  We&rsquo;ll assume that you&rsquo;re saving all github files in some location such as the ones used below.">
 
-<meta itemprop="wordCount" content="378">
+<meta itemprop="wordCount" content="397">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Computer setup (en)"/>
 <meta name="twitter:description" content="संस्कृतेन सूचना द्रष्टुम् अत्र गम्यताम् ।
@@ -336,16 +336,22 @@ like <code>git commit -am &quot;Some message&quot;</code> and <code>git push</co
 <li>Then go to <a href="https://github.com/XYZ/REPO/tree/static_files">https://github.com/XYZ/REPO/tree/static_files</a> and send a pull request .</li>
 </ul>
 </li>
+<li>Common steps
+<ul>
+<li>Text like <code>1 commit ahead</code> indicates that you have something to contribute.</li>
+<li>Find and use the &ldquo;Contribute&rdquo; link.</li>
+</ul>
+</li>
 </ul>
 <script>
 module_uiLib.replaceWithQueryParam("githubUserId", /XYZ(?=[^'’])/g);
 module_uiLib.replaceWithQueryParam("repo", /REPO(?=[^'’])/g);
 
-document.getElementById("transformId").onclick = function(e) {
+document.getElementById("transformId").addEventListener("click", function(e) {
   let userId = document.getElementById("input_githubUserId").value;
   console.log(userId);
   module_main.default.query.setParamAndGo("githubUserId", userId);
-};
+});
 </script><blockquote>
 </blockquote>
 
@@ -388,7 +394,7 @@ document.getElementById("transformId").onclick = function(e) {
     <a class="btn btn-secondary" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
     <div class="btn small border">
       
-      <a href="https://github.com/sanskrit/sanskrit.github.io/actions"><img src=""> Built </a> on 2022 Feb 16 05:05:17 UTC. (<a href="http://google.com/search?q=05%3a05%3a17%20UTC to IST">IST</a>)
+      <a href="https://github.com/sanskrit/sanskrit.github.io/actions"><img src=""> Built </a> on 2022 Feb 16 05:18:49 UTC. (<a href="http://google.com/search?q=05%3a18%3a49%20UTC to IST">IST</a>)
     </div>
   <ul id="footer-bar-right-custom" class="list-group list-group-horizontal">
   </ul>

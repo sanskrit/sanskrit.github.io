@@ -28,7 +28,7 @@
 <meta itemprop="name" content="Computer setup">
 <meta itemprop="description" content="समानं कर्म  अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्।  अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!!   https://github.com/XYZ/REPO इति पूर्वम् एव वर्तते चेन् निष्कासयतु browser-उपयोगेन। https://github.com/vishvAsa/REPO इत्यत्र गत्वा पुनः fork इति करोतु। https://github.com/XYZ/REPO इति किञ्चिल् लभ्यते।  सङ्गणके समीचीनस्थानप्राप्तिः  ततः समीचीनस्थाने terminal/ command-prompt इत्य् उद्घाट्य गच्छतु। यथा  cd F:\Git\ इति windows पक्षे cd ~ इति linux पक्षे    सञ्चिकाप्राप्तिः  सङ्गणके समीचीनस्थानप्राप्तिः इति भागे यद् उक्तं तत् कृत्वा  git clone --single-branch --depth 1 --branch master https://github.">
 
-<meta itemprop="wordCount" content="216">
+<meta itemprop="wordCount" content="235">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Computer setup"/>
 <meta name="twitter:description" content="समानं कर्म  अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्।  अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!!   https://github.com/XYZ/REPO इति पूर्वम् एव वर्तते चेन् निष्कासयतु browser-उपयोगेन। https://github.com/vishvAsa/REPO इत्यत्र गत्वा पुनः fork इति करोतु। https://github.com/XYZ/REPO इति किञ्चिल् लभ्यते।  सङ्गणके समीचीनस्थानप्राप्तिः  ततः समीचीनस्थाने terminal/ command-prompt इत्य् उद्घाट्य गच्छतु। यथा  cd F:\Git\ इति windows पक्षे cd ~ इति linux पक्षे    सञ्चिकाप्राप्तिः  सङ्गणके समीचीनस्थानप्राप्तिः इति भागे यद् उक्तं तत् कृत्वा  git clone --single-branch --depth 1 --branch master https://github."/>
@@ -324,16 +324,22 @@ hugo server --renderToDisk --config ./config_dev.toml
 <li>ततो नुदित्वाकर्षणाभ्यर्थनं <a href="https://github.com/XYZ/REPO/tree/static_files">https://github.com/XYZ/REPO/tree/static_files</a> इत्यत्र गत्वा प्रेषणीयम्।</li>
 </ul>
 </li>
+<li>अकर्षणाभ्यर्थन-प्रेषण-विधानं समानम्
+<ul>
+<li><code>1 commit ahead</code> इतीव किञ्चिद् दर्शितं चेत् प्रेषयितुं किञ्चिद् अस्तीत्य् अर्थः।</li>
+<li>&ldquo;Contribute&rdquo; इति कश्चन सङ्केतो दृश्येत। तत्र नुदनीयम्।</li>
+</ul>
+</li>
 </ul>
 <script>
 module_uiLib.replaceWithQueryParam("githubUserId", /XYZ(?=[^'’])/g);
 module_uiLib.replaceWithQueryParam("repo", /REPO(?=[^'’])/g);
 
-document.getElementById("transformId").onclick = function(e) {
+document.getElementById("transformId").addEventListener("click", function(e) {
   let userId = document.getElementById("input_githubUserId").value;
   console.log(userId);
   module_main.default.query.setParamAndGo("githubUserId", userId);
-};
+});
 </script><blockquote>
 </blockquote>
 
@@ -378,7 +384,7 @@ document.getElementById("transformId").onclick = function(e) {
     <a class="btn btn-secondary" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
     <div class="btn small border">
       
-      <a href="https://github.com/sanskrit/sanskrit.github.io/actions"><img src=""> Built </a> on 2022 Feb 16 05:05:17 UTC. (<a href="http://google.com/search?q=05%3a05%3a17%20UTC to IST">IST</a>)
+      <a href="https://github.com/sanskrit/sanskrit.github.io/actions"><img src=""> Built </a> on 2022 Feb 16 05:18:49 UTC. (<a href="http://google.com/search?q=05%3a18%3a49%20UTC to IST">IST</a>)
     </div>
   <ul id="footer-bar-right-custom" class="list-group list-group-horizontal">
   </ul>
