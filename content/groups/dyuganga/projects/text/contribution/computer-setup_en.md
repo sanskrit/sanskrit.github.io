@@ -69,14 +69,17 @@ hugo server --renderToDisk --config ./config_dev.toml
   - Then, commit and push your changes (using atom editor, or github desktop or commands
     like `git commit -am "Some message"` and `git push`).
   - Then go to https://github.com/XYZ/REPO/tree/static_files and send a pull request .
+- Common steps
+  - Text like `1 commit ahead` indicates that you have something to contribute. 
+  - Find and use the "Contribute" link.
 
 <script>
 module_uiLib.replaceWithQueryParam("githubUserId", /XYZ(?=[^'’])/g);
 module_uiLib.replaceWithQueryParam("repo", /REPO(?=[^'’])/g);
 
-document.getElementById("transformId").onclick = function(e) {
+document.getElementById("transformId").addEventListener("click", function(e) {
   let userId = document.getElementById("input_githubUserId").value;
   console.log(userId);
   module_main.default.query.setParamAndGo("githubUserId", userId);
-};
+});
 </script>

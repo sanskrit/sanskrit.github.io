@@ -56,14 +56,17 @@ hugo server --renderToDisk --config ./config_dev.toml
 - यदि कार्यम् REPO-static इत्यस्मिन् क्रियते
     - `git pull upstream static_files` इति परिवर्तनानि लभ्यानि।
     - ततो नुदित्वाकर्षणाभ्यर्थनं https://github.com/XYZ/REPO/tree/static_files इत्यत्र गत्वा प्रेषणीयम्।
+- अकर्षणाभ्यर्थन-प्रेषण-विधानं समानम्
+  - `1 commit ahead` इतीव किञ्चिद् दर्शितं चेत् प्रेषयितुं किञ्चिद् अस्तीत्य् अर्थः। 
+  - "Contribute" इति कश्चन सङ्केतो दृश्येत। तत्र नुदनीयम्। 
 
 <script>
 module_uiLib.replaceWithQueryParam("githubUserId", /XYZ(?=[^'’])/g);
 module_uiLib.replaceWithQueryParam("repo", /REPO(?=[^'’])/g);
 
-document.getElementById("transformId").onclick = function(e) {
+document.getElementById("transformId").addEventListener("click", function(e) {
   let userId = document.getElementById("input_githubUserId").value;
   console.log(userId);
   module_main.default.query.setParamAndGo("githubUserId", userId);
-};
+});
 </script>
