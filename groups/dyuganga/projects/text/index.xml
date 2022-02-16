@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Texts on संस्कृतजालक्षेत्रम्</title>
+    <link>https://sanskrit.github.io/groups/dyuganga/projects/text/</link>
+    <description>Recent content in Texts on संस्कृतजालक्षेत्रम्</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://sanskrit.github.io/groups/dyuganga/projects/text/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OCR on request</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/ocr_on_request/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/ocr_on_request/</guid>
+      <description>For requesters File a request here.
+For volunteers What is the workflow for an OCR volunteer?  First off - you should have access to OCR technology, and you should be willing to (learn to) use it. Look for requests on the issues page. Assign a request to yourself and work on it. Once you get the OCR-ed text, we need to pass it on to proof-reading and to early users/ readers.</description>
+    </item>
+    
+  </channel>
+</rss>

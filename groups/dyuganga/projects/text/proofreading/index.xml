@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>पाठशोधनम् on संस्कृतजालक्षेत्रम्</title>
+    <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/</link>
+    <description>Recent content in पाठशोधनम् on संस्कृतजालक्षेत्रम्</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Procedure (EN)</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/procedure_en/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/procedure_en/</guid>
+      <description>Contribution levels Our expectation: when we read the corrected text, we expect to have atleast the same experience as reading the original pdf (if not better). Even otherwise, if you leave the text in a significantly better state than earlier, it is valuable.
+ Top level: Perfect text and formatting. Next level: Perfect text, with basic formatting (described below). Reader won&amp;rsquo;t feel particular urge to consult the source most of the time.</description>
+    </item>
+    
+    <item>
+      <title>Why volunteer as a proofreader?</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/Why_volunteer_as_a_proofreader/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/Why_volunteer_as_a_proofreader/</guid>
+      <description>Why volunteer as a proofreader?
+ Your command over the language will dramatically improve. Your knowledge will increase. You will enjoy the process - especially if you are book-lover. You will be generating training data that can help make better sanskrit OCR software! You will be helping many other knowledge-lovers. (see &amp;ldquo;why digitize?&amp;rdquo; section here.)  Volunteer coordination  sanskrit-ocr t.me/sanskrit_ocr  </description>
+    </item>
+    
+    <item>
+      <title>क्रमः</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/kramaH/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/kramaH/</guid>
+      <description>प्रस्तुतौ मुख्यध्येयम्  markdown सञ्चिकाभिः (ततश् च ) प्रस्तुतिर् इष्यते ग्रन्थानाम्। तेन, जनितानां markdown सञ्चिकानाम् hugo इत्यादिभिः परीक्षणम् इष्यते।  पादटिप्पन्यः   footnotes-example   पुस्तकेष्व् एवम् पादटिप्पनीः पृष्ठपादेषु स्थाप्येरन्। नैवम् अत्र। उचितस्थानेषु प्रापणीयाः - यथा paragraph-अन्ते।
+यथाऽत्र दर्शिते चित्रे - (१) इत्यस्य सम्बन्ध आदिमश्लोकेनास्ति। तावत् तत्रैव स्थापनीयम्।
+न कदाचिद् अपि पादटिप्पनीभिर् वाक्यं छिद्येत - यथाऽत्र दर्शिते चित्रे &amp;ldquo;तत्र प्रवृत्तिप्रयोजनो विधि:-(४) सन्ध्याेश्च&amp;rdquo; इत्यादिकं वाक्यं छिन्नम्। तद् वाक्यखण्डम् अग्रे सारयतु। तत्सम्बद्धाम् अपि ४.</description>
+    </item>
+    
+  </channel>
+</rss>

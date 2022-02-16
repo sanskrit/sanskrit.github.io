@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>&#43;Proposed on संस्कृतजालक्षेत्रम्</title>
+    <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/</link>
+    <description>Recent content in &#43;Proposed on संस्कृतजालक्षेत्रम्</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Apastamba dharma sUtra commentary</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/Apastamba-dharma-sUtra-commentary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/Apastamba-dharma-sUtra-commentary/</guid>
+      <description>Status In progress. Sponsorship welcome.
+Proposed work I wanted to get typed haradatta&amp;rsquo;s commentary to Apastamba dharmasUtra. We&amp;rsquo;ll use optical character recognition (OCR) technology to speed up the work. The pdf is available on archive.org. In the end, the typed result will be presented as seen here (besides the plain text markdown), and needless to say - anyone will be welcome to access, use, copy, publish it however they like. In a later project, we will topically collate and present the sUtras with commentaries for easier reference.</description>
+    </item>
+    
+    <item>
+      <title>kRdanta-rUpa-mAla lookup</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/kRdanta-dict/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/kRdanta-dict/</guid>
+      <description>Goal Produce data for digital dictionaries to easily lookup major kRdanta forms of all verb-roots using the kRdanta-rUpamAla data (already digitized, needs to fleshed out and filled up as described below). Essentially, we would need to get a learned vyAkaraNa vidvAn to fill up this spreadsheet by looking at the original text.
+Importance Sanskrit is the Hindu liturgical language. Often times, a scholar or student needs to look up correct forms arising out of verbal roots to correctly understand (or compose) sanskrit text.</description>
+    </item>
+    
+    <item>
+      <title>mahAbhArata gItA press - present with audio</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/mbh-gItA-press_present-with-audio/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/mbh-gItA-press_present-with-audio/</guid>
+      <description>Goal Digitize and present the text of the mahAbhArata edition so laboriously and wonderfully recorded as part of this project - together with the audio. The text will (just like our audio files) be made available for free in markdown format - anyone can copy and reuse. Examples of such text with audio presentations:
+ rAmAyaNa https://vishvAsa.github.io/purANam/rAmAyaNam/AndhrapAThaH/1_bAlakANDam/01-kathAmukham/001_sanxepa/ raghuvaMsha https://vishvAsa.github.io/kAvyam/TIkA/padyam/kAlidAsaH/raghuvaMsham/01/ kumArasambhava https://vishvAsa.github.io/kAvyam/TIkA/padyam/kAlidAsaH/kumArasambhavam/02/ durgA saptashatI https://vishvAsa.github.io/purANam/durgA-saptashatI/01-prathama-charitam/ rAmacharitamAnasa https://vishvAsa.github.io/kAvyam/TIkA/padyam/purANam/rAmacharitamAnasa-TIkA/02_ayodhyAkANDa/ nArAyaNIyam https://vishvAsa.github.io/kAvyam/TIkA/padyam/purANam/nArAyaNIyam/003/ several sAmans etc.</description>
+    </item>
+    
+  </channel>
+</rss>
