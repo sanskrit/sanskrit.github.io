@@ -18,7 +18,7 @@ title = "+Hindu-vidyA"
     - [burden of moderating large groups](https://groups.google.com/g/bvparishat/c/m0WsHOqu39M/m/eJIri-u7AwAJ)).
 
 ## Posting rules
-No spam. Don't keep sending essentially the same message repeatedly in different threads. (BVP examples: [BVK's vAk yoga](https://groups.google.com/g/bvparishat/search?q=vAk%20yoga), [Achyut's mAheshwara sUtras](https://groups.google.com/g/bvparishat/search?q=Maheshwara%20sutras)), [Bijoy's neurology](https://groups.google.com/g/bvparishat/search?q=neurology)
+No spam. Don't keep sending essentially the same message repeatedly in different threads. (BVP examples: [BVK's vAk yoga](https://groups.google.com/g/bvparishat/search?q=vAk%20yoga), [Achyut's mAheshwara sUtras](https://groups.google.com/g/bvparishat/search?q=Maheshwara%20sutras))
 
 Polite communication with a couple of caveats:
 
