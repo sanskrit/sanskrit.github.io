@@ -30,7 +30,7 @@ Common setup  Below, replace &lsquo;XYZ&rsquo; with your github username.  Or us
 <meta itemprop="description" content="संस्कृतेन सूचना द्रष्टुम् अत्र गम्यताम् ।
 Common setup  Below, replace &lsquo;XYZ&rsquo; with your github username.  Or use this machine: Replace   If https://github.com/XYZ/REPO exists beforehand, please delete it by going to settings using your browser. Go to https://github.com/vishvAsa/REPO and fork (there should be a Fork button in the top-right). Thence, you will get https://github.com/XYZ/REPO .  Going to the right place in your computer  We&rsquo;ll assume that you&rsquo;re saving all github files in some location such as the ones used below.">
 
-<meta itemprop="wordCount" content="399">
+<meta itemprop="wordCount" content="412">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Computer setup (en)"/>
 <meta name="twitter:description" content="संस्कृतेन सूचना द्रष्टुम् अत्र गम्यताम् ।
@@ -300,13 +300,14 @@ cd REPO-content
 git remote add upstream https://github.com/vishvAsa/REPO.git
 git pull upstream content
 cd ..
-
-git clone --single-branch --depth 1 --branch static_files https://github.com/XYZ/REPO.git REPO-static
+</code></pre><div class="staticFilesInstruction">
+<pre><code>git clone --single-branch --depth 1 --branch static_files https://github.com/XYZ/REPO.git REPO-static
 cd REPO-static
 git remote add upstream https://github.com/vishvAsa/REPO.git
 git pull upstream static_files
 cd ..
-</code></pre><h2 id="running-hugo">Running hugo</h2>
+</code></pre></div>
+<h2 id="running-hugo">Running hugo</h2>
 <ul>
 <li>Having followed &ldquo;Going to the right place in your computer&rdquo;, and having retrieved the files as described above,</li>
 <li>do the below to run <code>hugo</code> to build the website on your computer (so that you can verify that everything appears as it
@@ -328,6 +329,9 @@ like <code>git commit -am &quot;Some message&quot;</code> and <code>git push</co
 <li>Then go to <a href="https://github.com/XYZ/REPO/tree/content">https://github.com/XYZ/REPO/tree/content</a> and send a pull request .</li>
 </ul>
 </li>
+</ul>
+<div class="staticFilesInstruction">
+<ul>
 <li>If you&rsquo;re changing files in <code>REPO-static</code> :
 <ul>
 <li>Make sure that you&rsquo;re working on the latest files by running: <code>git pull upstream static_files</code> .</li>
@@ -336,6 +340,9 @@ like <code>git commit -am &quot;Some message&quot;</code> and <code>git push</co
 <li>Then go to <a href="https://github.com/XYZ/REPO/tree/static_files">https://github.com/XYZ/REPO/tree/static_files</a> and send a pull request .</li>
 </ul>
 </li>
+</ul>
+</div>
+<ul>
 <li>Common steps
 <ul>
 <li>Text like <code>1 commit ahead</code> indicates that you have something to contribute.</li>
@@ -346,6 +353,10 @@ like <code>git commit -am &quot;Some message&quot;</code> and <code>git push</co
 <script>
 module_uiLib.replaceWithQueryParam("githubUserId", /XYZ(?=[^'’])/g);
 module_uiLib.replaceWithQueryParam("repo", /REPO(?=[^'’])/g);
+let noStaticFilesInstruction = module_main.default.query.getParam("noStatic");
+if (noStaticFilesInstruction) {
+  document.getElementsByClassName("staticFilesInstruction").forEach(function (x) {x.hidden = true;});
+}
 
 function handleTransformIdBtnClick(e) {
   let userId = document.getElementById("input_githubUserId").value;
@@ -394,7 +405,7 @@ function handleTransformIdBtnClick(e) {
     <a class="btn btn-secondary" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
     <div class="btn small border">
       
-      <a href="https://github.com/sanskrit/sanskrit.github.io/actions"><img src=""> Built </a> on 2022 Feb 28 08:59:22 UTC. (<a href="http://google.com/search?q=08%3a59%3a22%20UTC to IST">IST</a>)
+      <a href="https://github.com/sanskrit/sanskrit.github.io/actions"><img src=""> Built </a> on 2022 Feb 28 10:11:05 UTC. (<a href="http://google.com/search?q=10%3a11%3a05%20UTC to IST">IST</a>)
     </div>
   <ul id="footer-bar-right-custom" class="list-group list-group-horizontal">
   </ul>
