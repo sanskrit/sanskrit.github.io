@@ -5,7 +5,7 @@ unicode_script = "devanagari"
 
 ## समानं कर्म
 - अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्।
-  - अथवैतत् प्रयुज्यतां यन्त्रम्: <input id="input_githubUserId"></input><button id="transformId">पाठम् परिवर्तय!!</button>
+  - अथवैतत् प्रयुज्यतां यन्त्रम्: <input id="input_githubUserId" value="XYZ"></input><input id="input_repo" value="REPO"></input><button id="transformId" onclick="handleTransformIdBtnClick();">पाठम् परिवर्तय!!</button>
 - https://github.com/XYZ/REPO इति पूर्वम् एव वर्तते चेन् निष्कासयतु browser-उपयोगेन।
 - https://github.com/vishvAsa/REPO इत्यत्र गत्वा पुनः fork इति करोतु। https://github.com/XYZ/REPO इति किञ्चिल् लभ्यते।
 
@@ -29,7 +29,9 @@ cd REPO-content
 git remote add upstream https://github.com/vishvAsa/REPO.git
 git pull upstream content
 cd ..
+```
 
+```
 git clone --single-branch --depth 1 --branch static_files https://github.com/XYZ/REPO.git REPO-static
 cd REPO-static
 git remote add upstream https://github.com/vishvAsa/REPO.git
@@ -64,9 +66,10 @@ hugo server --renderToDisk --config ./config_dev.toml
 module_uiLib.replaceWithQueryParam("githubUserId", /XYZ(?=[^'’])/g);
 module_uiLib.replaceWithQueryParam("repo", /REPO(?=[^'’])/g);
 
-document.getElementById("transformId").addEventListener("click", function(e) {
+
+function handleTransformIdBtnClick(e) {
   let userId = document.getElementById("input_githubUserId").value;
-  console.log(userId);
+  console.log("transformId clicked", userId);
   module_main.default.query.setParamAndGo("githubUserId", userId);
-});
+}
 </script>

@@ -6,7 +6,7 @@
 ## Common setup
 
 - Below, replace _'XYZ'_ with your github username.
-  - Or use this machine: <input id="input_githubUserId"></input><button id="transformId">Replace</button>
+  - Or use this machine: <input id="input_githubUserId" value="XYZ"></input><input id="input_repo" value="REPO"></input><button id="transformId" onclick="handleTransformIdBtnClick();">Replace</button>
 - If https://github.com/XYZ/REPO exists beforehand, please delete it by going to settings using your browser.
 - Go to https://github.com/vishvAsa/REPO and fork (there should be a Fork button in the top-right). Thence, you will
   get https://github.com/XYZ/REPO .
@@ -77,9 +77,9 @@ hugo server --renderToDisk --config ./config_dev.toml
 module_uiLib.replaceWithQueryParam("githubUserId", /XYZ(?=[^'’])/g);
 module_uiLib.replaceWithQueryParam("repo", /REPO(?=[^'’])/g);
 
-document.getElementById("transformId").addEventListener("click", function(e) {
+function handleTransformIdBtnClick(e) {
   let userId = document.getElementById("input_githubUserId").value;
-  console.log(userId);
+  console.log("transformId clicked", userId);
   module_main.default.query.setParamAndGo("githubUserId", userId);
-});
+}
 </script>
