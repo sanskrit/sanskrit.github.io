@@ -30,7 +30,7 @@ Common setup  Below, replace &lsquo;XYZ&rsquo; with your github username.  Or us
 <meta itemprop="description" content="संस्कृतेन सूचना द्रष्टुम् अत्र गम्यताम् ।
 Common setup  Below, replace &lsquo;XYZ&rsquo; with your github username.  Or use this machine: Replace   If https://github.com/XYZ/REPO exists beforehand, please delete it by going to settings using your browser. Go to https://github.com/vishvAsa/REPO and fork (there should be a Fork button in the top-right). Thence, you will get https://github.com/XYZ/REPO .  Going to the right place in your computer  We&rsquo;ll assume that you&rsquo;re saving all github files in some location such as the ones used below.">
 
-<meta itemprop="wordCount" content="397">
+<meta itemprop="wordCount" content="399">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Computer setup (en)"/>
 <meta name="twitter:description" content="संस्कृतेन सूचना द्रष्टुम् अत्र गम्यताम् ।
@@ -268,7 +268,7 @@ Common setup  Below, replace &lsquo;XYZ&rsquo; with your github username.  Or us
 <ul>
 <li>Below, replace <em>&lsquo;XYZ&rsquo;</em> with your github username.
 <ul>
-<li>Or use this machine: <input id="input_githubUserId"></input><button id="transformId">Replace</button></li>
+<li>Or use this machine: <input id="input_githubUserId" value="XYZ"></input><input id="input_repo" value="REPO"></input><button id="transformId" onclick="handleTransformIdBtnClick();">Replace</button></li>
 </ul>
 </li>
 <li>If <a href="https://github.com/XYZ/REPO">https://github.com/XYZ/REPO</a> exists beforehand, please delete it by going to settings using your browser.</li>
@@ -347,11 +347,11 @@ like <code>git commit -am &quot;Some message&quot;</code> and <code>git push</co
 module_uiLib.replaceWithQueryParam("githubUserId", /XYZ(?=[^'’])/g);
 module_uiLib.replaceWithQueryParam("repo", /REPO(?=[^'’])/g);
 
-document.getElementById("transformId").addEventListener("click", function(e) {
+function handleTransformIdBtnClick(e) {
   let userId = document.getElementById("input_githubUserId").value;
-  console.log(userId);
+  console.log("transformId clicked", userId);
   module_main.default.query.setParamAndGo("githubUserId", userId);
-});
+}
 </script><blockquote>
 </blockquote>
 
@@ -394,7 +394,7 @@ document.getElementById("transformId").addEventListener("click", function(e) {
     <a class="btn btn-secondary" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
     <div class="btn small border">
       
-      <a href="https://github.com/sanskrit/sanskrit.github.io/actions"><img src=""> Built </a> on 2022 Feb 21 10:27:00 UTC. (<a href="http://google.com/search?q=10%3a27%3a00%20UTC to IST">IST</a>)
+      <a href="https://github.com/sanskrit/sanskrit.github.io/actions"><img src=""> Built </a> on 2022 Feb 28 08:59:22 UTC. (<a href="http://google.com/search?q=08%3a59%3a22%20UTC to IST">IST</a>)
     </div>
   <ul id="footer-bar-right-custom" class="list-group list-group-horizontal">
   </ul>

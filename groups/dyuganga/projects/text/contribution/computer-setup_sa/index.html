@@ -28,7 +28,7 @@
 <meta itemprop="name" content="Computer setup">
 <meta itemprop="description" content="समानं कर्म  अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्।  अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!!   https://github.com/XYZ/REPO इति पूर्वम् एव वर्तते चेन् निष्कासयतु browser-उपयोगेन। https://github.com/vishvAsa/REPO इत्यत्र गत्वा पुनः fork इति करोतु। https://github.com/XYZ/REPO इति किञ्चिल् लभ्यते।  सङ्गणके समीचीनस्थानप्राप्तिः  ततः समीचीनस्थाने terminal/ command-prompt इत्य् उद्घाट्य गच्छतु। यथा  cd F:\Git\ इति windows पक्षे cd ~ इति linux पक्षे    सञ्चिकाप्राप्तिः  सङ्गणके समीचीनस्थानप्राप्तिः इति भागे यद् उक्तं तत् कृत्वा  git clone --single-branch --depth 1 --branch master https://github.">
 
-<meta itemprop="wordCount" content="235">
+<meta itemprop="wordCount" content="237">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Computer setup"/>
 <meta name="twitter:description" content="समानं कर्म  अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्।  अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!!   https://github.com/XYZ/REPO इति पूर्वम् एव वर्तते चेन् निष्कासयतु browser-उपयोगेन। https://github.com/vishvAsa/REPO इत्यत्र गत्वा पुनः fork इति करोतु। https://github.com/XYZ/REPO इति किञ्चिल् लभ्यते।  सङ्गणके समीचीनस्थानप्राप्तिः  ततः समीचीनस्थाने terminal/ command-prompt इत्य् उद्घाट्य गच्छतु। यथा  cd F:\Git\ इति windows पक्षे cd ~ इति linux पक्षे    सञ्चिकाप्राप्तिः  सङ्गणके समीचीनस्थानप्राप्तिः इति भागे यद् उक्तं तत् कृत्वा  git clone --single-branch --depth 1 --branch master https://github."/>
@@ -264,7 +264,7 @@
 <ul>
 <li>अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्।
 <ul>
-<li>अथवैतत् प्रयुज्यतां यन्त्रम्: <input id="input_githubUserId"></input><button id="transformId">पाठम् परिवर्तय!!</button></li>
+<li>अथवैतत् प्रयुज्यतां यन्त्रम्: <input id="input_githubUserId" value="XYZ"></input><input id="input_repo" value="REPO"></input><button id="transformId" onclick="handleTransformIdBtnClick();">पाठम् परिवर्तय!!</button></li>
 </ul>
 </li>
 <li><a href="https://github.com/XYZ/REPO">https://github.com/XYZ/REPO</a> इति पूर्वम् एव वर्तते चेन् निष्कासयतु browser-उपयोगेन।</li>
@@ -294,8 +294,7 @@ cd REPO-content
 git remote add upstream https://github.com/vishvAsa/REPO.git
 git pull upstream content
 cd ..
-
-git clone --single-branch --depth 1 --branch static_files https://github.com/XYZ/REPO.git REPO-static
+</code></pre><pre><code>git clone --single-branch --depth 1 --branch static_files https://github.com/XYZ/REPO.git REPO-static
 cd REPO-static
 git remote add upstream https://github.com/vishvAsa/REPO.git
 git pull upstream static_files
@@ -335,11 +334,12 @@ hugo server --renderToDisk --config ./config_dev.toml
 module_uiLib.replaceWithQueryParam("githubUserId", /XYZ(?=[^'’])/g);
 module_uiLib.replaceWithQueryParam("repo", /REPO(?=[^'’])/g);
 
-document.getElementById("transformId").addEventListener("click", function(e) {
+
+function handleTransformIdBtnClick(e) {
   let userId = document.getElementById("input_githubUserId").value;
-  console.log(userId);
+  console.log("transformId clicked", userId);
   module_main.default.query.setParamAndGo("githubUserId", userId);
-});
+}
 </script><blockquote>
 </blockquote>
 
@@ -384,7 +384,7 @@ document.getElementById("transformId").addEventListener("click", function(e) {
     <a class="btn btn-secondary" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
     <div class="btn small border">
       
-      <a href="https://github.com/sanskrit/sanskrit.github.io/actions"><img src=""> Built </a> on 2022 Feb 21 10:27:00 UTC. (<a href="http://google.com/search?q=10%3a27%3a00%20UTC to IST">IST</a>)
+      <a href="https://github.com/sanskrit/sanskrit.github.io/actions"><img src=""> Built </a> on 2022 Feb 28 08:59:22 UTC. (<a href="http://google.com/search?q=08%3a59%3a22%20UTC to IST">IST</a>)
     </div>
   <ul id="footer-bar-right-custom" class="list-group list-group-horizontal">
   </ul>
