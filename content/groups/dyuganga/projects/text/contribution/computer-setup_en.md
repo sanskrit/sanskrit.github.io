@@ -34,13 +34,17 @@ cd REPO-content
 git remote add upstream https://github.com/vishvAsa/REPO.git
 git pull upstream content
 cd ..
+```
+<div class="staticFilesInstruction">
 
+```
 git clone --single-branch --depth 1 --branch static_files https://github.com/XYZ/REPO.git REPO-static
 cd REPO-static
 git remote add upstream https://github.com/vishvAsa/REPO.git
 git pull upstream static_files
 cd ..
 ```
+</div>
 
 ## Running hugo
 
@@ -64,11 +68,16 @@ hugo server --renderToDisk --config ./config_dev.toml
   - Then, commit and push your changes (using atom editor, or github desktop or commands
     like `git commit -am "Some message"` and `git push`).
   - Then go to https://github.com/XYZ/REPO/tree/content and send a pull request .
+
+<div class="staticFilesInstruction">
+
 - If you're changing files in `REPO-static` :
   - Make sure that you're working on the latest files by running: `git pull upstream static_files` .
   - Then, commit and push your changes (using atom editor, or github desktop or commands
     like `git commit -am "Some message"` and `git push`).
   - Then go to https://github.com/XYZ/REPO/tree/static_files and send a pull request .
+</div>
+
 - Common steps
   - Text like `1 commit ahead` indicates that you have something to contribute. 
   - Find and use the "Contribute" link.
@@ -76,6 +85,10 @@ hugo server --renderToDisk --config ./config_dev.toml
 <script>
 module_uiLib.replaceWithQueryParam("githubUserId", /XYZ(?=[^'’])/g);
 module_uiLib.replaceWithQueryParam("repo", /REPO(?=[^'’])/g);
+let noStaticFilesInstruction = module_main.default.query.getParam("noStatic");
+if (noStaticFilesInstruction) {
+  document.getElementsByClassName("staticFilesInstruction").forEach(function (x) {x.hidden = true;});
+}
 
 function handleTransformIdBtnClick(e) {
   let userId = document.getElementById("input_githubUserId").value;

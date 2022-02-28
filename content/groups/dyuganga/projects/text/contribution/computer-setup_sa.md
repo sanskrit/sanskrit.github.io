@@ -31,6 +31,8 @@ git pull upstream content
 cd ..
 ```
 
+<div class="staticFilesInstruction">
+
 ```
 git clone --single-branch --depth 1 --branch static_files https://github.com/XYZ/REPO.git REPO-static
 cd REPO-static
@@ -38,6 +40,7 @@ git remote add upstream https://github.com/vishvAsa/REPO.git
 git pull upstream static_files
 cd ..
 ```
+</div>
 
 ## hugo-चालनम्
 - सङ्गणके समीचीनस्थानप्राप्तिः इति भागे यद् उक्तं तत् कृत्वा
@@ -55,9 +58,14 @@ hugo server --renderToDisk --config ./config_dev.toml
 - यदि कार्यम् REPO-content इत्यस्मिन् क्रियते
     - `git pull upstream content` इति परिवर्तनानि लभ्यानि।
     - ततो नुदित्वाकर्षणाभ्यर्थनं https://github.com/XYZ/REPO/tree/content इत्यत्र गत्वा प्रेषणीयम्।
+
+<div class="staticFilesInstruction">
+
 - यदि कार्यम् REPO-static इत्यस्मिन् क्रियते
     - `git pull upstream static_files` इति परिवर्तनानि लभ्यानि।
     - ततो नुदित्वाकर्षणाभ्यर्थनं https://github.com/XYZ/REPO/tree/static_files इत्यत्र गत्वा प्रेषणीयम्।
+</div>
+
 - अकर्षणाभ्यर्थन-प्रेषण-विधानं समानम्
   - `1 commit ahead` इतीव किञ्चिद् दर्शितं चेत् प्रेषयितुं किञ्चिद् अस्तीत्य् अर्थः। 
   - "Contribute" इति कश्चन सङ्केतो दृश्येत। तत्र नुदनीयम्। 
