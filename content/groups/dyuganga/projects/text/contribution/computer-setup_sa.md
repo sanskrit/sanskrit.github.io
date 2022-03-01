@@ -70,14 +70,4 @@ hugo server --renderToDisk --config ./config_dev.toml
   - `1 commit ahead` इतीव किञ्चिद् दर्शितं चेत् प्रेषयितुं किञ्चिद् अस्तीत्य् अर्थः। 
   - "Contribute" इति कश्चन सङ्केतो दृश्येत। तत्र नुदनीयम्। 
 
-<script>
-module_uiLib.replaceWithQueryParam("githubUserId", /XYZ(?=[^'’])/g);
-module_uiLib.replaceWithQueryParam("repo", /REPO(?=[^'’])/g);
-
-
-function handleTransformIdBtnClick(e) {
-  let userId = document.getElementById("input_githubUserId").value;
-  console.log("transformId clicked", userId);
-  module_main.default.query.setParamAndGo("githubUserId", userId);
-}
-</script>
+<script src="../contribution-page-customizer.js"></script>

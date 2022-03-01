@@ -1,4 +1,5 @@
-+++ title = "Computer setup (en)"
++++
+title = "Computer setup (en)"
 +++
 
 संस्कृतेन सूचना द्रष्टुम् [अत्र गम्यताम्](../computer-setup_sa/) ।
@@ -82,17 +83,4 @@ hugo server --renderToDisk --config ./config_dev.toml
   - Text like `1 commit ahead` indicates that you have something to contribute. 
   - Find and use the "Contribute" link.
 
-<script>
-module_uiLib.replaceWithQueryParam("githubUserId", /XYZ(?=[^'’])/g);
-module_uiLib.replaceWithQueryParam("repo", /REPO(?=[^'’])/g);
-let noStaticFilesInstruction = module_main.default.query.getParam("noStatic");
-if (noStaticFilesInstruction) {
-  document.getElementsByClassName("staticFilesInstruction").forEach(function (x) {x.hidden = true;});
-}
-
-function handleTransformIdBtnClick(e) {
-  let userId = document.getElementById("input_githubUserId").value;
-  console.log("transformId clicked", userId);
-  module_main.default.query.setParamAndGo("githubUserId", userId);
-}
-</script>
+<script src="../contribution-page-customizer.js"></script>
