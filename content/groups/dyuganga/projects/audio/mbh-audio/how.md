@@ -20,7 +20,7 @@ A past attempt by us at using volunteers to record the text had thrown up severa
 This we hope to surpass by adding paid expert reciters.
 
 ### Who?
-The project is coordinated and conducted under the auspices of Vyoma Labs. We are grateful to have been promised a donation by the Indic Academy. With this plan to meet our expenses for this project (especially paying expert reciters).
+The project was initially coordinated and conducted under the auspices of Vyoma Labs. We are grateful to have been promised a donation by Aditi Bannerjee via Indic Academy. With this plan to meet our expenses for this project (especially paying expert reciters).
 
 ## Record audio for us?
 Are you interested in helping us? Please contact us via whatsapp (+1 650 567 6533) or email (we have an [email list](https://groups.google.com/forum/#!forum/mahabharata-mulam)). You can volunteer or you can choose to be paid daxiṇā - eitherway, please be aware that you *commit* to regularly produce good recordings.

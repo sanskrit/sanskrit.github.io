@@ -18,12 +18,17 @@ With your help, we hope to realize this dream - nay our solemn duty as descenden
 ## Status as of 2020-04
 shrI suhAs has contacted harisItArAma ghanapAThI , the vedic scholar who recited https://archive.org/details/Ramayana-recitation-Sriram-harisItArAmamUrti-Ghanapaati-v2 . The ghanapAThin (currently engaged in recording bhAgavatam, which he anticipates to complete by next makara sankrAnti/ Jan ) has enthusiastically agreed to recite mahAbhArata next year. The recording will be of similar quality to the rAmAyaNa one linked earlier, and the recordings will be published for free on archive.org as usual. shrI suhAs has arranged for a donor to comfortably fund the salaries of two reciters.
 
-Given this is excellent news, I will stop all work on our mostly volunteer-driven recordings (there is no point doing something which will be done better in the near future). We'll just await progress on suhAs's project next year. Till then I will just gratefully enjoy the recordings we've already produced (2+ parvas, 16.5k verses) and curated (example https://groups.google.com/forum/#!topic/bvparishat/BdNVYYNIQEk ).
+Given this is excellent news, I will stop all work on our mostly volunteer-driven recordings (there is no point doing something which will be done better in the near future). We'll just await progress on suhAs's project next year. 
+
+Till then I will just gratefully enjoy the recordings we've already produced (~1k recordings, ~350 adhyAyas accross 3 parvas, 16.5k verses) - see below for details. 
+
 
 ## Where?
 It is important to note that at any point in time, the output(in the form of audio files) of our efforts up to then will be available publicly and freely on the internet at archive.org. We will constantly publish a summary of project status online. So, connoiseurs will be able to enjoy the fruits of our labor even as the project progresses to increasingly higher levels of completion and quality.
 
 Listen or download here:
+
+- Audios presented together with the original and the hindI translation - see for example [1/151](https://vishvasa.github.io/purANam/mahAbhAratam/goraxapura-pAThaH/01_Adiparva/09_hiDimbavadhaparva/151_hiDimbA-saMvAdaH) .
 - [Github staging repositories](https://github.com/mahabharata-audio-2018/) - this is where audio file contributions are primarily and securely collected.
 - Here audio file contributions are primarily presented for listening.
   - [Archive item 1x](https://archive.org/details/mahAbhArata-mUla-paThanam-GP)
@@ -39,7 +44,7 @@ Listen or download here:
 
 Knowledge of the Mahābhārata is essential for every practicing Hindu. An Indic academy [note says](https://www.google.com/url?q=http://www.indictoday.com/events/launches/veda-vyasa-endowment-for-mahabharata-studies/&sa=D&ust=1536608308704000):
 
-“The Mahābhārata is a fundamental component of our Indic civilizational DNA.  It is an ancient, timeless tale that has incredible relevance and resonance even today.  It is a source of passionate debate and reflection, its complex characters, conflicts and themes motifs that recur again and again throughout all of our literature and arts.  There is a reason traffic and trains stopped while the Mahābhārata serial was playing on television screens thirty years ago.  No piece of literature better captures the ethos, worldview, values and aesthetics associated with our culture and civilization than the Mahābhārata.  As the longest epic in the history of world literature, there is no wonder that it is said what is not found in the Mahābhārata cannot be found elsewhere. (धर्मे च अर्थे च कामे च मोक्षे च भरतर्षभ। यदिहास्ति तदन्यत्र यन्नेहास्ति न तत्क्वचित् ।।)”
+> “The Mahābhārata is a fundamental component of our Indic civilizational DNA.  It is an ancient, timeless tale that has incredible relevance and resonance even today.  It is a source of passionate debate and reflection, its complex characters, conflicts and themes motifs that recur again and again throughout all of our literature and arts.  There is a reason traffic and trains stopped while the Mahābhārata serial was playing on television screens thirty years ago.  No piece of literature better captures the ethos, worldview, values and aesthetics associated with our culture and civilization than the Mahābhārata.  As the longest epic in the history of world literature, there is no wonder that it is said what is not found in the Mahābhārata cannot be found elsewhere. (धर्मे च अर्थे च कामे च मोक्षे च भरतर्षभ। यदिहास्ति तदन्यत्र यन्नेहास्ति न तत्क्वचित् ।।)”
 
 We fully agree with the above and won’t belabor it so as to avoid the folly of preaching to the choir.
 
