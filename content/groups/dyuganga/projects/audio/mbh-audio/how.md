@@ -23,7 +23,7 @@ This we hope to surpass by adding paid expert reciters.
 The project was initially coordinated and conducted under the auspices of Vyoma Labs. We are grateful to have been promised a donation by Aditi Bannerjee via Indic Academy. With this plan to meet our expenses for this project (especially paying expert reciters).
 
 ## Record audio for us?
-Are you interested in helping us? Please contact us via whatsapp (+1 650 567 6533) or email (we have an [email list](https://groups.google.com/forum/#!forum/mahabharata-mulam)). You can volunteer or you can choose to be paid daxiṇā - eitherway, please be aware that you *commit* to regularly produce good recordings.
+Are you interested in helping us? Please contact us via whatsapp or email (we have an [email list](https://groups.google.com/forum/#!forum/mahabharata-mulam)). You can volunteer or you can choose to be paid daxiṇā - eitherway, please be aware that you *commit* to regularly produce good recordings.
 
 ### The expected rate of output
 कियता कालेन पठनीयम् इति नैके ऽपृच्छन्। भवतां पठनक्षमताम् अनुसृत्य पठनार्थम् अध्यायान् सूचयिष्यामः - वयन्तु यावच्छीघ्रं ध्वनिमुद्रणानि सङ्गृहीतुं वाञ्छामः। उदाहरणाय- यदि दिने २०० श्लोकान् पठितुम् अस्ति क्षमता, तन्मात्रान् अध्यायान् पठनार्थं समर्पयामः। अवरपक्षे तु दिने १०० श्लोकान् पठितुं प्रयतध्वम्।
