@@ -115,10 +115,10 @@ Importance Sanskrit is the Hindu liturgical language. Often times, a scholar or 
     
     <item>
       <title>mahAbhArata gItA press - present with audio</title>
-      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/mbh-gItA-press_present-with-audio/</link>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/completed/mbh-gItA-press_present-with-audio/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/mbh-gItA-press_present-with-audio/</guid>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/completed/mbh-gItA-press_present-with-audio/</guid>
       <description>Goal Digitize and present the text of the mahAbhArata edition so laboriously and wonderfully recorded as part of this project - together with the audio. The text will (just like our audio files) be made available for free in markdown format - anyone can copy and reuse. Examples of such text with audio presentations:
  rAmAyaNa https://vishvAsa.github.io/purANam/rAmAyaNam/AndhrapAThaH/1_bAlakANDam/01-kathAmukham/001_sanxepa/ raghuvaMsha https://vishvAsa.github.io/kAvyam/TIkA/padyam/kAlidAsaH/raghuvaMsham/01/ kumArasambhava https://vishvAsa.github.io/kAvyam/TIkA/padyam/kAlidAsaH/kumArasambhavam/02/ durgA saptashatI https://vishvAsa.github.io/purANam/durgA-saptashatI/01-prathama-charitam/ rAmacharitamAnasa https://vishvAsa.github.io/kAvyam/TIkA/padyam/purANam/rAmacharitamAnasa-TIkA/02_ayodhyAkANDa/ nArAyaNIyam https://vishvAsa.github.io/kAvyam/TIkA/padyam/purANam/nArAyaNIyam/003/ several sAmans etc.</description>
     </item>
@@ -173,6 +173,17 @@ No content shown here is rendered, all content is based in the template layouts/
 Setting a very low sitemap priority will tell search engines this is not important content.
 This implementation uses Fusejs, jquery and mark.js
 Initial setup Search depends on additional output content type of JSON in config.toml ``` [outputs] home = [&amp;ldquo;HTML&amp;rdquo;, &amp;ldquo;JSON&amp;rdquo;] ```</description>
+    </item>
+    
+    <item>
+      <title>suhAsa wish list</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/suhAsa-wish-list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/suhAsa-wish-list/</guid>
+      <description>I suggest that priority be given to books that can be converted to dictionaries as their impact is greater. Here is a list of a few books. I have shared some of these books here. I will share the others upon request.
+Primary Texts
+ सुभाषितावलिः (Subhashita work) शार्ङ्गधरपद्धतिः (Subhashita work. If सुभाषितावलिः+शार्ङ्गधरपद्धतिः are done, all the big five Subhashita works will be made available) अन्योक्तिमुक्तावलिः of हंसराजगणिः (very comprehensive anyokti collection) कुवलयानन्द काव्यादर्श + रत्नश्री commentary (oldest AFAIK and best) पूर्णसरस्वती&amp;rsquo;s commentaries on मालतीमाधव and मेघदूत (पूर्णसरस्वती is an incredibly insightful commentator.</description>
     </item>
     
     <item>
