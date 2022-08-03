@@ -2,6 +2,12 @@
 title = "mahAbhArata gItA press - present with audio"
 +++
 
+## Status
+Completed in early 2022.
+
+### Sonsors
+- (1L Rs) from Aditi Bannerjee via Indic academy.
+
 ## Goal
 Digitize and present the text of the mahAbhArata edition so laboriously and wonderfully recorded as part of this project - together with the audio. The text will (just like our audio files) be made available for free in markdown format - anyone can copy and reuse. Examples of such text with audio presentations:
 
