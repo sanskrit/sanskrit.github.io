@@ -3,7 +3,7 @@ title = "बोधायन-ब्रह्म-कर्म-समुच्च�
 +++
 
 ## Status
-- In progress. A member of a small-town baudhAyana purohita family is engaged in this. Remarkably, she works with just a mobile phone.
+- In progress (Aug 2022 - ??). A member of a small-town baudhAyana purohita family is engaged in this. Remarkably, she works with just a mobile phone.
 
 ## Budget
 About 40k.
