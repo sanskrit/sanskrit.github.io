@@ -136,9 +136,9 @@ kailas rajasthan
 ### Computer setup
 Besides the above, (unless you are already computer-savvy and have other preferences) please set up your Windows computer (if you use another OS, let me know) in the following way, so that your work can be most enjoyable and seamless.
 
-- [Git for windows](https://gitforwindows.org/)
-- [Sublime text](https://www.sublimetext.com/) or [Atom editor](https://atom.io/)
-
+- Editor setup [Sublime text](https://www.sublimetext.com/) or [Atom editor](https://atom.io/)
+- Install [Git for windows](https://gitforwindows.org/)
+- Get the files to edit. (Rough guide - [en](/groups/dyuganga/projects/text/contribution/computer-setup_en/). Ask for details.)
 - Verifying your work by previewing (ie. "is the formatting correct"?)
   - (Dillinger online editor)[https://dillinger.io/]
   - Install Hugo 
