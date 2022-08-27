@@ -7,6 +7,7 @@ document.getElementsByClassName("staticFilesInstruction").forEach(function (x) {
 
 function handleTransformIdBtnClick(e) {
   let userId = document.getElementById("input_githubUserId").value;
-  console.log("transformId clicked", userId);
-  module_uiLib.default.query.setParamAndGo("githubUserId", userId);
+  let repoId = document.getElementById("input_repo").value;
+  console.log("transformId clicked", userId, repoId);
+  module_uiLib.default.query.setParamsAndGo({"githubUserId": userId, "repo": repoId});
 }
