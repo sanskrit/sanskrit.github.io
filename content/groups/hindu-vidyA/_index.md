@@ -1,5 +1,5 @@
 +++
-title = "+Hindu-vidyA"
+title = "+Hindu-vidyA groups"
 +++
 
 ## Intro
@@ -17,7 +17,7 @@ title = "+Hindu-vidyA"
 ### Our topical channels
 In these well defined topical channels, there is no restriction other than truthful pursuit of pertinent matters.
 
-Email streams:
+Prominent Email streams:
 
 - [shabda-vidya](https://groups.google.com/g/shabda-vidya)
 - [tantrollasah](https://groups.google.com/g/tantrollasah)
@@ -25,13 +25,16 @@ Email streams:
 - [kalpa-prayoga](https://groups.google.com/g/kalpa-prayoga)
 - [digital-sanskrit-temps](https://groups.google.com/g/digital-sanskrit-temps)
 
-Telegram:
+#### Full directory
 
-- 
+##### Tech
+<div class="spreadsheet" src="../groups_tech.toml" fullHeightWithRowsPerScreen=8> </div>  
 
-### External groups
-- RISA, [Indology](http://indology.info/email/), [भारतीयविद्वत्परिषत्](https://groups.google.com/forum/#!forum/bvparishat), [Indo-Eurasian research](https://groups.yahoo.com/neo/groups/Indo-Eurasian_research/conversations/messages), [shAstram](https://groups.google.com/g/shaastram).
-- Vedanta, jyotiSHa etc. related channels (To be listed).
+##### shAstra
+<div class="spreadsheet" src="../groups_shAstra.toml" fullHeightWithRowsPerScreen=8> </div>  
+
+##### Language
+<div class="spreadsheet" src="../groups_language.toml" fullHeightWithRowsPerScreen=8> </div>  
 
 #### Why another forum?
 - True, there are other email streams with similarly broad goals such as bhAratIya-vidvat-pariShat and Indology. But, as of 202108, neither is explicitly pro hindu-interests, leading to some confusion and conflict (BVP examples: [goal clarity thread](https://groups.google.com/g/bvparishat/c/wcbrBGchR-E), [M Deshpande leaving BVP](https://groups.google.com/g/bvparishat/c/m0WsHOqu39M/m/d7ky6VRMAAAJ) ...) arising out of mismatched expectations. 
