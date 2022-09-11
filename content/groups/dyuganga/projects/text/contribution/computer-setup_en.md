@@ -9,8 +9,7 @@ title = "Computer setup (en)"
 - Below, replace _'XYZ'_ with your github username.
   - Or use this machine: <input id="input_githubUserId" value="XYZ"></input><input id="input_repo" value="REPO"></input><button id="transformId" onclick="handleTransformIdBtnClick();">Replace</button>
 - If https://github.com/XYZ/REPO exists beforehand, please delete it by going to settings using your browser.
-- Go to https://github.com/vishvAsa/REPO and fork (there should be a Fork button in the top-right). Thence, you will
-  get https://github.com/XYZ/REPO .
+- Go to https://github.com/vishvAsa/REPO and fork (there should be a Fork button in the top-right). When forking, make sure to uncheck "master branch only" option. Thence, you will get https://github.com/XYZ/REPO .
 
 ## Going to the right place in your computer
 

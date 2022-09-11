@@ -7,7 +7,7 @@ unicode_script = "devanagari"
 - अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्।
   - अथवैतत् प्रयुज्यतां यन्त्रम्: <input id="input_githubUserId" value="XYZ"></input><input id="input_repo" value="REPO"></input><button id="transformId" onclick="handleTransformIdBtnClick();">पाठम् परिवर्तय!!</button>
 - https://github.com/XYZ/REPO इति पूर्वम् एव वर्तते चेन् निष्कासयतु browser-उपयोगेन।
-- https://github.com/vishvAsa/REPO इत्यत्र गत्वा पुनः fork इति करोतु। https://github.com/XYZ/REPO इति किञ्चिल् लभ्यते।
+- https://github.com/vishvAsa/REPO इत्यत्र गत्वा पुनः fork इति करोतु। तत्करणे "master branch only" इति विकल्पं निराकरोतु। तेन https://github.com/XYZ/REPO इति किञ्चिल् लभ्यते।
 
 ## सङ्गणके समीचीनस्थानप्राप्तिः
 - ततः समीचीनस्थाने terminal/ command-prompt इत्य् उद्घाट्य गच्छतु। यथा
