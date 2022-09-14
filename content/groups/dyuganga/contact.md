@@ -9,7 +9,6 @@ title: Contact सम्पर्कः
 - Google groups/ email [https://groups.google.com/g/dyuganga](https://groups.google.com/forum/#!forum/dyuganga). द्युगङ्गा-कार्यगणस्य वार्ता [अत्र](https://groups.google.com/forum/#!forum/dyuganga) ।
 - Twitter: [https://twitter.com/dyugangaa](https://twitter.com/dyugangaa)
 - Facebook: [https://www.facebook.com/dyugangA](https://www.facebook.com/dyugangA)
-- Telegram supporters channel: [https://t.me/dyugangA_supporters](https://t.me/dyugangA_supporters)
 
 ## Geo
 - We are located in [C Block, sahakAra nagara](https://goo.gl/maps/QrXL5uobRpCgW1W7A).
