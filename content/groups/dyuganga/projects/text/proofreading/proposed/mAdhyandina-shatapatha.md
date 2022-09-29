@@ -3,7 +3,7 @@ title = "mAdhyandina-shatapatha"
 +++
 
 ## Goal and motivation
-The sasvara pATha of shatapatha-brAhmaNa (mAdhyandina) is valuable for students and practitioners of vedic ritual and language. We a typed devanAgarI version which needs quite a bit of svara correction. If you can contribute labor or money towards this, please let me know. Else, please pass this on to those interested.
+The sasvara pATha of shatapatha-brAhmaNa (mAdhyandina) is valuable for students and practitioners of vedic ritual and language. We have a typed devanAgarI version which needs quite a bit of svara correction. If you can contribute labor or money towards this, please let me know. Else, please pass this on to those interested.
 
 ### Details
 Various editions of shatapatha-brAhmaNa have been published. Of them, ones by [Weber](https://archive.org/details/in.ernet.dli.2015.283077/page/n805/mode/2up?view=theater) and [vamshIdhara-shAstrI](https://archive.org/details/satapatha_bahmanam_with_sayana_bhashya__harisvami_bhashya_ed._vamsidhara_sastri_1940_gangavishnu/Satapatha%20Bahmanam%20with%20Sayana%20Bhashya%20%26%20Harisvami%20Bhashya%20Part%201%20-%20Vamsidhara%20Sastri%201940%20%28Gangavishnu%29/page/n505/mode/1up) are prominent. In reality, neither of them has perfect svara-s, though the latter is generally superior. So, ultimately one needs to compare both pATha-s, and use one's understanding of grammar, language and notation to pick the best reading. 
