@@ -17,7 +17,7 @@ We have used this to produce a [devanAgarI version](https://vishvasa.github.io/v
 प्रथमे᳘न क᳘र्मणाभि᳘पद्यते ऽपः प्र᳘णयति यज्ञोवा आ᳘पो यज्ञ᳘मेॗवैत᳘त्प्रथमे᳘न क᳘र्मणाभि᳘पद्यते ताः प्र᳘णयति यज्ञ᳘मेॗवैतद्वि᳘तनोति॥
 
 - This text should be further corrected to match the Weber edition perfectly. Especially, book 12 (of 14) needs much attention as acute accents marked (often with errors and lack of completeness) have been rendered as shatapatha-accent-marks.
-- Then, based on this text, we should produce an edition to match the vamshIdhara-shAstrI edition. This will involve correcting several errors (including [non-svara ones](https://vishvasa.github.io/vedAH_yajuH/vAjasaneyam/mAdhyandinam/shatapatha-brAhmaNam/weber-srotaH/)) of Weber.
+- Then, based on this text, we should produce an etext to match the vamshIdhara-shAstrI edition. This will involve correcting several errors (including [non-svara ones](https://vishvasa.github.io/vedAH_yajuH/vAjasaneyam/mAdhyandinam/shatapatha-brAhmaNam/weber-srotaH/)) of Weber.
 - Finally, we should compare both and derive the best reading.
 
 Of these, step 2 seems most laborious as one needs to compare accents on all 14 books.
