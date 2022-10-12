@@ -25,5 +25,8 @@ We have used this to produce a [devanAgarI version](https://vishvasa.github.io/v
 
 We would focus on steps 1 and 2 above. Of these, step 2 seems most laborious as one needs to compare accents on all 14 books. 
 
-## Estimated cost
+<details><summary>विस्तारः</summary>
+
 We expect to spend max 40 Rs per page (could be less - depends on how much effort is required); and there are about 1200 (effective) pages per edition; and there are two editions, one of which would be more labor intensive. So, estimate: between 60k and 96k.
+</details>
+
