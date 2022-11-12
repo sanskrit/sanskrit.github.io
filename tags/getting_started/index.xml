@@ -22,7 +22,7 @@
       
       <guid>https://sanskrit.github.io/groups/dyuganga/projects/audio/</guid>
       <description>In this section, we lists some audio projects. Find their decriptions using the navigation menu.
- A general list of audio resources - here. Sanskrit, Hindu, Hindi and Kannada Podcast list here.  Technical tips here.    </description>
+A general list of audio resources - here. Sanskrit, Hindu, Hindi and Kannada Podcast list here. Technical tips here. </description>
     </item>
     
     <item>
@@ -42,7 +42,7 @@
       <guid>https://sanskrit.github.io/groups/dyuganga/projects/audio/kannada-audio/</guid>
       <description>हरिः, ॐ! स्वागतम्!
 What? We aim to freely (Creative Commons Attribution-ShareAlike 4.0 International License) publish and distribute the popular and inspiring Kannada books as audio books on the internet.
-Copyright  We will target classics which are out of copyright and in the public domain. For audio books uploaded prior to 2019-02-15, we had neglected to consider the copyright status - we will remove those books or keep them depending on whether we succeed at getting permissions from copyright-holders.</description>
+Copyright We will target classics which are out of copyright and in the public domain. For audio books uploaded prior to 2019-02-15, we had neglected to consider the copyright status - we will remove those books or keep them depending on whether we succeed at getting permissions from copyright-holders.</description>
     </item>
     
     <item>
@@ -103,7 +103,7 @@ For contribution (labor or sponsorship), please see contact page.</description>
 लेखकः - ताताचार्यः।
 श्रीमन्महीशूरपुरी मध्यविद्योतमान दिव्यरत्नसिंहासनारूढ श्रीकृष्णराजेन्द्रास्थानपण्डित नल्लूरु श्री सज्जयाचार्यतनूज श्री ताताचार्यसाहायकेन परिशोध्य परिष्कृत्य विरचितः। तादृशश्रीकृष्णराजेन्द्रादेशेन धर्माधिकारि चक्रवर्त्यय्यङ्गार्येण महीशूरपुरी-मध्यविराजमानायां विद्यातरङ्गिण्याख स्वीयमुद्राक्षरशालायां मुद्रापितो विजयतेतमाम्। इदानीमेतन्मूल्यमेकरूप्यम्। वर्षम् - १८९६॥
 अंशाः-
- अवतारकथास्तोत्रम्। हर्यष्टकम्। उपयुक्तश्लोकाः। लिङ्गानुशासनवृत्तिः। श्रुतबोधः। वृत्तरत्नाकरः। चन्द्रालोकः। समासशिखामणिः। स्वरूपकोशः। सुबन्तशब्दानुक्रमणी। सप्रमाणशब्दरूपाणि। बालरामायणम्। श्रीरामायणसङ्ग्रहः। क्रियानिघण्टुद्वयम्। सप्रमाणसमासचक्रवर्त्याख्यग्रन्थः। तत्तद्व्याख्योदाहृतकतिपयप्रमाणवचनानि, तत्तद्व्याख्योक्तकतिपयकोशवचनानि। श्रीकृष्णाष्टकञ्च, एतत्समुदायघटितः।  </description>
+अवतारकथास्तोत्रम्। हर्यष्टकम्। उपयुक्तश्लोकाः। लिङ्गानुशासनवृत्तिः। श्रुतबोधः। वृत्तरत्नाकरः। चन्द्रालोकः। समासशिखामणिः। स्वरूपकोशः। सुबन्तशब्दानुक्रमणी। सप्रमाणशब्दरूपाणि। बालरामायणम्। श्रीरामायणसङ्ग्रहः। क्रियानिघण्टुद्वयम्। सप्रमाणसमासचक्रवर्त्याख्यग्रन्थः। तत्तद्व्याख्योदाहृतकतिपयप्रमाणवचनानि, तत्तद्व्याख्योक्तकतिपयकोशवचनानि। श्रीकृष्णाष्टकञ्च, एतत्समुदायघटितः। </description>
     </item>
     
     <item>
@@ -417,15 +417,6 @@ Research and publication The talent of the village is capable serious research a
     </item>
     
     <item>
-      <title>संस्कृतयूथाः</title>
-      <link>https://sanskrit.github.io/groups/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sanskrit.github.io/groups/</guid>
-      <description>Welcome page.</description>
-    </item>
-    
-    <item>
       <title>समासशिखामणिः</title>
       <link>https://sanskrit.github.io/people/i_narasimhaachaarya/upayuktaamsha/samaasa-shikhaamaNi/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -440,6 +431,15 @@ Research and publication The talent of the village is capable serious research a
 ६.अनेकशब्दसन्धिस्तु समासः कथ्यते यथा। अर्धं गुडस्यार्धगुडोऽब्धिङ्गताब्धिगता नदी॥
 ७.वाचा श्लक्ष्णस्तु वाक्श्लक्ष्णो दिग्बलिस्तु दिशे बलिः। सिंहाद्भयं सिंहभयं भूपतिस्तु भुवः पतिः॥
 ८.विष्णौ भक्तिर्विष्णुभक्तिः। नाश्वोऽनश्वो नगौरगौः। प्रकारान्तस्सप्त वै कर्मधारयस्य ब्रवीम्यहम्॥</description>
+    </item>
+    
+    <item>
+      <title>संस्कृतयूथाः</title>
+      <link>https://sanskrit.github.io/groups/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sanskrit.github.io/groups/</guid>
+      <description>Welcome page.</description>
     </item>
     
   </channel>
