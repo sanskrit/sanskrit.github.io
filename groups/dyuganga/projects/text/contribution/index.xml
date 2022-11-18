@@ -22,7 +22,7 @@
       
       <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/contribution/computer-setup_en/</guid>
       <description>संस्कृतेन सूचना द्रष्टुम् अत्र गम्यताम् ।
-Common setup Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username. Or use this machine: Replace If https://github.com/XYZ/REPO exists beforehand, please delete it by going to settings using your browser. Go to https://github.com/vishvAsa/REPO/fork and fork (there should be a Fork button in the top-right). When forking, make sure to uncheck &amp;ldquo;master branch only&amp;rdquo; option. Thence, you will get https://github.com/XYZ/REPO . Going to the right place in your computer We&amp;rsquo;ll assume that you&amp;rsquo;re saving all github files in some location such as the ones used below.</description>
+Common setup Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username. Or use this machine: Replace If https://github.com/XYZ/REPO exists beforehand, please delete it by going to settings using your browser. Go to https://github.com/vishvAsa/REPO/fork and fork (there should be a &amp;ldquo;Create Fork&amp;rdquo; button). When forking, make sure to uncheck &amp;ldquo;master branch only&amp;rdquo; option. Thence, you will get https://github.com/XYZ/REPO . Going to the right place in your computer We&amp;rsquo;ll assume that you&amp;rsquo;re saving all github files in some location such as the ones used below.</description>
     </item>
     
   </channel>
