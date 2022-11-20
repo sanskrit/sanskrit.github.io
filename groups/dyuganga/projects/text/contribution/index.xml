@@ -25,5 +25,18 @@
 Common setup Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username. Or use this machine: Replace If https://github.com/XYZ/REPO exists beforehand, please delete it by going to settings using your browser. Go to https://github.com/vishvAsa/REPO/fork and fork (there should be a &amp;ldquo;Create Fork&amp;rdquo; button). When forking, make sure to uncheck &amp;ldquo;master branch only&amp;rdquo; option. Thence, you will get https://github.com/XYZ/REPO . Going to the right place in your computer We&amp;rsquo;ll assume that you&amp;rsquo;re saving all github files in some location such as the ones used below.</description>
     </item>
     
+    <item>
+      <title>दोष-शुद्धि-सूचना-विचारः</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/contribution/doSha-shuddhi-sUchanA-vichAraH/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/contribution/doSha-shuddhi-sUchanA-vichAraH/</guid>
+      <description>आकर्षणाभ्यर्थने (pull request इत्यस्मिन्) केचिद् दोषा दृष्टाश् चेद् github-द्वारा सूचयिष्यन्ते। विपत्रसन्देशः प्राप्तः स्यात्।
+तद् विपत्रम् एवं किञ्चिद् दृश्येत -
+कस्मिंश् चिद् अपि सूचितस्य दोषस्य विषये विचार-विनिमयार्थम्, परिहार-सूचनार्थं चायं क्रमः।
+प्राप्ते विपत्रसन्देशे ऽधो वर्तमानम् &amp;ldquo;view it on GitHub&amp;rdquo; इति सङ्केतस्योपरि नुदतु। ततः किञ्चिद् जालक्षेत्रम् उद्घाटयिष्यते। तत्र, उचितस्थाने स्वदन्देशं लिखतु।
+अन्ततो गत्वा, दोषान् परिहृत्य, नुदित्वा (push कृत्वा), तस्मिन्नेव जालपुटे गत्वा, प्रतिदोषसूत्रम् &amp;ldquo;परिहृतम्&amp;rdquo; इति किञ्चत् समाधानं लिखित्वा प्रेषयेत्॥</description>
+    </item>
+    
   </channel>
 </rss>
