@@ -6,7 +6,7 @@ title = "दोष-शुद्धि-सूचना-विचारः"
 
 तद् विपत्रम्+++(=email)+++ एवं किञ्चिद् दृश्येत - 
 
-{{< figure src="../images/github-review-notification.png" title="" class="thumbnail">}}
+{{< figure src="../images/github-review-notification.png" title="" >}}
 
 कस्मिंश् चिद् अपि सूचितस्य दोषस्य विषये विचार-विनिमयार्थम्, परिहार-सूचनार्थं चायं क्रमः। 
 
