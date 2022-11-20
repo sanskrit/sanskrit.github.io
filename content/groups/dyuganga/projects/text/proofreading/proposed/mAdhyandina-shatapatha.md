@@ -2,8 +2,11 @@
 title = "mAdhyandina-shatapatha"
 +++
 
+## Status
+- Sponsorship promised by shrI virender.
+
 ## Goal and motivation
-The sasvara pATha of shatapatha-brAhmaNa (mAdhyandina) is valuable for students and practitioners of vedic ritual and language. We have a typed devanAgarI version which needs quite a bit of svara correction. If you can contribute labor or [money](https://vishvasa.github.io/interests/dharma-via-vishvas/) towards this, [please let me know](/groups/dyuganga/contact/). Else, please pass this on to those interested. The text, as usual, will remain freely available on internet for anyone to use and copy.
+The sasvara pATha of shatapatha-brAhmaNa (mAdhyandina) is valuable for students and practitioners of vedic ritual and language. We have a typed devanAgarI version which needs quite a bit of svara correction. The text, as usual, will remain freely available on internet for anyone to use and copy.
 
 ### Details
 Various editions of shatapatha-brAhmaNa have been published. Of them, ones by [Weber](https://archive.org/details/in.ernet.dli.2015.283077/page/n805/mode/2up?view=theater) and [vamshIdhara-shAstrI](https://archive.org/details/satapatha_bahmanam_with_sayana_bhashya__harisvami_bhashya_ed._vamsidhara_sastri_1940_gangavishnu/Satapatha%20Bahmanam%20with%20Sayana%20Bhashya%20%26%20Harisvami%20Bhashya%20Part%201%20-%20Vamsidhara%20Sastri%201940%20%28Gangavishnu%29/page/n505/mode/1up) are prominent. In reality, neither of them has perfect svara-s, though the latter is generally superior. So, ultimately one needs to compare both pATha-s, and use one's understanding of grammar, language and notation to pick the best reading. 
@@ -27,6 +30,6 @@ We would focus on steps 1 and 2 above. Of these, step 2 seems most laborious as 
 
 <details><summary>विस्तारः</summary>
 
-We expect to spend max 40 Rs per page (could be less - depends on how much effort is required); and there are about 1200 (effective) pages per edition; and there are two editions, one of which would be more labor intensive. So, estimate: between 60k and 96k.
+We expect to spend max x Rs per page (could be less - depends on how much effort is required); and there are about 1200 (effective) pages per edition; and there are two editions, one of which would be more labor intensive.
 </details>
 
