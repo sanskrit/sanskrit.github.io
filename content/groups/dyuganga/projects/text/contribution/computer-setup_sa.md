@@ -7,7 +7,9 @@ unicode_script = "devanagari"
 - अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्।
   - अथवैतत् प्रयुज्यतां यन्त्रम्: <input id="input_githubUserId" value="XYZ"></input><input id="input_repo" value="REPO"></input><button id="transformId" onclick="handleTransformIdBtnClick();">पाठम् परिवर्तय!!</button>
 - https://github.com/XYZ/REPO इति पूर्वम् एव वर्तते चेन् निष्कासयतु browser-उपयोगेन।
-- https://github.com/vishvAsa/REPO/fork इत्यत्र गत्वा पुनः fork इति करोतु। तत्करणे "master branch only" इति विकल्पं निराकरोतु। तेन https://github.com/XYZ/REPO इति किञ्चिल् लभ्यते।
+- https://github.com/vishvAsa/REPO/fork इत्यत्र गत्वा पुनः "Create Fork" इति नुदतु। तत्करणे "Copy the master branch only " इति विकल्पं निराकरोतु। तेन https://github.com/XYZ/REPO इति किञ्चिल् लभ्यते।
+
+![fork-creation](../images/fork-creation.png)
 
 ## सङ्गणके समीचीनस्थानप्राप्तिः
 - ततः समीचीनस्थाने terminal/ command-prompt इत्य् उद्घाट्य गच्छतु। यथा
@@ -57,8 +59,16 @@ hugo server --renderToDisk --config ./config_dev.toml
 ## सञ्चिकासु प्राप्तासु सत्सु कार्यम्
 - यदि कार्यम् REPO-content इत्यस्मिन् क्रियते
     - `git pull upstream content` इति परिवर्तनानि लभ्यानि।
+    - If using Atom: 
+      - Make necessary changes, 
+      - save (press Ctrl+S or use File menu), 
+      - click on Git (bottom right)
+      - click on stage-all
+      - Tyle a commit message, click on "commit"
+      - Finally push.
+      - Video demonstration - [here](https://youtu.be/xXpaUCvqpE4?list=PL63uIhJxWbgg3yJqzeh8kCxMo55YUX50F&t=1669) (२९:०० - ३२:००)।
     - ततो नुदित्वाकर्षणाभ्यर्थनं https://github.com/XYZ/REPO/tree/content इत्यत्र गत्वा प्रेषणीयम्।
-
+ 
 <div class="staticFilesInstruction">
 
 - यदि कार्यम् REPO-static इत्यस्मिन् क्रियते

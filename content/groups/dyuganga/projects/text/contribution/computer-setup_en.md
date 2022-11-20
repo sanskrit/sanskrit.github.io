@@ -9,14 +9,19 @@ title = "Computer setup (en)"
 - Below, replace _'XYZ'_ with your github username.
   - Or use this machine: <input id="input_githubUserId" value="XYZ"></input><input id="input_repo" value="REPO"></input><button id="transformId" onclick="handleTransformIdBtnClick();">Replace</button>
 - If https://github.com/XYZ/REPO exists beforehand, please delete it by going to settings using your browser.
-- Go to https://github.com/vishvAsa/REPO/fork and fork (there should be a "Create Fork" button). When forking, make sure to uncheck "master branch only" option. Thence, you will get https://github.com/XYZ/REPO .
+- Go to https://github.com/vishvAsa/REPO/fork and fork (there should be a "Create Fork" button). When forking, make sure to uncheck "Copy the master branch only" option. Thence, you will get https://github.com/XYZ/REPO .
+
+![fork-creation](../images/fork-creation.png)
 
 ## Going to the right place in your computer
 
-- We'll assume that you're saving all github files in some location such as the ones used below.
-- Please open terminal/ command-prompt in your computer.
-  - In Windows, do something like: `cd F:\Git\`
-  - In linux, do something like: `cd ~` .
+- We'll assume that you're saving all github files in some location (eg. `F:\Git\`). Please change the below accordingly.
+- Windows -
+  - navigate to the appropriate folder using "File explorer" or "My Computer"; Then right-click, select "Other options" if available, and finally click "Open Git Bash here".
+  - Or, open terminal/ command-prompt (go to start menu and search for "Command" or "terminal") and do something like: `cd F:\Git\`.
+- Linux
+  - do something like: `cd ~` .
+
 
 ## Getting the files
 
@@ -63,11 +68,21 @@ hugo server --renderToDisk --config ./config_dev.toml
 
 ## Submitting file changes
 
-- If you're chaning files in `REPO-content` :
+- If you're changing files in `REPO-content` :
   - Make sure that you're working on the latest files by running: `git pull upstream content` .
-  - Then, commit and push your changes (using atom editor, or github desktop or commands
-    like `git commit -am "Some message"` and `git push`).
+  - Then, commit and push your changes (using atom editor, or github desktop).
+    - `git pull upstream content` इति परिवर्तनानि लभ्यानि।
+    - If using Atom: 
+      - Make necessary changes, 
+      - save (press Ctrl+S or use File menu), 
+      - click on Git (bottom right)
+      - click on stage-all
+      - Tyle a commit message, click on "commit"
+      - Finally push.
+      - Video demonstration - [here](https://youtu.be/xXpaUCvqpE4?list=PL63uIhJxWbgg3yJqzeh8kCxMo55YUX50F&t=1669) (२९:०० - ३२:००)।
+    - If using command prompt/ terminal: `git commit -am "Some message"` and `git push`
   - Then go to https://github.com/XYZ/REPO/tree/content and send a pull request .
+  - Video demonstration - [here](https://youtu.be/xXpaUCvqpE4?list=PL63uIhJxWbgg3yJqzeh8kCxMo55YUX50F&t=1669) (२९:०० - ३२:००)। 
 
 <div class="staticFilesInstruction">
 
