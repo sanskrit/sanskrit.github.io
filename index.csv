@@ -3,9 +3,10 @@
 +Audio 	 groups/dyuganga/projects/audio/
 +Completed 	 groups/dyuganga/projects/text/proofreading/completed/
 +Contribute to Matturu मत्तूरुग्रामम् पुष्णाहि 	 groups/matturu/contribute/
-+Contribution 	 groups/dyuganga/projects/text/contribution/
++Contribution 	 groups/dyuganga/projects/text/git-workflow/
 +Data curation 	 groups/dyuganga/projects/data/
 +Dyugangā द्युगङ्गा 	 groups/dyuganga/
++Editing 	 groups/dyuganga/projects/text/proofreading/editing/
 +Genetic projects 	 groups/dyuganga/projects/data/genetic/
 +Hindu-vidyA groups 	 groups/hindu-vidyA/
 +Kannada audio 	 groups/dyuganga/projects/audio/kannada-audio/
@@ -22,7 +23,7 @@
 +काव्यम् 	 groups/dyuganga/projects/audio/kAvya-audio/
 +चित्रवेदाः chitravedAH 	 groups/dyuganga/projects/image/chitraveda/
 +चित्राणि 	 groups/dyuganga/images/
-+चित्राणि 	 groups/dyuganga/projects/text/contribution/images/
++चित्राणि 	 groups/dyuganga/projects/text/git-workflow/images/
 +चित्राणि 	 groups/dyuganga/projects/text/proofreading/images/
 +नरसिंहाचार्यः - परिचयः 	 people/i_narasimhaachaarya/
 +शालाः Schools 	 groups/dyuganga/projects/schools/
@@ -34,9 +35,10 @@ Apastamba gRhya sUtra commentaries 	 groups/dyuganga/projects/text/proofreading/
 aShTAdhyAyI vAsu commentary 	 groups/dyuganga/projects/text/proofreading/completed/aShTAdhyAyi-vAsu-commentary/
 Categories 	 categories/
 Computer 	 groups/dyuganga/internal/computer/
-Computer setup 	 groups/dyuganga/projects/text/contribution/computer-setup_sa/
-Computer setup (en) 	 groups/dyuganga/projects/text/contribution/computer-setup_en/
+Computer setup 	 groups/dyuganga/projects/text/git-workflow/computer-setup_sa/
+Computer setup (en) 	 groups/dyuganga/projects/text/git-workflow/computer-setup_en/
 Contact सम्पर्कः 	 groups/dyuganga/contact/
+Editing 	 groups/dyuganga/projects/text/proofreading/editing/markdown/
 Funders 	 funders/
 getting_started 	 tags/getting_started/
 Groups 	 groups/directory/
@@ -47,7 +49,6 @@ mahAbhArata gItA press - present with audio 	 groups/dyuganga/projects/text/proo
 Matturu History मत्तूरुग्रामः - इतिहासः 	 groups/matturu/history/
 Matturu Veda school मत्तूरु-ग्राम-वेद-पाठशाला 	 groups/matturu/contribute/veda-shaalaa/
 OCR on request 	 groups/dyuganga/projects/text/ocr_on_request/
-Procedure (EN) 	 groups/dyuganga/projects/text/proofreading/procedure_en/
 Search Results 	 search/
 suhAsa wish list 	 groups/dyuganga/projects/text/proofreading/proposed/suhAsa-wish-list/
 Tags 	 tags/
@@ -64,7 +65,7 @@ Why volunteer as a proofreader? 	 groups/dyuganga/projects/text/proofreading/Why
 तत्तद्व्याख्योक्तकोशेष्वजादिपदानि 	 people/i_narasimhaachaarya/upayuktaamsha/tattadvyakhyoktakosesvajadipadani/
 तिलसी-कोश-शोधन-क्रिया 	 groups/dyuganga/projects/text/proofreading/completed/tulasI-kosha/
 त्रिरूपकोशः 	 people/i_narasimhaachaarya/shriiharshakosha/tri/
-दोष-शुद्धि-सूचना-विचारः 	 groups/dyuganga/projects/text/contribution/doSha-shuddhi-sUchanA-vichAraH/
+दोष-शुद्धि-सूचना-विचारः 	 groups/dyuganga/projects/text/git-workflow/doSha-shuddhi-sUchanA-vichAraH/
 द्विरूपादिकोशः 	 people/i_narasimhaachaarya/shriiharshakosha/dvi/
 नरसिंहाचार्यः - परिचयः 	 people/i_narasimhaachaarya/upayuktaamsha/upayukta-shlokaah/
 पञ्चरूपपद्धतिः 	 people/i_narasimhaachaarya/shriiharshakosha/pancha/

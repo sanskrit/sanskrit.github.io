@@ -68,19 +68,19 @@ The content is currently displayed at https://ashtadhyayi.github.io/suutra/1.1/1
     
     <item>
       <title>Computer setup</title>
-      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/contribution/computer-setup_sa/</link>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/computer-setup_sa/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/contribution/computer-setup_sa/</guid>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/computer-setup_sa/</guid>
       <description>समानं कर्म अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! https://github.com/XYZ/REPO इति पूर्वम् एव वर्तते चेन् निष्कासयतु browser-उपयोगेन। https://github.com/vishvAsa/REPO/fork इत्यत्र गत्वा पुनः &amp;ldquo;Create Fork&amp;rdquo; इति नुदतु। तत्करणे &amp;ldquo;Copy the master branch only &amp;quot; इति विकल्पं निराकरोतु। तेन https://github.com/XYZ/REPO इति किञ्चिल् लभ्यते। सङ्गणके समीचीनस्थानप्राप्तिः ततः समीचीनस्थाने terminal/ command-prompt इत्य् उद्घाट्य गच्छतु। यथा cd F:\Git\ इति windows पक्षे cd ~ इति linux पक्षे सञ्चिकाप्राप्तिः सङ्गणके समीचीनस्थानप्राप्तिः इति भागे यद् उक्तं तत् कृत्वा git clone --single-branch --depth 1 --branch master https://github.</description>
     </item>
     
     <item>
       <title>Computer setup (en)</title>
-      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/contribution/computer-setup_en/</link>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/computer-setup_en/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/contribution/computer-setup_en/</guid>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/computer-setup_en/</guid>
       <description>संस्कृतेन सूचना द्रष्टुम् अत्र गम्यताम् ।
 Common setup Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username. Or use this machine: Replace If https://github.com/XYZ/REPO exists beforehand, please delete it by going to settings using your browser. Go to https://github.com/vishvAsa/REPO/fork and fork (there should be a &amp;ldquo;Create Fork&amp;rdquo; button). When forking, make sure to uncheck &amp;ldquo;Copy the master branch only&amp;rdquo; option. Thence, you will get https://github.com/XYZ/REPO . Going to the right place in your computer We&amp;rsquo;ll assume that you&amp;rsquo;re saving all github files in some location (eg.</description>
     </item>
@@ -93,6 +93,15 @@ Common setup Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username.
       <guid>https://sanskrit.github.io/groups/dyuganga/contact/</guid>
       <description>Short URL: https://rebrand.ly/dyugangA Please contact Vishvas / विश्वासो वासुकिजः for more info. Especially, please see Dharma via Vishvas page. Social web (Updates and sponsorship opportunities) Google groups/ email https://groups.google.com/g/dyuganga. द्युगङ्गा-कार्यगणस्य वार्ता अत्र । Twitter: https://twitter.com/dyugangaa Facebook: https://www.facebook.com/dyugangA Geo We are located in C Block, sahakAra nagara. Privacy policy We don&amp;rsquo;t sell or share information we collect to third party businesses.
 Refund policy Stripe forces us to have a &amp;ldquo;refund policy&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Editing</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/markdown/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/markdown/</guid>
+      <description>General General reference: MD Guide. italics - _italics_. Bold - **Bold**. Headings - ## Top heading ### Subheading #### Subsubheading conent Lists - item 1 - item 1.1 - item 2 - item 2.1 - item 2.2 - item 2.2.1 Spacing Paragraphs are separated by empty lines. Please remove empty spaces at the beginning of lines. As far as possible, prefer paragraphs without any line breaks (&amp;ldquo;Enter&amp;rdquo; keystrokes). Just use word-wrap in your editor program.</description>
     </item>
     
     <item>
@@ -180,16 +189,6 @@ Research and publication The talent of the village is capable serious research a
       <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/ocr_on_request/</guid>
       <description>For requesters File a request here.
 For volunteers What is the workflow for an OCR volunteer? First off - you should have access to OCR technology, and you should be willing to (learn to) use it. Look for requests on the issues page. Assign a request to yourself and work on it. Once you get the OCR-ed text, we need to pass it on to proof-reading and to early users/ readers.</description>
-    </item>
-    
-    <item>
-      <title>Procedure (EN)</title>
-      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/procedure_en/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/procedure_en/</guid>
-      <description>Contribution levels Our expectation: when we read the corrected text, we expect to have atleast the same experience as reading the original pdf (if not better). Even otherwise, if you leave the text in a significantly better state than earlier, it is valuable.
-Top level: Perfect text and formatting. Next level: Perfect text, with basic formatting (described below). Reader won&amp;rsquo;t feel particular urge to consult the source most of the time.</description>
     </item>
     
     <item>
@@ -365,10 +364,10 @@ Sponsors Vishvas family funds नियन्ता विश्वास अप
     
     <item>
       <title>दोष-शुद्धि-सूचना-विचारः</title>
-      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/contribution/doSha-shuddhi-sUchanA-vichAraH/</link>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/doSha-shuddhi-sUchanA-vichAraH/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/contribution/doSha-shuddhi-sUchanA-vichAraH/</guid>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/doSha-shuddhi-sUchanA-vichAraH/</guid>
       <description>आकर्षणाभ्यर्थने (pull request इत्यस्मिन्) केचिद् दोषा दृष्टाश् चेद् github-द्वारा सूचयिष्यन्ते। विपत्रसन्देशः प्राप्तः स्यात्।
 तद् विपत्रम् एवं किञ्चिद् दृश्येत -
 कस्मिंश् चिद् अपि सूचितस्य दोषस्य विषये विचार-विनिमयार्थम्, परिहार-सूचनार्थं चायं क्रमः।

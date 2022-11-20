@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>&#43;Contribution on संस्कृतजालक्षेत्रम्</title>
-    <link>https://sanskrit.github.io/groups/dyuganga/projects/text/contribution/</link>
+    <link>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/</link>
     <description>Recent content in &#43;Contribution on संस्कृतजालक्षेत्रम्</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://sanskrit.github.io/groups/dyuganga/projects/text/contribution/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Computer setup</title>
-      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/contribution/computer-setup_sa/</link>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/computer-setup_sa/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/contribution/computer-setup_sa/</guid>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/computer-setup_sa/</guid>
       <description>समानं कर्म अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! https://github.com/XYZ/REPO इति पूर्वम् एव वर्तते चेन् निष्कासयतु browser-उपयोगेन। https://github.com/vishvAsa/REPO/fork इत्यत्र गत्वा पुनः &amp;ldquo;Create Fork&amp;rdquo; इति नुदतु। तत्करणे &amp;ldquo;Copy the master branch only &amp;quot; इति विकल्पं निराकरोतु। तेन https://github.com/XYZ/REPO इति किञ्चिल् लभ्यते। सङ्गणके समीचीनस्थानप्राप्तिः ततः समीचीनस्थाने terminal/ command-prompt इत्य् उद्घाट्य गच्छतु। यथा cd F:\Git\ इति windows पक्षे cd ~ इति linux पक्षे सञ्चिकाप्राप्तिः सङ्गणके समीचीनस्थानप्राप्तिः इति भागे यद् उक्तं तत् कृत्वा git clone --single-branch --depth 1 --branch master https://github.</description>
     </item>
     
     <item>
       <title>Computer setup (en)</title>
-      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/contribution/computer-setup_en/</link>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/computer-setup_en/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/contribution/computer-setup_en/</guid>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/computer-setup_en/</guid>
       <description>संस्कृतेन सूचना द्रष्टुम् अत्र गम्यताम् ।
 Common setup Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username. Or use this machine: Replace If https://github.com/XYZ/REPO exists beforehand, please delete it by going to settings using your browser. Go to https://github.com/vishvAsa/REPO/fork and fork (there should be a &amp;ldquo;Create Fork&amp;rdquo; button). When forking, make sure to uncheck &amp;ldquo;Copy the master branch only&amp;rdquo; option. Thence, you will get https://github.com/XYZ/REPO . Going to the right place in your computer We&amp;rsquo;ll assume that you&amp;rsquo;re saving all github files in some location (eg.</description>
     </item>
     
     <item>
       <title>दोष-शुद्धि-सूचना-विचारः</title>
-      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/contribution/doSha-shuddhi-sUchanA-vichAraH/</link>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/doSha-shuddhi-sUchanA-vichAraH/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/contribution/doSha-shuddhi-sUchanA-vichAraH/</guid>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/doSha-shuddhi-sUchanA-vichAraH/</guid>
       <description>आकर्षणाभ्यर्थने (pull request इत्यस्मिन्) केचिद् दोषा दृष्टाश् चेद् github-द्वारा सूचयिष्यन्ते। विपत्रसन्देशः प्राप्तः स्यात्।
 तद् विपत्रम् एवं किञ्चिद् दृश्येत -
 कस्मिंश् चिद् अपि सूचितस्य दोषस्य विषये विचार-विनिमयार्थम्, परिहार-सूचनार्थं चायं क्रमः।

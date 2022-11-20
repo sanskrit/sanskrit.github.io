@@ -12,11 +12,13 @@
   </url><url>
     <loc>https://sanskrit.github.io/groups/matturu/contribute/</loc>
   </url><url>
-    <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/contribution/</loc>
+    <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/</loc>
   </url><url>
     <loc>https://sanskrit.github.io/groups/dyuganga/projects/data/</loc>
   </url><url>
     <loc>https://sanskrit.github.io/groups/dyuganga/</loc>
+  </url><url>
+    <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/</loc>
   </url><url>
     <loc>https://sanskrit.github.io/groups/dyuganga/projects/data/genetic/</loc>
   </url><url>
@@ -50,7 +52,7 @@
   </url><url>
     <loc>https://sanskrit.github.io/groups/dyuganga/images/</loc>
   </url><url>
-    <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/contribution/images/</loc>
+    <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/images/</loc>
   </url><url>
     <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/images/</loc>
   </url><url>
@@ -74,11 +76,13 @@
   </url><url>
     <loc>https://sanskrit.github.io/groups/dyuganga/internal/computer/</loc>
   </url><url>
-    <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/contribution/computer-setup_sa/</loc>
+    <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/computer-setup_sa/</loc>
   </url><url>
-    <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/contribution/computer-setup_en/</loc>
+    <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/computer-setup_en/</loc>
   </url><url>
     <loc>https://sanskrit.github.io/groups/dyuganga/contact/</loc>
+  </url><url>
+    <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/markdown/</loc>
   </url><url>
     <loc>https://sanskrit.github.io/funders/</loc>
   </url><url>
@@ -99,8 +103,6 @@
     <loc>https://sanskrit.github.io/groups/matturu/contribute/veda-shaalaa/</loc>
   </url><url>
     <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/ocr_on_request/</loc>
-  </url><url>
-    <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/procedure_en/</loc>
   </url><url>
     <loc>https://sanskrit.github.io/search/</loc>
     <priority>0.1</priority>
@@ -135,7 +137,7 @@
   </url><url>
     <loc>https://sanskrit.github.io/people/i_narasimhaachaarya/shriiharshakosha/tri/</loc>
   </url><url>
-    <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/contribution/doSha-shuddhi-sUchanA-vichAraH/</loc>
+    <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/doSha-shuddhi-sUchanA-vichAraH/</loc>
   </url><url>
     <loc>https://sanskrit.github.io/people/i_narasimhaachaarya/shriiharshakosha/dvi/</loc>
   </url><url>
