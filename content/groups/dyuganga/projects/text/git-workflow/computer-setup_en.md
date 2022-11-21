@@ -11,9 +11,20 @@ title = "Computer setup (en)"
 - If https://github.com/XYZ/REPO exists beforehand, please delete it by going to settings using your browser.
 - Go to https://github.com/vishvAsa/REPO/fork and fork (there should be a "Create Fork" button). When forking, make sure to uncheck "Copy the master branch only" option. Thence, you will get https://github.com/XYZ/REPO .
 
-![fork-creation](../images/fork-creation.png)
+{{< figure src="../images/fork-creation.png" title="" >}}
 
-## Going to the right place in your computer
+## Online work
+
+- Go to [https://vscode.dev/github/XYZ/REPO/tree/content](https://vscode.dev/github/XYZ/REPO/tree/content), navigate to the files you want to change and make your edits. You save changes by typing a "Commit message" and commiting + pushing.
+
+{{< figure src="../images/vscode-commit.png" title="" >}}
+
+PS: You can also change Font size, colors etc. by going to settings. 
+
+{{< figure src="../images/vscode-settings-font.png" title="">}}
+
+## Offline Work
+### Going to the right place in your computer
 
 - We'll assume that you're saving all github files in some location (eg. `F:\Git\`). Please change the below accordingly.
 - Windows -
@@ -23,7 +34,7 @@ title = "Computer setup (en)"
   - do something like: `cd ~` .
 
 
-## Getting the files
+### Getting the files
 
 - Having followed "Going to the right place in your computer", doe the below
 
@@ -51,7 +62,7 @@ cd ..
 ```
 </div>
 
-## Running hugo
+### Running hugo
 
 - Having followed "Going to the right place in your computer", and having retrieved the files as described above,
 - do the below to run `hugo` to build the website on your computer (so that you can verify that everything appears as it
