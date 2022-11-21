@@ -77,7 +77,7 @@ cd ../..
 hugo server --renderToDisk --config ./config_dev.toml
 ```
 
-## Submitting file changes
+### Pushing file changes
 
 - If you're changing files in `REPO-content` :
   - Make sure that you're working on the latest files by running: `git pull upstream content` .
@@ -104,6 +104,7 @@ hugo server --renderToDisk --config ./config_dev.toml
   - Then go to https://github.com/XYZ/REPO/tree/static_files and send a pull request .
 </div>
 
+## Sending pull request
 - Common steps
   - Text like `1 commit ahead` indicates that you have something to contribute. 
   - Find and use the "Contribute" link.
