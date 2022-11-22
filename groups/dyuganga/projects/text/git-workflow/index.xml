@@ -12,7 +12,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/computer-setup_sa/</guid>
-      <description>समानं कर्म अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! https://github.com/XYZ/REPO इति पूर्वम् एव वर्तते चेन् निष्कासयतु browser-उपयोगेन। https://github.com/vishvAsa/REPO/fork इत्यत्र गत्वा पुनः &amp;ldquo;Create Fork&amp;rdquo; इति नुदतु। तत्करणे &amp;ldquo;Copy the master branch only &amp;quot; इति विकल्पं निराकरोतु। तेन https://github.com/XYZ/REPO इति किञ्चिल् लभ्यते। सङ्गणके समीचीनस्थानप्राप्तिः ततः समीचीनस्थाने terminal/ command-prompt इत्य् उद्घाट्य गच्छतु। यथा cd F:\Git\ इति windows पक्षे cd ~ इति linux पक्षे सञ्चिकाप्राप्तिः सङ्गणके समीचीनस्थानप्राप्तिः इति भागे यद् उक्तं तत् कृत्वा git clone --single-branch --depth 1 --branch master https://github.</description>
+      <description>समानं कर्म अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! https://github.com/XYZ/REPO इति पूर्वम् एव वर्तते चेन् निष्कासयतु browser-उपयोगेन। https://github.com/vishvAsa/REPO/fork इत्यत्र गत्वा पुनः &amp;ldquo;Create Fork&amp;rdquo; इति नुदतु। तत्करणे &amp;ldquo;Copy the master branch only &amp;quot; इति विकल्पं निराकरोतु। तेन https://github.com/XYZ/REPO इति किञ्चिल् लभ्यते। fork-creation Online work Go to https://vscode.dev/github/XYZ/REPO/tree/content, navigate to the files you want to change and make your edits. You save changes by typing a &amp;ldquo;Commit message&amp;rdquo; and commiting + pushing.</description>
     </item>
     
     <item>
