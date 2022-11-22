@@ -18,6 +18,9 @@ title = "Computer setup (en)"
 - Go to [https://vscode.dev/github/XYZ/REPO/tree/content](https://vscode.dev/github/XYZ/REPO/tree/content), navigate to the files you want to change and make your edits. You save changes by typing a "Commit message" and commiting + pushing.
 
 {{< figure src="../images/vscode-commit.png" title="" >}}
+- Video demonstrations: 
+  - [here, till 7:55](https://youtu.be/yKLyfqL0A4M?t=462)
+  - [Inserting Headings and saving](https://www.youtube.com/watch?v=BlOavkB2ooU)
 
 PS: You can also change Font size, colors etc. by going to settings. 
 
@@ -105,8 +108,11 @@ hugo server --renderToDisk --config ./config_dev.toml
 </div>
 
 ## Sending pull request
-- Common steps
-  - Text like `1 commit ahead` indicates that you have something to contribute. 
-  - Find and use the "Contribute" link.
+- Open the appropriate github link as below
+  - If you're working on content branch, it will be https://github.com/XYZ/REPO/tree/content
+  - If you're working on static_files branch, it will be https://github.com/XYZ/REPO/tree/static_files
+- Text like `1 commit ahead` indicates that you have something to contribute. 
+- Find and use the "Contribute" link.
+- Video demonstration: [here, starting at 7:55](https://youtu.be/yKLyfqL0A4M?t=462)
 
 <script src="../contribution-page-customizer.js"></script>

@@ -9,14 +9,28 @@ unicode_script = "devanagari"
 - https://github.com/XYZ/REPO इति पूर्वम् एव वर्तते चेन् निष्कासयतु browser-उपयोगेन।
 - https://github.com/vishvAsa/REPO/fork इत्यत्र गत्वा पुनः "Create Fork" इति नुदतु। तत्करणे "Copy the master branch only " इति विकल्पं निराकरोतु। तेन https://github.com/XYZ/REPO इति किञ्चिल् लभ्यते।
 
-![fork-creation](../images/fork-creation.png)
+{{< figure src="../images/fork-creation.png" title="" >}}
 
-## सङ्गणके समीचीनस्थानप्राप्तिः
+## Online work
+
+- Go to [https://vscode.dev/github/XYZ/REPO/tree/content](https://vscode.dev/github/XYZ/REPO/tree/content), navigate to the files you want to change and make your edits. You save changes by typing a "Commit message" and commiting + pushing.
+
+{{< figure src="../images/vscode-commit.png" title="" >}}
+- Video demonstrations:
+  - [here, till 7:55](https://youtu.be/yKLyfqL0A4M?t=462)
+  - [Inserting Headings and saving](https://www.youtube.com/watch?v=BlOavkB2ooU)
+
+PS: You can also change Font size, colors etc. by going to settings.
+
+{{< figure src="../images/vscode-settings-font.png" title="">}}
+
+## Offline work
+### सङ्गणके समीचीनस्थानप्राप्तिः
 - ततः समीचीनस्थाने terminal/ command-prompt इत्य् उद्घाट्य गच्छतु। यथा
   - `cd F:\Git\` इति windows पक्षे
   - `cd ~` इति linux पक्षे
 
-## सञ्चिकाप्राप्तिः
+### सञ्चिकाप्राप्तिः
 - सङ्गणके समीचीनस्थानप्राप्तिः इति भागे यद् उक्तं तत् कृत्वा
 
 ```
@@ -44,7 +58,7 @@ cd ..
 ```
 </div>
 
-## hugo-चालनम्
+### hugo-चालनम्
 - सङ्गणके समीचीनस्थानप्राप्तिः इति भागे यद् उक्तं तत् कृत्वा
 
 ```
@@ -56,7 +70,7 @@ cd ../..
 hugo server --renderToDisk --config ./config_dev.toml
 ```
 
-## सञ्चिकासु प्राप्तासु सत्सु कार्यम्
+### सञ्चिकासु प्राप्तासु सत्सु कार्यम्
 - यदि कार्यम् REPO-content इत्यस्मिन् क्रियते
     - `git pull upstream content` इति परिवर्तनानि लभ्यानि।
     - If using Atom: 
@@ -76,8 +90,12 @@ hugo server --renderToDisk --config ./config_dev.toml
     - ततो नुदित्वाकर्षणाभ्यर्थनं https://github.com/XYZ/REPO/tree/static_files इत्यत्र गत्वा प्रेषणीयम्।
 </div>
 
-- अकर्षणाभ्यर्थन-प्रेषण-विधानं समानम्
-  - `1 commit ahead` इतीव किञ्चिद् दर्शितं चेत् प्रेषयितुं किञ्चिद् अस्तीत्य् अर्थः। 
-  - "Contribute" इति कश्चन सङ्केतो दृश्येत। तत्र नुदनीयम्। 
-
+## अकर्षणाभ्यर्थन-प्रेषण-विधानं समानम्
+- Open the appropriate github link as below
+  - If you're working on content branch, it will be https://github.com/XYZ/REPO/tree/content
+  - If you're working on static_files branch, it will be https://github.com/XYZ/REPO/tree/static_files
+- `1 commit ahead` इतीव किञ्चिद् दर्शितं चेत् प्रेषयितुं किञ्चिद् अस्तीत्य् अर्थः। 
+- "Contribute" इति कश्चन सङ्केतो दृश्येत। तत्र नुदनीयम्। 
+- Video demonstration: [here, starting at 7:55](https://youtu.be/yKLyfqL0A4M?t=462)
+- 
 <script src="../contribution-page-customizer.js"></script>
