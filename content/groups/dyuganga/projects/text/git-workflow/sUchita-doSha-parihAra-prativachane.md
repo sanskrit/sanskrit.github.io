@@ -11,6 +11,13 @@ title = "सूचित-दोष--परिहार-प्रतिवचन-
 
 
 ## आकर्षणाभ्यर्थन-प्राप्तिः Going to the pull request
+<details><summary>विस्तारः (द्रष्टुं नोद्यम्)</summary>
+
+- अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्।
+  - अथवैतत् प्रयुज्यतां यन्त्रम्: <input id="input_githubUserId" value="XYZ"></input><input id="input_repo" value="REPO"></input><button id="transformId" onclick="handleTransformIdBtnClick();">पाठम् परिवर्तय!!</button>
+</details>
+
+
 - Go to your github page, for example: https://github.com/XYZ/REPO/content
 - Find and click on "Contribute", "open pull request", "view pull request" in order.
 
