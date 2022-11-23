@@ -10,7 +10,7 @@ title = "सूचित-दोष--परिहार-प्रतिवचन-
 - अन्यथा परस्परप्रतीक्षया कार्यं विलम्ब्येत।)
 
 
-## आकर्षणाभ्यर्थन-प्राप्तिः Gouing to the pull request
+## आकर्षणाभ्यर्थन-प्राप्तिः Going to the pull request
 - Go to your github page, for example: https://github.com/XYZ/REPO/content
 - Find and click on "Contribute", "open pull request", "view pull request" in order.
 
