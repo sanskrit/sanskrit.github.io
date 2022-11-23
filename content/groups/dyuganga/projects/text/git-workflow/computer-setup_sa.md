@@ -97,5 +97,6 @@ hugo server --renderToDisk --config ./config_dev.toml
 - `1 commit ahead` इतीव किञ्चिद् दर्शितं चेत् प्रेषयितुं किञ्चिद् अस्तीत्य् अर्थः। 
 - "Contribute" इति कश्चन सङ्केतो दृश्येत। तत्र नुदनीयम्। 
 - Video demonstration: [here, starting at 7:55](https://youtu.be/yKLyfqL0A4M?t=462)
-- 
+
 <script src="../contribution-page-customizer.js"></script>
+
