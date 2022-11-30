@@ -8,7 +8,7 @@ title = "Computer setup (en)"
 
 - Below, replace _'XYZ'_ with your github username.
   - Or use this machine: <input id="input_githubUserId" value="XYZ"></input><input id="input_repo" value="REPO"></input><button id="transformId" onclick="handleTransformIdBtnClick();">Replace</button>
-- If https://github.com/XYZ/REPO exists beforehand, please delete it by going to settings using your browser.
+- If https://github.com/XYZ/REPO exists beforehand, please delete it by going to settings using your browser (https://github.com/XYZ/REPO/settings#danger-zone इत्यत्र गत्वा, पृष्ठस्यान्तं गत्वा "Delete this repository" इति करोतु।) .
 - Go to https://github.com/vishvAsa/REPO/fork and fork (there should be a "Create Fork" button). When forking, make sure to uncheck "Copy the master branch only" option. Thence, you will get https://github.com/XYZ/REPO .
 
 {{< figure src="../images/fork-creation.png" title="" >}}
