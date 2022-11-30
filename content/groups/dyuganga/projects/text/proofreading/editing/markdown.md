@@ -42,7 +42,7 @@ Often, footnotes which appear in the bottom of the page in a physical book, appe
 
 Consider the footnote in the image below (right click and open it in a new window for clearer view):
 
-{{< figure src="../images/kANe-footnote-example.png" title="" class="thumbnail">}}
+{{< figure src="../../images/kANe-footnote-example.png" title="" class="thumbnail">}}
 
 Here is how it should be presented in the markdown file:
 

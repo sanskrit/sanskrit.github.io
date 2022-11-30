@@ -7,7 +7,7 @@ unicode_script = "devanagari"
 - अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्।
   - अथवैतत् प्रयुज्यतां यन्त्रम्: <input id="input_githubUserId" value="XYZ"></input><input id="input_repo" value="REPO"></input><button id="transformId" onclick="handleTransformIdBtnClick();">पाठम् परिवर्तय!!</button>
 - https://github.com/XYZ/REPO इति पूर्वम् एव वर्तते चेन् निष्कासयतु browser-उपयोगेन (https://github.com/XYZ/REPO/settings#danger-zone इत्यत्र गत्वा, पृष्ठस्यान्तं गत्वा "Delete this repository" इति करोतु।) ।
-- https://github.com/vishvAsa/REPO/fork इत्यत्र गत्वा पुनः "Create Fork" इति नुदतु। तत्करणे "Copy the master branch only " इति विकल्पं निराकरोतु। तेन https://github.com/XYZ/REPO इति किञ्चिल् लभ्यते।
+- https://github.com/vishvAsa/REPO/fork इत्यत्र गत्वा पुनः "Create Fork" इति नुदतु। तत्करणे "Copy the master branch only " इति विकल्पं निराकरोतु (सावधानम्! न विस्मरतु!! चित्रम् ईक्षताम् अधः। )। तेन https://github.com/XYZ/REPO इति किञ्चिल् लभ्यते।
 
 {{< figure src="../images/fork-creation.png" title="" >}}
 
