@@ -73,7 +73,7 @@ The content is currently displayed at https://ashtadhyayi.github.io/suutra/1.1/1
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/computer-setup_sa/</guid>
-      <description>समानं कर्म अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! https://github.com/XYZ/REPO इति पूर्वम् एव वर्तते चेन् निष्कासयतु browser-उपयोगेन (https://github.com/XYZ/REPO/settings#danger-zone इत्यत्र गत्वा, पृष्ठस्यान्तं गत्वा &amp;ldquo;Delete this repository&amp;rdquo; इति करोतु।) । https://github.com/vishvAsa/REPO/fork इत्यत्र गत्वा पुनः &amp;ldquo;Create Fork&amp;rdquo; इति नुदतु। तत्करणे &amp;ldquo;Copy the master branch only &amp;quot; इति विकल्पं निराकरोतु (सावधानम्! न विस्मरतु!! चित्रम् ईक्षताम् अधः। )। तेन https://github.com/XYZ/REPO इति किञ्चिल् लभ्यते। fork-creation Online work Go to https://vscode.</description>
+      <description>समानं कर्म अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! https://github.com/XYZ/REPO इति पूर्वम् एव वर्तते चेन् निष्कासयतु browser-उपयोगेन (https://github.com/XYZ/REPO/settings#danger-zone इत्यत्र गत्वा, पृष्ठस्यान्तं गत्वा &amp;ldquo;Delete this repository&amp;rdquo; इति करोतु।) । https://github.com/vishvAsa/REPO/fork इत्यत्र गत्वा पुनः &amp;ldquo;Create Fork&amp;rdquo; इति नुदतु। तत्करणे &amp;ldquo;Copy the master branch only &amp;quot; इति विकल्पं निराकरोतु (सावधानम्! न विस्मरतु!! चित्रम् ईक्षताम् अधः। )। तेन https://github.com/XYZ/REPO/tree/content इति किञ्चिल् लभ्यते। fork-creation Online work Go to https://vscode.</description>
     </item>
     
     <item>
