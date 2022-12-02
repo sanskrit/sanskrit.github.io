@@ -18,7 +18,7 @@ title = "सूचित-दोष--परिहार-प्रतिवचन-
 </details>
 
 
-- Go to your github page, for example: https://github.com/XYZ/REPO/content
+- Go to your github page, for example: https://github.com/XYZ/REPO/tree/content
 - Find and click on "Contribute", "open pull request", "view pull request" in order.
 
 <details><summary>Via Email</summary>

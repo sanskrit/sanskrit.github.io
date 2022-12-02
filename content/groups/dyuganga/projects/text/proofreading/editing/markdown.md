@@ -3,6 +3,8 @@ title = "Editing"
 +++
 
 ## General
+- Longing video intro (markdown format check, quotes, headers, footnotes, new lines within paragraph,): [R202212](https://youtu.be/opLrf8kAazA)
+- Testing formatting: Use http://dillinger.io 
 - General reference: [MD Guide](https://www.markdownguide.org/extended-syntax/#footnotes).
 - _italics_ - `_italics_`. **Bold** - `**Bold**`.
 - Headings -
@@ -26,16 +28,38 @@ conent
 ## Spacing
 - Paragraphs are separated by empty lines. Please remove empty spaces at the beginning of lines.
 - As far as possible, prefer paragraphs without any line breaks ("Enter" keystrokes). Just use word-wrap in your editor program.
+- Of course, some paragraphs have multiple lines (example - halves of a shloka). In such cases, there should be TWO SPACES at the end of each line. For example:
+  - ```markdown
+  line 1 ending with 2 spaces  
+  line 2 in same paragraph.
+  ```
 
 
 ## Quotes
-- Please don’t use backticks (`). Use only ‘ or “.
-- Ensure that quotes match (for example: 'the wife of the king, the man of _Devadatta_'. Or ”the wife of the king, the man of _Devadatta_”.). 
+### Long quotes
+Example:
+```
+… यथाऽऽहुः —
+
+> (२) सुगतो यदि धर्मज्ञः कपिलो नेति का प्रमा।
+> तावुभौ यदि धर्मज्ञौ मतभेदः कथं तयोः ॥ 
+
+इति ।
+
+```
+
+### Short quotes
+- Please don’t use backticks (\`). Use only `‘` or `“`.
+- Ensure that quotes match (for example: `'the wife of the king, the man of _Devadatta_'`. Or `”the wife of the king, the man of _Devadatta_”`.). 
 - Please make sure that the quotes are appropriately positioned - for example, 
   - this is bad: `'similar, '_ûnartha_, 'words, '_kalaha_ 'quarrel,'`
   - this is better: `'similar,' _ûnartha_, 'words,' _kalaha_ 'quarrel,'`
   - and this is best: `'similar', _ûnartha_, 'words', _kalaha_ 'quarrel',`. 
   - We're NOT OK with the "bad" punctuation, but ok with "better" and prefer "best" above.
+
+
+
+
 
 ## Footnotes
 Often, footnotes which appear in the bottom of the page in a physical book, appear without separation in raw OCR text on screen. This confuses the reader. Hence, it should be properly formatted.
@@ -70,17 +94,4 @@ Observe:
 - Please generate tables using [this online tool](https://www.tablesgenerator.com/markdown_tables). तत्र फलकं रचयतु। ततः "Generate"  इति नुदतु। ततः "Copy to clipboard" इति कृत्वा सम्पाद्यमानसञ्चिकायां लिम्पतु (paste करोतु)।
 - Consider ditto marks or identical text associated with other text in a list (example [here](https://archive.org/details/ashtadhyayi/ashtadhyayi2?view=theater#page/n31/mode/1up)): Just repeat the text.
 - In case of other cases/ confusion, please contact us with a link to the page with the table/ chart/ figure. Don’t hesitate to ask.
-
-
-## Long quotes
-Example:
-```
-… यथाऽऽहुः —
-
-> (२) सुगतो यदि धर्मज्ञः कपिलो नेति का प्रमा।
-> तावुभौ यदि धर्मज्ञौ मतभेदः कथं तयोः ॥ 
-
-इति ।
-
-```
 
