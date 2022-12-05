@@ -28,8 +28,8 @@ conent
 ## Spacing
 - Paragraphs are separated by empty lines. Please remove empty spaces at the beginning of lines.
 - As far as possible, prefer paragraphs without any line breaks ("Enter" keystrokes). Just use word-wrap in your editor program.
-- Of course, some paragraphs have multiple lines (example - halves of a shloka). In such cases, there should be TWO SPACES at the end of each line. For example:
-  - ```markdown
+- Of course, some paragraphs have multiple lines (example - halves of a shloka). In such cases, there should be TWO SPACES at the end of each line. For example:  
+  ```
   line 1 ending with 2 spaces  
   line 2 in same paragraph.
   ```
