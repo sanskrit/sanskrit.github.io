@@ -27,7 +27,7 @@ conent
 
 ## Spacing
 - Paragraphs are separated by empty lines. Please remove empty spaces at the beginning of lines.
-- As far as possible, prefer paragraphs without any line breaks ("Enter" keystrokes). Just use word-wrap in your editor program.
+  - As far as possible, prefer paragraphs without any line breaks ("Enter" keystrokes). Just use word-wrap in your editor program.
 - Of course, some paragraphs have multiple lines (example - halves of a shloka). In such cases, there should be TWO SPACES at the end of each line. For example:  
   ```
   line 1 ending with 2 spaces  
@@ -36,6 +36,8 @@ conent
 
 
 ## Quotes
+- यद्य् उद्धृतः पाठो ह्रस्वः, यथामूलम् एव रक्षितुम् उचितम्। यद्य् उद्धृतः पाठो दीर्घः, तर्हि >-चिह्नेन सह विन्यास इष्यते।
+
 ### Long quotes
 Example:
 ```
@@ -46,6 +48,16 @@ Example:
 
 इति ।
 
+```
+
+Quotations within quotations:
+
+```
+Rastelli: 
+
+> “The Lakṣmītantra, which differentiates four categories of bhogas, defines sāmsparśika as follows: 
+> 
+>> ‘Objects of enjoyment, which are gentle, pleasing, and soft to the touch, such as water used for washing the feet, arghya, and the throne, (all these) that satisfy the Unborn with touch are sāṃsparśikas’.” 
 ```
 
 ### Short quotes
