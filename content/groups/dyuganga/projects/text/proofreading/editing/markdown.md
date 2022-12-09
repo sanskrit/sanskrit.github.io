@@ -12,7 +12,7 @@ title = "Editing"
 ## Top heading
 ### Subheading
 #### Subsubheading 
-conent
+content
 ```
 
 ## Lists
