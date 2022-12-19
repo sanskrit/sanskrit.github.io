@@ -1,6 +1,5 @@
 +++
 title = "+Contribution"
-unicode_script = "devanagari"
 +++
 ## Submitting changes
 - Please fork the repo, edit your files and send pull requests; a browser suffices - (I can guide on google meet).
