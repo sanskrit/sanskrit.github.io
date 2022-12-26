@@ -7,13 +7,21 @@ title = "Editing"
 - Testing formatting: Use http://dillinger.io 
 - General reference: [MD Guide](https://www.markdownguide.org/extended-syntax/#footnotes).
 - _italics_ - `_italics_`. **Bold** - `**Bold**`.
-- Headings -
+
+## Headings
 ```
 ## Top heading
 ### Subheading
 #### Subsubheading 
 content
 ```
+
+Don't do the below (शीर्षिकाः स्वभावतः स्थूलाक्षरैः प्रदर्श्यन्ते, तत्र विशिष्टाङ्कनस्यापेक्षा नास्ति। पङ्क्ति-मध्य-वर्तित्वम् उपेक्षणीयम्।):
+
+```
+###            **The proper age for Upanayana**
+```
+
 
 ## Lists
 ```
@@ -107,3 +115,28 @@ Observe:
 - Consider ditto marks or identical text associated with other text in a list (example [here](https://archive.org/details/ashtadhyayi/ashtadhyayi2?view=theater#page/n31/mode/1up)): Just repeat the text.
 - In case of other cases/ confusion, please contact us with a link to the page with the table/ chart/ figure. Don’t hesitate to ask.
 
+## Interleaving commentary
+Commentary may be interleaved as follows:
+
+```
+Core text/ मूलम्
+
+<details><summary>टीका</summary>
+
+Long commentary (टीकापङ्क्तयः) ....................................
+</details>
+```
+
+At times, it may be desirable to encapsulate the core/ मूल text as well, as below:
+
+```
+<details open><summary>मूलम्</summary>
+
+Core text/ मूलम्
+</details>
+
+<details><summary>टीका</summary>
+
+Long commentary (टीकापङ्क्तयः) ....................................
+</details>
+```
