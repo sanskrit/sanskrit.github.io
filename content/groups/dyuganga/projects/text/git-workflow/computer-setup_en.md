@@ -15,7 +15,7 @@ title = "Computer setup (en)"
 
 ## Online work
 
-- Go to [https://vscode.dev/github/XYZ/REPO/tree/content](https://vscode.dev/github/XYZ/REPO/tree/content) or [https://vscode.dev/github/XYZ/REPO/tree/static](https://vscode.dev/github/XYZ/REPO/tree/static) (if directed to go there) on the computer where you'll work (not mobile phone), provide all permissions. (Browser may block popups - enable popups. GitHub permission may be sought. etc..)
+- Go to [https://vscode.dev/github/XYZ/REPO/tree/content](https://vscode.dev/github/XYZ/REPO/tree/content) or [https://vscode.dev/github/XYZ/REPO/tree/static_files](https://vscode.dev/github/XYZ/REPO/tree/static_files) (if directed to go there) on the computer where you'll work (not mobile phone), provide all permissions. (Browser may block popups - enable popups. GitHub permission may be sought. etc..)
 - Navigate to the files you want to change and make your edits. You save changes by typing a "Commit message" and commiting + pushing.
 
 {{< figure src="../images/vscode-commit.png" title="" >}}
