@@ -28,7 +28,7 @@ PS: You can also change Font size, colors etc. by going to settings.
 {{< figure src="../images/vscode-settings-font.png" title="">}}
 
 ### Syncing fork
-- कार्यानुसारेण https://github.com/XYZ/REPO/tree/content, https://github.com/XYZ/REPO/tree/static इत्यत्र वा गत्वा, sync-fork इति करोतु - [चित्रे]((https://youtu.be/yKLyfqL0A4M?t=462)) दर्शितया रीत्या।
+- कार्यानुसारेण https://github.com/XYZ/REPO/tree/content, https://github.com/XYZ/REPO/tree/static इत्यत्र वा गत्वा, sync-fork इति करोतु - [चित्रे]((https://youtu.be/yKLyfqL0A4M?t=462)) दर्शितया रीत्या। (अवधेयम् - master-शाखायाम् एतत् कृतं व्यर्थप्रायम् न। content-आदि-शाखायां गत्वा करणीयम्। )
 - ततः vscode.dev जालपुटं नवीकरोतु (refresh/ reload)।
 - परिवर्तनानि (यथा नूतनाः सञ्चिका) लभ्येरन्।
 
