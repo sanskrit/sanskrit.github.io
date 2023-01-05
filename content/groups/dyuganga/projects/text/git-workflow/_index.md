@@ -12,15 +12,16 @@ Welcome! To contribute text corrections, please follow the following linked inst
 
 ## Initial Setup
 - Please install the below software.
-  - [Telegram](https://desktop.telegram.org/)
-  - For long term workers - [Discord](https://desktop.telegram.org/)
+  - [Zoom](https://zoom.us/support/download?os=android)
+  - Optional (can use browser interface): 
+    - [Telegram](https://desktop.telegram.org/), For long term workers - [Discord](https://discord.com/)
   - Additional software (Only if offline editing is accepted by us):
     - [git](https://git-scm.com/download/)
     - [vscode](https://code.visualstudio.com/)
 - Please sign up and send us the following items
   - Email id, phone number
   - Github user id
-  - Zoom
+  - Zoom id
   - Telegram id.
   - For long term workers: discord id .
   - If paid worker: (account holder name, account number, ifsc code, bank and branch name; UPI id).
