@@ -33,7 +33,7 @@ Where? It is important to note that at any point in time, the output(in the form
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/2_forking-repo/</guid>
-      <description>निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। (Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username.) अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Create an account on https://github.com. Sign in. If https://github.com/XYZ/REPO exists beforehand, please delete it by going to settings using your browser (Go to https://github.com/XYZ/REPO/settings#danger-zone, navigate to the end of the page, and click on &amp;ldquo;Delete this repository&amp;rdquo;.) . Go to https://github.com/vishvAsa/REPO/fork and fork (there should be a &amp;ldquo;Create Fork&amp;rdquo; button).</description>
+      <description>निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। (Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username.) अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Back to Git workflow Create an account on https://github.com. Sign in. If https://github.com/XYZ/REPO exists beforehand, please delete it by going to settings using your browser (Go to https://github.com/XYZ/REPO/settings#danger-zone, navigate to the end of the page, and click on &amp;ldquo;Delete this repository&amp;rdquo;.) . Go to https://github.com/vishvAsa/REPO/fork and fork (there should be a &amp;ldquo;Create Fork&amp;rdquo; button).</description>
     </item>
     
     <item>
@@ -51,7 +51,7 @@ Where? It is important to note that at any point in time, the output(in the form
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/offline-editing/2_getting_files/</guid>
-      <description>निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। (Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username.) अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Going to the right place in your computer (सङ्गणके समीचीनस्थानप्राप्तिः) We&amp;rsquo;ll assume that you&amp;rsquo;re saving all github files in some location (eg. F:\Git\). Please change the below accordingly. Windows - navigate to the appropriate folder using &amp;ldquo;File explorer&amp;rdquo; or &amp;ldquo;My Computer&amp;rdquo;; Then right-click, select &amp;ldquo;Other options&amp;rdquo; if available, and finally click &amp;ldquo;Open Git Bash here&amp;rdquo;.</description>
+      <description>निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। (Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username.) अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Back to Git workflow Going to the right place in your computer (सङ्गणके समीचीनस्थानप्राप्तिः) We&amp;rsquo;ll assume that you&amp;rsquo;re saving all github files in some location (eg. F:\Git\). Please change the below accordingly. Windows - navigate to the appropriate folder using &amp;ldquo;File explorer&amp;rdquo; or &amp;ldquo;My Computer&amp;rdquo;; Then right-click, select &amp;ldquo;Other options&amp;rdquo; if available, and finally click &amp;ldquo;Open Git Bash here&amp;rdquo;.</description>
     </item>
     
     <item>
@@ -60,7 +60,7 @@ Where? It is important to note that at any point in time, the output(in the form
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/4_sending-pull-request/</guid>
-      <description>निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। (Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username.) अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Open the appropriate github link as below
+      <description>निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। (Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username.) अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Back to Git workflow Open the appropriate github link as below
 If you&amp;rsquo;re working on content branch, it will be https://github.com/XYZ/REPO/tree/content If you&amp;rsquo;re working on static_files branch, it will be https://github.com/XYZ/REPO/tree/static_files Text like 1 commit ahead indicates that you have something to contribute. (1 commit ahead इतीव किञ्चिद् दर्शितं चेत् प्रेषयितुं किञ्चिद् अस्तीत्य् अर्थः।)</description>
     </item>
     
@@ -72,7 +72,7 @@ If you&amp;rsquo;re working on content branch, it will be https://github.com/XYZ
       <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/5_sUchita-doSha-parihAra-prativachane/</guid>
       <description>दोषसूचना-निरीक्षा Awaiting corrections नित्यं सकृद् अधः सूचितया रीत्या आकर्षणाभ्यर्थनम् (pull request) प्राप्य, आद्यन्तम् परीक्ष्य, यथापेक्षं प्रतिसूत्रं स्वोत्तराणि प्रेषयतु। दोषपरिहारः Correction दोषान् परिहृत्य, नुदित्वा (commit+push कृत्वा),
 (दोषमार्जनादिकं साधितं चेद् अध उक्तया रीत्या github-सूत्रेण सूचयितुं न विस्मरतु - अन्यथा परस्परप्रतीक्षया कार्यं विलम्ब्येत।)
-आकर्षणाभ्यर्थन-प्राप्तिः Going to the pull request निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Go to your github page, for example: https://github.</description>
+आकर्षणाभ्यर्थन-प्राप्तिः Going to the pull request निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Back to Git workflow Go to your github page, for example: https://github.</description>
     </item>
     
     <item>
@@ -229,7 +229,7 @@ For volunteers What is the workflow for an OCR volunteer? First off - you should
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/offline-editing/4_saving-changes/</guid>
-      <description>निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। (Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username.) अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Overview Get the latest files. (See &amp;ldquo;syncing&amp;rdquo; section below) Make changes in your editor (eg. vscode). Save, commit and push periodically. Syncing with remote repository Every day, make sure that you&amp;rsquo;re working on the latest files by doing the below. If you&amp;rsquo;re changing files in REPO-content : git pull upstream content इति परिवर्तनानि लभ्यानि। If you&amp;rsquo;re changing files in REPO-static : by running: git pull upstream static_files .</description>
+      <description>निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। (Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username.) अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Back to Git workflow Overview Get the latest files. (See &amp;ldquo;syncing&amp;rdquo; section below) Make changes in your editor (eg. vscode). Save, commit and push periodically. Syncing with remote repository Every day, make sure that you&amp;rsquo;re working on the latest files by doing the below. If you&amp;rsquo;re changing files in REPO-content : git pull upstream content इति परिवर्तनानि लभ्यानि। If you&amp;rsquo;re changing files in REPO-static : by running: git pull upstream static_files .</description>
     </item>
     
     <item>
@@ -238,7 +238,7 @@ For volunteers What is the workflow for an OCR volunteer? First off - you should
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/online-editing/saving-changes/</guid>
-      <description>निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। (Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username.) अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Saving changes Go to https://vscode.dev/github/XYZ/REPO/tree/content or https://vscode.dev/github/XYZ/REPO/tree/static_files (if directed to go there) on the computer where you&amp;rsquo;ll work (not mobile phone), provide all permissions. Config tips here. (Browser may block popups - enable popups. GitHub permission may be sought. etc..) Navigate to the files you want to change and make your edits.</description>
+      <description>निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। (Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username.) अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Back to Git workflow Saving changes Go to https://vscode.dev/github/XYZ/REPO/tree/content or https://vscode.dev/github/XYZ/REPO/tree/static_files (if directed to go there) on the computer where you&amp;rsquo;ll work (not mobile phone), provide all permissions. Config tips here. (Browser may block popups - enable popups. GitHub permission may be sought. etc..) Navigate to the files you want to change and make your edits.</description>
     </item>
     
     <item>
