@@ -102,8 +102,8 @@ Refund policy Stripe forces us to have a &amp;ldquo;refund policy&amp;rdquo;.</d
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/markdown/</guid>
-      <description>General Longing video intro (markdown format check, quotes, headers, footnotes, new lines within paragraph,): R202212 Testing formatting: Use http://dillinger.io General reference: MD Guide. italics - _italics_. Bold - **Bold**. Headings ## Top heading ### Subheading #### Subsubheading content Don&amp;rsquo;t do the below (शीर्षिकाः स्वभावतः स्थूलाक्षरैः प्रदर्श्यन्ते, तत्र विशिष्टाङ्कनस्यापेक्षा नास्ति। पङ्क्ति-मध्य-वर्तित्वम् उपेक्षणीयम्।):
-### **The proper age for Upanayana** Lists - item 1 - item 1.1 - item 2 - item 2.1 - item 2.</description>
+      <description>General Longing video intro (markdown format check, quotes, headers, footnotes, new lines within paragraph,): R202212 Testing formatting: Use http://dillinger.io General reference: MD Guide. italics - _italics_. Bold - **Bold**. Headings and sections ## Top heading ### Subheading #### Subsubheading content Don&amp;rsquo;t do the below (शीर्षिकाः स्वभावतः स्थूलाक्षरैः प्रदर्श्यन्ते, तत्र विशिष्टाङ्कनस्यापेक्षा नास्ति। पङ्क्ति-मध्य-वर्तित्वम् उपेक्षणीयम्।):
+### **The proper age for Upanayana** Lists - item 1 - item 1.1 - item 2 - item 2.</description>
     </item>
     
     <item>
@@ -257,17 +257,6 @@ Sponsors श्लाघ्यो @himanshucanberra महोदयो यद्
       
       <guid>https://sanskrit.github.io/groups/dyuganga/internal/onboarding/</guid>
       <description>कार्यान्तराणि भवनपरिचयः सङ्गणकप्रवेशः नियमसूचनम् लेखास् स्रष्टव्याः सङ्गणकयन्त्रे github.com, telegram, trello.com इत्येतेषु लेखां सृष्ट्वा लेखानामानि सूचयतु। लेखा-सङ्ग्रहणम् github team trello team, trello board jibble: नियामक आमन्त्रयति। telegram </description>
-    </item>
-    
-    <item>
-      <title>क्रमः</title>
-      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/kramaH/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/kramaH/</guid>
-      <description>प्रस्तुतौ मुख्यध्येयम् markdown सञ्चिकाभिः (ततश् च ) प्रस्तुतिर् इष्यते ग्रन्थानाम्। तेन, जनितानां markdown सञ्चिकानाम् hugo इत्यादिभिः परीक्षणम् इष्यते। पादटिप्पन्यः footnotes-example पुस्तकेष्व् एवम् पादटिप्पनीः पृष्ठपादेषु स्थाप्येरन्। नैवम् अत्र। उचितस्थानेषु प्रापणीयाः - यथा paragraph-अन्ते।
-यथाऽत्र दर्शिते चित्रे - (१) इत्यस्य सम्बन्ध आदिमश्लोकेनास्ति। तावत् तत्रैव स्थापनीयम्।
-न कदाचिद् अपि पादटिप्पनीभिर् वाक्यं छिद्येत - यथाऽत्र दर्शिते चित्रे &amp;ldquo;तत्र प्रवृत्तिप्रयोजनो विधि:-(४) सन्ध्याेश्च&amp;rdquo; इत्यादिकं वाक्यं छिन्नम्। तद् वाक्यखण्डम् अग्रे सारयतु। तत्सम्बद्धाम् अपि ४. आप० ध० १.३०.८. इति पादटिप्पनीम्।</description>
     </item>
     
     <item>
