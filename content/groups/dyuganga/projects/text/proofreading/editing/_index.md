@@ -3,7 +3,7 @@ title = "+Editing"
 +++
 
 ## Overview
-- Aim for perfect text and formatting.
+- Aim for perfect text and formatting (markdown instructions [here](markdown)).
 - Please strive to understand every work and sentence you edit.  प्रत्येकं वाक्यं व्याकरणशुद्ध्या ऽवगत्य शोधयितुं यतताम्। 
 - Follow multi-script proofreading.
 
