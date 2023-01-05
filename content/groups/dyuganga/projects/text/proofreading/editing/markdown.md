@@ -1,5 +1,5 @@
 +++
-title = "Editing"
+title = "Markdown"
 +++
 
 ## General
