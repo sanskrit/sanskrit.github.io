@@ -1,5 +1,5 @@
 +++
-title = "+2 Forking repo"
+title = "+Git workflow (गिट्-कार्य-क्रमः)"
 +++
 
 <details><summary>निर्देश-समीक्रिया (द्रष्टुं नोद्यम्)</summary>
