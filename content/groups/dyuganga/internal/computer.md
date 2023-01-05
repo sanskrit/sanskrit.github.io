@@ -20,9 +20,6 @@ title = "Computer"
 - [git](https://git-scm.com/download/)
 
 ### Proofreader kit
-- [git](https://git-scm.com/download/)
-- [vscode](https://code.visualstudio.com/)
-- [Telegram](https://desktop.telegram.org/)
 
 
 ## साङ्गणकतन्त्रांशाः (Windows)

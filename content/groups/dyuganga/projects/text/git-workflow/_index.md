@@ -8,11 +8,27 @@ title = "+2 Forking repo"
     - अथवैतत् प्रयुज्यतां यन्त्रम्: <input id="input_githubUserId" value="XYZ"></input><input id="input_repo" value="REPO"></input><button id="transformId" onclick="handleTransformIdBtnClick();">पाठम् परिवर्तय!!</button>
 </details>
 
-Welcome! To contribute text corrections, please follow the following linked instructions:
+Welcome! To contribute text corrections, please follow the following linked instructions.
 
-- Initial setup
+## Initial Setup
+- Please install the below software.
+  - [Telegram](https://desktop.telegram.org/)
+  - For long term workers - [Discord](https://desktop.telegram.org/)
+  - Additional software (Only if offline editing is accepted by us):
+    - [git](https://git-scm.com/download/)
+    - [vscode](https://code.visualstudio.com/)
+- Please sign up and send us the following items
+  - Email id, phone number
+  - Github user id
+  - Zoom
+  - Telegram id.
+  - For long term workers: discord id .
+  - If paid worker: (account holder name, account number, ifsc code, bank and branch name; UPI id).
+- Getting the files
   - [Forking the repository](2_forking-repo?githubUserId=XYZ&repo=REPO)
   - Only if offline editing is accepted by us: [Getting the files](offline-editing/2_getting_files?githubUserId=XYZ&repo=REPO)
+
+## Routine work
 - General editing instructions
   - Please read and understand [General editing instructions](/groups/dyuganga/projects/text/proofreading/editing).
   - Please read and understand [Markdown formatting instructions](/groups/dyuganga/projects/text/proofreading/editing/markdown).  
