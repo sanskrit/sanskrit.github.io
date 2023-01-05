@@ -16,6 +16,7 @@ title = "5 सूचित-दोष--परिहार-प्रतिवच�
 
 - अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्।
   - अथवैतत् प्रयुज्यतां यन्त्रम्: <input id="input_githubUserId" value="XYZ"></input><input id="input_repo" value="REPO"></input><button id="transformId" onclick="handleTransformIdBtnClick();">पाठम् परिवर्तय!!</button>
+- Back to [Git workflow](/content/groups/dyuganga/projects/text/git-workflow/)
 </details>
 
 
