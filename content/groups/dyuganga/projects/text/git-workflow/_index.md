@@ -33,7 +33,7 @@ Welcome! To contribute text corrections, please follow the following linked inst
 - General editing instructions
   - Please read and understand [General editing instructions](/groups/dyuganga/projects/text/proofreading/editing).
   - Please read and understand [Markdown formatting instructions](/groups/dyuganga/projects/text/proofreading/editing/markdown).  
-  - If you have any questions, don't ignore/ pretend - instead ask. (नावगतं चेन् नावगतम् इति वाच्यं ननु - मौनेन न कस्यचिल् लाभः।)
+  - If you have any questions, don't ignore/ pretend - instead ask via telegram, discord or phone. (नावगतं चेन् नावगतम् इति वाच्यं ननु - मौनेन न कस्यचिल् लाभः।)
   - Especially, please make sure to follow Multi-script proofreading described there.
 - Saving changes
   - NOTE - Always pull latest changes before working on and saving your edits.
