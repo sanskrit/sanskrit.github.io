@@ -1,6 +1,7 @@
 +++
 title = "+Editing"
 +++
+
 ## Contribution levels
 Our expectation: when we read the corrected text, we expect to have atleast the same experience as reading the original pdf (if not better). <u>Even otherwise, if you leave the text in a significantly better state than earlier, it is valuable.</u>
 

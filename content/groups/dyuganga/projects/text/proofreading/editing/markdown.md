@@ -8,7 +8,7 @@ title = "Editing"
 - General reference: [MD Guide](https://www.markdownguide.org/extended-syntax/#footnotes).
 - _italics_ - `_italics_`. **Bold** - `**Bold**`.
 
-## Headings
+## Headings and sections
 ```
 ## Top heading
 ### Subheading
@@ -33,14 +33,19 @@ Don't do the below (शीर्षिकाः स्वभावतः स्�
     - item 2.2.1
 ```
 
-## Spacing
-- Paragraphs are separated by empty lines. Please remove empty spaces at the beginning of lines.
-  - As far as possible, prefer paragraphs without any line breaks ("Enter" keystrokes). Just use word-wrap in your editor program.
-- Of course, some paragraphs have multiple lines (example - halves of a shloka). In such cases, there should be TWO SPACES at the end of each line. For example:  
-  ```
-  line 1 ending with 2 spaces  
-  line 2 in same paragraph.
-  ```
+## Spacing, paragraph-विवेकः
+- Paragraphs are separated by empty lines. Please remove empty spaces at the beginning of lines. पाठखण्डानां (paragraph इत्येषां) विवेकः सम्यक् स्यात् - रिक्तपङ्क्ति-रिक्तस्थानादियोजनैः।
+- Of course, some paragraphs have multiple lines (example - halves of a shloka). In such cases, there should be TWO SPACES at the end of each line. 
+
+```
+line 1 ending with 2 spaces  
+line 2 in same paragraph.
+
+Different paragraph.
+
+Another paragraph.
+```
+
 
 
 ## Quotes
@@ -116,28 +121,40 @@ Observe:
 - In case of other cases/ confusion, please contact us with a link to the page with the table/ chart/ figure. Don’t hesitate to ask.
 
 ## Interleaving commentary
-Commentary may be interleaved as follows:
+असकृत् समूलटिप्पनीः प्रस्तोतव्याः स्युः। तदैवं तेषाम् प्रदर्शनम्। Commentary may be interleaved as follows:
+
+{{< figure src="../../images/ApastambaDharmaSutram_0013.jpg" title="" class="thumbnail">}}
 
 ```
-Core text/ मूलम्
+## सूत्रम् 
+वेदाश्च ॥ ३॥
 
-<details><summary>टीका</summary>
+### प्रस्तावः
+वक्तव्यो वा विशेष , तमाह---
 
-Long commentary (टीकापङ्क्तयः) ....................................
+### टिप्पनी
+चोऽवधारणे । वेदा एव मूलप्रमाणं धर्माधर्मयोः ।…
+
+```
+
+At times, it may be desirable to encapsulate the core/ मूल text as well, as below. 
+
+
+```
+<details><summary>प्रस्तावः</summary>
+
+वक्तव्यो वा विशेष , तमाह---
 </details>
-```
 
-At times, it may be desirable to encapsulate the core/ मूल text as well, as below:
 
-```
 <details open><summary>मूलम्</summary>
 
-Core text/ मूलम्
+वेदाश्च ॥ ३॥
 </details>
 
 <details><summary>टीका</summary>
 
-Long commentary (टीकापङ्क्तयः) ....................................
+चोऽवधारणे । वेदा एव मूलप्रमाणं धर्माधर्मयोः ।…
 </details>
 ```
 
@@ -159,4 +176,15 @@ Long commentary (टीकापङ्क्तयः) .........................
 भजनौपयिक-गुण-विशेषान् आह - **अखिले**त्यादिना ।  
 
 **भुवन**-शब्दः क्षेत्रज्ञ-परः - 'त्रिभुवनं सम्प्रत्य् अनन्तोदयं' इति चतुश्-श्लोकी-स्थ-त्रिभुवन-शब्दवत्,  
+```
+
+
+## अनपेक्षित-पाठ-निष्कासनम्
+यान्त्रिकाक्षराभिज्ञानेन  (OCR करणेन) जनिते पाठे कदाचिद् एवम् अनपेक्षित पाठास् स्युर्, ये निष्कासनीयाः -
+
+```
+A
+HODAI
+.
+.
 ```
