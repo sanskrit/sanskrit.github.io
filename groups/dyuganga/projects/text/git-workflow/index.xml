@@ -45,5 +45,15 @@ If you&amp;rsquo;re working on content branch, it will be https://github.com/XYZ
 आकर्षणाभ्यर्थन-प्राप्तिः Going to the pull request निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Go to your github page, for example: https://github.</description>
     </item>
     
+    <item>
+      <title>VSCode</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/vscode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/vscode/</guid>
+      <description>Appearance You can also change Font size, colors etc. by going to settings (Bottom left ⚙️ gear icon ).
+vscode-settings-font Snippets Settings (Bottom left ⚙️ gear icon ) select&amp;quot;Configure user snippets&amp;quot; search for markdown Copy and save from here . </description>
+    </item>
+    
   </channel>
 </rss>

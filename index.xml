@@ -112,7 +112,7 @@ The content is currently displayed at https://ashtadhyayi.github.io/suutra/1.1/1
       
       <guid>https://sanskrit.github.io/groups/dyuganga/internal/computer/</guid>
       <description>(Unless you are already computer-savvy and have other preferences) Please set up your computer (if you use another OS, let me know) in the following way, so that your work can be most enjoyable and seamless.
-सङ्गणकापेक्षा 8GB RAM, fast processor (i5 or later) and laptop preferred Multi-platform tools Editor vscode Sublime text or Atom editor (deprecated) Communication Telegram Zoom Source control git Proofreader kit साङ्गणकतन्त्रांशाः (Windows) Editing tools Bhasha IME - C:\Program Files\ इत्यस्मिन् स्थाप्यन्ताम्। Advanced tools Intellij IDE Community edition । Setup theme, font size, font.</description>
+सङ्गणकापेक्षा 8GB RAM, fast processor (i5 or later) and laptop preferred Multi-platform tools Editor vscode Sublime text or Atom editor (deprecated) Communication Telegram Zoom Source control git साङ्गणकतन्त्रांशाः (Windows) Editing tools Bhasha IME - C:\Program Files\ इत्यस्मिन् स्थाप्यन्ताम्। Advanced tools Intellij IDE Community edition । Setup theme, font size, font.</description>
     </item>
     
     <item>
@@ -238,7 +238,7 @@ For volunteers What is the workflow for an OCR volunteer? First off - you should
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/online-editing/saving-changes/</guid>
-      <description>निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। (Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username.) अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Saving changes Go to https://vscode.dev/github/XYZ/REPO/tree/content or https://vscode.dev/github/XYZ/REPO/tree/static_files (if directed to go there) on the computer where you&amp;rsquo;ll work (not mobile phone), provide all permissions. (Browser may block popups - enable popups. GitHub permission may be sought. etc..) Navigate to the files you want to change and make your edits.</description>
+      <description>निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। (Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username.) अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Saving changes Go to https://vscode.dev/github/XYZ/REPO/tree/content or https://vscode.dev/github/XYZ/REPO/tree/static_files (if directed to go there) on the computer where you&amp;rsquo;ll work (not mobile phone), provide all permissions. Config tips here. (Browser may block popups - enable popups. GitHub permission may be sought. etc..) Navigate to the files you want to change and make your edits.</description>
     </item>
     
     <item>
@@ -272,6 +272,16 @@ Primary Texts
       
       <guid>https://sanskrit.github.io/groups/dyuganga/members/</guid>
       <description> Vishvas / विश्वासो वासुकिजः, Lead/ अग्रणीः Apart from Dyugangā activity, he also contributes to free open source software useful for Hindu practitioners, scholars and students - see various repos under orgs such as sanskrit-programmers, jyotisha, indic-dict etc. (Full list under github profile). Pradeepasimha/ प्रदीपसिंहाचार्यः, Scholar assistant/ विद्वन्मन्त्री Kishor Sharma/ किशोरशर्मा, Scholar assistant/ विद्वन्मन्त्री You?, Junior Scholar assistant/ उपविद्वन्मन्त्री Former members Sanjeeva/ सञ्जीवः, Junior Scholar assistant/ उपविद्वन्मन्त्री </description>
+    </item>
+    
+    <item>
+      <title>VSCode</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/vscode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/vscode/</guid>
+      <description>Appearance You can also change Font size, colors etc. by going to settings (Bottom left ⚙️ gear icon ).
+vscode-settings-font Snippets Settings (Bottom left ⚙️ gear icon ) select&amp;quot;Configure user snippets&amp;quot; search for markdown Copy and save from here . </description>
     </item>
     
     <item>
