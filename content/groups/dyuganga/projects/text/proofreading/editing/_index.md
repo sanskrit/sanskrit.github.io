@@ -6,9 +6,15 @@ title = "+Editing"
 Our expectation: when we read the corrected text, we expect to have atleast the same experience as reading the original pdf (if not better). <u>Even otherwise, if you leave the text in a significantly better state than earlier, it is valuable.</u>
 
 - Top level: Perfect text and formatting.
-- Next level: Perfect text, with basic formatting (described below). Reader won't feel particular urge to consult the source most of the time.
+- Next level: Perfect text, with basic formatting. Reader won't feel particular urge to consult the source most of the time.
 - Next level: Almost perfect text (possibly missing diacritics and accents), with basic formatting (contiguous paragraphs, footnotes etc.).
 - And so on.
+
+We generlly expect top level contribution from paid proofreaders.
+
+## Multi-script proofreading
+- The text should be examined in multiple scripts (as agreed earlier). Eg. devanAgarI and ISO, or devanAgarI and kannaDa. Script conversion may be accomplished using [aksharamukhA](https://aksharamukha.appspot.com/converter).
+- Problem being solved: In some scripts, it is hard to distinguish some characters; and mAtra-s may be missed. For example, in devanAgarI - ब‌ व, म स. A proofreader proficient in sanskrit once read  "प्लो**ने**न परिमार्जनानन्तरं तदुक्तं पाद्यं चाधिकमुक्तम् । अत्रापि स एव हे**त**रनु**म**न्धेयः ।" as "प्लो**ते**न परिमार्जनानन्तरं तद् उक्तं, पाद्यं चाधिकम् उक्तम् । अत्रापि स एव हे**तु**र् अनु**स**न्धेयः ।"
 
 ## Typing correct symbols
 - Please use the correct symbols. Common mistakes: |(pipe) instead of ।(daNDa), :(colon) instead of visarga(ः).
