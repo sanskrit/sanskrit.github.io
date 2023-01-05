@@ -1,5 +1,5 @@
 +++
-title = "Why volunteer as a proofreader?"
+title = "Why volunteer?"
 short_title = "Why volunteer as a"
 
 +++
@@ -14,4 +14,3 @@ Why volunteer as a proofreader?
 
 ## Volunteer coordination
 - [sanskrit-ocr](https://groups.google.com/g/sanskrit-ocr)
-- [t.me/sanskrit_ocr](http://t.me/sanskrit_ocr)

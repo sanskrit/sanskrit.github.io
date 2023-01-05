@@ -1,10 +1,28 @@
 +++
-title = "+Contribution"
+title = "+2 Forking repo"
 +++
-## Submitting changes
-- Please fork the repo, edit your files and send pull requests; a browser suffices - (I can guide on google meet).
 
-### Account setup
-- I must have sent out email invites to join https://trello.com/ocrcorrection . (We use trello for tracking tasks.) Please accept (contact me if you haven't received an invite).
-- Everyone needs to have a github account (We use github for checking and accepting corrections - example here) and join https://github.com/orgs/vishvAsa/teams/ocr-correction/ . Please create a github account and let me know offline so that I can send you an email invite to join https://github.com/orgs/vishvAsa/teams/ocr-correction/ .
+<details><summary>निर्देश-समीक्रिया (द्रष्टुं नोद्यम्)</summary>
 
+- अधः _XYZ_ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। (Below, replace _'XYZ'_ with your github username.)
+    - अथवैतत् प्रयुज्यतां यन्त्रम्: <input id="input_githubUserId" value="XYZ"></input><input id="input_repo" value="REPO"></input><button id="transformId" onclick="handleTransformIdBtnClick();">पाठम् परिवर्तय!!</button>
+</details>
+
+Welcome! To contribute text corrections, please follow the following linked instructions:
+
+- Initial setup
+  - [Forking the repository](2_forking-repo?githubUserId=XYZ&repo=REPO)
+  - Only if offline editing is accepted by us: [Getting the files](offline-editing/2_getting_files?githubUserId=XYZ&repo=REPO)
+- General editing instructions
+  - Please read and understand [General editing instructions](/groups/dyuganga/projects/text/proofreading/editing).
+  - Please read and understand [Markdown formatting instructions](/groups/dyuganga/projects/text/proofreading/editing/markdown).  
+  - If you have any questions, don't ignore/ pretend - instead ask. (नावगतं चेन् नावगतम् इति वाच्यं ननु - मौनेन न कस्यचिल् लाभः।)
+  - Especially, please make sure to follow Multi-script proofreading described there.
+- Saving changes
+  - NOTE - Always pull latest changes before working on and saving your edits.
+  - Online work: [Saving changes](online-editing/saving-changes?githubUserId=XYZ&repo=REPO)
+  - Only if offline editing is accepted by us: [Saving changes](offline-editing/4_saving-changes?githubUserId=XYZ&repo=REPO)
+- [Sending changes via pull requests (आकर्षणाभ्यर्थन-प्रेषणम्)](4_sending-pull-request?githubUserId=XYZ&repo=REPO) 
+- Attending to defect notifications: [सूचित-दोष-परिहार-प्रक्रिया](5_sUchita-doSha-parihAra-prativachane?githubUserId=XYZ&repo=REPO)
+
+<script src="contribution-page-customizer.js"></script>

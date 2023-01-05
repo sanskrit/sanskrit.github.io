@@ -1,15 +1,15 @@
 +++
-title = "सूचित-दोष--परिहार-प्रतिवचन-प्रक्रिया"
+title = "5 सूचित-दोष--परिहार-प्रतिवचन-प्रक्रिया"
 +++
 
 ## दोषपरिहारः Correction
-दोषान् परिहृत्य, नुदित्वा (push कृत्वा),
+दोषान् परिहृत्य, नुदित्वा (commit+push कृत्वा),
 
 (दोषमार्जनादिकं साधितं चेद् अध उक्तया रीत्या github-सूत्रेण सूचयितुं न विस्मरतु - अन्यथा परस्परप्रतीक्षया कार्यं विलम्ब्येत।)
 
 
 ## आकर्षणाभ्यर्थन-प्राप्तिः Going to the pull request
-<details><summary>विस्तारः (द्रष्टुं नोद्यम्)</summary>
+<details><summary>निर्देश-समीक्रिया (द्रष्टुं नोद्यम्)</summary>
 
 - अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्।
   - अथवैतत् प्रयुज्यतां यन्त्रम्: <input id="input_githubUserId" value="XYZ"></input><input id="input_repo" value="REPO"></input><button id="transformId" onclick="handleTransformIdBtnClick();">पाठम् परिवर्तय!!</button>
