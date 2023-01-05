@@ -6,13 +6,13 @@
   </url><url>
     <loc>https://sanskrit.github.io/people/</loc>
   </url><url>
+    <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/</loc>
+  </url><url>
     <loc>https://sanskrit.github.io/groups/dyuganga/projects/audio/</loc>
   </url><url>
     <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/completed/</loc>
   </url><url>
     <loc>https://sanskrit.github.io/groups/matturu/contribute/</loc>
-  </url><url>
-    <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/</loc>
   </url><url>
     <loc>https://sanskrit.github.io/groups/dyuganga/projects/data/</loc>
   </url><url>
@@ -29,6 +29,10 @@
     <loc>https://sanskrit.github.io/groups/dyuganga/projects/audio/mbh-audio/</loc>
   </url><url>
     <loc>https://sanskrit.github.io/groups/matturu/</loc>
+  </url><url>
+    <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/offline-editing/</loc>
+  </url><url>
+    <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/online-editing/</loc>
   </url><url>
     <loc>https://sanskrit.github.io/groups/dyuganga/projects/</loc>
   </url><url>
@@ -66,6 +70,16 @@
   </url><url>
     <loc>https://sanskrit.github.io/people/i_narasimhaachaarya/shriiharshakosha/</loc>
   </url><url>
+    <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/2_forking-repo/</loc>
+  </url><url>
+    <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/1_misc_account_setup/</loc>
+  </url><url>
+    <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/offline-editing/2_getting_files/</loc>
+  </url><url>
+    <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/4_sending-pull-request/</loc>
+  </url><url>
+    <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/5_sUchita-doSha-parihAra-prativachane/</loc>
+  </url><url>
     <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/completed/Apastamba-dharma-sUtra-commentary/</loc>
   </url><url>
     <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/completed/Apastamba-gRhya-sUtra-commentaries/</loc>
@@ -75,10 +89,6 @@
     <loc>https://sanskrit.github.io/categories/</loc>
   </url><url>
     <loc>https://sanskrit.github.io/groups/dyuganga/internal/computer/</loc>
-  </url><url>
-    <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/computer-setup_sa/</loc>
-  </url><url>
-    <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/computer-setup_en/</loc>
   </url><url>
     <loc>https://sanskrit.github.io/groups/dyuganga/contact/</loc>
   </url><url>
@@ -103,6 +113,10 @@
     <loc>https://sanskrit.github.io/groups/matturu/contribute/veda-shaalaa/</loc>
   </url><url>
     <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/ocr_on_request/</loc>
+  </url><url>
+    <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/offline-editing/4_saving-changes/</loc>
+  </url><url>
+    <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/online-editing/saving-changes/</loc>
   </url><url>
     <loc>https://sanskrit.github.io/search/</loc>
     <priority>0.1</priority>
@@ -174,7 +188,5 @@
     <loc>https://sanskrit.github.io/groups/</loc>
   </url><url>
     <loc>https://sanskrit.github.io/groups/dyuganga/projects/schools/bay-area-sanskrit-school-dream/</loc>
-  </url><url>
-    <loc>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/sUchita-doSha-parihAra-prativachane/</loc>
   </url>
 </urlset>

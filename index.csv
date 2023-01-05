@@ -1,9 +1,9 @@
  	 groups/matturu/LICENSE-CONTENT/
 +"ससंस्कृताः सुसंस्कृताः" 	 people/
++2 Forking repo 	 groups/dyuganga/projects/text/git-workflow/
 +Audio 	 groups/dyuganga/projects/audio/
 +Completed 	 groups/dyuganga/projects/text/proofreading/completed/
 +Contribute to Matturu मत्तूरुग्रामम् पुष्णाहि 	 groups/matturu/contribute/
-+Contribution 	 groups/dyuganga/projects/text/git-workflow/
 +Data curation 	 groups/dyuganga/projects/data/
 +Dyugangā द्युगङ्गा 	 groups/dyuganga/
 +Editing 	 groups/dyuganga/projects/text/proofreading/editing/
@@ -12,6 +12,8 @@
 +Kannada audio 	 groups/dyuganga/projects/audio/kannada-audio/
 +Mahabharata audio महाभारत-ध्वनि-प्राप्तिः 	 groups/dyuganga/projects/audio/mbh-audio/
 +Matturu मत्तूरुग्रामः - संस्कृत-ग्रामः श्रौत-ग्रामः गमक-ग्रामः 	 groups/matturu/
++Offline editing 	 groups/dyuganga/projects/text/git-workflow/offline-editing/
++Online editing 	 groups/dyuganga/projects/text/git-workflow/online-editing/
 +Projects उद्यमाः 	 groups/dyuganga/projects/
 +Proposed 	 groups/dyuganga/projects/text/proofreading/proposed/
 +Ramayana audio 	 groups/dyuganga/projects/audio/ramayana-audio/
@@ -30,13 +32,16 @@
 +शास्त्रम् 	 groups/dyuganga/projects/audio/shAstra-audio/
 +शिशुपालवधम् 	 people/i_narasimhaachaarya/shishupaalavadha/
 +श्रीहर्षकोशः 	 people/i_narasimhaachaarya/shriiharshakosha/
+1 Forking-repo 	 groups/dyuganga/projects/text/git-workflow/2_forking-repo/
+1 Misc account setup 	 groups/dyuganga/projects/text/git-workflow/1_misc_account_setup/
+2 Getting files 	 groups/dyuganga/projects/text/git-workflow/offline-editing/2_getting_files/
+4 Sending pull-request 	 groups/dyuganga/projects/text/git-workflow/4_sending-pull-request/
+5 सूचित-दोष--परिहार-प्रतिवचन-प्रक्रिया 	 groups/dyuganga/projects/text/git-workflow/5_sUchita-doSha-parihAra-prativachane/
 Apastamba dharma sUtra commentary 	 groups/dyuganga/projects/text/proofreading/completed/Apastamba-dharma-sUtra-commentary/
 Apastamba gRhya sUtra commentaries 	 groups/dyuganga/projects/text/proofreading/completed/Apastamba-gRhya-sUtra-commentaries/
 aShTAdhyAyI vAsu commentary 	 groups/dyuganga/projects/text/proofreading/completed/aShTAdhyAyi-vAsu-commentary/
 Categories 	 categories/
 Computer 	 groups/dyuganga/internal/computer/
-Computer setup 	 groups/dyuganga/projects/text/git-workflow/computer-setup_sa/
-Computer setup (en) 	 groups/dyuganga/projects/text/git-workflow/computer-setup_en/
 Contact सम्पर्कः 	 groups/dyuganga/contact/
 Editing 	 groups/dyuganga/projects/text/proofreading/editing/markdown/
 Funders 	 funders/
@@ -49,13 +54,15 @@ mahAbhArata gItA press - present with audio 	 groups/dyuganga/projects/text/proo
 Matturu History मत्तूरुग्रामः - इतिहासः 	 groups/matturu/history/
 Matturu Veda school मत्तूरु-ग्राम-वेद-पाठशाला 	 groups/matturu/contribute/veda-shaalaa/
 OCR on request 	 groups/dyuganga/projects/text/ocr_on_request/
+Saving changes 	 groups/dyuganga/projects/text/git-workflow/offline-editing/4_saving-changes/
+Saving changes 	 groups/dyuganga/projects/text/git-workflow/online-editing/saving-changes/
 Search Results 	 search/
 suhAsa wish list 	 groups/dyuganga/projects/text/proofreading/proposed/suhAsa-wish-list/
 Tags 	 tags/
 Team गणः 	 groups/dyuganga/members/
 Texts 	 groups/dyuganga/projects/text/
 V1 Gotra-haplogroup correlation 	 groups/dyuganga/projects/data/genetic/v1-gotra-haplogroup/
-Why volunteer as a proofreader? 	 groups/dyuganga/projects/text/proofreading/Why_volunteer_as_a_proofreader/
+Why volunteer? 	 groups/dyuganga/projects/text/proofreading/Why_volunteer_as_a_proofreader/
 उपसर्गार्थ-चन्द्रिका 	 groups/dyuganga/projects/text/proofreading/completed/upasargArtha-chandrikA/
 कार्यारम्भः Onboarding 	 groups/dyuganga/internal/onboarding/
 किशोरशर्मा 	 people/kishorsharma/
@@ -84,4 +91,3 @@ Why volunteer as a proofreader? 	 groups/dyuganga/projects/text/proofreading/Why
 समासशिखामणिः 	 people/i_narasimhaachaarya/upayuktaamsha/samaasa-shikhaamaNi/
 संस्कृतयूथाः 	 groups/
 संस्कृतशाला-प्रस्तावः 	 groups/dyuganga/projects/schools/bay-area-sanskrit-school-dream/
-सूचित-दोष--परिहार-प्रतिवचन-प्रक्रिया 	 groups/dyuganga/projects/text/git-workflow/sUchita-doSha-parihAra-prativachane/

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>&#43;Online editing on संस्कृतजालक्षेत्रम्</title>
+    <link>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/online-editing/</link>
+    <description>Recent content in &#43;Online editing on संस्कृतजालक्षेत्रम्</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/online-editing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Saving changes</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/online-editing/saving-changes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/online-editing/saving-changes/</guid>
+      <description>निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। (Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username.) अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Saving changes Go to https://vscode.dev/github/XYZ/REPO/tree/content or https://vscode.dev/github/XYZ/REPO/tree/static_files (if directed to go there) on the computer where you&amp;rsquo;ll work (not mobile phone), provide all permissions. (Browser may block popups - enable popups. GitHub permission may be sought. etc..) Navigate to the files you want to change and make your edits.</description>
+    </item>
+    
+  </channel>
+</rss>
