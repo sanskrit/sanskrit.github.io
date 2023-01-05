@@ -8,7 +8,7 @@ title = "Saving changes"
 </details>
 
 ## Saving changes
-- Go to [https://vscode.dev/github/XYZ/REPO/tree/content](https://vscode.dev/github/XYZ/REPO/tree/content) or [https://vscode.dev/github/XYZ/REPO/tree/static_files](https://vscode.dev/github/XYZ/REPO/tree/static_files) (if directed to go there) on the computer where you'll work (not mobile phone), provide all permissions.
+- Go to [https://vscode.dev/github/XYZ/REPO/tree/content](https://vscode.dev/github/XYZ/REPO/tree/content) or [https://vscode.dev/github/XYZ/REPO/tree/static_files](https://vscode.dev/github/XYZ/REPO/tree/static_files) (if directed to go there) on the computer where you'll work (not mobile phone), provide all permissions. Config tips [here](vscode).
   - (Browser may block popups - enable popups. GitHub permission may be sought. etc..)
 - Navigate to the files you want to change and make your edits. You save changes by typing a "Commit message" and commiting + pushing.
 
@@ -16,10 +16,6 @@ title = "Saving changes"
 - Video demonstrations:
   - [here, till 7:55](https://youtu.be/yKLyfqL0A4M?t=462)
   - [Inserting Headings and saving](https://www.youtube.com/watch?v=BlOavkB2ooU)
-
-PS: You can also change Font size, colors etc. by going to settings.
-
-{{< figure src="../../images/vscode-settings-font.png" title="">}}
 
 ## Syncing fork
 - कार्यानुसारेण https://github.com/XYZ/REPO/tree/content, https://github.com/XYZ/REPO/tree/static इत्यत्र वा गत्वा, sync-fork इति करोतु - [चित्रे]((https://youtu.be/yKLyfqL0A4M?t=462)) दर्शितया रीत्या। (अवधेयम् - master-शाखायाम् एतत् कृतं व्यर्थप्रायम् न। content-आदि-शाखायां गत्वा करणीयम्। )

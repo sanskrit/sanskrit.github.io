@@ -29,18 +29,21 @@ Welcome! To contribute text corrections, please follow the following linked inst
 ## Initial Setup
 - Please install the below software.
   - [Zoom](https://zoom.us/support/download?os=android)
+  - If devanAgarI/ ISO/ IAST typing is not setup: 
+    - If using windows: [Bhasha IME](https://sites.google.com/site/bhashaime/) - C:\Program Files\ इत्यस्मिन् स्थाप्यन्ताम्।
+    - If using MAC: [Lipika IME](https://github.com/ratreya/lipika-ime).
   - Optional (can use browser interface): 
     - [Telegram](https://desktop.telegram.org/), For long term workers - [Discord](https://discord.com/)
   - Additional software (Only if offline editing is accepted by us):
     - [git](https://git-scm.com/download/)
-    - [vscode](https://code.visualstudio.com/)
+    - [vscode](https://code.visualstudio.com/). Config tips [here](vscode).
 - Please sign up and send us the following items
   - Email id, phone number
   - Github user id
   - Zoom id
   - Telegram id.
   - For long term workers: discord id .
-  - If paid worker: (account holder name, account number, ifsc code, bank and branch name; UPI id).
+  - If paid worker: (account holder name, account number, IFSC code, bank and branch name; UPI id).
 - Getting the files
   - [Forking the repository](2_forking-repo?githubUserId=XYZ&repo=REPO)
   - Only if offline editing is accepted by us: [Getting the files](offline-editing/2_getting_files?githubUserId=XYZ&repo=REPO)

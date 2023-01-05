@@ -19,8 +19,6 @@ title = "Computer"
 ### Source control
 - [git](https://git-scm.com/download/)
 
-### Proofreader kit
-
 
 ## साङ्गणकतन्त्रांशाः (Windows)
 ### Editing tools
