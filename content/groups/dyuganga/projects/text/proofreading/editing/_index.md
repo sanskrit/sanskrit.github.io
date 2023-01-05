@@ -2,6 +2,11 @@
 title = "+Editing"
 +++
 
+## Overview
+- Aim for perfect text and formatting.
+- Please strive to understand every work and sentence you edit.  प्रत्येकं वाक्यं व्याकरणशुद्ध्या ऽवगत्य शोधयितुं यतताम्। 
+- Follow multi-script proofreading.
+
 ## Contribution levels
 Our expectation: when we read the corrected text, we expect to have atleast the same experience as reading the original pdf (if not better). <u>Even otherwise, if you leave the text in a significantly better state than earlier, it is valuable.</u>
 
