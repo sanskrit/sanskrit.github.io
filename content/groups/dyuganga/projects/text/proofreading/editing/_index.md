@@ -22,7 +22,7 @@ We generlly expect top level contribution from paid proofreaders.
 - Problem being solved: In some scripts, it is hard to distinguish some characters; and mAtra-s may be missed. For example, in devanAgarI - ब‌ व, म स. A proofreader proficient in sanskrit once read  "प्लो**ने**न परिमार्जनानन्तरं तदुक्तं पाद्यं चाधिकमुक्तम् । अत्रापि स एव हे**त**रनु**म**न्धेयः ।" as "प्लो**ते**न परिमार्जनानन्तरं तद् उक्तं, पाद्यं चाधिकम् उक्तम् । अत्रापि स एव हे**तु**र् अनु**स**न्धेयः ।"
 
 ## Typing correct symbols
-- Please use the correct symbols. Common mistakes: |(pipe) instead of ।(daNDa), :(colon) instead of visarga(ः).
+- Please use the correct symbols. Common mistakes: |(pipe) instead of ।(daNDa), :(colon) instead of visarga(ः), ०(शून्यम्) instead of ॰ (devanAgarI abbreviation sign).
 
 ### Special characters
 If you cannot type unusual unicode characters, copy them from here and paste.
