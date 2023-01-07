@@ -11,6 +11,7 @@
 +Hindu-vidyA groups 	 groups/hindu-vidyA/
 +Kannada audio 	 groups/dyuganga/projects/audio/kannada-audio/
 +Mahabharata audio महाभारत-ध्वनि-प्राप्तिः 	 groups/dyuganga/projects/audio/mbh-audio/
++Markdown 	 groups/dyuganga/projects/text/proofreading/editing/markdown/
 +Matturu मत्तूरुग्रामः - संस्कृत-ग्रामः श्रौत-ग्रामः गमक-ग्रामः 	 groups/matturu/
 +Offline editing 	 groups/dyuganga/projects/text/git-workflow/offline-editing/
 +Online editing 	 groups/dyuganga/projects/text/git-workflow/online-editing/
@@ -43,21 +44,26 @@ aShTAdhyAyI vAsu commentary 	 groups/dyuganga/projects/text/proofreading/complet
 Categories 	 categories/
 Computer 	 groups/dyuganga/internal/computer/
 Contact सम्पर्कः 	 groups/dyuganga/contact/
+Footnotes 	 groups/dyuganga/projects/text/proofreading/editing/markdown/Footnotes/
 Funders 	 funders/
 getting_started 	 tags/getting_started/
 Groups 	 groups/directory/
+Interleaving commentary 	 groups/dyuganga/projects/text/proofreading/editing/markdown/Interleaving_commentary/
 kRdanta-rUpa-mAla lookup 	 groups/dyuganga/projects/text/proofreading/proposed/kRdanta-dict/
 mAdhyandina-shatapatha 	 groups/dyuganga/projects/text/proofreading/proposed/mAdhyandina-shatapatha/
 Mahabharata audio project - How? महाभारत-ध्वनि-प्राप्तिः 	 groups/dyuganga/projects/audio/mbh-audio/how/
 mahAbhArata gItA press - present with audio 	 groups/dyuganga/projects/text/proofreading/completed/mbh-gItA-press_present-with-audio/
-Markdown 	 groups/dyuganga/projects/text/proofreading/editing/markdown/
 Matturu History मत्तूरुग्रामः - इतिहासः 	 groups/matturu/history/
 Matturu Veda school मत्तूरु-ग्राम-वेद-पाठशाला 	 groups/matturu/contribute/veda-shaalaa/
 OCR on request 	 groups/dyuganga/projects/text/ocr_on_request/
+Preserving page numbers 	 groups/dyuganga/projects/text/proofreading/editing/markdown/Preserving_page_numbers/
+Quotes 	 groups/dyuganga/projects/text/proofreading/editing/markdown/Quotes/
 Saving changes 	 groups/dyuganga/projects/text/git-workflow/offline-editing/4_saving-changes/
 Saving changes 	 groups/dyuganga/projects/text/git-workflow/online-editing/saving-changes/
 Search Results 	 search/
+Spacing, paragraph-विवेकः 	 groups/dyuganga/projects/text/proofreading/editing/markdown/Spacing_paragraph-vivekaH/
 suhAsa wish list 	 groups/dyuganga/projects/text/proofreading/proposed/suhAsa-wish-list/
+Tables and charts 	 groups/dyuganga/projects/text/proofreading/editing/markdown/Tables_and_charts/
 Tags 	 tags/
 Team गणः 	 groups/dyuganga/members/
 Texts 	 groups/dyuganga/projects/text/
