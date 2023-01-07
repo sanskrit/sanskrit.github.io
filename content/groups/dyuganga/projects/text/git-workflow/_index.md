@@ -28,7 +28,9 @@ Welcome! To contribute text corrections, please follow the following linked inst
 
 ## Initial Setup
 - Please install the below software.
-  - [Zoom](https://zoom.us/support/download?os=android)
+  - Communication software
+    - [Zoom](https://zoom.us/support/download?os=android)
+    - [flameshot](https://flameshot.org/)
   - If devanAgarI/ ISO/ IAST typing is not setup: 
     - If using windows: [Bhasha IME](https://sites.google.com/site/bhashaime/) - C:\Program Files\ इत्यस्मिन् स्थाप्यन्ताम्।
     - If using MAC: [Lipika IME](https://github.com/ratreya/lipika-ime).
