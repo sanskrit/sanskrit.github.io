@@ -22,6 +22,11 @@ title = "Saving changes"
   - [here, till 7:55](https://youtu.be/yKLyfqL0A4M?t=462)
   - [Inserting Headings and saving](https://www.youtube.com/watch?v=BlOavkB2ooU)
 
+PS: To close unnecessary tabs, do as illustrated below:
+
+{{< figure src="../../images/vscode-close-tabs.png" title="" >}}
+
+
 ## Syncing fork
 - कार्यानुसारेण https://github.com/XYZ/REPO/tree/content, https://github.com/XYZ/REPO/tree/static इत्यत्र वा गत्वा, sync-fork इति करोतु - [चित्रे](https://youtu.be/yKLyfqL0A4M?t=462) दर्शितया रीत्या। (अवधेयम् - master-शाखायाम् एतत् कृतं व्यर्थप्रायम् न। content-आदि-शाखायां गत्वा करणीयम्। )
 - ततः vscode.dev (अधः सूचितम्) जालपुटं नवीकरोतु (refresh/ reload)।
