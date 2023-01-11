@@ -11,6 +11,7 @@ title = "Saving changes"
 ## Saving changes
 - Go to [https://vscode.dev/github/XYZ/REPO/tree/content](https://vscode.dev/github/XYZ/REPO/tree/content) or [https://vscode.dev/github/XYZ/REPO/tree/static_files](https://vscode.dev/github/XYZ/REPO/tree/static_files) (if directed to go there) on the computer where you'll work (not mobile phone), provide all permissions. Config tips [here](vscode).
   - (Browser may block popups - enable popups. GitHub permission may be sought. etc..)
+- If needed, switch to the "Explorer view": [YT](https://youtu.be/6n22TxXi_yQ?t=558).
 - Navigate to the files you want to change and make your edits. You save changes by typing a "Commit message" and commiting + pushing.
 
 {{< figure src="../../images/vscode-commit.png" title="" >}}
