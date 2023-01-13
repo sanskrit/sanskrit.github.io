@@ -10,6 +10,7 @@ Consider the footnote in the image below (right click and open it in a new windo
 
 Here is how it should be presented in the markdown file:
 
+__________________________
 ```markdown
 He was only represented at first by symbols. If modern chronology about Buddha's ministry is to be followed [^1697] (he was born about 563 B. C. and died about 483 B, C.), it is almost impossible to hold that images of gods originally came to be made in imitation of images or statues of Buddha, since, as we saw above, temples and images of gods had already become widespread throughout India in the 4th or 5th century B. C. [^1698]. 
 
@@ -23,6 +24,7 @@ He was only represented at first by symbols. If modern chronology about Buddha's
 The first view is supported with arguments of some weight by Dr. Farquhar in J. R. A. S. for 1928 pp. 15-23. ...
 
 ```
+__________________________
 
 Observe:
 

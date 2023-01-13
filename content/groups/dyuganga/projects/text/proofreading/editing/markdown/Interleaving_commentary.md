@@ -6,6 +6,7 @@ title = "Interleaving commentary"
 
 {{< figure src="../../../images/ApastambaDharmaSutram_0013.jpg" title="" class="thumbnail">}}
 
+__________________________
 ```
 ## सूत्रम् 
 वेदाश्च ॥ ३॥
@@ -17,10 +18,12 @@ title = "Interleaving commentary"
 चोऽवधारणे । वेदा एव मूलप्रमाणं धर्माधर्मयोः ।…
 
 ```
+__________________________
 
 At times, it may be desirable to encapsulate the core/ मूल text as well, as below.
 
 
+__________________________
 ```
 <details><summary>प्रस्तावः</summary>
 
@@ -38,3 +41,4 @@ At times, it may be desirable to encapsulate the core/ मूल text as well, a
 चोऽवधारणे । वेदा एव मूलप्रमाणं धर्माधर्मयोः ।…
 </details>
 ```
+__________________________

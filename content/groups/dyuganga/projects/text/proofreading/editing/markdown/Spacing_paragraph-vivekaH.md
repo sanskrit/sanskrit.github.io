@@ -8,6 +8,7 @@ title = "Spacing, paragraph-विवेकः"
 - Paragraphs are separated by empty lines. Please remove empty spaces at the beginning of lines. पाठखण्डानां (paragraph इत्येषां) विवेकः सम्यक् स्यात् - रिक्तपङ्क्ति-रिक्तस्थानादियोजनैः।
 - Of course, some paragraphs have multiple lines (example - halves of a shloka). In such cases, there should be TWO SPACES at the end of each line. 
 
+__________________________
 ```
 line 1 ending with 2 spaces  
 line 2 in same paragraph.
@@ -16,10 +17,12 @@ Different paragraph.
 
 Another paragraph.
 ```
+__________________________
 
 ## पद्य-विन्यासः
 समप्रायं विभक्ता अक्षरसमूहाः पद्य-भागा इत्य् अवगन्तव्यम्। तेषां विन्यासः पादशो वा श्लोकार्धशो वा समान-पाठखण्ड(paragraph)-अन्तर्गतेषु भिन्नासु पङ्क्तिषु स्यात्।
 
+__________________________
 ```
 सुमुखश्चैकदन्तश्च कपिलो गजकर्णकः ।    
 लम्बोदरश्च विकटो विघ्नराजो गणाधिपः ॥  
@@ -30,3 +33,4 @@ Another paragraph.
 शुक्लाम्बरधरं विष्णुं शशिवर्णं चतुर्भुजम् ।  
 प्रसन्नवदनं ध्यायेत्सर्वविघ्नोपशान्तये ॥  
 ```
+__________________________
