@@ -32,4 +32,8 @@ PS: To close unnecessary tabs, do as illustrated below:
 - ततः vscode.dev (अधः सूचितम्) जालपुटं नवीकरोतु (refresh/ reload)।
 - परिवर्तनानि (यथा नूतनाः सञ्चिका) लभ्येरन्।
 
+If sync is successful, you will see messages like the below in the pull request:
+
+{{< figure src="../images/sync-fork-merge-success.png" title="" class="thumbnail">}}
+
 <script src="../../contribution-page-customizer.js"></script>
