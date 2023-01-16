@@ -23,6 +23,7 @@ See [posting-rules page](posting-rules).
 In these well defined topical channels, there is no restriction other than truthful pursuit of pertinent matters.
 
 ### shabda-shAstram
+- [shabda-shAstram](https://groups.google.com/g/shabda-vidya)
 
 <details><summary>Stock welcome message (email-stream)</summary>
 
@@ -31,6 +32,7 @@ In these well defined topical channels, there is no restriction other than truth
 
 
 ### tantrollAsaH
+- [tantrollasah](https://groups.google.com/g/tantrollasah)
 
 <details><summary>Stock welcome message (email-stream)</summary>
 
@@ -39,6 +41,7 @@ In these well defined topical channels, there is no restriction other than truth
 
 
 ### कल्पः
+- [kalpa-prayoga](https://groups.google.com/g/kalpa-prayoga)
 - **विषयः** \- कल्पो नाम वेदाङ्गं, यत्र श्रौत-स्मार्तागमिकाश् च प्रयोगा अन्तर्भूताः।
 - **उद्देशः** \- सर्वे भवन्तु सुखिनः, श्रौतगृह्यकर्मसु दक्षास्, संस्कारैस् सुसंस्कृताश्च।
 - **अधिकारः** \- सार्वजनिकोऽयं समूहः। न वयम् अधिकार-निश्चेतारः।
@@ -51,6 +54,7 @@ In these well defined topical channels, there is no restriction other than truth
 
 
 ### चेतो-देव-जीवादि-तत्त्व-विचारः
+- [cheto-deva-jivadi](https://groups.google.com/g/cheto-deva-jivadi)
 - **विषयः** / Topic - चेतो-देव-जीवादि-तत्त्वानि। (Consciousness, beings, Gods ...).
 - अधिकारः \- सम्प्रदायनियमो नास्ति। स्वाभिप्रायान् सुधियः प्रकटयन्तु।
 - उद्देशः \- नाना-दर्शन-जिज्ञासा, तत्त्वेषु स्व-स्व-निश्चयार्थं स्पष्ट-ज्ञान-प्राप्तिः।
@@ -64,6 +68,7 @@ In these well defined topical channels, there is no restriction other than truth
 
 
 ### kannaDa-vyAsanga
+- [kannada-vyasanga](https://groups.google.com/g/kannada-vyasanga)
 
 <details><summary>Stock welcome message (email-stream)</summary>
 
