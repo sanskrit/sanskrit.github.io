@@ -51,10 +51,15 @@ In these well defined topical channels, there is no restriction other than truth
 
 
 ### चेतो-देव-जीवादि-तत्त्व-विचारः
+- **विषयः** / Topic - चेतो-देव-जीवादि-तत्त्वानि। (Consciousness, beings, Gods ...).
+- अधिकारः \- सम्प्रदायनियमो नास्ति। स्वाभिप्रायान् सुधियः प्रकटयन्तु।
+- उद्देशः \- नाना-दर्शन-जिज्ञासा, तत्त्वेषु स्व-स्व-निश्चयार्थं स्पष्ट-ज्ञान-प्राप्तिः।
+- भाषाः \- संस्कृतम्, English
+- Posting rules, motivations, other topical groups etc.. on [web page here](https://sanskrit.github.io/groups/hindu-vidyA/).
 
 <details><summary>Stock welcome message (email-stream)</summary>
 
-चेतो-देव-जीवादि-तत्त्वेषु च विचारार्थं सृष्टेयं सन्देश-धारा। सद्यस् तु निर्बाधं स्वस्य प्रश्नान् प्रष्टुम् उपयोगाय भवति। ननु युष्मादृशैः पूर्वम् अपि मम ज्ञानं वर्धितम्। यावद् युष्माकम् भाराय न भविष्यति, तावद् इतः सन्देशान् लभध्वम् , यथावकाशं यथाज्ञानं चोत्तरैर् अनुगृह्णन्तु।
+चेतो-देव-जीवादि-तत्त्वेषु च विचारार्थं [सृष्टेयं](https://groups.google.com/g/cheto-deva-jIvAdi) सन्देश-धारा। सद्यस् तु निर्बाधं स्वस्य प्रश्नान् प्रष्टुम् उपयोगाय भवति। ननु युष्मादृशैः पूर्वम् अपि मम ज्ञानं वर्धितम्। यावद् युष्माकम् भाराय न भविष्यति, तावद् इतः सन्देशान् लभध्वम् , यथावकाशं यथाज्ञानं चोत्तरैर् अनुगृह्णन्तु।
 </details>
 
 
@@ -72,13 +77,15 @@ In these well defined topical channels, there is no restriction other than truth
 
 ## General channels
 ### Hindu vidyA
-- The general Hindu vidyA channel is a community to facilitate scholarship which, besides seeking the truth, aims to further Hindu interests (including Hindu dominance in India). Locations:
+- The general Hindu vidyA channel is a community to facilitate scholarship which, besides seeking the truth, aims to further Hindu interests (including Hindu dominance in India). 
+- Locations:
   - Email streams:
     - [Hindu-vidyA](https://groups.google.com/g/hindu-vidya/)
   - [Discord](https://discord.com/channels/1017076634253283488/1017076634861449311)
 - Target engagement:
   - People who profess to further Hindu interests - whatever their views.
   - Other people - so long as they eschew anti-hindu activities here (in favor of areas of common interest).
+- Posting rules, motivations, other topical groups etc.. on [web page here](https://sanskrit.github.io/groups/hindu-vidyA/).
 
 <details><summary>Stock welcome message (email-stream)</summary>
 
