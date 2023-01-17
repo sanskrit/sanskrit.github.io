@@ -107,11 +107,11 @@ In these well defined topical channels, there is no restriction other than truth
 ## Full directory
 
 ### Tech
-<div class="spreadsheet" src="../groups_tech.toml" fullHeightWithRowsPerScreen=8> </div>  
+<div class="spreadsheet" src="groups_tech.toml" fullHeightWithRowsPerScreen=8> </div>  
 
 ### shAstra
-<div class="spreadsheet" src="../groups_shAstra.toml" fullHeightWithRowsPerScreen=8> </div>  
+<div class="spreadsheet" src="groups_shAstra.toml" fullHeightWithRowsPerScreen=8> </div>  
 
 ### Language
-<div class="spreadsheet" src="../groups_language.toml" fullHeightWithRowsPerScreen=8> </div>  
+<div class="spreadsheet" src="groups_language.toml" fullHeightWithRowsPerScreen=8> </div>  
 

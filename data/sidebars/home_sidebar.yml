@@ -3,15 +3,6 @@
 title: Parts
 contents:
   - title: Home - Intro
-    url: /
-  - title: Projects
-    contents:
-      - url: recdir://projects/
-      - title: Blog
-        url: /assets/blog/index.html
-  - title: यूथाः
-    contents:
-      - url: recdir://groups/
-  - title: जनाः
-    contents:
-      - url: recdir://people/
+    url: recdir://
+  - title: Blog
+    url: /assets/blog/index.html
