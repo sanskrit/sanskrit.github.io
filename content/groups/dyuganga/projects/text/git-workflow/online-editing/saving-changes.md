@@ -34,6 +34,6 @@ PS: To close unnecessary tabs, do as illustrated below:
 
 If sync is successful, you will see messages like the below in the pull request:
 
-{{< figure src="../../images/sync-fork-merge-success.png" title="" class="thumbnail">}}
+{{< figure src="../../images/sync-fork-merge-success.png" title="">}}
 
 <script src="../../contribution-page-customizer.js"></script>
