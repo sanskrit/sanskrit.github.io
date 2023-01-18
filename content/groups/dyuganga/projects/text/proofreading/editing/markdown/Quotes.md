@@ -55,9 +55,9 @@ __________________________
 ```
 Rastelli: 
 
-> “The Lakṣmītantra, which differentiates four categories of bhogas, defines sāmsparśika as follows: 
+> The Lakṣmītantra, which differentiates four categories of bhogas, defines sāmsparśika as follows: 
 > 
->> ‘Objects of enjoyment, which are gentle, pleasing, and soft to the touch, such as water used for washing the feet, arghya, and the throne, (all these) that satisfy the Unborn with touch are sāṃsparśikas’.” 
+>> Objects of enjoyment, which are gentle, pleasing, and soft to the touch, such as water used for washing the feet, arghya, and the throne, (all these) that satisfy the Unborn with touch are sāṃsparśikas. 
 ```
 __________________________
 
