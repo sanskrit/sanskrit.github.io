@@ -18,7 +18,7 @@ Welcome! To contribute text corrections, please follow the following linked inst
   - Please read and understand [Markdown formatting instructions](/groups/dyuganga/projects/text/proofreading/editing/markdown).
   - If you have any questions, don't ignore/ pretend - instead ask via telegram, discord or phone. (नावगतं चेन् नावगतम् इति वाच्यं ननु - मौनेन न कस्यचिल् लाभः।)
 - Saving changes
-  - NOTE - Always pull latest changes before working on and saving your edits. <u>SHOULD BE DONE ON EVERY WORK-DAY.</u>
+  - NOTE - Always pull latest version (=sync fork) before working on and saving your edits. <u>SHOULD BE DONE ON EVERY WORK-DAY.</u>
   - Online work: [Saving changes](online-editing/saving-changes?githubUserId=XYZ&repo=REPO)
   - Only if offline editing is accepted by us: [Saving changes](offline-editing/4_saving-changes?githubUserId=XYZ&repo=REPO)
 - [Sending changes via pull requests (आकर्षणाभ्यर्थन-प्रेषणम्)](4_sending-pull-request?githubUserId=XYZ&repo=REPO). <u>SHOULD BE DONE ON EVERY WORK-DAY</u>, after work.
