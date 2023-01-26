@@ -7,6 +7,7 @@ title: Team गणः
 - [Pradeepasimha/ प्रदीपसिंहाचार्यः](../../../people/pradeepasimha/), Scholar assistant/ विद्वन्मन्त्री
 - [Kishor Sharma/ किशोरशर्मा](../../../people/kishorsharma/), Scholar assistant/ विद्वन्मन्त्री
 - [You?](../contact/), Junior Scholar assistant/ उपविद्वन्मन्त्री
+  - [Proofreader AD](https://www.canva.com/design/DAFTTNC9SKk/OPiloSedOQK-4PosKhDCQA/edit)
 
 ## Former members
 - Sanjeeva/ सञ्जीवः, Junior Scholar assistant/ उपविद्वन्मन्त्री
