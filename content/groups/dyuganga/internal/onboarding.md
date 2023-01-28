@@ -10,7 +10,8 @@ unicode_script: devanagari
 
 ## लेखास् स्रष्टव्याः
 - सङ्गणकयन्त्रे
-- github.com, telegram, trello.com इत्येतेषु लेखां सृष्ट्वा लेखानामानि सूचयतु।
+- github.com, telegram इत्येतयोर् लेखे सृष्ट्वा (- sign-up इति कृत्वा) लेखानामनी सूचयतु। ततः कार्यस्वरूपं वदिष्यामि।
+  - github.com, telegram, trello.com इत्येतेषु लेखां सृष्ट्वा लेखानामानि सूचयतु।
 
 ### लेखा-सङ्ग्रहणम्
 - [github team](https://github.com/orgs/sanskrit/teams/dyuganga)
