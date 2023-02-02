@@ -34,7 +34,7 @@ title = "2 Getting files"
 git clone --single-branch --depth 1 --branch master https://github.com/XYZ/REPO.git REPO-master
 cd REPO-master
 git remote add upstream https://github.com/vishvAsa/REPO.git
-git submodule update --init  themes/sanskrit-documentation-theme-hugo
+git submodule update  --single-branch --init  themes/sanskrit-documentation-theme-hugo
 cd ..
 
 git clone --single-branch --depth 1 --branch content https://github.com/XYZ/REPO.git REPO-content
