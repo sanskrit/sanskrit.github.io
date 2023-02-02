@@ -28,7 +28,7 @@
 <meta itemprop="name" content="2 Getting files">
 <meta itemprop="description" content="निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। (Below, replace &lsquo;XYZ&rsquo; with your github username.) अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Back to Git workflow Going to the right place in your computer (सङ्गणके समीचीनस्थानप्राप्तिः) We&rsquo;ll assume that you&rsquo;re saving all github files in some location (eg. F:\Git\). Please change the below accordingly. Windows - navigate to the appropriate folder using &ldquo;File explorer&rdquo; or &ldquo;My Computer&rdquo;; Then right-click, select &ldquo;Other options&rdquo; if available, and finally click &ldquo;Open Git Bash here&rdquo;.">
 
-<meta itemprop="wordCount" content="223">
+<meta itemprop="wordCount" content="219">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="2 Getting files"/>
 <meta name="twitter:description" content="निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। (Below, replace &lsquo;XYZ&rsquo; with your github username.) अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Back to Git workflow Going to the right place in your computer (सङ्गणके समीचीनस्थानप्राप्तिः) We&rsquo;ll assume that you&rsquo;re saving all github files in some location (eg. F:\Git\). Please change the below accordingly. Windows - navigate to the appropriate folder using &ldquo;File explorer&rdquo; or &ldquo;My Computer&rdquo;; Then right-click, select &ldquo;Other options&rdquo; if available, and finally click &ldquo;Open Git Bash here&rdquo;."/>
@@ -300,19 +300,19 @@
 <ul>
 <li>Having followed &ldquo;Going to the right place in your computer&rdquo;, do the below (सङ्गणके समीचीनस्थानप्राप्तिः इति भागे यद् उक्तं तत् कृत्वा)</li>
 </ul>
-<pre tabindex="0"><code>git clone --single-branch --depth 1 --branch master https://github.com/XYZ/REPO.git REPO-master
+<pre tabindex="0"><code>git clone --depth 1 --branch master https://github.com/XYZ/REPO.git REPO-master
 cd REPO-master
 git remote add upstream https://github.com/vishvAsa/REPO.git
-git submodule update  --single-branch --init  themes/sanskrit-documentation-theme-hugo
+git submodule update --init  themes/sanskrit-documentation-theme-hugo
 cd ..
 
-git clone --single-branch --depth 1 --branch content https://github.com/XYZ/REPO.git REPO-content
+git clone --depth 1 --branch content https://github.com/XYZ/REPO.git REPO-content
 cd REPO-content
 git remote add upstream https://github.com/vishvAsa/REPO.git
 git pull upstream content
 cd ..
 </code></pre><div class="staticFilesInstruction">
-<pre tabindex="0"><code>git clone --single-branch --depth 1 --branch static_files https://github.com/XYZ/REPO.git REPO-static
+<pre tabindex="0"><code>git clone --depth 1 --branch static_files https://github.com/XYZ/REPO.git REPO-static
 cd REPO-static
 git remote add upstream https://github.com/vishvAsa/REPO.git
 git pull upstream static_files
@@ -374,7 +374,7 @@ cd ..
     <a class="btn btn-secondary" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
     <div class="btn small border">
       
-      <a href="https://github.com/sanskrit/sanskrit.github.io/actions"><img src=""> Built </a> on 2023 Feb 2 09:22:42 UTC. (<a href="http://google.com/search?q=09%3a22%3a42%20UTC to IST">IST</a>)
+      <a href="https://github.com/sanskrit/sanskrit.github.io/actions"><img src=""> Built </a> on 2023 Feb 2 09:41:53 UTC. (<a href="http://google.com/search?q=09%3a41%3a53%20UTC to IST">IST</a>)
     </div>
   <ul id="footer-bar-right-custom" class="list-group list-group-horizontal">
   </ul>
