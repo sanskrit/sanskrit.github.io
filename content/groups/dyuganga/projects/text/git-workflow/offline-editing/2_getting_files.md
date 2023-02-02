@@ -31,13 +31,13 @@ title = "2 Getting files"
 - Having followed "Going to the right place in your computer", do the below (सङ्गणके समीचीनस्थानप्राप्तिः इति भागे यद् उक्तं तत् कृत्वा)
 
 ```
-git clone --single-branch --depth 1 --branch master https://github.com/XYZ/REPO.git REPO-master
+git clone --depth 1 --branch master https://github.com/XYZ/REPO.git REPO-master
 cd REPO-master
 git remote add upstream https://github.com/vishvAsa/REPO.git
-git submodule update  --single-branch --init  themes/sanskrit-documentation-theme-hugo
+git submodule update --init  themes/sanskrit-documentation-theme-hugo
 cd ..
 
-git clone --single-branch --depth 1 --branch content https://github.com/XYZ/REPO.git REPO-content
+git clone --depth 1 --branch content https://github.com/XYZ/REPO.git REPO-content
 cd REPO-content
 git remote add upstream https://github.com/vishvAsa/REPO.git
 git pull upstream content
@@ -46,7 +46,7 @@ cd ..
 <div class="staticFilesInstruction">
 
 ```
-git clone --single-branch --depth 1 --branch static_files https://github.com/XYZ/REPO.git REPO-static
+git clone --depth 1 --branch static_files https://github.com/XYZ/REPO.git REPO-static
 cd REPO-static
 git remote add upstream https://github.com/vishvAsa/REPO.git
 git pull upstream static_files
