@@ -28,7 +28,7 @@
 <meta itemprop="name" content="Saving changes">
 <meta itemprop="description" content="निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। (Below, replace &lsquo;XYZ&rsquo; with your github username.) अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Back to Git workflow Overview Get the latest files. (See &ldquo;syncing&rdquo; section below) Make changes in your editor (eg. vscode). Save, commit and push periodically. Syncing with remote repository Every day, make sure that you&rsquo;re working on the latest files by doing the below. If you&rsquo;re changing files in REPO-content : git pull upstream content इति परिवर्तनानि लभ्यानि। If you&rsquo;re changing files in REPO-static : by running: git pull upstream static_files .">
 
-<meta itemprop="wordCount" content="276">
+<meta itemprop="wordCount" content="297">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Saving changes"/>
 <meta name="twitter:description" content="निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। (Below, replace &lsquo;XYZ&rsquo; with your github username.) अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Back to Git workflow Overview Get the latest files. (See &ldquo;syncing&rdquo; section below) Make changes in your editor (eg. vscode). Save, commit and push periodically. Syncing with remote repository Every day, make sure that you&rsquo;re working on the latest files by doing the below. If you&rsquo;re changing files in REPO-content : git pull upstream content इति परिवर्तनानि लभ्यानि। If you&rsquo;re changing files in REPO-static : by running: git pull upstream static_files ."/>
@@ -293,12 +293,33 @@
 </ul>
 <h3 id="alternate-procedure-with-vscode">Alternate procedure with VSCode</h3>
 <ul>
-<li></li>
+<li>Do the following, and select the &ldquo;upstream&rdquo; branch.</li>
 </ul>
+
+<figure class="thumbnail">
+    
+    
+    
+    
+    
+    <a href="../images/vscode-pull-upstream.png">
+        <img src="../images/vscode-pull-upstream.png" alt="vscode-pull-upstream " />
+    </a>
+    <figcaption>
+        vscode-pull-upstream
+        
+    </figcaption>
+</figure>
+
+
 <h2 id="pushing-file-changes">Pushing file changes</h2>
 <ul>
 <li>Follow instructions in &ldquo;Syncing with remote repository&rdquo; first.</li>
-<li>Then, commit and push your changes (using atom editor, or github desktop).</li>
+<li>Then, commit and push your changes (using vscode, or github desktop).
+<ul>
+<li>For tips on using vscode, please learn to use the <a href="../../online-editing/saving-changes?githubUserId=XYZ&amp;repo=REPO">online interface first</a>.</li>
+</ul>
+</li>
 <li>If using command prompt/ terminal: <code>git commit -am &quot;Some message&quot;</code> and <code>git push</code>
 <ul>
 <li>Then go to <a href="https://github.com/XYZ/REPO/tree/content">https://github.com/XYZ/REPO/tree/content</a> and send a pull request .</li>
@@ -401,7 +422,7 @@ hugo server --renderToDisk --config ./config_dev.toml
     <a class="btn btn-secondary" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
     <div class="btn small border">
       
-      <a href="https://github.com/sanskrit/sanskrit.github.io/actions"><img src=""> Built </a> on 2023 Feb 10 10:22:37 UTC. (<a href="http://google.com/search?q=10%3a22%3a37%20UTC to IST">IST</a>)
+      <a href="https://github.com/sanskrit/sanskrit.github.io/actions"><img src=""> Built </a> on 2023 Feb 10 10:27:08 UTC. (<a href="http://google.com/search?q=10%3a27%3a08%20UTC to IST">IST</a>)
     </div>
   <ul id="footer-bar-right-custom" class="list-group list-group-horizontal">
   </ul>
