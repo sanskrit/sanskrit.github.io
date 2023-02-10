@@ -23,12 +23,15 @@ title = "Saving changes"
   -  by running: `git pull upstream static_files` .
 
 ### Alternate procedure with VSCode
-- 
+- Do the following, and select the "upstream" branch.
+
+{{< figure src="../images/vscode-pull-upstream.png" title="" class="thumbnail">}}
 
 ## Pushing file changes
 
 - Follow instructions in "Syncing with remote repository" first.
-- Then, commit and push your changes (using atom editor, or github desktop).
+- Then, commit and push your changes (using vscode, or github desktop).
+  - For tips on using vscode, please learn to use the [online interface first](../../online-editing/saving-changes?githubUserId=XYZ&repo=REPO).
 - If using command prompt/ terminal: `git commit -am "Some message"` and `git push`
   - Then go to https://github.com/XYZ/REPO/tree/content and send a pull request .
   - Video demonstration - [here](https://youtu.be/xXpaUCvqpE4?list=PL63uIhJxWbgg3yJqzeh8kCxMo55YUX50F&t=1669) (२९:०० - ३२:००)।
