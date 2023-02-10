@@ -54,5 +54,7 @@ cd ..
 ```
 </div>
 
+## Setting up the editor
+In VSCode, from File menu select Open Folder. Then, pick the appropriate folder in your computer (example: REPO-content ). 
 
 <script src="../../contribution-page-customizer.js"></script>

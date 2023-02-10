@@ -22,6 +22,9 @@ title = "Saving changes"
 - If you're changing files in `REPO-static` :
   -  by running: `git pull upstream static_files` .
 
+### Alternate procedure with VSCode
+- 
+
 ## Pushing file changes
 
 - Follow instructions in "Syncing with remote repository" first.
