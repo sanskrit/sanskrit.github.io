@@ -4,7 +4,7 @@ title = "+Markdown"
 +++
 ## General
 - Longing video intro (markdown format check, quotes, headers, footnotes, new lines within paragraph,): [R202212](https://youtu.be/opLrf8kAazA)
-- Testing formatting: Use http://dillinger.io
+- Testing formatting: Use https://stackedit.io/app# (Dillinger.io is a little defective)
 - General reference: [MD Guide](https://www.markdownguide.org/extended-syntax/#footnotes).
 - _italics_ - `_italics_`. **Bold** - `**Bold**`.
 
