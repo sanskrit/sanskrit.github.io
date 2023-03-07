@@ -24,15 +24,23 @@ For example:
 ```
 पुनः पवित्रे कृत्वाऽद्भिर्मार्जयति-   
 
-> ॐ आपोहिष्ठा मयोभुवस्तान ऊर्जे दधातन । महेरणाय चक्षसे ॥ यो व शिवतमोरसस्तस्य भाजयते ह नः । उशतीरिव मातरः ॥ तस्मा अरङ्गमामवो यस्य क्षयाय जिन्वथ । आपो जनयथा च नः ॥
-
-।। 
+> ॐ आपोहिष्ठा मयोभुवस्तान ऊर्जे दधातन ।  
+महेरणाय चक्षसे ॥  
+यो वः शिवतमोरसस्तस्य भाजयते ह नः ।  
+उशतीरिव मातरः ॥  
+तस्मा अरङ्गमामवो यस्य क्षयाय जिन्वथ ।  
+आपो जनयथा च नः ॥
 ```
+
+### What is a long quote?
+दीर्घं नाम वाक्यात् पङ्क्तेर् वाऽधिकम्।
+
+A quote is said to be long if it is longer than a sentence or line.
 
 ## Formatting overview
 - यद्य् उद्धृतः पाठो ह्रस्वः, मूलमध्य एव रक्षितुम् उचितम् "-चिह्न-प्रयोगेण। यद्य् उद्धृतः पाठो दीर्घः, तर्हि >-चिह्नेन सह विन्यास इष्यते।
 
-## Long quotes
+### Formatting Long quotes
 Example:
 
 __________________________
@@ -84,7 +92,7 @@ __________________________
 इति सङ्कल्प्य 
 ```
 __________________________
-## Short quotes
+### Formatting Short quotes
 - Please don’t use backticks (\`). Use only `‘` or `“`.
 - Ensure that quotes match (for example: `'the wife of the king, the man of _Devadatta_'`. Or `”the wife of the king, the man of _Devadatta_”`.). 
 - Please make sure that the quotes are appropriately positioned - for example, 
