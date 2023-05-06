@@ -11,7 +11,7 @@ title = "aShTAdhyAyI vAsu commentary"
 ## Details
 Thanks to the efforts (spanning 1.5 years) of (mostly) smt surekhA, and sponsorship of shrI nIlesh of ashtadhyayi.com, we now have a good proof-read text of SC vAsu English commentary on ashtadhyayi.
 
-It's available at [this snapshot](https://github.com/sanskrit/ashtadhyayi/tree/2a6758b4b34eed1cc5cb5ff7caf205a82d60df65/vAsu) . Future  improvements (eg. enforcing IAST/ ISO romanizations) will be available at https://github.com/sanskrit/ashtadhyayi/tree/master/vAsu .
+It's available at [this snapshot](https://github.com/sanskrit/ashtadhyayi/tree/2a6758b4b34eed1cc5cb5ff7caf205a82d60df65/vAsu) . Future  improvements (eg. enforcing IAST/ ISO romanizations) will be available at https://github.com/ashtadhyayi-com/data-edit .
 
 The content is currently displayed at https://ashtadhyayi.github.io/suutra/1.1/1.1.8/ etc..
 
