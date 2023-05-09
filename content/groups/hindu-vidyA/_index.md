@@ -23,7 +23,10 @@ See [posting-rules page](posting-rules).
 In these well defined topical channels, there is no restriction other than truthful pursuit of pertinent matters.
 
 ### shabda-shAstram
-- [shabda-shAstram](https://groups.google.com/g/shabda-vidya)
+- Locations
+  - [shabda-shAstram](https://groups.google.com/g/shabda-vidya)
+  - Subtopics within [Telegram](https://web.telegram.org/k/#@hindu_vidyA) and Discord
+
 
 <details><summary>Stock welcome message (email-stream)</summary>
 
@@ -41,7 +44,9 @@ In these well defined topical channels, there is no restriction other than truth
 
 
 ### कल्पः
-- [kalpa-prayoga](https://groups.google.com/g/kalpa-prayoga)
+- Locations:
+  - [kalpa-prayoga](https://groups.google.com/g/kalpa-prayoga)
+  - Subtopics within [Telegram](https://web.telegram.org/k/#@hindu_vidyA) and Discord
 - **विषयः** \- कल्पो नाम वेदाङ्गं, यत्र श्रौत-स्मार्तागमिकाश् च प्रयोगा अन्तर्भूताः।
 - **उद्देशः** \- सर्वे भवन्तु सुखिनः, श्रौतगृह्यकर्मसु दक्षास्, संस्कारैस् सुसंस्कृताश्च।
 - **अधिकारः** \- सार्वजनिकोऽयं समूहः। न वयम् अधिकार-निश्चेतारः।
@@ -54,7 +59,9 @@ In these well defined topical channels, there is no restriction other than truth
 
 
 ### चेतो-देव-जीवादि-तत्त्व-विचारः
-- [cheto-deva-jivadi](https://groups.google.com/g/cheto-deva-jivadi)
+Locations:
+  - [cheto-deva-jivadi](https://groups.google.com/g/cheto-deva-jivadi)
+  - Subtopics within [Telegram](https://web.telegram.org/k/#@hindu_vidyA) and Discord
 - **विषयः** / Topic - चेतो-देव-जीवादि-तत्त्वानि। (Consciousness, beings, Gods ...).
 - अधिकारः \- सम्प्रदायनियमो नास्ति। स्वाभिप्रायान् सुधियः प्रकटयन्तु।
 - उद्देशः \- नाना-दर्शन-जिज्ञासा, तत्त्वेषु स्व-स्व-निश्चयार्थं स्पष्ट-ज्ञान-प्राप्तिः।
@@ -68,7 +75,9 @@ In these well defined topical channels, there is no restriction other than truth
 
 
 ### kannaDa-vyAsanga
-- [kannada-vyasanga](https://groups.google.com/g/kannada-vyasanga)
+- Locations
+  - [kannada-vyasanga](https://groups.google.com/g/kannada-vyasanga)
+  - Subtopics within [Telegram](https://web.telegram.org/k/#@hindu_vidyA) and Discord
 
 <details><summary>Stock welcome message (email-stream)</summary>
 
@@ -87,6 +96,7 @@ In these well defined topical channels, there is no restriction other than truth
   - Email streams:
     - [Hindu-vidyA](https://groups.google.com/g/hindu-vidya/)
   - [Discord](https://discord.com/channels/1017076634253283488/1017076634861449311)
+  - [Telegram](https://web.telegram.org/k/#@hindu_vidyA)
 - Target engagement:
   - People who profess to further Hindu interests - whatever their views.
   - Other people - so long as they eschew anti-hindu activities here (in favor of areas of common interest).
