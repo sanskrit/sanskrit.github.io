@@ -15,6 +15,7 @@
 +Matturu मत्तूरुग्रामः - संस्कृत-ग्रामः श्रौत-ग्रामः गमक-ग्रामः 	 groups/matturu/
 +Offline editing 	 groups/dyuganga/projects/text/git-workflow/offline-editing/
 +Online editing 	 groups/dyuganga/projects/text/git-workflow/online-editing/
++Presentation 	 groups/dyuganga/projects/text/proofreading/presentation/
 +Projects उद्यमाः 	 groups/dyuganga/projects/
 +Proposed 	 groups/dyuganga/projects/text/proofreading/proposed/
 +Ramayana audio 	 groups/dyuganga/projects/audio/ramayana-audio/
@@ -28,6 +29,7 @@
 +चित्राणि 	 groups/dyuganga/images/
 +चित्राणि 	 groups/dyuganga/projects/text/git-workflow/images/
 +चित्राणि 	 groups/dyuganga/projects/text/proofreading/images/
++चित्राणि 	 groups/dyuganga/projects/text/proofreading/presentation/images/
 +नरसिंहाचार्यः - परिचयः 	 people/i_narasimhaachaarya/
 +शालाः Schools 	 groups/dyuganga/projects/schools/
 +शास्त्रम् 	 groups/dyuganga/projects/audio/shAstra-audio/
@@ -56,6 +58,8 @@ mahAbhArata gItA press - present with audio 	 groups/dyuganga/projects/text/proo
 Matturu History मत्तूरुग्रामः - इतिहासः 	 groups/matturu/history/
 Matturu Veda school मत्तूरु-ग्राम-वेद-पाठशाला 	 groups/matturu/contribute/veda-shaalaa/
 Message-response 	 groups/dyuganga/projects/text/git-workflow/message-response/
+Multiple commentaries 	 groups/dyuganga/projects/text/proofreading/presentation/Multiple_commentaries/
+Multiple scripts 	 groups/dyuganga/projects/text/proofreading/presentation/Multiple_scripts/
 OCR on request 	 groups/dyuganga/projects/text/ocr_on_request/
 Posting-rules 	 groups/hindu-vidyA/posting-rules/
 Preserving page numbers 	 groups/dyuganga/projects/text/proofreading/editing/markdown/Preserving_page_numbers/
