@@ -13,15 +13,18 @@ Digitize and present the text of the mahAbhArata edition so laboriously and wond
 
 
 
-- rAmAyaNa [https://vishvAsa.github.io/purANam/rAmAyaNam/AndhrapAThaH/1_bAlakANDam/01-kathAmukham/001_sanxepa/](https://vishvAsa.github.io/purANam/rAmAyaNam/AndhrapAThaH/1_bAlakANDam/01-kathAmukham/001_sanxepa/)
-- raghuvaMsha [https://vishvAsa.github.io/kAvyam/TIkA/padyam/kAlidAsaH/raghuvaMsham/01/](https://vishvAsa.github.io/kAvyam/TIkA/padyam/kAlidAsaH/raghuvaMsham/01/)
-- kumArasambhava [https://vishvAsa.github.io/kAvyam/TIkA/padyam/kAlidAsaH/kumArasambhavam/02/](https://vishvAsa.github.io/kAvyam/TIkA/padyam/kAlidAsaH/kumArasambhavam/02/)
-- durgA saptashatI [https://vishvAsa.github.io/purANam/durgA-saptashatI/01-prathama-charitam/](https://vishvAsa.github.io/purANam/durgA-saptashatI/01-prathama-charitam/)
-- rAmacharitamAnasa [https://vishvAsa.github.io/kAvyam/TIkA/padyam/purANam/rAmacharitamAnasa-TIkA/02_ayodhyAkANDa/](https://vishvAsa.github.io/kAvyam/TIkA/padyam/purANam/rAmacharitamAnasa-TIkA/02_ayodhyAkANDa/)
-- nArAyaNIyam [https://vishvAsa.github.io/kAvyam/TIkA/padyam/purANam/nArAyaNIyam/003/](https://vishvAsa.github.io/kAvyam/TIkA/padyam/purANam/nArAyaNIyam/003/)
+- rAmAyaNa eg. [001_sanxepa/](https://vishvAsa.github.io/purANam_vaiShNavam/rAmAyaNam/AndhrapAThaH/1_bAlakANDam/01-kathAmukham/001_sanxepa/)
+- raghuvaMsha eg. [raghuvaMsham/01/](https://vishvasa.github.io/kAvyam/laxyam/padyam/kAlidAsaH/raghuvaMsham/sarva-prastutiH/01/)
+- kumArasambhava eg. [kumArasambhavam/02/](https://vishvasa.github.io/kAvyam/laxyam/padyam/kAlidAsaH/kumArasambhavam/sarva-prastutiH/01_umotpattiH/)
+- durgA saptashatI - eg. [prathama-charitam/](https://vishvasa.github.io/purANam/mArkaNDeya-purANam/durgA-saptashatI/sarva-prastutiH/03_durgAsaptashatI/01_madhu-kaiTabha-vadhaH/)
+- rAmacharitamAnasa - eg. [02_ayodhyAkANDa/](https://vishvAsa.github.io/kAvyam/TIkA/padyam/purANam/rAmacharitamAnasa-TIkA/02_ayodhyAkANDa/)
+- nArAyaNIyam eg. [/nArAyaNIyam/003/](https://vishvAsa.github.io/kAvyam/TIkA/padyam/purANam/nArAyaNIyam/003/)
 - several sAmans etc..
 
 
 
+<details><summary>विस्तारः (द्रष्टुं नोद्यम्)</summary>
+
 ## Estimated cost
 I'll get it done by a learned gentleman I've been employing for much of the past year (for fixing taittirIya saMhitA commentary and such). He's very capable (I will supervise). I pay him by the hour \- I can keep track of the time he spends and let you know - so that you can transfer the money directly. Off the top of my head, I estimate that it will him a month or two to accomplish the task (utilizing OCR, other digitized versions of the text).
+</details>

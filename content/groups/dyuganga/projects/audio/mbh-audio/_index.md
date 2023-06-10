@@ -28,7 +28,7 @@ It is important to note that at any point in time, the output(in the form of aud
 
 Listen or download here:
 
-- Audios presented together with the original and the hindI translation - see for example [1/151](https://vishvasa.github.io/purANam/mahAbhAratam/goraxapura-pAThaH/01_Adiparva/09_hiDimbavadhaparva/151_hiDimbA-saMvAdaH) .
+- Audios presented together with the original and the hindI translation - see for example [1/151](https://vishvasa.github.io/purANam_vaiShNavam/mahAbhAratam/goraxapura-pAThaH/01_Adiparva/09_hiDimbavadhaparva/151_hiDimbA-saMvAdaH) .
 - [Github staging repositories](https://github.com/mahabharata-audio-2018/) - this is where audio file contributions are primarily and securely collected.
 - Here audio file contributions are primarily presented for listening.
   - [Archive item 1x](https://archive.org/details/mahAbhArata-mUla-paThanam-GP)
