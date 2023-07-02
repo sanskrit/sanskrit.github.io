@@ -11,6 +11,8 @@ title: Texts
 ## Why digitize?
 
 - Want to easily search for the source of that amazing shloka someone mentioned?
+- एकैकस्यापि श्लोकस्य नानाटीका एकत्रीकृत्य प्रकाशनीयाः।
+- text-to-speech-यन्त्रेण श्रोतुं सौकर्यं कल्पनीयम्।
 - Want to look up a certain term in (say) the abhyankar grammar dictionary on your phone?
 - Want to read flowing text comfortably on your tablet on phone? Want your annotations to be safe for ever? (See advantages described below)
 - Want to carry an entire library on your tablet?
