@@ -31,3 +31,6 @@ Observe:
 - Footnote numbers have been formatted specially - `[^1698]` etc.
 - Footnote definitions can be of two styles. Indenting is important in the second style, which can accommodate multiple paragraphs. ([MD Guide](https://www.markdownguide.org/extended-syntax/#footnotes).)
 - We _may_ choose to break paragraphs, but not sentences, so as to define footnotes near their place of use. It is ok to place footnotes at the nearest logical place - example at the end of the paragraph or list.
+
+
+Testing formatting: Use https://stackedit.io/app#

@@ -2,6 +2,7 @@
 title = "Quotes"
 
 +++
+Testing formatting: Use https://stackedit.io/app#
 
 ## What is a quote
 - Some text from another book. For example, in बौधायनब्रह्मकर्मसमुच्चय - 
