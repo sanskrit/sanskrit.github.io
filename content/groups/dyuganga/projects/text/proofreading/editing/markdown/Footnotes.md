@@ -34,3 +34,31 @@ Observe:
 
 
 Testing formatting: Use https://stackedit.io/app#
+
+## Deduplication
+प्रत्येकस्यां सञ्चिकायां
+परस्परभेदवतां पादटिप्पनीनां सङ्क्यानाम् परस्परभेदो भवेत्।  
+
+यत्र यत्र [^3] इत्य् अस्ति, तत्र तत्र समाना टिप्पनी दर्शनीया चेद् भिन्ना वार्ता। किन्तु +अत्र -
+
+```
+[^3]: Caland's text reads tathai'vāñjanam. It needs to be emended as tathai'vāntarāñjanam following the earlier occurrence.  
+
+[^3]: TĀ IV.9.1 
+
+[^3]: TĀ IV.8.3 
+```
+
+उदाहरणार्थम् - इत्यादि बहुविधटिप्पन्यो निर्दिष्टाः समाननाम्ना `[^3]` इत्यनेन ।  
+एवंं तर्हि कां कुत्र दर्शनीयम् इति सङ्गणकं कथं जानीयात्?
+अत एव पार्थक्यं कल्पनीयम्, यथा -
+
+```
+[^3-1]: Caland's text reads tathai'vāñjanam. It needs to be emended as tathai'vāntarāñjanam following the earlier occurrence.  
+
+[^3-2]: TĀ IV.9.1 
+
+[^3-3]: TĀ IV.8.3 
+```
+
+भेदकल्पनार्थं पृष्ठसङ्ख्या-स्थापनं युज्येत। यथा १२तमे पृष्ठे वर्तमानाय `[^१]` इति सङ्केताय `[^१-१२]` इति लेखनम्।
