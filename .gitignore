@@ -1,5 +1,4 @@
 .wercker
 /resources
 docs
-build_github
 build_*
