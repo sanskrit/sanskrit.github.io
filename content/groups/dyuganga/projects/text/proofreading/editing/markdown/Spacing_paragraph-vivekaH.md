@@ -20,10 +20,12 @@ Different paragraph.
 Another paragraph.
 ```
 __________________________
-
+### परिष्कारोदाहरणम्
 {{< figure src="../../../images/paragraph-spacing-errors.png" title="" class="thumbnail">}}
 
 {{< figure src="../../../images/paragraph-spacing-errors_fixed.png" title="" class="thumbnail">}}
+
+परिष्कारोदाहरणम् [अत्र](https://github.com/vishvAsa/vedAH/commit/a048b9f3e64af69f620b52b66efca4ba66935545)। 
 
 ## पद्य-विन्यासः
 समप्रायं विभक्ता अक्षरसमूहाः पद्य-भागा इत्य् अवगन्तव्यम्। तेषां विन्यासः पादशो वा श्लोकार्धशो वा समान-पाठखण्ड(paragraph)-अन्तर्गतेषु भिन्नासु पङ्क्तिषु स्यात्।
