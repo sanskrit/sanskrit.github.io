@@ -2,9 +2,11 @@
 title = "Spacing, paragraph-विवेकः"
 
 +++
-- अस्मत्परिभाषया
-  - रिक्तापङ्क्तिः = empty line, obtained by pressing Enter key twice.
-  - रिक्तस्थानम् = space, obtained by pressing "space bar" key.
+## अस्मत्परिभाषा
+- रिक्ता पङ्क्तिः = empty line, obtained by pressing Enter key twice.
+- रिक्तस्थानम् = space, obtained by pressing "space bar" key.
+
+## Paragraphs
 - Paragraphs are separated by empty lines. Please remove empty spaces at the beginning of lines. पाठखण्डानां (paragraph इत्येषां) विवेकः सम्यक् स्यात् - रिक्तपङ्क्ति-रिक्तस्थानादियोजनैः।
 - Of course, some paragraphs have multiple lines (example - halves of a shloka). In such cases, there should be TWO SPACES at the end of each line. 
 
