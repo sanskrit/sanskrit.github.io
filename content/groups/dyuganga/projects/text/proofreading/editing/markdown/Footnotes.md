@@ -54,11 +54,11 @@ Testing formatting: Use https://stackedit.io/app#
 अत एव पार्थक्यं कल्पनीयम्, यथा -
 
 ```
-[^3-1]: Caland's text reads tathai'vāñjanam. It needs to be emended as tathai'vāntarāñjanam following the earlier occurrence.  
+[^3_1]: Caland's text reads tathai'vāñjanam. It needs to be emended as tathai'vāntarāñjanam following the earlier occurrence.  
 
-[^3-2]: TĀ IV.9.1 
+[^3_2]: TĀ IV.9.1 
 
-[^3-3]: TĀ IV.8.3 
+[^3_3]: TĀ IV.8.3 
 ```
 
-भेदकल्पनार्थं पृष्ठसङ्ख्या-स्थापनं युज्येत। यथा १२तमे पृष्ठे वर्तमानाय `[^१]` इति सङ्केताय `[^१-१२]` इति लेखनम्।
+तोऽपि वरम् - भेदकल्पनार्थं पृष्ठसङ्ख्या-स्थापनं युज्येत। यथा १२तमे पृष्ठे वर्तमानाय `[^१]` इति सङ्केताय `[^१_१२]` इति लेखनम्।
