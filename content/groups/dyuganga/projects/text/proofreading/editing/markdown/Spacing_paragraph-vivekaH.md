@@ -19,6 +19,10 @@ Another paragraph.
 ```
 __________________________
 
+{{< figure src="../../../images/paragraph-spacing-errors.png" title="" class="thumbnail">}}
+
+{{< figure src="../../../images/paragraph-spacing-errors_fixed.png" title="" class="thumbnail">}}
+
 ## पद्य-विन्यासः
 समप्रायं विभक्ता अक्षरसमूहाः पद्य-भागा इत्य् अवगन्तव्यम्। तेषां विन्यासः पादशो वा श्लोकार्धशो वा समान-पाठखण्ड(paragraph)-अन्तर्गतेषु भिन्नासु पङ्क्तिषु स्यात्।
 
