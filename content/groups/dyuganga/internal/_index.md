@@ -7,4 +7,6 @@ unicode_script: devanagari
 - आन्तरिकसन्देशधारा [ऽत्र](https://groups.google.com/forum/#!forum/dyuganga-antarikam)।
 
 ## Posters
-- [design](https://www.canva.com/design/DAFTTNC9SKk/dAynbOObWELrdMowuDC6jA/view?utm_content=DAFTTNC9SKk&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink) . [View](https://www.canva.com/design/DAFTTNC9SKk/dAynbOObWELrdMowuDC6jA/view?utm_content=DAFTTNC9SKk&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
+- [design - sa](https://www.canva.com/design/DAFTTNC9SKk/dAynbOObWELrdMowuDC6jA/view?utm_content=DAFTTNC9SKk) . [View - sa](https://www.canva.com/design/DAFTTNC9SKk/dAynbOObWELrdMowuDC6jA/view?utm_content=DAFTTNC9SKk)
+
+- [design - ta](https://www.canva.com/design/DAF1PeXx_uM/ZzB_WlNNKKiMaqu-bv-DqA/edit) .
