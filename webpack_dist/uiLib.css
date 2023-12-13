@@ -153,6 +153,15 @@ audio {
 .header-nav a {
   color: yellow;
 }
+.header-nav a:active {
+  color: pink;
+}
+
+.print-two-col {
+  column-count: 2;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+}
 /*!********************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/handsontable/dist/handsontable.full.css ***!
   \********************************************************************************************************/
