@@ -15,12 +15,12 @@ Mahābhārata is the panchama-veda and should reside in every hindu's heart; but
 With your help, we hope to realize this dream - nay our solemn duty as descendents of the sages who inspired the Mahābhārata - of spreading the ideals of the Veda-s through this true and sacred auditory expression. If you want to contribute, see [this page](how.md).
 
 
-## Status as of 2020-04
-shrI suhAs has contacted harisItArAma ghanapAThI , the vedic scholar who recited https://archive.org/details/Ramayana-recitation-Sriram-harisItArAmamUrti-Ghanapaati-v2 . The ghanapAThin (currently engaged in recording bhAgavatam, which he anticipates to complete by next makara sankrAnti/ Jan ) has enthusiastically agreed to recite mahAbhArata next year. The recording will be of similar quality to the rAmAyaNa one linked earlier, and the recordings will be published for free on archive.org as usual. shrI suhAs has arranged for a donor to comfortably fund the salaries of two reciters.
+## Status as of 2024-01
+By 2020-04, shrI suhAs contacted harisItArAma ghanapAThI , the vedic scholar who recited https://archive.org/details/Ramayana-recitation-Sriram-harisItArAmamUrti-Ghanapaati-v2 . The ghanapAThin (then engaged in recording bhAgavatam, which he anticipated to complete by "next makara sankrAnti/ Jan" ) had enthusiastically agreed to recite mahAbhArata the next year. The recording was to be of similar quality to the rAmAyaNa one linked earlier, and the recordings would be published for free on archive.org as usual. shrI suhAs had arranged for a donor to comfortably fund the salaries of two reciters.
 
-Given this is excellent news, I will stop all work on our mostly volunteer-driven recordings (there is no point doing something which will be done better in the near future). We'll just await progress on suhAs's project next year. 
+Given this is excellent news, we stopped all work on our mostly volunteer-driven recordings (there is no point doing something which will be done better in the near future). We decided to just await progress on suhAs's project. 
 
-Till then I will just gratefully enjoy the recordings we've already produced (~1k recordings, ~350 adhyAyas accross 3 parvas, 16.5k verses) - see below for details. 
+Till then we will just gratefully enjoy the recordings we've already produced (~1k recordings, ~350 adhyAyas accross 3 parvas, 16.5k verses) - see below for details. 
 
 
 ## Where?
@@ -28,7 +28,7 @@ It is important to note that at any point in time, the output(in the form of aud
 
 Listen or download here:
 
-- Audios presented together with the original and the hindI translation - see for example [1/151](https://vishvasa.github.io/purANam_vaiShNavam/mahAbhAratam/goraxapura-pAThaH/01_Adiparva/09_hiDimbavadhaparva/151_hiDimbA-saMvAdaH) .
+- Audios presented together with the original text and the hindI translation - see for example [1/151](https://vishvasa.github.io/purANam_vaiShNavam/mahAbhAratam/goraxapura-pAThaH/hindy-anuvAdaH/01_Adiparva/09_hiDimbavadhaparva/151_hiDimbA-saMvAdaH/) .
 - [Github staging repositories](https://github.com/mahabharata-audio-2018/) - this is where audio file contributions are primarily and securely collected.
 - Here audio file contributions are primarily presented for listening.
   - [Archive item 1x](https://archive.org/details/mahAbhArata-mUla-paThanam-GP)
