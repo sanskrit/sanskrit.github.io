@@ -22,8 +22,7 @@ Welcome! To contribute text corrections, please follow the following linked inst
   - Online work: [Saving changes](online-editing/saving-changes?githubUserId=XYZ&repo=REPO)
   - Only if offline editing is accepted by us: [Saving changes](offline-editing/4_saving-changes?githubUserId=XYZ&repo=REPO)
 - [Sending changes via pull requests (आकर्षणाभ्यर्थन-प्रेषणम्)](4_sending-pull-request?githubUserId=XYZ&repo=REPO). <u>SHOULD BE DONE ON EVERY WORK-DAY</u>, after work.
-  - **यस्मिन् यस्मिन् दिने कार्यं करोति, तत्तद्दिने कार्यारम्भात् प्राक् sync fork इति कुर्यात्, कार्यान्ते चाकर्षणाभ्यर्थनं प्रेषयेत्।** एकस्मिन् दिने शोधनम् अपरस्मिन् दिने प्रेषणम् इति नैव युक्तम्।
-    तेन मत्पक्षे परीक्षणं सरलम् भवति, भ्रमाश् च वार्येरन्न् एतादृशाः।
+  - **यस्मिन् यस्मिन् दिने कार्यं करोति, तत्तद्दिने कार्यारम्भात् प्राक् sync fork इति कुर्यात्, कार्यान्ते चाकर्षणाभ्यर्थनं प्रेषयेत्।** एकस्मिन् दिने शोधनम् अपरस्मिन् दिने प्रेषणम् इति नैव युक्तम्। (अनेन मत्पक्षे परीक्षणं सरलम् भवति, भ्रमाश् च वार्येरन्।)
 - Attending to defect notifications: [सूचित-दोष-परिहार-प्रक्रिया](5_sUchita-doSha-parihAra-prativachane?githubUserId=XYZ&repo=REPO)
 
 ## Initial Setup
