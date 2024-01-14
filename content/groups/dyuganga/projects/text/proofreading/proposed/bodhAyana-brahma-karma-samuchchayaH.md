@@ -28,6 +28,7 @@ Digitize the excellent text, बोधायन-ब्रह्म-कर्म-
 - Long video intro (markdown format check, quotes, headers, footnotes, new lines within paragraph,): [R202212](https://youtu.be/opLrf8kAazA)
 - Testing formatting: Use https://stackedit.io/app# 
 - विशिष्य [Quotes](/content/groups/dyuganga/projects/text/proofreading/editing/markdown/Quotes) इत्य् अवधारयतु। 
+- अत्रोदाहरणार्थम् ईक्षताम् - [नवश्राद्धविधिः](/vedAH_yajuH/taittirIyam/sUtram/baudhAyanaH/brahma-karma-samuchchayaH/4_pitRmedhakANDam/09_navashrAddhavidhiH/), यस्य मूलपाठो [ऽत्र](https://archive.org/details/BodhayanaBramhakarma/page/n874/mode/1up) । 
 </details>
 
 
