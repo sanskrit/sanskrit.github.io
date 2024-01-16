@@ -60,8 +60,7 @@ Where? It is important to note that at any point in time, the output(in the form
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/4_sending-pull-request/</guid>
-      <description>निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। (Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username.) अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Back to Git workflow Open the appropriate github link as below
-If you&amp;rsquo;re working on content branch, it will be https://github.com/XYZ/REPO/tree/content If you&amp;rsquo;re working on static_files branch, it will be https://github.com/XYZ/REPO/tree/static_files Text like 1 commit ahead indicates that you have something to contribute. (1 commit ahead इतीव किञ्चिद् दर्शितं चेत् प्रेषयितुं किञ्चिद् अस्तीत्य् अर्थः।)</description>
+      <description>निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। (Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username.) अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Back to Git workflow Open the appropriate github link as below If you&amp;rsquo;re working on content branch, it will be https://github.com/XYZ/REPO/tree/content If you&amp;rsquo;re working on static_files branch, it will be https://github.com/XYZ/REPO/tree/static_files Text like 1 commit ahead indicates that you have something to contribute. (1 commit ahead इतीव किञ्चिद् दर्शितं चेत् प्रेषयितुं किञ्चिद् अस्तीत्य् अर्थः।) Find and use the &amp;ldquo;Contribute&amp;rdquo; link.</description>
     </item>
     
     <item>
