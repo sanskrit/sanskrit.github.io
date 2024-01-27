@@ -13,7 +13,7 @@ Digitize and present the text of the mahAbhArata edition so laboriously and wond
 
 
 
-- rAmAyaNa eg. [001_sanxepa/](https://vishvAsa.github.io/purANam_vaiShNavam/rAmAyaNam/AndhrapAThaH/1_bAlakANDam/01-kathAmukham/001_sanxepa/)
+- rAmAyaNa eg. [001_sanxepa/](https://vishvAsa.github.io/rAmAyaNam/vAlmIkIyam/)
 - raghuvaMsha eg. [raghuvaMsham/01/](https://vishvasa.github.io/kAvyam/laxyam/padyam/kAlidAsaH/raghuvaMsham/sarva-prastutiH/01/)
 - kumArasambhava eg. [kumArasambhavam/02/](https://vishvasa.github.io/kAvyam/laxyam/padyam/kAlidAsaH/kumArasambhavam/sarva-prastutiH/01_umotpattiH/)
 - durgA saptashatI - eg. [prathama-charitam/](https://vishvasa.github.io/purANam/mArkaNDeya-purANam/durgA-saptashatI/sarva-prastutiH/03_durgAsaptashatI/01_madhu-kaiTabha-vadhaH/)
