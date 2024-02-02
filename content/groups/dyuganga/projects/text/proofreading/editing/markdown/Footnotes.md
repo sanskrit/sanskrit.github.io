@@ -4,6 +4,12 @@ title = "Footnotes"
 +++
 Often, footnotes which appear in the bottom of the page in a physical book, appear without separation in raw OCR text on screen. This confuses the reader. Hence, it should be properly formatted.
 
+Every footnote has a **reference** position/ mark, and a **definition**. Example in the below image (right click and open it in a new window for clearer view):
+
+{{< figure src="../../../images/footnote_ref_def.png" title="" class="thumbnail">}}
+
+In our markup, every footnote should have it's references and definition clearly marked. 
+
 Consider the footnote in the image below (right click and open it in a new window for clearer view):
 
 {{< figure src="../../../images/kANe-footnote-example.png" title="" class="thumbnail">}}
