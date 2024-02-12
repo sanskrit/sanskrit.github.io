@@ -50,10 +50,12 @@ There is a famous poem[^13].
 
 [^13]:
 
-    Twinkle twinkle little star  
+    The poem goes:
+
+    > Twinkle twinkle little star  
     How I wonder what you are.
-    
-    Up above the world so high!  
+    >
+    > Up above the world so high!  
     Like a diamond in the sky.
 ```
 
