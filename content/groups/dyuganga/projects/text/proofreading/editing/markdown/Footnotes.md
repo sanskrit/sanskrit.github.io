@@ -10,6 +10,7 @@ Every footnote has a **reference** position/ mark, and a **definition**. Example
 
 In our markup, every footnote should have it's references and definition clearly marked. 
 
+## Example 1
 Consider the footnote in the image below (right click and open it in a new window for clearer view):
 
 {{< figure src="../../../images/kANe-footnote-example.png" title="" class="thumbnail">}}
@@ -41,6 +42,24 @@ Observe:
 
 
 Testing formatting: Use https://stackedit.io/app#
+
+## Multiline footnotes
+
+```
+There is a famous poem[^13].
+
+[^13]:
+
+    Twinkle twinkle little star  
+    How I wonder what you are.
+    
+    Up above the world so high!  
+    Like a diamond in the sky.
+```
+
+Observe that each line in the footnote definition has 4 initial spaces,  
+and that there is an empty line in the beginning.  
+Regarding paragraph formatting, line separation etc.. - usual markdown conventions (described [elsewhere](../) apply.)
 
 ## Deduplication
 प्रत्येकस्यां सञ्चिकायां
