@@ -1,5 +1,5 @@
 ---
-title: विरामदिनानि
+title: विरामदिनानि (Obsolete)
 unicode_script: devanagari
 ---
 
