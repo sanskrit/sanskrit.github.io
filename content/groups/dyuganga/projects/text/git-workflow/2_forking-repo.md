@@ -10,7 +10,7 @@ title = "1 Forking-repo"
 - Back to [Git workflow](/groups/dyuganga/projects/text/git-workflow/?githubUserId=XYZ&repo=REPO)
 </details>
 
-- Create an account on https://github.com. Sign in.
+- Sign in to https://github.com (Create an account if you don't already have one).
 - If https://github.com/XYZ/REPO exists beforehand, please delete it by going to settings using your browser (Go to https://github.com/XYZ/REPO/settings#danger-zone, navigate to the end of the page, and click on "Delete this repository".) .
 - Go to https://github.com/vishvAsa/REPO/fork and fork (there should be a "Create Fork" button). When forking, make sure to uncheck "Copy the master branch only" option (ATTENTION! DON'T FORGET THIS. PLEASE SEE PIC BELOW). Thence, you will get https://github.com/XYZ/REPO/tree/content .
 
