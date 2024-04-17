@@ -63,6 +63,10 @@ Observe that each line in the footnote definition has 4 initial spaces,
 and that there is an empty line in the beginning.  
 Regarding paragraph formatting, line separation etc.. - usual markdown conventions (described [elsewhere](../) apply.)
 
+यत्र दीर्घोद्धरणम् (श्लोकसदृशम्) भवति, तत्रैवम् अवश्यं क्रियताम्।  
+अन्यथापि पादटिप्पन्यवगतौ paragraph-विन्यासः शोभते चेद् एवम्।
+
+
 ## Deduplication
 प्रत्येकस्यां सञ्चिकायां
 परस्परभेदवतां पादटिप्पनीनां सङ्क्यानाम् परस्परभेदो भवेत्।  
