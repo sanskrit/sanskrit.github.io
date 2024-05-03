@@ -26,7 +26,6 @@ PS: To close unnecessary tabs, do as illustrated below:
 
 {{< figure src="../../images/vscode-close-tabs.png" title="" >}}
 
-
 ## Syncing fork
 - कार्यानुसारेण https://github.com/XYZ/REPO/tree/content, https://github.com/XYZ/REPO/tree/static_files इत्यत्र वा गत्वा,  
   sync-fork इति करोतु - [चित्रे](https://youtu.be/yKLyfqL0A4M?t=462) दर्शितया रीत्या।  
@@ -39,4 +38,11 @@ If sync is successful, you will see messages like the below in the pull request:
 
 {{< figure src="../../images/sync-fork-merge-success.png" title="">}}
 
+## Sending changes
+- [Sending changes via pull requests (आकर्षणाभ्यर्थन-प्रेषणम्)](4_sending-pull-request?githubUserId=XYZ&repo=REPO). <u>SHOULD BE DONE ON EVERY WORK-DAY</u>, after work.
+  - **यस्मिन् यस्मिन् दिने कार्यं करोति, तत्तद्दिने कार्यारम्भात् प्राक् sync fork इति कुर्यात्, कार्यान्ते चाकर्षणाभ्यर्थनं प्रेषयेत्।** एकस्मिन् दिने शोधनम् अपरस्मिन् दिने प्रेषणम् इति नैव युक्तम्। (अनेन मत्पक्षे परीक्षणं सरलम् भवति, भ्रमाश् च वार्येरन्।)
+
+
 <script src="../../contribution-page-customizer.js"></script>
+
+
