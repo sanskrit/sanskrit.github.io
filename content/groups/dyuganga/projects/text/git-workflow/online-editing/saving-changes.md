@@ -27,7 +27,7 @@ PS: To close unnecessary tabs, do as illustrated below:
 {{< figure src="../../images/vscode-close-tabs.png" title="" >}}
 
 ## Syncing fork
-- कार्यानुसारेण https://github.com/XYZ/REPO/tree/content, https://github.com/XYZ/REPO/tree/static_files इत्यत्र वा गत्वा,  
+- कार्यानुसारेण https://github.com/XYZ/REPO/tree/content इत्यत्र, ( https://github.com/XYZ/REPO/tree/static_files इत्यत्र वा यथानिर्देशं)  गत्वा,  
   sync-fork इति करोतु - [चित्रे](https://youtu.be/yKLyfqL0A4M?t=462) दर्शितया रीत्या।  
   उचितस्थाने "Sync fork" इति कीलकं न दृश्यते चेद् उपेक्षताम् - पूर्वम् एवास्मत्सञ्चिकाभिः समम् अस्तीति ज्ञायताम्।  
   (अवधेयम् - master-शाखायाम् एतत् कृतं व्यर्थप्रायम्। content-आदि-शाखायां गत्वा करणीयम्। )
