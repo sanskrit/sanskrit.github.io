@@ -8,6 +8,6 @@ title = "Figures"
 - Then apply a tag like:
 
 ```
-\{{< figure src="../images/IMAGE_FILE_NAME" title="" class="thumbnail">}}
+![](../images/FULL_IMAGE_FILE_NAME)
 ```
 
