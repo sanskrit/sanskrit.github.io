@@ -30,17 +30,8 @@ jobs:
         set -o xtrace
         git submodule update  --init --recursive
         git submodule update --remote --merge --recursive
-    - name: Get changed files
-      id: changed-files
-      if: ${{ github.event_name != 'workflow_dispatch' }}
-      uses: tj-actions/changed-files@v41
-#      with:
-#        files_ignore: |
-#          static/**
-#          content/**
     - name: Setup Hugo
       id: setup_hugo
-      if: ${{ steps.changed-files.conclusion == 'skipped' || steps.changed-files.outputs.any_changed == 'true'}}
       uses: peaceiris/actions-hugo@v2
       with:
         hugo-version: "0.122.0"
