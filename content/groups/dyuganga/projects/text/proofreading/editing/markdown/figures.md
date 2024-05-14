@@ -1,5 +1,5 @@
 +++
-title = "Images"
+title = "Figures"
 +++
 
 - Within an image subfolder, save the image to be incldued (screenshot using a tool like flameshot.org if needed). 
