@@ -97,3 +97,11 @@ Regarding paragraph formatting, line separation etc.. - usual markdown conventio
 
 [^3_3]: TĀ IV.8.3 
 ```
+
+## Quote used entirely replacing author's words
+{{< figure src="../../images/quote_entirely_replacing_author.jpg" title="" class="thumbnail">}}
+
+Reg. example above -  
+वस्तुतः "राजन्यवैश्ययोर् उपनयनम्" इत्यस्मिन् विभागे वर्तमानम् अखिलं ग्रन्थान्तराद् उद्धृतम् - आद्य्-अन्तयोर् वर्तमान-`"`-चिह्नेनैतज् ज्ञायते। तथापि स्ववचनस्थाने हि प्रयुक्तम्। अतस् तत्रोद्धरणचिह्नदानं नापेक्षितम्।
+
+किञ्च, तद्-अन्तः यद् उद्धरण-जातम् अस्ति तत् तु दर्शनीयम्।
