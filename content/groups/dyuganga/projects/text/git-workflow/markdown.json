@@ -1,0 +1,230 @@
+{
+	"mdtitle": {
+		"prefix": ["mdt"],
+		"body": [
+			"+++",
+			"title = \"$0${TM_FILENAME_BASE}\"",
+			"+++",
+			""
+		],
+		"description": "Title."
+	},
+	"figure_hugo": {
+		"prefix": ["fig"],
+		"body": [
+			"{{< figure src=\"../images/${CLIPBOARD}\" title=\"\" class=\"thumbnail\">}}",
+		],
+		"description": "Figure (hugo)."
+	},
+	"detail_vv": {
+		"prefix": ["vv", "व्व्"],
+		"body": [
+			"<details open><summary>विश्वास-प्रस्तुतिः</summary>", "",
+			"${TM_SELECTED_TEXT}${CLIPBOARD}",
+			"</details>",
+			"",
+			"<details><summary>मूलम्</summary>", "",
+			"${TM_SELECTED_TEXT}${CLIPBOARD}",
+			"</details>",
+			""
+		],
+		"description": "स-मूल-विश्वास-प्रस्तुतिः."
+	},
+	"detail_vt": {
+		"prefix": ["vvv", "व्व्व्"],
+		"body": [
+			"<details open><summary>विश्वास-टिप्पनी</summary>", "",
+			"${TM_SELECTED_TEXT}${CLIPBOARD}",
+			"</details>",
+			""
+		],
+		"description": "विश्वास-टिप्पनी"
+	},
+	"detail_dd": {
+		"prefix": ["dd", "द्द्"],
+		"body": [
+			"<details><summary>विस्तारः (द्रष्टुं नोद्यम्)</summary>", "",
+			"${TM_SELECTED_TEXT}${CLIPBOARD}",
+			"</details>",
+			""
+		],
+		"description": "विस्तारः"
+	},
+	"detail_ddd": {
+		"prefix": ["ddd", "द्द्द्"],
+		"body": [
+			"<details><summary>विस्तारः (द्रष्टुं नोद्यम्) - प्रस्तावः</summary>", "",
+			"${TM_SELECTED_TEXT}${CLIPBOARD}",
+			"</details>",
+			""
+		],
+		"description": "विस्तारः"
+	},
+	"detail_mm": {
+		"prefix": ["mm", "म्म्"],
+		"body": [
+			"<details><summary>मूलम्</summary>", "",
+			"${TM_SELECTED_TEXT}${CLIPBOARD}",
+			"</details>",
+			""
+		],
+		"description": "विस्तारः"
+	},
+	"detail_ee": {
+		"prefix": ["ee", "ए"],
+		"body": [
+			"<details><summary>English</summary>", "",
+			"${TM_SELECTED_TEXT}${CLIPBOARD}",
+			"</details>",
+			""
+		],
+		"description": "विस्तारः"
+	},
+	"detail_eee": {
+		"prefix": ["eee", "एऎ"],
+		"body": [
+			"<details><summary>English - Note</summary>", "",
+			"${TM_SELECTED_TEXT}${CLIPBOARD}",
+			"</details>",
+			""
+		],
+		"description": "विस्तारः"
+	},
+	"detail_mmm": {
+		"prefix": ["mmm", "म्म्म्"],
+		"body": [
+			"<details><summary>मानसतरङ्गिणीकृत्</summary>", "",
+			"${TM_SELECTED_TEXT}${CLIPBOARD}",
+			"</details>",
+			""
+		],
+		"description": "विस्तारः"
+	},
+	"detail_mmt": {
+		"prefix": ["mmt", "म्म्त्"],
+		"body": [
+			"<details><summary>मानसतरङ्गिणीकृत् - टिप्पनी</summary>", "",
+			"${TM_SELECTED_TEXT}${CLIPBOARD}",
+			"</details>",
+			""
+		],
+		"description": "विस्तारः"
+	},
+	"detail_tt": {
+		"prefix": ["tt", "त्त्"],
+		"body": [
+			"<details><summary>तमिऴ्</summary>", "",
+			"${TM_SELECTED_TEXT}${CLIPBOARD}",
+			"</details>",
+			""
+		],
+		"description": "विस्तारः"
+	},
+	"detail_kk": {
+		"prefix": ["kk", "क्क्"],
+		"body": [
+			"<details><summary>Keith</summary>", "",
+			"${TM_SELECTED_TEXT}${CLIPBOARD}",
+			"</details>",
+			""
+		],
+		"description": "विस्तारः"
+	},
+	"detail_kn": {
+		"prefix": ["kkk", "क्क्क्", "ಕ್ಕ್"],
+		"body": [
+			"<details><summary>ಕನ್ನಡ</summary>", "",
+			"${TM_SELECTED_TEXT}${CLIPBOARD}",
+			"</details>",
+			""
+		],
+		"description": "विस्तारः"
+	},
+	"detail_bb": {
+		"prefix": ["bb", "ब्ब्"],
+		"body": [
+			"<details><summary>भट्टभास्कर-टीका</summary>", "",
+			"${TM_SELECTED_TEXT}${CLIPBOARD}",
+			"</details>",
+			""
+		],
+		"description": "विस्तारः"
+	},
+	"detail_bv": {
+		"prefix": ["bv", "ब्व्"],
+		"body": [
+			"<details><summary>भास्करोक्त-विनियोगः</summary>", "",
+			"${TM_SELECTED_TEXT}${CLIPBOARD}",
+			"</details>",
+			""
+		],
+		"description": "विस्तारः"
+	},
+	"detail_ss": {
+		"prefix": ["ss", "स्स्"],
+		"body": [
+			"<details><summary>सायण-टीका</summary>", "",
+			"${TM_SELECTED_TEXT}${CLIPBOARD}",
+			"</details>",
+			""
+		],
+		"description": "विस्तारः"
+	},
+	"detail_sv": {
+		"prefix": ["sv", "स्व्"],
+		"body": [
+			"<details><summary>सायणोक्त-विनियोगः</summary>", "",
+			"${TM_SELECTED_TEXT}${CLIPBOARD}",
+			"</details>",
+			""
+		],
+		"description": "विस्तारः"
+	},
+	"detail_mm": {
+		"prefix": ["mm", "म्म्"],
+		"body": [
+			"<details><summary>मूलम्</summary>", "",
+			"${TM_SELECTED_TEXT}${CLIPBOARD}",
+			"</details>",
+			""
+		],
+		"description": "विस्तारः"
+	},
+	"detail_hh": {
+		"prefix": ["hh", "ह्ह्"],
+		"body": [
+			"<details><summary>हिन्दी</summary>", "",
+			"${TM_SELECTED_TEXT}${CLIPBOARD}",
+			"</details>",
+			""
+		],
+		"description": "विस्तारः"
+	},
+	"detail_hhh": {
+		"prefix": ["hhh", "ह्ह्ह्"],
+		"body": [
+			"<details><summary>हिन्दी - टिप्पनी</summary>", "",
+			"${TM_SELECTED_TEXT}${CLIPBOARD}",
+			"</details>",
+			""
+		],
+		"description": "विस्तारः"
+	},
+	"link_sss": {
+		"prefix": ["sss", "स्स्स्"],
+		"body": [
+		"Source: [TW]($0${TM_SELECTED_TEXT}${CLIPBOARD})",
+		""
+		],
+		"description": "Source link"
+	},
+	"include": {
+		"prefix": ["inc"],
+		"body": [
+		"<div class=\"js_include\" url=\"$0${CLIPBOARD}\" newLevelForH1=\"5\" includeTitle=\"false\"> </div>",
+		""
+		],
+		"description": "include"
+	},
+	}
+	
