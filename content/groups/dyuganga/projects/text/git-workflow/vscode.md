@@ -14,4 +14,8 @@ You can also change Font size, colors etc. by going to settings (Bottom left ⚙
 - Copy and save from [here](../markdown.json) .
 - Usage:
   - select + cut text, type shortcut, press ctrl-space, press down arrow and enter
-  - demo: [YT](https://youtu.be/4gzHnJp1iOk) . 
+  - demo: [YT](https://youtu.be/4gzHnJp1iOk) .
+  
+
+## Side-by-side text
+{{< figure src="../images/vscode-side-by-side-text.png" title="" class="thumbnail">}}
