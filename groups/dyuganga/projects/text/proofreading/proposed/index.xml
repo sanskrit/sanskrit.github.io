@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>&#43;Proposed on संस्कृतजालक्षेत्रम्</title>
+    <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/</link>
+    <description>Recent content in &#43;Proposed on संस्कृतजालक्षेत्रम्</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>kRdanta-rUpa-mAla lookup</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/kRdanta-dict/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/kRdanta-dict/</guid>
+      <description>Goal Produce data for digital dictionaries to easily lookup major kRdanta forms of all verb-roots using the kRdanta-rUpamAla data (already digitized, needs to fleshed out and filled up as described below). Essentially, we would need to get a learned vyAkaraNa vidvAn to fill up this spreadsheet by looking at the original text.&#xA;Importance Sanskrit is the Hindu liturgical language. Often times, a scholar or student needs to look up correct forms arising out of verbal roots to correctly understand (or compose) sanskrit text.</description>
+    </item>
+    <item>
+      <title>mAdhyandina-shatapatha</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/mAdhyandina-shatapatha/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/mAdhyandina-shatapatha/</guid>
+      <description>Status Sponsorship promised by shrI virender. Goal and motivation The sasvara pATha of shatapatha-brAhmaNa (mAdhyandina) is valuable for students and practitioners of vedic ritual and language. We have a typed devanAgarI version which needs quite a bit of svara correction. The text, as usual, will remain freely available on internet for anyone to use and copy.&#xA;Details Various editions of shatapatha-brAhmaNa have been published. Of them, ones by Weber and vamshIdhara-shAstrI are prominent.</description>
+    </item>
+    <item>
+      <title>suhAsa wish list</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/suhAsa-wish-list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/suhAsa-wish-list/</guid>
+      <description>I suggest that priority be given to books that can be converted to dictionaries as their impact is greater. Here is a list of a few books. I have shared some of these books here. I will share the others upon request.&#xA;Primary Texts&#xA;सुभाषितावलिः (Subhashita work) शार्ङ्गधरपद्धतिः (Subhashita work. If सुभाषितावलिः+शार्ङ्गधरपद्धतिः are done, all the big five Subhashita works will be made available) अन्योक्तिमुक्तावलिः of हंसराजगणिः (very comprehensive anyokti collection) कुवलयानन्द काव्यादर्श + रत्नश्री commentary (oldest AFAIK and best) पूर्णसरस्वती&amp;rsquo;s commentaries on मालतीमाधव and मेघदूत (पूर्णसरस्वती is an incredibly insightful commentator.</description>
+    </item>
+    <item>
+      <title>बोधायन-ब्रह्म-कर्म-समुच्चयः</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/bodhAyana-brahma-karma-samuchchayaH/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/bodhAyana-brahma-karma-samuchchayaH/</guid>
+      <description>Status In progress (Aug 2022 - ??). A member of a small-town baudhAyana purohita family is engaged in this. Remarkably, she works with just a mobile phone. Budget About 40k.&#xA;Proposed work Digitize the excellent text, बोधायन-ब्रह्म-कर्म-समुच्चयः. (published in 70-s from gokarNa)&#xA;Proofreader Instructions (द्रष्टुं नोद्यम्) कर्मणि भाग-द्वयम् - वर्ण-समीकरणम् (correcting the text), पाठ-विन्यासश् (formatting) च।&#xA;वर्ण-समीकरणं नाम मूलं दृष्ट्वा, उट्टङ्कित-पाठस्य परिष्करणम्।&#xA;किञ्च दीर्घ&amp;ndash;स-स्वर&amp;ndash;वैदिक-मन्त्रादीनाम् (उपदशाक्षरेभ्योऽपि दीर्घाणां) परिष्कारे न श्राम्यतु - यतः पूर्वमेव परिष्कृतपाठो ऽन्यतो ऽनुकरिष्यते।</description>
+    </item>
+  </channel>
+</rss>
