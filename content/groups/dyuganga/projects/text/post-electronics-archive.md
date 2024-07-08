@@ -36,9 +36,16 @@ Currently, the most promising media for storing images of pages or plain text ar
 Number of published texts we want to save is in 100000s.  
 Even if, in the beginning stages, we pick the most important ones, it might be 10000. Of these we'd need 10 copies to store in different locations.
 
-To help form a plan, consider the first 600pg book in this [bhAgavata-commentary series](https://archive.org/details/bhagavatam-multi-commentary/Srimad%20Bhagavata%20Mahapuranam%20Skandha%2001/page/258/mode/2up). There are roughly 1380 letters (e.g. व्या · ख्या · न · च · तु · ष्ट · य · वि · शि · ष्ट · म्) and 380 spaces in a typical page from the book linked earlier (counted using https://aksharas.vipran.in ).
+To help form a plan, consider the first 600pg book in this [bhAgavata-commentary series](https://archive.org/details/bhagavatam-multi-commentary/Srimad%20Bhagavata%20Mahapuranam%20Skandha%2001/page/258/mode/2up). There are roughly 1380 letters (e.g. व्या · ख्या · न · च · तु · ष्ट · य · वि · शि · ष्ट · म्) and 380 spaces in a typical page from the book linked earlier ([counting tool](https://aksharas.vipran.in) ).
 
 How many tablets would it need - at minimum resolution (requiring 10x magnification) and at naked-eye visible resolution?
+
+## Cost
+
+
+### Current enquiries
+For one-off texts, it can cost 40$ per ceramic tile plus shipping from EU. ("the smallest text size is 4 pt in Arial style. It is the still readable with the naked eye. the capacity  (of latin letters) is about 40 000 characters on the 20x20 cm surface of a MOM tablet.")
+
 
 ## Preservation need
 Human brain is limited - so important texts need to be preserved.  
