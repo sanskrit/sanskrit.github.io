@@ -2,6 +2,8 @@
 title = "Post electronics archive"
 +++
 
+Short url - https://rebrand.ly/dg-archive
+
 ## Intro
 **How to best preserve our knowledge (physical and spiritual) and texts?**
 
@@ -105,3 +107,10 @@ Examples of catastrophic loss -
 
 - The last classical antique library in Constantinople burnt down in the 5th century and 120000 codices with it. The first medieval library of the 6th century contained about 100 books.
 - Burnt libraries of nAlandA, Alexandria.
+
+## Post-industrial age focus
+The post-oil, post-industrial-age world will arrive (details [TM](https://escholarship.org/uc/item/9js5291m)), with much unrest, by 2160 (or 2260 if ice-methane extraction works out). Lack of fertilizers will lead to famine and a big drop in population. Raw materials like plastics, copper, and lithium too will be rarer. Machines - let alone computers - will be scarce. So, electronic data will be ephemeral.+++(5)+++
+
+(Even while the industrial age is going strong, 38% of web-pages from 2013 was not accessible anymore in 2024. [PR](pewresearch.org/data-labs/2024/05/17/when-online-content-disappears/))
+
+**How then to best preserve our knowledge (physical and spiritual) and texts?**
