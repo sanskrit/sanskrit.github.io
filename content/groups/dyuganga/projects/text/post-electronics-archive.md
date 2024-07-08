@@ -34,18 +34,59 @@ Currently, the most promising media for storing images of pages or plain text ar
 
 ## Text collection
 Number of published texts we want to save is in 100000s.  
-Even if, in the beginning stages, we pick the most important ones, it might be 10000. Of these we'd need 10 copies to store in different locations.
+Even if, in the beginning stages, we pick the most important ones, it might be 10000. Of these we'd need 25 copies to store in different locations worldwide.
 
 To help form a plan, consider the first 600pg book in this [bhAgavata-commentary series](https://archive.org/details/bhagavatam-multi-commentary/Srimad%20Bhagavata%20Mahapuranam%20Skandha%2001/page/258/mode/2up). There are roughly 1380 letters (e.g. व्या · ख्या · न · च · तु · ष्ट · य · वि · शि · ष्ट · म्) and 380 spaces in a typical page from the book linked earlier ([counting tool](https://aksharas.vipran.in) ).
 
 How many tablets would it need - at minimum resolution (requiring 10x magnification) and at naked-eye visible resolution?
 
 ## Cost
-
+Given the high volume, it is important the cost be low.  
+This likely possible if the technology is indigenized  
+and if local materials and skills are used.  
+We are still in the enquiry stage.
 
 ### Current enquiries
 For one-off texts, it can cost 40$ per ceramic tile plus shipping from EU. ("the smallest text size is 4 pt in Arial style. It is the still readable with the naked eye. the capacity  (of latin letters) is about 40 000 characters on the 20x20 cm surface of a MOM tablet.")
 
+TODO: Contact Long Now foundation regarding reuse of their Rosetta project tech.
+
+## Archive locations
+Redundant copies of texts should be preserved in geographically separated locations.  
+Preferably, there ought to be a local scholarly community   
+which can utilize and care for the texts.  
+Further, if the archive is located within a religious structure (eg. temple, maTha, samAdhi),  
+it is more likely to be preserved.  
+For example, in India and surroundings:
+
+- mattUru village, karNATaka
+- gokarNa, karNATaka
+- shrIrangam, tamiL nADu
+- tirupati, Andhra pradesh
+- daxiNapatha sattra, majUli, assam
+- bhuvaneshvar, Orissa
+- ayodhyA, UP
+- vRndAvan, UP
+- vArANAsI, UP
+- kAThmaNDu, nepAL
+- haridvAr, uttarAkhaND
+- shimla, HP
+- mahAkAla temple, ujjain, MP
+- dvArikA, GJ
+
+Outside India:
+
+- MUM Fairfield, Iowa, USA
+- barsAna dhAm, TX, USA
+- BAPS Shri Swaminarayan Mandir, London, UK
+- bAli, Indonesia
+- BAPS Shri Swaminarayan Mandir, Nairobi, Kenya
+- Durban Hindu temple, South Africa
+- Raghavendra swamy mutt, Toongabie, NSW, AU
+- Thirumurugan Temple, Auckland, New Zealand
+- Sri Siva Subramaniya Temple, Fiji
+- A temple in Guyana or Suriname, South America
+- The Latin American Hindu colony, South America
 
 ## Preservation need
 Human brain is limited - so important texts need to be preserved.  
