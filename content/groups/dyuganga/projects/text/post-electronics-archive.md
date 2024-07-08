@@ -16,6 +16,8 @@ The archive and media used for preserving books should resist degradation and de
 - Vandalism and arson
 - Human greed for material ("Let me melt these plates and make a knife")
 - Natural chemical degradation
+  - Air pollution
+  - Water, flooding
 - Insects, rodents and pests
 - Earthquakes
 
@@ -52,11 +54,13 @@ For one-off texts, it can cost 40$ per ceramic tile plus shipping from EU. ("the
 TODO: Contact Long Now foundation regarding reuse of their Rosetta project tech.
 
 ## Archive locations
-Redundant copies of texts should be preserved in geographically separated locations.  
-Preferably, there ought to be a local scholarly community   
+Redundant copies of texts should be preserved in geographically separated locations. Some criteria - 
+
+- Preferably, there ought to be a local scholarly community   
 which can utilize and care for the texts.  
-Further, if the archive is located within a religious structure (eg. temple, maTha, samAdhi),  
-it is more likely to be preserved.  
+- Further, if the archive is located within a religious structure (eg. temple, maTha, samAdhi), it is more likely to be preserved. 
+- The location should preferably be away from financial centers which are more likely to attract plunder. 
+
 For example, in India and surroundings:
 
 - mattUru village, karNATaka
