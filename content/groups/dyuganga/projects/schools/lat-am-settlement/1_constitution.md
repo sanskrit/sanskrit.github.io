@@ -20,9 +20,6 @@ title = "1 Settlement constitution"
   - Lingua franca (in formal meets, documents) - sanskrit (founders are fluent in it.) Easy to learn by immersion within a few days. औपचारिकी-भाषा संस्कृतम् एव स्यान् मौखिकम् अपि - यथापेक्षम् अनुवादको नियुज्यताम्। सर्वेषां च संस्कृत-शिक्षणं स्यात्। परिवारस्तरे स्वबलम् अनुसृत्य भाषान्तरम् भवतु नाम।
 - Location - being considered [elsewhere](../settlement-prospects).
 
-## Contact
-- [Telegram](https://t.me/+yp-oEsb8QuViZGUx)
-
 ## पृष्ठभूमिका Background
 - India
   - dense population. Famine + war looming post-oil-collapse (150 yrs, +100 if ice methane works). (Ref- [Murphy](https://escholarship.org/uc/energy_ambitions) )
