@@ -3,6 +3,12 @@ title = "Recruitment"
 +++
 
 ## Target
+### Profile
+- We seek Hindu families who are firmly committed to retaining their saMskAra-s and traditional knowledge across generations.  
+- They should agree with the settlement [constitution](../constitution]).
+- They should be willing to (eventually) switch over to Sanskrit - atleast for formal communication.
+
+### Number
 Shooting for 500 families.
 
 If founder size is not sufficient, colony is almost certain to fail in it's "conservative" goals. If too short:
