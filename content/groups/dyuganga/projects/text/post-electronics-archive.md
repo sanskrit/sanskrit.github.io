@@ -51,6 +51,8 @@ This likely possible if the technology is indigenized
 and if local materials and skills are used.  
 We are still in the enquiry stage.
 
+Idea: If you have contacts with Indian tile manufacturers in RJ (eg. kajAriya), and if you can convince them to develop the technology - we would be set to proceed.
+
 ### Current enquiries
 For one-off texts, it can cost 40$ per ceramic tile plus shipping from EU. ("the smallest text size is 4 pt in Arial style. It is the still readable with the naked eye. the capacity  (of latin letters) is about 40 000 characters on the 20x20 cm surface of a MOM tablet.")
 
