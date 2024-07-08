@@ -9,7 +9,8 @@ We propose a network of archives spread over multiple regions,
 where copies of all texts relevant to Hindus are preserved  
 in media which will persist for millennia.  
 The archived material should be readable with minimal technology,  
-to allow for regression technical abilities due to loss of knowledge, lack of materials, wars and such.
+to allow for regression technical abilities  
+due to loss of knowledge, lack of materials, electricity and such.
 
 The archive and media used for preserving books should resist degradation and destruction due to factors such as
 
