@@ -1,5 +1,5 @@
 +++
-title = "1 Settlement constitution"
+title = "1 Constitution"
 +++
 
 ## ध्येयम् Objective
