@@ -26,7 +26,7 @@ Rough sequence -
 - get the farm running
 - offer house + farm plots to qualified H (theoretically "faculty")  
   for "volunteer/ very cheap lease while you try",  
-  ending in sale and settlement
+  ending in sale and settlement (preferably as local citizens)
 - attract students
 
 ### maThas
