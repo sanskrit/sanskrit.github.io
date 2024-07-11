@@ -11,3 +11,6 @@ even as the industrial society collapses when fossil fuels run out, with unrest 
 
 This center in Latin America for Hindu studies  
 will also benefit locals and Hindu expat communities.
+
+## Contact
+- [Telegram](https://t.me/+yp-oEsb8QuViZGUx)
