@@ -25,7 +25,7 @@ title = "Saving changes"
 ### Alternate procedure with VSCode
 - Do the following, and select the "upstream" branch.
 
-{{< figure src="../images/vscode-pull-upstream.png" title="" class="thumbnail">}}
+{{< figure src="../../images/vscode-pull-upstream.png" title="" class="thumbnail">}}
 
 ## Pushing file changes
 
