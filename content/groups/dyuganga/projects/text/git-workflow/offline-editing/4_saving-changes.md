@@ -25,7 +25,13 @@ title = "Saving changes"
 ### Alternate procedure with VSCode
 - Do the following, and select the "upstream" branch.
 
+(Click on the images below and open in a new s)
+
 {{< figure src="../../images/vscode-pull-upstream.png" title="" class="thumbnail">}}
+
+{{< figure src="../../images/vscode-pull-upstream_select_upstream.png" title="" class="thumbnail">}}
+
+{{< figure src="../../images/vscode-pull-upstream_select_branch.png" title="" class="thumbnail">}}
 
 ## Pushing file changes
 
