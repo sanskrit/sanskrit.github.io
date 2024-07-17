@@ -1,0 +1,13 @@
++++
+title = "Math"
++++
+गणित-वाक्यान्य् एवं व्यवस्थापनीयानि - `\\(AB^2 + BC^2 = AC^2\\)` ।
+सर्वम् अपि गणितवाक्यम् `\\(…\\)` आवरणे ऽस्तु।
+पुनर् एतावत् कृतम् मूलम् अवलोक्य समीकरोतु - क्वचिद् दोषा दृश्यन्ते। पङ्क्ति-पूर्णं गणितवाक्यं चेद् एवं कुर्यात्  
+
+`$$(AB^2 + BC^2 = AC^2$$`
+
+इतोऽप्य् उदाहरणान्य् अत्रेक्षताम् - 
+
+- [जालपुटम्](https://vishvasa.github.io/notes/math/probability/inference/03_Bounds_on_deviation_probability/) , [मूलम्](https://raw.githubusercontent.com/vishvAsa/notes/content/math/probability/inference/03_Bounds_on_deviation_probability.md)
+
