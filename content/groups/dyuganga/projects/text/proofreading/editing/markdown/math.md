@@ -13,3 +13,5 @@ title = "Math"
 
 - [जालपुटम्](https://vishvasa.github.io/notes/math/probability/inference/03_Bounds_on_deviation_probability/) , [मूलम्](https://raw.githubusercontent.com/vishvAsa/notes/content/math/probability/inference/03_Bounds_on_deviation_probability.md)
 
+## Additional tips
+Be sure to escape \* in formulae, for example - <div class="tex2jax_ignore">`\\(Z_{n}^{\*}\\)`</div>
