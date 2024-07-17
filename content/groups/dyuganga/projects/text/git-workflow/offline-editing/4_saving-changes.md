@@ -23,9 +23,9 @@ title = "Saving changes"
   -  by running: `git pull upstream static_files` .
 
 ### Alternate procedure with VSCode
-- Do the following, and select the "upstream" branch.
+- Do the following, and select "upstream" and the appropriate branch (content or static_files).
 
-(Click on the images below and open in a new s)
+(Click on the images below and open and view full screen.)
 
 {{< figure src="../../images/vscode-pull-upstream.png" title="" class="thumbnail">}}
 
