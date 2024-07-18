@@ -3,15 +3,15 @@ title = "ग्राम-द्विजाः"
 +++
 
 ## Goal
-This project aims to convince dvija-s  
+This project aims to convince **dvija**-s  
 to transition to Indian villages soon and prepare;  
 and support them in doing so.  
-dvija-s have been the backbone of hindu civilization;  
+dvija-s have been the **backbone of hindu civilization**;  
 it is by their power and obstinacy that Gods, sages and ancestors continue to be honored (even by the wider society) in India.
 
-By dvija-s we not only mean brAhmaNa-s, kShatriya-s, vaishya-s;  
-and also sat-shUdra-s who reject victimhood & quota ideology -  
-and perhaps want to ennoble themselves to being - say vaishya-s  
+By dvija-s we not only mean **brAhmaNa-s, kShatriya-s, vaishya-s**;  
+and also **sat-shUdra**-s who **reject victimhood & quota ideology** -  
+and perhaps want to **ennoble** themselves to being - say vaishya-s  
 (rather than jealously forcing dvija-s to lose their saMskAra-s and nobility). 
 
 ## Contact 
