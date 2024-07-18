@@ -51,6 +51,7 @@ strive for **noble aging and death** (which themselves are inevitable).
 <details><summary>Templates</summary>
 
 namaH!  
-Are you interested in this project - https://rebrand.ly/grAma-dvija ?  
+Are you interested in this project to convince and support "dvija-s" (broadly defined)  
+to move to Indian villages - https://rebrand.ly/grAma-dvija ?  
 If not, please mention it to compatible Hindus on the "conservative" spectrum.
 </details>
