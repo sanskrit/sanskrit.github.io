@@ -11,10 +11,13 @@ it is by their power and obstinacy that Gods, sages and ancestors continue to be
 They brought beauty and harmony of the highest order, and can continue to do so.
 
 By dvija-s we not only mean **brAhmaNa-s, kShatriya-s, vaishya-s**;  
-and also **sat-shUdra**-s who **reject victimhood & quota ideology** of the dasyus -  
-and perhaps want to **ennoble** themselves to the victorious and beautiful dharma of the Aryas -  
-even to the extent of being de-jure (rather than just de-facto) vaishya-s  
-(rather than forcing dvija-s to lose their saMskAra-s and aptitude out). 
+and also **sat-shUdra**-s who, 
+
+- subscribe to the victorious and beautiful dharma of the Aryas,  
+- are confident in their self-worth and contribution to high civilization,  
+- **reject victimhood & quota ideology** of the dasyus,  
+- are pro-dvija-s (far from forcing dvija-s to lose their saMskAra-s and aptitude)  
+- and perhaps want to **ennoble** themselves to being de-jure (rather than just de-facto) vaishya-s. 
 
 ## Contact 
 - [tele]:(https://https://t.me/+aZpV3KvbSj1iZDUx)
