@@ -41,3 +41,13 @@ Potentials:
 - ramakrishna mission
 - iskcon
 
+<details><summary>Templates</summary>
+
+namaH!  
+Are you interested in this project  
+to establish an agrarian traditional Hindu settlement and school somewhere in Latin America,  
+where they can preserve, practice and propagate, alongside modern science, Hindu religion and arts (classical music, dance, rituals, meditations...) in peace  
+even as the industrial society collapses when fossil fuels run out, with unrest being more severe in the old world. - https://rebrand.ly/lat-am ?
+
+If not, you can mention it to compatible Hindus on the "conservative" spectrum.
+</details>

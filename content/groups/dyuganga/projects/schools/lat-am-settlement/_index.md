@@ -4,7 +4,7 @@ title = "+Latin Am Settlement"
 
 
 ## Intro
-Some young families want to (ultimately) establish an agrarian traditional Hindu settlement and university somewhere in Latin America;  
+Some young families want to (ultimately) establish an agrarian traditional Hindu settlement and school somewhere in Latin America;  
 where they can preserve, practice and propagate, alongside modern science, Hindu religion and arts (classical music, dance, rituals, meditations...) in peace  
 even as the industrial society collapses when fossil fuels run out, with unrest being more severe in the old world.
 
@@ -22,9 +22,10 @@ will also benefit locals and Hindu expat communities.
 
 The population/ resource density difference is stark.
 
-The alternative is to convince dvija-s to transition to Indian villages soon and prepare (also being [encouraged](https://https://t.me/+aZpV3KvbSj1iZDUx)). When famine hits, they'll be in a worse (though not hopeless) position relative to new-worlders - lands and harvest snatched, jihadists and bandits etc.. 
+The alternative is to convince dvija-s to transition to Indian villages soon and prepare (also being [encouraged](https://rebrand.ly/grAma-dvija)). When famine hits, they'll be in a worse (though not hopeless) position relative to new-worlders - lands and harvest snatched, jihadists and bandits etc.. 
 
 ## Contact
 - Short url - https://rebrand.ly/lat-am
 - [Telegram](https://t.me/+yp-oEsb8QuViZGUx)
+- Related projects - https://rebrand.ly/grAma-dvija
 

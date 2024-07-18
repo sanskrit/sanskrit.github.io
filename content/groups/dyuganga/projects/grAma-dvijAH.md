@@ -4,11 +4,14 @@ title = "ग्राम-द्विजाः"
 
 ## Goal
 This project aims to convince dvija-s  
-to transition to Indian villages soon and prepare. 
+to transition to Indian villages soon and prepare;  
+and support them in doing so. 
 
 ## Contact 
 - [tele]:(https://https://t.me/+aZpV3KvbSj1iZDUx)
 - Short url - https://rebrand.ly/grAma-dvija
+- Related projects - Latin American colony https://rebrand.ly/lat-am
+
 
 ## Background
 In India, we observe the below:
@@ -18,19 +21,28 @@ In India, we observe the below:
 - ब्रह्म-द्विट्-प्रभुत्वम्, jAti-woke-ism, sickular government.
 
 A huge fraction of dvija-s and high IQ/ high-saMskAra communities  
-have migrated out to cities (and abroad),  
+have **migrated out** to cities (and abroad),  
 with almost very few people left in rural areas  
 to conserve - alongside modern science - religion, noble Hindu ideals,  
 and revive, when circumstances are right, a noble society,  
 alongside respect for pure ability (and not quota-ism).  
 
-When famine hits, such city people be in a worse (though not hopeless) position relative to rural people -  
+When famine hits, such city people be in a **worse position** relative to rural people -  
 lands and harvest snatched, jihadists and bandits etc..  
 Beyond the negative impact on themselves,  
-it will be terrible for society as a whole  
+it will be **terrible for society** as a whole  
 due to the accompanying loss of knowledge and specialized ability;  
 leaving it vulnerable to terrible decay and obliteration.
 
 It would be a shame for Hindu India to turn into modern gandhAra, Afghanistan or (post-ethnic cleansing) kAshmIr.  
 We (whether as individuals or civilizations) should,  
-strive for noble aging and death.
+strive for **noble aging and death** (which themselves are inevitable).
+
+## Recruitment
+- Must give talks in schools, maThas etc..
+
+<details><summary>Templates</summary>
+
+namaH! You might be interested in this project - https://rebrand.ly/grAma-dvija
+
+</details>
