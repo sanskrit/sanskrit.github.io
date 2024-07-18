@@ -115,3 +115,14 @@ HindI: [TW](https://youtube.com/watch?v=3JSnw2XK3Aw)
 > 
 > -- Rjrasva
 
+## Non latin american locations
+Common question is: 
+
+> Why Latin America? Why not elsewhere (eg. AUS, USA...)?
+
+Common factor- they already have a viable hindu community there, lat-am doesn't -  
+so good venue for derisking by diversification.
+
+Particular factors
+
+- USA - Higher population density, internal conflicts, wokeism, tougher immigration routes
