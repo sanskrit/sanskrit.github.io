@@ -5,7 +5,14 @@ title = "ग्राम-द्विजाः"
 ## Goal
 This project aims to convince dvija-s  
 to transition to Indian villages soon and prepare;  
-and support them in doing so. 
+and support them in doing so.  
+dvija-s have been the backbone of hindu civilization;  
+it is by their power and obstinacy that Gods, sages and ancestors continue to be honored (even by the wider society) in India.
+
+By dvija-s we not only mean brAhmaNa-s, kShatriya-s, vaishya-s;  
+and also sat-shUdra-s who reject victimhood & quota ideology -  
+and perhaps want to ennoble themselves to being - say vaishya-s  
+(rather than jealously forcing dvija-s to lose their saMskAra-s and nobility). 
 
 ## Contact 
 - [tele]:(https://https://t.me/+aZpV3KvbSj1iZDUx)
@@ -43,6 +50,7 @@ strive for **noble aging and death** (which themselves are inevitable).
 
 <details><summary>Templates</summary>
 
-namaH! You might be interested in this project - https://rebrand.ly/grAma-dvija
-
+namaH!  
+Are you interested in this project - https://rebrand.ly/grAma-dvija ?  
+If not, please mention it to compatible Hindus on the "conservative" spectrum.
 </details>
