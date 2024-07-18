@@ -16,7 +16,7 @@ and also **sat-shUdra**-s who,
 - subscribe to the victorious and beautiful dharma of the Aryas,  
 - are confident in their self-worth and contribution to high civilization,  
 - **reject victimhood & quota ideology** of the dasyus,  
-- like trans-generational refinement, 
+- like trans-generational and communal refinement, 
 - are pro-dvija-s even as good dvija-s are pro-sat-shUdra-s,  
 - and (far from forcing dvija-s to lose their saMskAra-s and aptitude)  
   perhaps want to **ennoble** themselves to being de-jure (rather than just de-facto) vaishya-s . 
@@ -47,7 +47,7 @@ it will be **terrible for society** as a whole
 due to the accompanying loss of knowledge and specialized ability;  
 leaving it vulnerable to ugly decay and obliteration.
 
-It would be a shame for Hindu India to turn into modern gandhAra, Afghanistan or (post-ethnic cleansing) kAshmIr.  
+It would be a **shame** for Hindu India to turn into modern gandhAra, **Afghanistan** or (post-ethnic cleansing) **kAshmIr**.  
 We (whether as individuals or civilizations) should,  
 strive for **noble aging and death** (which themselves are inevitable).
 
