@@ -5,7 +5,7 @@ title = "+Latin Am Settlement"
 
 ## Intro
 Some young families want to (ultimately) establish an agrarian traditional Hindu settlement and university somewhere in Latin America;  
-where they can preserve, practice and propagate Hindu religion and arts (classical music, dance, rituals, meditations...) in peace  
+where they can preserve, practice and propagate, alongside modern science, Hindu religion and arts (classical music, dance, rituals, meditations...) in peace  
 even as the industrial society collapses when fossil fuels run out, with unrest being more severe in the old world.
 
 This center in Latin America for Hindu studies  
@@ -17,7 +17,7 @@ will also benefit locals and Hindu expat communities.
   - ब्रह्म-द्विट्-प्रभुत्वम्, jAti-woke-ism, sickular government.
   - Suboptimal to "put all eggs in one basket".
 - Latin America
-  - low population density, plenty land+water.
+  - Low population density, plenty land+water.
   - Locals look like us - so less conflict (though it will be there).
 
 The population/ resource density difference is stark.

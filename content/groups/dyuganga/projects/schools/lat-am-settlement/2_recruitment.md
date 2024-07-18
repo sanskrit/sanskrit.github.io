@@ -4,7 +4,8 @@ title = "2 Recruitment"
 
 ## Target
 ### Profile
-- We seek Hindu families who are firmly committed to retaining their saMskAra-s and traditional knowledge across generations.  
+- We seek Hindu families  
+  who are firmly committed to retaining their saMskAra-s and traditional knowledge across generations.  
 - They should agree with the settlement [constitution](../constitution]).
   - Particularly, they should be willing to (eventually) switch over to Sanskrit - atleast for formal communication.
 
