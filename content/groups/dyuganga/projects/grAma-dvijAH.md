@@ -6,8 +6,9 @@ title = "ग्राम-द्विजाः"
 This project aims to convince **dvija**-s  
 to transition to Indian villages soon and prepare;  
 and support them in doing so.  
-dvija-s have been the **backbone of hindu civilization**;  
-it is by their power and obstinacy that Gods, sages and ancestors continue to be honored (even by the wider society) in India.
+dvija-s have been the **backbone of Hindu civilization**;  
+it is by their power and obstinacy that Gods, sages and ancestors continue to be honored (even by the wider society) in India.  
+They brought beauty and harmony of the highest order, and can continue to do so.
 
 By dvija-s we not only mean **brAhmaNa-s, kShatriya-s, vaishya-s**;  
 and also **sat-shUdra**-s who **reject victimhood & quota ideology** -  

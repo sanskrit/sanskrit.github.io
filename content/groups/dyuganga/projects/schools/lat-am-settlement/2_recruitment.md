@@ -9,6 +9,7 @@ title = "2 Recruitment"
   who "do the math" and conclude that modern industrial society will not last, for the most part, beyond a few generations.  
 - They should agree with the settlement [constitution](../constitution]).
   - Particularly, they should be willing to (eventually) switch over to Sanskrit - atleast for formal communication.
+  - Of course, they should (gradually) learn the language of the surrounding people (eg. Spanish). 
 
 ### Number
 Shooting for 500 families.

@@ -64,6 +64,22 @@ We seek land with the following qualities:
 
 We can invest about 1-1.5 million USD in the beginning.
 
+## Paraguay
+- Fertile eastern half. Abundant water (riverine and underground).
+- Low taxes. No tax on foreign income. 
+- Socially and economically conservative. Considered by folks from neighboring countries (also Americans, Europeans) as a "safe haven" to park their investments and futures.
+- Recognizes "colonies" - Mennonite, Japanese etc.. colonies exist.
+
+## Uruguay
+- Most developed in South America.
+- Afflicted by gender-wokeness!
+- Many tourists and retirees. Relatively higher land cost.
+
+## Argentina
+- High inflation and poverty. Low fertility.
+- Powerful visa.
+- 300 sikhs there.
+
 ## Guyana
 28% Hindu - jAti dissolved.  
 Poor representation in army.
@@ -94,16 +110,8 @@ Highly diverse, poor but rich in natural resources, somewhat high crime rates du
 HindI: [TW](https://youtube.com/watch?v=3JSnw2XK3Aw)
 
 
-## Uruguay
-Most developed in South America.
-
 ## Chile
 > Chile doesn't have a lot of arable land compared to argentina but after uruguay it's the 2nd wealthiest in latin am, stable, & above all it has a lot of copper & other minerals. It is also more mestizo than argentina & uruguay which are more euro. Chilean passport is also the most powerful & citizenship is passed down all the way to grandkids, in most other countries only till your kids. 
 > 
 > -- Rjrasva
-
-## Argentina
-- High inflation and poverty. Low fertility.
-- Powerful visa.
-- 300 sikhs there.
 
