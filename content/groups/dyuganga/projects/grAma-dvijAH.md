@@ -16,7 +16,7 @@ and also **sat-shUdra**-s who,
 - subscribe to the victorious and beautiful dharma of the Aryas,  
 - are confident in their self-worth and contribution to high civilization,  
 - **reject victimhood & quota ideology** of the dasyus,  
-- are pro-dvija-s and trans-generational refinement, even as good dvija-s are pro-sat-shUdra-s,  
+- are pro-dvija-s and like trans-generational refinement, even as good dvija-s are pro-sat-shUdra-s,  
 - and (far from forcing dvija-s to lose their saMskAra-s and aptitude)  
   perhaps want to **ennoble** themselves to being de-jure (rather than just de-facto) vaishya-s . 
 

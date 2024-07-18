@@ -6,7 +6,7 @@ title = "2 Recruitment"
 ### Profile
 - We seek Hindu families  
   who are firmly committed to retaining their saMskAra-s, knowledge (traditional & modern) across generations;  
-  who "do the math" and conclude that modern industrial society will not last, for the most part, beyond a few generations.  
+  who preferably "do the math" ([web](https://dothemath.ucsd.edu/)) and conclude that modern industrial society will not last, for the most part, beyond a few generations.  
 - They should agree with the settlement [constitution](../constitution]).
   - Particularly, they should be willing to (eventually) switch over to Sanskrit - atleast for formal communication.
   - Of course, they should (gradually) learn the language of the surrounding people (eg. Spanish). 
