@@ -7,7 +7,7 @@ This project aims to convince **dvija**-s
 to transition to Indian villages soon and prepare;  
 and support them in doing so.  
 dvija-s have been the **backbone of Hindu civilization**;  
-it is by their power and obstinacy that Gods, sages and ancestors continue to be honored (even by the wider society) in India.  
+it is by their power and obstinacy that Gods, sages and ancestors continue to be adored (even by the wider society) in India.  
 They brought beauty and harmony of the highest order, and can continue to do so.
 
 By dvija-s we not only mean **brAhmaNa-s, kShatriya-s, vaishya-s**;  
@@ -16,7 +16,8 @@ and also **sat-shUdra**-s who,
 - subscribe to the victorious and beautiful dharma of the Aryas,  
 - are confident in their self-worth and contribution to high civilization,  
 - **reject victimhood & quota ideology** of the dasyus,  
-- are pro-dvija-s and like trans-generational refinement, even as good dvija-s are pro-sat-shUdra-s,  
+- like trans-generational refinement, 
+- are pro-dvija-s even as good dvija-s are pro-sat-shUdra-s,  
 - and (far from forcing dvija-s to lose their saMskAra-s and aptitude)  
   perhaps want to **ennoble** themselves to being de-jure (rather than just de-facto) vaishya-s . 
 
@@ -35,21 +36,24 @@ In India, we observe the below:
 
 A huge fraction of dvija-s and high IQ/ high-saMskAra communities  
 have **migrated out** to cities (and abroad),  
-with almost very few people left in rural areas  
+with few members left in rural areas  
 to conserve - alongside modern science - religion, noble Hindu ideals,  
-and revive, when circumstances are right, a noble society,  
-alongside respect for pure ability (and not quota-ism).  
+and revive, when circumstances are right, a noble society organized with a greater respect for pure ability (rather than quota-ism).  
 
 When famine hits, such city people be in a **worse position** relative to rural people -  
-lands and harvest snatched, jihadists and bandits etc..  
+there will be lands and harvest snatched, jihadists and bandits etc..  
 Beyond the negative impact on themselves,  
 it will be **terrible for society** as a whole  
 due to the accompanying loss of knowledge and specialized ability;  
-leaving it vulnerable to terrible decay and obliteration.
+leaving it vulnerable to ugly decay and obliteration.
 
 It would be a shame for Hindu India to turn into modern gandhAra, Afghanistan or (post-ethnic cleansing) kAshmIr.  
 We (whether as individuals or civilizations) should,  
 strive for **noble aging and death** (which themselves are inevitable).
+
+## Participation modes
+- Establish yourself in a village, 
+- attract other qualified people
 
 ## Recruitment
 - Must give talks in schools, maThas etc..
@@ -59,5 +63,5 @@ strive for **noble aging and death** (which themselves are inevitable).
 namaH!  
 Are you interested in this project to convince and support "dvija-s" (broadly defined)  
 to move to Indian villages - https://rebrand.ly/grAma-dvija ?  
-If not, please mention it to compatible Hindus on the "conservative" spectrum.
+If not, you can mention it to compatible Hindus on the "conservative" spectrum.
 </details>
