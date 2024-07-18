@@ -38,7 +38,7 @@ A huge fraction of dvija-s and high IQ/ high-saMskAra communities
 have **migrated out** to cities (and abroad),  
 with few members left in rural areas  
 to conserve - alongside modern science - religion, noble Hindu ideals,  
-and revive, when circumstances are right, a noble society organized with a greater respect for pure ability (rather than quota-ism).  
+and revive, when circumstances are right, a noble, harmonious and better organized society.  
 
 When famine hits, such city people be in a **worse position** relative to rural people -  
 there will be lands and harvest snatched, jihadists and bandits etc..  
