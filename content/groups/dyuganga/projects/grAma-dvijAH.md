@@ -17,7 +17,7 @@ and also **sat-shUdra**-s who,
 - are confident in their self-worth and contribution to high civilization,  
 - **reject victimhood & quota ideology** of the dasyus,  
 - like trans-generational and communal refinement, 
-- are pro-dvija-s even as good dvija-s are pro-sat-shUdra-s,  
+- are pro-dvija-s, even as good dvija-s are pro-sat-shUdra-s,  
 - and (far from forcing dvija-s to lose their saMskAra-s and aptitude)  
   perhaps want to **ennoble** themselves to being de-jure (rather than just de-facto) vaishya-s . 
 

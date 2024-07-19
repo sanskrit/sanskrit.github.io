@@ -56,13 +56,15 @@ You might also have to consider labor demand 20 yrs later based on current TFR's
 ### Land parameters
 We seek land with the following qualities:
 
-- should have good permanent water resources - eg. a river.
+- should have access to good permanent water resources (not requiring electricity) - eg. a river.
 - If near the sea, it should be atleast 100m above sea-level, to avoid flooding.
 - Should be fertile, allowing atleast 1500 acres (607 hectares) of farming; plus grazing land/ forest for goats/ sheep. If it has some forest patch, that would be good too.
 - It should, with little effort, generate income to at least cover annual taxes and expenses without spoiling/ poisoning nature (ie. preferably without chemical fertilizers/ pesticides etc..).
 - Crime rate should be low. Neighbors should be noble and intelligent.
 
-We can invest about 1-1.5 million USD in the beginning.
+We can invest about .5 million USD in the beginning.
+
+
 
 ## Paraguay
 - Fertile eastern half. Abundant water (riverine and underground).
