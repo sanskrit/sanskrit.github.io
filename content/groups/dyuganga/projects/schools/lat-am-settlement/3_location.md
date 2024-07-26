@@ -64,7 +64,8 @@ We seek land with the following qualities:
 
 We can invest about .5 million USD in the beginning.
 
-
+### Movement, Citizenship
+Citizens of member states of the Union of South American Nations (Mercosur) and its associate countries can travel without a visa or passport within the region. Mercosur member states include Argentina, Brazil, Paraguay, and Uruguay, and its associate countries include Bolivia, Chile, Colombia, Ecuador, and Peru. Together, these countries form an "area of free residence with the right to work" for all its citizens.
 
 ## Paraguay
 - Fertile eastern half. Abundant water (riverine and underground).
@@ -106,6 +107,15 @@ Highly diverse, poor but rich in natural resources, somewhat high crime rates du
 - Mennonite illegal land acquisition and deforestation [YT](https://www.youtube.com/watch?v=QBgA4EX65oM)
 
 ## Brazil
+
+### Hindu-phobia
+Brazil is 30% evangelical, 50% Catholic.
+
+Narco-pentecostalism in Brazil - A gang in Rio rules 100,000 people, enforces evangelicalism (2024). Rio’s ‘narco-pentecostal’ gangsters accused of ordering Catholic churches to close. The gang boss is called Peixão (Big Fish), after the Jesus fish. [TW](https://x.com/whyvert/status/1811263946201907565)
+
+Further the society is fractured in Brazil (whites vs blacks vs amerindians, catholics vs evangelists, gangesters ...)
+More homogenous countries to the south don't have that problem.  
+Even rich Brazilians and Argentinians buy property in Paraguay as a "safe-haven".
 
 ### Migration tips
 
