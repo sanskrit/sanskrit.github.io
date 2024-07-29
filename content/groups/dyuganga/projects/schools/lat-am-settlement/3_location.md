@@ -67,6 +67,10 @@ We can invest about .5 million USD in the beginning.
 ### Movement, Citizenship
 Citizens of member states of the Union of South American Nations (Mercosur) and its associate countries can travel without a visa or passport within the region. Mercosur member states include Argentina, Brazil, Paraguay, and Uruguay, and its associate countries include Bolivia, Chile, Colombia, Ecuador, and Peru. Together, these countries form an "area of free residence with the right to work" for all its citizens.
 
+### Regional variations
+Areas farther from cities tend to be lawless/ "strongest player rules" type.  
+"Tri-Border Area" between Argentina, Brazil and Paraguay, with Ciudad del Este, Paraguay being the hub, is a bustling hive of traders and traffickers hawking products from around the world, from pirated DVDs to appliances to guns. A free-trade zone, it has a reputation as a hotbed of dodgy dealings and crime.
+
 ## Paraguay
 - Fertile eastern half. Abundant water (riverine and underground).
 - Low taxes. No tax on foreign income. 
