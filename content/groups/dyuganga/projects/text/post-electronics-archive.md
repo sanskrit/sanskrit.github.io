@@ -28,6 +28,8 @@ Similar efforts include
 
 - Memory of mankind ([wiki](https://en.wikipedia.org/wiki/Memory_of_Mankind))
 - The Long now foundation's Rosetta Nickel Disks ([wiki](https://en.wikipedia.org/wiki/Rosetta_Project))
+- Github's Arctic Code Vault ([ap](https://archiveprogram.github.com/arctic-vault/)) - snapshot of every active public repository on 02/02/2020.
+- Arch Lunar Library. ([Arch mission](https://www.archmission.org/spaceil)) preserve the records of our civilization for up to billions of years. 
 
 ## Possible media
 Longevity of several media, ranging from paper to stone, is surveyed in this ["knowledge preservation" webpage](https://vishvasa.github.io/notes/backup/knowledge-preservation).
@@ -54,7 +56,7 @@ We are still in the enquiry stage.
 Idea: If you have contacts with Indian tile manufacturers in RJ (eg. kajAriya), and if you can convince them to develop the technology - we would be set to proceed.
 
 ### Current enquiries
-For one-off texts, it can cost 40$ per ceramic tile plus shipping from EU. ("the smallest text size is 4 pt in Arial style. It is the still readable with the naked eye. the capacity  (of latin letters) is about 40 000 characters on the 20x20 cm surface of a MOM tablet.")
+Ceramic tiles, 202406: For one-off texts, it can cost 40$ per ceramic tile plus shipping from EU. ("the smallest text size is 4 pt in Arial style. It is the still readable with the naked eye. the capacity  (of latin letters) is about 40 000 characters on the 20x20 cm surface of a MOM tablet.")
 
 TODO: Contact Long Now foundation regarding reuse of their Rosetta project tech.
 
