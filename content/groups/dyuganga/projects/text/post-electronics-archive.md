@@ -23,13 +23,14 @@ The archive and media used for preserving books should resist degradation and de
   - Water, flooding
 - Insects, rodents and pests
 - Earthquakes
+- Monopolizing, hoarding
 
 Similar efforts include 
 
 - Memory of mankind ([wiki](https://en.wikipedia.org/wiki/Memory_of_Mankind))
 - The Long now foundation's Rosetta Nickel Disks ([wiki](https://en.wikipedia.org/wiki/Rosetta_Project))
 - Github's Arctic Code Vault ([ap](https://archiveprogram.github.com/arctic-vault/)) - snapshot of every active public repository on 02/02/2020.
-- Arch Lunar Library. ([Arch mission](https://www.archmission.org/spaceil)) preserve the records of our civilization for up to billions of years. 
+- Arch Lunar Library. ([Arch mission](https://www.archmission.org/spaceil), [ar](https://archive.org/details/OverviewOfTheLunarLibrary/page/n23/mode/1up)) preserve the records of our civilization for up to billions of years. 
 
 ## Possible media
 Longevity of several media, ranging from paper to stone, is surveyed in this ["knowledge preservation" webpage](https://vishvasa.github.io/notes/backup/knowledge-preservation).
@@ -38,6 +39,8 @@ Currently, the most promising media for storing images of pages or plain text ar
 
 - High quality ceramic tiles
 - Nickel Disk
+
+Reading mechanism - magnifying lens, microscopy.
 
 ## Text collection
 Number of published texts we want to save is in 100000s.  
