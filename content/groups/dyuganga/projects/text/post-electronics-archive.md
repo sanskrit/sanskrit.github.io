@@ -63,6 +63,8 @@ Ceramic tiles, 202406: For one-off texts, it can cost 40$ per ceramic tile plus 
 
 TODO: Contact Long Now foundation regarding reuse of their Rosetta project tech.
 
+TODO: Contact Arctic world archive 
+
 ## Archive locations
 Redundant copies of texts should be preserved in geographically separated locations. Some criteria - 
 
