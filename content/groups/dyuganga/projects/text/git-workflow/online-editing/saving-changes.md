@@ -38,6 +38,18 @@ If sync is successful, you will see messages like the below in the pull request:
 
 {{< figure src="../../images/sync-fork-merge-success.png" title="">}}
 
+### Overwriting your changes
+कदाचिद् sync fork इति नुदितय् एवं दृश्येत -
+
+{{< figure src="../../images/sync-fork_discard-changes.jpg" title="">}}
+
+तथा सति, सावधानं क्रमश एवं कार्यम् -
+
+- भवत्कृत-परिवर्तनानि स्वसङ्गणके क्वचिद् रक्षतु।  
+- "sync fork" इति कृत्वा "discard commits" इति कीलकं नुदतु। तेनास्माभिः कृतानि परिवर्तनानि लभिष्यन्ते। 
+- पुनः browser मध्ये vscode इत्य् उद्घाटितं चेत्, तद् पिधाय पुनर् उद्घाटयतु। 
+- यथास्थानं पाठशोधने ऽनुवर्तताम् (यथापेक्षं पूर्वं स्वसनणके रक्षितानि परिवर्तनानि प्रयुज्य)।
+
 ## Sending changes
 - [Sending changes via pull requests (आकर्षणाभ्यर्थन-प्रेषणम्)](../../4_sending-pull-request?githubUserId=XYZ&repo=REPO). <u>SHOULD BE DONE ON EVERY WORK-DAY</u>, after work.
   - **यस्मिन् यस्मिन् दिने कार्यं करोति, तत्तद्दिने कार्यारम्भात् प्राक् sync fork इति कुर्यात्, कार्यान्ते चाकर्षणाभ्यर्थनं प्रेषयेत्।** एकस्मिन् दिने शोधनम् अपरस्मिन् दिने प्रेषणम् इति नैव युक्तम्। (अनेन मत्पक्षे परीक्षणं सरलम् भवति, भ्रमाश् च वार्येरन्।)
