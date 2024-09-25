@@ -44,6 +44,27 @@ If you cannot type unusual unicode characters, copy them from here and paste.
 - No harm using ISO instead of IAST - we can fix it later.
 - No harm ignoring initial letter capitalization (ie ṣ instead of Ṣ and so on).
 
+## Telugu
+Certain defects are common in old sanskrit texts published in telugu script. Please use sanskrit knowledge to detect and correct those. If in doubt ask with screenshot.
+
+One needs to remove fake spaces.  For example ఆర్యమిశ్రాః instead of ఆర్యమి శ్రాః , and బహూనామాస్తికానామహాత్మనాం instead of బహూనా మా స్తికానామహాత్మనాం.
+
+Also అథచాస్యాద ర్శా౯ - old telugu and kannaDa texts use something like ౯ (with with extra curls)  for n - so it should be అథచాస్యాదర్శాన్.
+
+Sometimes, instead of వో, they use a symbol like వేృ. So, this should be recognized as వో.
+
+Telugu sanskrit books often use dh ध् instead of th थ् (and rarely vice-versa)- for example - గ్రంథోయం (actually గ్రంథోయం) instead of గ్రంధోయం.
+
+The following are often confused by proofreaders (so beware)- 
+
+- na, sa
+- n-maatraa, m-maatraa 
+- v-maatraa, p-maatraa
+- ड, द, ध्-maatraas and letters 
+
+ఙ ఞ - not used in common telugu, are used. So beware of mistaking those too.
+
+In case of tamiL or maNipravALa texts in telugu script, printing ऴ् and ऱ् would be complicated.
 
 ## Things to ignore
 - Quotation mark placement which is not ‘bad’ as described in examples above - ie. don’t spend time trying to make it ‘best’.
