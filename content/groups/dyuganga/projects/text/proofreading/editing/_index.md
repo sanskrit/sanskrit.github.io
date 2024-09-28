@@ -53,7 +53,7 @@ Also అథచాస్యాద ర్శా౯ - old telugu and kannaDa texts 
 
 Sometimes, instead of వో, they use a symbol like వేృ. So, this should be recognized as వో.
 
-Telugu sanskrit books often use dh ध् instead of th थ् (and rarely vice-versa)- for example - గ్రంథోయం (actually గ్రంథోయం) instead of గ్రంధోయం.
+Telugu sanskrit books often use dh ध् instead of th थ् (and rarely vice-versa)- for example - గ్రంథోయం instead of గ్రంధోయం.
 
 The following are often confused by proofreaders (so beware)- 
 
