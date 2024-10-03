@@ -43,7 +43,7 @@ If sync is successful, you will see messages like the below in the pull request:
 
 {{< figure src="../../images/sync-fork_discard-changes.jpg" title="">}}
 
-परिहारो [ऽन्यत्रोक्तः](../../6_conflicts) । 
+परिहारो [ऽन्यत्रोक्तः](../../6_conflicts?githubUserId=XYZ&repo=REPO) । 
 
 ## Sending changes
 - [Sending changes via pull requests (आकर्षणाभ्यर्थन-प्रेषणम्)](../../4_sending-pull-request?githubUserId=XYZ&repo=REPO). <u>SHOULD BE DONE ON EVERY WORK-DAY</u>, after work.
