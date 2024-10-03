@@ -26,6 +26,7 @@ title = "6 Conflicts"
 - कासु सञ्चिकासु परिवर्तनं कृतम् इति विजानातु। तदर्थम् 
   - आकर्षणाभ्यर्थनम् उद्घाटयेत् ("आकर्षणाभ्यर्थन-प्राप्तिः" इति वीक्षताम् [अत्र](../5_sUchita-doSha-parihAra-prativachane?githubUserId=XYZ&repo=REPO))। 
   - अस्मिन् चित्रे दर्शितया रीत्या "Files changed" इति नुदतु। {{< figure src="../images/files-changed_review-changes.png" title="" class="thumbnail">}}
+  - तत्र परिवर्तितास् सञ्चिकास् स्फुटास् स्युः। {{< figure src="../images/changed-file-list.png" title="" class="thumbnail">}} 
 - भवत्कृत-परिवर्तनानि स्वसङ्गणके क्वचिद् रक्षतु।
 - browser मध्ये vscode इत्य् उद्घाटितं चेत्, तद् पिदधातु। 
 - "sync fork" इति कृत्वा "discard commits" इति कीलकं नुदतु। तेनान्यैः कृतानि परिवर्तनानि लभिष्यन्ते। (अनेन साकम् प्राचीनाकर्षणाभ्यर्थने सति, पिहितम् भवति। )
