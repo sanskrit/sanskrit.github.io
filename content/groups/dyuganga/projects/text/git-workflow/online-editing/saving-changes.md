@@ -43,12 +43,7 @@ If sync is successful, you will see messages like the below in the pull request:
 
 {{< figure src="../../images/sync-fork_discard-changes.jpg" title="">}}
 
-तथा सति, सावधानं क्रमश एवं कार्यम् -
-
-- भवत्कृत-परिवर्तनानि स्वसङ्गणके क्वचिद् रक्षतु।  
-- "sync fork" इति कृत्वा "discard commits" इति कीलकं नुदतु। तेनास्माभिः कृतानि परिवर्तनानि लभिष्यन्ते। 
-- पुनः browser मध्ये vscode इत्य् उद्घाटितं चेत्, तद् पिधाय पुनर् उद्घाटयतु। 
-- यथास्थानं पाठशोधने ऽनुवर्तताम् (यथापेक्षं पूर्वं स्वसनणके रक्षितानि परिवर्तनानि प्रयुज्य)।
+परिहारो [ऽन्यत्रोक्तः](../../6_conflicts) । 
 
 ## Sending changes
 - [Sending changes via pull requests (आकर्षणाभ्यर्थन-प्रेषणम्)](../../4_sending-pull-request?githubUserId=XYZ&repo=REPO). <u>SHOULD BE DONE ON EVERY WORK-DAY</u>, after work.
