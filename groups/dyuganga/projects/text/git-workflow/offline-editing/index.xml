@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>&#43;Offline editing on संस्कृतजालक्षेत्रम्</title>
+    <link>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/offline-editing/</link>
+    <description>Recent content in &#43;Offline editing on संस्कृतजालक्षेत्रम्</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/offline-editing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2 Getting files</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/offline-editing/2_getting_files/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/offline-editing/2_getting_files/</guid>
+      <description>निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। (Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username.) अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Back to Git workflow Going to the right place in your computer (सङ्गणके समीचीनस्थानप्राप्तिः) We&amp;rsquo;ll assume that you&amp;rsquo;re saving all github files in some location (eg. F:\Git\). Please change the below accordingly. Windows - navigate to the appropriate folder using &amp;ldquo;File explorer&amp;rdquo; or &amp;ldquo;My Computer&amp;rdquo;; Then right-click, select &amp;ldquo;Other options&amp;rdquo; if available, and finally click &amp;ldquo;Open Git Bash here&amp;rdquo;.</description>
+    </item>
+    <item>
+      <title>Saving changes</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/offline-editing/4_saving-changes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/offline-editing/4_saving-changes/</guid>
+      <description>निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। (Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username.) अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Back to Git workflow Overview Get the latest files. (See &amp;ldquo;syncing&amp;rdquo; section below) Make changes in your editor (eg. vscode). Save, commit and push periodically. Syncing with remote repository Every day, make sure that you&amp;rsquo;re working on the latest files by doing the below. If you&amp;rsquo;re changing files in REPO-content : git pull upstream content इति परिवर्तनानि लभ्यानि। If you&amp;rsquo;re changing files in REPO-static : by running: git pull upstream static_files .</description>
+    </item>
+  </channel>
+</rss>
