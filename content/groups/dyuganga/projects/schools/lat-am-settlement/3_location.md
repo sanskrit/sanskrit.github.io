@@ -76,15 +76,20 @@ Areas farther from cities tend to be lawless/ "strongest player rules" type.
 - Low taxes. No tax on foreign income. 
 - Socially and economically conservative. Considered by folks from neighboring countries (also Americans, Europeans) as a "safe haven" to park their investments and futures.
 - Recognizes "colonies" - Mennonite, Japanese etc.. colonies exist.
+- Hindus - small iskcon community is present.  
 
 ## Uruguay
 - Most developed in South America.
 - Afflicted by gender-wokeness!
 - Many tourists and retirees. Relatively higher land cost.
+- Hindus - hastinapura foundation is active. may have a small iskcon community.
 
 ## Argentina
 - High inflation and poverty. Low fertility.
 - Powerful visa.
+- Hindus 
+  - hastinapura foundation is active. 
+  - may have a small iskcon community.
 - 300 sikhs there.
 
 ## Guyana
@@ -111,6 +116,11 @@ Highly diverse, poor but rich in natural resources, somewhat high crime rates du
 - Mennonite illegal land acquisition and deforestation [YT](https://www.youtube.com/watch?v=QBgA4EX65oM)
 
 ## Brazil
+
+### Hindu-philia
+- Petropolis has a sanskrit speaking advaitin teacher Jonas's retreat center Vishva Vidya Institute of Vedanta, Sanskrit, Mantras and Vedic Culture.
+- AchArya sthAneshvara has a good following near sao paolo.
+
 
 ### Hindu-phobia
 Brazil is 30% evangelical, 50% Catholic.
