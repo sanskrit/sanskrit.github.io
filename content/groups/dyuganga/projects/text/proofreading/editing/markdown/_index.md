@@ -22,6 +22,7 @@ Don't do the below (शीर्षिकाः स्वभावतः स्�
 ###            **The proper age for Upanayana**
 ```
 
+Example for insertion of headings - see 2.md [here](https://github.com/vishvAsa/vedAH_yajuH/pull/621/files).
 
 ## Lists
 ```
