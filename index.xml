@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>&#43;उद्यमाः Projects on संस्कृतजालक्षेत्रम्</title>
+    <link>https://sanskrit.github.io/</link>
+    <description>Recent content in &#43;उद्यमाः Projects on संस्कृतजालक्षेत्रम्</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://sanskrit.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>&#43;शास्त्रम्</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/audio/shAstra-audio/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/audio/shAstra-audio/</guid>
+      <description>हरिः, ॐ! स्वागतम्!&#xA;What? We aim to freely (Creative Commons Attribution-ShareAlike 4.0 International License) publish some inspiring (mostly Sanskrit) shAstra-s as audio books on the internet.&#xA;Where? It is important to note that at any point in time, the output(in the form of audio files) of our efforts up to then will be available publicly and freely on the internet at archive.org. We will constantly publish a summary of project status online.</description>
+    </item>
+    <item>
+      <title>1 Constitution</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/schools/lat-am-settlement/1_constitution/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/schools/lat-am-settlement/1_constitution/</guid>
+      <description>ध्येयम् Objective Weather the coming collapse of industrial civilization (explained in background) by returning closer to nature Nurture nobility, wildness without savagery Retain knowledge and wonder about our universe to the extent possible. Adore nature. Adore the Gods and ancestors mainly via Hindu customs (adapted to the context). Perpetuate general and family-specific values and skills accross generations. Pass our values and knowledge to deserving outsiders to the extent they grok it; and maybe collaborate with them.</description>
+    </item>
+    <item>
+      <title>1 Forking-repo</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/2_forking-repo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/2_forking-repo/</guid>
+      <description>निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। (Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username.) अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Back to Git workflow Sign in to https://github.com (Create an account if you don&amp;rsquo;t already have one). If https://github.com/XYZ/REPO exists beforehand (i.e. you don&amp;rsquo;t get a 404 message on clicking this link), please delete it by going to settings using your browser (Go to https://github.com/XYZ/REPO/settings#danger-zone, navigate to the end of the page, and click on &amp;ldquo;Delete this repository&amp;rdquo;.</description>
+    </item>
+    <item>
+      <title>1 Misc account setup</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/1_misc_account_setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/1_misc_account_setup/</guid>
+      <description>Trello I must have sent out email invites to join https://trello.com/ocrcorrection . (We use trello for tracking tasks.) Please accept (contact me if you haven&amp;rsquo;t received an invite). Everyone needs to have a github account (We use github for checking and accepting corrections - example here) and join https://github.com/orgs/vishvAsa/teams/ocr-correction/ . Please create a github account and let me know offline so that I can send you an email invite to join https://github.</description>
+    </item>
+    <item>
+      <title>2 Getting files</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/offline-editing/2_getting_files/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/offline-editing/2_getting_files/</guid>
+      <description>निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। (Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username.) अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Back to Git workflow Going to the right place in your computer (सङ्गणके समीचीनस्थानप्राप्तिः) We&amp;rsquo;ll assume that you&amp;rsquo;re saving all github files in some location (eg. F:\Git\). Please change the below accordingly. Windows - navigate to the appropriate folder using &amp;ldquo;File explorer&amp;rdquo; or &amp;ldquo;My Computer&amp;rdquo;; Then right-click, select &amp;ldquo;Other options&amp;rdquo; if available, and finally click &amp;ldquo;Open Git Bash here&amp;rdquo;.</description>
+    </item>
+    <item>
+      <title>2 Recruitment</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/schools/lat-am-settlement/2_recruitment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/schools/lat-am-settlement/2_recruitment/</guid>
+      <description>Target Profile We seek Hindu families&#xA;who are firmly committed to retaining their saMskAra-s, knowledge (traditional &amp;amp; modern) across generations;&#xA;who preferably &amp;ldquo;do the math&amp;rdquo; (web) and conclude that modern industrial society will not last, for the most part, beyond a few generations. They should agree with the settlement constitution. Particularly, they should be willing to (eventually) switch over to Sanskrit - atleast for formal communication. Of course, they should (gradually) learn the language of the surrounding people (eg.</description>
+    </item>
+    <item>
+      <title>3 Location</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/schools/lat-am-settlement/3_location/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/schools/lat-am-settlement/3_location/</guid>
+      <description>Intro See intro section in settlement-constitution&#xA;Soil in amazon basin -&#xA;The amazing thing is that the soil is as poor in nutrients as the vegetation is rich. The humus layer, which is that dark, organic stuff in the soil that develops when plants or animal matter break down, is minimal nearly everywhere. The soil in the Amazon rainforest is the poorest and most infertile in the world. If one cuts down the forest, it is irretrievably lost.</description>
+    </item>
+    <item>
+      <title>4 Contribute</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/schools/lat-am-settlement/4_contribute/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/schools/lat-am-settlement/4_contribute/</guid>
+      <description>You can contribute by joining us as a member family, or by sponsorship.</description>
+    </item>
+    <item>
+      <title>4 Sending pull-request</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/4_sending-pull-request/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/4_sending-pull-request/</guid>
+      <description>निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। (Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username.) अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Back to Git workflow Open the appropriate github link as below If you&amp;rsquo;re working on content branch, it will be https://github.com/XYZ/REPO/tree/content If you&amp;rsquo;re working on static_files branch, it will be https://github.com/XYZ/REPO/tree/static_files Text like 1 commit ahead indicates that you have something to contribute. (1 commit ahead इतीव किञ्चिद् दर्शितं चेत् प्रेषयितुं किञ्चिद् अस्तीत्य् अर्थः।) Find and use the &amp;ldquo;Contribute&amp;rdquo; link.</description>
+    </item>
+    <item>
+      <title>5 सूचित-दोष--परिहार-प्रतिवचन-प्रक्रिया</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/5_sUchita-doSha-parihAra-prativachane/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/5_sUchita-doSha-parihAra-prativachane/</guid>
+      <description>दोषसूचना-निरीक्षा Awaiting corrections नित्यं सकृद् अधः सूचितया रीत्या आकर्षणाभ्यर्थनम् (pull request) प्राप्य, आद्यन्तम् परीक्ष्य, यथापेक्षं दोषान् परिहृत्य, प्रतिसूत्रं स्वोत्तराणि प्रेषयतु। इत्थं करणात् परम्, प्रत्येकस्मिन् दोष-सूत्रे भवद्-उत्तरम् एवान्ते दृश्येत। ततः परम् एव कार्यान्तरम् आरब्धुम् अर्हति। दोषपरिहारः Correction दोषान् परिहृत्य, नुदित्वा (commit+push कृत्वा),&#xA;(दोष-मार्जनादिकं साधितं चेद् अध उक्तया रीत्या github-सूत्रेण सूचयितुं न विस्मरतु - अन्यथा परस्परप्रतीक्षया कार्यं विलम्ब्येत।)&#xA;आकर्षणाभ्यर्थन-प्राप्तिः Going to the pull request निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!</description>
+    </item>
+    <item>
+      <title>6 Conflicts</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/6_conflicts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/6_conflicts/</guid>
+      <description>निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Back to Git workflow समस्याभिज्ञानम् भवद्-आकर्षणाभ्यर्थने कदाचिद् एवं दृश्येत -&#xA;conflicting-files अथवा कदाचिद् sync fork इति नुदितय् एवं दृश्येत -&#xA;sync-fork discard-changes अस्यार्थः - मत्-प्रति&amp;ndash;भवत्-प्रेषित-प्रत्योर् विवादे सति भवत्-परिष्करणान्य् अन्यानि यन्त्रेण तिरक्रियन्ते।&#xA;अत इयं समस्या मानुषप्रयासेण परिहरणीया।&#xA;परिहारः तथा सति, सावधानं क्रमश एवं कार्यम् -&#xA;कासु सञ्चिकासु परिवर्तनं कृतम् इति विजानातु। तदर्थम् आकर्षणाभ्यर्थनम् उद्घाटयेत् (&amp;ldquo;आकर्षणाभ्यर्थन-प्राप्तिः&amp;rdquo; इति वीक्षताम् अत्र)। अस्मिन् चित्रे दर्शितया रीत्या &amp;ldquo;Files changed&amp;rdquo; इति नुदतु। files-changed review-changes तत्र परिवर्तितास् सञ्चिकास् स्फुटास् स्युः। changed-file-list भवत्कृत-परिवर्तनानि स्वसङ्गणके क्वचिद् रक्षतु। browser मध्ये vscode इत्य् उद्घाटितं चेत्, तद् पिदधातु। &amp;ldquo;sync fork&amp;rdquo; इति कृत्वा &amp;ldquo;discard commits&amp;rdquo; इति कीलकं नुदतु। तेनान्यैः कृतानि परिवर्तनानि लभिष्यन्ते। (अनेन साकम् प्राचीनाकर्षणाभ्यर्थने सति, पिहितम् भवति। ) पुनः vscode-गवाक्षम् पुनर् उद्घाटयतु। यथास्थानं पाठशोधने ऽनुवर्तताम् (यथापेक्षं पूर्वं स्वसनणके रक्षितानि परिवर्तनानि प्रयुज्य)। ततः नूतनम् आकर्षणाभ्यर्थनम् प्रेषयतु। </description>
+    </item>
+    <item>
+      <title>Apastamba dharma sUtra commentary</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/completed/Apastamba-dharma-sUtra-commentary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/completed/Apastamba-dharma-sUtra-commentary/</guid>
+      <description>Status Completed. Sponsors: vishvAsa family funds. (Possible - advitIya said he would contribute in 202201.) Here. Proposed work I wanted to get typed haradatta&amp;rsquo;s commentary to Apastamba dharmasUtra. We&amp;rsquo;ll use optical character recognition (OCR) technology to speed up the work. The pdf is available on archive.org. In the end, the typed result will be presented as seen here (besides the plain text markdown), and needless to say - anyone will be welcome to access, use, copy, publish it however they like.</description>
+    </item>
+    <item>
+      <title>Apastamba gRhya sUtra commentaries</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/completed/Apastamba-gRhya-sUtra-commentaries/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/completed/Apastamba-gRhya-sUtra-commentaries/</guid>
+      <description>Status Completed.&#xA;Sonsors Partial support (40k Rs) from shrI harikiraN of Indic academy. Vishvas family funds Proposed work I wanted to get typed AnAkulA and tAtparyadarshanI commentaries to Apastamba gRhyasUtra to an error-free state. The pdf is available on archive.org. Well, it was typed up by someone a long time ago (and I had published it in wikisource a long time ago), but that version has many errors and that makes it irritating to read.</description>
+    </item>
+    <item>
+      <title>Argentine rural land law faq</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/schools/lat-am-settlement/articles/argentine-rural-land-law-faq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/schools/lat-am-settlement/articles/argentine-rural-land-law-faq/</guid>
+      <description>What are rural lands?&#xA;Rural lands are all those that are outside urban areas, regardless of the destination that is given to them.&#xA;Foreign people Can foreigners buy rural land in Argentina?&#xA;Yes, but the law prohibits foreigners from owning or possessing:&#xA;Lands with important and permanent bodies of water or that border important and permanent bodies of water. Land located in border security zones. Is there a limit to the total amount of rural land that foreigners can have?</description>
+    </item>
+    <item>
+      <title>aShTAdhyAyI vAsu commentary</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/completed/aShTAdhyAyi-vAsu-commentary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/completed/aShTAdhyAyi-vAsu-commentary/</guid>
+      <description>Status Completed 2020 Aug - 2022 Jan. Sponsor nIlesh of aShTAdhyAyI.com Details Thanks to the efforts (spanning 1.5 years) of (mostly) smt surekhA, and sponsorship of shrI nIlesh of ashtadhyayi.com, we now have a good proof-read text of SC vAsu English commentary on ashtadhyayi.&#xA;It&amp;rsquo;s available at this snapshot . Future improvements (eg. enforcing IAST/ ISO romanizations) will be available at https://github.com/ashtadhyayi-com/data-edit .&#xA;The content is currently displayed at https://ashtadhyayi.github.io/suutra/1.1/1.1.8/ etc.</description>
+    </item>
+    <item>
+      <title>Clocking</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/internal/clocking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/internal/clocking/</guid>
+      <description>sanskrit https://app.connecteam.com/#/ui?t=d1537d74&amp;amp;l=en-US इत्युपयुज्य&#xA;लेखां सृष्ट्वा वदतु।&#xA;तेनास्मत्कार्यगणे प्रवेशः कार्यते,&#xA;&amp;ldquo;You&amp;rsquo;ve been added to &amp;hellip; by ..&amp;rdquo; इति शीर्षिकया च connecteam-तः विपत्र-सन्देशो लभिष्यते।&#xA;तादृशे विपत्रे न प्राप्ते, नियामकः स्मारणीयः।&#xA;ततः परम् भवद्-दूरवाण्यां connecteam app इति स्थापयित्वा प्रयुङ्क्ताम्।&#xA;कार्यकालमानं तेन भविता।&#xA;कार्यारम्भे&#xA;app-द्वारा &amp;ldquo;DG Time clock&amp;rdquo; इत्यत्र &amp;ldquo;clock in&amp;rdquo; इति करोतु।&#xA;कार्यान्ते‌ / विरामे वापि &amp;ldquo;clock out&amp;rdquo; इति करोतु।&#xA;कार्यकाल एव मातव्य इतीतरक्षणेषु यथा कालगणना न स्यात्, तथावदधातु।&#xA;कदाचित् तादृशे दोषे सति app-द्वारैव परिष्कारं प्रार्थयितुं शक्यम्।</description>
+    </item>
+    <item>
+      <title>Computer</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/internal/computer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/internal/computer/</guid>
+      <description>(Unless you are already computer-savvy and have other preferences) Please set up your computer (if you use another OS, let me know) in the following way, so that your work can be most enjoyable and seamless.&#xA;सङ्गणकापेक्षा 8GB RAM, fast processor (i5 or later) and laptop preferred Multi-platform tools Editor vscode Sublime text or Atom editor (deprecated) Communication Telegram Zoom Source control git साङ्गणकतन्त्रांशाः (Windows) Editing tools Bhasha IME - C:\Program Files\ इत्यस्मिन् स्थाप्यन्ताम्। Advanced tools Intellij IDE Community edition । Setup theme, font size, font.</description>
+    </item>
+    <item>
+      <title>Contact सम्पर्कः</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/contact/</guid>
+      <description>Short URL: https://rebrand.ly/dyugangA Please contact Vishvas / विश्वासो वासुकिजः for more info. Especially, please see Dharma via Vishvas page. Social web (Updates and sponsorship opportunities) Google groups/ email https://groups.google.com/g/dyuganga. द्युगङ्गा-कार्यगणस्य वार्ता अत्र । Twitter: https://twitter.com/dyugangaa Facebook: https://www.facebook.com/dyugangA Geo We are located in C Block, sahakAra nagara. Privacy policy We don&amp;rsquo;t sell or share information we collect to third party businesses.&#xA;Refund policy Stripe forces us to have a &amp;ldquo;refund policy&amp;rdquo;.</description>
+    </item>
+    <item>
+      <title>Figures</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/markdown/figures/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/markdown/figures/</guid>
+      <description> vs-code-new-folder-creation Within an image subfolder (create one if needed), save the image to be incldued (screenshot using a tool like flameshot.org if needed).&#xA;If that&amp;rsquo;s not possible, please send the image file via telegram. Then apply a tag like:&#xA;![](../images/FULL_IMAGE_FILE_NAME) </description>
+    </item>
+    <item>
+      <title>Footnotes</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/markdown/Footnotes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/markdown/Footnotes/</guid>
+      <description>Often, footnotes which appear in the bottom of the page in a physical book, appear without separation in raw OCR text on screen. This confuses the reader. Hence, it should be properly formatted.&#xA;Every footnote has a reference position/ mark, and a definition. Example in the below image (right click and open it in a new window for clearer view):&#xA;footnote ref def In our markup, every footnote should have it&amp;rsquo;s references and definition clearly marked.</description>
+    </item>
+    <item>
+      <title>Funders</title>
+      <link>https://sanskrit.github.io/funders/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/funders/</guid>
+      <description>Archiving British Library grants here. </description>
+    </item>
+    <item>
+      <title>Groups</title>
+      <link>https://sanskrit.github.io/groups/directory/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/directory/</guid>
+      <description>Please check out hindu-vidya communities on here.&#xA;External groups Sanskrit shAstra Major groups RISA, Indology, भारतीयविद्वत्परिषत्, Indo-Eurasian research, shAstram. Vedanta, jyotiSha etc. related channels (To be listed). Hindutva </description>
+    </item>
+    <item>
+      <title>Interleaving commentary</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/markdown/Interleaving_commentary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/markdown/Interleaving_commentary/</guid>
+      <description>असकृत् समूलटिप्पनीः प्रस्तोतव्याः स्युः। तदैवं तेषाम् प्रदर्शनम्। Commentary may be interleaved as follows:&#xA;ApastambaDharmaSutram 0013 ## सूत्रम् वेदाश्च ॥ ३॥ ### प्रस्तावः वक्तव्यो वा विशेष , तमाह--- ### टिप्पनी चोऽवधारणे । वेदा एव मूलप्रमाणं धर्माधर्मयोः ।… At times, it may be desirable to encapsulate the core/ मूल text as well, as below.&#xA;&amp;lt;details&amp;gt;&amp;lt;summary&amp;gt;प्रस्तावः&amp;lt;/summary&amp;gt; वक्तव्यो वा विशेष , तमाह--- &amp;lt;/details&amp;gt; &amp;lt;details open&amp;gt;&amp;lt;summary&amp;gt;मूलम्&amp;lt;/summary&amp;gt; वेदाश्च ॥ ३॥ &amp;lt;/details&amp;gt; &amp;lt;details&amp;gt;&amp;lt;summary&amp;gt;टीका&amp;lt;/summary&amp;gt; चोऽवधारणे । वेदा एव मूलप्रमाणं धर्माधर्मयोः ।… &amp;lt;/details&amp;gt; </description>
+    </item>
+    <item>
+      <title>kRdanta-rUpa-mAla lookup</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/kRdanta-dict/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/kRdanta-dict/</guid>
+      <description>Goal Produce data for digital dictionaries to easily lookup major kRdanta forms of all verb-roots using the kRdanta-rUpamAla data (already digitized, needs to fleshed out and filled up as described below). Essentially, we would need to get a learned vyAkaraNa vidvAn to fill up this spreadsheet by looking at the original text.&#xA;Importance Sanskrit is the Hindu liturgical language. Often times, a scholar or student needs to look up correct forms arising out of verbal roots to correctly understand (or compose) sanskrit text.</description>
+    </item>
+    <item>
+      <title>mAdhyandina-shatapatha</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/mAdhyandina-shatapatha/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/mAdhyandina-shatapatha/</guid>
+      <description>Status Sponsorship promised by shrI virender. Goal and motivation The sasvara pATha of shatapatha-brAhmaNa (mAdhyandina) is valuable for students and practitioners of vedic ritual and language. We have a typed devanAgarI version which needs quite a bit of svara correction. The text, as usual, will remain freely available on internet for anyone to use and copy.&#xA;Details Various editions of shatapatha-brAhmaNa have been published. Of them, ones by Weber and vamshIdhara-shAstrI are prominent.</description>
+    </item>
+    <item>
+      <title>Mahabharata audio project - How? महाभारत-ध्वनि-प्राप्तिः</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/audio/mbh-audio/how/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/audio/mbh-audio/how/</guid>
+      <description>How?</description>
+    </item>
+    <item>
+      <title>mahAbhArata gItA press - present with audio</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/completed/mbh-gItA-press_present-with-audio/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/completed/mbh-gItA-press_present-with-audio/</guid>
+      <description>Status Completed in early 2022.&#xA;Sonsors (1L Rs) from Aditi Bannerjee via Indic academy. Goal Digitize and present the text of the mahAbhArata edition so laboriously and wonderfully recorded as part of this project - together with the audio. The text will (just like our audio files) be made available for free in markdown format - anyone can copy and reuse. Examples of such text with audio presentations:&#xA;rAmAyaNa eg. 001_sanxepa/ raghuvaMsha eg.</description>
+    </item>
+    <item>
+      <title>Math</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/markdown/math/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/markdown/math/</guid>
+      <description>Basic formatting गणित-वाक्यान्य् एवं व्यवस्थापनीयानि&#xA;\(AB^2 + BC^2 = AC^2\) इति लेखितम् -&#xA;`\\(AB^2 + BC^2 = AC^2\\)`, अथवैवम् `@#AB^2 + BC^2 = AC^2#@` । सर्वम् अपि गणितवाक्यम् \\(…\\) आवरणे ऽस्तु। पुनर् एतावत् कृतम् मूलम् अवलोक्य समीकरोतु - क्वचिद् दोषा दृश्यन्ते। पङ्क्ति-पूर्णं गणितवाक्यं चेद् एवं कुर्यात्&#xA;`\\[ 2\frac{1}{9}a^2 \\]` अनेनैतज् जन्यते -&#xA;\[2\frac{1}{9}a^2\]&#xA;Additional tips इतोऽप्य् उदाहरणान्य् अत्रेक्षताम् -&#xA;जालपुटम् , मूलम् Be sure to escape * in formulae, for example - \\(Z_{n}^{\*}\\)</description>
+    </item>
+    <item>
+      <title>Message-response</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/message-response/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/message-response/</guid>
+      <description>Telegram Replying: भवान् right-click/long press इति कृत्वा reply करोतु। अन्यथा कस्मिन् विषये किं वदतीत्य् एव न ज्ञायते। Message number 105 may refer to message number 39 or message number 65. To understand which message is being referred to, please learn to click on the quoted message. Example below: quoted-telegram-message </description>
+    </item>
+    <item>
+      <title>Multiple commentaries</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/presentation/Multiple_commentaries/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/presentation/Multiple_commentaries/</guid>
+      <description>Example of how multiple commentaries can be presented - RV shakala 1.1.1&#xA;(Click images to englarge.)&#xA;rv 1a rv 1b rv 1c </description>
+    </item>
+    <item>
+      <title>Multiple scripts</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/presentation/Multiple_scripts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/presentation/Multiple_scripts/</guid>
+      <description>Example of how the same page is presented in multiple scripts.&#xA;(Click images to englarge.)&#xA;ags 1a ags 1b </description>
+    </item>
+    <item>
+      <title>OCR on request</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/ocr_on_request/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/ocr_on_request/</guid>
+      <description>For requesters File a request here.&#xA;For volunteers What is the workflow for an OCR volunteer? First off - you should have access to OCR technology, and you should be willing to (learn to) use it. Look for requests on the issues page. Assign a request to yourself and work on it. Once you get the OCR-ed text, we need to pass it on to proof-reading and to early users/ readers.</description>
+    </item>
+    <item>
+      <title>Payment</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/internal/payment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/internal/payment/</guid>
+      <description>Connecteam steps access time clock. 01 access timeclock 02 access timeclock click on &amp;ldquo;timesheets&amp;rdquo; set pay period 03 pay details </description>
+    </item>
+    <item>
+      <title>Post electronics archive</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/post-electronics-archive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/post-electronics-archive/</guid>
+      <description>Short url - https://rebrand.ly/dg-archive&#xA;Intro How to best preserve our knowledge (physical and spiritual) and texts?&#xA;We propose a network of archives spread over multiple regions,&#xA;where copies of all texts relevant to Hindus are preserved&#xA;in media which will persist for millennia.&#xA;The archived material should be readable with minimal technology,&#xA;to allow for regression technical abilities&#xA;due to loss of knowledge, lack of materials, electricity and such.&#xA;The archive and media used for preserving books should resist degradation and destruction due to factors such as</description>
+    </item>
+    <item>
+      <title>Posting-rules</title>
+      <link>https://sanskrit.github.io/groups/hindu-vidyA/posting-rules/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/hindu-vidyA/posting-rules/</guid>
+      <description>No spam No spam. Don&amp;rsquo;t keep sending essentially the same message repeatedly in different threads. (BVP examples: BVK&amp;rsquo;s vAk yoga, Achyut&amp;rsquo;s mAheshwara sUtras)&#xA;Polite communication with a couple of caveats &amp;ldquo;No first strike&amp;rdquo; principle. If someone crosses the line, one should not be blamed for responding in the same manner (BVP example: &amp;ldquo;haters&amp;rdquo;). One should be free to harshly and clearly criticize ideas - without getting to the person proposing them.</description>
+    </item>
+    <item>
+      <title>Preserving page numbers</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/markdown/Preserving_page_numbers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/markdown/Preserving_page_numbers/</guid>
+      <description>कदाचित् पृष्ठसङ्ख्यारक्षणम् इष्यते। एवं रक्ष्येरन् - [[123]]।&#xA;मूले paragraph-मध्ये श्लोकमध्ये वा नूतनपृष्ठारम्भस् स्यात्। तर्हि मध्ये पृष्ठसङ्ख्या निपतेत्। अस्मत्संस्करणे तद् वारणीयम्। pargraph-आदि-विच्छेदो यथा न स्यात् तथा पृष्ठसङ्ख्याम् इषच् चालयित्वा स्थापणीयम्। ताः सङ्ख्याः pagagraph मध्ये न स्युः, वाक्यमध्ये नैव, पदमध्ये नैव। यथा अत्र (←उद्घाट्य पश्यतु) -&#xA;श्री-सर्वार्थ-सिद्धि--रघुवीर-गद्य--वासव-दत्ता-मङ्गल-श्लोकवत् वस्तु-निर्देश-रूपं च मङ्गलं सूचितम् । “पाराशर्यवचस्सुधे&amp;#34;त्यत्र &amp;gt; &amp;#34;स्तुत्य्-आत्मक-गुरूपासन-रूप-मङ्गलाचारश् चार्थतः क्रियत” इति श्रुत-प्रकाशिकायाम् उक्तम् । [[32]] भजनौपयिक-गुण-विशेषान् आह - **अखिले**त्यादिना । **भुवन**-शब्दः क्षेत्रज्ञ-परः - &amp;#39;त्रिभुवनं सम्प्रत्य् अनन्तोदयं&amp;#39; इति चतुश्-श्लोकी-स्थ-त्रिभुवन-शब्दवत्, </description>
+    </item>
+    <item>
+      <title>Quotes</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/markdown/Quotes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/markdown/Quotes/</guid>
+      <description>Testing formatting: Use https://stackedit.io/app#&#xA;What is a quote Some text from another book. For example, in बौधायनब्रह्मकर्मसमुच्चय - 1 2 3 4 5 6 तस्य काल उक्तो दक्षस्मृतौ- &amp;gt; उषःकाले तु सम्प्राप्ते शौचं कृत्वा यथाविधि ततः स्नानं प्रकुर्वीत दन्तधावनपूर्वकम् ॥ इति ॥ Some words spoken or to be spoken by a character in the book, or by the reader/ ritualist. For example:&#xA;1 2 3 4 5 6 7 8 पुनः पवित्रे कृत्वाऽद्भिर्मार्जयति- &amp;gt; ॐ आपोहिष्ठा मयोभुवस्तान ऊर्जे दधातन । महेरणाय चक्षसे ॥ यो वः शिवतमोरसस्तस्य भाजयते ह नः । उशतीरिव मातरः ॥ तस्मा अरङ्गमामवो यस्य क्षयाय जिन्वथ । आपो जनयथा च नः ॥ विन्यसनीयम् मूलम् पुनः पवित्रे कृत्वाऽद्भिर्मार्जयति - ॐ आपोहिष्ठा मयोभुवस्तान ऊर्जे दधातन । महेरणाय चक्षसे ॥ यो वः शिवतमोरसस्तस्य भाजयते ह नः । उशतीरिव मातरः ॥ तस्मा अरङ्गमामवो यस्य क्षयाय जिन्वथ । आपो जनयथा च नः ॥ मन्त्रप्रतीकान्य् उद्धरणवद् दर्शनीयानि। यथा -</description>
+    </item>
+    <item>
+      <title>Rjrasva list</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/schools/lat-am-settlement/articles/rjrasva-list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/schools/lat-am-settlement/articles/rjrasva-list/</guid>
+      <description>Source: TW&#xA;Natural resources: Latin America &amp;gt; overexploited old-world countries by far whether it be empty land, minerals, water, oil &amp;amp; gas Ease of entry: Generally Latin America has easy path to entry, residency, &amp;amp; citizenship including jus soli (birth right citizenship) Quality of life: Much better than India whether it be traffic, pollution, honking, cleanliness Pay: Higher wages than India, in some cases much higher as in the case of Chile Uruguay Chances of backlash: Lower because there is no 1 set apart founding ethnic group that feels threatened by immigrants.</description>
+    </item>
+    <item>
+      <title>Saving changes</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/offline-editing/4_saving-changes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/offline-editing/4_saving-changes/</guid>
+      <description>निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। (Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username.) अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Back to Git workflow Overview Get the latest files. (See &amp;ldquo;syncing&amp;rdquo; section below) Make changes in your editor (eg. vscode). Save, commit and push periodically. Syncing with remote repository Every day, make sure that you&amp;rsquo;re working on the latest files by doing the below. If you&amp;rsquo;re changing files in REPO-content : git pull upstream content इति परिवर्तनानि लभ्यानि। If you&amp;rsquo;re changing files in REPO-static : by running: git pull upstream static_files .</description>
+    </item>
+    <item>
+      <title>Saving changes</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/online-editing/saving-changes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/online-editing/saving-changes/</guid>
+      <description>निर्देश-समीक्रिया (द्रष्टुं नोद्यम्) अधः XYZ इति यद् अस्ति, तस्य स्थाने स्वीयं github-नाम प्रयुङ्क्ताम्। (Below, replace &amp;lsquo;XYZ&amp;rsquo; with your github username.) अथवैतत् प्रयुज्यतां यन्त्रम्: पाठम् परिवर्तय!! Back to Git workflow Saving changes Go to https://vscode.dev/github/XYZ/REPO/tree/content or https://vscode.dev/github/XYZ/REPO/tree/static_files (if working on files located in static_files branch) on the computer where you&amp;rsquo;ll work (not mobile phone), provide all permissions. Config tips here. (Browser may block popups - enable popups. GitHub permission may be sought.</description>
+    </item>
+    <item>
+      <title>Search Results</title>
+      <link>https://sanskrit.github.io/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/search/</guid>
+      <description>This file exists solely to respond to /search URL with the related search layout template.&#xA;No content shown here is rendered, all content is based in the template layouts/page/search.html&#xA;Setting a very low sitemap priority will tell search engines this is not important content.&#xA;This implementation uses Fusejs, jquery and mark.js&#xA;Initial setup Search depends on additional output content type of JSON in config.toml ``` [outputs] home = [&amp;ldquo;HTML&amp;rdquo;, &amp;ldquo;JSON&amp;rdquo;] ```</description>
+    </item>
+    <item>
+      <title>Spacing, paragraph-विवेकः</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/markdown/Spacing_paragraph-vivekaH/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/markdown/Spacing_paragraph-vivekaH/</guid>
+      <description>अस्मत्परिभाषा रिक्ता पङ्क्तिः = empty line, obtained by pressing Enter key twice. रिक्तस्थानम् = space, obtained by pressing &amp;ldquo;space bar&amp;rdquo; key. Paragraphs Paragraphs are separated by empty lines. Please remove empty spaces at the beginning of lines. पाठखण्डानां (paragraph इत्येषां) विवेकः सम्यक् स्यात् - रिक्तपङ्क्ति-रिक्तस्थानादियोजनैः। Of course, some paragraphs have multiple lines (example - halves of a shloka). In such cases, there should be TWO SPACES at the end of each line.</description>
+    </item>
+    <item>
+      <title>suhAsa wish list</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/suhAsa-wish-list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/suhAsa-wish-list/</guid>
+      <description>I suggest that priority be given to books that can be converted to dictionaries as their impact is greater. Here is a list of a few books. I have shared some of these books here. I will share the others upon request.&#xA;Primary Texts&#xA;सुभाषितावलिः (Subhashita work) शार्ङ्गधरपद्धतिः (Subhashita work. If सुभाषितावलिः+शार्ङ्गधरपद्धतिः are done, all the big five Subhashita works will be made available) अन्योक्तिमुक्तावलिः of हंसराजगणिः (very comprehensive anyokti collection) कुवलयानन्द काव्यादर्श + रत्नश्री commentary (oldest AFAIK and best) पूर्णसरस्वती&amp;rsquo;s commentaries on मालतीमाधव and मेघदूत (पूर्णसरस्वती is an incredibly insightful commentator.</description>
+    </item>
+    <item>
+      <title>Tables and charts</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/markdown/Tables_and_charts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/markdown/Tables_and_charts/</guid>
+      <description>Please generate tables using online tools such as 0, 1. तत्र फलकं रचयतु। ततः &amp;ldquo;Generate&amp;rdquo; इति नुदतु। ततः &amp;ldquo;Copy to clipboard&amp;rdquo; इति कृत्वा सम्पाद्यमानसञ्चिकायां लिम्पतु (paste करोतु)। Consider ditto marks or identical text associated with other text in a list (example here): Just repeat the text. In case of other cases/ confusion, please contact us with a link to the page with the table/ chart/ figure. Don’t hesitate to ask.</description>
+    </item>
+    <item>
+      <title>Team गणः</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/members/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/members/</guid>
+      <description> Vishvas / विश्वासो वासुकिजः, Lead/ अग्रणीः Apart from Dyugangā activity, he also contributes to free open source software useful for Hindu practitioners, scholars and students - see various repos under orgs such as sanskrit-programmers, jyotisha, indic-dict etc. (Full list under github profile). V, Sar, Sur, Shr &amp;hellip; You?, Junior Scholar assistant/ उपविद्वन्मन्त्री Proofreader AD Former members Sanjeeva/ सञ्जीवः, Junior Scholar assistant/ उपविद्वन्मन्त्री Pradeepasimha/ प्रदीपसिंहाचार्यः, Scholar assistant/ विद्वन्मन्त्री Kishor Sharma/ किशोरशर्मा, Scholar assistant/ विद्वन्मन्त्री </description>
+    </item>
+    <item>
+      <title>VSCode</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/vscode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/vscode/</guid>
+      <description>Appearance You can also change Font size, colors etc. by going to settings (Bottom left ⚙️ gear icon ).&#xA;vscode-settings-font Snippets Settings (Bottom left ⚙️ gear icon ) select&amp;quot;Configure user snippets&amp;quot; or &amp;ldquo;Snippets&amp;rdquo; search for markdown and open a file called markdown.json (see Video linked below) Copy and save from here . Usage: select + cut text, type shortcut, press ctrl-space, press down arrow and enter demo: YT . Side-by-side text vscode-side-by-side-text </description>
+    </item>
+    <item>
+      <title>Why volunteer?</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/Why_volunteer_as_a_proofreader/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/Why_volunteer_as_a_proofreader/</guid>
+      <description>Why volunteer as a proofreader?&#xA;Your command over the language will dramatically improve. Your knowledge will increase. You will enjoy the process - especially if you are book-lover. You will be generating training data that can help make better sanskrit OCR software! You will be helping many other knowledge-lovers. (see &amp;ldquo;why digitize?&amp;rdquo; section here.) Volunteer coordination sanskrit-ocr </description>
+    </item>
+    <item>
+      <title>उपसर्गार्थ-चन्द्रिका</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/completed/upasargArtha-chandrikA/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/completed/upasargArtha-chandrikA/</guid>
+      <description>Status 20221016 इति दिने समाप्तम्।&#xA;उपसर्गार्थचन्द्रिकायाश् शोधितः पाठो ऽत्र वर्तते - vishvAsa-site , github ।&#xA;यथेष्टं गृहीत्वा प्रयोक्तुम् अर्हथ। दोषा यथास्थानम् परिष्कार्या github-आकर्षणाभ्यर्थनैः - सूचनीयो वाहम्।&#xA;Sponsors श्लाघ्यो @himanshucanberra महोदयो यद्धनेन साधितम् इदं कार्यम्। सम्बद्ध-कार्याणि dict कार्यं शिष्टम्। कश्चित् साङ्गणकश् चेत् तत्रोपचिकीर्षति, सूचनीयो ऽहम्।&#xA;एवम् अन्येऽपि वर्तन्ते बहुमूल्या ग्रन्थाः - तत्तुल्यरीत्या प्रकाशने यथाशक्ति सहकुर्वन्तु।</description>
+    </item>
+    <item>
+      <title>कार्यारम्भः Onboarding</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/internal/onboarding/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/internal/onboarding/</guid>
+      <description>कार्यान्तराणि भवनपरिचयः सङ्गणकप्रवेशः नियमसूचनम् सन्देशाः नियत-कार्य-दिन-चितिः&#xA;सङ्गणकप्रश्नः प्रणमामि,&#xA;https://www.linkedin.com/jobs/view/3634871677/ इत्यत्र यथोक्तं&#xA;यान्त्रिक-पाठ-शोधन-कार्ये ऽस्मिन् सङ्गणकयन्त्रं, संस्कृतोट्टङ्कन-कौशलं चापेक्षितम्। तद् वर्तते वा?&#xA;एकत्र मूलग्रन्थं (pdf-रूपेण) दृष्ट्वा, अपरत्रोट्टङ्कितं पाठं शोधयितुं सौकर्यं स्यात् (24inch monitor प्रयोगेण यथा, tablet+computer इति युगलेन वा)।&#xA;दूरवाण्यैव शोधनम् कठिनम् भवेत्।&#xA;तथा सति सदयं देवनागर्या संस्कृतेन प्रत्युत्तरं प्रेषयतु।&#xA;लेखासृष्टिः प्रणमामि।&#xA;संस्कृतग्रन्थानां यान्त्रिकपाठस्य शोधने भवद्-आसक्तिर् दृष्टा।&#xA;तत्र वस्तुतो रुचिः कौशलं चास्ति वेति ज्ञेयम्।&#xA;तदर्थं प्रारम्भे लघुकार्यखण्डेन परीक्षावहै।&#xA;github.com, telegram इत्येतयोर् लेखे सृष्ट्वा (- sign-up इति कृत्वा) लेखानामनी सूचयतु (अस्मत्कार्यपद्धताव् एतयोः प्रयोगो ऽपेक्ष्यते)।</description>
+    </item>
+    <item>
+      <title>ग्राम-द्विजाः</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/grAma-dvijAH/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/grAma-dvijAH/</guid>
+      <description>Goal This project aims to convince dvija-s&#xA;to transition to Indian villages soon and prepare;&#xA;and support them in doing so.&#xA;dvija-s have been the backbone of Hindu civilization;&#xA;it is by their power and obstinacy that Gods, sages and ancestors continue to be adored (even by the wider society) in India.&#xA;They brought beauty and harmony of the highest order, and can continue to do so.&#xA;By dvija-s we not only mean brAhmaNa-s, kShatriya-s, vaishya-s;</description>
+    </item>
+    <item>
+      <title>चतूरूपकोशः</title>
+      <link>https://sanskrit.github.io/people/i_narasimhaachaarya/shriiharshakosha/chatur/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/people/i_narasimhaachaarya/shriiharshakosha/chatur/</guid>
+      <description>अथ चतूरूपकोशः&#xA;श्रीहर्षकृतः&amp;mdash;&amp;mdash;&amp;ndash; चतूरूपे &amp;mdash;अ-क-ग-च-ज-झ-त-द-ध-न-प-ब-भ&#xA;१. अग्रमग्र्यं तथाग्रीयमग्रियं च प्रचक्षते। अङ्कूरमङ्कुरं च स्यादङ्कुरोङ्कूर इत्यपि॥&#xA;२. अनूक्षणं नूक्षणं चाप्यनुक्षणमवक्षणम्। अच्छभल्लश्च भल्लश्च भल्लूकश्चापि भल्लुकः॥&#xA;३. अवग्राहोऽवग्रहश्च वग्राहोवग्रहोपि च। कन्तुकं कन्दुकं चैव गन्दुकं गेन्दुकं तथा॥&#xA;४. कौतुकं कुतुकं च स्यात्कौतूहलकुतूहले। गुच्छोगुञ्छोगुळुच्छश्च गुळश्च परिकीर्तितः॥&#xA;५. गोशीर्षं गोशिरश्चैव गावं गोशीर्षिकापि च। चन्द्रमाश्चन्दिरश्चन्द्र-मसश्चन्द्रश्च कीर्तितः॥&#xA;६. चन्द्रभागा चान्द्रभागा चन्द्रभागी च सम्मता। चान्द्रभागी च सैवोक्ता भवेदेवं चतुर्विधम्॥&#xA;७. चिवरं चीवरं चीरी चवरः परिकथ्यते। जनिश्च जन्म जनुषी जननं चेति कथ्यते॥</description>
+    </item>
+    <item>
+      <title>जालक्षेत्रमिदमन्विष्यताम्</title>
+      <link>https://sanskrit.github.io/custom_site_search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/custom_site_search/</guid>
+      <description> </description>
+    </item>
+    <item>
+      <title>तत्तद्व्याख्योक्तकोशेष्वजादिपदानि</title>
+      <link>https://sanskrit.github.io/people/i_narasimhaachaarya/upayuktaamsha/tattadvyakhyoktakosesvajadipadani/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/people/i_narasimhaachaarya/upayuktaamsha/tattadvyakhyoktakosesvajadipadani/</guid>
+      <description>अथ तत्तद्व्याख्योक्तकोशेष्वजादिपदानि&amp;mdash;- यथा&amp;mdash;-&#xA;अग्रमालम्बने प्राप्ये&amp;ndash;&#xA;विश्वः&amp;mdash; अङ्कस्समीप उत्सङ्गे चिह्ने स्थानापराधयोः, केशवः&amp;mdash; मृताववसिते रम्ये समाप्तावन्त इष्यते-&#xA;शब्दार्णवः&amp;mdash;- अर्धेन्दुश्चन्द्रशकले गळहस्तनखाङ्कयोः।&#xA;विश्वः&amp;ndash;&#xA;अतिथिस्स्यात्प्राहुणिके कोपेकुशतनूभवे&amp;ndash;&#xA;रत्नमाला&amp;ndash;&#xA;अन्तो स्त्री&#xA;निश्चयेनाशेस्वरूपेग्रेन्तिकेऽन्तरे-&#xA;रत्नमाला&amp;ndash;&#xA;यदवाच्यस्य वचनमवाच्यवचनं हि तत्।&#xA;भवेदनुशयोद्वेषे पश्चात्तापानुबन्धयोः-&#xA;विश्वः&amp;ndash;&#xA;अन्यौ विभिन्नासदृशौ&amp;ndash;&#xA;वै&amp;ndash;&#xA;क्लीबेन्तरं चावकाशे तादर्ध्येवसरेऽवधौ। वै&amp;ndash;&#xA;अश्वस्तुरङ्गस्तुरगोहयस्सप्तिस्तुरङ्गमः।&#xA;शालिहोत्री व्रती&#xA;कुण्डीप्रोधीवारुःप्रकीर्णकः।&#xA;कुदरोघोटकस्तार्क्ष्यःक्रमणोगृहभोजनः।&#xA;,वै&amp;ndash;&#xA;अर्थःप्रकारेविषयेव्यवहारेप्रयोजने&amp;ndash;&#xA;रत्नमाला&amp;mdash; ज्ञातहेतुविवक्षायामप्यादिकथमव्ययम्।&#xA;कथमादितथाप्यन्तं यत्नगौरवबाधयोः।&#xA;उत्पलमाला&amp;ndash;&#xA;भवेदपचितिः पूजाव्ययहानिषुनिष्कृतौ। वि-&#xA;श्रेष्ठोक्षाणौ तु पुङ्गवौ।&#xA;,वै&amp;ndash;&#xA;॥&#xA;अभिजातस्थिरे न्याय्ये कुलीनप्राप्तरूपयोः।&#xA;वि-&#xA;अरुणोर्कार्कसारथ्योररुणं लोहितेन्यवत्। वि-&#xA;अस्रमश्रुणि शोणिते-&#xA;वि-</description>
+    </item>
+    <item>
+      <title>तिलसी-कोश-शोधन-क्रिया</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/completed/tulasI-kosha/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/completed/tulasI-kosha/</guid>
+      <description>Status Completed in 2020.&#xA;Sponsors Vishvas family funds नियन्ता विश्वास अपेक्षा और क्रम तुलसीशब्दकोश के निर्वाच्य-शब्दोँ का संस्करण। (शब्दनिर्वचन का संस्करण अनपेक्षित है। पर प्रतिपङ्क्ति एक शब्द और एक निर्वचन हि हो - ऐसा प्रयास हो।) OCR/यन्त्र-परिष्कृत पाठ - यहाँ । pdf/चित्रीकृत-ग्रन्थ - यहाँ । इन चित्रोँ को देखिए - १, २। आसक्त जन नियन्ता का सम्पर्क करेँ। वह आप के कार्यखण्ड को निश्चित करेँगे। प्रश्न हो तो नियन्ता को पूछिए। दक्षिणा का मान प्रतिपृष्ठ २ रुपय। समर्पित पाठ मेँ त्रुटि होने पर ०.</description>
+    </item>
+    <item>
+      <title>त्रिरूपकोशः</title>
+      <link>https://sanskrit.github.io/people/i_narasimhaachaarya/shriiharshakosha/tri/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/people/i_narasimhaachaarya/shriiharshakosha/tri/</guid>
+      <description>१. अङ्कणं चाङ्गणं स्यादङ्गणा चापि कीर्तिता। अरतिश्चापि निरतिर्विरतिश्च समं त्रयम्॥&#xA;२. अवतंसो वतंसस्स्यादुत्तंसः परिकीर्तितः। अलकं चालकःकेशैस्त्र्यलका श्रीदपत्तनम्॥&#xA;३. अध्वनीनोऽप्यध्वगश्चाप्यध्वन्यश्च प्रकीर्तितः। भवेदाषाढ आशाढोप्यषाढक इति त्रयम्॥&#xA;४. आन्दोळिकास्यादंदोळोऽन्दोळिका च निगद्यते। उररीकृतमित्येतदूरीकृतमुरीकृतम्॥&#xA;(त्रिरूपकोशे क-ख-ग-च-ज-त-द-ध-प&#xA;५. उदंस्यादुदकं चापि दकं च परिकीर्तितं। भवेदेडुकमेडूकमैडुकं न्यस्तकीकसम्॥&#xA;६. कटीरश्च कटी चापि कटिश्चापि निगद्यते। कबरःकबरिश्चापि कबरी चापि कथ्यते॥&#xA;७. कर्पटश्च पटश्चापि पटी चापि प्रकीर्तिता। काडम्बश्च कडम्बश्च कलम्बश्च प्रकीर्तिता॥&#xA;८. कुटीरश्च कुटी चापि कुटिश्चापि निगद्यते। केशपक्षः केशपाशः केशहस्तोऽपि च स्मृतः॥</description>
+    </item>
+    <item>
+      <title>द्विरूपादिकोशः</title>
+      <link>https://sanskrit.github.io/people/i_narasimhaachaarya/shriiharshakosha/dvi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/people/i_narasimhaachaarya/shriiharshakosha/dvi/</guid>
+      <description>अथ श्रीहर्षकृत द्विरूपादिकोशप्रारम्भः&amp;mdash;&amp;mdash;&amp;mdash;-(उपयुक्तांशसङ्ग्रह्पुस्तकात्)&#xA;श्लो॥ तुषाराद्रिप्रतीकाशं तुलसीदामभूषणं। तुरङ्गममुखं वन्दे तुङ्गसारस्वतप्रदम्॥&#xA;(१)&#xA;उमारमणसुत्राम विरिंच्यादिसुरांचितं। समस्तविघ्नहन्तारमर्वाननमहं भजे॥&#xA;(२) प्रबोधमाधातुमशाब्दिकानां कृपामवाप्तुं च सतां&#xA;कवीनां। द्विरूपकोशो रचितो विचार्य बहुप्रबन्धस्थितशब्दभेदान्॥&#xA;३ ॥ कृपामुपेत्यापि सतां कवीनां कृतो मया रूपमवाप्य शब्द&#xA;भेदप्रकाशोखिलवाङ्मयार्थः। ज्ञात्वा च पूर्वप्रचुरान्प्रयोगान् प्रामाणिकोदाहरणानि मत्वा।&#xA;रूपादिभेदेष्वपि लक्षणेषु विचक्षणो निश्चिनुयात्सुशब्दान्॥&#xA;(४) द्विलिङ्गताच्प्रत्ययहल्कृताम्भिदां सपञ्चकद्वित्रिचतुःप्रकारात्। भूमैकवाचित्वमपीह वाचां श्रीहर्षसूरिर्वितनोति कोशे॥&#xA;५ ॥ क्वचिन्मात्राकृतो भेदः क्वचिद्वर्णकृतोत्र च। (क्वचिदर्थान्तरोल्लेखात्) क्वचिद्विभक्तिभेदैश्च शब्दानां रूढितः क्वचित्॥&#xA;६ ॥ एतत्कोशपदान्येव पौर्वापर्यविपर्ययात्। न्यस्तानि शीघ्रबोधार्थमकारादिक्रमादिह॥ नानादेशसमानीतपुस्तकालोक&#xA;नादपि। सन्देहस्यानपगमाद्यथामातृकमङ्कितम्॥ न तत्र मम दोषोस्ति तदन्विष्याखिलं पुनः। दोषज्ञैःपरिहर्तव्यो दोष इत्यर्थ्यते मुहुः॥</description>
+    </item>
+    <item>
+      <title>नरसिंहाचार्यः - परिचयः</title>
+      <link>https://sanskrit.github.io/people/i_narasimhaachaarya/upayuktaamsha/upayukta-shlokaah/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/people/i_narasimhaachaarya/upayuktaamsha/upayukta-shlokaah/</guid>
+      <description>पत्त्रम् १ १. सदृशं त्रिषु लिङ्गेषु सर्वासु च विभक्तिषु।&#xA;वचनेषु च सर्वेषु यन्नव्येति तदव्ययम्॥&#xA;२. यल्लिङ्गं यद्वचनं या च विभक्तिर्विशेष्यस्य।&#xA;तल्लिङ्गं तद्वचनं सा च विभक्तिर्विशेषणस्यापि॥&#xA;३. लिङ्गसङ्ख्याविभेदेऽपि विशेषणविशेष्यता।&#xA;विभक्तिः पुनरेकैव विशेषणविशेष्ययोः॥&#xA;४. नस्यान्नियतलिङ्गेषु तेषु लिङ्गं विशेष्यवत्।&#xA;त्यदादिषु क्वचिल्लिङ्गं विधेयोद्देश्यगं भवेत्॥&#xA;५. विशेषणं पुरस्कृत्य विशेष्यं तदनन्तरं।&#xA;कर्तृकर्मक्रियायुक्तम् एतदन्वयलक्षणम्॥&#xA;६. विशेष्यं तु प्रधानं स्यादप्रधानं विशेषणम्।&#xA;द्वाभ्यां युग्ममिति प्रोक्तं त्रिभिश्श्लोकैर्विशेषकम्॥&#xA;७. कलापकं चतुर्भिस्स्यात्तदूर्ध्वं कुलकं मतम्।&#xA;लळयोर्लडयोस्तद्वज्जडयोर्वबयोस्तथा॥&#xA;८. रलयोर्नणयोश्चान्ते सविसर्गाविसर्गयोः।&#xA;सबिन्दुकाबिन्दुकयोस्स्यादभेदेन कल्पनम्॥&#xA;९. इदमस्तु सन्निकृष्टं समीपतरवर्तिचैतदोरूपम्।</description>
+    </item>
+    <item>
+      <title>पञ्चरूपपद्धतिः</title>
+      <link>https://sanskrit.github.io/people/i_narasimhaachaarya/shriiharshakosha/pancha/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/people/i_narasimhaachaarya/shriiharshakosha/pancha/</guid>
+      <description>अथ पञ्चरूपपद्धतिः&amp;mdash;&amp;mdash;&amp;ndash; १. . कण्डूयनं च कण्डूया कण्डूः कण्डूति कण्डुती। किसालयं किसलयं किसालं किसलं किसम्॥&#xA;२. कुवालयं कुवलयं कुवालं कुवलं कुवम्। धनिर्धन्याकधान्याके धान्यं धान्येयकं तथा॥&#xA;३. पत्रा पत्री पत्रिका च पत्रकं पत्रमुच्यते। मारुषो मरुषो मर्षो मारुषं मरुषं तथा॥&#xA;४. लोलुपो लोलुभो लोलो लम्पटो लालसोपि च। शेषश्शेषं च शिष्टञ्च शेषितश्चैव शेषिकः॥&#xA;५. शिवालं शैवलं शैवालं च शैवालशैवलौ। हसश्च हासिका हासो हसनं हास्यमित्यपि॥&#xA;इति पञ्चरूपपद्धतिस्समाप्ता।&#xA;इत्थं सत्कविराजराजिमकुटालङ्कारहीरायित श्रीहीरात्मभवेन नैषधमहाकाव्योज्ज्वलत्कीर्तिना।&#xA;उद्वृत्तप्रतिवादिमस्तकतटीविन्यस्तवामाङ्घ्रिणा श्रीहर्षेण कृतं चिरं विजयतां श्रीकोशरत्नं महत्॥ (कोशश्चायं समाप्तः)</description>
+    </item>
+    <item>
+      <title>पद्यधारा</title>
+      <link>https://sanskrit.github.io/groups/padyadhaaraa/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/padyadhaaraa/</guid>
+      <description>परिचयः अस्माकं‌ विपत्त्रधारिणीम् ईक्षताम् अत्र।&#xA;Facebook मुखपुस्तके &amp;ldquo;कवयो वयममी&amp;rdquo; :-)। गद्यकाव्य-विभागो ऽत्र।&#xA;whatsapp-तन्त्रांशे सरस-छन्दोभाषणम्? प्रविश्यताम् अत्र।&#xA;संस्कृतपद्यं नाम छन्दोबद्धं स्यात्।&#xA;छन्दसः परिचयः, अपेक्षा, परीक्षणयन्त्राणि इत्यादिकम् अत्र सूचितम्।&#xA;क्षेत्रान्तराणि पद्यप्रकाशनमार्गाः कविसमयः। प्राचीप्रज्ञायां काव्यधारा। विध्युद्दूतो ऽन्तर्जालपत्रिका। (प्रकाशकेभ्यः उत्तरं न प्राप्तम्।) पद्यचौर्ये प्राचीना इह। पद्याभ्यासस्थानानि पद्यपानम्। </description>
+    </item>
+    <item>
+      <title>पात्राणि</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/internal/roles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/internal/roles/</guid>
+      <description>साधारणनियमाः उत्साहपूर्णं कार्यम्। महामारीम् अभिलक्ष्य - प्रायेण गृहादेव कार्यम्। कार्यदिने प्रवेशविधिः attendance login (via app/ site) कार्यदिने निर्गमनविधिः attendance logout कार्याभाव-प्राक्सूचना - सोमवासरादारभ्य शुक्रवासरं यावद् वर्तमानेषु दिवसेषु कार्याभावः पूर्वमेव सूचनीयः (यथा दिनारम्भे पूर्वेद्युर् वा)। तेन +अनावश्यकनिरीक्षं वार्यते। संस्कृतेनैव व्यवहारः। विद्वन्मन्त्री कार्याणि एवंविधम् भवन्ति प्रायेण -&#xA;यथापेक्षं ग्रन्थपाठानाम् उट्टङ्कनम्, उट्टङ्कितस्य शोधनम् वा, महाभारतादेर् ध्वनिसञ्चिकानाम् परीक्षणं, तादृक्कार्याणि कुर्वतां सङ्ग्रहणं निरीक्षणं वापि यथा। तदन्तरा यथानिर्देशं बालपाठने यत्नो वा ऽल्पकार्यान्तरं वा संस्कृतादिविशिष्टज्ञानानपेक्षम् अपि स्यात्।</description>
+    </item>
+    <item>
+      <title>प्रमाणवचनानि (तत्तद्व्याख्योदाहृतानि)</title>
+      <link>https://sanskrit.github.io/people/i_narasimhaachaarya/upayuktaamsha/tattadvyakhyodahrtapramanavacanani/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/people/i_narasimhaachaarya/upayuktaamsha/tattadvyakhyodahrtapramanavacanani/</guid>
+      <description>आसीदिदं तमोभूतमप्रज्ञातमलक्षणम्। अप्रतर्क्यमविज्ञेयं प्रसुप्तमिव सर्वतः॥(१)&#xA;ततस्स्वयम्भूर्भगवानव्यक्तो व्यञ्जयन्निदं महाभूतादिवृत्तौजाः प्रादुरासीत्तमोनुदः॥(२)&#xA;योसावतीन्द्रियग्राह्यस्सूक्ष्मोऽव्यक्तस्सनातनः। सर्वभूतमयोऽचिन्त्यस्स एव स्वयमुद्बभौ॥(३)&#xA;सोऽभिध्याय शरीरात्स्वात्सिसृक्षुर्विविधाः प्रजा॥&#xA;अप एव ससर्जादौ तासु वीर्यमपासृजत्॥(४)&#xA;तदण्डमभवध्धैमं सहस्रांशुसमप्रभम्। तस्मिन् जज्ञे स्वयं ब्रह्मा सर्वलोकपितामहः॥(५)&#xA;तस्मिन्नण्डे स भगवानुषित्वा परिवत्सरम्। स्वयमेवात्मनो ध्यानात्तदण्डमकर्रोद्द्विधा॥(६)&#xA;ताभ्यां सशकलाभ्यां च दिवं भूमिं च निर्ममे। मध्ये व्योमदिशश्चाष्टावपां स्थानं च शाश्वतम्॥(७)&#xA;सर्वेषां तु स नामानि कर्माणि च पृथक्पृथक्। वेदशब्देभ्य एवादौ पृथक्संस्थाश्च निर्ममे॥(८)&#xA;(मनुः) नाम रूपं च भूतानां कृत्यानां च प्रपञ्चनं। वेदशदेभ्य एवादौ देवादीनां चकार सः॥</description>
+    </item>
+    <item>
+      <title>बोधायन-ब्रह्म-कर्म-समुच्चयः</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/bodhAyana-brahma-karma-samuchchayaH/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/proposed/bodhAyana-brahma-karma-samuchchayaH/</guid>
+      <description>Status In progress (Aug 2022 - ??). A member of a small-town baudhAyana purohita family is engaged in this. Remarkably, she works with just a mobile phone. Budget About 40k.&#xA;Proposed work Digitize the excellent text, बोधायन-ब्रह्म-कर्म-समुच्चयः. (published in 70-s from gokarNa)&#xA;Proofreader Instructions (द्रष्टुं नोद्यम्) कर्मणि भाग-द्वयम् - वर्ण-समीकरणम् (correcting the text), पाठ-विन्यासश् (formatting) च।&#xA;वर्ण-समीकरणं नाम मूलं दृष्ट्वा, उट्टङ्कित-पाठस्य परिष्करणम्।&#xA;किञ्च दीर्घ&amp;ndash;स-स्वर&amp;ndash;वैदिक-मन्त्रादीनाम् (उपदशाक्षरेभ्योऽपि दीर्घाणां) परिष्कारे न श्राम्यतु - यतः पूर्वमेव परिष्कृतपाठो ऽन्यतो ऽनुकरिष्यते।</description>
+    </item>
+    <item>
+      <title>लिङ्गानुशासनम्</title>
+      <link>https://sanskrit.github.io/people/i_narasimhaachaarya/upayuktaamsha/linganusasanam/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/people/i_narasimhaachaarya/upayuktaamsha/linganusasanam/</guid>
+      <description>लिङ्गानुशासनम्&#xA;श्लो॥ येनाक्षरसमान्नायमधिगम्य महेश्वरात्। कृत्स्नं व्याकरणं प्रोक्तं तस्मै पाणिनये नमः॥ श्रीहयग्रीवाय नमः॥&#xA;अथ लिङ्गानुशासनम्&amp;mdash;-&#xA;लिङ्गं ॥ अयमधिकारो वेदितव्य आशास्त्रपरिसमाप्तेः। स्त्री ॥ इदमधिकृतं वेदितव्यम्।&#xA;यत्र स्त्रीलिङ्गादन्यलिङ्गं शिष्यते तत्र सूत्र एव लिङ्गं वक्ष्यते। ऋकारान्ता मातृदुहितृस्वसृयातृननन्दरः। ऋकारान्ता&#xA;मात्रादयः पञ्चैव शब्दाः स्त्रीलिङ्गा भवन्ति। इयं माता। मात्रूः पश्य। इयं दुहिता। स्वसा याता ननान्दा। मात्रादिग्रहणं किम्।&#xA;पिता। भ्राता। पित्रून्। भ्रात्रूनित्यत्र माभूत्। मात्रादिनियमात्तिसृचतस्रोरव्याप्तिरिति चेत् &amp;ldquo;स्त्रियामेव त्रिचतुरोस्तदादेशविधानान्न दोषः। अन्यूप्रत्ययान्तो धातुः। &amp;ldquo;अनिप्रत्ययान्त ऊप्रत्ययान्तश्च धातुः स्त्रीलिङ्गो भवति। इयं सरणिः। अवनिः। अर्तनिः। अर्हणिः। ग्रहणिः। चर्षणिः। वर्मणिः। क्षेपणिरिति। ऊप्रत्ययान्ताः। इयं चमूः। खर्जूः। सर्जूः। वधूः। जम्बूः। कन्दूः। अलाबूरित्यादि। प्रत्ययान्तग्रहणं किम्?</description>
+    </item>
+    <item>
+      <title>विरामदिनानि (Obsolete)</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/internal/holidays_obsolete/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/internal/holidays_obsolete/</guid>
+      <description>कार्यदिनसूचना Attendance जालक्षेत्राद् आमन्त्रणम् प्रेषयिष्यते। app तन्त्रांशो ऽपि वर्तते। प्रतिहोरम् इयद् इति कालमानेन वेतनं निश्चिनुमः प्रतिमासम्। कार्यवेला/ Work days साधारणापेक्षा - सप्ताहे ५ दिनानीति मानेन कार्यदिनानि स्युः। दिने च ८ होराणां कार्यवेला। विरामदिनानि (अवर्तमान-व्यवस्था)/ Paid leaves (Inactive policy) सप्ताहे २ दिनय् इति मानेन सप्ताहान्तदिनानि सङ्गृह्य युगपदेव विरामदिनानि भोक्तुं शक्यते (अनेन +एकादश्यादिव्रताचरणे ग्रामयात्रायाञ्च सौकर्यं स्यादिति धीः)। किञ्च, विशिष्टानुज्ञां विना ८ एव दिनानि तादृशानि सङ्गृहीतुं शक्यानि - न ततोऽधिकम्। एतदन्तरा प्रतिमासं दिनमेकम् इति मानेन विरामदिनानि लभ्यन्ते। तानि सङ्गृह्य भोक्तुं शक्यम्। अथवा धनाय विक्रेतुम् अपि शक्यम्। किन्तु, विशिष्टानुज्ञां विना ८ एव दिनानि तादृशानि सङ्गृहीतुं शक्यानि - न ततोऽधिकम्। भुज्यमानेषु सङ्गृहीत-विरामदिनेषु प्राक्सूचना देया, विपत्रेण चानुज्ञा लब्धव्या। एतदन्तरा +एतेषूत्सवदिनेषु सप्ताहान्तादन्तरा वर्तमानेषु विरामदिनानि दीयन्ते, प्रत्युत्सवम् एकम् इति मानेन - दीपावलिः, नवरात्रि, गणेशोत्सवः। अन्येषूत्सवेषु विरामिदिनानि यथापेक्षं गृह्याणि - यतो जने जने प्रियोत्सवो भिन्नः। </description>
+    </item>
+    <item>
+      <title>वीरपाण्ड्यभूपालविरचित-क्रियानिघण्टुः</title>
+      <link>https://sanskrit.github.io/people/i_narasimhaachaarya/upayuktaamsha/kriyaa-nighaNTu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/people/i_narasimhaachaarya/upayuktaamsha/kriyaa-nighaNTu/</guid>
+      <description>श्री वीरपाण्ड्यभूपालविरचित-क्रियानिघण्टु-प्रारम्भः&#xA;श्लोकेषु यथा-&#xA;१. धातुप्रयोगपर्याये केचित्काव्योपयोगिनः। वीरपाण्ड्यक्षितीशेन वक्ष्यन्ते शिक्षितुं शिशून्॥&#xA;२. विद्यतेस्तिभवत्यत्र स्यादस्तुस्ताद्भवत्वपि। भूयाद्भवेत्तु भवताद्विद्यतां श्रीर्जगत्त्रये॥&#xA;३. सम्पद्यते जायते च जजन्त्युत्पद्यते जगत्। सम्भवत्याविर्भवति प्रादुर्भवति सर्वदा॥&#xA;४. तिष्ठत्यास्ते वर्तते च वसत्यत्र गृहे रमा। प्राणिति श्वसिति श्रेयान्यः परार्थाय जीवति॥&#xA;५. रचयति करोति कुरुते विदधाति विधत्त आदधात्यार्यः। सम्पादयति तथासावाधत्ते सृज्यते सौख्यम्॥&#xA;६. उत्पादयति सृजति च निर्वर्तयतीह साधयत्याशु। राध्नोति च साध्नोति च राध्यति साध्यति च सिध्यति प्रीतिम्॥&#xA;प्रसूयते प्रसूते च प्रसूषति सुवत्यपि। प्रसवत्यपि सौत्येषा पुत्रं पुण्यवती सती॥</description>
+    </item>
+    <item>
+      <title>शिक्षा - उच्चारणे ध्वनिरक्षणे च सूचनाः Reciting and Recording- tips</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/audio/tips/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/audio/tips/</guid>
+      <description>Short url : https://rebrand.ly/mbh-recording-standards&#xA;Good pronunciation: Most important varNa-level pronunciation (English) Clearly distinguish न vs ण, स vs श vs ष, अल्पप्राण (त) vs महाप्राण (थ), थ vs ध, आ vs अ (esp in the end, like in उवाच), etc.. But don&amp;rsquo;t overcompensate! Overemphasis on mahAprANa-s etc.. harms the natural melody. Don&amp;rsquo;t elongate final vyanjana-s. &amp;ldquo;इदम् अन्यत्तु भगवन्&amp;rdquo; इत्यत्रान्तिमनकारो &amp;ldquo;भगवन्न्अ(३)&amp;rdquo; इतिवन् न श्रूयेत। There is a pervasive practice of Visarga pronunciation in Karnataka state, as like in the place of pronunciation of the words “पराक्रमः” and “विक्रमः”, it sounds like “पराक्रमहा” “विक्रमहा” which gives opposite meaning (like one who destroyes valour is “पराक्रमहा” and one who destroys the courage is “विक्रमहा”) to the listeners.</description>
+    </item>
+    <item>
+      <title>शिशुपालवधे सर्गः १</title>
+      <link>https://sanskrit.github.io/people/i_narasimhaachaarya/shishupaalavadha/sarga-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/people/i_narasimhaachaarya/shishupaalavadha/sarga-1/</guid>
+      <description>नारदागमनम् श्लोकः १॥&#xA;श्रियः पतिः श्रीमति शासितुं जगज्जगन्निवासो वसुदेवसद्मनि।&#xA;वसन् ददर्शावतरन्तमम्बरात्, हिरण्यगर्भाङ्गभुवं मुनिं हरिः।&#xA;पदच्छेदः&amp;ndash;श्रियः, पतिः, श्रीमति, शासितुं, जगत्, जगन्निवासः, वसुदेवसद्मनि, वसन्, ददर्श, अवतरन्तं, अम्बरात्, हिरण्यगर्भाङ्गभुवं, मुनिं, हरिः।&#xA;प्रतिपदार्थः-जगन्निवासः-जगत्=जगतः, निवासः=निवासस्थानं, (जगत्(सर्वं)यस्मिन् वसति-सः-निवासस्थानभूतः; श्रियः=लक्ष्म्याः, पतिः=भर्ता; हरिः=श्रीमन्नारायणः,&#xA;जगत्=भुवनं, शासितुं=नियन्तुं, श्रीमति=शोभायुक्ते(सुसम्पन्ने), वसुदेवसद्मनि-वसुदेव=वसुदेवस्य, सद्मनि=गृहे, वसन्=निवसन्, अम्बरात्=आकाशात्, अवतरन्तं=&#xA;अधःआगच्छन्तं, हिरण्यगर्भाङ्गभुवं-हिरण्यगर्भ=ब्रह्मणःअङ्ग=शरीरात्, भुवं=जातं, मुनिं=यतिं(नारदं), ददर्श=अपश्यत्।&#xA;तात्पर्यम्&amp;ndash;सर्वं जगत् यस्य निवासस्थानं भवति, तादृशः, लक्ष्मीपतिश्च हरिः(श्रीमान् नारायणः)लोकान् नियन्तुं वसुदेवस्य गृहे निवसन् गगनात् आगच्छन्तं ब्रह्मणः&#xA;कुमारं नारदनामानं मुनिम् अपश्यत्।&#xA;अत्र चरित्रम् एवम् अस्ति&amp;ndash;श्रीमान् नारायणः लक्ष्म्याः भर्ता। सर्वं जगत् तस्य वासभूमिः। सः द्वारकापट्टणे भारतदेशे वसुदेवस्य गृहे निवसति। वसुदेवः तस्य पिता।</description>
+    </item>
+    <item>
+      <title>शिशुपालवधे सर्गः २</title>
+      <link>https://sanskrit.github.io/people/i_narasimhaachaarya/shishupaalavadha/sarga-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/people/i_narasimhaachaarya/shishupaalavadha/sarga-2/</guid>
+      <description>श्लो॥ १ . यियक्षमाणेनाहूतः पार्थेनाथ द्विषन्मुरम्।&#xA;अभिचैद्यं प्रतिष्ठासुःआसीत् कार्यद्वयाकुलः॥&#xA;प्रतिपदार्थः &amp;mdash; अथ = इन्द्रसन्देशमुक्त्वा नारदस्य निर्गमनान्तरं , यियक्षमाणेन = यष्टुम् इच्छता = राजसूययागं कर्तुम् इच्छता , पार्थेन =( पृथायाःपुत्रेण ) युथिष्ठिरेण = धर्मराजेन, आहूतः = आकारितः , अभिचैद्यं = शिशुपालं प्रति , प्रतिष्ठासुः = प्रस्थातुम् इच्छुः , मुरं द्विषन् = मुरारिः ( श्रीकृष्णः ), कार्यद्वयाकुलः &amp;ndash; कार्यद्वय = सुरकार्य , सुहृत्कार्यद्वयेन, आकुलः = व्याकुलः , आसीत् = अभवत्।&#xA;तात्पर्यम् &amp;mdash;&amp;ndash; इन्द्रस्य सन्देशं ( शिशुपालवधः करणीय इति) नारदात् श्रीकृष्णः श्रुतवान्।</description>
+    </item>
+    <item>
+      <title>श्रुतबोधः</title>
+      <link>https://sanskrit.github.io/people/i_narasimhaachaarya/upayuktaamsha/shrutabodha/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/people/i_narasimhaachaarya/upayuktaamsha/shrutabodha/</guid>
+      <description>छन्दसां लक्षणं येन श्रुतमात्रेण बुद्ध्यते।तमहं सम्प्रवक्ष्यामि श्रुतबोधमविस्तरम्॥ १&#xA;संयुक्ताद्यं दीर्घं सानुस्वारं विसर्गसम्मिश्रं।विज्ञेयमक्षरं गुरुपादान्तस्थं विकल्पेन॥ २&#xA;आदिमध्यावसानेषु यरता यान्ति लाघवं।भजसा गौरवं यान्ति मनौ तु गुरुलाघवम्॥ ३&#xA;यस्याः प्रथमे पादे द्वादशमात्रा स्तथा तृतीयेऽपि। अष्टादश द्वितीये चतुर्थके पञ्चदश सार्या॥ ४&#xA;आर्या पूर्वार्थसमं द्वितीयमपि भवति यत्र हंसगते।छन्दोविदस्तदानीं गीतिं ताममृतवाणि भाषन्ते॥ ५&#xA;आर्योत्तरार्थतुल्यं प्रथमार्थमपि प्रयुक्तञ्चेत्। कामिनि,तामुपगीतिं प्रकाशन्ते महाकवयः॥ ६&#xA;आद्यचतुर्थं पञ्चमकञ्चेत्।यत्र गुरुस्स्यात्साक्षरपङ्क्तिः।अगुरुचतुष्कं भवति गुरू द्वौ घनकुचयुग्मे शशिवदानासा॥७&#xA;तुर्यं पञ्चमकं चेद्यत्र स्याल्लघु बाले। विद्वद्भिर्मृगनेत्रे,प्रोक्ता सा मदरेखा॥ ८</description>
+    </item>
+    <item>
+      <title>समासशिखामणिः</title>
+      <link>https://sanskrit.github.io/people/i_narasimhaachaarya/upayuktaamsha/samaasa-shikhaamaNi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/people/i_narasimhaachaarya/upayuktaamsha/samaasa-shikhaamaNi/</guid>
+      <description>समासशिखामणिः&#xA;अथ श्रीमत्ताताचार्यकृत समासशिखामणिः प्रारभ्यते&amp;mdash;&amp;mdash;&amp;mdash; १.वक्ष्ये तत्पुरुषं कर्म-धारयं बालबुद्धये। बहुव्रीहिं द्विगुं द्वन्द्वमव्ययीभावमेव च॥&#xA;२.समासाष्षट्सु सङ्क्षिप्ता अष्टाविंशतिधा पुनः। तत्राष्टधा तत्पुरुष स्सप्तधा कर्मधारयः॥&#xA;३.सप्तधा च बहुव्रीहि र्द्विगुर्द्वन्द्वो द्विधा द्विधा। द्विविधश्चाव्ययीभाव इत्यष्टाविंशतिः क्रमात्॥&#xA;४.तत्र तत्पुरुषस्याष्टौ प्रकारान् प्रब्रवीम्यहम्। प्रथमाद्यास्तत्पुरुषा स्सप्तधा स्युर्नञष्टमः॥&#xA;५.एतेषां विग्रहं वक्ष्ये समासानां यथाक्रमम्। विभज्य् गृह्यते यस्स विग्रहः परिकीर्तितः॥&#xA;६.अनेकशब्दसन्धिस्तु समासः कथ्यते यथा। अर्धं गुडस्यार्धगुडोऽब्धिङ्गताब्धिगता नदी॥&#xA;७.वाचा श्लक्ष्णस्तु वाक्श्लक्ष्णो दिग्बलिस्तु दिशे बलिः। सिंहाद्भयं सिंहभयं भूपतिस्तु भुवः पतिः॥&#xA;८.विष्णौ भक्तिर्विष्णुभक्तिः। नाश्वोऽनश्वो नगौरगौः। प्रकारान्तस्सप्त वै कर्मधारयस्य ब्रवीम्यहम्॥</description>
+    </item>
+    <item>
+      <title>संस्कृतशाला-प्रस्तावः</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/schools/bay-area-sanskrit-school-dream/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/schools/bay-area-sanskrit-school-dream/</guid>
+      <description>Archived project! Not being pursued! Motivation We have all heard of (and some of us have visited) schools where:&#xA;students are instructed in samskritam and hindu arts besides regular subjects like science, mathematics, english, history, social science etc.. Often, the medium of instruction is bilingual - Sanskrit for some topics (esp. humanities), English for others.&#xA;Benefits of such schools are as follows:&#xA;Kids growing up in an environment filled with Indian culture is desirable - not just for their development, but also for the revival of bhAratIya samskriti.</description>
+    </item>
+  </channel>
+</rss>
