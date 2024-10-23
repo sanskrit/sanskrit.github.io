@@ -22,7 +22,12 @@ Don't do the below (शीर्षिकाः स्वभावतः स्�
 ###            **The proper age for Upanayana**
 ```
 
-Example for insertion of headings - see 2.md [here](https://github.com/vishvAsa/vedAH_yajuH/pull/621/files).
+Examples for insertion of headings - 
+
+- [KS](https://github.com/vishvAsa/AgamaH_vaiShNavaH/pull/83/files)
+- see 2.md [here](https://github.com/vishvAsa/vedAH_yajuH/pull/621/files).
+
+Note - This is not to be done in table of contents! That has to be formatted differently. Rather, one refers to such table of contents and makes changes in the main text.
 
 ## Lists
 ```
