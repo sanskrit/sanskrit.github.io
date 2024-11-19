@@ -92,6 +92,9 @@ Areas farther from cities tend to be lawless/ "strongest player rules" type.
   - may have a small iskcon community.
 - 300 sikhs there.
 
+> keep this list in mind if you’re planning to settle in the interior: arsenic is mainly found in groundwater (wells) in the following provinces: buenos aires (north of the province, salado river basin), chaco (near the paraná river), formosa (rural areas, eastern region), santa fe (central and northern areas, near salado and paraná rivers), santiago del estero (north and west), tucumán (north), salta (rural areas, near rivers), catamarca (west, pre-andes), la rioja (rural areas in the west), jujuy (north and west), mendoza (west, rural areas), san juan (rural areas), córdoba (north and center, near suquía river), río negro (southern rural areas), neuquén (rural areas near rivers and aquifers), la pampa (northern rural areas), misiones (northeastern rural areas).
+
+
 ## Guyana
 28% Hindu - jAti dissolved.  
 Poor representation in army.
