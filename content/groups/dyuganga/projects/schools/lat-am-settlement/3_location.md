@@ -21,6 +21,8 @@ Soil in amazon basin -
 
 
 ### Assimilation and identity
+Religious communities tend to hold on and succeed, while purely linguistic and racist ones don't.
+
 #### Failures
 > nietzsche's sister & brother in law founded an "aryan" colony in middle of paraguay in 1800's, it failed, most who remain are mixed. There was also a socialist aussie utopian community for goras founded there, similar story.
 
@@ -32,8 +34,11 @@ Forced assimilation:
 
 Argentina's "black disappearance".
 
+There was a thriving Welsh colony in Patagonia from the late 1800s - mostly assimilated now. 
+
 #### Successes
-There's a thriving Welsh colony in Patagonia from the late 1800s. 
+Mennonite colonies in Paraguay, Peru etc.. 
+
 
 ### Deciding Factors
 (In decreasing order of priority)
