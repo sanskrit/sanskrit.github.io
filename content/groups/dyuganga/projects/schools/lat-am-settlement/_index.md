@@ -4,7 +4,7 @@ title = "+Latin Am Settlement"
 
 
 ## Intro
-Some young families want to (ultimately) establish an agrarian traditional Hindu settlement and school somewhere in Latin America;  
+Some young families want to (ultimately) establish an **agrarian traditional Hindu colony** (and school) somewhere in Latin America;  
 where they can preserve, practice and propagate, alongside modern science, Hindu religion and arts (classical music, dance, rituals, meditations...) in peace  
 even as the industrial society collapses when fossil fuels run out, with unrest being more severe in the old world.
 
@@ -12,6 +12,10 @@ This center in Latin America for Hindu studies
 will also benefit locals and Hindu expat communities.
 
 ## पृष्ठभूमिका Background
+Main attraction is that good land is so much cheaper there;  
+hostility to Hindu cultural elite is low,  
+and immigration troubles are not too much.
+
 - India
   - dense population. Famine + war looming post-oil-collapse (150 yrs, +100 if ice methane works). (Ref- [Murphy](https://escholarship.org/uc/energy_ambitions) )
   - ब्रह्म-द्विट्-प्रभुत्वम्, jAti-woke-ism, sickular government.
