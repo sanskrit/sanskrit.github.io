@@ -83,6 +83,13 @@ Areas farther from cities tend to be lawless/ "strongest player rules" type.
 - Recognizes "colonies" - Mennonite, Japanese etc.. colonies exist.
 - Hindus - small iskcon community is present.  
 
+### Real estate tax
+Real estate tax is levied annually at 1% of the fiscal value of the property, which is generally less than actual value (or market value). A tax rate of 0.5% applies if the area of rural property is smaller than five hectares and is used for agricultural or cattle ranching.  
+In certain areas, an additional tax is levied on the fiscal value of vacant and semi-vacant land when the area of the built-up portion falls within certain determined percentage limits. 
+Large tracts of land in rural areas are subject to an additional tax determined on a percentage basis and to a proportional tax of 0.5% to 1% on the fiscal value of tracts with areas ranging from 10,000 to 60,000 or more hectares.
+
+The 1992 Paraguayan Constitution established that municipalities and departments are entitled to the tax revenues directly related to real estate. Collection of these taxes is the responsibility of municipal governments.
+
 ## Uruguay
 - Most developed in South America.
 - Afflicted by gender-wokeness!
@@ -101,7 +108,7 @@ Areas farther from cities tend to be lawless/ "strongest player rules" type.
 
 
 ## Guyana
-28% Hindu - jAti dissolved.  
+28% Hindu - jAti mostly dissolved.  
 Poor representation in army.
 
 Nutrient poor soil. 
