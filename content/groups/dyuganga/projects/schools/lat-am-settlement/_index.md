@@ -29,7 +29,7 @@ The population/ resource density difference is stark.
 The industrial society is bound to collapse when fossil fuels run out,  
 with unrest being more severe in the old world.
 
-The alternative route is to convince dvija-s to transition to Indian villages soon and prepare (also being [encouraged](https://rebrand.ly/grAma-dvija)).  
+An alternative route is to convince dvija-s to transition to Indian villages soon and prepare (also being [encouraged](https://rebrand.ly/grAma-dvija)).  
 When famine hits, they'll be in a worse (though not hopeless) position relative to new-worlders - lands and harvest snatched, jihadists and bandits etc.. 
 
 ## Contact
