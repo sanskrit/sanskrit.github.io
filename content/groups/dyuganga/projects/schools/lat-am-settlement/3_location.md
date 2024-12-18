@@ -97,7 +97,9 @@ The 1992 Paraguayan Constitution established that municipalities and departments
 - Hindus - hastinapura foundation is active. may have a small iskcon community.
 
 ## Argentina
-- High inflation and poverty. Low fertility.
+- High inflation - potentially solved by milei's 2024 dollar switch. 
+- high poverty. 
+- Low fertility.
 - Powerful visa.
 - Hindus 
   - hastinapura foundation is active. 
@@ -155,6 +157,9 @@ HindI: [TW](https://youtube.com/watch?v=3JSnw2XK3Aw)
 > Chile doesn't have a lot of arable land compared to argentina but after uruguay it's the 2nd wealthiest in latin am, stable, & above all it has a lot of copper & other minerals. It is also more mestizo than argentina & uruguay which are more euro. Chilean passport is also the most powerful & citizenship is passed down all the way to grandkids, in most other countries only till your kids. 
 > 
 > -- Rjrasva
+
+- No tax on argicultural use land as of 2023. [YT](https://www.youtube.com/watch?v=cOVlWWKOjA8)
+- Politics - strong center, strong left, strong right. 11 constitutions!
 
 ## Non latin american locations
 Common question is: 
