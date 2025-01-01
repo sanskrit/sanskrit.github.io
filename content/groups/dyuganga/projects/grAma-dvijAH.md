@@ -3,7 +3,7 @@ title = "ग्राम-द्विजाः"
 +++
 
 ## Goal
-This project aims to convince **dvija**-s  
+This project aims to convince traditional Hindu cultural elite, particularly **dvija**-s  
 to transition to Indian villages soon and prepare;  
 and support them in doing so.  
 dvija-s have been the **backbone of Hindu civilization**;  
