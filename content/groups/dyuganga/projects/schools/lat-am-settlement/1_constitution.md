@@ -8,7 +8,7 @@ title = "1 Constitution"
 - Retain knowledge and wonder about our universe to the extent possible. 
 - Adore nature.
 - Adore the Gods and ancestors mainly via Hindu customs (adapted to the context).
-- Perpetuate general and family-specific values and skills accross generations.
+- Perpetuate general and family-specific values, skills and arts accross generations. 
 - Pass our values and knowledge to deserving outsiders to the extent they grok it; and maybe collaborate with them.
 
 ## मार्गः 
