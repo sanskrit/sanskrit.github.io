@@ -5,7 +5,7 @@ title = "1 Constitution"
 ## ध्येयम् Objective
 - Weather the coming collapse of industrial civilization (explained in background) by returning closer to nature
 - Nurture nobility, wildness without savagery
-- Retain knowledge and wonder about our universe to the extent possible. 
+- Retain knowledge and wonder about our universe, Self and the Gods to the extent possible. 
 - Adore nature.
 - Adore the Gods, sages and ancestors mainly via Hindu customs (adapted to the context).
 - Perpetuate general and family-specific values, skills and arts accross generations. 
