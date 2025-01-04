@@ -34,7 +34,7 @@ When famine hits, they'll be in a worse (though not hopeless) position relative 
 
 ## Contact
 - Short url - https://rebrand.ly/lat-am
-- [Telegram](https://t.me/+yp-oEsb8QuViZGUx)
+- [Tele](https://rebrand.ly/lat-am-tele)
 
 [//]: # (- Related projects - https://rebrand.ly/grAma-dvija)
 
