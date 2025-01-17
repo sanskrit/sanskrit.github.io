@@ -3,7 +3,9 @@ title = "kAvya texts"
 +++
 
 ## Intro
-Prose and verse poetry (kAvya-s) are a great source of joy and wisdom for Hindus.  We've hired a few people to type up precious texts (besides collecting those already published on the net) and published them for free online, so that anyone can read, search, copy / distribute, oft with commentary and translation, like
+Prose and verse poetry (kAvya-s) are a great source of joy and wisdom for Hindus.  
+
+We've hired a few people to type up precious texts (besides collecting those already published on the net) and published them for free online, so that anyone can read, search, copy / distribute, oft with commentary and translation, like
 
 
 - [Universal subhAShita DB, pratimAlA site](https://subhashita.github.io/saMskRtam/padyam/random/)

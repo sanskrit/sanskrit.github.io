@@ -3,7 +3,9 @@ title = "Tattva texts"
 +++
 
 ## Intro
-Classical Hindu thoughts on the nature of existence, soul, (re)incarnation, the Gods, nobility, joy etc.. merit preservation and propagation. We've hired a few people to type up precious texts (besides collecting those already published on the net) and published them for free online, so that anyone can read, search, copy / distribute, like
+Classical Hindu thoughts on the nature of existence, soul, (re)incarnation, the Gods, nobility, joy etc.. merit preservation and propagation. 
+
+We've hired a few people to type up precious texts (besides collecting those already published on the net) and published them for free online, so that anyone can read, search, copy / distribute, like
 
 - वेदाः, भाष्याणि, अनुवादाः 
 - इतिहास-पुराणानि

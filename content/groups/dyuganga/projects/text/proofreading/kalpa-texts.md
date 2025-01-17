@@ -5,7 +5,9 @@ title = "Kalpa texts"
 ## Intro
 "आचार-प्रभवो धर्मः", as विष्णु-सहस्र-नाम-स्तोत्र says. True, solid dharma arises from proper AchAra (and perishes without it).
 
-Hindus need authentically sourced ritual procedures. We've hired a few people to type up precious manuals (besides collecting those already published on the net) and published them for free online, so that anyone can read, search, copy / distribute, like - 
+So, Hindus need authentically sourced ritual (saMskAra, AchAra) procedures; compiled by sages; practiced by our victorious ancestors. 
+
+We've hired a few people to type up precious manuals (besides collecting those already published on the net) and published them for free online, so that anyone can read, search, copy / distribute, like - 
 
 - मूल-सूत्रादि
   - शत-पथ-ब्राह्मणम् सटीकं सानुवादम्। 
