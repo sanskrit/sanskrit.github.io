@@ -27,7 +27,7 @@ Hindus need authentically sourced ritual procedures. We've hired a few people to
   - स्त्री-धर्म-पद्धतिः
   - वैखानसानाम् आह्निकामृतम्
   - बोधायन-ब्रह्म-कर्म-समुच्चयः
-  - [हिरण्यकेशि-संस्कार-रत्न-माला](https://vishvAsa.github.io/vedAH_yajuH/taittirIyam/sUtram/hiraNyakeshI/paddhatiH/saMskAraratnamAlA/) 
+  - [हिरण्यकेशि-संस्कार-रत्न-माला](https://vishvasa.github.io/vedAH_yajuH/taittirIyam/sUtram/hiraNyakeshI/gRhyam/paddhatiH/saMskAraratnamAlA/) 
   - …
   
 
