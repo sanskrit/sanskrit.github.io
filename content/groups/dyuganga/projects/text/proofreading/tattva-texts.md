@@ -3,7 +3,7 @@ title = "Tattva texts"
 +++
 
 ## Intro
-Classical Hindu thoughts on the nature of existence, soul, (re)incarnation, the Gods, nobility, joy etc.. merit preservation and propagation. We've hired a few people to type up precious texts (besides collecting those already published on the net) and published them for free on the net, so that anyone can read, search, copy / distribute, like
+Classical Hindu thoughts on the nature of existence, soul, (re)incarnation, the Gods, nobility, joy etc.. merit preservation and propagation. We've hired a few people to type up precious texts (besides collecting those already published on the net) and published them for free online, so that anyone can read, search, copy / distribute, like
 
 - वेदाः, भाष्याणि, अनुवादाः 
 - इतिहास-पुराणानि
@@ -20,4 +20,4 @@ Classical Hindu thoughts on the nature of existence, soul, (re)incarnation, the 
   - हयशीर्षोपाख्यानम्
 - सर्वात्म-शम्भु-सिद्धान्त-[प्रकाशीका](https://vishvasa.github.io/AgamaH_shaivaH/sampradAyaH/28-Agama-sampradAyaH/tattvam/sampradAyaH/aShTa-prakaraNa-shAkhA/parichaya-sanxepaH/sarvAtma-shambhu-siddhAnta-prakAshikA/)
 
-<div class="js_include" url="/groups/dyuganga/projects/text/proofreading/contrib_related" unfilled newLevelForH1="5" includeTitle="false"> </div>  
+<div class="js_include" url="/groups/dyuganga/projects/text/proofreading/contrib_related" unfilled newLevelForH1="1" includeTitle="false"> </div>  
