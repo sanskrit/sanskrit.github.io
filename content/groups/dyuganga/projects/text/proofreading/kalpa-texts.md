@@ -9,8 +9,9 @@ Hindus need authentically sourced ritual procedures. We've hired a few people to
 
 - मूल-सूत्रादि
   - शत-पथ-ब्राह्मणम् सटीकं सानुवादम्। 
-  - आपस्तम्ब-गृह्य-धर्म-शुल्ब-श्रौत-सूत्राणि सटीकानि, सानुवादानि। (Apastamba [gRhya](https://vishvAsa.github.io/vedAH_yajuH/taittirIyam/sUtram/ApastambaH/gRhyam/) and [dharma](https://vishvAsa.github.io/vedAH_yajuH/taittirIyam/sUtram/ApastambaH/dharma-sUtram/) sUtra-s)
+  - आपस्तम्ब-गृह्य-धर्म-शुल्ब-श्रौत-सूत्राणि सटीकानि, सानुवादानि। (Apastamba [gRhya](https://vishvAsa.github.io/vedAH_yajuH/taittirIyam/sUtram/ApastambaH/gRhyam/) and [dharma](https://vishvAsa.github.io/vedAH_yajuH/taittirIyam/sUtram/ApastambaH/dharma-sUtram/) sUtra-s, [EkAgnikANDa commentary](https://vishvasa.github.io/vedAH_yajuH/taittirIyam/sUtram/ApastambaH/gRhyam/ekAgnikANDam/sarva-prastutiH/))
   - एवम् बोधायन-गौतमाश्वलायनादीनाम्। 
+  - अन्यैर् उट्टङ्किताः मनुस्मृत्यादयः सटीकानुवादाः। 
 - श्रीवैष्णव-कृताः प्रयोग-ग्रन्थाः ([YV-SV](https://vishvasa.github.io/vedAH_yajuH/taittirIyam/sUtram/ApastambaH/gRhyam/paddhatiH/shrIvaiShNavaH/) , [SV](https://vishvasa.github.io/AgamaH_vaiShNavaH/rAmAnuja-sampradAyaH/kriyA) )
   - गोपाल-देशिक-श्राद्ध-प्रयोगः
   - माडभूषि-वीरराघवः - ०१ पूर्व-प्रयोग-चन्द्रिका ०२ अपर-प्रयोग-दर्पणः
@@ -39,7 +40,7 @@ Anyone may freely use those and anything else we've collected.
 - Or, one may volunteer labor to proofread such texts, if equipped with time, a computer and ability.
 
 ## Related projects
-Some of our proofreading/ publication efforts target other areas. (Eg. H philosophy, kAvya, vyAkaraNa, [universal subhAShita DB](https://subhashita.github.io/saMskRtam/padyam/random/))
+Some of our proofreading/ publication efforts target other areas. (Eg. [kalpa-texts](/groups/dyuganga/projects/text/proofreading/kalpa-texts/), [tattva-texts](/groups/dyuganga/projects/text/proofreading/tattva-texts/)), kAvya, vyAkaraNa, [universal subhAShita DB](https://subhashita.github.io/saMskRtam/padyam/random/))
 
 I'm also interested in arranging for long-term (millennium scale) text preservation even for the coming post industrial era - https://rebrand.ly/dg-archive . But no traction - since the right technology (which exists) / interest is not at hand. If you know some one interested in such please connect.
 
