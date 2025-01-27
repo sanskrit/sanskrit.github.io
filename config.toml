@@ -10,7 +10,7 @@ disablePathToLower = true
   section = ["HTML", "RSS", "JSON"]
 
 [params]
-  githubEditMePathBase = "https://github.com/sanskrit/sanskrit.github.io/edit/content/"
+  githubEditMePathBase = "https://github.com/sanskrit/sanskrit.github.io/edit/master/content/"
   contactLink = "https://github.com/sanskrit/sanskrit.github.io/issues/new"
   env = "production"
   disqusShortcode = "sanskrit-projects-site"
