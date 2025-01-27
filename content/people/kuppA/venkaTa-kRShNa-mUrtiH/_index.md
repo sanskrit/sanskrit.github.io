@@ -2,7 +2,9 @@
 title = "+वेङ्कट-कृष्ण-मूर्तिः"
 +++
 
-## Intro
+{{< figure src="images/content/people/kuppA/venkaTa-kRShNa-mUrtiH/images/mugshot.jpg" title="" class="thumbnail">}}
+
+## Bio
 Name : **Kuppa Venkata Krishna Murty**
 
 Date of Birth : 12.09.1949
@@ -11,13 +13,22 @@ Father : "Sarva Tantra Visaarada" Sri **Kuppa Sri Anjaneya Sastry**
 
 Place of Birth : Machilipatnam, Krishna District, Andhra Pradesh, India
 
-Educational Qualifications
+## About
+Prof K.V.Krishna Murty established Institute of Scientific Research on Vedas (I-SERVE) in 2004 with its Head Quarters at Hyderabad and it is recognized by Department of Scientific and Industrial Research (DSIR) as Scientific and Industrial Research Organisation (SIRO). 
+
+He established its branches at Delhi, Tirupati and Visakhapatnam.
+
+Prof K.V.Krishna Murthy utilised his knowledge of various branches of Vedic sciences as a base for further study, discussion and research on National and international levels. For this purpose he conducted around 50 National and international conferences so far and brought out several conference volumes and other publications which were made available to various Universities and Research institutes.
+
+He left I.S.E.R.V.E. in 2016 and came back to Sri Ganapathy Sachchidananda Ashram, Mysore, On his Guru's command and is continuing his services to Sri Ganapathy Sachchidananda Avadhoota Datta Peetham, Mysore, As Vidyadhikari of the Peetham.
+
+## Educational Qualifications
 
 **B.Sc \(MPC\)** Andhra University, India – 1969.
 
 **M.A. \(Pure Mathematics\)** Andhra University, India - 1972
 
-Traditional Education & Gurus
+## Traditional Education & Gurus
 
 Sanskrit & Telugu Saahityas –
 
@@ -213,5 +224,8 @@ Prof. K.V. Krishna Murthy's research on ancient Indian Sciences had been recogni
 1. **Lyla Impex Pvt. Ltd.**, Vijayawada.
 2. **Pragati Bio- Pharma Ltd.**, Hyderabad.
 
-
+## Contact
+- [Linkedin](https://www.linkedin.com/in/kuppa-venkata-krishna-murty-75b623346/)
+- vedakavikvk ATT gmail
+- 9866330060
 
