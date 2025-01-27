@@ -22,6 +22,9 @@ Prof K.V.Krishna Murthy utilised his knowledge of various branches of Vedic scie
 
 He left I.S.E.R.V.E. in 2016 and came back to Sri Ganapathy Sachchidananda Ashram, Mysore, On his Guru's command and is continuing his services to Sri Ganapathy Sachchidananda Avadhoota Datta Peetham, Mysore, As Vidyadhikari of the Peetham.
 
+<div class="js_include" url="images/" unfilled newLevelForH1="5" includeTitle="false"> </div>  
+
+
 ## Educational Qualifications
 
 **B.Sc \(MPC\)** Andhra University, India – 1969.
