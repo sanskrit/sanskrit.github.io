@@ -2,7 +2,7 @@
 title = "+वेङ्कट-कृष्ण-मूर्तिः"
 +++
 
-{{< figure src="images/content/people/kuppA/venkaTa-kRShNa-mUrtiH/images/mugshot.jpg" title="" class="thumbnail">}}
+{{< figure src="images/mugshot.jpg" title="" class="thumbnail">}}
 
 ## Bio
 Name : **Kuppa Venkata Krishna Murty**
