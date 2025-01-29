@@ -53,7 +53,7 @@ Mennonite colonies in Paraguay, Peru etc..
 - human friendly climate/ altitude
 - expanse of the country - mountains, forests, desert, seas
 
-### Rjrasva list
+#### Rjrasva list
 Looking at level of econ development + crime rates + long term stability the following would qualify: Uruguay, Chile, Argentina, Costa Rica, Panama, Brazil, & Peru.
 
 You might also have to consider labor demand 20 yrs later based on current TFR's & several of these r ultra low TFR
