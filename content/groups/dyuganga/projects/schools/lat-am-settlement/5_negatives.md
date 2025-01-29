@@ -11,7 +11,7 @@ We're learning Spanish and Portuguese.
 ## Human resource quality
 The human resource quality is generally poor -  
 80s IQ population, like India.  
-Yet, a creamy layer exists (note nobel laureates of Argentina) - mostly Euro and Levantine immigrants.
+Yet, a creamy layer exists - mostly Euro and Levantine origin people - eg. nobel laureates of Argentina.
 
 ## Politics
 The jAti-politics and quotas atleast would be thankfully missing! (Nayib Bukele, Alberto Fujimori etc. come to mind.)
