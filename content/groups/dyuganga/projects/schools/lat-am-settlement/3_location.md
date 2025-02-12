@@ -78,8 +78,11 @@ Areas farther from cities tend to be lawless/ "strongest player rules" type.
 
 ## Paraguay
 - Fertile eastern half. Abundant water (riverine and underground).
-- Low taxes. No tax on foreign income. 
 - Socially and economically conservative. Considered by folks from neighboring countries (also Americans, Europeans) as a "safe haven" to park their investments and futures.
+- Economic conservativism
+  - Low taxes. No tax on foreign income.
+  - Few people own most of the land.
+  - Least subsidies, poor infrastructure development.
 - Recognizes "colonies" - Mennonite, Japanese etc.. colonies exist.
 - Hindus - small iskcon community is present.  
 
@@ -159,7 +162,10 @@ HindI: [TW](https://youtube.com/watch?v=3JSnw2XK3Aw)
 > -- Rjrasva
 
 - No tax on argicultural use land as of 2023. [YT](https://www.youtube.com/watch?v=cOVlWWKOjA8)
+- Economics - strong socialist, subsidy giving tendencies. Electricity rate doubled for 400kWh and above to not burden the rest.
 - Politics - strong center, strong left, strong right. 11 constitutions!
+
+
 
 ## Non latin american locations
 Common question is: 
