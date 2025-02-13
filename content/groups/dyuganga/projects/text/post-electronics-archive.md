@@ -4,13 +4,15 @@ title = "Post electronics archive"
 
 Short url - https://rebrand.ly/dg-archive
 
+Presentation [here](https://docs.google.com/presentation/d/14v72trudW8XQWV488Ebqe4vILCWrkOlaLZX1R0PXWEE/edit?usp=sharing).
+
 ## Intro
 **How to best preserve our knowledge (physical and spiritual) and texts?**
 
 We propose a network of archives spread over multiple regions,  
 where copies of all texts relevant to Hindus are preserved  
 in media which will persist for millennia.  
-The archived material should be readable with minimal technology,  
+The archived material should be readable (even reproducible!) with minimal technology,  
 to allow for regression technical abilities  
 due to loss of knowledge, lack of materials, electricity and such.
 
