@@ -4,7 +4,8 @@ title = "Post electronics archive"
 
 Short url - https://rebrand.ly/dg-archive
 
-Presentation [here](https://docs.google.com/presentation/d/14v72trudW8XQWV488Ebqe4vILCWrkOlaLZX1R0PXWEE/edit?usp=sharing).
+Presentation [here](https://docs.google.com/presentation/d/14v72trudW8XQWV488Ebqe4vILCWrkOlaLZX1R0PXWEE/edit?usp=sharing).  
+[YT video](https://youtu.be/RsEq824x6eQ)
 
 ## Intro
 **How to best preserve our knowledge (physical and spiritual) and texts?**
