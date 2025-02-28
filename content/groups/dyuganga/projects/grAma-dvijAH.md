@@ -19,7 +19,8 @@ and also **sat-shUdra**-s who,
 - like trans-generational and communal refinement, 
 - are pro-dvija-s, even as good dvija-s are pro-sat-shUdra-s,  
 - and (far from forcing dvija-s to lose their saMskAra-s and aptitude)  
-  perhaps want to **ennoble** themselves to being de-jure (rather than just de-facto) vaishya-s . 
+  perhaps want to **ennoble** themselves to being de-jure (rather than just de-facto) dvija-s . 
+
 
 ## Contact 
 - [tele]:(https://https://t.me/+aZpV3KvbSj1iZDUx)
@@ -64,4 +65,19 @@ namaH!
 Are you interested in this project to convince and support "dvija-s" (broadly defined)  
 to move to Indian villages - https://rebrand.ly/grAma-dvija ?  
 If not, you can mention it to compatible Hindus on the "conservative" spectrum.
+</details>
+
+<details><summary>विप्र-दृष्ट्या</summary>
+
+> अन्यत्र हीनम् परिसरम् प्रत्य् अपकर्षणं स्याद् अस्मत्-प्रजानाम्  
+
+इति कारणेन 
+
+> भारतेष्व् एव ब्रह्मानुकूल-प्रस्फुट-क्षत्रोपेत-जात्या परिवृतैर् ग्रामस्थैर् विप्रैर् भाव्यम् 
+
+इति रविलोचनाभिप्रायः। ते च यथासम्भवम् आदर-दर्शन--बोधनादिभिर् आकर्षणीयाः। 
+
+कास् ता जातय इति चेत् - तेवर्, नायर्, कम्म …।  
+का नेति चेत् - गौड-जाट-वॆळ्ळाल-प्रभृतयः। 
+(अन्येष्व् अपि विज्ञातेषु तत्-तत्-प्रदेशज्ञास् सूचयन्तु। )
 </details>
