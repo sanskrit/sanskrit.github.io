@@ -29,7 +29,7 @@ We've hired a few people to type up precious manuals (besides collecting those a
   - स्त्री-धर्म-पद्धतिः
   - वैखानसानाम् आह्निकामृतम्
   - बोधायन-ब्रह्म-कर्म-समुच्चयः
-  - [हिरण्यकेशि-संस्कार-रत्न-माला](https://vishvasa.github.io/vedAH_yajuH/taittirIyam/sUtram/hiraNyakeshI/gRhyam/paddhatiH/saMskAraratnamAlA/) 
+  - [हिरण्यकेशि-संस्कार-रत्न-माला](https://vishvasa.github.io/vedAH_yajuH/taittirIyam/sUtram/hiraNyakeshI/gRhyam/paddhatiH/saMskAra-ratna-mAlA/) 
   - …
   
 

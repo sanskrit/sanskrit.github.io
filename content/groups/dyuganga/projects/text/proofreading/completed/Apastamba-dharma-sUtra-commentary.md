@@ -17,10 +17,7 @@ I'll get it done by a learned gentleman I've been employing for much of the past
 
 
 ## Past experience/ examples:  
-- Apastamba gRhya sUtra commentaries (partly sponsored by HariKiran of Indic Academy) [here](https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/completed/Apastamba-gRhya-sUtra-commentaries/) .
-- [https://vishvAsa.github.io/vedAH_yajuH/taittirIyam/sUtram/hiraNyakeshI/paddhatiH/saMskAraratnamAlA/](https://vishvAsa.github.io/vedAH_yajuH/taittirIyam/sUtram/hiraNyakeshI/paddhatiH/saMskAraratnamAlA/)  \- saMskAraratnamAlA, an excellent KYV paddhati text especially popular in mahArAShTra (albeit belonging to the closely related hiraNyakeshI sUtra). This was executed by saMskRtabhAratI people (at their expense) after I suggested the text to them.
-- Ongoing work pertaining to SC Vasu's commentary on aShTAdhyAyI ( example [here](https://ashtadhyayi.github.io/sutra-details/?sutra=1.1.6) ), sponsored by shrI nIlesh of [ashyadhyayi.com](http://ashyadhyayi.com) .
-
+...
 
 ## Importance of the work
 I frequently refer to it for regulating members of my household (including myself), and presumably it will similarly be the case for a good majority of south Indian brAhmaNas. Flowing text will be far better than pdfs or physical books.
