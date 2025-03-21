@@ -1,6 +1,6 @@
 +++
 title = "ಶ್ರೀಕೃಷ್ಣ-ಗೋಪಾಲ-ಶರ್ಮ-ಘನಪಾಠೀ"
-
+unicode_script = "kannada"
 +++
 
 
