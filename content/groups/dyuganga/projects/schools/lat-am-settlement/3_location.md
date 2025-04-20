@@ -98,6 +98,7 @@ The 1992 Paraguayan Constitution established that municipalities and departments
 - Afflicted by gender-wokeness!
 - Many tourists and retirees. Relatively higher land cost.
 - Hindus - hastinapura foundation is active. may have a small iskcon community.
+- Passport nationality problem fixed as of 2025.
 
 ## Argentina
 - High inflation - potentially solved by milei's 2024 dollar switch. 
