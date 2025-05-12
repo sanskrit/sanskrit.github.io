@@ -13,3 +13,4 @@ The doubts will usually be answered on the pull request; following which you'll 
 
 {{< figure src="../images/pull-request-doubt-clarification.png" title="" class="thumbnail">}}
 
+सन्देशसमयविषये चिन्ता नास्त्य् एव - यथावकाशं प्रतिवदामि। १ दिनाद् अधिकं विलम्बे सति तु मार्गान्तरेण (वाट्साप्/दूरवाण्य्-आह्वादिभिः) सूचनीयोऽहम्।
