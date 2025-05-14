@@ -5,7 +5,7 @@ title = "Preserving page numbers"
 
 कदाचित् पृष्ठसङ्ख्यारक्षणम् इष्यते। एवं रक्ष्येरन् - `[[123]]`। 
 
-मूले paragraph-मध्ये श्लोकमध्ये वा नूतनपृष्ठारम्भस् स्यात्। तर्हि मध्ये पृष्ठसङ्ख्या निपतेत्। अस्मत्संस्करणे तद् वारणीयम्। pargraph-आदि-विच्छेदो यथा न स्यात् तथा पृष्ठसङ्ख्याम् इषच् चालयित्वा स्थापणीयम्। ताः सङ्ख्याः pagagraph मध्ये न स्युः, वाक्यमध्ये नैव, पदमध्ये नैव। यथा [अत्र](https://raw.githubusercontent.com/vishvAsa/AgamaH/content/AryaH/hinduism/branches/vaiShNavaH/shrI-sampradAyaH/kriyA/gopAla-deshikaH/Ahnikam_AhnikArtha-prakAshikA/01_praveshaH.md) (←उद्घाट्य पश्यतु) -
+मूले paragraph-मध्ये श्लोकमध्ये वा नूतनपृष्ठारम्भस् स्यात्। तर्हि मध्ये पृष्ठसङ्ख्या निपतेत्। अस्मत्संस्करणे तद् वारणीयम्। pargraph-आदि-विच्छेदो यथा न स्यात् तथा पृष्ठसङ्ख्याम् इषच् चालयित्वा स्थापणीयम्। ताः सङ्ख्याः pagagraph मध्ये न स्युः, वाक्यमध्ये नैव, पदमध्ये नैव। यथा [अत्र](https://raw.githubusercontent.com/vishvAsa/rAmAnujIyam/content/kriyA/venkaTa-nAtha-shAkhA/gopAla-deshikaH/Ahnikam_AhnikArtha-prakAshikA/01_praveshaH.md) (←उद्घाट्य पश्यतु) -
 
 __________________________
 ```
