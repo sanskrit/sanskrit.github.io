@@ -2,7 +2,10 @@
 title = "Understand or ask"
 +++
 
-Please strive to understand every work and sentence you edit.  प्रत्येकं वाक्यं व्याकरणशुद्ध्या ऽवगत्य शोधयितुं यतताम्। यत् किञ्चिद् उट्टङ्क्यते परिष्कृतम् इति भाव्यते, तद् (भाषादृष्ट्या वाप्य्) अवगन्तव्यम्।
+Please strive to understand every work and sentence you edit.  
+प्रत्येकं वाक्यम् ऽवगत्य शोधयितुं यतताम्।  
+यत् किञ्चिद् उट्टङ्क्यते, परिष्कृतम् इति वा भाव्यते,  
+तद् (भाषा-मात्र-दृष्ट्या वाप्य्) अवगन्तव्यम्।
 
 If in doubt, ask with pic on telegram (see figure below);  
 and mark the doubtful text with [[??]] sign in the file being edited. 
@@ -13,4 +16,7 @@ The doubts will usually be answered on the pull request; following which you'll 
 
 {{< figure src="../images/pull-request-doubt-clarification.png" title="" class="thumbnail">}}
 
-सन्देशसमयविषये चिन्ता नास्त्य् एव - यथावकाशं प्रतिवदामि। १ दिनाद् अधिकं विलम्बे सति तु मार्गान्तरेण (वाट्साप्/दूरवाण्य्-आह्वादिभिः) सूचनीयोऽहम्।
+सन्देश-समय-विषये चिन्ता नास्त्य् एव -  
+यथाऽवकाशं प्रतिवदामि।  
+१ दिनाद् अधिकं विलम्बे सति  
+तु मार्गान्तरेण (वाट्साप्/दूरवाण्य्-आह्वादिभिः) सूचनीयोऽहम्।
