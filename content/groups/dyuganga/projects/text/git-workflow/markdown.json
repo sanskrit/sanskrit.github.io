@@ -12,7 +12,7 @@
 	"figure_hugo": {
 		"prefix": ["fig"],
 		"body": [
-			"{{< figure src=\"../images/${CLIPBOARD}\" title=\"\" class=\"thumbnail\">}}",
+			"{{< figure src=\"../images/${CLIPBOARD}\" title=\"\" class=\"thumbnail\">}}"
 		],
 		"description": "Figure (hugo)."
 	},
@@ -130,6 +130,16 @@
 		],
 		"description": "विस्तारः"
 	},
+	"detail_pp": {
+		"prefix": ["pp", "प्प्"],
+		"body": [
+			"<details><summary>पद-पाठः</summary>", "",
+			"${TM_SELECTED_TEXT}${CLIPBOARD}",
+			"</details>",
+			""
+		],
+		"description": "विस्तारः"
+	},
 	"detail_kn": {
 		"prefix": ["kkk", "क्क्क्", "ಕ್ಕ್"],
 		"body": [
@@ -225,6 +235,6 @@
 		""
 		],
 		"description": "include"
-	},
 	}
+}
 	
