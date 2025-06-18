@@ -9,7 +9,7 @@ title = "+Editing"
 ## Workflows
 Our proofreaders follow various workflows to achieve perfect text based on what suits them. 
 
-### 2-step Workflow
+### 2-step Workflow द्विः-परीक्षण-रीतिः
 In each of the below 2 steps, you should do the following -
 
 - detect and correct errors - provided both the original image and your language skills agree with the correction. 
@@ -24,7 +24,7 @@ The steps:
 
 In our experience, omitting Step 2 leads to many errors for many people.
 
-### Max-pada-split-workflow
+### Max-pada-split-workflow (अधिकतम-पद-विभाग-रीतिः)
 Here, within sanskrit text, you insert spaces and hyphens to the maximum possible extant, subject to the [pada-separation rules](pada-separation). So, you get text like - सिद्धिस् साध्ये सताम् अस्त्व् इत्य् अवदत् instead of सिद्धिस्साध्ये सतामस्त्वित्यवदत्.
 
 
@@ -82,9 +82,6 @@ The following are often confused by proofreaders (so beware)-
 ఙ ఞ - not used in common telugu, are used. So beware of mistaking those too.
 
 In case of tamiL or maNipravALa texts in telugu script, printing ऴ् and ऱ् would be complicated.
-
-## Things to ignore
-- Quotation mark placement which is not ‘bad’ as described in examples above - ie. don’t spend time trying to make it ‘best’.
 
 
 
