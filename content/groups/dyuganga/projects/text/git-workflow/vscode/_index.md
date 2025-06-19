@@ -13,17 +13,16 @@ title = "+VsCode"
   - demo: [YT](https://youtu.be/4gzHnJp1iOk) .
 
 ## Settings and Appearance
-You can also change Font size, colors etc. by going to settings (Bottom left ⚙️ gear icon ).
-
-{{< figure src="images/settings-font.png" title="">}}
-
-Alternatively, you can do this:
-
 - Click on the bottom left ⚙️ gear icon
 - select Settings
 - Click on the button (top right), which looks like this - {{< figure src="images/open-json-button.png" title="">}}
 - You should get a settings.json file.
 - Copy and save from [here](settings.json) .
+
+### Manual changes
+You can also change Font size, colors etc. by going to settings (Bottom left ⚙️ gear icon ).
+
+{{< figure src="images/settings-font.png" title="">}}
 
 ## Keyboard shortcuts
 - Click on the bottom left ⚙️ gear icon
