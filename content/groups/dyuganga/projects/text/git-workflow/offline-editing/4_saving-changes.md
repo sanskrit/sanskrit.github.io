@@ -27,11 +27,11 @@ title = "Saving changes"
 
 (Click on the images below and open and view full screen.)
 
-{{< figure src="../../images/vscode-pull-upstream.png" title="" class="thumbnail">}}
+{{< figure src="../../vscode/images/pull-upstream.png" title="" class="thumbnail">}}
 
-{{< figure src="../../images/vscode-pull-upstream_select_upstream.png" title="" class="thumbnail">}}
+{{< figure src="../../vscode/images/pull-upstream_select_upstream.png" title="" class="thumbnail">}}
 
-{{< figure src="../../images/vscode-pull-upstream_select_branch.png" title="" class="thumbnail">}}
+{{< figure src="../../vscode/images/pull-upstream_select_branch.png" title="" class="thumbnail">}}
 
 ## Pushing file changes
 

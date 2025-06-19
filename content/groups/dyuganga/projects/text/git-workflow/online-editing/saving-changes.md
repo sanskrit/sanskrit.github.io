@@ -13,18 +13,18 @@ title = "Saving changes"
   - (Browser may block popups - enable popups. GitHub permission may be sought. etc..)
 - If needed, switch to the "Explorer view": [YT](https://youtu.be/6n22TxXi_yQ?t=558).
 
-{{< figure src="../../images/vscode-explorer.png" title="" >}}
+{{< figure src="../../vscode/images/explorer.png" title="" >}}
 
 - Navigate to the files you want to change and make your edits. You save changes by typing a "Commit message" and commiting + pushing.
 
-{{< figure src="../../images/vscode-commit.png" title="" >}}
+{{< figure src="../../vscode/images/commit.png" title="" >}}
 - Video demonstrations:
   - [here, till 7:55](https://youtu.be/yKLyfqL0A4M?t=462)
   - [Inserting Headings and saving](https://www.youtube.com/watch?v=BlOavkB2ooU)
 
 PS: To close unnecessary tabs, do as illustrated below:
 
-{{< figure src="../../images/vscode-close-tabs.png" title="" >}}
+{{< figure src="../../vscode/images/close-tabs.png" title="" >}}
 
 ## Syncing fork
 - कार्यानुसारेण https://github.com/XYZ/REPO/tree/content इत्यत्र, ( https://github.com/XYZ/REPO/tree/static_files इत्यत्र वा यथानिर्देशं)  गत्वा,  
