@@ -1,0 +1,29 @@
+{
+  "workbench.colorTheme": "Visual Studio Light",
+  "editor.fontSize": 24,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "git.enableSmartCommit": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "editor.fontFamily": "'Noto Sans Mono', 'Noto Sans Devanagari', monospace",
+  "files.watcherExclude": {
+    "**/build**": true,
+    "**/exampleSite**": true,
+    "**/target**": true
+  },
+  "editor.renderWhitespace": "all",
+  "git.openRepositoryInParentFolders": "always",
+  "explorer.confirmDelete": false,
+  "remoteHub.commitDirectlyWarning": "off",
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "editor.largeFileOptimizations": false,
+  "redhat.telemetry.enabled": true,
+  "editor.wordBasedSuggestions": "off",
+  "editor.inlineSuggest.suppressSuggestions": true,
+  "typescript.updateImportsOnPaste.enabled": false,
+  "javascript.updateImportsOnPaste.enabled": false,
+  "markdown.editor.updateLinksOnPaste.enabled": false,
+  "files.autoSave": "afterDelay"
+}
