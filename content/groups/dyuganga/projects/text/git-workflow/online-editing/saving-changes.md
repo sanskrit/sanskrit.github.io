@@ -28,7 +28,7 @@ PS: To close unnecessary tabs, do as illustrated below:
 
 ## Syncing fork
 - प्रतिवारं (दीर्घविश्रान्तेः परम् अपि) कार्यारम्भात् प्राक् sync fork इति कुर्यात्।
-  - [Syncing your fork (आकर्षणाभ्यर्थन-प्रेषणम्)](../../4_sending-pull-request?githubUserId=XYZ&repo=REPO). 
+  - [Syncing your fork](../syncing_fork?githubUserId=XYZ&repo=REPO). 
 
 
 ## Sending changes
