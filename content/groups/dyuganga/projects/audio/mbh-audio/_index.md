@@ -15,12 +15,16 @@ Mahābhārata is the panchama-veda and should reside in every hindu's heart; but
 With your help, we hope to realize this dream - nay our solemn duty as descendents of the sages who inspired the Mahābhārata - of spreading the ideals of the Veda-s through this true and sacred auditory expression. If you want to contribute, see [this page](how.md).
 
 
-## Status as of 2024-01
-By 2020-04, shrI suhAs contacted harisItArAma ghanapAThI , the vedic scholar who recited https://archive.org/details/Ramayana-recitation-Sriram-harisItArAmamUrti-Ghanapaati-v2 . The ghanapAThin (then engaged in recording bhAgavatam, which he anticipated to complete by "next makara sankrAnti/ Jan" ) had enthusiastically agreed to recite mahAbhArata the next year. The recording was to be of similar quality to the rAmAyaNa one linked earlier, and the recordings would be published for free on archive.org as usual. shrI suhAs had arranged for a donor to comfortably fund the salaries of two reciters.
-
-Given this is excellent news, we stopped all work on our mostly volunteer-driven recordings (there is no point doing something which will be done better in the near future). We decided to just await progress on suhAs's project. 
+## Status as of 2025-01
+Given excellent news (2020-04) about a similar proposed professional recording project, we stopped all work on our mostly volunteer-driven recordings (there is no point doing something which will be done better in the near future). We decided to just await progress on such a project.
 
 Till then we will just gratefully enjoy the recordings we've already produced (~1k recordings, ~350 adhyAyas accross 3 parvas, 16.5k verses) - see below for details. 
+
+### News
+By spring 2025, we heard that shrI yogAnanda will get audio recordings done with such scholars, with support from Sarayu foundation.
+
+Around 2020-04, shrI suhAs contacted harisItArAma ghanapAThI , the vedic scholar who recited [rAmAyaNa](https://archive.org/details/Ramayana-recitation-Sriram-harisItArAmamUrti-Ghanapaati-v2). The ghanapAThin (then engaged in recording bhAgavatam, which he anticipated to complete by "next makara sankrAnti/ Jan" ) had enthusiastically agreed to recite mahAbhArata the next year. The recording was to be of similar quality to the rAmAyaNa one linked earlier, and the recordings would be published for free on archive.org as usual. shrI suhAs had arranged for a donor to comfortably fund the salaries of two reciters. However, suhAs's project never took off.
+
 
 
 ## Where?
