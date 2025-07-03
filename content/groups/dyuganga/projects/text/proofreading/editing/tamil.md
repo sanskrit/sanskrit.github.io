@@ -5,7 +5,7 @@ title = "Tamil"
 
 
 ## अक्षरमाला
-[इदं](https://vishvasa.github.io/bhAShAntaram/tamiL/aksharamAlA/?transliterationTarget=%3F%3F&transliterationTargetAlt=devanagari&printCols=1&bodyFontSize=0.4cm&includeStyle=true) कागदे प्रकाश्य स्वपार्श्वे स्थापयतु।  
+[इदं](https://vishvasa.github.io/bhAShAntaram/tamiL/aksharamAlA_dev/?transliterationTarget=%3F%3F&transliterationTargetAlt=tamil&printCols=1&bodyFontSize=0.4cm&includeStyle=true) कागदे प्रकाश्य स्वपार्श्वे स्थापयतु।  
 
 अन्तिमपङ्क्तित्रये दृश्यमाना वर्णा नूतनाः।  
 तत्र विशिष्यावदधातु।
