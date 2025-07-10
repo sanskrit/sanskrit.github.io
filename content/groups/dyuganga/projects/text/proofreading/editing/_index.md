@@ -12,7 +12,8 @@ Our proofreaders follow various workflows to achieve perfect text based on what 
 ### 2-step Workflow द्विः-परीक्षण-रीतिः
 In each of the below 2 steps, you should do the following -
 
-- detect and correct errors - provided both the original image and your language skills agree with the correction. 
+- Use AI LLM to correct 10-20 lines (instructions [here](../AI-prompt).)
+- Manually detect and correct errors - provided both the original image and your language skills agree with the correction. 
 - Mark doubtful places and ask for clarification as described [here](understand_ask) - eg. where your language intuition and the original image conflict.
 - In doing the above, it's important that you try to understand the text to the extant possible.
 
