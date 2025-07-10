@@ -10,9 +10,10 @@ title = "+Editing"
 Our proofreaders follow various workflows to achieve perfect text based on what suits them. 
 
 ### 2-step Workflow द्विः-परीक्षण-रीतिः
+First, use AI LLM to correct 10-20 lines (instructions [here](../AI-prompt)). Then proceed to manual proofreading below.
+
 In each of the below 2 steps, you should do the following -
 
-- Use AI LLM to correct 10-20 lines (instructions [here](../AI-prompt).)
 - Manually detect and correct errors - provided both the original image and your language skills agree with the correction. 
 - Mark doubtful places and ask for clarification as described [here](understand_ask) - eg. where your language intuition and the original image conflict.
 - In doing the above, it's important that you try to understand the text to the extant possible.
@@ -21,7 +22,7 @@ The steps:
 
 **Step 1**: First go through a page or block of the text by repeatedly doing this: read the next few words in the image, and then fix/ mark the same in the typed text.
 
-**Step 2**: Then, read the corrected text from Step 1 directly (preferably aloud, and in a different script as described [here](multi-script-proofreading)), looking at the original image _only_ where you are suspect an error.
+**Step 2**: Then, read the corrected text from Step 1 directly (preferably aloud, and preferably in a different script as described [here](multi-script-proofreading)), looking at the original image _only_ where you are suspect an error.
 
 In our experience, omitting Step 2 leads to many errors for many people.
 
