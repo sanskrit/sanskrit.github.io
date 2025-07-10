@@ -27,9 +27,9 @@ The steps:
 In our experience, omitting Step 2 leads to many errors for many people.
 
 ### Max-pada-split-workflow (अधिकतम-पद-विभाग-रीतिः)
-Here, within sanskrit text, you insert spaces and hyphens to the maximum possible extant, subject to the [pada-separation rules](pada-separation). So, you get text like - सिद्धिस् साध्ये सताम् अस्त्व् इत्य् अवदत् instead of सिद्धिस्साध्ये सतामस्त्वित्यवदत्.
+First, use AI LLM to correct 10-20 lines (instructions [here](../AI-prompt)). Then proceed to manual proofreading below.
 
-
+Within sanskrit text, you insert spaces and hyphens to the maximum possible extant, subject to the [pada-separation rules](pada-separation). So, you get text like - सिद्धिस् साध्ये सताम् अस्त्व् इत्य् अवदत् instead of सिद्धिस्साध्ये सतामस्त्वित्यवदत्.
 
 ## Contribution levels
 Our expectation: when we read the corrected text, we expect to have atleast the same experience as reading the original pdf (if not better). <u>Even otherwise, if you leave the text in a significantly better state than earlier, it is valuable.</u>
