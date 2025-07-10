@@ -46,3 +46,16 @@ __________________________
 प्रसन्नवदनं ध्यायेत्सर्वविघ्नोपशान्तये ॥  
 ```
 __________________________
+
+
+## AI LLM prompts
+Go to [aistudio](https://aistudio.google.com/prompts/new_chat).  
+Provide the below prompt - 
+
+> Separate words at pada (inflected word) boundaries with spaces.  
+In doing the above, NEVER break a sandhi. For example, ह्यस्तु should be spit to ह्य् अस्तु and not हि अस्तु.  
+>
+> Separate subwords inside compounds with hyphens. In doing the above, NEVER break a sandhi. For example, श्रीधरस्येच्छा should yield श्री-धरस्येच्छा, and not श्री-धरस्य-इच्छा. Never separate such subwords by space - remove such spurious spaces.  
+Input and output will be devanAgarI.  
+Markdown formatting will be used - so be careful not to mess with spaces. 
+
