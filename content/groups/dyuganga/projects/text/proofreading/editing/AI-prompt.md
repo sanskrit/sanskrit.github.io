@@ -5,7 +5,9 @@ title = "AI prompt"
 - Go to [aistudio](https://aistudio.google.com/prompts/new_chat).  
 - Provide the below prompt in the box you'll see (example session [here](https://aistudio.google.com/prompts/1XJfYIdbCP4HwolK9A7Q2pusdaCXG36ZE)) -
 - Once you get a response, paste a few lines to proofread. (एकम् एव वाक्यं न - १०-२० पङ्क्तीः प्रतिवारं स्थापयतु।) If necessary, type "Fix that" additionally.
+  - Note that this will yield text with a lot of hyphens and spaces (eg. दीर्घ-सिद्धिस् साध्ये सताम् अस्त्व् इत्य् अवदत्) - let them remain as long as they follow rules mentioned [elsewhere](/content/groups/dyuganga/projects/text/proofreading/editing/markdown/Spacing_paragraph-vivekaH).
 - यन्त्र-परिष्कारं जातं लब्ध्वा, ततो मानुष-शोधनम्। अनेन परिष्कार-गतिर् वर्धेत।  
+
 
 ## Prompt
 **Separate words** at pada (inflected word) boundaries with spaces.  
