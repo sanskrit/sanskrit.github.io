@@ -28,10 +28,10 @@ While at it, **identify errors and suggest corrections** inline using this forma
 
 **Format quotes** (mantras to be chanted are also counted as quotes) as follows -
 
-- Short quotes, involving 2-3 words should be placed within ""symobls.
-- Longer quotes should use the markdown >-symbol.
-- Nested quotes should be similarly formatted.
+- Short quotes, involving less than 5 words should be placed within ""symobls.
+- Longer quotes should use the markdown > symbol. (Use proper markdown formatting.)
+- Nested quotes should be similarly formatted per markdown rules.
 
-**Markdown formatting** will be used - so be careful not to mess with spaces.
+**Markdown formatting** will be used - so be careful when messing with spaces.
 
 Preserve **page numbers**, which come from scanning the page. For example, when you identify page number 922, format it as [[922]]. You can make it appear in the mist of a paragraph which flows on to the next page.
