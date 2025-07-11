@@ -9,7 +9,9 @@ title = "AI prompt"
 - यन्त्र-परिष्कारं जातं लब्ध्वा, ततो मानुष-शोधनम्। अनेन परिष्कार-गतिर् वर्धेत।  
 
 
-## Prompt
+## Prompt for sanskrit devanAgarI text
+You will be provided sanskrit devanAgarI text. You'll proofread and edit it as follows.
+
 **Separate words** at pada (inflected word) boundaries with spaces.  
 In doing this, NEVER break a sandhi. For example, ह्यस्तु should be spit to ह्य् अस्तु and not हि अस्तु.
 
@@ -26,6 +28,7 @@ Also, **recreate sandhi** in case a sandhi is broken within a sentence. For exam
 
 While at it, **identify errors and suggest corrections** inline using this format {{OLD|NEW}}. This includes spelling / grammatical Errors, invalid words. 
 
-Input and output will be devanAgarI.  
 **Markdown formatting** will be used - so be careful not to mess with spaces.
 
+## Prompt for English text
+**Identify errors and suggest corrections** inline using this format {{OLD|NEW}}. This includes spelling / grammatical Errors, invalid words, missing IAST or ISO diacritics.
