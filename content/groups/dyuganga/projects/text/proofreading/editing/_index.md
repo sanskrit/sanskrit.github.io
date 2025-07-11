@@ -10,7 +10,7 @@ title = "+Editing"
 Our proofreaders follow various workflows to achieve perfect text based on what suits them. 
 
 ### 2-step Workflow द्विः-परीक्षण-रीतिः
-First, use AI LLM to correct 10-20 lines (instructions [here](../AI-prompt)). Then proceed to manual proofreading below.
+First, use AI LLM to correct 10-20 lines (instructions [here](AI-prompt)). Then proceed to manual proofreading below.
 
 In each of the below 2 steps, you should do the following -
 
@@ -27,7 +27,7 @@ The steps:
 In our experience, omitting Step 2 leads to many errors for many people.
 
 ### Max-pada-split-workflow (अधिकतम-पद-विभाग-रीतिः)
-First, use AI LLM to correct 10-20 lines (instructions [here](../AI-prompt)). Then proceed to manual proofreading below.
+First, use AI LLM to correct 10-20 lines (instructions [here](AI-prompt)). Then proceed to manual proofreading below.
 
 Within sanskrit text, you insert spaces and hyphens to the maximum possible extant, subject to the [pada-separation rules](pada-separation). So, you get text like - सिद्धिस् साध्ये सताम् अस्त्व् इत्य् अवदत् instead of सिद्धिस्साध्ये सतामस्त्वित्यवदत्.
 
