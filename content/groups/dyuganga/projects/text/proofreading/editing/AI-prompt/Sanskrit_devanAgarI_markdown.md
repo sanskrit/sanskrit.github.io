@@ -10,12 +10,17 @@ We have a physical book with
 
 You will be provided sanskrit devanAgarI markdown (from OCR of some pages). You'll proofread with the following edits.
 
+First some clarification on what "**breaking a sandhi**" is.  
+ह्यस्तु to ह्य् अस्तु is not breakage, but not हि अस्तु.
+शम्यादि to शम्य्-आदि is not breakage, but not शमी-आदि is.  
+The principle is that, when transliterated to IAST, ignoring inserted hyphens and spaces, if the same letters are seen, the sandhi is not broken.
+
 **Separate words** at pada (inflected word) boundaries with spaces.  
-In doing this, NEVER break a sandhi. For example, ह्यस्तु should be spit to ह्य् अस्तु and not हि अस्तु.
+In doing this, NEVER break a sandhi.
 
 **Separate subwords** inside compounds with hyphens. In doing this, observe the following rules
 
-- NEVER break a sandhi. For example, श्रीधरस्येच्छा should yield श्री-धरस्येच्छा, and not श्री-धरस्य-इच्छा. 
+- NEVER break a sandhi.
 - Never separate such subwords by space - remove such spurious spaces. 
 - Don't separate upasarga prefixes - आश्रमम् should not be replaced by आ-श्रमम्.
 
