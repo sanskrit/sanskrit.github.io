@@ -10,11 +10,13 @@ title = "+Editing"
 Our proofreaders follow various workflows to achieve perfect text based on what suits them. 
 
 ### साधारण-परीक्षण-रीतिः
-**यान्त्रिक-शोधनम्** - First, use AI LLM to correct 10-20 lines (instructions [here](AI-prompt)). Then proceed to manual proofreading below.
+
+
+**यान्त्रिक-शोधनम्** - First, use AI LLM to correct 10-20 lines (instructions [here](AI-prompt)). 
 
 - (Note that, depending on the prompt, this may yield sanskrit text with a lot of hyphens and spaces (eg. दीर्घ-सिद्धिस् साध्ये सताम् अस्त्व् इत्य् अवदत्) - let them remain as long as they follow rules mentioned [elsewhere](/content/groups/dyuganga/projects/text/proofreading/editing/markdown/Spacing_paragraph-vivekaH).)
 
-ततो **मानुष-शोधनम्**॥ In each of the below 2 steps, you should do the following -
+Then proceed to manual proofreading below. ततो **मानुष-शोधनम्**॥ In each of the below 2 steps, you should do the following -
 
 - Manually detect and correct errors - provided both the original image and your language skills agree with the correction. 
 - Mark doubtful places and ask for clarification as described [here](understand_ask) - eg. where your language intuition and the original image conflict.
@@ -26,9 +28,9 @@ The steps:
 
 **मूल-प्रधान-शोधनम्**: First go through a page or block of the text by repeatedly doing this: read the next few words in the image, and then fix/ mark the same in the typed text.
 
-**टङ्कित-पाठ-प्रधान-शोधनम्**: Then, read the corrected text from Step 1 directly (preferably aloud, and preferably in a different script as described [here](multi-script-proofreading)), looking at the original image _only_ where you are suspect an error.
+**टङ्कित-पाठ-प्रधान-शोधनम्**: Then, read the corrected text from the previous step directly (preferably aloud, and preferably in a different script as described [here](multi-script-proofreading)), looking at the original image _only_ where you are suspect an error.
 
-In our experience, omitting Step 2 leads to many errors for some people.
+If in our experience, omitting one of the steps (usually the last) does not lead to many errors or loss of speed, you will be allowed to omit it - be sure to ask.
 
 ### Fully manual workflow
 Within sanskrit text, you insert spaces and hyphens to the maximum possible extant, subject to the [pada-separation rules](pada-separation). So, you get text like - सिद्धिस् साध्ये सताम् अस्त्व् इत्य् अवदत् instead of सिद्धिस्साध्ये सतामस्त्वित्यवदत्.
