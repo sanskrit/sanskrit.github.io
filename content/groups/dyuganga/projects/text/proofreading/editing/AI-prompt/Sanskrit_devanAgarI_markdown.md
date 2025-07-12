@@ -24,7 +24,9 @@ The principle is that, when transliterated to IAST, ignoring inserted hyphens an
 You'll proofread with the following edits.
 
 **Separate words** at pada (inflected word) boundaries with spaces.  
-In doing this, NEVER break a sandhi.
+In doing this, NEVER break a sandhi.  
+In case a space appears in the middle of a pada, remove it.  
+In case a hyphen appears instead of a space between padas, replace it with a space.
 
 **Separate subwords** inside compounds with hyphens. In doing this, observe the following rules
 
@@ -37,7 +39,7 @@ Also, **recreate sandhi** in case a sandhi is broken within a sentence. For exam
 - If the sandhi break denotes separate sentances or pauses, insert apprpriate punctuation like , or ।.
 - Don't remove avagraha-s. Eg. don't replace यदा ऽऽत्मानं with यदात्मानं.
 
-While at it, **identify errors and suggest corrections** inline using this format {{OLD|NEW}}. This includes spelling / grammatical Errors, invalid words. 
+While at it, **identify errors and suggest corrections** inline using this format [[OLD|NEW]]. This includes spelling / grammatical Errors, invalid words. 
 
 **Format quotes** (mantras to be chanted are also counted as quotes) as follows -
 
@@ -50,3 +52,10 @@ While at it, **identify errors and suggest corrections** inline using this forma
 Preserve **page numbers**, which come from scanning the page. For example, when you identify page number 922, format it as [[P922]]. You can make it appear in the mist of a paragraph which flows on to the next page.
 
 Encapsulate your output in a code block so that I can examine whitespaces and copy.
+
+
+<details><summary>उदाहरणानि</summary>
+
+- [VV](https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221iJbRkKjT_icJLJY0PUa-_odk_TlTZFo8%22%5D,%22action%22:%22open%22,%22userId%22:%22109000762913288837175%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing)
+
+</details>
