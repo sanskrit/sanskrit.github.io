@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>&#43;AI prompt on संस्कृतजालक्षेत्रम्</title>
+    <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/</link>
+    <description>Recent content in &#43;AI prompt on संस्कृतजालक्षेत्रम्</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>English text with sanskrit footnotes</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/English_text_with_sanskrit_foo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/English_text_with_sanskrit_foo/</guid>
+      <description>&lt;p&gt;We have a physical book with&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;English content with some sanskrit IAST words.&lt;/li&gt;&#xA;&lt;li&gt;footnotes (sanskrit devanAgarI mostly) appearing at the bottom of some pages,&lt;/li&gt;&#xA;&lt;li&gt;page numbers appearing at the top or bottom,&lt;/li&gt;&#xA;&lt;li&gt;book or chapter title / number appearing at the top&lt;/li&gt;&#xA;&lt;li&gt;Subtopic discussed within the page.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;You&amp;rsquo;ll be given some plain text (OCR of some pages or PDF). Use it to produce clean markdown.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Identify errors and suggest corrections&lt;/strong&gt; inline, within content, footnotes and section headings, using this format [[OLD|NEW]] strictly. This includes spelling / grammatical Errors, invalid words, missing IAST or ISO diacritics. Rules while doing this&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Other Indic language markdown</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/Other_Indic_language_markdown/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/Other_Indic_language_markdown/</guid>
+      <description>&lt;p&gt;We have a physical book with&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Indic language content.&lt;/li&gt;&#xA;&lt;li&gt;footnotes appearing at the bottom of some pages,&lt;/li&gt;&#xA;&lt;li&gt;page numbers appearing at the top or bottom,&lt;/li&gt;&#xA;&lt;li&gt;possibly book or chapter title / number appearing at the top&lt;/li&gt;&#xA;&lt;li&gt;possibly - subtopic discussed within the page.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;You will be provided sanskrit some of the following -&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;devanAgarI markdown (from OCR of some pages)&lt;/li&gt;&#xA;&lt;li&gt;pdf or images&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Use it to produce clean markdown.&lt;/p&gt;&#xA;&lt;p&gt;Every indic language text should be first converted to ISO.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sanskrit devanAgarI markdown</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/Sanskrit_devanAgarI_markdown/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/Sanskrit_devanAgarI_markdown/</guid>
+      <description>&lt;p&gt;We have a physical book with&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;sanskrit devanAgarI content&lt;/li&gt;&#xA;&lt;li&gt;possibly footnotes appearing at the bottom of each page&lt;/li&gt;&#xA;&lt;li&gt;page numbers appearing at the top or bottom,&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;You will be provided sanskrit some of the following -&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;devanAgarI markdown (from OCR of some pages)&lt;/li&gt;&#xA;&lt;li&gt;pdf or images&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;From that you&amp;rsquo;ll produce proper and correct markdown, keeping text styles like bold and italic, separating paragraphs, but removing hard-wraps.&lt;/p&gt;&#xA;&lt;p&gt;First some clarification on what &amp;ldquo;&lt;strong&gt;breaking a sandhi&lt;/strong&gt;&amp;rdquo; is.&lt;br&gt;&#xA;ह्यस्तु to ह्य् अस्तु is not breakage, but not हि अस्तु.&#xA;शम्यादि to शम्य्-आदि is not breakage, but not शमि-आदि is.&lt;br&gt;&#xA;The principle is that, when transliterated to IAST, ignoring inserted hyphens and spaces, if the same letters are seen, the sandhi is not broken.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
