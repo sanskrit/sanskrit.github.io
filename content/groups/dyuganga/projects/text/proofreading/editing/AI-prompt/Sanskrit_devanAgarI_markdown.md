@@ -49,7 +49,14 @@ While at it, **identify errors and suggest corrections** inline using this forma
 
 **Markdown formatting** will be used - so be careful when messing with spaces. Verse lines must end with 2 spaces. Paragraphs should be separated by two new-lines.
 
-Preserve **page numbers**, which come from scanning the page. For example, when you identify page number 922, format it as [[P922]]. You can make it appear in the mist of a paragraph which flows on to the next page.
+Preserve **page numbers**, which come from scanning the page. For example, when you identify page number 922, format it as [[P922]]. You can make it appear in the mist of a paragraph which flows on to the next page. 
+
+There should be no page breaks between paragraphs.
+
+Final checks - 
+
+- Ensure you've not broken sandhis as described earlier.
+- Ensure footnotes are in markdown format.
 
 Encapsulate your output in a code block so that I can examine whitespaces and copy.
 
