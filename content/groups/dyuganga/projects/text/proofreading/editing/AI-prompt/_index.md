@@ -62,5 +62,12 @@ Enable
 
 </details>
 
+<details><summary>Prompt making (द्रष्टुं नोद्यम्)</summary>
+
+- Iterate within a chat.  
+- Then say - Improve my initial instructions so that you will get it right the first time in a fresh chat.
+</details>
+
+
 
 **Prompts below.**
