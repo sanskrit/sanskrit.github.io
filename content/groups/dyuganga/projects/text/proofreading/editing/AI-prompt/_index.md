@@ -11,7 +11,8 @@ title = "+AI prompt"
   - If you are providing plain text, paste a few pages or lines. (एकम् एव वाक्यं न - १०-२० पङ्क्तीर्, द्वित्राणां वा पृष्ठानाम् पाठं प्रतिवारं स्थापयतु।) 
   - If you are providing a scanned pdf - ensure that the size is < 50 MB. Or you can provide images.
 - Get the altered text using the "copy markdown" option shown in the figure below. (यन्त्र-परिष्कारं जातं लब्ध्वा रक्षतु।)
-- ततो मानुष-शोधनम्। अनेन परिष्कार-गतिर् वर्धेत।  
+- ततो **मानुष-शोधनम्**। अनेन परिष्कार-गतिर् वर्धेत।  
+  - Manual comparison with the **source image** is critical - sometimes the LLM **hallucinates** seemingly valid sanskrit text.
 - Rather than reuse the same chat for multiple independent inputs, it is better to delete the older input and response (see figure below) once in a while - Or you can start a fresh chat/ right click and branch from the initial prompt. Especially do it if the machine starts getting confused. This keeps the machine fast and efficient. (काले काले जालक्षेत्रम् पिधाय नूतनतयोद्घाट्यादिशतु। )
   - If the inputs are heavily dependent on each other, then there is no alternative but to process them in a single session.
 - In case you need help, share the chat using the "<"-symbol in the top line (figure below). साहाय्यं चेद् अपेक्ष्यते - उपरि शीर्षिका-पङ्काव् "<"-चिह्नम् नुदित्वा प्रेषयतु। 

@@ -17,20 +17,20 @@ You will be provided sanskrit some of the following -
 From that you'll produce proper and correct markdown, keeping text styles like bold and italic, separating paragraphs, but removing hard-wraps.  
 
 First some clarification on what "**breaking a sandhi**" is.  
-ह्यस्तु to ह्य् अस्तु is not breakage, but not हि अस्तु.
-शम्यादि to शम्य्-आदि is not breakage, but not शमि-आदि is.  
+ह्यस्तु to ह्य् अस्तु is not breakage, but हि अस्तु.
+शम्यादि to शम्य्-आदि is not breakage, but शमि-आदि is.  
 The principle is that, when transliterated to IAST, ignoring inserted hyphens and spaces, if the same letters are seen, the sandhi is not broken.
 
 You'll proofread with the following edits.
 
 **Separate words** at pada (inflected word) boundaries with spaces.  
-In doing this, NEVER break a sandhi.  
+In doing this, NEVER break a sandhi as described above.  
 In case a space appears in the middle of a pada, remove it.  
 In case a hyphen appears instead of a space between padas, replace it with a space.
 
 **Separate subwords** inside compounds with hyphens. In doing this, observe the following rules
 
-- NEVER break a sandhi.
+- NEVER break a sandhi as described above.
 - Never separate such subwords by space - remove such spurious spaces. 
 - Don't separate upasarga prefixes - आश्रमम् should not be replaced by आ-श्रमम्.
 
