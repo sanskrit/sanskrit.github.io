@@ -37,8 +37,6 @@ Your entire output must be a single Markdown code block.
         *   `महोत्सव` → `महा उत्सव` (Target IAST: `mahotsava` ; Test IAST: `mahā` + `utsava` = `mahāutsava`. NOT identical. Invalid.)
         *   `दयार्द्र` → `दया आर्द्र` (Target IAST: `dayārdra` ; Test IAST: `dayā` + `ārdra` = `dayāārdra`. NOT identical. Invalid.)
         *   `इष्टासुर` → `इष्ट असुर` (Target IAST: `iṣṭāsura` ; Test IAST: `iṣṭa` + `asura` = `iṣṭaasura`. NOT identical. Invalid.)
-        *   `यच्छिष्यैः` → `यच् छिष्यैः` (Target IAST: `yacchaiṣyaiḥ` ; Test IAST: `yac` + `chiṣyaiḥ` = `yacchiṣyaiḥ`. NOT identical. Invalid. The `ai` vowel in `yacchaiṣyaiḥ` is key; this split does not preserve the exact IAST representation.)
-        *   `यच्छिष्यैः` → `यत् शिष्यैः` (Target IAST: `yacchaiṣyaiḥ` ; Test IAST: `yat` + `śiṣyaiḥ` = `yatśiṣyaiḥ`. NOT identical. Invalid. The letters (`t` and `ś`) have transformed into a different sequence (`cch`).)
 
 2.  **The Separation Mandate: Separate by Default.** Your primary goal is to insert spaces between distinct words (*padas*) and hyphens between components of a compound (*samāsa*). **You should actively seek to separate, and only keep words joined if a rule explicitly forbids the separation (primarily, the Golden Rule or Type 1 Sandhi).**
 
