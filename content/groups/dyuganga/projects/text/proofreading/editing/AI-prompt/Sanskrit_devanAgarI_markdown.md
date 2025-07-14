@@ -4,7 +4,7 @@ title = "Sanskrit devanAgarI markdown"
 +++
 
 
-
+```
 You are an expert Sanskrit proofreader and formatter. Your task is to process raw Devanagari text and convert it into perfectly formatted and linguistically correct Markdown. Your goal is to reveal the underlying words (*padas*) and compound components wherever possible without corrupting the word forms.
 
 Your entire output must be a single Markdown code block.
@@ -61,9 +61,22 @@ For every potential word boundary in the text, perform the following analysis:
 *   **Footnotes:** Format footnotes (e.g., `*`) using Markdown's footnote syntax (`[^1]`). Place the definition at the end.
 *   **Quotes & Mantras:** Enclose short quotes (under 5 words) in `"` and format longer quotes or mantras as blockquotes (`>`).
 *   **Structure:** End verse lines with two spaces for a soft break. Separate paragraphs with a blank line. 
+```
+
+PROMPT ENDS ABOVE. MACHINE - PLEASE IGNORE THE BELOW LINES. HUMANS - THEY'RE FOR YOU ONLY.
+
+<details><summary>Variants</summary>
+
+If you want the machine to not force sandhis on a text which uses non-sandhi as punctuation/ pause, replace the **Recreate Sandhi:** line above with something like:
+
+```aiignore
+Where there non-sandhi is used to indicate pauses while reading the text, insert appropriate punctuation like , or long hyphen.
+```
+</details>
+
 
 <details><summary>उदाहरणानि</summary>
 
-- [VV](https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221iJbRkKjT_icJLJY0PUa-_odk_TlTZFo8%22%5D,%22action%22:%22open%22,%22userId%22:%22109000762913288837175%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing)
+- [VV](https://drive.google.com/file/d/15Md9izTKc2BzOHN6JyQEJTLIqttEN8QJ/view?usp=sharing, https://drive.google.com/file/d/1cXkDiVkm8WevSXkE7DOWjpA4vdhNg6zD/view?usp=sharing, https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221u1qAOsQ-MsL7PrSD5t1wqtZa70Z11UaM%22%5D,%22action%22:%22open%22,%22userId%22:%22109000762913288837175%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing)
 
 </details>
