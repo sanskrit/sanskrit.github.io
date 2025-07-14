@@ -24,7 +24,7 @@ Your entire output must be a single Markdown code block.
     *   **Type 1 (Unbreakable/Formative):** Sandhis that create a new word stem, like `guṇa`, `vṛddhi`, and `savarṇadīrgha`. These often occur *inside* a compound to form the compound word itself. **Never break these.**
         *   `महा + उत्सव → महोत्सव` (guṇa). Do NOT change to `महा-उत्सव`.
         *   `दया + आर्द्र → दयार्द्र` (savarṇadīrgha). Do NOT change to `दया-आर्द्र`.
-        *   **`देवासुरमनुष्य` (savarṇadīrgha). The join `देव + असुर → देवासुर` forms a single, unbreakable dvandva compound stem. This stem is then hyphenated with the next component. The correct form is `देवासुर-मनुष्य`. The separation `देव-असुर-मनुष्य` is INVALID.**
+        *   `इष्टासुर` (savarṇadīrgha). The separation `इष्ट-असुर` is INVALID.
 
     *   **Type 2 (Separable/Connective):** Sandhis that join complete, independent words, like `yaṇ`, `visarga`, and most consonant sandhis. **You must separate or hyphenate these** if they occur at a word/compound boundary, subject to the Golden Rule.
         *   `द्वि + ऋचम् → द्व्यृचम्` (yaṇ). This MUST be hyphenated to `द्व्य्-ऋचं`.
