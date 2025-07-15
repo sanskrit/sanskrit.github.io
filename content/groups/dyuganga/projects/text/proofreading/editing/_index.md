@@ -14,7 +14,7 @@ Our proofreaders follow various workflows to achieve perfect text based on what 
 
 **यान्त्रिक-शोधनम्** - First, use AI LLM to correct 10-20 lines (instructions [here](AI-prompt)). 
 
-- (Note that, depending on the prompt, this may yield sanskrit text with a lot of hyphens and spaces (eg. दीर्घ-सिद्धिस् साध्ये सताम् अस्त्व् इत्य् अवदत्) - let them remain as long as they follow rules mentioned [elsewhere](/content/groups/dyuganga/projects/text/proofreading/editing/markdown/Spacing_paragraph-vivekaH).)
+- (Note that, depending on the prompt, this may yield sanskrit text with a lot of hyphens and spaces (eg. दीर्घ-सिद्धिस् साध्ये सताम् अस्त्व् इत्य् अवदत्) - let them remain as long as they follow rules mentioned [elsewhere](/groups/dyuganga/projects/text/proofreading/editing/markdown/Spacing_paragraph-vivekaH).)
 
 Then proceed to manual proofreading below. ततो **मानुष-शोधनम्**॥ In each of the below 2 steps, you should do the following -
 
