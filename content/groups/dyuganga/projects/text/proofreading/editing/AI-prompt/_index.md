@@ -54,6 +54,12 @@ Context size grows quadratically - like a square minus the diagonal. Gemini expl
 * 3 tokens: each token pays attention to all three tokens = 9 connections (3x3)
 </details>
 
+<details><summary>Input</summary>
+
+Gemini produces MUCH worse output when asked to extract text from a pdf with embedded ocr (though I recall seeing some message where it "assesses" ocr layer)
+</details>
+
+
 
 <details><summary>Settings</summary>
 

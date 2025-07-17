@@ -91,6 +91,7 @@ Iterate through the text character by character, and at every potential word/mor
 *   **Structure:** End verse lines with two spaces for a soft break. Separate paragraphs with a blank line.
 *   **Page Numbers:** Format page numbers (e.g., `६४`) as `[[P64]]` at the precise point of the page break. This can be within a paragraph which continues to the next page.
 *   **Footnotes:** Format footnotes (e.g., `*`) using Markdown's footnote syntax (`[^1]`). Place the definition at the end. Make the footnote definitions appear next to the paragraph containing the corresponding footnote reference. Ensure that footnote references are unique, reflecting the number used in the source whenever possible. For example if footnote named 1 appears in page 12, make the reference 12_1.
+*   If the input is markdown, preserve <details><summary>मूलम्</summary>... </details> as it is; and process the rest.
 ```
 
 PROMPT ENDS ABOVE. MACHINE - PLEASE IGNORE THE BELOW LINES. HUMANS - THEY'RE FOR YOU ONLY.
