@@ -11,7 +11,7 @@ title = "+AI prompt"
   - If you are providing plain text, paste a few pages or lines. (एकम् एव वाक्यं न - १०-२० पङ्क्तीर्, द्वित्राणां वा पृष्ठानाम् पाठं प्रतिवारं स्थापयतु।) 
   - If you are providing a scanned pdf - ensure that the size is < 50 MB. Or you can provide images.
 - Get the altered text using the "copy markdown" option shown in the figure below. (यन्त्र-परिष्कारं जातं लब्ध्वा रक्षतु।)
-- ततो **मानुष-शोधनम्**। अनेन परिष्कार-गतिर् वर्धेत।  
+- ततो **मानुष-शोधनम्**। अनेन परिष्कार-गतिर् वर्धेत। 
   - Manual comparison with the **source image** is critical - sometimes the LLM **hallucinates** seemingly valid sanskrit text.
 
 

@@ -30,6 +30,9 @@ The steps:
 
 **टङ्कित-पाठ-प्रधान-शोधनम्**: Then, read the corrected text from the previous step directly (preferably aloud, and preferably in a different script as described [here](multi-script-proofreading)), looking at the original image _only_ where you are suspect an error.
 
+These steps are to be followed in sequence -  
+never blindly trust the AI output, even with near perfect text.
+
 If in our experience, omitting one of the steps (usually the last) does not lead to many errors or loss of speed, you will be allowed to omit it - be sure to ask.
 
 ### Fully manual workflow

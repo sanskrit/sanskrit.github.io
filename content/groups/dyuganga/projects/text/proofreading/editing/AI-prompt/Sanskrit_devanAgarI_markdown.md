@@ -111,3 +111,6 @@ Where there non-sandhi is used to indicate pauses while reading the text, insert
 - [VV](https://drive.google.com/file/d/15Md9izTKc2BzOHN6JyQEJTLIqttEN8QJ/view?usp=sharing, https://drive.google.com/file/d/1cXkDiVkm8WevSXkE7DOWjpA4vdhNg6zD/view?usp=sharing, https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221u1qAOsQ-MsL7PrSD5t1wqtZa70Z11UaM%22%5D,%22action%22:%22open%22,%22userId%22:%22109000762913288837175%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing)
 
 </details>
+
+## दोषावेक्षा 
+- सन्धि-स्थलेषु शोधनीयं भवेत्। यन्त्रेण दत्तानाम् **अनिष्ट-रूपाणाम्** उदाहरणानि - प्रत्येकम् → प्रति-एकम् (प्रत्य्-एकम् इति स्यात्), इत्यस्य → इति-अस्य (इत्य्-अस्य इति स्यात्), नैतत् → न-एतत्, तथेति → तथा-इति, पुनरपि   → पुनः-अपि। तथा प्राप्ते, शोधनीयम्, यन्त्रं च सोदाहरणं तर्जनीयम् - "why did you violate the golden rule at ... ?" इति। 
