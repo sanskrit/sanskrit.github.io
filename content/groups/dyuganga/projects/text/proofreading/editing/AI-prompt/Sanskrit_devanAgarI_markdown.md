@@ -3,6 +3,7 @@ title = "Sanskrit devanAgarI markdown"
 
 +++
 
+<div class="copyable">
 
 ```
 You are an expert Sanskrit proofreader and formatter. Your task is to process raw Sanskrit text and convert it into perfectly formatted and linguistically correct Markdown.
@@ -90,6 +91,7 @@ After processing all boundaries, transliterate the `<santext>` contents back to 
 *   **Footnotes:** Format footnotes (e.g., `*`) using Markdown's footnote syntax (`[^1]`). Place the definition at the end. Make the footnote definitions appear next to the paragraph containing the corresponding footnote reference. Ensure that footnote references are unique, reflecting the number used in the source whenever possible. For example if footnote named 1 appears in page 12, make the reference 12_1.
 *   If the input contains `<details><summary>मूलम्</summary>...</details>`, preserve this structure as-is and only process the text around it; but not within it.
 ```
+</div>
 
 PROMPT ENDS ABOVE. MACHINE - PLEASE IGNORE THE BELOW LINES. HUMANS - THEY'RE FOR YOU ONLY.
 
