@@ -30,33 +30,33 @@ This is the most critical section. Study these examples carefully as they define
 
 **A. Separable Boundaries: These MUST be split.**
 
-*   **Vowel to Semivowel (yaṇ sandhi):** The transformed semivowel (`y` or `v`) stays with the first word.
-    *   `iti + ēvam → ityēvam` must be split as `ity ēvam`. (The `i` became `y`; the `y` is kept).
-    *   `phāni + api → phalānyapi` must be split as `phalāny api`.
-    *   `madhu + ariḥ → madhvariḥ` must be split as `madhv ariḥ`.
+*   **Vowel to Semivowel (yaṇ sandhi):** The transformed semivowel (`य्` or `व्`) stays with the first word.
+    *   `इति + एवम् → इत्येवम्` must be split as `इत्य् एवम्`. (The `इ` became `य्`; the `य्` is kept).
+    *   `फलानि + अपि → फलान्यपि` must be split as `फलान्य् अपि`.
+    *   `मधु + अरिः → मध्वरिः` must be split as `मध्व्-अरिः`.
 
-*   **Visarga (`ḥ`) Sandhi:**
-    *   `visarga` to `o`: `rāmaḥ + asti → rāmō'sti`. Split as `rāmō 'sti`. (The avagraha `’` is part of the boundary).
-    *   `visarga` to `r`: `duḥ + prakṛtēḥ + asya → duṣprakṛtērasya`. Split as `duṣprakṛtēr asya`.
-    *   `visarga` to `s/ś/ṣ`: `namaḥ + tē → namastē`. Split as `namas tē`.
+*   **Visarga (`ः`) Sandhi:**
+    *   `visarga` to `ो`: `रामः + अस्ति → रामोऽस्ति`. Split as `रामो ऽस्ति`. (The avagraha `’` is part of the boundary).
+    *   `visarga` to `र्`: `दुः + प्रकृतेः + अस्य → दुष्प्रकृतेरस्य`. Split as `दुष्प्रकृतेर् अस्य`.
+    *   `visarga` to `स्/श्/ष्`: `नमः + ते → नमस्ते`. Split as `नमस् ते`.
 
-*   **Final `m` (anusvāra):** A final `m` before a vowel is separated by a space.
-    *   `phalam + aśnutē → phalamaśnutē`. Split as `phalam aśnutē`.
-    *   `artham + iti → arthamiti`. Split as `artham iti`.
+*   **Final `म्`:** A final `म्` before a vowel is separated by a space.
+    *   `फलम् + अश्नुते → फलमश्नुते`. Split as `फलम् अश्नुते`.
+    *   `अर्थम् + इति  → अर्थमिति`. Split as `अर्थम् इति`.
 
 *   **Consonant Assimilation:**
-    *   `tat + hi → taddhi`. Split as `tad dhi`.
+    *   `तत् + हि → तद्धि`. Split as `तद् धि`.
 
 **B. Non-Separable Boundaries: These MUST NOT be split.**
 
 *   **Vowel Lengthening (dīrgha sandhi):** When two vowels merge into a single long vowel.
-    *   `dayā + ārdra → dayārdra`. The boundary `yā` is non-separable.
-    *   `api + icchā → apīcchā`. The boundary `pī` is non-separable.
+    *   `दया + आर्द्र → दयार्द्र`. The boundary `या` is non-separable.
+    *   `अपि + इच्छा → अपीच्छा`. The boundary `पी` is non-separable.
 
-*   **Vowel Combination (guṇa/vṛddhi sandhi):** When two vowels merge into a new, single vowel (`e`, `o`, `ai`, `au`).
-    *   `mahā + utsava → mahōtsava`. The boundary `hō` is non-separable.
-    *   `rāma + iti → rāmēti`. The boundary `mē` is non-separable.
-    *   `sadā + ēva → sadaiva`. The boundary `dai` is non-separable.
+*   **Vowel Combination (guṇa/vṛddhi sandhi):** When two vowels merge into a new, single vowel (`े`, `ो`, `ै`, `ौ`).
+    *   `महा + उत्सव → महोत्सव`. The boundary `हो` is non-separable.
+    *   `राम + इति → रामेति`. The boundary `मे` is non-separable.
+    *   `सदा + एव → सदैव`. The boundary `दै` is non-separable.
 
 ### **Part 2: The Rigorous Processing Workflow**
 
@@ -66,18 +66,18 @@ Follow these steps in strict order. **This is not a set of guidelines; it is an 
 *   Remove hard-wrapped line breaks to create continuous paragraphs.
 *   Correct obvious typographical errors (e.g., a space in the middle of a word).
 *   Preserve intentional styles like **bold** and *italic*.
-*   Identify Sanskrit text, wrap it in `<santext>` tags, and transliterate to ISO 15919 for internal processing.
+*   Identify Sanskrit text and it's script (eg. kannaDa), wrap it in `<santext script=SCRIPT_NAME>` tags, and transliterate to devanāgarī for internal processing.
 
 **Step 2: The Core Separation Algorithm**
 For each text wrapped in `<santext>` tags, iterate through every potential word boundary and apply the following logic:
 
 1.  **Check if Separable:** Using the principles and explicit examples in Part 1, determine if the boundary is separable. If it is non-separable, do nothing and move to the next boundary.
 2.  **Choose the Separator:**
-    *   If the words form a compound (samāsa), insert a **hyphen (`-`)**. Example: `puṇya-pāpaiḥ`.
+    *   If the words form a compound (samāsa), insert a **hyphen (`-`)**. Example: `पुण्य-पापैः`.
     *   Otherwise, for all other separable sandhis, insert a **space (` `)**.
 3.  **Apply the Separation:** Insert the chosen separator, strictly adhering to the "Separation Principle" (Part 1, Rule 2). Do not change the characters that resulted from the sandhi.
 
-After processing all boundaries, transliterate the `<santext>` contents back to the original script (e.g., devanāgarī).
+After processing all boundaries, transliterate the `<santext>` contents back to the original script (e.g., kannaDa).
 
 **Step 3: Source Error Handling**
 *   **This step is distinct from sandhi separation.** It concerns fixing clear spelling or grammatical errors in the *source words themselves*.
@@ -113,5 +113,3 @@ Where there non-sandhi is used to indicate pauses while reading the text, insert
 
 </details>
 
-## दोषावेक्षा 
-- सन्धि-स्थलेषु शोधनीयं भवेत्। यन्त्रेण दत्तानाम् **अनिष्ट-रूपाणाम्** उदाहरणानि - प्रत्येकम् → प्रति-एकम् (प्रत्य्-एकम् इति स्यात्), इत्यस्य → इति-अस्य (इत्य्-अस्य इति स्यात्), नैतत् → न-एतत्, तथेति → तथा-इति, पुनरपि   → पुनः-अपि। तथा प्राप्ते, शोधनीयम्, यन्त्रं च सोदाहरणं तर्जनीयम् - "why did you violate The Separation Principle at ... ?" इति। 
