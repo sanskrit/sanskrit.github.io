@@ -149,6 +149,18 @@ __________________________
 #### उद्धरणैक्यकल्पनम्
 समानोद्धरणे प्रारम्भे >-स्याद् एव - रिक्तपङ्क्तिष्व् अपि, पृष्ठसङ्ख्यासूचके ऽपि। अधो दोषेण उद्धरणत्रयम् इव दर्श्यते। 
 
+```markdown
+Rastelli says: 
+
+> The Lakṣmītantra, which differentiates four categories of bhogas, defines sāmsparśika as follows: 
+
+>> Objects of enjoyment, which are gentle, pleasing, and soft to the touch, such as water used for washing the feet, arghya, and the throne, (all these) that satisfy the Unborn with touch are sāṃsparśikas.
+
+> Hence ...
+```
+
+अस्य स्थाने यथाधः - "Rastelli"-इत्यादाव् उदाहरणे दर्शितम्, तथेष्टम्।
+
 __________________________
 ```markdown
 Rastelli says: 
@@ -161,7 +173,6 @@ Rastelli says:
 ```
 __________________________
 
-अस्य स्थाने यथोर्ध्वं "Rastelli"-इत्यादाव् उदाहरणे दर्शितम्, तथेष्टम्।
 
 
 ### Formatting Short quotes
