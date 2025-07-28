@@ -2,6 +2,8 @@
 title = "Other Indic language markdown"
 
 +++
+
+```markdown
 We have a physical book with
 
 - Indic language content.
@@ -47,5 +49,7 @@ Some pages specify the title of the book or chapter - remove those.
 Finally, transliterate the ISO indic language text back to devanAgarI.
 
 Encapsulate your output in a code block so that I can examine whitespaces and copy.
+```
+
 
 PROMPT ENDS ABOVE. MACHINE - PLEASE IGNORE THE BELOW LINES. HUMANS - THEY'RE FOR YOU ONLY.

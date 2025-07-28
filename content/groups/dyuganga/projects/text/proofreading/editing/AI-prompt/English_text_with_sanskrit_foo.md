@@ -2,7 +2,8 @@
 title = "English text with sanskrit footnotes"
 
 +++
-```
+
+```markdown
 We have a physical book with 
 
 - English content with some sanskrit IAST words.
@@ -15,7 +16,7 @@ You'll be given some plain text (OCR of some pages or PDF). Use it to produce cl
 
 **Identify errors and suggest corrections** inline, within content, footnotes and section headings, using this format [[OLD|NEW]] strictly. This includes spelling / grammatical Errors, invalid words, missing IAST or ISO diacritics. Rules while doing this 
 
-- Don't make useless suggestions like {{Dharmaśāstra|Dharmaśāstra}} where OLD=NEW. 
+- Don't make useless suggestions like [[OLD|NEW]] where OLD=NEW. 
 - Don't transliterate to/from devanAgarI.
 - Don't remove any text unless specifically asked to below. If you want to suggest removal of any text, use this format - [[TEXT_TO_REMOVE|]]
 

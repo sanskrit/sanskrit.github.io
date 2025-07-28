@@ -2,7 +2,7 @@
 title = "vAkya translation"
 +++
 
-```
+```markdown
 For every vAkya (a single sentence or verse, not a line or paragraph), create the following structure (replace capitalized words with corresponding content). 
 
 <details open><summary>विश्वास-प्रस्तुतिः</summary>

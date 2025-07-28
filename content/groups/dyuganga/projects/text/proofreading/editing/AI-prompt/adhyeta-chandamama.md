@@ -2,7 +2,7 @@
 title = "Adhyeta chandamama"
 +++
 
-```
+```markdown
 ## chandAmAma - kArtik
 ### Role and Context:
 
