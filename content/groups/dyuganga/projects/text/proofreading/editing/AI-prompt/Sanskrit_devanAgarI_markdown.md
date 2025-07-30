@@ -96,13 +96,16 @@ PROMPT ENDS ABOVE. MACHINE - PLEASE IGNORE THE BELOW LINES. HUMANS - THEY'RE FOR
 
 <details><summary>Variants</summary>
 
-*   **Recreate Sandhi:** If the source text has an unnatural separation (e.g., `अथ स्थापकः अनिरुद्धः`), you must recreate the correct sandhi (`अथ स्थापको ऽनिरुद्धो`). Do not do this if punctuation (`।` or `,`) justifies the pause. Never remove a pre-existing avagraha (`ऽ`).
+**Recreate Sandhi:** If the source text has an unnatural separation (e.g., `अथ स्थापकः अनिरुद्धः`), you must recreate the correct sandhi (`अथ स्थापको ऽनिरुद्धो`). Do not do this if punctuation (`।` or `,`) justifies the pause. Never remove a pre-existing avagraha (`ऽ`).
 
 If you want the machine to not force sandhis on a text which uses non-sandhi as punctuation/ pause, replace the **Recreate Sandhi:** line above with something like:
 
 ```aiignore
 Where there non-sandhi is used to indicate pauses while reading the text, insert appropriate punctuation like , or long hyphen.
 ```
+
+Fix texts only in `<details><summary>विश्वास-प्रस्तुतिः </summary>` blocks below.
+
 </details>
 
 
