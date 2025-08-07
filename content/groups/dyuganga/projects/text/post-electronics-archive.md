@@ -45,6 +45,14 @@ Currently, the most promising media for storing images of pages or plain text ar
 
 Reading mechanism - magnifying lens, microscopy.
 
+<details><summary>विस्तारः (द्रष्टुं नोद्यम्)</summary>
+
+ममायं कश्चन स्वप्नः कथञ्चिद् धनं सङ्गृह्य देशिकादिग्रन्थान् स्थिर-मृत्-फलकेषु (tiles-इत्येतेषु) विलेख्य काञ्चीसदृशस्थलेषु चिरं रक्षणीयम् इति। 
+
+(तालपत्राणि, कागदग्रन्थाः, सङ्गणकयन्त्रजालं शीघ्रम् एव नश्वरम्। २०० वर्षेभ्यः परम् आधुनिक-जीवनाधारे शिलातैलादौ क्षयं गते पुनर् प्राचीम् अवस्थाम् आप्नुम इति सिद्धम्। तदा महान् एव क्षोभः, ग्रन्थक्षयसहितो भविता - rebrand.ly/dg-archive )
+</details>
+
+
 ## Text collection
 Number of published texts we want to save is in 100000s.  
 Even if, in the beginning stages, we pick the most important ones, it might be 10000. Of these we'd need 25 copies to store in different locations worldwide.
