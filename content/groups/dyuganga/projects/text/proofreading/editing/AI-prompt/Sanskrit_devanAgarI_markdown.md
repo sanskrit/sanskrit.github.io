@@ -19,23 +19,39 @@ A word or stem boundary is the point where two words or stems are joined (possib
 
 #### **2. The Separation Principle**
 
-The core of your task is to identify "separable" boundaries and insert the correct separator (a space or a hyphen). 
+The core of your task is to identify "separable" boundaries and insert the correct separator (a space or a hyphen).
 
-The **cardinal rule** is: **Do not revert the sandhi.** When you insert a separator, you must preserve the characters that resulted from the phonetic combination. You are splitting the *result* of the sandhi, not undoing it.
+The **cardinal rule** is: **Do not revert the sandhi.** You are splitting the *result* of the sandhi, not undoing it.
 
-#### **3. Separable vs. Non-Separable Boundaries (Examples)**
+#### **3. The Rule of Precedence: Non-Separability is Absolute**
 
-This is the most critical section. Study these examples carefully as they define the logic for separation.
+This is the most critical section. The rules for non-separation **always take precedence** over rules for separation.
 
-**A. Separable Boundaries: These MUST be split.**
+*   **If a boundary is identified as non-separable, you MUST NOT split it for any reason, even if the words form a compound (`samāsa`).** This is a veto rule.
+
+#### **4. Boundary Types and Examples**
+
+**A. Non-Separable Boundaries: These MUST NOT be split.**
+
+*   **Vowel Lengthening (dīrgha sandhi):** When two vowels merge into a single long vowel (`आ`, `ई`, `ऊ`, `ॠ`).
+    *   `दया + आर्द्र → दयार्द्र`. The boundary `या` is non-separable.
+    *   `अपि + इच्छा → अपीच्छा`. The boundary `पी` is non-separable.
+    *   **Crucial Compound Example:** `धर्म + अर्थ → धर्मार्थ`. This is a `dīrgha sandhi` within a compound. Because the non-separation rule is absolute, this **must remain `धर्मार्थ`**, not be split into `धर्म-अर्थ`.
+    *   **Error Case Study:** The input `स्वप्रकाशाद्वितीय` (from `स्वप्रकाश + अद्वितीय`) must remain `स्वप्रकाशाद्वितीय` because it is a `dīrgha sandhi`. It is incorrect to split it as `स्वप्रकाश-अद्वितीय`.
+
+*   **Vowel Combination (guṇa/vṛddhi sandhi):** When two vowels merge into a new, single vowel (`ए`, `ओ`, `ऐ`, `औ`).
+    *   `महा + उत्सव → महोत्सव`. The boundary `हो` is non-separable.
+    *   `राम + इति → रामेति`. The boundary `मे` is non-separable.
+    *   `सदा + एव → सदैव`. The boundary `दै` is non-separable.
+
+**B. Separable Boundaries: These MUST be split if not vetoed by a non-separable rule.**
 
 *   **Vowel to Semivowel (yaṇ sandhi):** The transformed semivowel (`य्` or `व्`) stays with the first word.
     *   `इति + एवम् → इत्येवम्` must be split as `इत्य् एवम्`. (The `इ` became `य्`; the `य्` is kept).
-    *   `फलानि + अपि → फलान्यपि` must be split as `फलान्य् अपि`.
     *   `मधु + अरिः → मध्वरिः` must be split as `मध्व्-अरिः`.
 
 *   **Visarga (`ः`) Sandhi:**
-    *   `visarga` to `ो`: `रामः + अस्ति → रामोऽस्ति`. Split as `रामो ऽस्ति`. (The avagraha `’` is part of the boundary).
+    *   `visarga` to `ो`: `रामः + अस्ति → रामोऽस्ति`. Split as `रामो ऽस्ति`. (The avagraha `ऽ` is part of the boundary).
     *   `visarga` to `र्`: `दुः + प्रकृतेः + अस्य → दुष्प्रकृतेरस्य`. Split as `दुष्प्रकृतेर् अस्य`.
     *   `visarga` to `स्/श्/ष्`: `नमः + ते → नमस्ते`. Split as `नमस् ते`.
 
@@ -46,17 +62,6 @@ This is the most critical section. Study these examples carefully as they define
 *   **Consonant Assimilation:**
     *   `तत् + हि → तद्धि`. Split as `तद् धि`.
 
-**B. Non-Separable Boundaries: These MUST NOT be split.**
-
-*   **Vowel Lengthening (dīrgha sandhi):** When two vowels merge into a single long vowel.
-    *   `दया + आर्द्र → दयार्द्र`. The boundary `या` is non-separable.
-    *   `अपि + इच्छा → अपीच्छा`. The boundary `पी` is non-separable.
-
-*   **Vowel Combination (guṇa/vṛddhi sandhi):** When two vowels merge into a new, single vowel (`े`, `ो`, `ै`, `ौ`).
-    *   `महा + उत्सव → महोत्सव`. The boundary `हो` is non-separable.
-    *   `राम + इति → रामेति`. The boundary `मे` is non-separable.
-    *   `सदा + एव → सदैव`. The boundary `दै` is non-separable.
-
 ### **Part 2: The Rigorous Processing Workflow**
 
 Follow these steps in strict order. **This is not a set of guidelines; it is an algorithm.**
@@ -65,16 +70,18 @@ Follow these steps in strict order. **This is not a set of guidelines; it is an 
 *   Remove hard-wrapped line breaks to create continuous paragraphs.
 *   Correct obvious typographical errors (e.g., a space in the middle of a word).
 *   Preserve intentional styles like **bold** and *italic*.
-*   Identify Sanskrit text and it's script (eg. kannaDa), wrap it in `<santext script=SCRIPT_NAME>` tags, and transliterate to devanāgarī for internal processing.
+*   Identify Sanskrit text and its script (eg. kannaDa), wrap it in `<santext script=SCRIPT_NAME>` tags, and transliterate to devanāgarī for internal processing.
 
 **Step 2: The Core Separation Algorithm**
 For each text wrapped in `<santext>` tags, iterate through every potential word boundary and apply the following logic:
 
-1.  **Check if Separable:** Using the principles and explicit examples in Part 1, determine if the boundary is separable. If it is non-separable, do nothing and move to the next boundary.
-2.  **Choose the Separator:**
-    *   If the words form a compound (samāsa), insert a **hyphen (`-`)**. Example: `पुण्य-पापैः`.
-    *   Otherwise, for all other separable sandhis, insert a **space (` `)**.
-3.  **Apply the Separation:** Insert the chosen separator, strictly adhering to the "Separation Principle" (Part 1, Rule 2). Do not change the characters that resulted from the sandhi.
+1.  **First Check (The Veto):** Examine the boundary. Is it a **non-separable** `dīrgha`, `guṇa`, or `vṛddhi` sandhi?
+    *   If **YES**, the Rule of Precedence applies. **Do nothing.** Do not split it. Move to the next boundary.
+2.  **Second Check (Separation):** If the boundary passed the first check (i.e., it is not a non-separable vowel merger), now determine if it is one of the **separable** types defined in Part 1, Section 4.B.
+    *   If **NO**, do nothing and move on.
+3.  **Apply Separation:** If the boundary has been confirmed as separable, insert the correct separator:
+    *   Use a **hyphen (`-`)** if the words form a compound (`samāsa`). Example: `पुण्य-पापैः`.
+    *   Use a **space (` `)** for all other separable cases. Example: `इत्य् एवम्`.
 
 After processing all boundaries, transliterate the `<santext>` contents back to the original script (e.g., kannaDa).
 
