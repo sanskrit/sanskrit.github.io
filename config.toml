@@ -14,7 +14,6 @@ disablePathToLower = true
   contactLink = "https://github.com/sanskrit/sanskrit.github.io/issues/new"
   env = "production"
   # disqusShortcode = "sanskrit-projects-site"
-  math = true
 
 [markup.goldmark.renderer]
    unsafe = true
