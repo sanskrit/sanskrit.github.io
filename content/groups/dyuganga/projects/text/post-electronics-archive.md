@@ -40,8 +40,8 @@ Longevity of several media, ranging from paper to stone, is surveyed in this ["k
 
 Currently, the most promising media for storing images of pages or plain text are:
 
-- High quality ceramic tiles
-- Nickel Disk
+- High quality ceramic tiles - either engrave with laser or do kiln-fired ceramic tile printing.
+- Nickel Disk with laser engraving.
 
 Reading mechanism - magnifying lens, microscopy.
 
