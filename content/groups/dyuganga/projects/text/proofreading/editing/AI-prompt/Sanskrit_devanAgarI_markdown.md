@@ -118,7 +118,9 @@ Fix texts only in `<details><summary>विश्वास-प्रस्तु
 
 <details><summary>उदाहरणानि</summary>
 
-- [VV](https://drive.google.com/file/d/15Md9izTKc2BzOHN6JyQEJTLIqttEN8QJ/view?usp=sharing, https://drive.google.com/file/d/1cXkDiVkm8WevSXkE7DOWjpA4vdhNg6zD/view?usp=sharing, https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221u1qAOsQ-MsL7PrSD5t1wqtZa70Z11UaM%22%5D,%22action%22:%22open%22,%22userId%22:%22109000762913288837175%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing)
+JUst to see, not use!
+
+- [VV](https://drive.google.com/file/d/15Md9izTKc2BzOHN6JyQEJTLIqttEN8QJ/view?usp=sharing), [TW](https://drive.google.com/file/d/1cXkDiVkm8WevSXkE7DOWjpA4vdhNg6zD/view?usp=sharing)
 
 </details>
 
