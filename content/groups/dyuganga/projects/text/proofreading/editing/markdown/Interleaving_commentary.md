@@ -4,7 +4,8 @@ title = "Interleaving commentary"
 +++
 असकृत् समूलटिप्पनीः प्रस्तोतव्याः स्युः। तदैवं तेषाम् प्रदर्शनम्। Commentary may be interleaved as follows:
 
-{{< figure src="../../../images/ApastambaDharmaSutram_0013.jpg" title="" class="thumbnail">}}
+![](../../../images/ApastambaDharmaSutram_0013.jpg)
+{title="" class="thumbnail"}
 
 __________________________
 ```

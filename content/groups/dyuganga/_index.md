@@ -4,9 +4,11 @@ sidebar: dyuganga_sidebar
 summary: Welcome page.
 ---
 
-{{< figure src="images/ashmanvatI.jpg" title="Dyugangā banner" >}}
+![](images/ashmanvatI.jpg)
+{title="Dyugangā banner"}
 
-{{< figure src="images/dg-homa-logo.gif" title="Dyugangā logo" class="thumbnail">}}
+![](images/dg-homa-logo.gif)
+{title="Dyugangā logo" class="thumbnail"}
 
 ## Goals ध्येयानि
 Dyugangā is a work group dedicated to the promotion of ever-victorious Hindu ideals and arts. It's current focus is in presenting important texts for easy study.
@@ -15,9 +17,10 @@ The texts may be presented as
 
 - audio files (eg: [MahAbhArata audio book project](projects/audio/mbh-audio/)), 
 - as web pages (eg: [Apastamba-gRhya-sUtra](https://vishvasa.github.io/vedAH_yajuH/taittirIyam/sUtram/ApastambaH/gRhyam/sUtra-TIkAH/), [Apastamba-dharma-sUtra](https://vishvasa.github.io/vedAH_yajuH/taittirIyam/sUtram/ApastambaH/dharma-sUtram/sarva-prastutiH/), [EkAgnikANDa commentary](https://vishvasa.github.io/vedAH_yajuH/taittirIyam/sUtram/ApastambaH/gRhyam/ekAgnikANDam/sarva-prastutiH/), [manu-smRti](https://vishvasa.github.io/kalpAntaram/smRtiH/manuH/sarva-prastutiH/05/), [raghuvaMsha](https://vishvasa.github.io/kAvyam/laxyam/padyam/kAlidAsaH/raghuvaMsham/sarva-prastutiH/01/), more [kalpa-texts](/groups/dyuganga/projects/text/proofreading/kalpa-texts/), [tattva-texts](/groups/dyuganga/projects/text/proofreading/tattva-texts/), [universal subhAShita DB](https://subhashita.github.io/saMskRtam/padyam/random/)), 
-- as dictionaries (eg: [stardict](https://sanskrit-coders.github.io/dictionaries/offline/stardict)). 
+- as dictionaries (eg: [stardict](https://sanskrit-coders.github.io/dictionaries/offline/stardict))
+- ebooks distributed on various platforms (eg: [book-pub](https://github.com/vishvAsa/book-pub/tree/master), amazon, google play). 
 
-Check out our [trello board](https://trello.com/b/d4dANdrD/%E0%A4%A6%E0%A5%8D%E0%A4%AF%E0%A5%81%E0%A4%97%E0%A4%99%E0%A5%8D%E0%A4%97%E0%A4%BE-dyuganga) for a more fine grained listing; or maybe subscribe to mail-streams for past and future announcements ([dg](https://groups.google.com/g/dyuganga), [hv](https://groups.google.com/g/hindu-vidya/), [san](https://groups.google.com/g/samskrita)).
+You may subscribe to mail-streams for past and future announcements ([dg](https://groups.google.com/g/dyuganga), [hv](https://groups.google.com/g/hindu-vidya/), [san](https://groups.google.com/g/samskrita)).
 
 The choice of material heavily depends on the special interests of its current lead (vedas, kalpa, purANa-s).
 
@@ -28,9 +31,7 @@ The choice of material heavily depends on the special interests of its current l
 
 सद्यश्च ग्रन्थाः संस्थाग्रण्या रुचिविशेषम् अनुसृत्य चिताः - वेदाः, इतिहासपुराणानि, कल्पवेदाङ्गग्रन्थाश् चेति।
 
-## Establishment संस्थापनम्
-The group started semi-formally in Feb 2020. It was hosted for a couple of months before the Wuhan pandemic under the aegis of shrI manjunath's Cleverkare, an entirely unrelated business. Since then it has been running mostly on Vishvas family funds. 
-
 ### Contribution दानम्
 Donations and sponsorship are welcome (use [contact page](contact/)) - they help offset operating costs (worker payments mainly ~1L/mo) and plan further projects. Project-specific sponsorship opportunities are occasionally advertised on our social media accounts and on certain mailing lists.
+
 

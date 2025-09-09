@@ -13,18 +13,21 @@ title = "Saving changes"
   - (Browser may block popups - enable popups. GitHub permission may be sought. etc..)
 - If needed, switch to the "Explorer view": [YT](https://youtu.be/6n22TxXi_yQ?t=558).
 
-{{< figure src="../../vscode/images/explorer.png" title="" >}}
+![](../../vscode/images/explorer.png)
+{title=""}
 
 - Navigate to the files you want to change and make your edits. You save changes by typing a "Commit message" and commiting + pushing.
 
-{{< figure src="../../vscode/images/commit.png" title="" >}}
+![](../../vscode/images/commit.png)
+{title=""}
 - Video demonstrations:
   - [here, till 7:55](https://youtu.be/yKLyfqL0A4M?t=462)
   - [Inserting Headings and saving](https://www.youtube.com/watch?v=BlOavkB2ooU)
 
 PS: To close unnecessary tabs, do as illustrated below:
 
-{{< figure src="../../vscode/images/close-tabs.png" title="" >}}
+![](../../vscode/images/close-tabs.png)
+{title=""}
 
 ## Syncing fork
 - प्रतिवारं (दीर्घविश्रान्तेः परम् अपि) कार्यारम्भात् प्राक् sync fork इति कुर्यात्।

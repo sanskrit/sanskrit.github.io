@@ -22,7 +22,8 @@ title = "+AI prompt"
 - All images and pdf files you upload are stored in [Google drive](https://drive.google.com/drive/folders/). Go there, look for and enter a directory called "Google AI Studio", and delete old files/ chats once in a while.
 - In case you need help, share the chat using the "<"-symbol in the top line (figure below). साहाय्यं चेद् अपेक्ष्यते - उपरि शीर्षिका-पङ्काव् "<"-चिह्नम् नुदित्वा प्रेषयतु। 
 
-{{< figure src="images/gemini-aistudio-message-options.png" title="" class="thumbnail">}}
+![](images/gemini-aistudio-message-options.png)
+{title="" class="thumbnail"}
 
 <details><summary>Stats</summary>
 

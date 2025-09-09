@@ -6,14 +6,16 @@ Often, footnotes which appear in the bottom of the page in a physical book, appe
 
 Every footnote has a **reference** position/ mark, and a **definition**. Example in the below image (right click and open it in a new window for clearer view):
 
-{{< figure src="../../../images/footnote_ref_def.png" title="" class="thumbnail">}}
+![](../../../images/footnote_ref_def.png)
+{title="" class="thumbnail"}
 
 In our markup, every footnote should have it's references and definition clearly marked. 
 
 ## Example 1
 Consider the footnote in the image below (right click and open it in a new window for clearer view):
 
-{{< figure src="../../../images/kANe-footnote-example.png" title="" class="thumbnail">}}
+![](../../../images/kANe-footnote-example.png)
+{title="" class="thumbnail"}
 
 Here is how it should be presented in the markdown file:
 
@@ -99,7 +101,8 @@ Regarding paragraph formatting, line separation etc.. - usual markdown conventio
 ```
 
 ## Quote used entirely replacing author's words
-{{< figure src="../../images/quote_entirely_replacing_author.jpg" title="" class="thumbnail">}}
+![](../../images/quote_entirely_replacing_author.jpg)
+{title="" class="thumbnail"}
 
 Reg. example above -  
 वस्तुतः "राजन्यवैश्ययोर् उपनयनम्" इत्यस्मिन् विभागे वर्तमानम् अखिलं ग्रन्थान्तराद् उद्धृतम् - आद्य्-अन्तयोर् वर्तमान-`"`-चिह्नेनैतज् ज्ञायते। तथापि स्ववचनस्थाने हि प्रयुक्तम्। अतस् तत्रोद्धरणचिह्नदानं नापेक्षितम्।

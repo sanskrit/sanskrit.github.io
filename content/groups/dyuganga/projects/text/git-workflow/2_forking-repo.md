@@ -21,6 +21,7 @@ title = "1 Forking-repo"
 </details>
 
 
-{{< figure src="../images/fork-creation.png" title="" >}}
+![](../images/fork-creation.png)
+{title=""}
 
 <script src="../contribution-page-customizer.js"></script>

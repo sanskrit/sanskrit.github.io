@@ -3,6 +3,7 @@ title: किशोरशर्मा
 unicode_script: devanagari
 ---
 
-{{< figure src="mugshot.jpg"  class="thumbnail">}}
+![](mugshot.jpg)
+{class="thumbnail"}
 
 भारद्वाजोऽसौ नैयायिकशास्त्रविद् देवप्रयागवासी हिमाचलप्रदेशे जातः।

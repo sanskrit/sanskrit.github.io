@@ -2,11 +2,13 @@
 title: Texts
 ---
 
-{{< figure src="http://i.imgur.com/h4K8Jqk.jpg"  class="thumbnail">}}
+![](http://i.imgur.com/h4K8Jqk.jpg)
+{class="thumbnail"}
 
 
 
-{{< figure src="http://i.imgur.com/hIrQSLf.png"  class="thumbnail">}}
+![](http://i.imgur.com/hIrQSLf.png)
+{class="thumbnail"}
 
 ## Why digitize?
 
@@ -23,7 +25,8 @@ title: Texts
 
 फलकादिषु जङ्गमयन्त्रेषु संस्कृतपुस्तकपठनं मे ऽतिरोचते। उदाहरणमत्र वीक्षेथाम्। तेनाधिकसंस्कृतपुस्तकानि तथा प्रकाश्येरन्निति काङ्क्षा मदीया। एवं प्रकाशनं नास्ति कठिनम्।
 
-[{{< figure src="https://i.imgur.com/MHj9suN.png"  class="thumbnail">}}
+[![](https://i.imgur.com/MHj9suN.png)
+{class="thumbnail"}
 
 ## How to contribute? [OBSOLETE]
 

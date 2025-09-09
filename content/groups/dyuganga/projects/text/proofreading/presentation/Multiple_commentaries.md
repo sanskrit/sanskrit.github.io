@@ -6,7 +6,10 @@ Example of how multiple commentaries can be presented - [RV shakala 1.1.1](https
 
 (Click images to englarge.)
 
-{{< figure src="../images/rv_1a" title="" class="thumbnail">}}
-{{< figure src="../images/rv_1b" title="" class="thumbnail">}}
-{{< figure src="../images/rv_1c" title="" class="thumbnail">}}
+![](../images/rv_1a)
+{title="" class="thumbnail"}
+![](../images/rv_1b)
+{title="" class="thumbnail"}
+![](../images/rv_1c)
+{title="" class="thumbnail"}
 

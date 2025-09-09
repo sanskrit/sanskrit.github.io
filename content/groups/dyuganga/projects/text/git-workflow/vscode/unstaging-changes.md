@@ -6,4 +6,5 @@ commit-तः अनपेक्षित-सञ्चिकाः एवं न
 
 "Staged changes" आवल्यां दृश्यमाना एव सञ्चिकाः संरक्ष्यन्ते । (commit भवन्ति। )
 
-{{< figure src="../images/unstage-changes.png" title="" class="thumbnail">}}
+![](../images/unstage-changes.png)
+{title="" class="thumbnail"}

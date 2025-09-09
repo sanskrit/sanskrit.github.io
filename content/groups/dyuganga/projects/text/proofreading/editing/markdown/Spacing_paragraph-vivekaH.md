@@ -24,9 +24,11 @@ Another paragraph.
 ```
 __________________________
 ### परिष्कारोदाहरणम्
-{{< figure src="../../../images/paragraph-spacing-errors.png" title="" class="thumbnail">}}
+![](../../../images/paragraph-spacing-errors.png)
+{title="" class="thumbnail"}
 
-{{< figure src="../../../images/paragraph-spacing-errors_fixed.png" title="" class="thumbnail">}}
+![](../../../images/paragraph-spacing-errors_fixed.png)
+{title="" class="thumbnail"}
 
 परिष्कारोदाहरणम् [अत्र](https://github.com/vishvAsa/vedAH/commit/a048b9f3e64af69f620b52b66efca4ba66935545)। 
 

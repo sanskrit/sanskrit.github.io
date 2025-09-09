@@ -10,11 +10,13 @@ Please strive to understand every work and sentence you edit.
 If in doubt, ask with pic on telegram (see figure below);  
 and mark the doubtful text with [[??]] sign in the file being edited. 
 
-{{< figure src="../../images/telegram-doubts.png" title="" class="thumbnail">}}
+![](../../images/telegram-doubts.png)
+{title="" class="thumbnail"}
 
 The doubts will usually be answered on the pull request; following which you'll follow the usual correction + updation [protocol](/groups/dyuganga/projects/text/git-workflow/5_sUchita-doSha-parihAra-prativachane) .
 
-{{< figure src="../../images/pull-request-doubt-clarification.png" title="" class="thumbnail">}}
+![](../../images/pull-request-doubt-clarification.png)
+{title="" class="thumbnail"}
 
 ## Response codes
 - s, स् indicate Yes (= typed text is correct. [[??]]-sign can be removed).

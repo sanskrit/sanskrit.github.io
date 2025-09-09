@@ -3,7 +3,8 @@ title: प्रदीपसिंहाचार्यः
 unicode_script: devanagari
 ---
 
-{{< figure src="mugshot.png"  class="thumbnail">}}
+![](mugshot.png)
+{class="thumbnail"}
 
 ## परिचयः 
 - नाम - सि आर् प्रदीपसिंहः, आचार्यः, चतुर्वेदी।

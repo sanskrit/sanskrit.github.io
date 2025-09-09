@@ -22,12 +22,14 @@ title = "Syncing fork"
 
 If sync is successful, you will see messages like the below in the pull request:
 
-{{< figure src="../../images/sync-fork-merge-success.png" title="">}}
+![](../../images/sync-fork-merge-success.png)
+{title=""}
 
 ## Overwriting your changes
 कदाचिद् sync fork इति नुदितय् एवं दृश्येत -
 
-{{< figure src="../../images/sync-fork_discard-changes.jpg" title="">}}
+![](../../images/sync-fork_discard-changes.jpg)
+{title=""}
 
 परिहारो [ऽन्यत्रोक्तः](../../6_conflicts?githubUserId=XYZ&repo=REPO) । 
 

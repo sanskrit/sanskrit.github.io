@@ -112,7 +112,8 @@ Rastelli:
 ```
 __________________________
 
-{{< figure src="../../../images/quotation_in_quotation.png" title="" class="thumbnail">}}
+![](../../../images/quotation_in_quotation.png)
+{title="" class="thumbnail"}
 
 #### Quotation unit उद्धरणैक्यम्
 एकस्माद् एव स्थानान् नैकेषाम् पङ्क्तीनाम् उद्धरणं प्रदर्शनीयं स्यात्। तादृशस्योद्धरणखण्डस्य सन्ततता सन्ततैः >-चिह्नैर् अङ्कनेन प्रदर्श्यते। यथोर्ध्वं "Rastelli"-इत्यादाव् उदाहरणे। 
