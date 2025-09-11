@@ -11,7 +11,7 @@ summary: Welcome page.
 {title="Dyugangā logo" class="thumbnail"}
 
 ## Goals ध्येयानि
-Dyugangā is a work group dedicated to the promotion of ever-victorious Hindu ideals and arts. It's current focus is in presenting important texts for easy study.
+Dyugangā (https://rebrand.ly/dyuganga) is a work group dedicated to the promotion of ever-victorious Hindu ideals and arts. It's current focus is in presenting important texts for easy study.
 
 The texts may be presented as 
 
