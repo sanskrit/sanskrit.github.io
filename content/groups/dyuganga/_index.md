@@ -16,9 +16,9 @@ Dyugangā (https://rebrand.ly/dyuganga) is a work group dedicated to the promoti
 The texts may be presented as 
 
 - audio files (eg: [MahAbhArata audio book project](projects/audio/mbh-audio/)), 
-- as web pages (eg: [Apastamba-gRhya-sUtra](https://vishvasa.github.io/vedAH_yajuH/taittirIyam/sUtram/ApastambaH/gRhyam/sUtra-TIkAH/), [Apastamba-dharma-sUtra](https://vishvasa.github.io/vedAH_yajuH/taittirIyam/sUtram/ApastambaH/dharma-sUtram/sarva-prastutiH/), [EkAgnikANDa commentary](https://vishvasa.github.io/vedAH_yajuH/taittirIyam/sUtram/ApastambaH/gRhyam/ekAgnikANDam/sarva-prastutiH/), [manu-smRti](https://vishvasa.github.io/kalpAntaram/smRtiH/manuH/sarva-prastutiH/05/), [raghuvaMsha](https://vishvasa.github.io/kAvyam/laxyam/padyam/kAlidAsaH/raghuvaMsham/sarva-prastutiH/01/), more [kalpa-texts](/groups/dyuganga/projects/text/proofreading/kalpa-texts/), [tattva-texts](/groups/dyuganga/projects/text/proofreading/tattva-texts/), [universal subhAShita DB](https://subhashita.github.io/saMskRtam/padyam/random/)), 
+- as web pages (eg. linked in our website: [Apastamba-gRhya-sUtra](https://vishvasa.github.io/vedAH_yajuH/taittirIyam/sUtram/ApastambaH/gRhyam/sUtra-TIkAH/), [Apastamba-dharma-sUtra](https://vishvasa.github.io/vedAH_yajuH/taittirIyam/sUtram/ApastambaH/dharma-sUtram/sarva-prastutiH/), [EkAgnikANDa commentary](https://vishvasa.github.io/vedAH_yajuH/taittirIyam/sUtram/ApastambaH/gRhyam/ekAgnikANDam/sarva-prastutiH/), [manu-smRti](https://vishvasa.github.io/kalpAntaram/smRtiH/manuH/sarva-prastutiH/05/), [raghuvaMsha](https://vishvasa.github.io/kAvyam/laxyam/padyam/kAlidAsaH/raghuvaMsham/sarva-prastutiH/01/), more [kalpa-texts](/groups/dyuganga/projects/text/proofreading/kalpa-texts/), [tattva-texts](/groups/dyuganga/projects/text/proofreading/tattva-texts/), [universal subhAShita DB](https://subhashita.github.io/saMskRtam/padyam/random/)), 
 - as dictionaries (eg: [stardict](https://sanskrit-coders.github.io/dictionaries/offline/stardict))
-- ebooks distributed on various platforms (eg: [book-pub](https://github.com/vishvAsa/book-pub/tree/master), amazon, google play). 
+- ebooks distributed on various platforms - freely where allowed (eg: [vishvasa.github.io/book-pub](https://vishvasa.github.io/book-pub), amazon, google play). 
 
 You may subscribe to mail-streams for past and future announcements ([dg](https://groups.google.com/g/dyuganga), [hv](https://groups.google.com/g/hindu-vidya/), [san](https://groups.google.com/g/samskrita)).
 
@@ -32,6 +32,6 @@ The choice of material heavily depends on the special interests of its current l
 सद्यश्च ग्रन्थाः संस्थाग्रण्या रुचिविशेषम् अनुसृत्य चिताः - वेदाः, इतिहासपुराणानि, कल्पवेदाङ्गग्रन्थाश् चेति।
 
 ### Contribution दानम्
-Donations and sponsorship are welcome (use [contact page](contact/)) - they help offset operating costs (worker payments mainly ~1L/mo) and plan further projects. Project-specific sponsorship opportunities are occasionally advertised on our social media accounts and on certain mailing lists.
+Donations and sponsorship are welcome (use [contact page on our website](contact/)) - they help offset operating costs (eg. worker payments mainly ~1L/mo, book distribution) and plan further projects. Project-specific sponsorship opportunities are occasionally advertised on our social media accounts and on certain mailing lists.
 
 
