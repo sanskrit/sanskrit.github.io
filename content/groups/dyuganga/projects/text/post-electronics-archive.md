@@ -76,6 +76,14 @@ TODO: Contact Long Now foundation regarding reuse of their Rosetta project tech.
 
 TODO: Contact Arctic world archive 
 
+### Volume and weight
+> 1 cr. pandulipi with avg. 100 pages -  
+> My weight & vol. calc are for 75-80 GSM paper.  
+> 1,575 cu. m., 1,250 tonnes for A5 duplex.  
+> 55 rooms of 10 x 10 x 10 feet.  
+> 
+> HDD weight: 100 kg - 100 x 10 TB each.
+
 ## Archive locations
 Redundant copies of texts should be preserved in geographically separated locations. Some criteria - 
 
