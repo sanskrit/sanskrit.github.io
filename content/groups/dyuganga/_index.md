@@ -18,7 +18,9 @@ The texts may be presented as
 - audio files (eg: [MahAbhArata audio book project](projects/audio/mbh-audio/)), 
 - as web pages (eg. linked in our website: [Apastamba-gRhya-sUtra](https://vishvasa.github.io/vedAH_yajuH/taittirIyam/sUtram/ApastambaH/gRhyam/sUtra-TIkAH/), [Apastamba-dharma-sUtra](https://vishvasa.github.io/vedAH_yajuH/taittirIyam/sUtram/ApastambaH/dharma-sUtram/sarva-prastutiH/), [EkAgnikANDa commentary](https://vishvasa.github.io/vedAH_yajuH/taittirIyam/sUtram/ApastambaH/gRhyam/ekAgnikANDam/sarva-prastutiH/), [manu-smRti](https://vishvasa.github.io/kalpAntaram/smRtiH/manuH/sarva-prastutiH/05/), [raghuvaMsha](https://vishvasa.github.io/kAvyam/laxyam/padyam/kAlidAsaH/raghuvaMsham/sarva-prastutiH/01/), more [kalpa-texts](/groups/dyuganga/projects/text/proofreading/kalpa-texts/), [tattva-texts](/groups/dyuganga/projects/text/proofreading/tattva-texts/), [universal subhAShita DB](https://subhashita.github.io/saMskRtam/padyam/random/)), 
 - as dictionaries (eg: [stardict](https://sanskrit-coders.github.io/dictionaries/offline/stardict))
-- ebooks distributed on various platforms - freely where allowed (eg: [vishvasa.github.io/book-pub](https://vishvasa.github.io/book-pub), amazon, google play). 
+- ebooks distributed on various platforms - (eg: [vishvasa.github.io/book-pub](https://vishvasa.github.io/book-pub), amazon, google play). Formats include md, pdf (A4, A5), epub, azw3, html, etc. 
+
+We distribute these for free, and under a CC BY 4.0 license. (Platforms may levy their fees.)
 
 You may subscribe to mail-streams for past and future announcements ([dg](https://groups.google.com/g/dyuganga), [hv](https://groups.google.com/g/hindu-vidya/), [san](https://groups.google.com/g/samskrita)).
 
