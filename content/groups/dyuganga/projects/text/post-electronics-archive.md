@@ -94,6 +94,7 @@ which can utilize and care for the texts.
 
 For example, in India and surroundings:
 
+- pAjaka uDupi (tAra prakAshana keeps an archive there.)
 - mattUru village, karNATaka
 - gokarNa, karNATaka
 - shrIrangam, tamiL nADu
