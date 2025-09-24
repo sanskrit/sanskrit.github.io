@@ -15,7 +15,6 @@ ORIGINAL VAKYA OR VERSE
 TRANSLATION
 </details>
 
-
 <details><summary>मूलम्</summary>
 
 ORIGINAL VAKYA OR VERSE (SAME AS IN विश्वास-प्रस्तुतिः ABOVE)
@@ -26,5 +25,8 @@ so the newlines after the summary tag are significant.
 Don't use html tags (like BR) where markdown suffices (2 like spaces at the end of the line instead of BR tag).
 
 Wrap the entire output in a markdown code block so that spaces may be verified and copied.
+
+Rules regarding the English translation -  
+Use proper ISO 15919 diacritics.
 ```
 
