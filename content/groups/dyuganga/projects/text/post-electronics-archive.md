@@ -124,6 +124,12 @@ Outside India:
 - A temple in Guyana or Suriname, South America
 - The Latin American Hindu colony, South America
 
+### Notable examples
+- Mithila Kunj, Vrindavan is building a temple with tiles having all shlokas of srimad bhAgavatam engraved
+- 80 Yrs Old Laxmi Narayan Temple, Engraved With Geeta Shlokos On Temple Walls At Jharsuguda : [TW](https://m.youtube.com/watch?v=hmLNu7mSD1A)
+- Also, srI krishna janmabhumi recently (near 2025) got srimad bhAgavatam engraved in gold plates. Already had copper ones
+
+
 ## Preservation need
 Human brain is limited - so important texts need to be preserved.  
 For example:
