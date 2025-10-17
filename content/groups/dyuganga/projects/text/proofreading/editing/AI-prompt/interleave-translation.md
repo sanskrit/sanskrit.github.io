@@ -9,7 +9,7 @@ Separate sentences and interleave translation in the following format for each s
 
 <details open><summary>विश्वास-प्रस्तुतिः</summary>
 
-ORIGINAL SENTENCE
+ORIGINAL SENTENCE, with only sandhis in sentence ends resolved.
 </details>
 
 <details><summary>English</summary>
@@ -17,9 +17,14 @@ ORIGINAL SENTENCE
 TRANSLATION
 </details>
 
+<details><summary>English - Notes</summary>
+
+ANY NOTES ASSOCIATED WITH THE TRANSLATION. SKIP THIS DETAILS BLOCK IF THERE ARE NO NOTES.
+</details>
+
 <details><summary>मूलम्</summary>
 
-ORIGINAL SENTENCE
+ORIGINAL SENTENCE (WITH NO CHANGES)
 </details>
 
 Suggest any corrections in this format : [[OLD|NEW]].
