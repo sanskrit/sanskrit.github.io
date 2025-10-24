@@ -33,3 +33,29 @@ Suggest any corrections in this format : [[OLD|NEW]].
 
 The empty lines shown above are significant and must be retained. Note that there should be no empty line before `</details>` tag.
 ```
+
+
+Alternate:
+
+```markdown
+I will give you two texts - 1 is clean source of the sanskrit original. 2 is OCR of the same text with hindI commentary. Using this, produce a md file which interleaves the commentary in this form
+
+<details open><summary>विश्वास-प्रस्तुतिः</summary>
+
+ORIGINAL VAKYA OR VERSE
+</details>
+
+<details><summary>टीका</summary>
+
+COMMENTARY
+</details>
+
+<details><summary>मूलम्</summary>
+
+ORIGINAL VAKYA OR VERSE (SAME AS IN विश्वास-प्रस्तुतिः ABOVE)
+</details>
+
+
+Suggest corrections only in the commentary portion, only in this form - [OLD|NEW]. No wanton change of text.  
+Use markdown format for footnotes. (if footnote named 1 appears in page 12, make the reference 12_1).
+```
