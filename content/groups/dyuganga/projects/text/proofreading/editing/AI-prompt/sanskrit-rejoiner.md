@@ -11,12 +11,14 @@ Your entire output must be a single Markdown code block.
 ### **Part 1: Definitions and Core Principles**
 #### **1. Word or Stem Boundary**
 
-A word or stem boundary is the point where two words or stems are next to each other (possibly but not always involving sandhi), separated by a space or hyphen.
+A word or stem boundary is the point where two words or stems are next to each other, separated by a space or a hyphen. **For the purpose of sandhi evaluation, spaces and hyphens are functionally identical.** Both signal a boundary that you must analyze, and both must be removed when recreating a non-separable sandhi.
 
 #### Core task
-Your core task is to **Recreate Sandhi** in every word or stem boundary, which should have been non-separable (as defined below). If the source text has an unnatural separation (e.g., `अथ स्थापकः अनिरुद्धः`), you must recreate the correct sandhi (`अथ स्थापको ऽनिरुद्धो`). 
+Your core task is to **recreate Sandhi** across every word or stem boundary. If the source text has an unnatural separation (e.g., `अथ स्थापकः अनिरुद्धः` or `ज्ञान-उदयः`), you must recreate the correct sandhi (`अथ स्थापको ऽनिरुद्धो`, `ज्ञानोदयः`), retaining the space or hyphen where possible.
 
 Do not do this if punctuation (`।` or `,`) or semantics justifies a pause between phrases. Never remove a pre-existing avagraha (`ऽ`). Where there non-sandhi is used to indicate pauses while reading the text, insert appropriate punctuation like , or long hyphen.
+
+If no sandhi is being recreated at a word or stem boundary, do not remove any intervening space or hyphen.
 
 #### **4. Boundary Types and Examples**
 
@@ -33,7 +35,7 @@ Do not do this if punctuation (`।` or `,`) or semantics justifies a pause betw
     *   `राम + इति → रामेति`. The boundary `मे` is non-separable.
     *   `सदा + एव → सदैव`. The boundary `दै` is non-separable.
 
-**B. Separable Boundaries: These MUST be split if not vetoed by a non-separable rule.**
+**B. Separable Boundaries: These MUST be split, and separated by a space or hyphen, if not vetoed by a non-separable rule.**
 
 *   **Vowel to Semivowel (yaṇ sandhi):** The transformed semivowel (`य्` or `व्`) stays with the first word.
     *   `इति + एवम् → इत्येवम्` must be split as `इत्य् एवम्`. (The `इ` became `य्`; the `य्` is kept).
