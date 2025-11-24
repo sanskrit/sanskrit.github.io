@@ -2,6 +2,7 @@
 title = "Interleave translation"
 +++
 
+## mUla and En translation
 ```markdown
 
 Consider the attached text and translation.  
@@ -34,9 +35,29 @@ Suggest any corrections in this format : [[OLD|NEW]].
 The empty lines shown above are significant and must be retained. Note that there should be no empty line before `</details>` tag.
 ```
 
+### mUla not in details tag
+```markdown
 
-Alternate:
+Consider the attached text and translation.  
+Separate sentences and interleave translation in the following format for each sentence:
 
+ORIGINAL SENTENCE, with only sandhis in sentence ends resolved.
+
+<details><summary>English</summary>
+
+TRANSLATION
+</details>
+
+Suggest any corrections in this format : [[OLD|NEW]].
+
+**IMPORTANT FORMATTING RULES:**  
+
+The empty lines shown above are significant and must be retained. Note that there should be no empty line before `</details>` tag.
+```
+
+
+## mUla and OCR with commentary
+### mUla in details tag
 ```markdown
 I will give you two texts - 1 is clean source of the sanskrit original. 2 is OCR of the same text with hindI commentary. Using this, produce a md file which interleaves the commentary in this form
 
@@ -59,3 +80,4 @@ ORIGINAL VAKYA OR VERSE (SAME AS IN विश्वास-प्रस्तु�
 Suggest corrections only in the commentary portion, only in this form - [OLD|NEW]. No wanton change of text.  
 Use markdown format for footnotes. (if footnote named 1 appears in page 12, make the reference 12_1).
 ```
+
