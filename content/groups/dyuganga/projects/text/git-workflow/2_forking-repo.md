@@ -12,7 +12,7 @@ title = "1 Forking-repo"
 
 - Sign in to https://github.com (Create an account if you don't already have one).
 - If https://github.com/XYZ/REPO exists beforehand (i.e. you don't get a 404 message on clicking this link), please delete it by going to settings using your browser (Go to https://github.com/XYZ/REPO/settings#danger-zone, navigate to the end of the page, and click on "Delete this repository".) .
-- Go to https://github.com/vishvAsa/REPO/fork and fork (there should be a "Create Fork" button). When forking, make sure to uncheck "Copy the master branch only" option (ATTENTION! DON'T FORGET THIS. PLEASE SEE PIC BELOW). Thence, you will get https://github.com/XYZ/REPO/tree/content .
+- Go to https://github.com/vishvAsa/REPO/fork and fork (there should be a "Create Fork" button). When forking, make sure to uncheck "Copy the master/content branch only" option (ATTENTION! DON'T FORGET THIS. PLEASE SEE PIC BELOW). Thence, you will get https://github.com/XYZ/REPO/tree/content .
 
 <details><summary>संस्कृतानुवादः (द्रष्टुं नोद्यम्)</summary>
 
