@@ -79,9 +79,11 @@ For example:
 
 
 ### What is a long quote?
-दीर्घं नाम वाक्यात् पङ्क्तेर् वाऽधिकम्।
+दीर्घं नाम वाक्यात् पङ्क्तेर् वाऽधिकम्।  
+भिन्न-निरन्तर-पङ्क्ति-सङ्ग्रहे दर्श्यते चेद् अपि दीर्घम् इति गण्यताम्।
 
-A quote is said to be long if it is longer than a sentence or line.
+A quote is said to be long if it is longer than a sentence or line.  
+Even a short quote, if displayed in a separate paragraph or line is called a "long quote".
 
 ## Formatting overview
 - यद्य् उद्धृतः पाठो ह्रस्वः, मूलमध्य एव रक्षितुम् उचितम् "-चिह्न-प्रयोगेण। यद्य् उद्धृतः पाठो दीर्घः, तर्हि >-चिह्नेन सह विन्यास इष्यते।
