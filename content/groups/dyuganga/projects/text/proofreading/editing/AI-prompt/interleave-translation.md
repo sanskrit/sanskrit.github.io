@@ -55,6 +55,27 @@ Suggest any corrections in this format : [[OLD|NEW]].
 The empty lines shown above are significant and must be retained. Note that there should be no empty line before `</details>` tag.
 ```
 
+### Insert above mUla
+```markdown
+You will be given some text and a translation or commentary.  
+In the text given, you will see tags like the below- 
+
+<details><summary>मूलम्</summary>
+
+ORIGINAL_TEXT
+</details>
+
+Please add the relevant bit from the translation provided above every such tag, in the following format:
+
+<details><summary>English</summary>
+
+TRANSLATION
+</details>
+
+Are you ready?
+```
+
+
 
 ## mUla and OCR with commentary
 ### mUla in details tag
