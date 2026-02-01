@@ -65,6 +65,8 @@ In the text given, you will see tags like the below-
 ORIGINAL_TEXT
 </details>
 
+Note - We're not referring to `<details><summary>मूलम् (संयुक्तम्)</summary> ... </details>` blocks.
+
 Please add the relevant bit from the translation provided above every such tag, in the following format:
 
 <details><summary>English</summary>
