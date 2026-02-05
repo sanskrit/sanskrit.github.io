@@ -11,7 +11,7 @@ summary: Welcome page.
 {title="Dyugangā logo" class="thumbnail"}
 
 ## Goals ध्येयानि
-Dyugangā (https://rebrand.ly/dyuganga) is a work group dedicated to the promotion of ever-victorious Hindu ideals and arts. It's current focus is in presenting important texts for easy study.
+Dyugangā (https://rebrand.ly/dyuganga) is a work group dedicated to the promotion of ever-victorious Hindu ideals and arts. It's current focus is in presenting important texts for easy study. Long term goal (https://rebrand.ly/dg-archive) is to save texts to last for millennia into the coming post-electronic/ industrial age.
 
 The texts may be presented as 
 
@@ -20,16 +20,15 @@ The texts may be presented as
 - as dictionaries (eg: [stardict](https://sanskrit-coders.github.io/dictionaries/offline/stardict))
 - ebooks distributed on various platforms - (eg: [vishvasa.github.io/book-pub](https://vishvasa.github.io/book-pub), amazon, google play - [SVK](https://play.google.com/store/books/series?id=EeyGHAAAABCW8M) [SVT](https://play.google.com/store/books/series?id=deyGHAAAABDy8M) [का](https://play.google.com/store/books/series?id=EuyGHAAAABCV8M)). Formats include md, pdf (A4, A5), epub, azw3, html, etc. 
 
-We distribute these for free, and under a CC BY 4.0 license. (Platforms may levy their fees.)
-
-You may subscribe to mail-streams for past and future announcements ([dg](https://groups.google.com/g/dyuganga), [hv](https://groups.google.com/g/hindu-vidya/), [san](https://groups.google.com/g/samskrita)).
+We distribute these for free, and under a CC BY 4.0 license. (Platforms may levy their fees.) You may subscribe to mail-streams for past and future announcements ([dg](https://groups.google.com/g/dyuganga), [hv](https://groups.google.com/g/hindu-vidya/), [san](https://groups.google.com/g/samskrita)). 
 
 The choice of material heavily depends on the special interests of its current lead (vedas, kalpa, purANa-s).
 
 ### संस्कृतानुवादः
-द्युगङ्गा नाम कार्यसंस्था ऽजेयानां भारतीयपुरुषार्थपरिकल्पनानाञ्च हिन्दुककलानाञ्च प्रसारणाय वर्तते। तदीयस् स्थूलोद्देशोऽधुना प्रमुखग्रन्थानाम् अध्ययनसौकर्याय प्रस्तुतिः। ततो ग्रन्थसङ्कलनकेन्द्रम् इति वक्तुमलम्।
+द्युगङ्गा नाम कार्यसंस्था - अजेयानां भारतीयपुरुषार्थपरिकल्पनानाञ्च, हिन्दुककलानाञ्च प्रसारणाय वर्तते।  
+तदीयस् स्थूलोद्देशोऽधुना प्रमुखग्रन्थानाम् अध्ययनसौकर्याय प्रस्तुतिः। ततो ग्रन्थ-सङ्कलन-केन्द्रम् इति वक्तुम् अलम्। दूरोद्देशस् तु (https://rebrand.ly/dg-archive) आधुनिक-शिला-तैल-युगात् परम् अपि सहस्राधिक-वर्षाणि यावद् ग्रन्थ-रक्षा।
 
-ग्रन्थानाम् प्रस्तुतिर् ध्वनिसञ्चिकाभिस् स्यात् (यथा [महाभारतपारायणप्रसारणे](https://sanskrit.github.io/groups/dyuganga/projects/audio/mbh-audio/)), जालक्षेत्रपृष्ठैर् वा (यथा [विश्वासस्य मन्त्रटिप्पनीषु](https://vishvasa.github.io/vedAH_sAma/paravastu-saama/devaH/agniH/mahAvaishvAnara-vratam/), [एकाग्निकाण्डटीका](https://vishvasa.github.io/vedAH_yajuH/taittirIyam/sUtram/ApastambaH/gRhyam/ekAgnikANDam/sarva-prastutiH/1_01a/)), शब्दकोशैर् वाऽपि ([stardict](https://sanskrit-coders.github.io/dictionaries/offline/stardict))।
+ग्रन्थानाम् प्रस्तुतिर् ध्वनिसञ्चिकाभिस् स्यात् (यथा [महाभारतपारायणप्रसारणे](https://sanskrit.github.io/groups/dyuganga/projects/audio/mbh-audio/)), जालक्षेत्रपृष्ठैर् वा (यथा [विश्वासस्य मन्त्रटिप्पनीषु](https://vishvasa.github.io/vedAH_sAma/paravastu-saama/devaH/agniH/mahAvaishvAnara-vratam/), [एकाग्निकाण्डटीका](https://vishvasa.github.io/vedAH_yajuH/taittirIyam/sUtram/ApastambaH/gRhyam/ekAgnikANDam/sarva-prastutiH/1_01a/)), शब्दकोशैर् वाऽपि ([stardict](https://sanskrit-coders.github.io/dictionaries/offline/stardict))। इमे ऽस्मत्पक्षतो मुक्तरीत्या प्रसार्यन्ते।
 
 सद्यश्च ग्रन्थाः संस्थाग्रण्या रुचिविशेषम् अनुसृत्य चिताः - वेदाः, इतिहासपुराणानि, कल्पवेदाङ्गग्रन्थाश् चेति।
 
