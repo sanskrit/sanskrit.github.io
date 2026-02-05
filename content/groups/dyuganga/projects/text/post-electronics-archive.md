@@ -137,7 +137,7 @@ Agamas prescribe that temples should have libraries of important texts. This was
 In modern times -
 
 - Mithila Kunj, Vrindavan is building a temple with tiles having all shlokas of srimad bhAgavatam engraved
-- 80 Yrs Old Laxmi Narayan Temple, Engraved With Geeta Shlokos On Temple Walls At Jharsuguda : [TW](https://m.youtube.com/watch?v=hmLNu7mSD1A)
+- 80 Yrs Old Laxmi Narayan Temple, Engraved With Geeta Shlokas On Temple Walls At Jharsuguda : [TW](https://m.youtube.com/watch?v=hmLNu7mSD1A)
 - Also, srI krishna janmabhumi recently (near 2025) got srimad bhAgavatam engraved in gold plates. Already had copper ones
 
 
