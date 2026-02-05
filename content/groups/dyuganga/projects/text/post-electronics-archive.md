@@ -125,21 +125,7 @@ Outside India:
 - The Latin American Hindu colony, South America
 
 ### Notable examples
-Agamas prescribe that temples should have libraries of important texts. This was observed in practice - 
-
-> These (annamAchArya and co) Sankirtanas totaling to about 32,000 in number, along with other works, became inscribed in copper plates and were stored in a stone-built cell called ‘Sankirtana Bhandaram’ (i.e., the storehouse of Sankirtanas), located right adjacent to the shrine of Acharya Rāmānuja, in the Tirumamani Mantapam within the Vimana Pradakshina of the Tirumala temple. This storehouse exists till today. It is indeed a place where reverence has to be paid because this was the place of safe concealment of the copper plates bearing the Sankirtanas for nearly four centuries, until they were removed in the mid 1900’s for the purpose of publication. - advitIyaH
-
-> In Tamil Nadu, libraries attached to temples were known as sarasvatI-bhaNDAras. For instance, an inscription of Jatavarman Sundara Pandyan at Chidambaram temple describes the functioning of such a library at that temple along with officials associated with it. (Example via TS kRShNan.)  
-\- Another inscription of 1369 CE records that Kampana Udayar of the Vijayanagara dynasty established a Saraswathi Bhandaram in the Kanchi Varadharaja Perumal temple, ensuring its upkeep.  
-\- Likewise, a Nayak-period inscription from Srirangam mentions a Saraswathi Bhandaram and details a donation of one lakh (100,000 kasu) for the installation of the images of Sarasvati, Hayagriva, and Veda Vyasa in the temple library, with regular offerings dedicated to these deities.
-
-
-In modern times -
-
-- Mithila Kunj, Vrindavan is building a temple with tiles having all shlokas of srimad bhAgavatam engraved
-- 80 Yrs Old Laxmi Narayan Temple, Engraved With Geeta Shlokas On Temple Walls At Jharsuguda : [TW](https://m.youtube.com/watch?v=hmLNu7mSD1A)
-- Also, srI krishna janmabhumi recently (near 2025) got srimad bhAgavatam engraved in gold plates. Already had copper ones
-
+See separate [page](https://vishvAsa.github.io/notes/sapiens/branches/Aryan/satem/indo-iranian/indo-aryan/resources/archives).
 
 ## Preservation need
 Human brain is limited - so important texts need to be preserved.  
