@@ -11,7 +11,7 @@ summary: Welcome page.
 {title="Dyugangā logo" class="thumbnail"}
 
 ## Goals ध्येयानि
-Dyugangā (https://rebrand.ly/dyuganga) is a work group dedicated to the promotion of ever-victorious Hindu ideals and arts. It's current focus is in presenting important texts for easy study. Long term goal (https://rebrand.ly/dg-archive) is to save texts to last for millennia into the coming post-electronic/ industrial age.
+Dyugangā is a work group dedicated to the promotion of ever-victorious Hindu ideals and arts. It's current focus is in presenting important texts for easy study. Long term goal (https://rebrand.ly/dg-archive) is to save texts to last for millennia into the coming post-electronic/ industrial age.
 
 The texts may be presented as 
 
@@ -28,11 +28,24 @@ The choice of material heavily depends on the special interests of its current l
 द्युगङ्गा नाम कार्यसंस्था - अजेयानां भारतीयपुरुषार्थपरिकल्पनानाञ्च, हिन्दुककलानाञ्च प्रसारणाय वर्तते।  
 तदीयस् स्थूलोद्देशोऽधुना प्रमुखग्रन्थानाम् अध्ययनसौकर्याय प्रस्तुतिः। ततो ग्रन्थ-सङ्कलन-केन्द्रम् इति वक्तुम् अलम्। दूरोद्देशस् तु (https://rebrand.ly/dg-archive) आधुनिक-शिला-तैल-युगात् परम् अपि सहस्राधिक-वर्षाणि यावद् ग्रन्थ-रक्षा।
 
-ग्रन्थानाम् प्रस्तुतिर् ध्वनिसञ्चिकाभिस् स्यात् (यथा [महाभारतपारायणप्रसारणे](https://sanskrit.github.io/groups/dyuganga/projects/audio/mbh-audio/)), जालक्षेत्रपृष्ठैर् वा (यथा [विश्वासस्य मन्त्रटिप्पनीषु](https://vishvasa.github.io/vedAH_sAma/paravastu-saama/devaH/agniH/mahAvaishvAnara-vratam/), [एकाग्निकाण्डटीका](https://vishvasa.github.io/vedAH_yajuH/taittirIyam/sUtram/ApastambaH/gRhyam/ekAgnikANDam/sarva-prastutiH/1_01a/)), शब्दकोशैर् वाऽपि ([stardict](https://sanskrit-coders.github.io/dictionaries/offline/stardict))। इमे ऽस्मत्पक्षतो मुक्तरीत्या प्रसार्यन्ते।
+ग्रन्थानाम् प्रस्तुतिर् ध्वनिसञ्चिकाभिस् स्यात् (यथा [महाभारतपारायणप्रसारणे](https://sanskrit.github.io/groups/dyuganga/projects/audio/mbh-audio/)), जाल-क्षेत्र-पृष्ठैर् वा (यथा [विश्वासस्य मन्त्रटिप्पनीषु](https://vishvasa.github.io/vedAH_sAma/paravastu-saama/devaH/agniH/mahAvaishvAnara-vratam/), [एकाग्निकाण्डटीका](https://vishvasa.github.io/vedAH_yajuH/taittirIyam/sUtram/ApastambaH/gRhyam/ekAgnikANDam/sarva-prastutiH/1_01a/)), शब्द-कोशैर् वाऽपि ([stardict](https://sanskrit-coders.github.io/dictionaries/offline/stardict))। इमे ऽस्मत्-पक्षतो मुक्त-रीत्या प्रसार्यन्ते। सद्यश्च ग्रन्थाः संस्थाग्रण्या रुचिविशेषम् अनुसृत्य चिताः - वेदाः, इतिहास-पुराणानि, कल्प-वेदाङ्ग-ग्रन्थाश् चेति।
 
-सद्यश्च ग्रन्थाः संस्थाग्रण्या रुचिविशेषम् अनुसृत्य चिताः - वेदाः, इतिहासपुराणानि, कल्पवेदाङ्गग्रन्थाश् चेति।
-
-### Contribution दानम्
-Donations and sponsorship are welcome (use [contact page on our website](https://sanskrit.github.io/groups/dyuganga/contact/)) - they help offset operating costs (eg. worker payments mainly ~1L/mo, book distribution) and plan further projects. Project-specific sponsorship opportunities are occasionally advertised on our social media accounts and on certain mailing lists.
+### Contribution, contact
+अस्मत्-सम्पर्को जालसुलभः (Contact website) - https://rebrand.ly/dyuganga । Serious volunteering, donations and sponsorship are welcome (use [contact page on our website](https://sanskrit.github.io/groups/dyuganga/contact/)) - they help offset operating costs (eg. worker payments mainly ~1L/mo, book distribution) and plan further projects. Project-specific sponsorship opportunities are occasionally advertised on our social media accounts and on certain mailing lists.
 
 
+## वन्दनीय-वन्दना
+(अनेनोद्यमेन नैषां महतां साक्षात् सम्बन्ध ऊह्यः ।)
+
+<div class="js_include" url="/rAmAnujIyam/vyakti-shlokAdi/paLHaveri-laxmI-nRsiMhaH.md" unfilled newLevelForH1="5" includeTitle="false"> 
+
+इञ्जिमेडु-यति-सिंह-**रक्षितो**  
+राजगोप--बुध-गोप-**चारितः**।  
+सिंह-लक्ष्म-नर-नाम-भाग् **बभौ**  
+दिव्य-सूक्ति-वन-मार्ग-**नायकः**॥
+
+यद्-आचार-स्वभावाभ्यां  
+"ज्ञेयम् अस्त्य् अत्र वैष्णवे"।  
+इति निष्कर्ष-जिज्ञासे,  
+**नौमि** तं श्री-नृसिंहकम्॥
+</div>  
