@@ -58,21 +58,23 @@ The empty lines shown above are significant and must be retained. Note that ther
 ### Insert above mUla
 ```markdown
 You will be given some text and a translation or commentary.  
-In the text given, you will see tags like the below- 
 
-<details><summary>मूलम्</summary>
+**Your Task:**
+1. Identify every `<details><summary>मूलम्</summary> ... </details>` block.
+  - (Ignore `मूलम् (संयुक्तम्)` blocks).
+2. Insert the corresponding English translation segment directly **above** each identified tag.
+3. Use the format:
+   <details><summary>English</summary>
 
-ORIGINAL_TEXT
-</details>
+   TRANSLATION_TEXT
+   </details>
 
-Note - We're not referring to `<details><summary>मूलम् (संयुक्तम्)</summary> ... </details>` blocks.
-
-Please add the relevant bit from the translation provided above every such tag, in the following format:
-
-<details><summary>English</summary>
-
-TRANSLATION
-</details>
+**Strict Constraints:**
+- **Script Integrity:** Ensure that all Sanskrit text remains in Devanagari. If you find stray Latin characters within a Devanagari block (e.g., "ye" instead of "ये"), correct them to the proper Devanagari character.
+- **Verbatim Copying:** Outside of fixing stray Latin letters, do not change a single character, accent mark (svara), or punctuation in the original Sanskrit text.
+- **No Extra Commentary:** Do not add your own explanations or "Here is the text" headers.
+- **Preserve Formatting:** Maintain all original tags, spacing, and accent marks (svara marks) in the source text exactly as provided.
+- **Sequential Matching:** Match the translation sentences to the 'मूलम्' blocks in the order they appear.
 
 Are you ready?
 ```

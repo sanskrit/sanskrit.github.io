@@ -37,14 +37,24 @@ To do this, methodically iterate over every (mUla, context title) pair and look 
   - Does every word in the विश्वास-प्रस्तुतिः match the text in मूलम्?
   - **Sequence Check:** Does the order match the 1-8 list exactly?
   - Did I move text, or did I copy?
+  - If I find that I have accidentally used the `मूलम्` text (the flowing verse) inside a `पद-पाठः` block (the word-for-word breakdown), I will delete it and copy the correct string from the source.
 
 ### CRITICAL EXECUTION RULES (The "No-Drift" Protocol) 
 - Don't move or alter मूलम् blocks - they are invariant.
 - We're not referring to मूलम् (संयुक्तम्) blocks by मूलम् above. Don't touch any blocks or text not listed above as "context blocks".
-- **Immutable Block Protocol:** Treat every other `<details>` block as an "Immutable String Object." Do not "write" or "predict" the text. Your internal process must be: [IDENTIFY BLOCK] -> [EXTRACT EXACT STRING] -> [BUFFER] -> [PASTE].
-- **Movement, Not Generation:** Do not copy blocks. If a block is moved to a new position, it must no longer exist in its old position.
-- **Character-Level Fidelity:** You must not change, add, or delete a single character (including accents/swaras, punctuation, or spaces) within the content of a block. You are a "block-mover," not a writer. 
-- **The "No-Normalization" Rule:** Do not "fix" Sanskrit spelling or grammar. If the original text has a typo, move it as-is. The only way to suggest a fix is using the format: `[[OLD|NEW]]`.
+- **Immutable string Protocol (Enhanced):**
+  - Treat strings in every other `<details>` block as "Immutable String Objects." Do not "write" or "predict" the text. Your internal process must be: [IDENTIFY BLOCK] -> [EXTRACT EXACT STRING] -> [BUFFER] -> [PASTE]. 
+  - **Movement, Not Generation:** Do not copy blocks. If a block is moved to a new position, it must no longer exist in its old position.
+  - **String Integrity:** Before finalizing a block move, perform a "Visual Diff." Compare the first and last 5 words of your output block against the original source block. They must be an identical character-for-character match.
+- **The "Context-Source" Rule:**
+  - **Cross-Contamination Check:** You must NEVER use text from a `मूलम्` block to fill a `पद-पाठः` block (or vice versa). Even if they are about the same verse, the characters and punctuation (like the `।` vs `.` or the presence of sandhi-splitting in पद-पाठः) are different.
+  - Content for a `पद-पाठः` block can **only** come from a block originally titled `पद-पाठः` in the source text.
+  - Content for a `टीका` block can **only** come from a block originally titled `टीका`.
+- **Anti-Prediction Shield:**
+  - Do not "summarize" or "shorten" the content.
+  - If a `पद-पाठः` block in the source contains split words (e.g., `इति॑ । आ॒ह॒`), do not replace it with the combined form from the `मूलम्` (e.g., `इत्याह`).
+  - **Character-Level Fidelity:** You must not change, add, or delete a single character (including accents/swaras, punctuation, or spaces) within the content of a block. You are a "block-mover," not a writer. 
+  - **The "No-Normalization" Rule:** Do not "fix" Sanskrit spelling or grammar. If the original text has a typo, move it as-is. The only way to suggest a fix is using the format: `[[OLD|NEW]]`.
 - **Header Integrity:** Keep the `##` and `###` headers in their logical positions relative to the `मूलम्` blocks they describe.
 
 
