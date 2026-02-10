@@ -5,6 +5,7 @@ title = "+AI prompt"
 
 - Go to [aistudio](https://aistudio.google.com/prompts/new_chat). यन्त्रजालक्षेत्रं यातु।  
 - A **prompt** is a set of instructions given to the machine. It's usually many sentences.
+- Pick the proper AI ([see image](images/ai-studio-model-picking.png)). Generally, you should pick gemini-2.5-pro.
 - **Pick a prompt** from the list provided below appropriate for your task. यन्त्रायोचितम् आदेशं चिनोतु।  (Example: [sanskrit prompt](Sanskrit_devanAgarI_markdown), [english prompt](English_text_with_sanskrit_foo) - Use the 'Copy' button.)
 - **Paste** that entire prompt in the box you'll see. अखिलम् आदेशं बहुवाक्यात्मकम् अपि युगपद् यन्त्राय प्रेषयतु। 
 - Once you get a response, give the material to proofread. उत्तरे प्राप्ते, परिष्कार्यम् पाठं स्थापयतु।
