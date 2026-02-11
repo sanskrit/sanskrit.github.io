@@ -7,6 +7,12 @@ Please strive to understand every work and sentence you edit.
 यत् किञ्चिद् उट्टङ्क्यते, परिष्कृतम् इति वा भाव्यते,  
 तद् (भाषा-मात्र-दृष्ट्या वाप्य्) अवगन्तव्यम्।
 
+## Asking AI
+You can ask questions on https://aistudio.google.com/ and get very good answers. Example prompts with responses [here](/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/language-help). Procedure for using prompt [here](/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/).
+
+Advantage: You can ask a 100 questions to the AI, it will answer patiently.
+
+## Asking on telegram
 If in doubt, ask with pic on telegram (see figure below);  
 and mark the doubtful text with [[??]] sign in the file being edited. 
 
