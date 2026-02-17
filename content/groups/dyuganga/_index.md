@@ -31,7 +31,7 @@ The choice of material heavily depends on the special interests of its current l
 ग्रन्थानाम् प्रस्तुतिर् ध्वनिसञ्चिकाभिस् स्यात् (यथा [महाभारतपारायणप्रसारणे](https://sanskrit.github.io/groups/dyuganga/projects/audio/mbh-audio/)), जाल-क्षेत्र-पृष्ठैर् वा (यथा [विश्वासस्य मन्त्रटिप्पनीषु](https://vishvasa.github.io/vedAH_sAma/paravastu-saama/devaH/agniH/mahAvaishvAnara-vratam/), [एकाग्निकाण्डटीका](https://vishvasa.github.io/vedAH_yajuH/taittirIyam/sUtram/ApastambaH/gRhyam/ekAgnikANDam/sarva-prastutiH/1_01a/)), शब्द-कोशैर् वाऽपि ([stardict](https://sanskrit-coders.github.io/dictionaries/offline/stardict))। इमे ऽस्मत्-पक्षतो मुक्त-रीत्या प्रसार्यन्ते। सद्यश्च ग्रन्थाः संस्थाग्रण्या रुचिविशेषम् अनुसृत्य चिताः - वेदाः, इतिहास-पुराणानि, कल्प-वेदाङ्ग-ग्रन्थाश् चेति।
 
 ### Contribution, contact
-अस्मत्-सम्पर्को जालसुलभः (Contact website) - https://rebrand.ly/dyuganga । Serious volunteering, donations and sponsorship are welcome (use [contact page on our website](https://sanskrit.github.io/groups/dyuganga/contact/)) - they help offset operating costs (eg. worker payments mainly ~1L/mo, book distribution) and plan further projects. Project-specific sponsorship opportunities are occasionally advertised on our social media accounts and on certain mailing lists.
+अस्मत्-सम्पर्कः - @gmail - vishvas.vasuki, ९५९१२ ६८५०६ (see [contact page on our website](https://sanskrit.github.io/groups/dyuganga/contact/))। Serious volunteering, donations and sponsorship are welcome  - they help offset operating costs (eg. worker payments, book distribution) and plan further projects. Project-specific sponsorship opportunities are occasionally advertised on our social media accounts and on certain mailing lists.
 
 
 ## वन्दनीय-वन्दना
