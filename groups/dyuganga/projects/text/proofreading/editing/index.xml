@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>&#43;Editing on संस्कृतजालक्षेत्रम्</title>
+    <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/</link>
+    <description>Recent content in &#43;Editing on संस्कृतजालक्षेत्रम्</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI help</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-help/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-help/</guid>
+      <description>&lt;p&gt;You can take the help of AI for proofreading.&lt;/p&gt;&#xA;&lt;p&gt;General strategy -&lt;/p&gt;&#xA;&lt;p&gt;Use one AI to OCR, another judge LLM to proofread.&lt;/p&gt;&#xA;&lt;h2 id=&#34;web-interface&#34;&gt;Web interface&lt;/h2&gt;&#xA;&lt;p&gt;See separate &lt;a href=&#34;../AI-prompt&#34;&gt;page&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;inside-editor&#34;&gt;Inside editor&lt;/h2&gt;&#xA;&lt;p&gt;See images &lt;a href=&#34;https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/images/AI&#34;&gt;here&lt;/a&gt; to get ideas.&lt;/p&gt;&#xA;&lt;p&gt;You can get this assistance from within the Vscode or Intellij editor.&lt;/p&gt;&#xA;&lt;figure class=&#34;thumbnail&#34;&gt;&#xA;&#xA;    &lt;a href=&#34;../images/AI/vscode_AI_skt-typo_detection.png&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&#xA;        &lt;img src=&#34;../images/AI/vscode_AI_skt-typo_detection.png&#34; alt=&#34;&#34; title=&#34;&#34;&gt;&#xA;    &lt;/a&gt;&#xA;&#xA;    &#xA;&#xA;&lt;/figure&gt;&#xA;&lt;h2 id=&#34;use-cases&#34;&gt;Use cases&lt;/h2&gt;&#xA;&lt;p&gt;kArttika uses LLMs to go from a pdf scan to formatted text. 8 hours per the entire chandamama issue of 50-60 pages. (&amp;ldquo;I was spending 40+ hours when it was tesseract-based. So, 2-3 stories a week, max.&amp;rdquo;)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Multi-script-proofreading</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/multi-script-proofreading/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/multi-script-proofreading/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;The text should be examined in multiple scripts (as agreed earlier). Eg. devanAgarI and ISO, or devanAgarI and kannaDa. Script conversion may be accomplished using &lt;a href=&#34;https://aksharamukha.appspot.com/converter&#34;&gt;aksharamukhA&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Problem being solved: In some scripts, it is hard to distinguish some characters; and mAtra-s may be missed. For example, in devanAgarI - ब‌ व, म स; in IAST/ISO ki kī, ku kū, in kannaDa ದ ಧ ಥ, ಡ ಢ. A proofreader proficient in sanskrit once read  &amp;ldquo;प्लो&lt;strong&gt;ने&lt;/strong&gt;न परिमार्जनानन्तरं तदुक्तं पाद्यं चाधिकमुक्तम् । अत्रापि स एव हे&lt;strong&gt;त&lt;/strong&gt;रनु&lt;strong&gt;म&lt;/strong&gt;न्धेयः ।&amp;rdquo; as &amp;ldquo;प्लो&lt;strong&gt;ते&lt;/strong&gt;न परिमार्जनानन्तरं तद् उक्तं, पाद्यं चाधिकम् उक्तम् । अत्रापि स एव हे&lt;strong&gt;तु&lt;/strong&gt;र् अनु&lt;strong&gt;स&lt;/strong&gt;न्धेयः ।&amp;rdquo;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>pada-separation</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/pada-separation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/pada-separation/</guid>
+      <description>&lt;h2 id=&#34;असमतपरभष&#34;&gt;अस्मत्परिभाषा&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;रिक्ता पङ्क्तिः = empty line, obtained by pressing Enter key twice.&lt;/li&gt;&#xA;&lt;li&gt;रिक्तस्थानम् = space, obtained by pressing &amp;ldquo;space bar&amp;rdquo; key.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;पदम&#34;&gt;पदम्&lt;/h2&gt;&#xA;&lt;p&gt;सुप्-तिङन्तम् पदम् इति पदसंज्ञा ऽवगन्तव्या। यथा रामः, हरिहरः, लोकेशः इति पदानि। &lt;code&gt;हरिह&lt;/code&gt;, &lt;code&gt;रा&lt;/code&gt;  इति न पदे।&#xA;पदमध्ये रिक्तावकाशो न स्यात्। यथा &lt;code&gt;रा मः&lt;/code&gt;, &lt;code&gt;हरि हरः&lt;/code&gt; इति न लेख्यम्।&lt;/p&gt;&#xA;&lt;p&gt;कदाचित् पदमध्ये &lt;strong&gt;ऽनुचित रिक्तस्थानाभावो&lt;/strong&gt; दृश्येत। यथा&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;मणिबन्धनिमग्नेनहस्तेनादायवैजलम्&lt;/code&gt; इत्य् अत्र&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;मणिबन्धनिमग्नेन हस्तेनादाय वै जलम्&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;इति स्यात्।&lt;br&gt;&#xA;एवं रिक्तस्थानाभावे समीकार्यम्।&lt;/p&gt;&#xA;&lt;p&gt;पदमध्ये रिक्तस्थानयोजने कदापि &lt;strong&gt;वर्णव्यत्यासः न&lt;/strong&gt; कार्यः।&lt;br&gt;&#xA;सन्धि-विभागो नैव कार्यः।  (म → म् अ इति तु न सन्धि-विभागः । यत्र व्याकरणशास्त्रोक्त-विभागः, तत्रैव &amp;ldquo;सन्धि-विभाग&amp;quot;संज्ञा।)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tamil</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/tamil/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/tamil/</guid>
+      <description>&lt;h2 id=&#34;अकषरमल&#34;&gt;अक्षरमाला&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://vishvasa.github.io/bhAShAntaram/tamiL/aksharamAlA_dev/?transliterationTarget=%3F%3F&amp;amp;transliterationTargetAlt=tamil&amp;amp;printCols=1&amp;amp;bodyFontSize=0.4cm&amp;amp;includeStyle=true&#34;&gt;इदं&lt;/a&gt; कागदे प्रकाश्य स्वपार्श्वे स्थापयतु।&lt;/p&gt;&#xA;&lt;p&gt;अन्तिमपङ्क्तित्रये दृश्यमाना वर्णा नूतनाः।&lt;br&gt;&#xA;तत्र विशिष्यावदधातु।&lt;/p&gt;&#xA;&lt;p&gt;अवधेयम् - द्राविड्यां वर्गीयव्यञ्जनेषु&lt;br&gt;&#xA;कङचञटणतनपम एव वर्णा इतर-वर्गीय-व्यञ्जनस्थाने ऽपि प्रयुज्यन्ते।&lt;br&gt;&#xA;तत्र तत्र देवनागरीकरणे ते ते वर्णा ऊहनीयास् स्युः।&lt;/p&gt;&#xA;&lt;p&gt;Sometimes you may be asked to type tamiL script seen in the book images in devanAgarI.&lt;br&gt;&#xA;ततो द्राविडभागान् पठित्वा तद्-अनुसारेण देवनागर्योट्टङ्कयतु जागरूकतया। तेन सुलभम् भवेत्।&lt;/p&gt;&#xA;&lt;h2 id=&#34;वरगय-वयञजनष-परवरतनम&#34;&gt;वर्गीय-व्यञ्जनेषु परिवर्तनम्&lt;/h2&gt;&#xA;&lt;p&gt;द्राविड्याम् प्रत्येकस्मिन् द्राविड-पदे प्रथमेतरवर्णः कचटतप-स्थाने गजडदब भवति।&lt;/p&gt;&#xA;&lt;p&gt;उदाहरणम्&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;(चुरुङ्गिच् चुरुङ्गि)&#xA;(चुरुङ्किच्) - (जुरुङ्गिज्) इति भवति वा इति भ्रमः?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Text commentary alignment</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/text-commentary-alignment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/text-commentary-alignment/</guid>
+      <description>&lt;h2 id=&#34;maximal-alignment-preference&#34;&gt;Maximal alignment preference&lt;/h2&gt;&#xA;&lt;p&gt;Let there be 3 or even more recensions of the core text -&lt;br&gt;&#xA;in the gold-standard source,&lt;br&gt;&#xA;they should be aligned with each other &lt;em&gt;and&lt;/em&gt; with the commentaries to the extant possible,&lt;br&gt;&#xA;as shown in the SB case.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Replicating 3 diferrent copies of commentaries would mean that every typo would be corrected in 3 places, which is not resilient.&lt;/li&gt;&#xA;&lt;li&gt;Readers, while preferring a particular pATha,  would be interested in easily referring to other pATha-s as well.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Understand or ask</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/understand_ask/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/understand_ask/</guid>
+      <description>&lt;p&gt;Please strive to understand every work and sentence you edit.&lt;br&gt;&#xA;प्रत्येकं वाक्यम् ऽवगत्य शोधयितुं यतताम्।&lt;br&gt;&#xA;यत् किञ्चिद् उट्टङ्क्यते, परिष्कृतम् इति वा भाव्यते,&lt;br&gt;&#xA;तद् (भाषा-मात्र-दृष्ट्या वाप्य्) अवगन्तव्यम्।&lt;/p&gt;&#xA;&lt;h2 id=&#34;asking-ai&#34;&gt;Asking AI&lt;/h2&gt;&#xA;&lt;p&gt;You can ask questions on &lt;a href=&#34;https://aistudio.google.com/&#34;&gt;https://aistudio.google.com/&lt;/a&gt; and get very good answers. Example prompts with responses &lt;a href=&#34;https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/language-help&#34;&gt;here&lt;/a&gt;. Procedure for using prompt &lt;a href=&#34;https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Advantage: You can ask a 100 questions to the AI, it will answer patiently.&lt;/p&gt;&#xA;&lt;h2 id=&#34;asking-on-telegram&#34;&gt;Asking on telegram&lt;/h2&gt;&#xA;&lt;p&gt;If in doubt, ask with pic on telegram (see figure below);&lt;br&gt;&#xA;and mark the doubtful text with [[??]] sign in the file being edited.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

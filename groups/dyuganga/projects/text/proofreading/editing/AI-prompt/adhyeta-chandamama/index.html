@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>संस्कृतजालक्षेत्रम्  | Adhyeta chandamama</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.143.0">
+    
+    
+      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+
+    <link href="/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/" rel="alternate" type="application/rss+xml" title="संस्कृतजालक्षेत्रम्" />
+    <link href="/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/" rel="feed" type="application/rss+xml" title="संस्कृतजालक्षेत्रम्" />
+
+    <meta property="og:url" content="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/">
+  <meta property="og:site_name" content="संस्कृतजालक्षेत्रम्">
+  <meta property="og:title" content="Adhyeta chandamama">
+  <meta property="og:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 ## chandAmAma - kArtik ### Role and Context: You are an expert Sanskrit linguist, a meticulous digital archivist, and an advanced OCR and layout understanding system. Your task is to accurately transcribe and intelligently structure the linguistically relevant content from the provided PDF scans of an old Sanskrit magazine. Precision, adherence to formatting rules, and deep understanding of Sanskrit context are paramount. ### Input: I will provide you with page-by-page scans (or the full PDF document) of an old Sanskrit magazine. ### Primary Goal: To extract specified text content in a clean, rationalized, and structured format, while intelligently ignoring irrelevant elements. --- ### Detailed Instructions: #### 1. Content Inclusion Criteria (Extract These): Carefully transcribe the full text of: * Articles (लेखाः): Any non-fiction prose pieces. * Stories (कथाः): Fictional narratives. * Quizzes (प्रश्नोत्तरी): Questions, puzzles, or challenges. * Content Index (विषयसूची / अनुक्रमणिका): The table of contents. * Poems (कविताः / काव्यानि): Verse compositions. * Text within Comic Panels (चित्रकथायाः पाठः): Any dialogue or narration explicitly part of a comic strip. #### 2. Content Exclusion Criteria (Ignore These Completely): * All Images: Do not transcribe any text that is part of a standard image, illustration, or photograph, unless it&#39;s text within a comic panel (as specified above). * Advertisements (विज्ञापनम्): Ignore all commercial advertisements. * Page Numbers: Do not transcribe page numbers unless they are part of the Content Index. * Headers/Footers: Unless they contain the author/title info to be moved (see point 4). * Magazine Mastheads/Logos: Do not transcribe the main magazine title/logo on the cover or inside pages, unless it&#39;s part of the Content Index itself. #### 3. Text Normalization and Rationalization: * There must not be any space to the left of any punctuation character. इति । is WRONG. इति। is right. Do this for question marks, quotes, exclamation marks etc. * Replace two or more dots ... with an ellipsis character. * Double Quotes (“ ” „ -&gt; &#34;): * Convert all variations of opening double quotes (e.g., “, „) into a single, standardized plain double quote character: &#34; * Convert all variations of closing double quotes (e.g., ”, ‟) into a single, standardized plain double quote character: &#34; * Single Quotes (‘ ’ ‚ -&gt; &#39;): * Convert all variations of opening single quotes (e.g., ‘, ‚) into a single, standardized plain single quote character: &#39; * Convert all variations of closing single quotes (e.g., ’, ‛) into a single, standardized plain single quote character: &#39; * Sensible Decision on Unbalanced/Wrong Quote Marks (Crucial - Use Sanskrit Knowledge): * If you encounter an unbalanced quote (e.g., an opening quote without a closing one, or vice-versa) or a quote mark that appears grammatically incorrect or misplaced within a Sanskrit sentence, use your deep knowledge of Sanskrit grammar, syntax, and common idiomatic expressions to make the most sensible correction. * Prioritize preserving the intended meaning of the Sanskrit text. * Examples of sensible decisions: * If a quote is opened (&#34;) at the start of a sentence/paragraph and there&#39;s no explicit closing quote, assume it closes at the end of the current logical statement or paragraph. * If a closing quote (&#34;) appears without an obvious opening one, assess if it&#39;s genuinely a quote closure (implying an uncaptured opening) or a stray mark. If it&#39;s a quote, try to infer its logical start. * If a quote mark is used incorrectly (e.g., in place of a punctuation mark), correct it to the standard punctuation while ensuring the quoted text, if any, remains properly enclosed. * Quotes will generally begin around the actions of speaking/thinking (उक्तवान्/वती, चिन्तितवान्/वती etc) or words like thus (यत्). They will end around the word इति. * A hyphen - before a quote with an optional space between the two is probably an mdash. * Paragraph Separation: * Separate distinct paragraphs within an article/story/poem using three newline characters (\n\n\n). * Do not add extra newlines for line breaks within a paragraph unless it&#39;s a true paragraph break indicated by the layout or content. * Join the lines of each paragraph using a space character in lieu of the \n. We need one paragraph to occupy one line of the output. * Author/Info Placement: * Any author names, contributor notes, &#39;Part X of Y&#39;, or other relevant metadata (normally found at the bottom of an article, story, or poem on a page) must be moved to the very beginning of the extracted text for that piece. #### 4. Layout Handling (Column Flow): Accurately follow the reading order. Whether the content is presented in a single column or multiple columns (typically two-column layouts are common in magazines), ensure the text flows correctly. This means: * Read from the top of the first column to its bottom. * Then, move to the top of the next column on the same page and read to its bottom. * Only after completing all columns on the current page, proceed to the next page. * Do not mix text across columns incorrectly. * Verify that no text is left undetected/unread. Do not jump from the end of column 1 to the middle of column 2 ignoring the first half of the column. This can happen sometimes based on wrong assumptions about image widths. #### 5. Output Format and Structure: * We use a document based on s-expressions. The content will be fully marked up later. But do the basic document and paragraph marking (document :type &#34;story&#34;\n\n\n(p .......)\n\n\n(p .......)\n\n\n) first. * For each extracted content piece, provide it in the following structured format. If an article/story spans multiple pages, transcribe it continuously as a single piece under one heading. * Within each paragraph, if you are confident that the quotes are balanced, convert the quotes to a structured format. So `अनन्तरं बहु विचार्य मापनं कृत्वा तस्याः छायायाः मूल्यं &#39;एकशतं रुप्यकाणि देयानि&#39; इति निश्चयः अभवत्।` becomes `अनन्तरं बहु विचार्य मापनं कृत्वा तस्याः छायायाः मूल्यं (&#39; एकशतं रुप्यकाणि देयानि) इति निश्चयः अभवत्।` This is RIGHT: (&#39; एकशतं रुप्यकाणि देयानि). These are WRONG: (&#39;एकशतं रुप्यकाणि देयानि&#39;) and (&#39;एकशतं रुप्यकाणि देयानि). This will also applied to nested quotes (&#34;..&#39;...&#39;..&#34; and &#39;..&#34;...&#34;..&#39;). *Example Output Segment:* (document :type &#34;article&#34; (title संस्कृतभाषायाः महत्वम्) (author श्री. रामचन्द्रः शास्त्री) (p संस्कृतभाषा विश्वस्य प्राचीनतमासु भाषासु अन्यतमा अस्ति। अस्याः भाषायाः व्याकरणं पाणिना विरचितम् अस्ति, यत् अत्यन्तं वैज्ञानिकं सुव्यवस्थितं च मन्यते।) (p भारते संस्कृतस्य महत्वं बहुधा स्वीक्रियते। अनेके ग्रन्थाः, पुराणाः, काव्यानि च संस्कृतभाषया एव लिखितानि सन्ति।) ) === End of Article === (document :type &#34;story&#34; (title शृगालस्य चतुराई) (note पञ्चविंशतिवर्षेभ्यः पूर्वं चन्दमामायां प्रकाशिता कथा) (p एकस्मिन् वने एकः धूर्त शृगालः निवसति स्म। सः प्रतिदिनं नूतनं उपायं चिन्तयति स्म कथं सः मृगान् खादितुं शक्नोति।) (p एकदा सः एकं सिंहं दृष्ट्वा भीतः अभवत्। परन्तु सः शीघ्रं एव एकं उपायं अचिन्तयत्। (&#34; अहं सिंहस्य मित्रं भविष्यामि) इति सः अचिन्तयत्।) ) === End of Story === (document :type &#34;comic&#34; (title पञ्चछात्राः) (p मम नाम रमेशः अस्ति।) (p भवान् कुत्र गच्छति?) (p अहं विद्यालयं गच्छामि।) ) === End of Comic === *Important Considerations:* * *Accuracy:* Strive for 100% accuracy in transcription. * *Devanagari:* Keep the output in Devanagari script as found in the original, without transliteration, unless the original uses a different script (very unlikely). * *Uncertainty:* If any part of the text is illegible or you are uncertain about a quote correction, please indicate it clearly within [square brackets with a note, e.g., [पाठः अस्पष्टः] or [uncertain quote correction]. * *Page-by-page processing:* If your system processes page by page, please indicate the page number before the content extracted from that page. If it processes the whole document, just provide continuous output. *IMPORTANT:* DO NOT do this for articles/stories/content spanning multiple pages. In those cases, the page number should only be indicated at the very start. The end marker === End of Comic === etc will then only appear at the actual end of the content, not at the end of each page. * *Empty Pages:* If a page contains only ignored content (e.g., just advertisements or blank space), simply state: Page X: Contains only ignored content.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="groups">
+
+  <meta itemprop="name" content="Adhyeta chandamama">
+  <meta itemprop="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 ## chandAmAma - kArtik ### Role and Context: You are an expert Sanskrit linguist, a meticulous digital archivist, and an advanced OCR and layout understanding system. Your task is to accurately transcribe and intelligently structure the linguistically relevant content from the provided PDF scans of an old Sanskrit magazine. Precision, adherence to formatting rules, and deep understanding of Sanskrit context are paramount. ### Input: I will provide you with page-by-page scans (or the full PDF document) of an old Sanskrit magazine. ### Primary Goal: To extract specified text content in a clean, rationalized, and structured format, while intelligently ignoring irrelevant elements. --- ### Detailed Instructions: #### 1. Content Inclusion Criteria (Extract These): Carefully transcribe the full text of: * Articles (लेखाः): Any non-fiction prose pieces. * Stories (कथाः): Fictional narratives. * Quizzes (प्रश्नोत्तरी): Questions, puzzles, or challenges. * Content Index (विषयसूची / अनुक्रमणिका): The table of contents. * Poems (कविताः / काव्यानि): Verse compositions. * Text within Comic Panels (चित्रकथायाः पाठः): Any dialogue or narration explicitly part of a comic strip. #### 2. Content Exclusion Criteria (Ignore These Completely): * All Images: Do not transcribe any text that is part of a standard image, illustration, or photograph, unless it&#39;s text within a comic panel (as specified above). * Advertisements (विज्ञापनम्): Ignore all commercial advertisements. * Page Numbers: Do not transcribe page numbers unless they are part of the Content Index. * Headers/Footers: Unless they contain the author/title info to be moved (see point 4). * Magazine Mastheads/Logos: Do not transcribe the main magazine title/logo on the cover or inside pages, unless it&#39;s part of the Content Index itself. #### 3. Text Normalization and Rationalization: * There must not be any space to the left of any punctuation character. इति । is WRONG. इति। is right. Do this for question marks, quotes, exclamation marks etc. * Replace two or more dots ... with an ellipsis character. * Double Quotes (“ ” „ -&gt; &#34;): * Convert all variations of opening double quotes (e.g., “, „) into a single, standardized plain double quote character: &#34; * Convert all variations of closing double quotes (e.g., ”, ‟) into a single, standardized plain double quote character: &#34; * Single Quotes (‘ ’ ‚ -&gt; &#39;): * Convert all variations of opening single quotes (e.g., ‘, ‚) into a single, standardized plain single quote character: &#39; * Convert all variations of closing single quotes (e.g., ’, ‛) into a single, standardized plain single quote character: &#39; * Sensible Decision on Unbalanced/Wrong Quote Marks (Crucial - Use Sanskrit Knowledge): * If you encounter an unbalanced quote (e.g., an opening quote without a closing one, or vice-versa) or a quote mark that appears grammatically incorrect or misplaced within a Sanskrit sentence, use your deep knowledge of Sanskrit grammar, syntax, and common idiomatic expressions to make the most sensible correction. * Prioritize preserving the intended meaning of the Sanskrit text. * Examples of sensible decisions: * If a quote is opened (&#34;) at the start of a sentence/paragraph and there&#39;s no explicit closing quote, assume it closes at the end of the current logical statement or paragraph. * If a closing quote (&#34;) appears without an obvious opening one, assess if it&#39;s genuinely a quote closure (implying an uncaptured opening) or a stray mark. If it&#39;s a quote, try to infer its logical start. * If a quote mark is used incorrectly (e.g., in place of a punctuation mark), correct it to the standard punctuation while ensuring the quoted text, if any, remains properly enclosed. * Quotes will generally begin around the actions of speaking/thinking (उक्तवान्/वती, चिन्तितवान्/वती etc) or words like thus (यत्). They will end around the word इति. * A hyphen - before a quote with an optional space between the two is probably an mdash. * Paragraph Separation: * Separate distinct paragraphs within an article/story/poem using three newline characters (\n\n\n). * Do not add extra newlines for line breaks within a paragraph unless it&#39;s a true paragraph break indicated by the layout or content. * Join the lines of each paragraph using a space character in lieu of the \n. We need one paragraph to occupy one line of the output. * Author/Info Placement: * Any author names, contributor notes, &#39;Part X of Y&#39;, or other relevant metadata (normally found at the bottom of an article, story, or poem on a page) must be moved to the very beginning of the extracted text for that piece. #### 4. Layout Handling (Column Flow): Accurately follow the reading order. Whether the content is presented in a single column or multiple columns (typically two-column layouts are common in magazines), ensure the text flows correctly. This means: * Read from the top of the first column to its bottom. * Then, move to the top of the next column on the same page and read to its bottom. * Only after completing all columns on the current page, proceed to the next page. * Do not mix text across columns incorrectly. * Verify that no text is left undetected/unread. Do not jump from the end of column 1 to the middle of column 2 ignoring the first half of the column. This can happen sometimes based on wrong assumptions about image widths. #### 5. Output Format and Structure: * We use a document based on s-expressions. The content will be fully marked up later. But do the basic document and paragraph marking (document :type &#34;story&#34;\n\n\n(p .......)\n\n\n(p .......)\n\n\n) first. * For each extracted content piece, provide it in the following structured format. If an article/story spans multiple pages, transcribe it continuously as a single piece under one heading. * Within each paragraph, if you are confident that the quotes are balanced, convert the quotes to a structured format. So `अनन्तरं बहु विचार्य मापनं कृत्वा तस्याः छायायाः मूल्यं &#39;एकशतं रुप्यकाणि देयानि&#39; इति निश्चयः अभवत्।` becomes `अनन्तरं बहु विचार्य मापनं कृत्वा तस्याः छायायाः मूल्यं (&#39; एकशतं रुप्यकाणि देयानि) इति निश्चयः अभवत्।` This is RIGHT: (&#39; एकशतं रुप्यकाणि देयानि). These are WRONG: (&#39;एकशतं रुप्यकाणि देयानि&#39;) and (&#39;एकशतं रुप्यकाणि देयानि). This will also applied to nested quotes (&#34;..&#39;...&#39;..&#34; and &#39;..&#34;...&#34;..&#39;). *Example Output Segment:* (document :type &#34;article&#34; (title संस्कृतभाषायाः महत्वम्) (author श्री. रामचन्द्रः शास्त्री) (p संस्कृतभाषा विश्वस्य प्राचीनतमासु भाषासु अन्यतमा अस्ति। अस्याः भाषायाः व्याकरणं पाणिना विरचितम् अस्ति, यत् अत्यन्तं वैज्ञानिकं सुव्यवस्थितं च मन्यते।) (p भारते संस्कृतस्य महत्वं बहुधा स्वीक्रियते। अनेके ग्रन्थाः, पुराणाः, काव्यानि च संस्कृतभाषया एव लिखितानि सन्ति।) ) === End of Article === (document :type &#34;story&#34; (title शृगालस्य चतुराई) (note पञ्चविंशतिवर्षेभ्यः पूर्वं चन्दमामायां प्रकाशिता कथा) (p एकस्मिन् वने एकः धूर्त शृगालः निवसति स्म। सः प्रतिदिनं नूतनं उपायं चिन्तयति स्म कथं सः मृगान् खादितुं शक्नोति।) (p एकदा सः एकं सिंहं दृष्ट्वा भीतः अभवत्। परन्तु सः शीघ्रं एव एकं उपायं अचिन्तयत्। (&#34; अहं सिंहस्य मित्रं भविष्यामि) इति सः अचिन्तयत्।) ) === End of Story === (document :type &#34;comic&#34; (title पञ्चछात्राः) (p मम नाम रमेशः अस्ति।) (p भवान् कुत्र गच्छति?) (p अहं विद्यालयं गच्छामि।) ) === End of Comic === *Important Considerations:* * *Accuracy:* Strive for 100% accuracy in transcription. * *Devanagari:* Keep the output in Devanagari script as found in the original, without transliteration, unless the original uses a different script (very unlikely). * *Uncertainty:* If any part of the text is illegible or you are uncertain about a quote correction, please indicate it clearly within [square brackets with a note, e.g., [पाठः अस्पष्टः] or [uncertain quote correction]. * *Page-by-page processing:* If your system processes page by page, please indicate the page number before the content extracted from that page. If it processes the whole document, just provide continuous output. *IMPORTANT:* DO NOT do this for articles/stories/content spanning multiple pages. In those cases, the page number should only be indicated at the very start. The end marker === End of Comic === etc will then only appear at the actual end of the content, not at the end of each page. * *Empty Pages:* If a page contains only ignored content (e.g., just advertisements or blank space), simply state: Page X: Contains only ignored content.">
+  <meta itemprop="wordCount" content="1450">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Adhyeta chandamama">
+  <meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 ## chandAmAma - kArtik ### Role and Context: You are an expert Sanskrit linguist, a meticulous digital archivist, and an advanced OCR and layout understanding system. Your task is to accurately transcribe and intelligently structure the linguistically relevant content from the provided PDF scans of an old Sanskrit magazine. Precision, adherence to formatting rules, and deep understanding of Sanskrit context are paramount. ### Input: I will provide you with page-by-page scans (or the full PDF document) of an old Sanskrit magazine. ### Primary Goal: To extract specified text content in a clean, rationalized, and structured format, while intelligently ignoring irrelevant elements. --- ### Detailed Instructions: #### 1. Content Inclusion Criteria (Extract These): Carefully transcribe the full text of: * Articles (लेखाः): Any non-fiction prose pieces. * Stories (कथाः): Fictional narratives. * Quizzes (प्रश्नोत्तरी): Questions, puzzles, or challenges. * Content Index (विषयसूची / अनुक्रमणिका): The table of contents. * Poems (कविताः / काव्यानि): Verse compositions. * Text within Comic Panels (चित्रकथायाः पाठः): Any dialogue or narration explicitly part of a comic strip. #### 2. Content Exclusion Criteria (Ignore These Completely): * All Images: Do not transcribe any text that is part of a standard image, illustration, or photograph, unless it&#39;s text within a comic panel (as specified above). * Advertisements (विज्ञापनम्): Ignore all commercial advertisements. * Page Numbers: Do not transcribe page numbers unless they are part of the Content Index. * Headers/Footers: Unless they contain the author/title info to be moved (see point 4). * Magazine Mastheads/Logos: Do not transcribe the main magazine title/logo on the cover or inside pages, unless it&#39;s part of the Content Index itself. #### 3. Text Normalization and Rationalization: * There must not be any space to the left of any punctuation character. इति । is WRONG. इति। is right. Do this for question marks, quotes, exclamation marks etc. * Replace two or more dots ... with an ellipsis character. * Double Quotes (“ ” „ -&gt; &#34;): * Convert all variations of opening double quotes (e.g., “, „) into a single, standardized plain double quote character: &#34; * Convert all variations of closing double quotes (e.g., ”, ‟) into a single, standardized plain double quote character: &#34; * Single Quotes (‘ ’ ‚ -&gt; &#39;): * Convert all variations of opening single quotes (e.g., ‘, ‚) into a single, standardized plain single quote character: &#39; * Convert all variations of closing single quotes (e.g., ’, ‛) into a single, standardized plain single quote character: &#39; * Sensible Decision on Unbalanced/Wrong Quote Marks (Crucial - Use Sanskrit Knowledge): * If you encounter an unbalanced quote (e.g., an opening quote without a closing one, or vice-versa) or a quote mark that appears grammatically incorrect or misplaced within a Sanskrit sentence, use your deep knowledge of Sanskrit grammar, syntax, and common idiomatic expressions to make the most sensible correction. * Prioritize preserving the intended meaning of the Sanskrit text. * Examples of sensible decisions: * If a quote is opened (&#34;) at the start of a sentence/paragraph and there&#39;s no explicit closing quote, assume it closes at the end of the current logical statement or paragraph. * If a closing quote (&#34;) appears without an obvious opening one, assess if it&#39;s genuinely a quote closure (implying an uncaptured opening) or a stray mark. If it&#39;s a quote, try to infer its logical start. * If a quote mark is used incorrectly (e.g., in place of a punctuation mark), correct it to the standard punctuation while ensuring the quoted text, if any, remains properly enclosed. * Quotes will generally begin around the actions of speaking/thinking (उक्तवान्/वती, चिन्तितवान्/वती etc) or words like thus (यत्). They will end around the word इति. * A hyphen - before a quote with an optional space between the two is probably an mdash. * Paragraph Separation: * Separate distinct paragraphs within an article/story/poem using three newline characters (\n\n\n). * Do not add extra newlines for line breaks within a paragraph unless it&#39;s a true paragraph break indicated by the layout or content. * Join the lines of each paragraph using a space character in lieu of the \n. We need one paragraph to occupy one line of the output. * Author/Info Placement: * Any author names, contributor notes, &#39;Part X of Y&#39;, or other relevant metadata (normally found at the bottom of an article, story, or poem on a page) must be moved to the very beginning of the extracted text for that piece. #### 4. Layout Handling (Column Flow): Accurately follow the reading order. Whether the content is presented in a single column or multiple columns (typically two-column layouts are common in magazines), ensure the text flows correctly. This means: * Read from the top of the first column to its bottom. * Then, move to the top of the next column on the same page and read to its bottom. * Only after completing all columns on the current page, proceed to the next page. * Do not mix text across columns incorrectly. * Verify that no text is left undetected/unread. Do not jump from the end of column 1 to the middle of column 2 ignoring the first half of the column. This can happen sometimes based on wrong assumptions about image widths. #### 5. Output Format and Structure: * We use a document based on s-expressions. The content will be fully marked up later. But do the basic document and paragraph marking (document :type &#34;story&#34;\n\n\n(p .......)\n\n\n(p .......)\n\n\n) first. * For each extracted content piece, provide it in the following structured format. If an article/story spans multiple pages, transcribe it continuously as a single piece under one heading. * Within each paragraph, if you are confident that the quotes are balanced, convert the quotes to a structured format. So `अनन्तरं बहु विचार्य मापनं कृत्वा तस्याः छायायाः मूल्यं &#39;एकशतं रुप्यकाणि देयानि&#39; इति निश्चयः अभवत्।` becomes `अनन्तरं बहु विचार्य मापनं कृत्वा तस्याः छायायाः मूल्यं (&#39; एकशतं रुप्यकाणि देयानि) इति निश्चयः अभवत्।` This is RIGHT: (&#39; एकशतं रुप्यकाणि देयानि). These are WRONG: (&#39;एकशतं रुप्यकाणि देयानि&#39;) and (&#39;एकशतं रुप्यकाणि देयानि). This will also applied to nested quotes (&#34;..&#39;...&#39;..&#34; and &#39;..&#34;...&#34;..&#39;). *Example Output Segment:* (document :type &#34;article&#34; (title संस्कृतभाषायाः महत्वम्) (author श्री. रामचन्द्रः शास्त्री) (p संस्कृतभाषा विश्वस्य प्राचीनतमासु भाषासु अन्यतमा अस्ति। अस्याः भाषायाः व्याकरणं पाणिना विरचितम् अस्ति, यत् अत्यन्तं वैज्ञानिकं सुव्यवस्थितं च मन्यते।) (p भारते संस्कृतस्य महत्वं बहुधा स्वीक्रियते। अनेके ग्रन्थाः, पुराणाः, काव्यानि च संस्कृतभाषया एव लिखितानि सन्ति।) ) === End of Article === (document :type &#34;story&#34; (title शृगालस्य चतुराई) (note पञ्चविंशतिवर्षेभ्यः पूर्वं चन्दमामायां प्रकाशिता कथा) (p एकस्मिन् वने एकः धूर्त शृगालः निवसति स्म। सः प्रतिदिनं नूतनं उपायं चिन्तयति स्म कथं सः मृगान् खादितुं शक्नोति।) (p एकदा सः एकं सिंहं दृष्ट्वा भीतः अभवत्। परन्तु सः शीघ्रं एव एकं उपायं अचिन्तयत्। (&#34; अहं सिंहस्य मित्रं भविष्यामि) इति सः अचिन्तयत्।) ) === End of Story === (document :type &#34;comic&#34; (title पञ्चछात्राः) (p मम नाम रमेशः अस्ति।) (p भवान् कुत्र गच्छति?) (p अहं विद्यालयं गच्छामि।) ) === End of Comic === *Important Considerations:* * *Accuracy:* Strive for 100% accuracy in transcription. * *Devanagari:* Keep the output in Devanagari script as found in the original, without transliteration, unless the original uses a different script (very unlikely). * *Uncertainty:* If any part of the text is illegible or you are uncertain about a quote correction, please indicate it clearly within [square brackets with a note, e.g., [पाठः अस्पष्टः] or [uncertain quote correction]. * *Page-by-page processing:* If your system processes page by page, please indicate the page number before the content extracted from that page. If it processes the whole document, just provide continuous output. *IMPORTANT:* DO NOT do this for articles/stories/content spanning multiple pages. In those cases, the page number should only be indicated at the very start. The end marker === End of Comic === etc will then only appear at the actual end of the content, not at the end of each page. * *Empty Pages:* If a page contains only ignored content (e.g., just advertisements or blank space), simply state: Page X: Contains only ignored content.">
+<script type="text/javascript">
+    
+    let baseURL = "https:\/\/sanskrit.github.io\/";
+    let basePath = "/" + baseURL.split("/").slice(3).join("/");
+    let siteParams = JSON.parse("{\u0022contactlink\u0022:\u0022https:\/\/github.com\/sanskrit\/sanskrit.github.io\/issues\/new\u0022,\u0022env\u0022:\u0022production\u0022,\u0022githubeditmepathbase\u0022:\u0022https:\/\/github.com\/sanskrit\/sanskrit.github.io\/edit\/master\/content\/\u0022}");
+    let pageDefaultsList = JSON.parse("[{\u0022scope\u0022:{\u0022pathPrefix\u0022:\u0022\u0022},\u0022values\u0022:{\u0022comments\u0022:true,\u0022layout\u0022:\u0022page\u0022,\u0022search\u0022:true,\u0022sidebar\u0022:\u0022home_sidebar\u0022}},{\u0022scope\u0022:{\u0022pathPrefix\u0022:\u0022groups\/dyuganga\u0022},\u0022values\u0022:{\u0022comments\u0022:true,\u0022layout\u0022:\u0022page\u0022,\u0022search\u0022:true,\u0022sidebar\u0022:\u0022dyuganga_sidebar\u0022}}]");
+    let sidebarsData = JSON.parse("{\u0022dyuganga_sidebar\u0022:{\u0022contents\u0022:[{\u0022url\u0022:\u0022recdir:\/\/groups\/dyuganga\/\u0022},{\u0022title\u0022:\u0022Code\u0022,\u0022url\u0022:\u0022https:\/\/sanskrit-coders.github.io\/\u0022}],\u0022title\u0022:\u0022Parts\u0022},\u0022home_sidebar\u0022:{\u0022contents\u0022:[{\u0022title\u0022:\u0022Home - Intro\u0022,\u0022url\u0022:\u0022recdir:\/\/\u0022},{\u0022title\u0022:\u0022Blog\u0022,\u0022url\u0022:\u0022\/assets\/blog\/index.html\u0022}],\u0022title\u0022:\u0022Parts\u0022}}");
+    
+    var pageRelUrlTree = {};
+</script>
+
+    
+    <script type="text/javascript">
+  let pageVars = {};
+  pageVars.pageUrlMinusBasePath = "\/groups\/dyuganga\/projects\/text\/proofreading\/editing\/AI-prompt\/adhyeta-chandamama\/".replace(basePath, "/");
+  pageVars.pageParams = {};
+  pageVars.pageSource = "groups\/dyuganga\/projects\/text\/proofreading\/editing\/AI-prompt\/adhyeta-chandamama.md";
+  console.log(pageVars.pageSource);
+  var pageDefaults;
+  for (let possiblePageDefaults of pageDefaultsList) {
+    if (pageVars.pageSource.startsWith(possiblePageDefaults.scope.pathPrefix)) {
+      pageDefaults = possiblePageDefaults.values
+    }
+  }
+    
+</script>
+
+
+    <script src="/webpack_dist/uiLib-bundle.js"></script>
+
+
+
+
+
+
+
+    <link rel="stylesheet" href="/webpack_dist/uiLib.css">
+<link rel="stylesheet" href="/css/uiLibPrint.css" media="print" >
+<link rel="stylesheet" href="/css/fonts.css" >
+<link rel="stylesheet" href="/css/@fortawesome/fontawesome-free/css/solid.min.css">
+
+<link rel="stylesheet" href="/css/@fortawesome/fontawesome-free/css/fontawesome.min.css">
+
+
+<link rel="alternate" hreflang="sa-Deva" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/" />
+<link rel="alternate" hreflang="sa-Deva" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=devanagari" />
+
+<link rel="alternate" hreflang="sa-Knda" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=kannada" />
+<link rel="alternate" hreflang="sa-Mlym" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=malayalam" />
+<link rel="alternate" hreflang="sa-Telu" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=telugu" />
+<link rel="alternate" hreflang="sa-Taml-t-sa-Taml-m0-superscript" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=tamil_superscripted" />
+<link rel="alternate" hreflang="sa-Taml" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=tamil" />
+<link rel="alternate" hreflang="sa-Gran" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=grantha" />
+
+<link rel="alternate" hreflang="sa-Gujr" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=gujarati" />
+<link rel="alternate" hreflang="sa-Guru" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=gurmukhi" />
+<link rel="alternate" hreflang="sa-Shar" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=sharada" />
+<link rel="alternate" hreflang="sa-Dogr" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=dogra" />
+<link rel="alternate" hreflang="sa-Phag" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=phags_pa" />
+<link rel="alternate" hreflang="sa-Tibt" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=tibetan" />
+<link rel="alternate" hreflang="sa-Sidd" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=siddham" />
+<link rel="alternate" hreflang="sa-Newa" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=newa" />
+<link rel="alternate" hreflang="sa-Modi" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=modi" />
+<link rel="alternate" hreflang="sa-Tirh" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=tirhuta_maithili" />
+<link rel="alternate" hreflang="sa-Gong" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=gondi_gujala" />
+<link rel="alternate" hreflang="sa-Gonm" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=gondi_masaram" />
+
+
+<link rel="alternate" hreflang="sa-Orya" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=oriya" />
+<link rel="alternate" hreflang="sa-Beng-t-sa-Beng-m0-assamese" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=assamese" />
+<link rel="alternate" hreflang="sa-Beng" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=bengali" />
+<link rel="alternate" hreflang="sa-Mtei" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=manipuri" />
+<link rel="alternate" hreflang="sa-Sinh" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=sinhala" />
+<link rel="alternate" hreflang="sa-Limb" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=limbu" />
+<link rel="alternate" hreflang="sa-Lepc" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=lepcha" />
+
+
+<link rel="alternate" hreflang="sa-Cyrl" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=cyrillic" />
+<link rel="alternate" hreflang="sa-Latn-t-sa-Zyyy-m0-iso" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=iso" />
+<link rel="alternate" hreflang="sa-Latn-t-sa-Zyyy-m0-iast" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=iast" />
+<link rel="alternate" hreflang="sa-Aran" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=urdu" />
+<link rel="alternate" hreflang="sa-Avst" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=avestan" />
+
+<link rel="alternate" hreflang="sa-Brah" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=brahmi" />
+<link rel="alternate" hreflang="sa-Khar" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=kharoshthi" />
+<link rel="alternate" hreflang="sa-Zanb" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=zanbazar_square" />
+<link rel="alternate" hreflang="sa-Bhks" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=bhaiksuki" />
+
+<link rel="alternate" hreflang="sa-Bali" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=balinese" />
+<link rel="alternate" hreflang="sa-Java" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=javanese" />
+<link rel="alternate" hreflang="sa-Laoo" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=lao" />
+<link rel="alternate" hreflang="sa-Laoo-t-sa-Laoo-m0-Laopali" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=lao_pali" />
+<link rel="alternate" hreflang="sa-Mymr" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=burmese" />
+<link rel="alternate" hreflang="sa-Mymr-t-sa-Mymr-m0-Mon" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=mon" />
+<link rel="alternate" hreflang="sa-Cham" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=cham" />
+<link rel="alternate" hreflang="sa-Khmr" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=khmer" />
+<link rel="alternate" hreflang="sa-Thai" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/?transliteration_target=thai" />
+
+  </head>
+
+  <body class="ma0 bg-near-white">
+    
+
+
+    
+<header class="p-1 bg-yellow noPrint">
+    <nav role="navigation" class="col">
+      <div id="div_top_bar" class="row">
+        <div class="col-md-3 justify-content-start">
+          <a  href="/" class="btn col border">
+            <i class="fas fa-gopuram ">संस्कृतजालक्षेत्रम् <br/> Adhyeta chandamama</i>
+          </a>
+        </div>
+        <div id="div_top_bar_right" class="col-md-auto d-flex justify-content-center">
+          <button class="btn btn-light"  href="#transliterationDropdown" data-toggle="collapse">
+            ✍
+          </button>
+          <select id="transliterationDropdown" size="1" class="collapse" onchange="module_uiLib.default.content.updateTransliteration()">
+            <optgroup label="🌍">
+              <option value="iso">āISO</option>
+              <option value="iso_vedic">āi-āu</option>
+              <option value="cyrillic">пу</option>
+              <option value="urdu">نس</option>
+              <option value="??">🌍??</option>
+            </optgroup>
+            <optgroup label="🛕🧭S">
+              <option value="kannada">ಅ</option>
+              <option value="malayalam">അ</option>
+              <option value="telugu">క</option>
+              <option value="tamil_superscripted">க²</option>
+              <option value="tamil_extended">க</option>
+              <option value="grantha">𑌅</option>
+            </optgroup>
+            <optgroup label="🛕🧭N">
+              <option value="devanagari" selected="">स</option>
+              <option value="gujarati">અ</option>
+              <option value="gurmukhi">ਅ</option>
+            </optgroup>
+            <optgroup label="🛕🧭E">
+              <option value="oriya">ଅ</option>
+              <option value="assamese">অস</option>
+              <option value="bengali">অ</option>
+            </optgroup>
+            <optgroup label="🛕🏺📜">
+              <option value="sharada">𑆑𑇀𑆰</option>
+              <option value="brahmi">𑀅</option>
+            </optgroup>
+            <optgroup label="🛕🌋">
+              <option value="balinese">ᬩᬮᬶ</option>
+            </optgroup>
+          </select>
+          <div>
+          <button class="btn btn-outline-secondary btn-sm"  href="#transliterationDropdownAlt" data-toggle="collapse">
+          (✍)
+          </button>
+          <select id="transliterationDropdownAlt" size="1"  style="font-size:12px" class="bg-light-yellow collapse" onchange="module_uiLib.default.content.updateTransliteration()">
+            <optgroup label="🌍">
+              <option value="iso">āISO</option>
+              <option value="iso_vedic">āi-āu</option>
+              <option value="cyrillic">пу</option>
+              <option value="urdu">نس</option>
+              <option value="??">🌍??</option>
+            </optgroup>
+            <optgroup label="🛕🧭S">
+              <option value="kannada">ಅ</option>
+              <option value="malayalam">അ</option>
+              <option value="telugu">క</option>
+              <option value="tamil_superscripted">க²</option>
+              <option value="tamil_extended">க</option>
+              <option value="grantha">𑌅</option>
+            </optgroup>
+            <optgroup label="🛕🧭N">
+              <option value="devanagari" selected="">स</option>
+              <option value="gujarati">અ</option>
+              <option value="gurmukhi">ਅ</option>
+            </optgroup>
+            <optgroup label="🛕🧭E">
+              <option value="oriya">ଅ</option>
+              <option value="assamese">অস</option>
+              <option value="bengali">অ</option>
+            </optgroup>
+            <optgroup label="🛕🏺📜">
+              <option value="sharada">𑆑𑇀𑆰</option>
+              <option value="brahmi">𑀅</option>
+            </optgroup>
+            <optgroup label="🛕🌋">
+              <option value="balinese">ᬩᬮᬶ</option>
+            </optgroup>
+          </select>
+          </div>
+          <div class="row col d-flex  dropdown">
+            <button class="btn btn-secondary-outline btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              A±
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="btn btn-secondary btn-sm" onclick="module_uiLib.changeTextSize(2)">A+</a>
+            <a class="btn btn-secondary btn-sm" onclick="module_uiLib.changeTextSize(-2)">A-</a>
+            </div>
+          </div>
+          <button class="btn btn-light btn-sm"  href="#commentStyleDropdown" data-toggle="collapse">
+            🗨
+          </button>
+          <select id="commentStyleDropdown" class="collapse" size="1" onchange="module_uiLib.default.content.updateCommentStyleFromDropdown()">
+            <option value="on">✔</option>
+            <option value="hidden">✗</option>
+          </select>
+          <div><a id="expandAllButton" class="btn btn-secondary" onclick="module_uiLib.default.query.setParamsAndGo({'expandDetails': '.*'})">↕️️</a></div>
+          <div id="printStyleDiv" class="row col d-flex  dropdown">
+          <button class="btn btn-light btn-sm dropdown-toggle"  href="#printStyleDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          🖨
+          </button>
+            <div class="dropdown-menu col" aria-labelledby="printStyleDropdown">
+              <div class="row justify-content-center">
+                <p>Cols:</p>
+                <input type="number" min="1" max="10" value="2" step="1" id="tbColumns" style="width: 3ch;"  accesskey="c"/>
+              </div>
+              <div class="row justify-content-center">
+                <p>A±:</p> <input type="text" id="tbBodyFontSize" value="0.4cm" style="width: 6ch;"  accesskey="f"></input>
+              </div>
+              <div class="row justify-content-center">
+                <p>Incl:</p> <input checked type="checkbox" id="tbIncludeStyle" value="on"></input>
+                <button id="btnPrintStyle" onclick="module_uiLib.default.content.updatePrintStyle()">🖨
+                </button>
+              </div>
+            </div>
+        </div>
+        </div>
+        <div id="audioDiv" class="row col d-flex  dropdown">
+          <button class="btn btn-secondary-outline btn-sm dropdown-toggle" type="button" id="audioDropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            🎧
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a id="speakerButton" class="btn btn-outline-secondary btn-sm" onclick="module_uiLib.default.content.handleSpeakToggle()">⏯</a>
+          <button id="speakerPauseButton" class="btn btn-outline-secondary btn-sm">⏸</button>
+            <div id="audioOptionsDiv" class="row justify-content-center" >
+              <div>
+                <p class="lead">Vol</p>
+                <input type="range" min="0" max="1" value="1" step="0.1" id="volume" />
+                <span id="volume-label" class="ms-2">1</span>
+              </div>
+              <div class="mx-5">
+                <p class="lead">Rate</p>
+                <input type="range" min="0.1" max="10" value="1" id="rate" step="0.1" />
+                <span id="rate-label" class="ms-2">1</span>
+              </div>
+              <div>
+                <p class="lead">Pitch</p>
+                <input type="range" min="0" max="2" value="1" step="0.1" id="pitch" />
+                <span id="pitch-label" class="ms-2">1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="https://sanskrit.github.io/search"  class="btn btn-light btn-sm">🥽🔦</a>
+        <div class="row col  d-flex justify-content-center">
+          <div><a id="previousPage" href="" class="btn btn-secondary">###<i class="fas fa-caret-left"></i></a></div>
+          <div ><a id="nextPage" href="" class="btn btn-secondary"><i class="fas fa-caret-right"></i> ### </a></div>
+        </div>
+        <ul id="top-bar-right-custom" class="list-group list-group-horizontal">
+        </ul>
+      </div>
+    </nav>
+</header>
+
+    
+    <div class="row" name="contentRow">
+      
+      <aside class="col-md-3 card border noPrint " id="sidebar">
+          <div id="fastSearch">
+              <datalist id="pageDataList"></datalist>
+              <input id="searchInput" placeholder="शीर्षिकान्विष्यताम्" list="pageDataList" onchange="module_uiLib.default.navigation.pageLoader()">
+          </div>
+          <details open  class="bg-light-gray" >
+              <summary id="sidebarToggleLink" onclick="module_uiLib.default.navigation.sidebarToggleHandler()">
+            Menu
+              </summary>
+              <ul id="sidebarBody" class="list pl2 p-0 bg-yellow">
+              </ul>
+          </details>
+      </aside>
+      <main class="col p-3" role="main" data-pagefind-body>
+        
+<header class='border d-flex justify-content-between'>
+    <h1 id="Adhyeta chandamama">Adhyeta chandamama</h1>
+    
+    <a id="editLink" class="btn btn-primary noPrint"  href="https://github.com/sanskrit/sanskrit.github.io/edit/master/content/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama.md"><i class="fas fa-edit"></i></a>
+    
+</header>
+<article>
+  <aside id="toc_card" class="card border noPrint ">
+    <details id="toc_header">
+        <summary>What's in this page?</summary>
+      <div id="toc_body" class="p-0">
+        
+        <ul id="toc_ul" class="list p-0">
+        </ul>
+      </div>
+    </details>
+    <div id="progressBarDiv" class="row d-flex justify-content-center">
+      🐎💪<progress id="progressLoading" value="0" max="100"> 32% </progress>
+    </div>
+  </aside>
+  <div id="post_content">
+  <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#800080;font-weight:bold">## chandAmAma - kArtik
+</span></span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold">### Role and Context:
+</span></span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span>You are an expert Sanskrit linguist, a meticulous digital archivist, and an advanced OCR and layout understanding system. Your task is to accurately transcribe and intelligently structure the linguistically relevant content from the provided PDF scans of an old Sanskrit magazine. Precision, adherence to formatting rules, and deep understanding of Sanskrit context are paramount.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold">### Input:
+</span></span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span>I will provide you with page-by-page scans (or the full PDF document) of an old Sanskrit magazine.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold">### Primary Goal:
+</span></span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span>To extract specified text content in a clean, rationalized, and structured format, while intelligently ignoring irrelevant elements.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold">### Detailed Instructions:
+</span></span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold">#### 1. Content Inclusion Criteria (Extract These):
+</span></span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span>Carefully transcribe the full text of:
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   Articles (लेखाः): Any non-fiction prose pieces.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   Stories (कथाः): Fictional narratives.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   Quizzes (प्रश्नोत्तरी): Questions, puzzles, or challenges.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   Content Index (विषयसूची / अनुक्रमणिका): The table of contents.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   Poems (कविताः / काव्यानि): Verse compositions.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   Text within Comic Panels (चित्रकथायाः पाठः): Any dialogue or narration explicitly part of a comic strip.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold">#### 2. Content Exclusion Criteria (Ignore These Completely):
+</span></span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   All Images: Do not transcribe any text that is part of a standard image, illustration, or photograph, unless it&#39;s text within a comic panel (as specified above).
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   Advertisements (विज्ञापनम्): Ignore all commercial advertisements.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   Page Numbers: Do not transcribe page numbers unless they are part of the Content Index.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   Headers/Footers: Unless they contain the author/title info to be moved (see point 4).
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   Magazine Mastheads/Logos: Do not transcribe the main magazine title/logo on the cover or inside pages, unless it&#39;s part of the Content Index itself.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold">#### 3. Text Normalization and Rationalization:
+</span></span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span> There must not be any space to the left of any punctuation character. इति । is WRONG. इति। is right. Do this for question marks, quotes, exclamation marks etc.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span> Replace two or more dots ... with an ellipsis character. 
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   Double Quotes (“ ” „ -&gt; &#34;):
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   Convert all variations of opening double quotes (e.g., “, „) into a single, standardized plain double quote character: &#34;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   Convert all variations of closing double quotes (e.g., ”, ‟) into a single, standardized plain double quote character: &#34;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>  Single Quotes (‘ ’ ‚ -&gt; &#39;):
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   Convert all variations of opening single quotes (e.g., ‘, ‚) into a single, standardized plain single quote character: &#39;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   Convert all variations of closing single quotes (e.g., ’, ‛) into a single, standardized plain single quote character: &#39;
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>  Sensible Decision on Unbalanced/Wrong Quote Marks (Crucial - Use Sanskrit Knowledge):
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   If you encounter an unbalanced quote (e.g., an opening quote without a closing one, or vice-versa) or a quote mark that appears grammatically incorrect or misplaced within a Sanskrit sentence, use your deep knowledge of Sanskrit grammar, syntax, and common idiomatic expressions to make the most sensible correction.
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   Prioritize preserving the intended meaning of the Sanskrit text.
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   Examples of sensible decisions:
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">*</span>   If a quote is opened (&#34;) at the start of a sentence/paragraph and there&#39;s no explicit closing quote, assume it closes at the end of the current logical statement or paragraph.
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">*</span>   If a closing quote (&#34;) appears without an obvious opening one, assess if it&#39;s genuinely a quote closure (implying an uncaptured opening) or a stray mark. If it&#39;s a quote, try to infer its logical start.
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">*</span>   If a quote mark is used incorrectly (e.g., in place of a punctuation mark), correct it to the standard punctuation while ensuring the quoted text, if any, remains properly enclosed.
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span> Quotes will generally begin around the actions of speaking/thinking (उक्तवान्/वती, चिन्तितवान्/वती etc) or words like thus (यत्). They will end around the word इति.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span> A hyphen - before a quote with an optional space between the two is probably an mdash.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   Paragraph Separation:
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   Separate distinct paragraphs within an article/story/poem using three newline characters (\n\n\n).
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   Do not add extra newlines for line breaks within a paragraph unless it&#39;s a true paragraph break indicated by the layout or content.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span> Join the lines of each paragraph using a space character in lieu of the \n. We need one paragraph to occupy one line of the output.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   Author/Info Placement:
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   Any author names, contributor notes, &#39;Part X of Y&#39;, or other relevant metadata (normally found at the bottom of an article, story, or poem on a page) must be moved to the very beginning of the extracted text for that piece.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold">#### 4. Layout Handling (Column Flow):
+</span></span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span>Accurately follow the reading order. Whether the content is presented in a single column or multiple columns (typically two-column layouts are common in magazines), ensure the text flows correctly. This means:
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   Read from the top of the first column to its bottom.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   Then, move to the top of the next column on the same page and read to its bottom.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   Only after completing all columns on the current page, proceed to the next page.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   Do not mix text across columns incorrectly.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>  Verify that no text is left undetected/unread. Do not jump from the end of column 1 to the middle of column 2 ignoring the first half of the column. This can happen sometimes based on wrong assumptions about image widths.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold">#### 5. Output Format and Structure:
+</span></span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span> We use a document based on s-expressions. The content will be fully marked up later. But do the basic document and paragraph marking (document :type &#34;story&#34;\n\n\n(p .......)\n\n\n(p .......)\n\n\n) first.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>  For each extracted content piece, provide it in the following structured format. If an article/story spans multiple pages, transcribe it continuously as a single piece under one heading. 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>  Within each paragraph, if you are confident that the quotes are balanced, convert the quotes to a structured format. So `अनन्तरं बहु
+</span></span><span style="display:flex;"><span>विचार्य मापनं कृत्वा तस्याः छायायाः मूल्यं &#39;एकशतं रुप्यकाणि देयानि&#39; इति निश्चयः अभवत्।<span style="color:#4070a0">` becomes `</span>अनन्तरं बहु विचार्य मापनं कृत्वा तस्याः छायायाः मूल्यं
+</span></span><span style="display:flex;"><span>(&#39; एकशतं रुप्यकाणि देयानि) इति निश्चयः अभवत्।` This is RIGHT: (&#39; एकशतं रुप्यकाणि देयानि). These are WRONG: (&#39;एकशतं रुप्यकाणि देयानि&#39;) and (&#39;एकशतं रुप्यकाणि देयानि). This will also applied to nested quotes (&#34;..&#39;...&#39;..&#34; and &#39;..&#34;...&#34;..&#39;).
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-style:italic">*Example Output Segment:*</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(document :type &#34;article&#34;
+</span></span><span style="display:flex;"><span>(title संस्कृतभाषायाः महत्वम्)
+</span></span><span style="display:flex;"><span>(author श्री. रामचन्द्रः शास्त्री)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(p संस्कृतभाषा विश्वस्य प्राचीनतमासु भाषासु अन्यतमा अस्ति। अस्याः भाषायाः व्याकरणं पाणिना विरचितम् अस्ति, यत् अत्यन्तं वैज्ञानिकं सुव्यवस्थितं च मन्यते।)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(p भारते संस्कृतस्य महत्वं बहुधा स्वीक्रियते। अनेके ग्रन्थाः, पुराणाः, काव्यानि च संस्कृतभाषया एव लिखितानि सन्ति।)
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>=== End of Article ===
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(document :type &#34;story&#34;
+</span></span><span style="display:flex;"><span>(title शृगालस्य चतुराई)
+</span></span><span style="display:flex;"><span>(note पञ्चविंशतिवर्षेभ्यः पूर्वं चन्दमामायां प्रकाशिता कथा)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(p एकस्मिन् वने एकः धूर्त शृगालः निवसति स्म। सः प्रतिदिनं नूतनं उपायं चिन्तयति स्म कथं सः मृगान् खादितुं शक्नोति।)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(p एकदा सः एकं सिंहं दृष्ट्वा भीतः अभवत्। परन्तु सः शीघ्रं एव एकं उपायं अचिन्तयत्। (&#34; अहं सिंहस्य मित्रं भविष्यामि) इति सः अचिन्तयत्।)
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>=== End of Story ===
+</span></span><span style="display:flex;"><span>(document :type &#34;comic&#34;
+</span></span><span style="display:flex;"><span>(title पञ्चछात्राः)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(p मम नाम रमेशः अस्ति।)
+</span></span><span style="display:flex;"><span>(p भवान् कुत्र गच्छति?)
+</span></span><span style="display:flex;"><span>(p अहं विद्यालयं गच्छामि।)
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>=== End of Comic ===
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-style:italic">*Important Considerations:*</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   <span style="font-style:italic">*Accuracy:*</span> Strive for 100% accuracy in transcription.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   <span style="font-style:italic">*Devanagari:*</span> Keep the output in Devanagari script as found in the original, without transliteration, unless the original uses a different script (very unlikely).
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   <span style="font-style:italic">*Uncertainty:*</span> If any part of the text is illegible or you are uncertain about a quote correction, please indicate it clearly within [square brackets with a note, e.g., [पाठः अस्पष्टः] or [uncertain quote correction].
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   <span style="font-style:italic">*Page-by-page processing:*</span> If your system processes page by page, please indicate the page number before the content extracted from that page. If it processes the whole document, just provide continuous output. <span style="font-style:italic">*IMPORTANT:*</span> DO NOT do this for articles/stories/content spanning multiple pages. In those cases, the page number should only be indicated at the very start. The end marker === End of Comic === etc will then only appear at the actual end of the content, not at the end of each page.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   <span style="font-style:italic">*Empty Pages:*</span> If a page contains only ignored content (e.g., just advertisements or blank space), simply state: Page X: Contains only ignored content.
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+  </div>
+</article>
+
+
+        
+
+        
+
+
+
+    <aside class="card border noPrint" id="section-tree-item-groups_dyuganga_projects_text_proofreading_editing_AI-prompt_adhyeta-chandamama_md">
+        <div class="card-title bg-light-gray border d-flex justify-content-between">
+            <a href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/adhyeta-chandamama/">Adhyeta chandamama </a>
+            <a data-toggle="collapse" href="#section-tree-item-body-groups_dyuganga_projects_text_proofreading_editing_AI-prompt_adhyeta-chandamama_md" role="button" aria-expanded="false" aria-controls="section-tree-item-body-groups_dyuganga_projects_text_proofreading_editing_AI-prompt_adhyeta-chandamama_md" >…<i class="fas fa-caret-down" class="collapsed"></i> </a>
+        </div>
+        <nav id="section-tree-item-body-groups_dyuganga_projects_text_proofreading_editing_AI-prompt_adhyeta-chandamama_md" class="card-body p-0 collapse">
+            
+            <li>draft: false</li>
+            
+            <li>iscjklanguage: false</li>
+            
+            <li>title: Adhyeta chandamama</li>
+            
+        </nav>
+    </aside>
+
+
+      </main>
+    </div>
+    <footer class="bg-yellow  p-1 noPrint" role="contentinfo">
+  
+
+  <div id="div_foot_nav_bar" class="row">
+    <a href="https://sanskrit.github.io/search"  class="btn btn-light btn-sm">🥽🔦</a>
+    <div class="row col  d-flex justify-content-center">
+      <div><a id="previousPageFoot" href="" class="btn btn-secondary">###<i class="fas fa-caret-left"></i></a></div>
+      <div ><a id="nextPageFoot" href="" class="btn btn-secondary"><i class="fas fa-caret-right"></i> ### </a></div>
+    </div>
+      <ul id="footer-bar-right-custom" class="list-group list-group-horizontal">
+      </ul>
+  </div>
+  <div id="div_footer_bar" class="container-fluid d-flex justify-content-between">
+    <a class="btn btn-secondary" href="https://github.com/sanskrit/sanskrit.github.io/issues/new" >
+      ✉️Contact
+    </a>
+    <a class="btn btn-secondary" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
+    <div class="btn small border">
+      
+      <a href="https://github.com/sanskrit/sanskrit.github.io/actions"><img src=""> Built </a> on 2026 Feb 17 02:36:54 UTC. (<a href="http://google.com/search?q=02%3a36%3a54%20UTC to IST">IST</a>)
+    </div>
+  </div>
+</footer>
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33H08JSLQR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33H08JSLQR');
+</script>
+
+  </body>
+  <script type='text/javascript'>
+    
+    
+    
+    module_uiLib.onDocumentReadyTasks();
+  </script>
+  
+</html>
