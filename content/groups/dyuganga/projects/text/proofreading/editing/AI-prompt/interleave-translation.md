@@ -5,12 +5,12 @@ title = "Interleave translation"
 ## mUla and En translation
 ```markdown
 
-Consider the attached text and translation.  
+I will give you some text and translation.  
 Separate sentences and interleave translation in the following format for each sentence:
 
 <details open><summary>विश्वास-प्रस्तुतिः</summary>
 
-ORIGINAL SENTENCE, with only sandhis in sentence ends resolved.
+ORIGINAL SENTENCE, with only sandhis in sentence ends (but nowhere else in the middle) resolved.
 </details>
 
 <details><summary>English</summary>
@@ -32,7 +32,10 @@ Suggest any corrections in this format : [[OLD|NEW]].
 
 **IMPORTANT FORMATTING RULES:**  
 
-The empty lines shown above are significant and must be retained. Note that there should be no empty line before `</details>` tag.
+The empty lines shown above are significant and must be retained. Note that there should be no empty line before `</details>` tag.  
+Retain all other markdown (eg. headings) as they are.
+
+Are you ready?
 ```
 
 ### mUla not in details tag
