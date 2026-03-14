@@ -109,6 +109,24 @@ Suggest corrections only in the commentary portion, only in this form - [OLD|NEW
 Use markdown format for footnotes. (if footnote named 1 appears in page 12, make the reference 12_1).
 ```
 
+## En and Es translation addition
+```markdown
+
+You will be given some markdown text. 
+
+Under each <details><summary>नीलमेघः (सं)</summary> ... </details> block, place the following blocks - 
+
+<details><summary>English</summary>
+
+ENGLISH TRANSLATION corresponding to the text in the नीलमेघः (सं) block above, selected FROM THE translation provided in the end (not anything freshly created)
+</details>
+
+<details><summary>Español</summary>
+
+Spanish translation of the above English block
+</details>
+```
+
 ## maNipravALa, skt, kn
 ```markdown
 I will give you some text in kannaDa script where each numbered maNipravALa (sanskritized tamil) sUtra is followed by a sanskrit verse and kannada translation.
