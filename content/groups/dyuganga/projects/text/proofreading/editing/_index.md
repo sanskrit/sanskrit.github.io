@@ -70,6 +70,11 @@ If you cannot type unusual unicode characters, copy them from here and paste.
 - No harm using ISO instead of IAST - we can fix it later.
 - No harm ignoring initial letter capitalization (ie ṣ instead of Ṣ and so on).
 
+## Sanskrit
+### Optional forms
+समृद्ध्यते → ईदृशेषु वैकल्पिकरूपेषु प्रसिद्धतर एव चेतव्यः, यथा ऽत्र समृध्यते।  
+(नानेन सत्त्व-सत्वयोर् विकल्पो भाव्यः - एकतरस्यैव व्याकरण-शुद्धत्वात्। )
+
 ## Telugu
 Certain defects are common in old sanskrit texts published in telugu script. Please use sanskrit knowledge to detect and correct those. If in doubt ask with screenshot.
 
