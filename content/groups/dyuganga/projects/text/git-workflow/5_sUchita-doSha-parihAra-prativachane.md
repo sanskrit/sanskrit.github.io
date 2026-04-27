@@ -18,7 +18,7 @@ title = "5 सूचित-दोष--परिहार-प्रतिवच�
 </details>
 
 
-- Go to: https://github.com/vishvAsa/REPO/pulls?q=
+- Go to: https://github.com/vishvAsa/REPO/issues?q=is%3Apr+author%3AXYZ
 - Click on your latest pull request.
 
 ### Via Email
