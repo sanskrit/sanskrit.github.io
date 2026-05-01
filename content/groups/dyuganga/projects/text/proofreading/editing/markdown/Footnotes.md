@@ -68,6 +68,33 @@ Regarding paragraph formatting, line separation etc.. - usual markdown conventio
 यत्र दीर्घोद्धरणम् (श्लोकसदृशम्) भवति, तत्रैवम् अवश्यं क्रियताम्।  
 अन्यथापि पादटिप्पन्यवगतौ paragraph-विन्यासः शोभते चेद् एवम्।
 
+### As details
+
+Some very long footnotes are better presented as details tags placed after the relevant paragraph. For example:
+
+```markdown
+
+<details><summary>विस्तारः (द्रष्टुं नोद्यम्)</summary>
+
+> जामि वा एतद् यज्ञस्य क्रियते यद् अन्वञ्चौ पुरोडाशौ उपांशु-याजम् अन्तरा यजति (तै.सं. २.६.६)
+
+इति दर्श-पूर्णमास-प्रकरणे श्रूयते।
+
+एतद्-वाक्यम् अधिकृत्य (पू.मी. २.२.४ )अधिकरणे एवं सिद्धान्तितम्।
+
+पूर्णमासे
+
+> यद् आग्नेयः
+
+> ताभ्याम् एतम् अग्नीषोमीयम् एकादश-कपालम्
+
+इति पुरोडाश-याग-द्वयं विहितं ।
+
+तस्याविच्छेदेनानुष्ठान-करणे,  
+....
+</details>
+```
+
 
 ## Deduplication
 प्रत्येकस्यां सञ्चिकायां
