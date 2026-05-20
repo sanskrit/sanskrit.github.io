@@ -37,7 +37,7 @@ The empty lines shown above are significant and must be retained. Note that ther
 Retain all other markdown (eg. headings) as they are.
 
 ## Hyphenator algorithm
-This algorithm is to be applied to text within विश्वास-प्रस्तुतिः blocks, and nowhere else.
+This algorithm is to be applied to text only where explicitly required above, and nowhere else.
 
 ### **Part 1: Definitions and Core Principles**
 
@@ -193,7 +193,7 @@ You will be given some text and a translation or commentary.
 **Your Task:**
 1. Identify every `<details><summary>मूलम्</summary> ... </details>` block.
   - (Ignore `मूलम् (संयुक्तम्)` blocks).
-2. Insert the corresponding English translation segment directly **above** each identified tag.
+2. Insert the corresponding English translation segment directly **above** each identified tag, separated by two empty lines.
 3. Use the format:
    <details><summary>English</summary>
 
@@ -245,7 +245,7 @@ You will be given some text and a translation or commentary.
 **Your Task:**
 1. Identify every `<details><summary>मूलम्</summary> ... </details>` block.
   - (Ignore `मूलम् (संयुक्तम्)` blocks).
-2. Insert the corresponding commentary segment directly **below** each identified tag.
+2. Insert the corresponding commentary segment directly **below** each identified tag, separated by two empty lines.
 3. Use the format:
    <details><summary>टीका</summary>
 
@@ -261,7 +261,7 @@ You will be given some text and a translation or commentary.
 
 
 ## Hyphenator algorithm
-This algorithm is to be applied to text within विश्वास-प्रस्तुतिः blocks, and nowhere else.
+This algorithm is to be applied to text only where explicitly required above, and nowhere else.
 
 ### **Part 1: Definitions and Core Principles**
 
