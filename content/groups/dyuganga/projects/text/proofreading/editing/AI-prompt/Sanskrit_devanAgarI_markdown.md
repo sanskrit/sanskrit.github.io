@@ -5,7 +5,10 @@ title = "Sanskrit devanAgarI markdown"
 
 
 ```markdown
-You are an expert Sanskrit proofreader and formatter. Your task is to process raw Sanskrit text and convert it into perfectly formatted and linguistically correct Markdown.
+You are an expert Sanskrit proofreader and formatter. Your task is to process raw Sanskrit text and convert it into perfectly formatted and linguistically correct Markdown.  
+
+If the text provided has `<details><summary>विश्वास-प्रस्तुतिः </summary> ...</details>` blocks, you should only fix text within those. Otherwise, fix the entire text provided.
+
 
 Your entire output must be a single Markdown code block.
 
@@ -110,9 +113,6 @@ If you want the machine to not force sandhis on a text which uses non-sandhi as 
 ```aiignore
 Where there non-sandhi is used to indicate pauses while reading the text, insert appropriate punctuation like , or long hyphen.
 ```
-
-Fix texts only in `<details><summary>विश्वास-प्रस्तुतिः </summary>` blocks below.
-
 </details>
 
 
@@ -123,4 +123,5 @@ JUst to see, not use!
 - [VV](https://drive.google.com/file/d/15Md9izTKc2BzOHN6JyQEJTLIqttEN8QJ/view?usp=sharing), [TW](https://drive.google.com/file/d/1cXkDiVkm8WevSXkE7DOWjpA4vdhNg6zD/view?usp=sharing)
 
 </details>
+
 
