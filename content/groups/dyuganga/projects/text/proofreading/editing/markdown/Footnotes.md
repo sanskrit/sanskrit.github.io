@@ -70,6 +70,8 @@ Regarding paragraph formatting, line separation etc.. - usual markdown conventio
 
 ### As details
 
+४ पङ्क्तिभ्योऽपि दीर्घा चेट् टिप्पनी, details-आवरणे निवेशयितुं वरं स्यात् (dd ctrl-space इति कृत्वा)।  
+
 Some very long footnotes are better presented as details tags placed after the relevant paragraph. For example:
 
 ```markdown
