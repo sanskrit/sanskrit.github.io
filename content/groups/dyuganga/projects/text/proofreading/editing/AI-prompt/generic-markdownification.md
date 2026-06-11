@@ -14,6 +14,11 @@ Be sure to use markdown format for headings and footnotes.
 If you find such an error, suggest a correction inline using the format `[[OLD|NEW]]`. Example: `[[prarabvaṁ|prārabdhaṁ]]`.
 ```
 
+### Retain annotations
+```markdown
+Here is a partially edited version of (intro from xyz) , with my annotations (which you should retain). Process and fix.
+```
+
 
 ## Generic translated
 ```markdown
@@ -27,6 +32,7 @@ If you find such an error, suggest a correction inline using the format `[[OLD|N
 
 Are you ready?
 ``` 
+
 
 ## English text with sanskrit footnotes
 ```markdown
