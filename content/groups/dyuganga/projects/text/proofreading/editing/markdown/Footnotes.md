@@ -97,6 +97,7 @@ Some very long footnotes are better presented as details tags placed after the r
 </details>
 ```
 
+details-आवरणे स्थापिते सति, आदौ रिक्तावकाशा नापेक्षिताः। `[^1_55_टिप्पनी]` इत्यादि चिह्नम् अपि नापेक्षितम्। सम्बद्धमूलवाक्य पार्श्वे हि स्यात्।
 
 ## Deduplication
 प्रत्येकस्यां सञ्चिकायां
