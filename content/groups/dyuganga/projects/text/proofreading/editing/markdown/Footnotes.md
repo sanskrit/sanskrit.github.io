@@ -4,7 +4,7 @@ title = "Footnotes"
 +++
 Often, footnotes which appear in the bottom of the page in a physical book, appear without separation in raw OCR text on screen. This confuses the reader. Hence, it should be properly formatted.
 
-Every footnote has a **reference** position/ mark, and a **definition**. Example in the below image (right click and open it in a new window for clearer view):
+Every footnote has a **reference** (सङ्केतः) position/ mark, and a **definition** (पादटिप्पनी). Example in the below image (right click and open it in a new window for clearer view):
 
 ![](../../../images/footnote_ref_def.png)
 {title="" class="thumbnail"}
@@ -140,3 +140,7 @@ Reg. example above -
 वस्तुतः "राजन्यवैश्ययोर् उपनयनम्" इत्यस्मिन् विभागे वर्तमानम् अखिलं ग्रन्थान्तराद् उद्धृतम् - आद्य्-अन्तयोर् वर्तमान-`"`-चिह्नेनैतज् ज्ञायते। तथापि स्ववचनस्थाने हि प्रयुक्तम्। अतस् तत्रोद्धरणचिह्नदानं नापेक्षितम्।
 
 किञ्च, तद्-अन्तः यद् उद्धरण-जातम् अस्ति तत् तु दर्शनीयम्।
+
+## सङ्केत-स्थापनम्
+यथासम्भवम्, पदमध्यय्, उपपदमध्ये वा पादटिप्पनी चिह्नं न स्थापयेत्।  
+`मत्-सुहृ[^v18]दस् तिलापः` इत्य्-अपेक्षया `मत्-[^v18]सुहृदस् तिलापः` इति वा, `मत्-सुहृदस्[^v18] तिलापः` इति वा वरम्। 
