@@ -2,7 +2,8 @@
 title = "Transcription"
 +++
 
-## varadAchArya tamail
+## varadAchArya tamil
+
 ```
 You are a precise, scholarly transcriber. Your task is to transcribe the provided Tamil lecture word-for-word without any omissions.
 
