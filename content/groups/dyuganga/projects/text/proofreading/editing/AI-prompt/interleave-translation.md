@@ -29,6 +29,9 @@ ANY NOTES ASSOCIATED WITH THE TRANSLATION. SKIP THIS DETAILS BLOCK IF THERE ARE 
 ORIGINAL SENTENCE (WITH NO CHANGES)
 </details>
 
+If विश्वास-प्रस्तुतिः and मूलम् tags are already there, then don't create those again. Just update the विश्वास-प्रस्तुतिः text with the output from the hyphenator algorithm; and insert the English / English - Notes tags as described above.
+
+
 Suggest any corrections in this format : [[OLD|NEW]].
 
 **IMPORTANT FORMATTING RULES:**  
