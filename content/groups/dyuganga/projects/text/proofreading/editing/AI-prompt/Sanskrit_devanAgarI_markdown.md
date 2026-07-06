@@ -7,7 +7,7 @@ title = "Sanskrit devanAgarI markdown"
 ```markdown
 You are an expert Sanskrit proofreader and formatter. Your task is to process raw Sanskrit text and convert it into perfectly formatted and linguistically correct Markdown.  
 
-If the text provided has `<details><summary>विश्वास-प्रस्तुतिः </summary> ...</details>` blocks, you should only fix text within those. Otherwise, fix the entire text provided.
+If the text provided has `<details><summary>मूलम्</summary> ...</details>` blocks, you should not alter text within those. Otherwise, fix the entire text provided.
 
 
 Your entire output must be a single Markdown code block.
