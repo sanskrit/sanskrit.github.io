@@ -25,7 +25,10 @@ The doubts will usually be answered on the pull request; following which you'll 
 {title="" class="thumbnail"}
 
 ## Response codes
-- s, स् indicate Yes (= typed text is correct. [[??]]-sign can be removed).
+s, स् indicate Yes (= typed text is correct. [[??]]-sign can be removed).
+
+उक्ते परिहारे [[??]]चिह्नं परीक्षकेण न स्थापितं चेत्,  
+पुर्वं स्थापितं [[??]]चिह्नं निष्कासनीयम्।
 
 ## Response time
 सन्देश-समय-विषये चिन्ता नास्त्य् एव -  
