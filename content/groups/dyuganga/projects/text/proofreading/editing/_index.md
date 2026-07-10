@@ -9,12 +9,13 @@ title = "+Editing"
 ## Workflow
 Our proofreaders follow various workflows to achieve perfect text based on what suits them. 
 
-### साधारण-परीक्षण-रीतिः
+### साधारण-परीक्षण-रीतिः (En)
 
 
 **यान्त्रिक-शोधनम्** - First, use AI LLM to correct 10-20 lines (instructions [here](AI-prompt)). 
 
 - (Note that, depending on the prompt, this may yield sanskrit text with a lot of hyphens and spaces (eg. दीर्घ-सिद्धिस् साध्ये सताम् अस्त्व् इत्य् अवदत्) - let them remain as long as they follow rules mentioned [elsewhere](/groups/dyuganga/projects/text/proofreading/editing/markdown/Spacing_paragraph-vivekaH).)
+- This may have already been done. If so, omit this stemp.
 
 Then proceed to manual proofreading below. ततो **मानुष-शोधनम्**॥ In each of the below 2 steps, you should do the following -
 
@@ -34,6 +35,43 @@ These steps are to be followed in sequence -
 never blindly trust the AI output, even with near perfect text.
 
 If in our experience, omitting one of the steps (usually the last) does not lead to many errors or loss of speed, you will be allowed to omit it - be sure to ask.
+
+### साधारण-परीक्षण-रीतिः (सं)
+**यान्त्रिक-शोधनम्** - प्रथमं कृत्रिमबुद्ध्या (AI LLM) उपयोगं कृत्वा  
+दशविंशतिपङ्क्तीः शोधयन्तु ([अत्र](AI-prompt) निर्देशाः)।  
+(विशेषतः सूच्यते यत्, यन्त्र-बुद्ध्य्-अनुसारेणैतेन बहुभिः संयोजकचिह्नैः रिक्तस्थानैश्च युक्तः संस्कृतपाठः उत्पद्येत (यथा - "दीर्घ-सिद्धिस् साध्ये सताम् अस्त्व् इत्य् अवदत्") - यावत् तेऽन्यत्र [निर्दिष्टानां](/groups/dyuganga/projects/text/proofreading/editing/markdown/Spacing_paragraph-vivekaH) नियमानां पालनं कुर्वन्ति, तावत् ते तथैव तिष्ठन्तु।)  
+पूर्वम् एवेदम् अन्येन कदाचित् कृतं स्यात्। तथा सति, नेदम् पुनः कार्यम्। 
+
+ततो **मानुष-शोधनम्**॥
+पश्चाद् वक्ष्यमाणयोर् द्वयोः सोपानयोर् भवद्भिर् एतद्-अनुसर्तव्यम् -  
+
+- यदि मूलचित्रं, भवतां भाषाकौशलं चोपयुज्य स्वयं दोषान् अन्विष्य तेषां शोधनं कुर्वन्तु।
+- शङ्कास्पदानि स्थानानि चिह्नीकृत्यात्र [वर्णितरीत्या](understand_ask) स्पष्टीकरणं पृच्छन्तु -  
+  यथा, यत्र भवतां भाषाप्रतिभा मूलचित्रं च परस्परं विरुध्येते।
+- एतत् कुर्वद्भिर् भवद्भिर् यथाशक्यं पाठस्यावबोधाय प्रयत्नः करणीय इति महत्त्वपूर्णम्।
+- सामान्यदोषेभ्यः सावधाना भवन्तु। विशेषनिर्देशः - पदानां मध्ये -चिह्नानि न स्युः, पदान्तर्गतं रिक्तस्थानं च न भवेत्।
+
+द्वे सोपाने -
+
+**मूल-प्रधान-शोधनम्** - प्रथमं चित्रेऽग्रिमान् कतिपयशब्दान् पठित्वा,  
+टङ्किते पाठे तान् एव शुद्धीकुर्वन्तु चिह्नीकुर्वन्तु वा -  
+एतद् वारं वारं कुर्वन्तः  
+पाठस्य पृष्ठम् एकं खण्डं वा शोधयन्तु।
+
+**टङ्कित-पाठ-प्रधान-शोधनम्** -  
+तद्-अनन्तरं पूर्व-सोपाने शोधितं पाठं साक्षात् पठन्तु  
+(उच्चैःस्वरेण, [अत्र](multi-script-proofreading) वर्णितरीत्या ऽन्य-लिप्यां च चेद् वरम्),  
+केवलं यत्रैव दोषस्य शङ्का भवेत् तत्रैव मूलचित्रं पश्यन्तः।  
+
+एते निर्देशाः क्रमेणैवानुसर्तव्यानि -  
+पाठे प्रायशः सर्वथा शुद्धे सत्यपि,  
+कृत्रिमबुद्धेः परिणामं कदाप्य् अन्धवन्न विश्वसन्तु।
+ 
+यद्य् अस्माकम् अनुभवेनैकस्य सोपानस्य त्यागेन (प्रायशः अन्तिमस्य)  
+बहवो दोषा, वेग-क्षतिर् वा न सम्भवति,  
+तर्हि तस्य त्यागाय भवद्भ्यो ऽनुमतिर् दास्यते -  
+एतद्-अर्थं निश्चितं पृच्छन्तु।
+
 
 ### Fully manual workflow
 Within sanskrit text, you insert spaces and hyphens to the maximum possible extant, subject to the [pada-separation rules](pada-separation). So, you get text like - सिद्धिस् साध्ये सताम् अस्त्व् इत्य् अवदत् instead of सिद्धिस्साध्ये सतामस्त्वित्यवदत्.
