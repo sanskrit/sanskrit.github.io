@@ -1,10 +1,11 @@
 +++
-title = "+कृष्ण-शर्मा"
+title = "+ वि.कृष्ण-शर्मा"
 +++
 
-V. Krishna Sharma \(Shrauti - Shastri\)
+V. Krishna Sharma 
+\(Shrauti - Shastri\)
 
-## Offering
+### Offering
 I'm V. Krishna Sharma, a scholar of Sama Veda and Advaita Vedanta Shastra. 
 
 - A person who respects the Indian culture, philosophies and traditions.
@@ -28,11 +29,11 @@ I'm V. Krishna Sharma, a scholar of Sama Veda and Advaita Vedanta Shastra.
 + Samaveda                                      ~      Brahmasri “*Samagana Chatura”* **H.N Rajesh Shrowthy**, Mysore  
 + Adwaita Vedanta                          ~      Brahmasri “*Nyaya Vedanta Vidvanmani”**** *****Dr. K. Vishwanatha Sharma**, Tirupati.  
 + Panini Vyakarana                         ~       Brahmasri Late. **Dr. Rani Subbaih Deekshitulu,** Mysore. 
-+ Ashta Brahmana                               ~      Brahmasri “*T.T.D Ashthana Vidwan” ***Venkatesh Shrowty**, Tirupati.  
++ Ashta Brahmana                               ~      Brahmasri “*T.T.D Ashthana Vidwan” **Venkatesh Shrowty**, Tirupati.  
 + Shiksha Vyakarana                         ~       Brahmasri “*Chaturvedi*”** Dr. Vamshi Krishna Ghanapathy**, Mysore. 
 + Basic Sanskrit                                ~       Brahmasri Late.** Mahabalaih**, Mysore. 
 
-Achievements, Certificates and Awards in Samaveda
+### Achievements, Certificates and Awards in Samaveda
 
 + Samaveda Rahasyanta                   -       Avadhoota Datta Peetham, Mysore. 
 + Samaveda Rahasyanta                   -       Sri Veda Shastra Parishat, Rajamundry. 
@@ -45,7 +46,7 @@ Achievements, Certificates and Awards in Samaveda
 + Vishishta Samaveda Vidwan            -      Yagynavalkya Shuklayajurveda Trust, Banglore. 
 
 
-Achievements, Certificates and Awards in Adwaita Vedanta Shastra
+### Achievements, Certificates and Awards in Adwaita Vedanta Shastra
 
 
 + “Adwaita Vedanta Ratnam”             -      Shri Kanchee Veda Vedanta Shastra Sabha, Tenali. 
@@ -57,7 +58,7 @@ Achievements, Certificates and Awards in Adwaita Vedanta Shastra
 
 
 
-Work Experience
+### Work Experience
 
 + Veda Parayanadar                         -       Tirumala Tirupati Veda Parayana Scheme, Tirupati. \(Sep’2019 - Present\) 
 + Samaveda Adhyapakar                   -       Shrutirama Gurukulam, Banglore. \(February 2020 – April 2021\) 
@@ -94,7 +95,7 @@ Work Experience
 
 
 
-## Other Activities
+### Other Activities
 
 + Can perform Samaveda Homa prayoga, Punyahavachana, All Pujas, Yajurvediya Puja etc. 
 + Rudra Homa, Chandi Homa, Ganapati Homa, Datttatreya Homa, Shimshumara Homa 
@@ -102,7 +103,7 @@ Work Experience
 
 
 
-## Online and Offline classes on various subjects
+### Online and Offline classes on various subjects
 
 + All Suktas in Samaveda \(Including Upanishats and Brahmanas\) Recital and Explanatory classes. 
 + 10 Upanishats, Bhagavadgita, Brahma Sutra, Vedanta Paribhasha on Vedanta Shastra in Sanskrit, Telugu and Kannada. 
@@ -116,7 +117,6 @@ Work Experience
 + Kannada - Hindi -Tamil Limited working Proficiency. 
 + English - Elementary Proficiency. 
 
- 
 
 ## Social Network
 
@@ -127,15 +127,16 @@ Work Experience
 
 ## Contact
 
-Email                  :             krshnasharma93 ATT gmail.com
+Email        :     krshnasharma93@gmail.com
 
-Contact No.      :             \+91 9573973801
+Contact No.  :  +91 9573973801
 
-DOB                  :             09-09-1993
+DOB          :    09-09-1993
 
 Address
 
-**V. Krishna Sharma,** \(Samaveda Adhyapakar\)  
+**V. Krishna Sharma,** 
+\(Samaveda Adhyapakar\)  
 1063-57, Shakti Nilaya,  
 1st Main, 5th Cross,  
 Vidyaranyapuram,  
