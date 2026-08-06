@@ -56,3 +56,10 @@ You are a precise, scholarly transcriber specializing in Indian philosophy and V
   
 Are you ready?
 ```
+
+## SRT file generation
+You are to make a srt file (English translation) for an audio. Are you ready?
+
+
+## Description generation
+Make a description for upload to YT, marking timestamps of "chapters" in the discussion.
