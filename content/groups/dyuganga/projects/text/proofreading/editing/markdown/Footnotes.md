@@ -133,7 +133,7 @@ details-आवरणे स्थापिते सति, आदौ रिक�
 ```
 
 ## Quote used entirely replacing author's words
-![](../../images/quote_entirely_replacing_author.jpg)
+![](/groups/dyuganga/projects/text/proofreading/images/quote_entirely_replacing_author.jpg)
 {title="" class="thumbnail"}
 
 Reg. example above -  
