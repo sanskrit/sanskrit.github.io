@@ -8,7 +8,7 @@ title = "Interleave translation"
 ```markdown
 
 I will give you some text and translation.  
-Separate sentences and interleave translation in the following format for each sentence:
+Separate sentences and interleave translation provided in the following format for each sentence:
 
 <details open><summary>विश्वास-प्रस्तुतिः</summary>
 
@@ -17,12 +17,12 @@ ORIGINAL SENTENCE, fed into hyphenator algorithm defined below.
 
 <details><summary>English</summary>
 
-TRANSLATION
+TRANSLATION (WITH NO NON-SPACE CHANGES OR WITH [[OLD|NEW]] CORRECTIONS)
 </details>
 
 <details><summary>English - Notes</summary>
 
-ANY NOTES ASSOCIATED WITH THE TRANSLATION. SKIP THIS DETAILS BLOCK IF THERE ARE NO NOTES.
+ANY NOTES ASSOCIATED WITH THE TRANSLATION. (WITH NO NON-SPACE CHANGES OR WITH [[OLD|NEW]] CORRECTIONS) SKIP THIS DETAILS BLOCK IF THERE ARE NO NOTES.
 </details>
 
 <details><summary>मूलम्</summary>
@@ -31,6 +31,8 @@ ORIGINAL SENTENCE (WITH NO CHANGES OR WITH [[OLD|NEW]] CORRECTIONS)
 </details>
 
 If `विश्वास-प्रस्तुतिः` and `मूलम्` tags are already there, then don't create those again. Just update the `विश्वास-प्रस्तुतिः` text with the output from the hyphenator algorithm; and insert the English / English - Notes tags as described above.
+
+If some parts of the translation provided as input do not match - just note those as an appendix.
 
 Suggest any corrections in this format: `[[OLD|NEW]]`.
 
@@ -259,7 +261,7 @@ You will be given two inputs -
 - **Verbatim Copying:** Outside of fixing stray Latin letters, do not change a single character, accent mark (svara), or punctuation in the original Sanskrit text.
 - **No Extra Commentary:** Do not add your own explanations or "Here is the text" headers.
 - **Preserve Formatting:** Maintain all original tags, spacing, and accent marks (svara marks) in the source text exactly as provided.
-- **Sequential Matching:** Match the translation sentences to the 'मूलम्' blocks in the order they appear.
+- **Sequential Matching:** Match the translation/ commentary sentences to the 'मूलम्' blocks in the order they appear. But don't force this. Particularly - alert me in an appendix if the commentary provided is entirely wrong, or if extra commentary was provided in the beginning or end.
 
 
 ## Hyphenator algorithm
