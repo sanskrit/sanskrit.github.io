@@ -240,7 +240,7 @@ COMMENTARY PASSED THROUGH the Hyphenator algorithm defined below
 - **No Extra Commentary:** Do not add your own explanations or "Here is the text" headers.
 - **Preserve Formatting:** Maintain all original tags, spacing, and accent marks (svara marks) in the source text exactly as provided.
 - **Sequential Matching:** Match the translation/ commentary sentences to the 'मूलम्' blocks in the order they appear. But don't force this. Particularly - alert me in an appendix if the commentary provided is entirely wrong, or if extra commentary was provided in the beginning or end.
-
+- **Granularity:** Don't club multiple mUla vAkya-s together (unless they form a verse) - It's ok if each sentence does not have a corresponding commentary. 
 
 ## Hyphenator algorithm
 This algorithm is to be applied to text only where explicitly required above (`विश्वास-प्रस्तुतिः` block), and nowhere else.
