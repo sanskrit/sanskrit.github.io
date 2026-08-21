@@ -27,6 +27,9 @@ The doubts will usually be answered on the pull request; following which you'll 
 ## Response codes
 s, स् indicate Yes (= typed text is correct. [[??]]-sign can be removed).
 
+अवधेयम् - उत्तरे स्=s=yes=आम् इति यथास्थानम् अवगन्तव्यम्।  
+?? इत्युक्ते प्रश्नचिह्नं रक्षणीयम् इति क्वचित्, "कुतोऽयं प्रमाद" इत्य् अन्यत्र।
+
 उक्ते परिहारे [[??]]चिह्नं परीक्षकेण न स्थापितं चेत्,  
 पुर्वं स्थापितं [[??]]चिह्नं निष्कासनीयम्।
 
