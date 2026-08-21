@@ -49,7 +49,7 @@ title = "5 सूचित-दोष--परिहार-प्रतिवच�
 सावधानम् - अन्यत्र "Files changed" इत्यस्य स्थाने "Conversation" इत्यत्र दृष्टं चेत्,  
 "Load more" इत्यादि नुदित्वा प्रत्येकं सूत्रं प्रतिवाच्यम्। 
 
-s, स्, ?? इत्यादिषु सङ्क्षेपेष्व् अत्र द्रष्टव्यम् - Source: [TW](/groups/dyuganga/projects/text/proofreading/editing/understand_ask) ।
+s, स्, ?? इत्यादिषु सङ्क्षेपेष्व् अत्र द्रष्टव्यम् - Source: [TW](/groups/dyuganga/projects/text/proofreading/editing/understand_ask) - "Response codes" इति भागे।
 
 ## दोष-परिहारः Correction
 दोषान् परिहृत्य, नुत्त्वा (commit+push कृत्वा),
