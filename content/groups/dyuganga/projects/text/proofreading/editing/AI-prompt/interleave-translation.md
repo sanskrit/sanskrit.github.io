@@ -593,7 +593,6 @@ COMMENTARY, fed into hyphenator algorithm defined below.
 CORE TEXT
 </details>
 
-Suggest any corrections in this format : [[OLD|NEW]].
 
 **IMPORTANT FORMATTING RULES:**
 
