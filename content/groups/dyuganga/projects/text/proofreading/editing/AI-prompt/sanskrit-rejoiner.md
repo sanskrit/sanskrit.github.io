@@ -55,3 +55,54 @@ If no sandhi is being recreated at a word or stem boundary, do not remove any in
 
 
 ```
+
+## Dot replacer
+```
+I will give you some sanskrit text, where words belonging to a samAksa compound are split, and several sandhis are resolved. These splits are indicated by a dot, as in "अथ.यद्.वो.अहम्.घोर.संस्पर्शतमो.अस्मि  ।".   
+
+You will redo the sandhis where dots are present, reomove the dots and reconstruct the original text, albeit with the following conditions.  
+
+- whereever possible, within a samAsa compound, insert a - where a dot was present. For example - घोर.संस्पर्शतमो to घोर-संस्पर्शतमो and द्व्य्.अग्नी to द्व्य्-अग्नी. 
+- whereever possible, replace the dot between 2 non-compound padas with a space, For example - मासाव्.अन्वारब्धौ to मासाव् अन्वारब्धौ and अग्निर्.गायत्रम् to अग्निर् गायत्रम्
+
+The above should happen only in separable word/ stem boundaries described below, and not at non-separable ones.
+
+## **4. Boundary Types and Examples**
+
+**A. Non-Separable Boundaries: These MUST NOT be split.**
+
+*   **Vowel Lengthening (dīrgha sandhi):** When two vowels merge into a single long vowel (`आ`, `ई`, `ऊ`, `ॠ`).
+    *   `दया + आर्द्र → दयार्द्र`. The boundary `या` is non-separable.
+    *   `अपि + इच्छा → अपीच्छा`. The boundary `पी` is non-separable.
+    *   **Crucial Compound Example:** `धर्म + अर्थ → धर्मार्थ`. This is a `dīrgha sandhi` within a compound. Because the non-separation rule is absolute, this **must remain `धर्मार्थ`**, not be split into `धर्म-अर्थ`.
+    *   **Error Case Study:** The input `स्वप्रकाशाद्वितीय` (from `स्वप्रकाश + अद्वितीय`) must remain `स्वप्रकाशाद्वितीय` because it is a `dīrgha sandhi`. It is incorrect to split it as `स्वप्रकाश-अद्वितीय`.
+
+*   **Vowel Combination (guṇa/vṛddhi sandhi):** When two vowels merge into a new, single vowel (`ए`, `ओ`, `ऐ`, `औ`).
+    *   `महा + उत्सव → महोत्सव`. The boundary `हो` is non-separable.
+    *   `राम + इति → रामेति`. The boundary `मे` is non-separable.
+    *   `सदा + एव → सदैव`. The boundary `दै` is non-separable.
+
+**B. Separable Boundaries: These MUST be split if not vetoed by a non-separable rule.**
+
+*   **Vowel to Semivowel (yaṇ sandhi):** The transformed semivowel (`य्` or `व्`) stays with the first word.
+    *   `इति + एवम् → इत्येवम्` must be split as `इत्य् एवम्`. (The `इ` became `य्`; the `य्` is kept).
+    *   `मधु + अरिः → मध्वरिः` must be split as `मध्व्-अरिः`.
+
+*   **Visarga (`ः`) Sandhi:**
+    *   `visarga` to `ो`: `रामः + अस्ति → रामोऽस्ति`. Split as `रामो ऽस्ति`. (The avagraha `ऽ` is part of the boundary).
+    *   `visarga` to `र्`: `दुः + प्रकृतेः + अस्य → दुष्प्रकृतेरस्य`. Split as `दुष्प्रकृतेर् अस्य`.
+    *   `visarga` to `स्/श्/ष्`: `नमः + ते → नमस्ते`. Split as `नमस् ते`.
+
+*   **Final `म्`:** A final `म्` before a vowel is separated by a space.
+    *   `फलम् + अश्नुते → फलमश्नुते`. Split as `फलम् अश्नुते`.
+    *   `अर्थम् + इति  → अर्थमिति`. Split as `अर्थम् इति`.
+
+*   **Consonant Assimilation:**
+    *   `तत् + हि → तद्धि`. Split as `तद् धि`.
+
+## Conclusion
+Your entire output must be a single Markdown code block. Dont skip any text.
+
+Are you ready?
+
+```
