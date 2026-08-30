@@ -732,24 +732,19 @@ COMMENTARY_TEXT, passed to hyphenator algorithm defined below if in sanskrit.
 </details>
 
 
-**Constraints for commentary/ translation block:**
-- **Script Integrity:** Ensure that all Sanskrit text remains in Devanagari. If you find stray Latin characters within a Devanagari block (e.g., "ye" instead of "ये"), correct them to the proper Devanagari character.
+
+- **No Silent Corrections:** Typographical or spelling errors in the source text must never be corrected silently in any block. Any correction must strictly use the inline `[[OLD|NEW]]` format.  
+- **Max granularity** - Each मूलम् block should have the smallest possible coherent sentence or verse. Don't put multiple sentences together just to conform to the translation or commentary.
+- **Script Integrity:** Ensure that all Sanskrit text remains in Devanagari. If you find stray Latin characters within a Devanagari block (e.g., "ye" instead of "ये"), correct them to the proper Devanagari character. When segmenting and copying sentences into their respective blocks, you must ensure that no syllables, vowel signs (mātrās), consonants, or punctuation marks are accidentally truncated, dropped, or mutated.  
 - **Verbatim Copying:** Within the mUla blocks, besides fixing stray Latin letters, do not change a single character, accent mark (svara), or punctuation in the original Sanskrit text.
 - **No Extra Commentary:** Do not add your own explanations or "Here is the text" headers.
-- **Preserve Formatting:** Maintain all original tags, spacing, and accent marks (svara marks) in the source text exactly as provided.
+- **Preserve Formatting:** Maintain all original tags, spacing, and accent marks (svara marks) in the source text exactly as provided. **Spacing:** The empty lines shown above are significant and must be retained. Note that there should be no empty line before the `</details>` tag. Retain all other markdown (e.g., headings) as they are.
 - **Sequential Matching:** Match the translation/ commentary sentences to the 'मूलम्' blocks in the order they appear. But don't force this. 
 - **Appendix** - alert me in an appendix if the commentary/ translation provided is entirely wrong, or if extra commentary/ translation was provided in the beginning or end.
-
+- Don't forget to apply the hyphenator aglorithm where required.
 
 If `विश्वास-प्रस्तुतिः` and `मूलम्` tags are already there, then don't create those again. Just update the `विश्वास-प्रस्तुतिः` text with the output from the hyphenator algorithm; and insert the Translation / Translation - Notes tags as described above.
 
-
-**IMPORTANT FORMATTING RULES:**  
-
-1. **Fidelity of the `मूलम्` Block with Explicit Corrections:** The text within the `<details><summary>मूलम्</summary>...</details>` block must be a character-for-character replica of the original sentence as it appears in the source input. No *silent* typographical corrections or normalizations are permitted. However, you are explicitly allowed to mark corrections within this block using the `[[OLD|NEW]]` format. Aside from these explicitly marked `[[OLD|NEW]]` corrections, the surrounding text must remain entirely unchanged.
-2. **Prevention of Character Dropping and Mutation:** When segmenting and copying sentences into their respective blocks, you must ensure that no syllables, vowel signs (mātrās), consonants, or punctuation marks are accidentally truncated, dropped, or mutated.
-3. **No Silent Corrections:** Typographical or spelling errors in the source text must never be corrected silently in any block. Any correction must strictly use the inline `[[OLD|NEW]]` format.
-4. **Spacing:** The empty lines shown above are significant and must be retained. Note that there should be no empty line before the `</details>` tag. Retain all other markdown (e.g., headings) as they are.
 
 ---
 
