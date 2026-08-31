@@ -34,5 +34,5 @@ Be sure to use markdown format for **headings and footnotes**.
 
 
 ## Final instructions
-Start from the beginning, process fully. Don't produce any additional commentary. Are you ready?
+Start from the beginning, process fully. Produce the outupt required, not any commentary about what you should do. Are you ready?
 ```

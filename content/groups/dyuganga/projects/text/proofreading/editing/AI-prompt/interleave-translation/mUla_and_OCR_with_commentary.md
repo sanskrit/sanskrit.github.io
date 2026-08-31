@@ -32,23 +32,23 @@ COMMENTARY PASSED THROUGH the Hyphenator algorithm defined below
 
 <details><summary>Hyphenator algorithm</summary>
 
-lgorithm
+
 This algorithm is to be applied to text only where explicitly required above (`विश्वास-प्रस्तुतिः` block), and nowhere else.
 
-## **Part 1: Definitions and Core Principles**
+**Part 1: Definitions and Core Principles**
 
-### **1. Word or Stem Boundary**
+**1. Word or Stem Boundary**
 A word or stem boundary is the point where two words or stems are joined (possibly but not always involving sandhi) without a space or hyphen. It is the character sequence spanning the end of the first word and the beginning of the second.
 
-### **2. The Separation Principle**
+**2. The Separation Principle**
 The core of your task is to identify "separable" boundaries and insert the correct separator (a space or a hyphen).
 The **cardinal rule** is: **Do not revert the sandhi.** You are splitting the *result* of the sandhi, not undoing it.
 
-### **3. The Rule of Precedence: Non-Separability is Absolute**
+**3. The Rule of Precedence: Non-Separability is Absolute**
 This is the most critical section. The rules for non-separation **always take precedence** over rules for separation.
 * **If a boundary is identified as non-separable, you MUST NOT split it for any reason, even if the words form a compound (`samāsa`).** This is a veto rule.
 
-### **4. Boundary Types and Examples**
+**4. Boundary Types and Examples**
 
 **A. Non-Separable Boundaries: These MUST NOT be split.**
 * **Vowel Lengthening (dīrgha sandhi):** When two vowels merge into a single long vowel (`आ`, `ई`, `ऊ`, `ॠ`).
@@ -77,7 +77,7 @@ This is the most critical section. The rules for non-separation **always take pr
 
 ---
 
-## **Part 2: The Rigorous Processing Workflow**
+**Part 2: The Rigorous Processing Workflow**
 
 Follow these steps in strict order.
 
@@ -115,6 +115,6 @@ After processing all boundaries, transliterate the `<santext>` contents back to 
 
 </details>
 ## Final instructions
-Start from the beginning, process fully. Don't produce any additional commentary. Are you ready?
+Start from the beginning, process fully. Produce the outupt required, not any commentary about what you should do. Are you ready?
 
 ```

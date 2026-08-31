@@ -3,14 +3,14 @@ title = "mUla, en translation, commentary"
 +++
 
 ```markdown
-
 I will give you 3 inputs - 
 
 - Original text
 - translation
 - Commentary
 
-Separate sentences and interleave translation provided in the following format for each sentence:
+### Interleaving Instructions
+Separate the text into individual sentences. For every single sentence, output the interleaved translation and commentary in the following format:
 
 <details open><summary>विश्वास-प्रस्तुतिः</summary>
 
@@ -34,20 +34,20 @@ ORIGINAL SENTENCE (WITH NO CHANGES OR WITH [[OLD|NEW]] CORRECTIONS)
 
 <details><summary>टीका</summary>
 
-COMMENTARY_TEXT, passed to hyphenator algorithm defined below if in sanskrit.
+COMMENTARY_TEXT, passed to hyphenator algorithm defined below if in sanskrit. SKIP THIS DETAILS BLOCK IF THERE IS NO MATCHING COMMENTARY FOR THIS SENTENCE.
 </details>
 
 
-
+### Processing Rules
 - **No Silent Corrections:** Typographical or spelling errors in the source text must never be corrected silently in any block. Any correction must strictly use the inline `[[OLD|NEW]]` format.  
-- **Max granularity** - Each मूलम् block should have the smallest possible coherent sentence or verse. Don't put multiple sentences together just to conform to the translation or commentary.
+- **Strict Max Granularity (Sentence-by-Sentence Splitting):** Each `मूलम्` block MUST contain exactly one single, coherent sentence or independent clause. Under no circumstances should multiple sentences be grouped into a single `<details>` block, even if they share a paragraph, translation block, or commentary block in the input. You must manually divide and map the translation and commentary sentence-by-sentence to match this granular level.
 - **Script Integrity:** Ensure that all Sanskrit text remains in Devanagari. If you find stray Latin characters within a Devanagari block (e.g., "ye" instead of "ये"), correct them to the proper Devanagari character. When segmenting and copying sentences into their respective blocks, you must ensure that no syllables, vowel signs (mātrās), consonants, or punctuation marks are accidentally truncated, dropped, or mutated.  
 - **Verbatim Copying:** Within the mUla blocks, besides fixing stray Latin letters, do not change a single character, accent mark (svara), or punctuation in the original Sanskrit text.
 - **No Extra Commentary:** Do not add your own explanations or "Here is the text" headers.
-- **Preserve Formatting:** Maintain all original tags, spacing, and accent marks (svara marks) in the source text exactly as provided. **Spacing:** The empty lines shown above are significant and must be retained. Note that there should be no empty line before the `</details>` tag. Retain all other markdown (e.g., headings) as they are.
-- **Sequential Matching:** Match the translation/ commentary sentences to the 'मूलम्' blocks in the order they appear. But don't force this. 
-- **Appendix** - alert me in an appendix if the commentary/ translation provided is entirely wrong, or if extra commentary/ translation was provided in the beginning or end.
-- Don't forget to apply the hyphenator aglorithm where required.
+- **Preserve Formatting:** Maintain all original tags, headings, spacing, and accent marks (svara marks) in the source text exactly as provided. **Spacing:** The empty lines shown above are significant and must be retained. Note that there should be no empty line before the `</details>` tag. Retain all other markdown (e.g., headings) as they are.
+- **Sequential Matching:** Match the translation/commentary sentences to the 'मूलम्' blocks in the order they appear.
+- **Mandatory Appendix:** You MUST output a section titled `## Appendix` at the very end of your response. Use this section to explicitly report if the provided commentary or translation is mismatched, wrong, contains extra content (e.g., commentary text at the end with no matching Sanskrit), or is missing content. If no anomalies or mismatches are found, you must still output this section and write: "No mismatches or anomalies detected."
+- **Hyphenator:** Apply the hyphenator algorithm where required (`विश्वास-प्रस्तुतिः` and `टीका` blocks).
 
 If `विश्वास-प्रस्तुतिः` and `मूलम्` tags are already there, then don't create those again. Just update the `विश्वास-प्रस्तुतिः` text with the output from the hyphenator algorithm; and insert the Translation / Translation - Notes tags as described above.
 
@@ -56,23 +56,22 @@ If `विश्वास-प्रस्तुतिः` and `मूलम्` 
 
 <details><summary>Hyphenator algorithm</summary>
 
-lgorithm
 This algorithm is to be applied to text only where explicitly required above (example - `विश्वास-प्रस्तुतिः` block), and nowhere else.
 
-## **Part 1: Definitions and Core Principles**
+**Part 1: Definitions and Core Principles**
 
-### **1. Word or Stem Boundary**
+**1. Word or Stem Boundary**
 A word or stem boundary is the point where two words or stems are joined (possibly but not always involving sandhi) without a space or hyphen. It is the character sequence spanning the end of the first word and the beginning of the second.
 
-### **2. The Separation Principle**
+**2. The Separation Principle**
 The core of your task is to identify "separable" boundaries and insert the correct separator (a space or a hyphen).
 The **cardinal rule** is: **Do not revert the sandhi.** You are splitting the *result* of the sandhi, not undoing it.
 
-### **3. The Rule of Precedence: Non-Separability is Absolute**
+**3. The Rule of Precedence: Non-Separability is Absolute**
 This is the most critical section. The rules for non-separation **always take precedence** over rules for separation.
 * **If a boundary is identified as non-separable, you MUST NOT split it for any reason, even if the words form a compound (`samāsa`).** This is a veto rule.
 
-### **4. Boundary Types and Examples**
+**4. Boundary Types and Examples**
 
 **A. Non-Separable Boundaries: These MUST NOT be split.**
 * **Vowel Lengthening (dīrgha sandhi):** When two vowels merge into a single long vowel (`आ`, `ई`, `ऊ`, `ॠ`).
@@ -101,7 +100,7 @@ This is the most critical section. The rules for non-separation **always take pr
 
 ---
 
-## **Part 2: The Rigorous Processing Workflow**
+**Part 2: The Rigorous Processing Workflow**
 
 Follow these steps in strict order.
 
@@ -140,7 +139,7 @@ After processing all boundaries, transliterate the `<santext>` contents back to 
 ---
 
 ## Final instructions
-Start from the beginning, process fully. Don't produce any additional commentary. Are you ready?
+Start from the beginning, process fully. Produce the outupt required, not any commentary about what you should do. Are you ready?
 
 ```
 
