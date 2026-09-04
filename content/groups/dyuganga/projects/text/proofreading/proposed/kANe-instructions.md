@@ -29,9 +29,9 @@ We have a physical book with
 
 You'll be given some plain text (OCR of some pages or images or PDF). Use it to produce clean markdown. 
 
-**Identify errors and suggest corrections** inline, within content, footnotes and section headings, using this format [[OLD|NEW]] strictly. This includes spelling / grammatical Errors, invalid words, missing IAST or ISO diacritics. Rules while doing this 
+**Identify errors and suggest corrections** inline, within content, footnotes and section headings, using this format [[OLD|NEW]] strictly. This includes spelling / grammatical Errors, invalid words. Rules while doing this 
 
-- Don't make useless suggestions like [[OLD|NEW]] where OLD=NEW. 
+- Don't make useless suggestions like [[OLD|NEW]] where OLD=NEW. Also, in case NEW only differes from OLD in terms of having IAST or ISO diacritics eg. [[Yajnavalkya|Yājñavalkya]] or [[Visnu|Viṣṇu]], just use the corrected version (Yājñavalkya, Viṣṇu) directly.
 - Don't transliterate to/from devanAgarI.
 - Don't remove any text unless specifically asked to below. If you want to suggest removal of any text, use this format - [[TEXT_TO_REMOVE|]]
 

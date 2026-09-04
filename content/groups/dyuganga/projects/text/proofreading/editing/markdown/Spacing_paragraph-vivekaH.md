@@ -5,7 +5,7 @@ title = "Spacing, paragraph-विवेकः"
 ## अस्मत्परिभाषा
 - वाक्यम् = sentence
 - पङ्क्तिः = line
-- निरन्तर-पङ्क्ति-सङ्ग्रहः = paragraph
+- पङ्क्ति-परिच्छेदः / निरन्तर-पङ्क्ति-सङ्ग्रहः = paragraph
 - रिक्ता पङ्क्तिः = empty line, obtained by pressing Enter key twice.
 - रिक्तस्थानम् = space, obtained by pressing "space bar" key.
 
