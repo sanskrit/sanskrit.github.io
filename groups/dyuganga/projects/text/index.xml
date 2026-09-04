@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Texts on संस्कृतजालक्षेत्रम्</title>
+    <link>https://sanskrit.github.io/groups/dyuganga/projects/text/</link>
+    <description>Recent content in Texts on संस्कृतजालक्षेत्रम्</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://sanskrit.github.io/groups/dyuganga/projects/text/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Estimates</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/estimates/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/estimates/</guid>
+      <description>&lt;p&gt;Source: kArtik 2024&lt;/p&gt;&#xA;&lt;p&gt;With Gemini taking care of 95%, I estimate about 5 man-minutes per page for proofreading. So 12 pages per man-hour.&lt;/p&gt;&#xA;&lt;p&gt;Actual, unique, published Sanskrit literature is about 100-200K pages if you only look at the mula text. This figure increases manifold if you add variant readings, translations and commentaries in other languages etc. I have not included the content of the 50m pandulipis (Debroy&amp;rsquo;s figure from some speech of his) in this.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OCR on request</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/ocr_on_request/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/ocr_on_request/</guid>
+      <description>&lt;h2 id=&#34;for-requesters&#34;&gt;For requesters&lt;/h2&gt;&#xA;&lt;p&gt;File a request &lt;a href=&#34;https://github.com/sanskrit/raw_etexts/issues/new?assignees=&amp;amp;labels=OCR&amp;amp;template=OCR.yaml&amp;amp;title=%5BOCR%5D+%3Ctitle%3E&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;for-volunteers&#34;&gt;For volunteers&lt;/h2&gt;&#xA;&lt;h3 id=&#34;what-is-the-workflow-for-an-ocr-volunteer&#34;&gt;What is the workflow for an OCR volunteer?&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;First off - you should have access to OCR technology, and you should be willing to (learn to) use it.&lt;/li&gt;&#xA;&lt;li&gt;Look for requests on &lt;a href=&#34;https://github.com/sanskrit/raw_etexts/issues&#34;&gt;the issues page&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Assign a request to yourself and work on it.&lt;/li&gt;&#xA;&lt;li&gt;Once you get the OCR-ed text, we need to pass it on to proof-reading and to early users/ readers.&#xA;&lt;ul&gt;&#xA;&lt;li&gt;So initially, store the result in a separate folder in github repo such as &lt;a href=&#34;https://github.com/sanskrit/raw_etexts&#34;&gt;sanskrit/raw_etexts&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Please include terms a person searching on an internet search engine may use.&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Transliterate the title into the appropriate scripts.&lt;/li&gt;&#xA;&lt;li&gt;Use &amp;lsquo;-&amp;rsquo; to separate terms in a samAsa. Eg. कुलार्णव-तन्त्रम् kulArNava-tantram&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Announce the fact that you&amp;rsquo;ve OCR-ed the file on places such as samskrita@googlegroups and sanskrit-ocr@googlegroups.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;why-be-an-ocr-volunteer&#34;&gt;Why be an OCR volunteer?&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;You will be helping many other knowledge-lovers. (see &amp;ldquo;&lt;a href=&#34;&#34;&gt;why digitize&lt;/a&gt;?&amp;rdquo; section here.)&lt;/li&gt;&#xA;&lt;li&gt;You will have the satisfaction of putting your technical skills and time to good use.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Post electronics archive</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/post-electronics-archive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/post-electronics-archive/</guid>
+      <description>&lt;p&gt;Short url - &lt;a href=&#34;https://rebrand.ly/dg-archive&#34;&gt;https://rebrand.ly/dg-archive&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Presentation &lt;a href=&#34;https://docs.google.com/presentation/d/14v72trudW8XQWV488Ebqe4vILCWrkOlaLZX1R0PXWEE/edit?usp=sharing&#34;&gt;here&lt;/a&gt;.&lt;br&gt;&#xA;&lt;a href=&#34;https://youtu.be/RsEq824x6eQ&#34;&gt;YT video&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;How to best preserve our knowledge (physical and spiritual) and texts?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;We propose a network of archives spread over multiple regions,&lt;br&gt;&#xA;where copies of all texts relevant to Hindus are preserved&lt;br&gt;&#xA;in media which will persist for millennia.&lt;br&gt;&#xA;The archived material should be readable (even reproducible!) with minimal technology,&lt;br&gt;&#xA;to allow for regression technical abilities&lt;br&gt;&#xA;due to loss of knowledge, lack of materials, electricity and such.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
