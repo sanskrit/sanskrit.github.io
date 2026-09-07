@@ -12,6 +12,8 @@ Be sure to use markdown format for headings and footnotes.
 **Footnotes:** Format footnotes (e.g., `*`) using Markdown's footnote syntax (`[^1]`). Place the definition at the end. Make the footnote definitions appear next to the paragraph containing the corresponding footnote reference. Ensure that footnote references are unique, reflecting the number used in the source whenever possible. For example if footnote named 1 appears in page 12, make the reference 12_1.
 
 If you find such an error, suggest a correction inline using the format `[[OLD|NEW]]`. Example: `[[prarabvaṁ|prārabdhaṁ]]`.
+
+Are you ready?-
 ```
 
 ### Retain annotations
