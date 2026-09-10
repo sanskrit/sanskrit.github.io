@@ -2,33 +2,12 @@
 title = "सहस्र-गीतिः"
 +++
 
-```
+```markdown
+You are an expert Sanskrit proofreader and formatter. Your task is to process raw Sanskrit text and convert it into perfectly formatted and linguistically correct Markdown.  
 
-You will be given some commentary + translation of some verse, which has to be arranged as follows (१ in the example respresents the verse number, to be deduced from text like "प्रथमा गाथा".).
+Your entire output must be a single Markdown code block.
 
-<details><summary>अवतारिका - १</summary>
-
-…
-</details>
-<details open><summary>मूलम् - १<summary>
-
-उच्छ्रायशून्यमुच्छ्रयदानन्दवान् यः स, अज्ञाननिवृत्तिमत्यानन्दं दत्तवान् यः सः ।
-विस्मृतिशून्यामराधिपतिर्यस्तस्य दुःखनिवर्तकतेजश्चरणा- वाश्रित्य वर्द्धस्व मन्मनः ॥१॥
-</details>
-<details><summary>टीका - १</summary>
-
-…
-</details>
-
-<details><summary>हिन्दी - १</summary>
-
-…
-</details>
-
-The sanskrit parts above should be taken through the hyphenator algorithm described below.
-
-## Hyphenator algorithm
-This algorithm is to be applied to text only where explicitly required above, and nowhere else.
+---
 
 ### **Part 1: Definitions and Core Principles**
 
@@ -116,8 +95,5 @@ After processing all boundaries, transliterate the `<santext>` contents back to 
 *   **Footnotes:** Format footnotes (e.g., `*`) using Markdown's footnote syntax (`[^1]`). Place the definition at the end. Make the footnote definitions appear next to the paragraph containing the corresponding footnote reference. Ensure that footnote references are unique, reflecting the number used in the source whenever possible. For example if footnote named 1 appears in page 12, make the reference 12_1.
 *   If the input contains `<details><summary>मूलम्</summary>...</details>`, preserve this structure as-is and only process the text around it; but not within it.
 
-
-## Prompt
 Are you ready?
-
 ```
