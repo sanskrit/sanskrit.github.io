@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>&#43;VsCode on संस्कृतजालक्षेत्रम्</title>
+    <link>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/vscode/</link>
+    <description>Recent content in &#43;VsCode on संस्कृतजालक्षेत्रम्</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/vscode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Checking diff</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/vscode/checking-diff/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/vscode/checking-diff/</guid>
+      <description>&lt;p&gt;एवं सञ्चिकाया उपरि नुदित्वा व्यत्यासान् वीक्षितुं शक्यम्।&lt;/p&gt;&#xA;&lt;figure class=&#34;thumbnail&#34;&gt;&#xA;&#xA;    &lt;a href=&#34;../images/checking-diff.png&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&#xA;        &lt;img src=&#34;../images/checking-diff.png&#34; alt=&#34;&#34; title=&#34;&#34;&gt;&#xA;    &lt;/a&gt;&#xA;&#xA;    &#xA;&#xA;&lt;/figure&gt;</description>
+    </item>
+    <item>
+      <title>Unstaging changes</title>
+      <link>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/vscode/unstaging-changes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sanskrit.github.io/groups/dyuganga/projects/text/git-workflow/vscode/unstaging-changes/</guid>
+      <description>&lt;p&gt;commit-तः अनपेक्षित-सञ्चिकाः एवं निष्कासनीयाः - दक्षिण-मूष-नोदनम् (right click), ततः unstage changes इति चित्वा। तेन परिवर्तनानि न नश्यन्ति, किञ्च commit-मध्ये न प्रेष्यन्ते।&lt;/p&gt;&#xA;&lt;p&gt;&amp;ldquo;Staged changes&amp;rdquo; आवल्यां दृश्यमाना एव सञ्चिकाः संरक्ष्यन्ते । (commit भवन्ति। )&lt;/p&gt;&#xA;&lt;figure class=&#34;thumbnail&#34;&gt;&#xA;&#xA;    &lt;a href=&#34;../images/unstage-changes.png&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&#xA;        &lt;img src=&#34;../images/unstage-changes.png&#34; alt=&#34;&#34; title=&#34;&#34;&gt;&#xA;    &lt;/a&gt;&#xA;&#xA;    &#xA;&#xA;&lt;/figure&gt;</description>
+    </item>
+  </channel>
+</rss>
