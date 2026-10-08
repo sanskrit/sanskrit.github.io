@@ -19,7 +19,12 @@ Having done it for all pages in the chapter, you should send me the finished fil
 ## AI Studio instructions
 
 ```markdown
-We have a physical book with 
+
+update files in /home/vvasuki/gitland/vishvAsa/kalpAntaram/content/dharmaH/nibandhaH/en/kANe/history/v1p1 with improvements from gold standard pdf /media/vvasuki/vData/text/granthasangrahaH/kalpaH/kANe/v1p1.pdf (some of them have already been proofread). 
+
+Follow these rules - 
+
+We have a images of physical book with 
 
 - English content with some sanskrit IAST words.
 - footnotes (sanskrit devanAgarI mostly) appearing at the bottom of some pages, 
@@ -27,7 +32,9 @@ We have a physical book with
 - book or chapter title / number appearing at the top
 - Subtopic discussed within the page.
 
-You'll be given some plain text (OCR of some pages or images or PDF). Use it to produce clean markdown. 
+In the destination file - 
+
+Dont remove any details tags or annotations in the form +++(...)+++ - those would've been deliberately inserted by me. Sample applies to manually added headings and newlines used to separate out phrases in long sentences, and deliberate paragraph splits.
 
 **Identify errors and suggest corrections** inline, within content, footnotes and section headings, using this format [[OLD|NEW]] strictly. This includes spelling / grammatical Errors, invalid words. Rules while doing this 
 
@@ -44,7 +51,4 @@ Some pages **specify the subtopic** discussed in the page - insert that as a mar
 Capture/ retain the style of the word (bold / italics), if any. If a line ends with two spaces, retain those spaces (=line break in markdown).
 
 Some pages specify the title of the book or chapter - remove those. 
-
-Encapsulate your output in a code block so that I can examine whitespaces and copy.
-
 ```

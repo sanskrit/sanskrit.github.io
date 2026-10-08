@@ -25,7 +25,7 @@ ANY NOTES ASSOCIATED WITH THE TRANSLATION. (WITH NO NON-SPACE CHANGES OR WITH [[
 
 <details><summary>मूलम्</summary>
 
-ORIGINAL SENTENCE (WITH NO CHANGES OR WITH [[OLD|NEW]] CORRECTIONS)
+ORIGINAL SENTENCE (WITH NO CHANGES OTHER THAN [[OLD|NEW]] CORRECTIONS)
 </details>
 
 If `विश्वास-प्रस्तुतिः` and `मूलम्` tags are already there, then don't create those again. Just update the `विश्वास-प्रस्तुतिः` text with the output from the hyphenator algorithm; and insert the English / English - Notes tags as described above.
