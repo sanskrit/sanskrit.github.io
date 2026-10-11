@@ -1,52 +1,57 @@
 +++
-title = "mUla and En translation"
+title = "Non-detail mUla"
 +++
-## Non-detail mUla - No sandhi splitting
+No sandhi splitting
 
-```markdown
+```
+I will give you 2 inputs - 
 
-I will give you some text and translation.  
-Separate sentences and interleave translation provided in the following format for each sentence:
+- Original text
+- translation
+
+## Interleaving Instructions
+Separate the text into individual sentences. For every single sentence, output the interleaved translation in the following format:
 
 <details open><summary>विश्वास-प्रस्तुतिः</summary>
 
 ORIGINAL SENTENCE, fed into hyphenator algorithm defined below.
 </details>
 
-<details><summary>English</summary>
+<details><summary>Translation</summary>
 
-TRANSLATION (WITH NO NON-SPACE CHANGES OR WITH [[OLD|NEW]] CORRECTIONS)
+TRANSLATION (WITH NO NON-SPACE CHANGES, POSSIBLY WITH [[OLD|NEW]] CORRECTIONS)
 </details>
 
-<details><summary>English - Notes</summary>
+<details><summary>Translation - Notes</summary>
 
-ANY NOTES ASSOCIATED WITH THE TRANSLATION. (WITH NO NON-SPACE CHANGES OR WITH [[OLD|NEW]] CORRECTIONS) SKIP THIS DETAILS BLOCK IF THERE ARE NO NOTES.
+ANY NOTES ASSOCIATED WITH THE TRANSLATION. (WITH NO NON-SPACE CHANGES, POSSIBLY WITH [[OLD|NEW]] CORRECTIONS) SKIP THIS DETAILS BLOCK IF THERE ARE NO NOTES.
 </details>
 
 <details><summary>मूलम्</summary>
 
-ORIGINAL SENTENCE (WITH NO CHANGES OTHER THAN [[OLD|NEW]] CORRECTIONS)
+ORIGINAL SENTENCE (WITH NO CHANGES, POSSIBLY WITH [[OLD|NEW]] CORRECTIONS)
 </details>
 
-If `विश्वास-प्रस्तुतिः` and `मूलम्` tags are already there, then don't create those again. Just update the `विश्वास-प्रस्तुतिः` text with the output from the hyphenator algorithm; and insert the English / English - Notes tags as described above.
 
-If some parts of the translation provided as input do not match - just note those as an appendix.
+## Processing Rules
+- **No Silent Corrections:** Typographical or spelling errors in the source text must never be corrected silently in any block. Any correction must strictly use the inline `[[OLD|NEW]]` format.  
+- **Strict Max Granularity (Sentence-by-Sentence Splitting):** Each `मूलम्` block MUST contain exactly one single, coherent sentence or independent clause. Under no circumstances should multiple sentences be grouped into a single `<details>` block, even if they share a paragraph, translation block, or commentary block in the input. You must manually divide and map the translation and commentary sentence-by-sentence to match this granular level.
+- **Script Integrity:** Ensure that all Sanskrit text remains in Devanagari. If you find stray Latin characters within a Devanagari block (e.g., "ye" instead of "ये"), correct them to the proper Devanagari character. When segmenting and copying sentences into their respective blocks, you must ensure that no syllables, vowel signs (mātrās), consonants, or punctuation marks are accidentally truncated, dropped, or mutated.  
+- **Verbatim Copying:** Within the mUla blocks, besides fixing stray Latin letters, do not change a single character, accent mark (svara), or punctuation in the original Sanskrit text.
+- **No Extra Commentary:** Do not add your own explanations or "Here is the text" headers.
+- **Preserve Formatting:** Maintain all original tags, headings, spacing, and accent marks (svara marks) in the source text exactly as provided. **Spacing:** The empty lines shown above are significant and must be retained. Note that there should be no empty line before the `</details>` tag. Retain all other markdown (e.g., headings) as they are.
+- **Sequential Matching:** Match the translation/commentary sentences to the 'मूलम्' blocks in the order they appear.
+- **Mandatory Appendix:** You MUST output a section titled `## Appendix` at the very end of your response. Use this section to explicitly report if the provided commentary or translation is mismatched, wrong, contains extra content (e.g., commentary text at the end with no matching Sanskrit), or is missing content. If no anomalies or mismatches are found, you must still output this section and write: "No mismatches or anomalies detected."
+- **Hyphenator:** Apply the hyphenator algorithm where required (`विश्वास-प्रस्तुतिः` and `टीका` blocks).
 
-Suggest any corrections in this format: `[[OLD|NEW]]`.
+If `विश्वास-प्रस्तुतिः` and `मूलम्` tags are already there, then don't create those again. Just update the `विश्वास-प्रस्तुतिः` text with the output from the hyphenator algorithm; and insert the Translation / Translation - Notes tags as described above.
 
-**IMPORTANT FORMATTING RULES:**  
-
-1. **Fidelity of the `मूलम्` Block with Explicit Corrections:** The text within the `<details><summary>मूलम्</summary>...</details>` block (and similarly any other non-विश्वास-प्रस्तुतिः block) must be a character-for-character replica of the original sentence as it appears in the source input. No *silent* typographical corrections or normalizations are permitted. However, you are explicitly allowed to mark corrections within this block using the `[[OLD|NEW]]` format. Aside from these explicitly marked `[[OLD|NEW]]` corrections, the surrounding text must remain entirely unchanged.
-2. **Prevention of Character Dropping and Mutation:** When segmenting and copying sentences into their respective blocks, you must ensure that no syllables, vowel signs (mātrās), consonants, or punctuation marks are accidentally truncated, dropped, or mutated.
-3. **No Silent Corrections:** Typographical or spelling errors in the source text must never be corrected silently in any block. Any correction must strictly use the inline `[[OLD|NEW]]` format within both the `विश्वास-प्रस्तुतिः` and `मूलम्` blocks.
-4. **Spacing:** The empty lines shown above are significant and must be retained. Note that there should be no empty line before the `</details>` tag. Retain all other markdown (e.g., headings) as they are.
 
 ---
 
 <details><summary>Hyphenator algorithm</summary>
 
-
-This algorithm is to be applied to text only where explicitly required above (`विश्वास-प्रस्तुतिः` block), and nowhere else.
+This algorithm is to be applied to text only where explicitly required above (example - `विश्वास-प्रस्तुतिः` block), and nowhere else.
 
 **Part 1: Definitions and Core Principles**
 
@@ -124,92 +129,11 @@ After processing all boundaries, transliterate the `<santext>` contents back to 
 * **Page Numbers:** Format page numbers (e.g., `६४`) as `[[P64]]` at the precise point of the page break. This can be within a paragraph which continues to the next page.
 * **Footnotes:** Format footnotes (e.g., `*`) using Markdown's footnote syntax (`[^1]`). Place the definition at the end. Place footnote definitions next to the paragraph containing the corresponding footnote reference. Ensure that footnote references are unique, reflecting the number used in the source whenever possible (e.g., `[^12_1]` for footnote 1 on page 12).
 
+</details>
+
 ---
 
-</details>
-### Final instructions
+## Final instructions
 Start from the beginning, process fully. Produce the outupt required, not any commentary about what you should do. Are you ready?
 
 ```
-
-## Terminal sandhi splitting (to fix)
-```markdown
-
-I will give you some text and translation.  
-Separate sentences and interleave translation in the following format for each sentence:
-
-<details open><summary>विश्वास-प्रस्तुतिः</summary>
-
-ORIGINAL SENTENCE, with only sandhis in sentence ends (but nowhere else in the middle) resolved.
-</details>
-
-<details><summary>English</summary>
-
-TRANSLATION
-</details>
-
-<details><summary>English - Notes</summary>
-
-ANY NOTES ASSOCIATED WITH THE TRANSLATION. SKIP THIS DETAILS BLOCK IF THERE ARE NO NOTES.
-</details>
-
-<details><summary>मूलम्</summary>
-
-ORIGINAL SENTENCE (WITH NO CHANGES)
-</details>
-
-Suggest any corrections in this format : [[OLD|NEW]].
-
-**IMPORTANT FORMATTING RULES:**  
-
-The empty lines shown above are significant and must be retained. Note that there should be no empty line before `</details>` tag.  
-Retain all other markdown (eg. headings) as they are.
-
-Are you ready?
-```
-
-## mUla not in details tag
-```markdown
-
-Consider the attached text and translation.  
-Separate sentences and interleave translation in the following format for each sentence:
-
-ORIGINAL SENTENCE, with only sandhis in sentence ends resolved.
-
-<details><summary>English</summary>
-
-TRANSLATION
-</details>
-
-Suggest any corrections in this format : [[OLD|NEW]].
-
-**IMPORTANT FORMATTING RULES:**  
-
-The empty lines shown above are significant and must be retained. Note that there should be no empty line before `</details>` tag.
-```
-
-## Insert above mUla
-```markdown
-You will be given some text and a translation or commentary.  
-
-**Your Task:**
-1. Identify every `<details><summary>मूलम्</summary> ... </details>` block.
-  - (Ignore `मूलम् (संयुक्तम्)` blocks).
-2. Insert the corresponding English translation segment directly **above** each identified tag, separated by two empty lines.
-3. Use the format:
-   <details><summary>English</summary>
-
-   TRANSLATION_TEXT
-   </details>
-
-**Strict Constraints:**
-- **Script Integrity:** Ensure that all Sanskrit text remains in Devanagari. If you find stray Latin characters within a Devanagari block (e.g., "ye" instead of "ये"), correct them to the proper Devanagari character.
-- **Verbatim Copying:** Outside of fixing stray Latin letters, do not change a single character, accent mark (svara), or punctuation in the original Sanskrit text.
-- **No Extra Commentary:** Do not add your own explanations or "Here is the text" headers.
-- **Preserve Formatting:** Maintain all original tags, spacing, and accent marks (svara marks) in the source text exactly as provided.
-- **Sequential Matching:** Match the translation sentences to the 'मूलम्' blocks in the order they appear.
-
-Are you ready?
-```
-
-
