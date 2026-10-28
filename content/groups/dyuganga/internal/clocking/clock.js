@@ -6,14 +6,19 @@
     active: 'dyuganga_clock_active_v1',
     selectedUser: 'dyuganga_clock_selected_user_v1',
     pending: 'dyuganga_clock_pending_v1',
-    auth: 'dyuganga_clock_auth_v1'
+    auth: 'dyuganga_clock_auth_v1',
+    breakUntil: 'dyuganga_clock_break_v1',
+    daily: 'dyuganga_clock_daily_v1'
   };
   const TWO_HOURS = 2 * 60 * 60 * 1000;
-  const COLUMNS = ['Recorded at', 'User', 'Date', 'Start', 'End', 'Hours', 'Notes', 'Timezone', 'Shift ID'];
-  const DEFAULT_ENDPOINT = 'https://script.google.com/macros/s/AKfycbw7LNoaHRJEktArmanWEN9XMYLC10GYeloiYXYh9RIAz1LELE2MTMxS4muiqPaGhogm6w/exec';
+  const HOURLY_MS = 60 * 60 * 1000;
+  const BREAK_MS = 5 * 60 * 1000;
+  const COLUMNS = ['Recorded at', 'User', 'Start', 'End', 'Hours', 'Notes', 'Timezone', 'Shift ID'];
+  const DEFAULT_ENDPOINT = window.DYUGANGA_CLOCK_ENDPOINT || 'https://script.google.com/macros/s/AKfycbw7LNoaHRJEktArmanWEN9XMYLC10GYeloiYXYh9RIAz1LELE2MTMxS4muiqPaGhogm6w/exec';
 
   const $ = function (id) { return document.getElementById(id); };
   let currentRecord = null;
+  let currentPending = null;
   let ending = false;
   let starting = false;
   let authPrompt = null;
@@ -21,6 +26,7 @@
   let usersLoaded = false;
   let usersLoadError = false;
   let timerStarted = false;
+  let dailyFetchStarted = false;
   let toastTimer = null;
 
   function read(key, fallback) {
@@ -45,6 +51,138 @@
       window.localStorage.removeItem(key);
     } catch (err) {
       // Ignore.
+    }
+  }
+
+  function getPendingList() {
+    const value = read(KEYS.pending, null);
+    let list = [];
+    if (Array.isArray(value)) {
+      list = value;
+    } else if (value && value.record) {
+      list = [value];
+    }
+    return list.filter(function (item) {
+      return item && item.record;
+    });
+  }
+
+  function savePendingList(list) {
+    if (!list.length) {
+      remove(KEYS.pending);
+    } else {
+      write(KEYS.pending, list);
+    }
+  }
+
+  function addPending(record, error) {
+    const list = getPendingList();
+    let found = false;
+    for (let i = 0; i < list.length; i++) {
+      if (list[i].record.id === record.id) {
+        list[i] = { record: record, error: error };
+        found = true;
+        break;
+      }
+    }
+    if (!found) {
+      list.push({ record: record, error: error });
+    }
+    savePendingList(list);
+    return list;
+  }
+
+  function removePending(id) {
+    const list = getPendingList().filter(function (item) {
+      return item.record.id !== id;
+    });
+    savePendingList(list);
+    return list;
+  }
+
+  function getBreakMap() {
+    const map = read(KEYS.breakUntil, {});
+    return map && typeof map === 'object' && !Array.isArray(map) ? map : {};
+  }
+
+  function getBreakUntil(user) {
+    if (!user) {
+      return 0;
+    }
+    return Number(getBreakMap()[user]) || 0;
+  }
+
+  function setBreakUntil(user, until) {
+    const map = getBreakMap();
+    map[user] = until;
+    write(KEYS.breakUntil, map);
+  }
+
+  function clearBreakUntil(user) {
+    const map = getBreakMap();
+    delete map[user];
+    if (Object.keys(map).length === 0) {
+      remove(KEYS.breakUntil);
+    } else {
+      write(KEYS.breakUntil, map);
+    }
+  }
+
+  function getDailyMap() {
+    const map = read(KEYS.daily, {});
+    return map && typeof map === 'object' && !Array.isArray(map) ? map : {};
+  }
+
+  function getCachedDailyStatus(user) {
+    return getDailyMap()[user] || null;
+  }
+
+  function getPendingTodayHours(user) {
+    const today = localDate(new Date());
+    return getPendingList().reduce(function (sum, item) {
+      const record = item.record;
+      if (record.user !== user) {
+        return sum;
+      }
+      const startDate = record.start ? String(record.start).slice(0, 10) : '';
+      if (startDate !== today) {
+        return sum;
+      }
+      const hours = Number(record.hours);
+      return sum + (Number.isFinite(hours) ? hours : 0);
+    }, 0);
+  }
+
+  function getDailyAllowance(user) {
+    const status = getCachedDailyStatus(user);
+    const max = status ? Number(status.dailyMax) || 0 : 0;
+    const today = localDate(new Date());
+    const todayHours = status && status.date === today ? Number(status.todayHours) || 0 : 0;
+    return {
+      max: max,
+      used: todayHours + getPendingTodayHours(user)
+    };
+  }
+
+  async function loadDailyStatus(user) {
+    const auth = getAuth(user);
+    if (!auth) {
+      return getCachedDailyStatus(user);
+    }
+    try {
+      const body = await postJson({ action: 'dailyStatus', token: auth.token });
+      const status = {
+        dailyMax: Number(body.dailyMax) || 0,
+        todayHours: Number(body.todayHours) || 0,
+        date: String(body.date || ''),
+        fetchedAt: Date.now()
+      };
+      const map = getDailyMap();
+      map[user] = status;
+      write(KEYS.daily, map);
+      return status;
+    } catch (err) {
+      return getCachedDailyStatus(user);
     }
   }
 
@@ -170,14 +308,38 @@
       day: 'numeric'
     });
 
+    const user = selectedUser();
+    const breakUntil = user ? getBreakUntil(user) : 0;
+    if (breakUntil && breakUntil <= now.getTime()) {
+      clearBreakUntil(user);
+      refresh();
+      return;
+    }
+
     const shift = activeShift();
     if (!shift) {
       showOver2h(false);
       return;
     }
 
-    const elapsed = Math.max(0, now.getTime() - new Date(shift.startISO).getTime());
+    const startMs = new Date(shift.startISO).getTime();
+    const elapsed = Math.max(0, now.getTime() - startMs);
     $('elapsed').textContent = formatDuration(elapsed);
+
+    if (!ending && !starting) {
+      const allowance = getDailyAllowance(user);
+      const remainingMs = allowance.max > 0
+        ? Math.max(0, (allowance.max - allowance.used) * 3600000)
+        : Infinity;
+      if (allowance.max > 0 && elapsed >= remainingMs) {
+        autoEndShift(user, shift, 'daily-max', allowance.max, new Date(startMs + remainingMs));
+        return;
+      }
+      if (elapsed >= HOURLY_MS) {
+        autoEndShift(user, shift, 'hourly', 0, new Date(startMs + HOURLY_MS));
+        return;
+      }
+    }
 
     if (elapsed >= TWO_HOURS) {
       showOver2h(true);
@@ -194,7 +356,11 @@
   function refresh() {
     const user = selectedUser();
     const shift = activeShift();
-    $('startBtn').disabled = !user || !!shift || starting || ending || !!authPrompt;
+    const breakUntil = user ? getBreakUntil(user) : 0;
+    const onBreak = breakUntil > Date.now();
+    const allowance = user ? getDailyAllowance(user) : { max: 0, used: 0 };
+    const dailyReached = allowance.max > 0 && allowance.used >= allowance.max;
+    $('startBtn').disabled = !user || !!shift || starting || ending || !!authPrompt || onBreak || dailyReached;
     $('endBtn').disabled = !user || !shift || ending || starting;
     $('activePanel').hidden = !shift;
 
@@ -214,11 +380,20 @@
         $('userHint').textContent = 'Choose a user to enable the buttons.';
       }
       showOver2h(false);
+    } else if (onBreak) {
+      $('userHint').textContent = 'Take a break. Start again after ' + localTime(new Date(breakUntil)) + '.';
+      showOver2h(false);
+    } else if (dailyReached) {
+      $('userHint').textContent = 'Daily maximum of ' + allowance.max + ' hours already reached.';
+      showOver2h(false);
     } else if (authPrompt && authPrompt.user === user) {
       $('userHint').textContent = 'Sign in to start the shift.';
       showOver2h(false);
     } else if (getAuth(user)) {
-      $('userHint').textContent = 'Signed in on this browser. Ready to start.';
+      const usedText = allowance.max > 0
+        ? ' Daily max ' + allowance.max + 'h, used ' + (Math.round(allowance.used * 100) / 100) + 'h.'
+        : '';
+      $('userHint').textContent = 'Signed in on this browser. Ready to start.' + usedText;
       showOver2h(false);
     } else {
       $('userHint').textContent = 'The password is asked once, on this browser, when you first start.';
@@ -241,12 +416,23 @@
       window.alert('A shift is already running for ' + user + '.');
       return;
     }
+    const breakUntil = getBreakUntil(user);
+    if (breakUntil > Date.now()) {
+      window.alert('Take a break. Start shift after ' + localTime(new Date(breakUntil)) + '.');
+      return;
+    }
 
     starting = true;
     refresh();
     try {
       const token = await ensureAuth(user);
       if (!token) {
+        return;
+      }
+      await loadDailyStatus(user);
+      const allowance = getDailyAllowance(user);
+      if (allowance.max > 0 && allowance.used >= allowance.max) {
+        window.alert('Daily maximum of ' + allowance.max + ' hours already reached.');
         return;
       }
       const now = new Date();
@@ -266,7 +452,7 @@
     }
   }
 
-  async function endShift() {
+  function endShift() {
     if (ending) {
       return;
     }
@@ -275,16 +461,22 @@
     if (!user || !shift) {
       return;
     }
+    finishShift(user, shift, 'manual');
+  }
 
+  async function finishShift(user, shift, reason, endTime) {
+    if (ending) {
+      return;
+    }
     ending = true;
     $('endBtn').disabled = true;
 
     const start = new Date(shift.startISO);
-    const end = new Date();
+    const end = endTime ? new Date(endTime) : new Date();
     const ms = Math.max(0, end.getTime() - start.getTime());
     const hours = ms / 3600000;
 
-    if (hours > 2 && !shift.alerted) {
+    if (reason === 'manual' && hours > 2 && !shift.alerted) {
       shift.alerted = true;
       setActiveShift(shift);
       window.alert('This shift is longer than 2 hours (' + formatDuration(ms) + '). Please check that the times are correct.');
@@ -293,7 +485,6 @@
     const record = {
       id: shift.id,
       user: user,
-      date: localDate(start),
       start: localStamp(start),
       end: localStamp(end),
       startISO: start.toISOString(),
@@ -309,27 +500,47 @@
     clearActiveShift(user);
     refresh();
 
-    write(KEYS.pending, { record: record, error: 'The upload has not been confirmed yet.' });
+    addPending(record, 'The upload has not been confirmed yet.');
     renderResult(record, { kind: 'saving' });
 
     try {
       await uploadRecord(record);
-      const pending = read(KEYS.pending, null);
-      if (pending && pending.record && pending.record.id === record.id) {
-        remove(KEYS.pending);
+      const remaining = removePending(record.id);
+      if (remaining.length) {
+        renderPendingError(remaining, 'The latest shift was recorded, but earlier shifts are still pending.');
+      } else {
+        renderResult(record, { kind: 'success' });
       }
-      renderResult(record, { kind: 'success' });
     } catch (err) {
-      if (err && err.code === 'AUTH') {
-        clearAuth(user);
+      if (err && err.code === 'COLLISION') {
+        const remaining = removePending(record.id);
+        renderCollision(record, err.message, remaining);
+      } else {
+        if (err && err.code === 'AUTH') {
+          clearAuth(user);
+        }
+        const message = err && err.message ? err.message : 'The upload failed.';
+        const pending = addPending(record, message);
+        renderPendingError(pending, message);
       }
-      const message = err && err.message ? err.message : 'The upload failed.';
-      write(KEYS.pending, { record: record, error: message });
-      renderResult(record, { kind: 'error', error: message });
     } finally {
       ending = false;
       refresh();
     }
+  }
+
+  function autoEndShift(user, shift, reason, dailyMax, endTime) {
+    if (ending || starting) {
+      return;
+    }
+    if (reason === 'hourly') {
+      const breakUntil = Date.now() + BREAK_MS;
+      setBreakUntil(user, breakUntil);
+      window.alert('Take a break, walk away, look away. Shift ended. Start shift after ' + localTime(new Date(breakUntil)) + '.');
+    } else if (reason === 'daily-max') {
+      window.alert('Daily maximum of ' + dailyMax + ' hours reached. Shift ended.');
+    }
+    finishShift(user, shift, reason, endTime);
   }
 
   function tsvHeader() {
@@ -340,7 +551,6 @@
     return [
       record.recordedAt,
       record.user,
-      record.date,
       record.start,
       record.end,
       record.hours,
@@ -350,31 +560,46 @@
     ].join('\t');
   }
 
-  function telegramText(record) {
-    return [
-      'Dyuganga shift record',
-      'User: ' + record.user,
-      'Date: ' + record.date,
-      'Start: ' + record.start,
-      'End: ' + record.end,
-      'Duration: ' + record.durationText + ' (' + record.hours + ' h)',
-      'Timezone: ' + record.timezone,
-      'Shift ID: ' + record.id,
+  function emailText(records) {
+    const list = Array.isArray(records) ? records : [records];
+    const lines = [
+      'Subject: Dyuganga shift record' + (list.length === 1 ? '' : 's'),
       '',
-      'Spreadsheet row (TSV):',
-      tsvHeader(),
-      tsvRow(record)
-    ].join('\n');
+      'Please add the following row' + (list.length === 1 ? '' : 's') + ' to the shift sheet:',
+      tsvHeader()
+    ];
+    list.forEach(function (record) {
+      lines.push(tsvRow(record));
+    });
+    lines.push('');
+    list.forEach(function (record) {
+      lines.push('User: ' + record.user + ' | Start: ' + record.start + ' | End: ' + record.end +
+        ' | Duration: ' + record.durationText + ' (' + record.hours + ' h) | Shift ID: ' + record.id);
+    });
+    return lines.join('\n');
+  }
+
+  function recordsForCopy() {
+    if (currentPending && currentPending.length) {
+      return currentPending.map(function (item) {
+        return item.record;
+      });
+    }
+    return currentRecord ? [currentRecord] : [];
   }
 
   function renderResult(record, state) {
     currentRecord = record;
+    currentPending = null;
     const card = $('result');
     card.hidden = false;
+    $('editShiftLink').hidden = true;
     card.classList.toggle('sc-ok', state.kind === 'success');
-    card.classList.toggle('sc-error', state.kind === 'error');
-    $('retryBtn').hidden = state.kind !== 'error';
-    $('dismissBtn').hidden = state.kind !== 'error';
+    card.classList.remove('sc-error');
+    $('retryBtn').hidden = true;
+    $('retryBtn').disabled = false;
+    $('retryBtn').textContent = 'Retry upload';
+    $('dismissBtn').hidden = true;
     $('resultWarn').hidden = !record.over2h;
     $('resultWarn').textContent = record.over2h
       ? 'Warning: this shift is longer than 2 hours (' + record.durationText + ').'
@@ -384,21 +609,71 @@
     if (state.kind === 'saving') {
       $('resultTitle').textContent = 'Saving shift...';
       $('resultMsg').textContent = 'Trying to send ' + record.user + "'s shift to the Google spreadsheet.";
-    } else if (state.kind === 'success') {
-      $('resultTitle').textContent = 'Shift recorded in the spreadsheet';
-      $('resultMsg').textContent = record.user + ': ' + record.start +
-        ' to ' + record.end + ' (' + record.durationText + ', ' + record.hours + ' h).';
     } else {
-      $('resultTitle').textContent = 'Could not save to the spreadsheet';
-      $('resultMsg').textContent = (state.error || 'The upload failed.') +
-        ' The shift data is safe below. Copy it and send it to your manager on Telegram, or paste it into the spreadsheet.';
-      card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      $('resultTitle').textContent = state.title || 'Shift recorded in the spreadsheet';
+      $('resultMsg').textContent = state.message || (record.user + ': ' + record.start +
+        ' to ' + record.end + ' (' + record.durationText + ', ' + record.hours + ' h).');
     }
+  }
+
+  function renderPendingError(list, message) {
+    currentPending = list;
+    currentRecord = null;
+    const card = $('result');
+    card.hidden = false;
+    $('editShiftLink').hidden = true;
+    card.classList.remove('sc-ok');
+    card.classList.add('sc-error');
+    $('retryBtn').hidden = false;
+    $('retryBtn').disabled = false;
+    $('retryBtn').textContent = 'Retry upload (' + list.length + ')';
+    $('dismissBtn').hidden = false;
+    const over2h = list.some(function (item) { return item.record.over2h; });
+    $('resultWarn').hidden = !over2h;
+    $('resultWarn').textContent = over2h
+      ? 'Warning: at least one pending shift is longer than 2 hours.'
+      : '';
+    $('dataBlock').textContent = tsvHeader() + '\n' + list.map(function (item) {
+      return tsvRow(item.record);
+    }).join('\n');
+    $('resultTitle').textContent = 'Could not save ' + list.length + ' shift' +
+      (list.length === 1 ? '' : 's') + ' to the spreadsheet';
+    $('resultMsg').textContent = (message || 'The upload failed.') + ' ' + list.length +
+      ' shift' + (list.length === 1 ? '' : 's') +
+      ' waiting. "Retry upload" sends all of them. Copy the rows below and send them to your manager by email, or paste them into the spreadsheet.';
+    card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function renderCollision(record, message, remaining) {
+    currentRecord = record;
+    currentPending = null;
+    const card = $('result');
+    card.hidden = false;
+    $('editShiftLink').hidden = false;
+    card.classList.remove('sc-ok');
+    card.classList.add('sc-error');
+    const pendingCount = remaining ? remaining.length : 0;
+    $('retryBtn').hidden = pendingCount === 0;
+    $('retryBtn').disabled = false;
+    $('retryBtn').textContent = 'Retry other pending (' + pendingCount + ')';
+    $('dismissBtn').hidden = true;
+    $('resultWarn').hidden = !record.over2h;
+    $('resultWarn').textContent = record.over2h
+      ? 'Warning: this shift is longer than 2 hours (' + record.durationText + ').'
+      : '';
+    $('dataBlock').textContent = tsvHeader() + '\n' + tsvRow(record);
+    $('resultTitle').textContent = 'Shift already exists in the spreadsheet';
+    $('resultMsg').textContent = (message || 'A shift with the same start or end time already exists.') +
+      ' This write was not saved and will not be retried. Open Check shifts to request a correction.' +
+      (pendingCount ? ' ' + pendingCount + ' other pending shift(s) can be retried below.' : '');
+    card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
   function hideResult() {
     currentRecord = null;
+    currentPending = null;
     $('result').hidden = true;
+    $('editShiftLink').hidden = true;
     $('retryBtn').hidden = true;
     $('dismissBtn').hidden = true;
   }
@@ -492,31 +767,65 @@
   }
 
   async function retryPending() {
-    const pending = read(KEYS.pending, null);
-    if (!pending || !pending.record) {
+    const list = getPendingList();
+    if (!list.length) {
       hideResult();
       return;
     }
-    const record = pending.record;
+
     $('retryBtn').disabled = true;
-    renderResult(record, { kind: 'saving' });
-    try {
-      await uploadRecord(record);
-      const current = read(KEYS.pending, null);
-      if (current && current.record && current.record.id === record.id) {
-        remove(KEYS.pending);
+    $('resultTitle').textContent = 'Retrying ' + list.length + ' shift' + (list.length === 1 ? '' : 's') + '...';
+    $('resultMsg').textContent = 'Sending all pending shifts to the spreadsheet.';
+    let successCount = 0;
+    let lastRecord = null;
+    let lastError = '';
+    let collisionRecord = null;
+    let collisionError = '';
+
+    for (let i = 0; i < list.length; i++) {
+      const record = list[i].record;
+      lastRecord = record;
+      try {
+        await uploadRecord(record);
+        removePending(record.id);
+        successCount++;
+      } catch (err) {
+        if (err && err.code === 'AUTH') {
+          clearAuth(record.user);
+          lastError = err.message || 'Sign-in expired. Please sign in again.';
+          addPending(record, lastError);
+          break;
+        }
+        if (err && err.code === 'COLLISION') {
+          removePending(record.id);
+          collisionRecord = record;
+          collisionError = err.message || 'A shift with the same start or end time already exists.';
+          continue;
+        }
+        lastError = err && err.message ? err.message : 'The upload failed.';
+        addPending(record, lastError);
       }
-      renderResult(record, { kind: 'success' });
-    } catch (err) {
-      if (err && err.code === 'AUTH') {
-        clearAuth(record.user);
-      }
-      const message = err && err.message ? err.message : 'The upload failed.';
-      write(KEYS.pending, { record: record, error: message });
-      renderResult(record, { kind: 'error', error: message });
-    } finally {
-      $('retryBtn').disabled = false;
     }
+
+    const remaining = getPendingList();
+    if (collisionRecord) {
+      const message = collisionError + (successCount > 0
+        ? ' ' + successCount + ' other shift(s) were uploaded.'
+        : '');
+      renderCollision(collisionRecord, message, remaining);
+    } else if (remaining.length) {
+      const message = successCount > 0
+        ? successCount + ' shift(s) uploaded; ' + remaining.length + ' still pending. ' + lastError
+        : (lastError || 'The upload failed.');
+      renderPendingError(remaining, message);
+    } else {
+      renderResult(lastRecord, {
+        kind: 'success',
+        title: 'Pending shifts recorded',
+        message: 'Uploaded ' + successCount + ' pending shift' + (successCount === 1 ? '' : 's') + '.'
+      });
+    }
+    $('retryBtn').disabled = false;
   }
 
   function dismissPending() {
@@ -692,6 +1001,100 @@
     resolveAuth(null);
   }
 
+  function testStartDate() {
+    const input = $('testStartTime');
+    if (!input || !input.value) {
+      return null;
+    }
+    const parts = String(input.value).split(':');
+    if (parts.length < 2) {
+      return null;
+    }
+    const date = new Date();
+    date.setHours(Number(parts[0]) || 0, Number(parts[1]) || 0, 0, 0);
+    if (date.getTime() > Date.now()) {
+      date.setDate(date.getDate() - 1);
+    }
+    return date;
+  }
+
+  function setTestMessage(text) {
+    const element = $('testMsg');
+    if (element) {
+      element.textContent = text || '';
+    }
+  }
+
+  function testHourlyBreak() {
+    const user = selectedUser();
+    if (!user) {
+      setTestMessage('Choose a user first.');
+      return;
+    }
+    if (activeShift()) {
+      setTestMessage('End the active shift before testing.');
+      return;
+    }
+    const start = testStartDate();
+    if (!start) {
+      setTestMessage('Choose a shift start time.');
+      return;
+    }
+    const elapsed = Math.max(0, Date.now() - start.getTime());
+    if (elapsed < HOURLY_MS) {
+      setTestMessage('Hourly break is not due yet: ' + formatDuration(elapsed) + ' of 1h.');
+      return;
+    }
+    const breakUntil = Date.now() + BREAK_MS;
+    setBreakUntil(user, breakUntil);
+    window.alert('Take a break, walk away, look away. Shift ended. Start shift after ' + localTime(new Date(breakUntil)) + '.');
+    setTestMessage('Hourly break simulated. Start is disabled until ' + localTime(new Date(breakUntil)) + '. No shift was uploaded.');
+    refresh();
+  }
+
+  async function testDailyLimit() {
+    const user = selectedUser();
+    if (!user) {
+      setTestMessage('Choose a user first.');
+      return;
+    }
+    if (activeShift()) {
+      setTestMessage('End the active shift before testing.');
+      return;
+    }
+    const start = testStartDate();
+    if (!start) {
+      setTestMessage('Choose a shift start time.');
+      return;
+    }
+    if (!getCachedDailyStatus(user)) {
+      await loadDailyStatus(user);
+    }
+    const allowance = getDailyAllowance(user);
+    if (allowance.max <= 0) {
+      setTestMessage('No daily maximum found for this user. Check the Personnel sheet and sign in.');
+      return;
+    }
+    const elapsedHours = Math.max(0, Date.now() - start.getTime()) / 3600000;
+    const used = allowance.used + elapsedHours;
+    const usedText = Math.round(used * 100) / 100;
+    if (used >= allowance.max) {
+      window.alert('Daily maximum of ' + allowance.max + ' hours reached. Shift ended.');
+      setTestMessage('Daily maximum reached: ' + usedText + ' of ' + allowance.max + ' h. No shift was uploaded.');
+    } else {
+      setTestMessage('Daily maximum not reached: ' + usedText + ' of ' + allowance.max + ' h.');
+    }
+  }
+
+  function resetTest() {
+    const user = selectedUser();
+    if (user) {
+      clearBreakUntil(user);
+    }
+    setTestMessage('');
+    refresh();
+  }
+
   function hydrate() {
     renderUsers();
     updateConnectionStatus();
@@ -701,13 +1104,26 @@
       $('userSelect').value = storedUser;
     }
 
+    const testTime = $('testStartTime');
+    if (testTime && !testTime.value) {
+      const shift = activeShift();
+      testTime.value = shift
+        ? localTime(new Date(shift.startISO)).slice(0, 5)
+        : localTime(new Date(Date.now() - HOURLY_MS)).slice(0, 5);
+    }
+
     refresh();
 
-    const pending = read(KEYS.pending, null);
-    if (pending && pending.record) {
-      renderResult(pending.record, {
-        kind: 'error',
-        error: pending.error || 'This shift has not been uploaded yet.'
+    const pending = getPendingList();
+    if (pending.length) {
+      renderPendingError(pending, pending[pending.length - 1].error || 'This shift has not been uploaded yet.');
+    }
+
+    const currentUser = selectedUser();
+    if (!dailyFetchStarted && currentUser && getAuth(currentUser)) {
+      dailyFetchStarted = true;
+      loadDailyStatus(currentUser).then(function () {
+        refresh();
       });
     }
 
@@ -730,6 +1146,12 @@
         }
         write(KEYS.selectedUser, event.target.value);
         refresh();
+        const selected = event.target.value;
+        if (selected && getAuth(selected)) {
+          loadDailyStatus(selected).then(function () {
+            refresh();
+          });
+        }
       }
     });
 
@@ -749,24 +1171,30 @@
         startBtn: startShift,
         endBtn: endShift,
         copyRowBtn: function () {
-          if (currentRecord) {
-            copyText(tsvRow(currentRecord));
+          const records = recordsForCopy();
+          if (records.length) {
+            copyText(records.map(tsvRow).join('\n'));
           }
         },
         copyHeaderBtn: function () {
-          if (currentRecord) {
-            copyText(tsvHeader() + '\n' + tsvRow(currentRecord));
+          const records = recordsForCopy();
+          if (records.length) {
+            copyText(tsvHeader() + '\n' + records.map(tsvRow).join('\n'));
           }
         },
-        copyTelegramBtn: function () {
-          if (currentRecord) {
-            copyText(telegramText(currentRecord));
+        copyEmailBtn: function () {
+          const records = recordsForCopy();
+          if (records.length) {
+            copyText(emailText(records));
           }
         },
         retryBtn: retryPending,
         dismissBtn: dismissPending,
         signInBtn: submitAuth,
-        cancelAuthBtn: cancelAuth
+        cancelAuthBtn: cancelAuth,
+        testBreakBtn: testHourlyBreak,
+        testDailyBtn: testDailyLimit,
+        testResetBtn: resetTest
       };
       if (actions[button.id]) {
         event.preventDefault();

@@ -3,10 +3,11 @@ title = "Shift Clock"
 +++
 <div id="shiftClockApp" class="shift-clock-app">
   <div class="sc-brand">Dyuganga</div>
-  <p class="sc-subtitle">Start a shift, end it, and record the hours in the shared spreadsheet.</p>
+  <p class="sc-subtitle">Start a shift, end it, and record the hours in the private spreadsheet.</p>
   <div class="sc-topline">
     <span id="connStatus" class="sc-status-pill">Spreadsheet setup needed</span>
     <span class="sc-private-note">Private sheet &middot; Personnel-managed users</span>
+    <a href="../check-shifts/">Check shifts</a>
     <a href="../clock-setup/">Setup</a>
   </div>
 
@@ -60,14 +61,32 @@ title = "Shift Clock"
     <p id="resultWarn" class="sc-warn-banner" hidden></p>
     <pre id="dataBlock" class="sc-data-block" aria-label="Shift data for the spreadsheet"></pre>
     <div class="sc-actions">
-      <button id="copyRowBtn" class="sc-btn sc-btn-secondary sc-btn-small" type="button">Copy row (TSV)</button>
-      <button id="copyHeaderBtn" class="sc-btn sc-btn-secondary sc-btn-small" type="button">Copy row + header</button>
-      <button id="copyTelegramBtn" class="sc-btn sc-btn-secondary sc-btn-small" type="button">Copy for Telegram</button>
+      <button id="copyRowBtn" class="sc-btn sc-btn-secondary sc-btn-small" type="button">Copy rows (TSV)</button>
+      <button id="copyHeaderBtn" class="sc-btn sc-btn-secondary sc-btn-small" type="button">Copy rows + header</button>
+      <button id="copyEmailBtn" class="sc-btn sc-btn-secondary sc-btn-small" type="button">Copy for email</button>
+      <a id="editShiftLink" class="sc-btn sc-btn-secondary sc-btn-small" href="../check-shifts/" hidden>Open Check shifts</a>
       <button id="retryBtn" class="sc-btn sc-btn-primary sc-btn-small" type="button" hidden>Retry upload</button>
-      <button id="dismissBtn" class="sc-btn sc-btn-secondary sc-btn-small" type="button" hidden>I have sent it - dismiss</button>
+      <button id="dismissBtn" class="sc-btn sc-btn-secondary sc-btn-small" type="button" hidden>I have sent them - dismiss</button>
     </div>
-    <p class="sc-hint">If the spreadsheet cannot be reached, copy the row and send it to your manager on Telegram (or paste it into the spreadsheet yourself).</p>
+    <p class="sc-hint">If the spreadsheet cannot be reached, copy the rows and send them to your manager by email (or paste them into the spreadsheet yourself).</p>
   </section>
+
+  <details id="testPanel" class="sc-card sc-test">
+    <summary>Test</summary>
+    <div class="sc-test-body">
+      <p class="sc-hint">Simulates the auto-end alerts without uploading a shift. End any active shift first.</p>
+      <div class="sc-row">
+        <label class="sc-field">
+          <span class="sc-field-label">Shift start time</span>
+          <input id="testStartTime" type="time">
+        </label>
+        <button id="testBreakBtn" class="sc-btn sc-btn-secondary" type="button">Test hourly break</button>
+        <button id="testDailyBtn" class="sc-btn sc-btn-secondary" type="button">Test daily limit</button>
+        <button id="testResetBtn" class="sc-btn sc-btn-secondary sc-btn-small" type="button">Reset test</button>
+      </div>
+      <p id="testMsg" class="sc-hint" role="status"></p>
+    </div>
+  </details>
 
   <div id="toast" class="sc-toast" role="status"></div>
 </div>
@@ -167,7 +186,8 @@ title = "Shift Clock"
   }
   .shift-clock-app select,
   .shift-clock-app input[type="text"],
-  .shift-clock-app input[type="password"] {
+  .shift-clock-app input[type="password"],
+  .shift-clock-app input[type="time"] {
     width: 100%;
     min-height: 44px;
     padding: 9px 12px;
@@ -180,6 +200,7 @@ title = "Shift Clock"
   .shift-clock-app select:focus,
   .shift-clock-app input[type="text"]:focus,
   .shift-clock-app input[type="password"]:focus,
+  .shift-clock-app input[type="time"]:focus,
   .shift-clock-app .sc-btn:focus-visible {
     outline: 3px solid rgba(15, 118, 110, 0.28);
     outline-offset: 2px;
@@ -227,6 +248,12 @@ title = "Shift Clock"
     color: var(--sc-brand);
   }
   .shift-clock-app .sc-btn-small { min-height: 38px; padding: 8px 13px; font-size: 0.86rem; }
+  .shift-clock-app a.sc-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
   .shift-clock-app .sc-hint {
     min-height: 1.4em;
     margin: 9px 0 0;
@@ -307,7 +334,32 @@ title = "Shift Clock"
     align-items: stretch;
   }
   .shift-clock-app .sc-row input[type="text"],
-  .shift-clock-app .sc-row input[type="password"] { flex: 1 1 240px; }
+  .shift-clock-app .sc-row input[type="password"],
+  .shift-clock-app .sc-row input[type="time"] { flex: 1 1 240px; }
+  .shift-clock-app .sc-test { padding: 0; overflow: hidden; }
+  .shift-clock-app .sc-test > summary {
+    padding: 16px 20px;
+    cursor: pointer;
+    color: var(--sc-muted);
+    font-weight: 750;
+    list-style: none;
+    user-select: none;
+  }
+  .shift-clock-app .sc-test > summary::-webkit-details-marker { display: none; }
+  .shift-clock-app .sc-test > summary::before {
+    content: "+";
+    display: inline-block;
+    width: 1.2em;
+    color: var(--sc-brand);
+    font-size: 1.15em;
+    font-weight: 800;
+  }
+  .shift-clock-app .sc-test[open] > summary::before { content: "-"; }
+  .shift-clock-app .sc-test-body {
+    padding: 0 20px 20px;
+    border-top: 1px solid var(--sc-line);
+  }
+  .shift-clock-app .sc-test-body .sc-row { margin-top: 12px; }
   .shift-clock-app .sc-toast {
     position: fixed;
     left: 50%;

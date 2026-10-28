@@ -1,0 +1,379 @@
++++
+title = "Check shifts"
++++
+<div id="checkShiftsApp" class="check-shifts-app">
+  <div class="cs-brand">Dyuganga</div>
+  <p class="cs-subtitle">Review your shifts from the last 32 days and request a correction.</p>
+  <div class="cs-topline">
+    <span id="csStatus" class="cs-status-pill">Sign in to continue</span>
+    <a href="../clock/">Back to Shift Clock</a>
+  </div>
+
+  <section id="csLoginCard" class="cs-card" hidden>
+    <div class="cs-title">Sign in</div>
+    <p class="cs-hint">Use your Personnel name and the value in the <code>pw</code> column.</p>
+    <div class="cs-row">
+      <select id="csLoginUser" aria-label="User"></select>
+      <input id="csLoginPassword" type="password" autocomplete="current-password" placeholder="Password" aria-label="Password">
+      <button id="csSignInBtn" class="cs-btn cs-btn-primary" type="button">Sign in</button>
+    </div>
+    <p id="csLoginMsg" class="cs-hint" role="status"></p>
+  </section>
+
+  <section id="csShiftsCard" class="cs-card" hidden>
+    <div class="cs-row cs-row-between">
+      <div>
+        <div class="cs-title">Your shifts, last 32 days</div>
+        <p id="csViewerMsg" class="cs-hint"></p>
+      </div>
+      <div class="cs-row cs-row-actions">
+        <button id="csRefreshBtn" class="cs-btn cs-btn-secondary cs-btn-small" type="button">Refresh</button>
+        <button id="csSignOutBtn" class="cs-btn cs-btn-secondary cs-btn-small" type="button">Sign out</button>
+      </div>
+    </div>
+    <p id="csShiftsMsg" class="cs-hint" role="status"></p>
+    <div class="cs-table-wrap">
+      <table class="cs-table">
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Start</th>
+            <th>End</th>
+            <th>Hours</th>
+            <th>Notes</th>
+            <th>Pending</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="csShiftsBody"></tbody>
+      </table>
+    </div>
+    <p class="cs-hint">Requesting deletion sets that row's <code>Pending</code> column to <code>Delete</code>. The manager reviews pending requests in the sheet.</p>
+  </section>
+
+  <section id="csAddCard" class="cs-card" hidden>
+    <div class="cs-title">Request an addition</div>
+    <p class="cs-hint">Use full start and end date-times. For a shift crossing midnight, choose the next day for End. The new row will be marked <code>Pending = Add</code>.</p>
+    <div class="cs-form">
+      <div class="cs-field">
+        <span class="cs-field-label">User</span>
+        <div id="csAddUserLabel" class="cs-value"></div>
+      </div>
+      <label class="cs-field">
+        <span class="cs-field-label">Start</span>
+        <input id="csAddStart" type="datetime-local">
+      </label>
+      <label class="cs-field">
+        <span class="cs-field-label">End</span>
+        <input id="csAddEnd" type="datetime-local">
+      </label>
+      <label class="cs-field cs-field-wide">
+        <span class="cs-field-label">Notes</span>
+        <input id="csAddNotes" type="text" placeholder="Reason or description (optional)">
+      </label>
+    </div>
+    <div class="cs-row">
+      <button id="csAddBtn" class="cs-btn cs-btn-primary" type="button">Request addition</button>
+    </div>
+    <p id="csAddMsg" class="cs-hint" role="status"></p>
+  </section>
+
+  <div id="csToast" class="cs-toast" role="status"></div>
+</div>
+
+<style>
+  .check-shifts-app {
+    --cs-card: #ffffff;
+    --cs-ink: #1b2433;
+    --cs-muted: #5b6b82;
+    --cs-line: #d9e2ee;
+    --cs-brand: #0f766e;
+    --cs-brand-dark: #115e59;
+    --cs-ok: #047857;
+    --cs-danger: #b91c1c;
+    --cs-warn: #9a3412;
+    --cs-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+    max-width: 1000px;
+    margin: 0 auto;
+    color: var(--cs-ink);
+    font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans Devanagari", "Noto Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .check-shifts-app,
+  .check-shifts-app *,
+  .check-shifts-app *::before,
+  .check-shifts-app *::after {
+    box-sizing: border-box;
+  }
+  .check-shifts-app .cs-brand {
+    color: var(--cs-brand);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .check-shifts-app .cs-subtitle {
+    margin: 4px 0 0;
+    color: var(--cs-muted);
+  }
+  .check-shifts-app .cs-topline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-top: 12px;
+  }
+  .check-shifts-app .cs-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 11px;
+    border: 1px solid var(--cs-line);
+    border-radius: 999px;
+    background: var(--cs-card);
+    color: var(--cs-muted);
+    font-size: 0.78rem;
+    font-weight: 650;
+  }
+  .check-shifts-app .cs-status-pill::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #f59e0b;
+  }
+  .check-shifts-app .cs-status-pill.cs-ok::before {
+    background: #10b981;
+  }
+  .check-shifts-app .cs-topline a {
+    color: var(--cs-brand);
+    font-size: 0.84rem;
+    font-weight: 650;
+    text-decoration: none;
+  }
+  .check-shifts-app .cs-topline a:hover {
+    text-decoration: underline;
+  }
+  .check-shifts-app .cs-card {
+    margin-top: 16px;
+    padding: 20px;
+    border: 1px solid var(--cs-line);
+    border-radius: 14px;
+    background: var(--cs-card);
+    box-shadow: var(--cs-shadow);
+  }
+  .check-shifts-app .cs-title {
+    font-size: 1.2rem;
+    font-weight: 750;
+    margin: 0;
+  }
+  .check-shifts-app .cs-hint {
+    margin: 8px 0 0;
+    color: var(--cs-muted);
+    font-size: 0.86rem;
+  }
+  .check-shifts-app .cs-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    align-items: stretch;
+    margin-top: 10px;
+  }
+  .check-shifts-app .cs-row-between {
+    justify-content: space-between;
+    align-items: center;
+  }
+  .check-shifts-app .cs-row-between .cs-hint {
+    margin-top: 2px;
+  }
+  .check-shifts-app .cs-row-actions {
+    margin-top: 0;
+  }
+  .check-shifts-app .cs-field {
+    display: block;
+    flex: 1 1 180px;
+    min-width: 160px;
+  }
+  .check-shifts-app .cs-field-label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--cs-muted);
+    font-size: 0.74rem;
+    font-weight: 750;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .check-shifts-app select,
+  .check-shifts-app input[type="text"],
+  .check-shifts-app input[type="password"],
+  .check-shifts-app input[type="datetime-local"] {
+    width: 100%;
+    min-height: 42px;
+    padding: 8px 11px;
+    border: 1px solid var(--cs-line);
+    border-radius: 10px;
+    background: var(--cs-card);
+    color: var(--cs-ink);
+    font: inherit;
+  }
+  .check-shifts-app select:focus,
+  .check-shifts-app input:focus,
+  .check-shifts-app .cs-btn:focus-visible {
+    outline: 3px solid rgba(15, 118, 110, 0.28);
+    outline-offset: 2px;
+  }
+  .check-shifts-app .cs-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 12px;
+  }
+  .check-shifts-app .cs-field-wide {
+    grid-column: 1 / -1;
+  }
+  .check-shifts-app .cs-value {
+    padding: 9px 0;
+    font-weight: 750;
+  }
+  .check-shifts-app .cs-btn {
+    min-height: 42px;
+    padding: 8px 15px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font: inherit;
+    font-weight: 750;
+    cursor: pointer;
+    transition: transform 0.12s ease, background 0.12s ease, border-color 0.12s ease;
+  }
+  .check-shifts-app .cs-btn:not(:disabled):hover {
+    transform: translateY(-1px);
+  }
+  .check-shifts-app .cs-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.42;
+    transform: none;
+  }
+  .check-shifts-app .cs-btn-primary {
+    background: var(--cs-brand);
+    color: #ffffff;
+  }
+  .check-shifts-app .cs-btn-primary:hover:not(:disabled) {
+    background: var(--cs-brand-dark);
+  }
+  .check-shifts-app .cs-btn-secondary {
+    border-color: var(--cs-line);
+    background: transparent;
+    color: var(--cs-ink);
+  }
+  .check-shifts-app .cs-btn-secondary:hover:not(:disabled) {
+    border-color: var(--cs-brand);
+    color: var(--cs-brand);
+  }
+  .check-shifts-app .cs-btn-danger {
+    background: var(--cs-danger);
+    color: #ffffff;
+  }
+  .check-shifts-app .cs-btn-small {
+    min-height: 34px;
+    padding: 6px 11px;
+    font-size: 0.82rem;
+  }
+  .check-shifts-app .cs-table-wrap {
+    margin-top: 12px;
+    overflow-x: auto;
+    border: 1px solid var(--cs-line);
+    border-radius: 10px;
+  }
+  .check-shifts-app .cs-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+  .check-shifts-app .cs-table th,
+  .check-shifts-app .cs-table td {
+    padding: 9px 10px;
+    border-bottom: 1px solid var(--cs-line);
+    text-align: left;
+    vertical-align: top;
+  }
+  .check-shifts-app .cs-table th {
+    background: rgba(15, 118, 110, 0.06);
+    color: var(--cs-muted);
+    font-size: 0.72rem;
+    font-weight: 750;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .check-shifts-app .cs-table tbody tr:last-child td {
+    border-bottom: 0;
+  }
+  .check-shifts-app .cs-table td {
+    white-space: nowrap;
+  }
+  .check-shifts-app .cs-table td.cs-time,
+  .check-shifts-app .cs-table td.cs-hours {
+    font-variant-numeric: tabular-nums;
+  }
+  .check-shifts-app .cs-table td.cs-notes {
+    min-width: 120px;
+    max-width: 220px;
+    white-space: normal;
+  }
+  .check-shifts-app .cs-pending {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 0.74rem;
+    font-weight: 750;
+  }
+  .check-shifts-app .cs-pending-delete {
+    background: #fef2f2;
+    color: #b91c1c;
+  }
+  .check-shifts-app .cs-pending-add {
+    background: #ecfdf5;
+    color: #047857;
+  }
+  .check-shifts-app .cs-empty {
+    padding: 16px;
+    color: var(--cs-muted);
+    text-align: center;
+  }
+  .check-shifts-app .cs-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    z-index: 10;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: var(--cs-ink);
+    color: #ffffff;
+    font-size: 0.86rem;
+    font-weight: 700;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 12px);
+    transition: opacity 0.18s ease, transform 0.18s ease;
+  }
+  .check-shifts-app .cs-toast.cs-show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  .check-shifts-app [hidden] {
+    display: none !important;
+  }
+  @media (max-width: 600px) {
+    .check-shifts-app .cs-card {
+      padding: 16px;
+    }
+    .check-shifts-app .cs-row-between {
+      align-items: flex-start;
+    }
+    .check-shifts-app .cs-row > .cs-btn {
+      flex: 1 1 100%;
+    }
+  }
+</style>
+<script src="/groups/dyuganga/internal/clocking/check-shifts.js"></script>
