@@ -27,6 +27,7 @@
   let usersLoadError = false;
   let timerStarted = false;
   let dailyFetchStarted = false;
+  let lastTickDate = localDate(new Date());
   let toastTimer = null;
 
   function read(key, fallback) {
@@ -308,6 +309,18 @@
       day: 'numeric'
     });
 
+    const dateText = localDate(now);
+    if (dateText !== lastTickDate) {
+      lastTickDate = dateText;
+      refresh();
+      const current = selectedUser();
+      if (current && getAuth(current)) {
+        loadDailyStatus(current).then(function () {
+          refresh();
+        });
+      }
+    }
+
     const user = selectedUser();
     const breakUntil = user ? getBreakUntil(user) : 0;
     if (breakUntil && breakUntil <= now.getTime()) {
@@ -363,6 +376,22 @@
     $('startBtn').disabled = !user || !!shift || starting || ending || !!authPrompt || onBreak || dailyReached;
     $('endBtn').disabled = !user || !shift || ending || starting;
     $('activePanel').hidden = !shift;
+
+    const notice = $('startNotice');
+    if (notice) {
+      if (onBreak) {
+        notice.hidden = false;
+        notice.textContent = 'Start disabled for a mandatory 5-minute break. It will be enabled at ' + localTime(new Date(breakUntil)) + '.';
+      } else if (dailyReached) {
+        const nextMidnight = new Date();
+        nextMidnight.setHours(24, 0, 0, 0);
+        notice.hidden = false;
+        notice.textContent = 'Start disabled: daily maximum of ' + allowance.max + ' hours reached. It will be enabled after midnight at ' + localTime(nextMidnight) + '.';
+      } else {
+        notice.hidden = true;
+        notice.textContent = '';
+      }
+    }
 
     if (shift) {
       $('activeUser').textContent = shift.user;
@@ -527,6 +556,10 @@
       ending = false;
       refresh();
     }
+
+    loadDailyStatus(user).then(function () {
+      refresh();
+    });
   }
 
   function autoEndShift(user, shift, reason, dailyMax, endTime) {

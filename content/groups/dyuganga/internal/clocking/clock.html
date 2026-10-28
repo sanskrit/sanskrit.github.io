@@ -28,6 +28,7 @@ title = "Shift Clock"
       <button id="startBtn" class="sc-btn sc-btn-primary" type="button" disabled>Start shift</button>
       <button id="endBtn" class="sc-btn sc-btn-danger" type="button" disabled>End shift</button>
     </div>
+    <div id="startNotice" class="sc-start-notice" hidden></div>
 
     <div id="activePanel" class="sc-active-panel" hidden>
       <div class="sc-active-grid">
@@ -259,6 +260,16 @@ title = "Shift Clock"
     margin: 9px 0 0;
     color: var(--sc-muted);
     font-size: 0.86rem;
+  }
+  .shift-clock-app .sc-start-notice {
+    margin-top: 10px;
+    padding: 9px 11px;
+    border: 1px solid rgba(154, 52, 18, 0.35);
+    border-radius: 9px;
+    background: var(--sc-warn-bg);
+    color: var(--sc-warn);
+    font-size: 0.88rem;
+    font-weight: 700;
   }
   .shift-clock-app .sc-active-panel {
     margin-top: 18px;

@@ -51,8 +51,7 @@ The Start button stays disabled until the break ends. The break is stored in the
 
 The Apps Script project is [here](https://script.google.com/u/1/home/projects/1GRTdpZ4PsTT_8QU0dw_fVMTaDJJFhyZDoSgh_dl64Ck9XKfwNeztwGJ9/edit).
 
-Saving the script in the editor does **not** update the live web app. After saving, update the deployment: **Deploy → Manage deployments → Edit → Version: New version → Deploy**. If the `/exec` URL changes, update `DEFAULT_ENDPOINT` in [clock.js](../clock.js).
-
+Saving the script in the editor does **not** update the live web app.
 
 1. Open the private spreadsheet and choose **Extensions → Apps Script**.
 2. Replace the default code with the contents of [app-script.js](../app-script.js).
@@ -61,8 +60,11 @@ Saving the script in the editor does **not** update the live web app. After savi
 5. For the first deployment, choose **Deploy → New deployment** and select type **Web app**.
 6. Set **Execute as: Me** and **Who has access: Anyone**.
 7. Deploy, approve the permissions, and copy the Web app URL ending in `/exec`.
-8. After changing `app-script.js` later, update the existing deployment: **Deploy → Manage deployments → Edit → Version: New version** so the `/exec` URL stays the same.
-9. If the URL changes, update `DEFAULT_ENDPOINT` in [clock.js](../clock.js).
+8. If the URL changes, update `DEFAULT_ENDPOINT` in [clock.js](../clock.js).
+
+### Redeployment
+
+Same project/deployment: **Deploy → Manage deployments → Edit → Version: New version → Deploy**.
 
 The current deployed endpoint is:
 
@@ -70,6 +72,8 @@ The current deployed endpoint is:
 https://script.google.com/macros/s/AKfycbw7LNoaHRJEktArmanWEN9XMYLC10GYeloiYXYh9RIAz1LELE2MTMxS4muiqPaGhogm6w/exec
 ```
 
-## Deployment note
+### Deployment note
 
 Use **Execute as: Me** with **Who has access: Anyone**. The script then runs with the owner's access to the private spreadsheet, so the sheet stays private. Choosing **Execute as: User accessing the web app** would require every user to have access to the private spreadsheet, and the page's requests would need Google authentication.
+
+
