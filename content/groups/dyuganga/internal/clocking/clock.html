@@ -1,0 +1,348 @@
++++
+title = "Shift Clock"
++++
+<div id="shiftClockApp" class="shift-clock-app">
+  <div class="sc-brand">Dyuganga</div>
+  <p class="sc-subtitle">Start a shift, end it, and record the hours in the shared spreadsheet.</p>
+  <div class="sc-topline">
+    <span id="connStatus" class="sc-status-pill">Spreadsheet setup needed</span>
+    <span class="sc-private-note">Private sheet &middot; Personnel-managed users</span>
+    <a href="../clock-setup/">Setup</a>
+  </div>
+
+  <section class="sc-card" aria-labelledby="controlsTitle">
+    <span id="controlsTitle" class="sc-sr-only">Shift controls</span>
+    <label class="sc-field" for="userSelect">
+      <span class="sc-field-label">User</span>
+      <select id="userSelect" autocomplete="off">
+        <option value="">Select user...</option>
+      </select>
+    </label>
+    <p id="userHint" class="sc-hint">Choose a user to enable the buttons.</p>
+
+    <div class="sc-clock-display" id="liveClock">--:--:--</div>
+    <div class="sc-clock-date" id="liveDate"></div>
+
+    <div class="sc-actions">
+      <button id="startBtn" class="sc-btn sc-btn-primary" type="button" disabled>Start shift</button>
+      <button id="endBtn" class="sc-btn sc-btn-danger" type="button" disabled>End shift</button>
+    </div>
+
+    <div id="activePanel" class="sc-active-panel" hidden>
+      <div class="sc-active-grid">
+        <div>
+          <span class="sc-label">User</span>
+          <span class="sc-value" id="activeUser"></span>
+        </div>
+        <div>
+          <span class="sc-label">Started</span>
+          <span class="sc-value" id="activeStart"></span>
+        </div>
+      </div>
+      <div class="sc-elapsed">Elapsed: <span id="elapsed">0m 00s</span></div>
+      <div id="over2h" class="sc-warn-banner" hidden>Warning: this shift has exceeded 2 hours.</div>
+    </div>
+  </section>
+
+  <section id="authPanel" class="sc-card" hidden aria-live="polite">
+    <div id="authTitle" class="sc-result-title" role="heading" aria-level="2">Sign in</div>
+    <p id="authMsg" class="sc-hint"></p>
+    <div class="sc-row">
+      <input id="passwordInput" type="password" autocomplete="current-password" placeholder="Password">
+      <button id="signInBtn" class="sc-btn sc-btn-primary sc-btn-small" type="button">Sign in</button>
+      <button id="cancelAuthBtn" class="sc-btn sc-btn-secondary sc-btn-small" type="button">Cancel</button>
+    </div>
+  </section>
+
+  <section id="result" class="sc-card sc-result-card" aria-live="polite" hidden>
+    <div id="resultTitle" class="sc-result-title" role="heading" aria-level="2"></div>
+    <p id="resultMsg" class="sc-result-msg"></p>
+    <p id="resultWarn" class="sc-warn-banner" hidden></p>
+    <pre id="dataBlock" class="sc-data-block" aria-label="Shift data for the spreadsheet"></pre>
+    <div class="sc-actions">
+      <button id="copyRowBtn" class="sc-btn sc-btn-secondary sc-btn-small" type="button">Copy row (TSV)</button>
+      <button id="copyHeaderBtn" class="sc-btn sc-btn-secondary sc-btn-small" type="button">Copy row + header</button>
+      <button id="copyTelegramBtn" class="sc-btn sc-btn-secondary sc-btn-small" type="button">Copy for Telegram</button>
+      <button id="retryBtn" class="sc-btn sc-btn-primary sc-btn-small" type="button" hidden>Retry upload</button>
+      <button id="dismissBtn" class="sc-btn sc-btn-secondary sc-btn-small" type="button" hidden>I have sent it - dismiss</button>
+    </div>
+    <p class="sc-hint">If the spreadsheet cannot be reached, copy the row and send it to your manager on Telegram (or paste it into the spreadsheet yourself).</p>
+  </section>
+
+  <div id="toast" class="sc-toast" role="status"></div>
+</div>
+
+<style>
+  .shift-clock-app {
+    --sc-card: #ffffff;
+    --sc-ink: #1b2433;
+    --sc-muted: #5b6b82;
+    --sc-line: #d9e2ee;
+    --sc-brand: #0f766e;
+    --sc-brand-dark: #115e59;
+    --sc-ok: #047857;
+    --sc-warn: #9a3412;
+    --sc-warn-bg: #fff7ed;
+    --sc-danger: #b91c1c;
+    --sc-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+    max-width: 840px;
+    margin: 0 auto;
+    color: var(--sc-ink);
+    font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans Devanagari", "Noto Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .shift-clock-app,
+  .shift-clock-app *,
+  .shift-clock-app *::before,
+  .shift-clock-app *::after {
+    box-sizing: border-box;
+  }
+  .shift-clock-app .sc-brand {
+    color: var(--sc-brand);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .shift-clock-app .sc-subtitle {
+    margin: 4px 0 0;
+    color: var(--sc-muted);
+  }
+  .shift-clock-app .sc-topline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-top: 12px;
+  }
+  .shift-clock-app .sc-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 11px;
+    border: 1px solid var(--sc-line);
+    border-radius: 999px;
+    background: var(--sc-card);
+    color: var(--sc-muted);
+    font-size: 0.78rem;
+    font-weight: 650;
+  }
+  .shift-clock-app .sc-status-pill::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #f59e0b;
+  }
+  .shift-clock-app .sc-status-pill.sc-ok::before { background: #10b981; }
+  .shift-clock-app .sc-topline a {
+    color: var(--sc-brand);
+    font-size: 0.84rem;
+    font-weight: 650;
+    text-decoration: none;
+  }
+  .shift-clock-app .sc-topline a:hover { text-decoration: underline; }
+  .shift-clock-app .sc-private-note {
+    color: var(--sc-muted);
+    font-size: 0.8rem;
+  }
+  .shift-clock-app .sc-card {
+    margin-top: 16px;
+    padding: 20px;
+    border: 1px solid var(--sc-line);
+    border-radius: 14px;
+    background: var(--sc-card);
+    box-shadow: var(--sc-shadow);
+  }
+  .shift-clock-app .sc-field { display: block; }
+  .shift-clock-app .sc-field-label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--sc-muted);
+    font-size: 0.78rem;
+    font-weight: 750;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .shift-clock-app select,
+  .shift-clock-app input[type="text"],
+  .shift-clock-app input[type="password"] {
+    width: 100%;
+    min-height: 44px;
+    padding: 9px 12px;
+    border: 1px solid var(--sc-line);
+    border-radius: 10px;
+    background: var(--sc-card);
+    color: var(--sc-ink);
+    font: inherit;
+  }
+  .shift-clock-app select:focus,
+  .shift-clock-app input[type="text"]:focus,
+  .shift-clock-app input[type="password"]:focus,
+  .shift-clock-app .sc-btn:focus-visible {
+    outline: 3px solid rgba(15, 118, 110, 0.28);
+    outline-offset: 2px;
+  }
+  .shift-clock-app .sc-clock-display {
+    margin: 16px 0 2px;
+    font-size: clamp(2.1rem, 8vw, 3.3rem);
+    font-variant-numeric: tabular-nums;
+    font-weight: 750;
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+  .shift-clock-app .sc-clock-date {
+    color: var(--sc-muted);
+    font-size: 0.9rem;
+  }
+  .shift-clock-app .sc-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 16px;
+  }
+  .shift-clock-app .sc-btn {
+    min-height: 43px;
+    padding: 9px 16px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font: inherit;
+    font-weight: 750;
+    cursor: pointer;
+    transition: transform 0.12s ease, background 0.12s ease, border-color 0.12s ease;
+  }
+  .shift-clock-app .sc-btn:not(:disabled):hover { transform: translateY(-1px); }
+  .shift-clock-app .sc-btn:disabled { cursor: not-allowed; opacity: 0.42; transform: none; }
+  .shift-clock-app .sc-btn-primary { background: var(--sc-brand); color: #ffffff; }
+  .shift-clock-app .sc-btn-primary:hover:not(:disabled) { background: var(--sc-brand-dark); }
+  .shift-clock-app .sc-btn-danger { background: var(--sc-danger); color: #ffffff; }
+  .shift-clock-app .sc-btn-secondary {
+    border-color: var(--sc-line);
+    background: transparent;
+    color: var(--sc-ink);
+  }
+  .shift-clock-app .sc-btn-secondary:hover:not(:disabled) {
+    border-color: var(--sc-brand);
+    color: var(--sc-brand);
+  }
+  .shift-clock-app .sc-btn-small { min-height: 38px; padding: 8px 13px; font-size: 0.86rem; }
+  .shift-clock-app .sc-hint {
+    min-height: 1.4em;
+    margin: 9px 0 0;
+    color: var(--sc-muted);
+    font-size: 0.86rem;
+  }
+  .shift-clock-app .sc-active-panel {
+    margin-top: 18px;
+    padding: 14px 15px;
+    border: 1px solid var(--sc-line);
+    border-radius: 11px;
+    background: rgba(15, 118, 110, 0.06);
+  }
+  .shift-clock-app .sc-active-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 9px 18px;
+  }
+  .shift-clock-app .sc-label {
+    display: block;
+    color: var(--sc-muted);
+    font-size: 0.7rem;
+    font-weight: 750;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .shift-clock-app .sc-value {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+  }
+  .shift-clock-app .sc-elapsed {
+    margin-top: 11px;
+    color: var(--sc-brand);
+    font-size: 1.4rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .shift-clock-app .sc-warn-banner {
+    margin-top: 11px;
+    padding: 9px 11px;
+    border: 1px solid rgba(154, 52, 18, 0.35);
+    border-radius: 9px;
+    background: var(--sc-warn-bg);
+    color: var(--sc-warn);
+    font-size: 0.88rem;
+    font-weight: 700;
+  }
+  .shift-clock-app .sc-result-title {
+    margin: 0 0 5px;
+    font-size: 1.2rem;
+    font-weight: 750;
+  }
+  .shift-clock-app .sc-result-msg { margin: 0; color: var(--sc-muted); }
+  .shift-clock-app .sc-data-block {
+    margin: 14px 0 0;
+    padding: 13px;
+    border: 1px solid var(--sc-line);
+    border-radius: 10px;
+    background: rgba(27, 36, 51, 0.04);
+    color: var(--sc-ink);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.78rem;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+    user-select: all;
+    -webkit-user-select: all;
+  }
+  .shift-clock-app .sc-result-card.sc-ok { border-color: rgba(4, 120, 87, 0.4); }
+  .shift-clock-app .sc-result-card.sc-ok .sc-result-title { color: var(--sc-ok); }
+  .shift-clock-app .sc-result-card.sc-error { border-color: rgba(185, 28, 28, 0.38); }
+  .shift-clock-app .sc-result-card.sc-error .sc-result-title { color: var(--sc-danger); }
+  .shift-clock-app .sc-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: stretch;
+  }
+  .shift-clock-app .sc-row input[type="text"],
+  .shift-clock-app .sc-row input[type="password"] { flex: 1 1 240px; }
+  .shift-clock-app .sc-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    z-index: 10;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: var(--sc-ink);
+    color: #ffffff;
+    font-size: 0.86rem;
+    font-weight: 700;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 12px);
+    transition: opacity 0.18s ease, transform 0.18s ease;
+  }
+  .shift-clock-app .sc-toast.sc-show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  .shift-clock-app [hidden] { display: none !important; }
+  .shift-clock-app .sc-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  @media (max-width: 520px) {
+    .shift-clock-app .sc-card { padding: 16px; }
+    .shift-clock-app .sc-actions .sc-btn { flex: 1 1 100%; }
+  }
+</style>
+<script src="/groups/dyuganga/internal/clocking/clock.js"></script>
