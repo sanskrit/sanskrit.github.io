@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>संस्कृतजालक्षेत्रम्  | Clock setup</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.143.0">
+    
+    
+      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+
+    <link href="/groups/dyuganga/internal/clocking/clock-setup/" rel="alternate" type="application/rss+xml" title="संस्कृतजालक्षेत्रम्" />
+    <link href="/groups/dyuganga/internal/clocking/clock-setup/" rel="feed" type="application/rss+xml" title="संस्कृतजालक्षेत्रम्" />
+
+    <meta property="og:url" content="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/">
+  <meta property="og:site_name" content="संस्कृतजालक्षेत्रम्">
+  <meta property="og:title" content="Clock setup">
+  <meta property="og:description" content="The browser clock is at Shift Clock.
+Users and passwords Users are read from the Personnel sheet of the private Dyuganga spreadsheet. Only rows with a non-empty pw cell are listed in the dropdown. The Name and pw columns are found by header name. The value of the pw cell is the password. Clear a pw cell to disable that user. The browser stores a signed session token for 180 days. It does not store the password. Passwords are managed by editing the pw column, or by running createUserFromPrompt() in the Apps Script editor.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="groups">
+
+  <meta itemprop="name" content="Clock setup">
+  <meta itemprop="description" content="The browser clock is at Shift Clock.
+Users and passwords Users are read from the Personnel sheet of the private Dyuganga spreadsheet. Only rows with a non-empty pw cell are listed in the dropdown. The Name and pw columns are found by header name. The value of the pw cell is the password. Clear a pw cell to disable that user. The browser stores a signed session token for 180 days. It does not store the password. Passwords are managed by editing the pw column, or by running createUserFromPrompt() in the Apps Script editor.">
+  <meta itemprop="wordCount" content="700">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Clock setup">
+  <meta name="twitter:description" content="The browser clock is at Shift Clock.
+Users and passwords Users are read from the Personnel sheet of the private Dyuganga spreadsheet. Only rows with a non-empty pw cell are listed in the dropdown. The Name and pw columns are found by header name. The value of the pw cell is the password. Clear a pw cell to disable that user. The browser stores a signed session token for 180 days. It does not store the password. Passwords are managed by editing the pw column, or by running createUserFromPrompt() in the Apps Script editor.">
+<script type="text/javascript">
+    
+    let baseURL = "https:\/\/sanskrit.github.io\/";
+    let basePath = "/" + baseURL.split("/").slice(3).join("/");
+    let siteParams = JSON.parse("{\u0022contactlink\u0022:\u0022https:\/\/github.com\/sanskrit\/sanskrit.github.io\/issues\/new\u0022,\u0022env\u0022:\u0022production\u0022,\u0022githubeditmepathbase\u0022:\u0022https:\/\/github.com\/sanskrit\/sanskrit.github.io\/edit\/master\/content\/\u0022}");
+    let pageDefaultsList = JSON.parse("[{\u0022scope\u0022:{\u0022pathPrefix\u0022:\u0022\u0022},\u0022values\u0022:{\u0022comments\u0022:true,\u0022layout\u0022:\u0022page\u0022,\u0022search\u0022:true,\u0022sidebar\u0022:\u0022home_sidebar\u0022}},{\u0022scope\u0022:{\u0022pathPrefix\u0022:\u0022groups\/dyuganga\u0022},\u0022values\u0022:{\u0022comments\u0022:true,\u0022layout\u0022:\u0022page\u0022,\u0022search\u0022:true,\u0022sidebar\u0022:\u0022dyuganga_sidebar\u0022}}]");
+    let sidebarsData = JSON.parse("{\u0022dyuganga_sidebar\u0022:{\u0022contents\u0022:[{\u0022url\u0022:\u0022recdir:\/\/groups\/dyuganga\/\u0022},{\u0022title\u0022:\u0022Code\u0022,\u0022url\u0022:\u0022https:\/\/sanskrit-coders.github.io\/\u0022}],\u0022title\u0022:\u0022Parts\u0022},\u0022home_sidebar\u0022:{\u0022contents\u0022:[{\u0022title\u0022:\u0022Home - Intro\u0022,\u0022url\u0022:\u0022recdir:\/\/\u0022},{\u0022title\u0022:\u0022Blog\u0022,\u0022url\u0022:\u0022\/assets\/blog\/index.html\u0022}],\u0022title\u0022:\u0022Parts\u0022}}");
+    
+    var pageRelUrlTree = {};
+</script>
+
+    
+    <script type="text/javascript">
+  let pageVars = {};
+  pageVars.pageUrlMinusBasePath = "\/groups\/dyuganga\/internal\/clocking\/clock-setup\/".replace(basePath, "/");
+  pageVars.pageParams = {};
+  pageVars.pageSource = "groups\/dyuganga\/internal\/clocking\/clock-setup.md";
+  console.log(pageVars.pageSource);
+  var pageDefaults;
+  for (let possiblePageDefaults of pageDefaultsList) {
+    if (pageVars.pageSource.startsWith(possiblePageDefaults.scope.pathPrefix)) {
+      pageDefaults = possiblePageDefaults.values
+    }
+  }
+    
+</script>
+
+
+    <script src="/webpack_dist/uiLib-bundle.js"></script>
+
+
+
+
+
+
+
+
+
+
+    <link rel="stylesheet" href="/webpack_dist/uiLib.css">
+<link rel="stylesheet" href="/css/uiLibPrint.css" media="print" >
+<link rel="stylesheet" href="/css/fonts.css" >
+<link rel="stylesheet" href="/css/@fortawesome/fontawesome-free/css/solid.min.css">
+
+<link rel="stylesheet" href="/css/@fortawesome/fontawesome-free/css/fontawesome.min.css">
+
+
+<link rel="alternate" hreflang="sa-Deva" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/" />
+<link rel="alternate" hreflang="sa-Deva" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=devanagari" />
+
+<link rel="alternate" hreflang="sa-Knda" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=kannada" />
+<link rel="alternate" hreflang="sa-Mlym" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=malayalam" />
+<link rel="alternate" hreflang="sa-Telu" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=telugu" />
+<link rel="alternate" hreflang="sa-Taml-t-sa-Taml-m0-superscript" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=tamil_superscripted" />
+<link rel="alternate" hreflang="sa-Taml" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=tamil" />
+<link rel="alternate" hreflang="sa-Gran" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=grantha" />
+
+<link rel="alternate" hreflang="sa-Gujr" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=gujarati" />
+<link rel="alternate" hreflang="sa-Guru" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=gurmukhi" />
+<link rel="alternate" hreflang="sa-Shar" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=sharada" />
+<link rel="alternate" hreflang="sa-Dogr" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=dogra" />
+<link rel="alternate" hreflang="sa-Phag" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=phags_pa" />
+<link rel="alternate" hreflang="sa-Tibt" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=tibetan" />
+<link rel="alternate" hreflang="sa-Sidd" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=siddham" />
+<link rel="alternate" hreflang="sa-Newa" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=newa" />
+<link rel="alternate" hreflang="sa-Modi" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=modi" />
+<link rel="alternate" hreflang="sa-Tirh" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=tirhuta_maithili" />
+<link rel="alternate" hreflang="sa-Gong" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=gondi_gujala" />
+<link rel="alternate" hreflang="sa-Gonm" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=gondi_masaram" />
+
+
+<link rel="alternate" hreflang="sa-Orya" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=oriya" />
+<link rel="alternate" hreflang="sa-Beng-t-sa-Beng-m0-assamese" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=assamese" />
+<link rel="alternate" hreflang="sa-Beng" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=bengali" />
+<link rel="alternate" hreflang="sa-Mtei" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=manipuri" />
+<link rel="alternate" hreflang="sa-Sinh" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=sinhala" />
+<link rel="alternate" hreflang="sa-Limb" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=limbu" />
+<link rel="alternate" hreflang="sa-Lepc" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=lepcha" />
+
+
+<link rel="alternate" hreflang="sa-Cyrl" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=cyrillic" />
+<link rel="alternate" hreflang="sa-Latn-t-sa-Zyyy-m0-iso" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=iso" />
+<link rel="alternate" hreflang="sa-Latn-t-sa-Zyyy-m0-iast" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=iast" />
+<link rel="alternate" hreflang="sa-Aran" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=urdu" />
+<link rel="alternate" hreflang="sa-Avst" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=avestan" />
+
+<link rel="alternate" hreflang="sa-Brah" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=brahmi" />
+<link rel="alternate" hreflang="sa-Khar" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=kharoshthi" />
+<link rel="alternate" hreflang="sa-Zanb" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=zanbazar_square" />
+<link rel="alternate" hreflang="sa-Bhks" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=bhaiksuki" />
+
+<link rel="alternate" hreflang="sa-Bali" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=balinese" />
+<link rel="alternate" hreflang="sa-Java" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=javanese" />
+<link rel="alternate" hreflang="sa-Laoo" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=lao" />
+<link rel="alternate" hreflang="sa-Laoo-t-sa-Laoo-m0-Laopali" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=lao_pali" />
+<link rel="alternate" hreflang="sa-Mymr" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=burmese" />
+<link rel="alternate" hreflang="sa-Mymr-t-sa-Mymr-m0-Mon" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=mon" />
+<link rel="alternate" hreflang="sa-Cham" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=cham" />
+<link rel="alternate" hreflang="sa-Khmr" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=khmer" />
+<link rel="alternate" hreflang="sa-Thai" href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/?transliteration_target=thai" />
+
+  </head>
+
+  <body class="ma0 bg-near-white">
+    
+
+
+    
+<header class="p-1 bg-yellow noPrint">
+    <nav role="navigation" class="col">
+      <div id="div_top_bar" class="row">
+        <div class="col-md-3 justify-content-start">
+          <a  href="/" class="btn col border">
+            <i class="fas fa-gopuram ">संस्कृतजालक्षेत्रम् <br/> Clock setup</i>
+          </a>
+        </div>
+        <div id="div_top_bar_right" class="col-md-auto d-flex justify-content-center">
+          <button class="btn btn-light"  href="#transliterationDropdown" data-toggle="collapse">
+            ✍
+          </button>
+          <select id="transliterationDropdown" size="1" class="collapse" onchange="module_uiLib.default.content.updateTransliteration()">
+            <optgroup label="🌍">
+              <option value="iso">āISO</option>
+              <option value="iso_vedic">āi-āu</option>
+              <option value="cyrillic">пу</option>
+              <option value="urdu">نس</option>
+              <option value="??">🌍??</option>
+            </optgroup>
+            <optgroup label="🛕🧭S">
+              <option value="kannada">ಅ</option>
+              <option value="malayalam">അ</option>
+              <option value="telugu">క</option>
+              <option value="tamil_superscripted">க²</option>
+              <option value="tamil_extended">க</option>
+              <option value="grantha">𑌅</option>
+            </optgroup>
+            <optgroup label="🛕🧭N">
+              <option value="devanagari" selected="">स</option>
+              <option value="gujarati">અ</option>
+              <option value="gurmukhi">ਅ</option>
+            </optgroup>
+            <optgroup label="🛕🧭E">
+              <option value="oriya">ଅ</option>
+              <option value="assamese">অস</option>
+              <option value="bengali">অ</option>
+            </optgroup>
+            <optgroup label="🛕🏺📜">
+              <option value="sharada">𑆑𑇀𑆰</option>
+              <option value="brahmi">𑀅</option>
+            </optgroup>
+            <optgroup label="🛕🌋">
+              <option value="balinese">ᬩᬮᬶ</option>
+            </optgroup>
+          </select>
+          <div>
+          <button class="btn btn-outline-secondary btn-sm"  href="#transliterationDropdownAlt" data-toggle="collapse">
+          (✍)
+          </button>
+          <select id="transliterationDropdownAlt" size="1"  style="font-size:12px" class="bg-light-yellow collapse" onchange="module_uiLib.default.content.updateTransliteration()">
+            <optgroup label="🌍">
+              <option value="iso">āISO</option>
+              <option value="iso_vedic">āi-āu</option>
+              <option value="cyrillic">пу</option>
+              <option value="urdu">نس</option>
+              <option value="??">🌍??</option>
+            </optgroup>
+            <optgroup label="🛕🧭S">
+              <option value="kannada">ಅ</option>
+              <option value="malayalam">അ</option>
+              <option value="telugu">క</option>
+              <option value="tamil_superscripted">க²</option>
+              <option value="tamil_extended">க</option>
+              <option value="grantha">𑌅</option>
+            </optgroup>
+            <optgroup label="🛕🧭N">
+              <option value="devanagari" selected="">स</option>
+              <option value="gujarati">અ</option>
+              <option value="gurmukhi">ਅ</option>
+            </optgroup>
+            <optgroup label="🛕🧭E">
+              <option value="oriya">ଅ</option>
+              <option value="assamese">অস</option>
+              <option value="bengali">অ</option>
+            </optgroup>
+            <optgroup label="🛕🏺📜">
+              <option value="sharada">𑆑𑇀𑆰</option>
+              <option value="brahmi">𑀅</option>
+            </optgroup>
+            <optgroup label="🛕🌋">
+              <option value="balinese">ᬩᬮᬶ</option>
+            </optgroup>
+          </select>
+          </div>
+          <div class="row col d-flex  dropdown">
+            <button class="btn btn-secondary-outline btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              A±
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="btn btn-secondary btn-sm" onclick="module_uiLib.changeTextSize(2)">A+</a>
+            <a class="btn btn-secondary btn-sm" onclick="module_uiLib.changeTextSize(-2)">A-</a>
+            </div>
+          </div>
+          <button class="btn btn-light btn-sm"  href="#commentStyleDropdown" data-toggle="collapse">
+            🗨
+          </button>
+          <select id="commentStyleDropdown" class="collapse" size="1" onchange="module_uiLib.default.content.updateCommentStyleFromDropdown()">
+            <option value="on">✔</option>
+            <option value="hidden">✗</option>
+          </select>
+          <div><a id="expandAllButton" class="btn btn-secondary" onclick="module_uiLib.default.query.setParamsAndGo({'expandDetails': '.*'})">↕️️</a></div>
+          <div id="printStyleDiv" class="row col d-flex  dropdown">
+          <button class="btn btn-light btn-sm dropdown-toggle"  href="#printStyleDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          🖨
+          </button>
+            <div class="dropdown-menu col" aria-labelledby="printStyleDropdown">
+              <div class="row justify-content-center">
+                <p>Cols:</p>
+                <input type="number" min="1" max="10" value="2" step="1" id="tbColumns" style="width: 3ch;"  accesskey="c"/>
+              </div>
+              <div class="row justify-content-center">
+                <p>A±:</p> <input type="text" id="tbBodyFontSize" value="0.4cm" style="width: 6ch;"  accesskey="f"></input>
+              </div>
+              <div class="row justify-content-center">
+                <p>Incl:</p> <input checked type="checkbox" id="tbIncludeStyle" value="on"></input>
+                <button id="btnPrintStyle" onclick="module_uiLib.default.content.updatePrintStyle()">🖨
+                </button>
+              </div>
+            </div>
+        </div>
+        </div>
+        <div id="audioDiv" class="row col d-flex  dropdown">
+          <button class="btn btn-secondary-outline btn-sm dropdown-toggle" type="button" id="audioDropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            🎧
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a id="speakerButton" class="btn btn-outline-secondary btn-sm" onclick="module_uiLib.default.content.handleSpeakToggle()">⏯</a>
+          <button id="speakerPauseButton" class="btn btn-outline-secondary btn-sm" onclick="module_uiLib.default.content.handlePauseToggle()">⏸</button>
+            <div id="audioOptionsDiv" class="row justify-content-center" >
+              <div>
+                <p class="lead">Vol</p>
+                <input type="range" min="0" max="1" value="1" step="0.1" id="volume" />
+                <span id="volume-label" class="ms-2">1</span>
+              </div>
+              <div class="mx-5">
+                <p class="lead">Rate</p>
+                <input type="range" min="0.1" max="10" value="1" id="rate" step="0.1" />
+                <span id="rate-label" class="ms-2">1</span>
+              </div>
+              <div>
+                <p class="lead">Pitch</p>
+                <input type="range" min="0" max="2" value="1" step="0.1" id="pitch" />
+                <span id="pitch-label" class="ms-2">1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="https://sanskrit.github.io/search"  class="btn btn-light btn-sm">🥽🔦</a>
+        <div class="row col  d-flex justify-content-center">
+          <div><a id="previousPage" href="" class="btn btn-secondary">###<i class="fas fa-caret-left"></i></a></div>
+          <div ><a id="nextPage" href="" class="btn btn-secondary"><i class="fas fa-caret-right"></i> ### </a></div>
+        </div>
+        <ul id="top-bar-right-custom" class="list-group list-group-horizontal">
+        </ul>
+      </div>
+    </nav>
+</header>
+
+    
+    <div class="row" name="contentRow">
+      
+      <aside class="col-md-3 card border noPrint " id="sidebar">
+          <div id="fastSearch">
+              <datalist id="pageDataList"></datalist>
+              <input id="searchInput" placeholder="शीर्षिकान्विष्यताम्" list="pageDataList" onchange="module_uiLib.default.navigation.pageLoader()">
+          </div>
+          <details open  class="bg-light-gray" >
+              <summary id="sidebarToggleLink" onclick="module_uiLib.default.navigation.sidebarToggleHandler()">
+            Menu
+              </summary>
+              <ul id="sidebarBody" class="list pl2 p-0 bg-yellow">
+              </ul>
+          </details>
+      </aside>
+      <main class="col p-3" role="main" data-pagefind-body>
+        
+<header class='border d-flex justify-content-between'>
+    <h1 id="Clock setup">Clock setup</h1>
+    
+    <a id="editLink" class="btn btn-primary noPrint"  href="https://github.com/sanskrit/sanskrit.github.io/edit/master/content/groups/dyuganga/internal/clocking/clock-setup.md"><i class="fas fa-edit"></i></a>
+    
+</header>
+<article>
+  <aside id="toc_card" class="card border noPrint ">
+    <details id="toc_header">
+        <summary>What's in this page?</summary>
+      <div id="toc_body" class="p-0">
+        
+        <ul id="toc_ul" class="list p-0">
+        </ul>
+      </div>
+    </details>
+    <div id="progressBarDiv" class="row d-flex justify-content-center">
+      🐎💪<progress id="progressLoading" value="0" max="100"> 32% </progress>
+    </div>
+  </aside>
+  <div id="post_content">
+  <p>The browser clock is at <a href="../clock/">Shift Clock</a>.</p>
+<h2 id="users-and-passwords">Users and passwords</h2>
+<ul>
+<li>Users are read from the <strong>Personnel</strong> sheet of the private Dyuganga spreadsheet.</li>
+<li>Only rows with a non-empty <code>pw</code> cell are listed in the dropdown.</li>
+<li>The <code>Name</code> and <code>pw</code> columns are found by header name.</li>
+<li>The value of the <code>pw</code> cell is the password.</li>
+<li>Clear a <code>pw</code> cell to disable that user.</li>
+<li>The browser stores a signed session token for 180 days. It does not store the password.</li>
+</ul>
+<p>Passwords are managed by editing the <code>pw</code> column, or by running <code>createUserFromPrompt()</code> in the Apps Script editor.</p>
+<h2 id="shift-sheet">Shift sheet</h2>
+<p>New shift rows are added at the top of the sheet named <code>Shifts</code>, directly below the header (newest first), or the first non-Personnel sheet. Change <code>SHIFTS_SHEET</code> at the top of <a href="../app-script.js">app-script.js</a> if the shift sheet has another name.</p>
+<p>The columns are: <code>Recorded at</code>, <code>User</code>, <code>Start</code>, <code>End</code>, <code>Hours</code>, <code>Notes</code>, <code>Timezone</code>, <code>Shift ID</code>, <code>Pending</code>.</p>
+<p><code>Start</code> and <code>End</code> include the full local date and time (<code>YYYY-MM-DD HH:mm:ss</code>), so shifts that cross midnight are unambiguous.</p>
+<p>If the shift sheet still has the old <code>Date</code> column, run <code>removeDateColumn()</code> once in the Apps Script editor, or delete that column manually. New rows are written by header name, so they stay aligned even before the column is removed.</p>
+<p>The script adds a <code>Pending</code> column automatically if it is missing. A normal clock-out leaves <code>Pending</code> blank.</p>
+<h2 id="checking-shifts">Checking shifts</h2>
+<p>The <a href="../check-shifts/">Check shifts</a> page lists the signed-in user&rsquo;s own shifts from the last 32 days. After signing in with a Personnel user, the user can:</p>
+<ul>
+<li>request deletion of one of their own shifts, which sets its <code>Pending</code> cell to <code>Delete</code>;</li>
+<li>request addition of one of their own missing shifts, which inserts a new row with <code>Pending = Add</code>.</li>
+</ul>
+<p>The manager reviews and clears the <code>Pending</code> column after processing the request.</p>
+<p>A clock-out is rejected if the same user already has a shift with the same start or end time (for example, a row added manually by the admin). The failed write is not queued for retry; the user is prompted to open the Check shifts page instead. Resending the same Shift ID is treated as already saved, so it cannot create a duplicate row.</p>
+<h2 id="daily-maximum-and-breaks">Daily maximum and breaks</h2>
+<p>The Personnel sheet may have a column whose header contains <code>Daily Max</code> or <code>Max hours</code> (matched case-insensitively). Its value is in hours. When the user&rsquo;s recorded hours for today plus any local pending shifts reach that value, the active shift ends automatically with an alert. <code>Pending = Add</code> rows are not counted until approved. Starting again after the day&rsquo;s maximum is refused with an alert.</p>
+<p>Every hour of an active shift ends the shift automatically and sets a 5-minute break. The alert is:</p>
+<p><code>Take a break, walk away, look away. Shift ended. Start shift after HH:MM:SS.</code></p>
+<p>The Start button stays disabled until the break ends. The break is stored in the browser per user, so reloading the page does not bypass it. The hourly auto-ended shift is uploaded normally; a manual end does not start a break. The daily maximum requires the <code>dailyStatus</code> action, so redeploy the Apps Script after updating it.</p>
+<h2 id="deploying-the-apps-script-endpoint">Deploying the Apps Script endpoint</h2>
+<p>The Apps Script project is <a href="https://script.google.com/u/1/home/projects/1GRTdpZ4PsTT_8QU0dw_fVMTaDJJFhyZDoSgh_dl64Ck9XKfwNeztwGJ9/edit">here</a>.</p>
+<p>Saving the script in the editor does <strong>not</strong> update the live web app.</p>
+<ol>
+<li>Open the private spreadsheet and choose <strong>Extensions → Apps Script</strong>.</li>
+<li>Replace the default code with the contents of <a href="../app-script.js">app-script.js</a>.</li>
+<li>Run <code>setup()</code> once.</li>
+<li>Put a password in the <code>pw</code> column of the Personnel sheet for each user you want to enable.</li>
+<li>For the first deployment, choose <strong>Deploy → New deployment</strong> and select type <strong>Web app</strong>.</li>
+<li>Set <strong>Execute as: Me</strong> and <strong>Who has access: Anyone</strong>.</li>
+<li>Deploy, approve the permissions, and copy the Web app URL ending in <code>/exec</code>.</li>
+<li>If the URL changes, update <code>DEFAULT_ENDPOINT</code> in <a href="../clock.js">clock.js</a>.</li>
+</ol>
+<h3 id="redeployment">Redeployment</h3>
+<p>Same project/deployment: <strong>Deploy → Manage deployments → Edit → Version: New version → Deploy</strong>.</p>
+<p>The current deployed endpoint is:</p>
+<pre tabindex="0"><code>https://script.google.com/macros/s/AKfycbw7LNoaHRJEktArmanWEN9XMYLC10GYeloiYXYh9RIAz1LELE2MTMxS4muiqPaGhogm6w/exec
+</code></pre><h3 id="deployment-note">Deployment note</h3>
+<p>Use <strong>Execute as: Me</strong> with <strong>Who has access: Anyone</strong>. The script then runs with the owner&rsquo;s access to the private spreadsheet, so the sheet stays private. Choosing <strong>Execute as: User accessing the web app</strong> would require every user to have access to the private spreadsheet, and the page&rsquo;s requests would need Google authentication.</p>
+
+  </div>
+</article>
+
+
+        
+
+        
+
+
+
+    <aside class="card border noPrint" id="section-tree-item-groups_dyuganga_internal_clocking_clock-setup_md">
+        <div class="card-title bg-light-gray border d-flex justify-content-between">
+            <a href="https://sanskrit.github.io/groups/dyuganga/internal/clocking/clock-setup/">Clock setup </a>
+            <a data-toggle="collapse" href="#section-tree-item-body-groups_dyuganga_internal_clocking_clock-setup_md" role="button" aria-expanded="false" aria-controls="section-tree-item-body-groups_dyuganga_internal_clocking_clock-setup_md" >…<i class="fas fa-caret-down" class="collapsed"></i> </a>
+        </div>
+        <nav id="section-tree-item-body-groups_dyuganga_internal_clocking_clock-setup_md" class="card-body p-0 collapse">
+            
+            <li>draft: false</li>
+            
+            <li>iscjklanguage: false</li>
+            
+            <li>title: Clock setup</li>
+            
+        </nav>
+    </aside>
+
+
+      </main>
+    </div>
+    <footer class="bg-yellow  p-1 noPrint" role="contentinfo">
+  
+
+  <div id="div_foot_nav_bar" class="row">
+    <a href="https://sanskrit.github.io/search"  class="btn btn-light btn-sm">🥽🔦</a>
+    <div class="row col  d-flex justify-content-center">
+      <div><a id="previousPageFoot" href="" class="btn btn-secondary">###<i class="fas fa-caret-left"></i></a></div>
+      <div ><a id="nextPageFoot" href="" class="btn btn-secondary"><i class="fas fa-caret-right"></i> ### </a></div>
+    </div>
+      <ul id="footer-bar-right-custom" class="list-group list-group-horizontal">
+      </ul>
+  </div>
+  <div id="div_footer_bar" class="container-fluid d-flex justify-content-between">
+    <a class="btn btn-secondary" href="https://github.com/sanskrit/sanskrit.github.io/issues/new" >
+      ✉️Contact
+    </a>
+    <a class="btn btn-secondary" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
+    <div class="btn small border">
+      
+      <a href="https://github.com/sanskrit/sanskrit.github.io/actions"><img src=""> Built </a> on 2026 Oct 30 03:15:18 UTC. (<a href="http://google.com/search?q=03%3a15%3a18%20UTC to IST">IST</a>)
+    </div>
+  </div>
+</footer>
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33H08JSLQR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33H08JSLQR');
+</script>
+
+  </body>
+  <script type='text/javascript'>
+    
+    
+    
+    module_uiLib.onDocumentReadyTasks();
+  </script>
+  
+</html>
