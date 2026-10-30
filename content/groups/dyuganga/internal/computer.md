@@ -40,21 +40,21 @@ title = "Computer"
 - Alternatively [see here](https://gohugo.io/getting-started/installing/).
 
 ## सङ्गणकतन्त्रांशाः (Mac)
+- Keyman itrans sanskrit
 - [Lipika IME](https://github.com/ratreya/lipika-ime) for typing devanagari, iast etc..
 
 ## सङ्गणकतन्त्रांशाः (Linux)
-- Install Manjaro via Architect installer
-- `yay -S dyuganga`
+
 
 ### Multimedia
 - [Audacity](https://www.audacityteam.org/)
 - [VLC](https://www.videolan.org/index.html)
 
 ### Misc
-- Chrome, MS Word
+- Chrome, Word/ Document editor
 - Zip extractor
 
 ## Repositories
-- [संस्कारः](https://github.com/vvasuki/saMskAra/) - Fork and clone.
-- [काव्यम्](https://github.com/vvasuki/kAvyam/) - Fork and clone.
+- [संस्कारः](https://github.com/vishvAsa/saMskAra/) - Fork and clone.
+- [काव्यम्](https://github.com/vishvAsa/kAvyam/) - Fork and clone.
 - [Raw etexts](https://github.com/sanskrit/raw_etexts/) - clone.

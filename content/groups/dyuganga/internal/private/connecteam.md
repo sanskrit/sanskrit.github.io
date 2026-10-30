@@ -1,7 +1,8 @@
 +++
 title = "Connecteam"
 +++
-
+- Time tracking: connecteam: नियामक आमन्त्रयति। 
+  - ततो "Login" इति नुदित्वा प्रवेष्टव्यम्। "Verify" इति कार्यं न करोति चेत् "More options" इति चेतव्यम्। 
 
 
 ## प्रवेशः
