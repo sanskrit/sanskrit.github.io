@@ -47,6 +47,8 @@ A cumulative hour of work since the last break ends the current shift automatica
 
 The Start button stays disabled until the break ends. The break and cumulative state are stored in the browser per user, so reloading does not bypass them. The active panel shows time since the last break, and the idle hint shows the accumulated total. The auto-ended shift is uploaded normally.
 
+Break and daily-limit alerts use a browser notification (allow notifications when prompted), two beeps, a flashing tab title, and a modal that stays until dismissed. The notification and flashing title remain visible when the clock page is in another tab; the modal is shown when the user returns.
+
 The Test details block in the clock page only simulates the alerts; it does not set a real break or upload a shift. **Reset test** clears a break left by an earlier test.
 
 The daily maximum requires the `dailyStatus` action, so redeploy the Apps Script after updating it.

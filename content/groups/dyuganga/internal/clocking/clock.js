@@ -30,6 +30,11 @@
   let dailyFetchStarted = false;
   let lastTickDate = localDate(new Date());
   let toastTimer = null;
+  let audioContext = null;
+  let currentNotification = null;
+  let titleFlashTimer = null;
+  let titleFlashOriginal = null;
+  let titleFlashOn = false;
 
   function read(key, fallback) {
     try {
@@ -483,9 +488,11 @@
       window.alert('A shift is already running for ' + user + '.');
       return;
     }
+    ensureAudio();
+    ensureNotificationPermission();
     const breakUntil = getBreakUntil(user);
     if (breakUntil > Date.now()) {
-      window.alert('Take a break. Start shift after ' + localTime(new Date(breakUntil)) + '.');
+      showCriticalAlert('Mandatory break', 'Take a break. Start shift after ' + localTime(new Date(breakUntil)) + '.');
       return;
     }
     const work = getWorkState(user);
@@ -503,7 +510,7 @@
       await loadDailyStatus(user);
       const allowance = getDailyAllowance(user);
       if (allowance.max > 0 && allowance.used >= allowance.max) {
-        window.alert('Daily maximum of ' + allowance.max + ' hours already reached.');
+        showCriticalAlert('Daily limit reached', 'Daily maximum of ' + allowance.max + ' hours already reached.');
         return;
       }
       const now = new Date();
@@ -561,7 +568,7 @@
     }
 
     if (breakUntil) {
-      window.alert('Take a break, walk away, look away. Shift ended. Start shift after ' + localTime(new Date(breakUntil)) + '.');
+      showCriticalAlert('Mandatory break', 'Take a break, walk away, look away. Shift ended. Start shift after ' + localTime(new Date(breakUntil)) + '.');
     } else if (reason === 'manual' && hours > 2 && !shift.alerted) {
       shift.alerted = true;
       setActiveShift(shift);
@@ -626,9 +633,9 @@
     if (reason === 'hourly') {
       const breakUntil = Date.now() + BREAK_MS;
       setBreakUntil(user, breakUntil);
-      window.alert('Take a break, walk away, look away. Shift ended. Start shift after ' + localTime(new Date(breakUntil)) + '.');
+      showCriticalAlert('Mandatory break', 'Take a break, walk away, look away. Shift ended. Start shift after ' + localTime(new Date(breakUntil)) + '.');
     } else if (reason === 'daily-max') {
-      window.alert('Daily maximum of ' + dailyMax + ' hours reached. Shift ended.');
+      showCriticalAlert('Daily limit reached', 'Daily maximum of ' + dailyMax + ' hours reached. Shift ended.');
     }
     finishShift(user, shift, reason, endTime);
   }
@@ -1091,6 +1098,180 @@
     resolveAuth(null);
   }
 
+  function ensureAudio() {
+    const AudioCtor = window.AudioContext || window.webkitAudioContext;
+    if (!AudioCtor) {
+      return null;
+    }
+    if (!audioContext) {
+      try {
+        audioContext = new AudioCtor();
+      } catch (err) {
+        return null;
+      }
+    }
+    if (audioContext.state === 'suspended') {
+      try {
+        const resume = audioContext.resume();
+        if (resume && typeof resume.catch === 'function') {
+          resume.catch(function () {});
+        }
+      } catch (err) {
+        // Ignore audio resume failures.
+      }
+    }
+    return audioContext;
+  }
+
+  function playBeeps() {
+    const ctx = ensureAudio();
+    if (!ctx) {
+      return;
+    }
+    const schedule = function () {
+      const start = ctx.currentTime;
+      [0, 0.4].forEach(function (offset) {
+        const oscillator = ctx.createOscillator();
+        const gain = ctx.createGain();
+        oscillator.type = 'sine';
+        oscillator.frequency.setValueAtTime(880, start + offset);
+        gain.gain.setValueAtTime(0.0001, start + offset);
+        gain.gain.exponentialRampToValueAtTime(0.35, start + offset + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.0001, start + offset + 0.25);
+        oscillator.connect(gain);
+        gain.connect(ctx.destination);
+        oscillator.start(start + offset);
+        oscillator.stop(start + offset + 0.3);
+      });
+    };
+    if (ctx.state === 'suspended' && typeof ctx.resume === 'function') {
+      try {
+        ctx.resume().then(schedule).catch(function () {});
+        return;
+      } catch (err) {
+        // Fall through and try to schedule directly.
+      }
+    }
+    schedule();
+  }
+
+  function ensureNotificationPermission() {
+    if (!('Notification' in window) || Notification.permission !== 'default') {
+      return;
+    }
+    try {
+      const request = Notification.requestPermission();
+      if (request && typeof request.catch === 'function') {
+        request.catch(function () {});
+      }
+    } catch (err) {
+      // Ignore unsupported notification prompts.
+    }
+  }
+
+  function showNotificationNow(title, message) {
+    if (!('Notification' in window)) {
+      return;
+    }
+    if (currentNotification) {
+      try { currentNotification.close(); } catch (err) {}
+      currentNotification = null;
+    }
+    try {
+      currentNotification = new Notification('Dyuganga: ' + title, {
+        body: message,
+        tag: 'dyuganga-shift-alert',
+        renotify: true,
+        requireInteraction: true,
+        silent: true
+      });
+      currentNotification.onclick = function () {
+        try { window.focus(); } catch (err) {}
+        try { currentNotification.close(); } catch (err) {}
+        currentNotification = null;
+      };
+    } catch (err) {
+      currentNotification = null;
+    }
+  }
+
+  function showNotification(title, message) {
+    if (!('Notification' in window)) {
+      return;
+    }
+    if (Notification.permission === 'granted') {
+      showNotificationNow(title, message);
+      return;
+    }
+    if (Notification.permission === 'default') {
+      try {
+        const request = Notification.requestPermission();
+        if (request && typeof request.then === 'function') {
+          request.then(function (permission) {
+            if (permission === 'granted') {
+              showNotificationNow(title, message);
+            }
+          }).catch(function () {});
+        }
+      } catch (err) {
+        // Ignore.
+      }
+    }
+  }
+
+  function stopTitleFlash() {
+    if (titleFlashTimer) {
+      window.clearInterval(titleFlashTimer);
+      titleFlashTimer = null;
+    }
+    if (titleFlashOriginal !== null) {
+      document.title = titleFlashOriginal;
+      titleFlashOriginal = null;
+    }
+  }
+
+  function startTitleFlash(text) {
+    stopTitleFlash();
+    titleFlashOriginal = document.title;
+    titleFlashOn = true;
+    document.title = text;
+    titleFlashTimer = window.setInterval(function () {
+      titleFlashOn = !titleFlashOn;
+      document.title = titleFlashOn ? text : titleFlashOriginal;
+    }, 1000);
+  }
+
+  function dismissCriticalAlert() {
+    const modal = $('criticalAlert');
+    if (modal) {
+      modal.hidden = true;
+    }
+    if (currentNotification) {
+      try { currentNotification.close(); } catch (err) {}
+      currentNotification = null;
+    }
+    stopTitleFlash();
+  }
+
+  function showCriticalAlert(title, message) {
+    ensureAudio();
+    playBeeps();
+    showNotification(title, message);
+    startTitleFlash('ALERT: ' + title);
+    const modal = $('criticalAlert');
+    if (modal) {
+      $('criticalAlertTitle').textContent = title;
+      $('criticalAlertMsg').textContent = message;
+      modal.hidden = false;
+      const dismiss = $('criticalAlertDismiss');
+      if (dismiss) {
+        window.setTimeout(function () {
+          try { dismiss.focus(); } catch (err) {}
+        }, 0);
+      }
+    }
+  }
+
   function testStartDate() {
     const input = $('testStartTime');
     if (!input || !input.value) {
@@ -1116,6 +1297,8 @@
   }
 
   function testHourlyBreak() {
+    ensureAudio();
+    ensureNotificationPermission();
     const user = selectedUser();
     if (!user) {
       setTestMessage('Choose a user first.');
@@ -1137,11 +1320,13 @@
     }
     const breakUntil = Date.now() + BREAK_MS;
     const breakTime = localTime(new Date(breakUntil));
-    window.alert('Take a break, walk away, look away. Shift ended. Start shift after ' + breakTime + '.');
+    showCriticalAlert('Test: mandatory break', 'Take a break, walk away, look away. Shift ended. Start shift after ' + breakTime + '. Test only; no real break was set.');
     setTestMessage('Hourly break simulated. Real notice would be: "Start disabled for a mandatory 5-minute break. It will be enabled at ' + breakTime + '." No shift was uploaded and no real break was set.');
   }
 
   async function testDailyLimit() {
+    ensureAudio();
+    ensureNotificationPermission();
     const user = selectedUser();
     if (!user) {
       setTestMessage('Choose a user first.');
@@ -1168,7 +1353,7 @@
     const used = allowance.used + elapsedHours;
     const usedText = Math.round(used * 100) / 100;
     if (used >= allowance.max) {
-      window.alert('Daily maximum of ' + allowance.max + ' hours reached. Shift ended.');
+      showCriticalAlert('Test: daily limit', 'Daily maximum of ' + allowance.max + ' hours reached. Shift ended. Test only; no shift was uploaded.');
       setTestMessage('Daily maximum reached: ' + usedText + ' of ' + allowance.max + ' h. No shift was uploaded.');
     } else {
       setTestMessage('Daily maximum not reached: ' + usedText + ' of ' + allowance.max + ' h.');
@@ -1245,13 +1430,27 @@
     });
 
     document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && $('criticalAlert') && !$('criticalAlert').hidden) {
+        dismissCriticalAlert();
+        return;
+      }
       if (event.key === 'Enter' && event.target && event.target.id === 'passwordInput') {
         event.preventDefault();
         submitAuth();
       }
     });
 
+    document.addEventListener('visibilitychange', function () {
+      if (!document.hidden) {
+        stopTitleFlash();
+      }
+    });
+
     document.addEventListener('click', function (event) {
+      if (event.target && event.target.id === 'criticalAlert') {
+        dismissCriticalAlert();
+        return;
+      }
       const button = event.target && event.target.closest ? event.target.closest('button') : null;
       if (!button || !button.id) {
         return;
@@ -1283,7 +1482,8 @@
         cancelAuthBtn: cancelAuth,
         testBreakBtn: testHourlyBreak,
         testDailyBtn: testDailyLimit,
-        testResetBtn: resetTest
+        testResetBtn: resetTest,
+        criticalAlertDismiss: dismissCriticalAlert
       };
       if (actions[button.id]) {
         event.preventDefault();

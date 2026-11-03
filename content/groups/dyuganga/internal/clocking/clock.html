@@ -90,6 +90,14 @@ title = "Shift Clock"
     </div>
   </details>
 
+  <div id="criticalAlert" class="sc-critical" hidden role="alertdialog" aria-modal="true" aria-labelledby="criticalAlertTitle">
+    <div class="sc-critical-card">
+      <div id="criticalAlertTitle" class="sc-critical-title">Alert</div>
+      <p id="criticalAlertMsg" class="sc-critical-msg"></p>
+      <button id="criticalAlertDismiss" class="sc-btn sc-btn-primary" type="button">OK</button>
+    </div>
+  </div>
+
   <div id="toast" class="sc-toast" role="status"></div>
 </div>
 
@@ -378,6 +386,39 @@ title = "Shift Clock"
     border-top: 1px solid var(--sc-line);
   }
   .shift-clock-app .sc-test-body .sc-row { margin-top: 12px; }
+  .shift-clock-app .sc-critical {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(15, 23, 42, 0.62);
+  }
+  .shift-clock-app .sc-critical-card {
+    width: min(540px, 100%);
+    padding: 24px;
+    border: 2px solid var(--sc-warn);
+    border-radius: 16px;
+    background: var(--sc-card);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.4);
+  }
+  .shift-clock-app .sc-critical-title {
+    color: var(--sc-warn);
+    font-size: 1.35rem;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+  .shift-clock-app .sc-critical-msg {
+    margin: 10px 0 18px;
+    color: var(--sc-ink);
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
   .shift-clock-app .sc-toast {
     position: fixed;
     left: 50%;
