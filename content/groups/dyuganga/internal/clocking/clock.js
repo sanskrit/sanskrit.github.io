@@ -35,6 +35,7 @@
   let titleFlashTimer = null;
   let titleFlashOriginal = null;
   let titleFlashOn = false;
+  let testBreakTimer = null;
 
   function read(key, fallback) {
     try {
@@ -1296,7 +1297,7 @@
     }
   }
 
-  function testHourlyBreak() {
+  function testHourlyBreak(force) {
     ensureAudio();
     ensureNotificationPermission();
     const user = selectedUser();
@@ -1309,12 +1310,12 @@
       return;
     }
     const start = testStartDate();
-    if (!start) {
+    if (!start && !force) {
       setTestMessage('Choose a shift start time.');
       return;
     }
-    const elapsed = Math.max(0, Date.now() - start.getTime());
-    if (elapsed < HOURLY_MS) {
+    const elapsed = start ? Math.max(0, Date.now() - start.getTime()) : HOURLY_MS;
+    if (!force && elapsed < HOURLY_MS) {
       setTestMessage('Hourly break is not due yet: ' + formatDuration(elapsed) + ' of 1h.');
       return;
     }
@@ -1322,6 +1323,27 @@
     const breakTime = localTime(new Date(breakUntil));
     showCriticalAlert('Test: mandatory break', 'Take a break, walk away, look away. Shift ended. Start shift after ' + breakTime + '. Test only; no real break was set.');
     setTestMessage('Hourly break simulated. Real notice would be: "Start disabled for a mandatory 5-minute break. It will be enabled at ' + breakTime + '." No shift was uploaded and no real break was set.');
+  }
+
+  function scheduleTestHourlyBreak() {
+    ensureAudio();
+    ensureNotificationPermission();
+    if (testBreakTimer) {
+      window.clearTimeout(testBreakTimer);
+      testBreakTimer = null;
+    }
+    const button = $('testBreakAfter30Btn');
+    if (button) {
+      button.disabled = true;
+    }
+    setTestMessage('Hourly break test scheduled in 30 seconds. Switch to another tab now.');
+    testBreakTimer = window.setTimeout(function () {
+      testBreakTimer = null;
+      if (button) {
+        button.disabled = false;
+      }
+      testHourlyBreak(true);
+    }, 30000);
   }
 
   async function testDailyLimit() {
@@ -1364,6 +1386,14 @@
     const user = selectedUser();
     if (user) {
       clearBreakUntil(user);
+    }
+    if (testBreakTimer) {
+      window.clearTimeout(testBreakTimer);
+      testBreakTimer = null;
+      const button = $('testBreakAfter30Btn');
+      if (button) {
+        button.disabled = false;
+      }
     }
     setTestMessage('');
     refresh();
@@ -1481,6 +1511,7 @@
         signInBtn: submitAuth,
         cancelAuthBtn: cancelAuth,
         testBreakBtn: testHourlyBreak,
+        testBreakAfter30Btn: scheduleTestHourlyBreak,
         testDailyBtn: testDailyLimit,
         testResetBtn: resetTest,
         criticalAlertDismiss: dismissCriticalAlert
