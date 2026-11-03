@@ -8,7 +8,8 @@
     pending: 'dyuganga_clock_pending_v1',
     auth: 'dyuganga_clock_auth_v1',
     breakUntil: 'dyuganga_clock_break_v1',
-    daily: 'dyuganga_clock_daily_v1'
+    daily: 'dyuganga_clock_daily_v1',
+    work: 'dyuganga_clock_work_v1'
   };
   const TWO_HOURS = 2 * 60 * 60 * 1000;
   const HOURLY_MS = 60 * 60 * 1000;
@@ -163,6 +164,36 @@
       max: max,
       used: todayHours + getPendingTodayHours(user)
     };
+  }
+
+  function getWorkMap() {
+    const map = read(KEYS.work, {});
+    return map && typeof map === 'object' && !Array.isArray(map) ? map : {};
+  }
+
+  function getWorkState(user) {
+    const state = getWorkMap()[user];
+    return {
+      workMs: state ? Math.max(0, Number(state.workMs) || 0) : 0,
+      lastEnd: state ? Number(state.lastEnd) || 0 : 0
+    };
+  }
+
+  function setWorkState(user, state) {
+    const map = getWorkMap();
+    map[user] = {
+      workMs: Math.max(0, Number(state.workMs) || 0),
+      lastEnd: Number(state.lastEnd) || 0
+    };
+    write(KEYS.work, map);
+  }
+
+  function getEffectiveWorkMs(user) {
+    const state = getWorkState(user);
+    if (state.lastEnd && Date.now() - state.lastEnd >= BREAK_MS) {
+      return 0;
+    }
+    return state.workMs;
   }
 
   async function loadDailyStatus(user) {
@@ -337,7 +368,9 @@
 
     const startMs = new Date(shift.startISO).getTime();
     const elapsed = Math.max(0, now.getTime() - startMs);
+    const work = getWorkState(user);
     $('elapsed').textContent = formatDuration(elapsed);
+    $('cumulativeWork').textContent = formatDuration(work.workMs + elapsed);
 
     if (!ending && !starting) {
       const allowance = getDailyAllowance(user);
@@ -348,8 +381,9 @@
         autoEndShift(user, shift, 'daily-max', allowance.max, new Date(startMs + remainingMs));
         return;
       }
-      if (elapsed >= HOURLY_MS) {
-        autoEndShift(user, shift, 'hourly', 0, new Date(startMs + HOURLY_MS));
+      const hourlyRemainingMs = Math.max(0, HOURLY_MS - work.workMs);
+      if (elapsed >= hourlyRemainingMs) {
+        autoEndShift(user, shift, 'hourly', 0, new Date(startMs + hourlyRemainingMs));
         return;
       }
     }
@@ -419,10 +453,14 @@
       $('userHint').textContent = 'Sign in to start the shift.';
       showOver2h(false);
     } else if (getAuth(user)) {
+      const effectiveWork = getEffectiveWorkMs(user);
+      const workText = effectiveWork > 0
+        ? ' Since last break: ' + formatDuration(effectiveWork) + '.'
+        : '';
       const usedText = allowance.max > 0
         ? ' Daily max ' + allowance.max + 'h, used ' + (Math.round(allowance.used * 100) / 100) + 'h.'
         : '';
-      $('userHint').textContent = 'Signed in on this browser. Ready to start.' + usedText;
+      $('userHint').textContent = 'Signed in on this browser. Ready to start.' + workText + usedText;
       showOver2h(false);
     } else {
       $('userHint').textContent = 'The password is asked once, on this browser, when you first start.';
@@ -449,6 +487,10 @@
     if (breakUntil > Date.now()) {
       window.alert('Take a break. Start shift after ' + localTime(new Date(breakUntil)) + '.');
       return;
+    }
+    const work = getWorkState(user);
+    if (work.lastEnd && Date.now() - work.lastEnd >= BREAK_MS) {
+      setWorkState(user, { workMs: 0, lastEnd: work.lastEnd });
     }
 
     starting = true;
@@ -504,8 +546,23 @@
     const end = endTime ? new Date(endTime) : new Date();
     const ms = Math.max(0, end.getTime() - start.getTime());
     const hours = ms / 3600000;
+    const priorWork = getWorkState(user);
+    const accumulatedWork = priorWork.workMs + ms;
+    let breakUntil = 0;
 
-    if (reason === 'manual' && hours > 2 && !shift.alerted) {
+    if (reason === 'hourly') {
+      setWorkState(user, { workMs: 0, lastEnd: Date.now() });
+    } else if (reason === 'manual' && accumulatedWork >= HOURLY_MS) {
+      breakUntil = Date.now() + BREAK_MS;
+      setBreakUntil(user, breakUntil);
+      setWorkState(user, { workMs: 0, lastEnd: Date.now() });
+    } else {
+      setWorkState(user, { workMs: accumulatedWork, lastEnd: Date.now() });
+    }
+
+    if (breakUntil) {
+      window.alert('Take a break, walk away, look away. Shift ended. Start shift after ' + localTime(new Date(breakUntil)) + '.');
+    } else if (reason === 'manual' && hours > 2 && !shift.alerted) {
       shift.alerted = true;
       setActiveShift(shift);
       window.alert('This shift is longer than 2 hours (' + formatDuration(ms) + '). Please check that the times are correct.');
@@ -1079,10 +1136,9 @@
       return;
     }
     const breakUntil = Date.now() + BREAK_MS;
-    setBreakUntil(user, breakUntil);
-    window.alert('Take a break, walk away, look away. Shift ended. Start shift after ' + localTime(new Date(breakUntil)) + '.');
-    setTestMessage('Hourly break simulated. Start is disabled until ' + localTime(new Date(breakUntil)) + '. No shift was uploaded.');
-    refresh();
+    const breakTime = localTime(new Date(breakUntil));
+    window.alert('Take a break, walk away, look away. Shift ended. Start shift after ' + breakTime + '.');
+    setTestMessage('Hourly break simulated. Real notice would be: "Start disabled for a mandatory 5-minute break. It will be enabled at ' + breakTime + '." No shift was uploaded and no real break was set.');
   }
 
   async function testDailyLimit() {

@@ -42,6 +42,7 @@ title = "Shift Clock"
         </div>
       </div>
       <div class="sc-elapsed">Elapsed: <span id="elapsed">0m 00s</span></div>
+      <div class="sc-cumulative">Since last break: <span id="cumulativeWork">0m 00s</span></div>
       <div id="over2h" class="sc-warn-banner" hidden>Warning: this shift has exceeded 2 hours.</div>
     </div>
   </section>
@@ -75,7 +76,7 @@ title = "Shift Clock"
   <details id="testPanel" class="sc-card sc-test">
     <summary>Test</summary>
     <div class="sc-test-body">
-      <p class="sc-hint">Simulates the auto-end alerts without uploading a shift. End any active shift first.</p>
+      <p class="sc-hint">Simulates the alerts only; it does not set a real break or upload a shift. End any active shift first. Reset clears a break left by an earlier test.</p>
       <div class="sc-row">
         <label class="sc-field">
           <span class="sc-field-label">Shift start time</span>
@@ -302,6 +303,12 @@ title = "Shift Clock"
     font-variant-numeric: tabular-nums;
     font-weight: 800;
     letter-spacing: -0.02em;
+  }
+  .shift-clock-app .sc-cumulative {
+    margin-top: 6px;
+    color: var(--sc-muted);
+    font-size: 0.9rem;
+    font-variant-numeric: tabular-nums;
   }
   .shift-clock-app .sc-warn-banner {
     margin-top: 11px;
