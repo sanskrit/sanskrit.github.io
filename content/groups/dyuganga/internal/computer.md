@@ -8,9 +8,13 @@ title = "Computer"
 - 8GB RAM, fast processor (i5 or later) and laptop preferred
 
 ## Multi-platform tools
+### Browser
+- [Ask Gemini extension](
+https://chromewebstore.google.com/detail/ask-gemini/pffmfjjjbhakkbeonopidpmebomnchhe )
+
 ### Editor
 - [vscode](https://code.visualstudio.com/)
-- [Sublime text](https://www.sublimetext.com/) or [Atom editor (deprecated)](https://atom.io/)
+- [Sublime text](https://www.sublimetext.com/) 
 
 ### Communication
 - [Telegram](https://desktop.telegram.org/)

@@ -36,6 +36,7 @@
   let titleFlashOriginal = null;
   let titleFlashOn = false;
   let testBreakTimer = null;
+  let testCountdownTimer = null;
 
   function read(key, fallback) {
     try {
@@ -1332,15 +1333,33 @@
       window.clearTimeout(testBreakTimer);
       testBreakTimer = null;
     }
+    if (testCountdownTimer) {
+      window.clearInterval(testCountdownTimer);
+      testCountdownTimer = null;
+    }
     const button = $('testBreakAfter30Btn');
+    const deadline = Date.now() + 30000;
+    const updateCountdown = function () {
+      const remaining = Math.max(0, Math.ceil((deadline - Date.now()) / 1000));
+      if (button) {
+        button.textContent = 'Test hourly break after ' + remaining + ' sec';
+      }
+      setTestMessage('Hourly break test scheduled. Alert in ' + remaining + ' seconds. Switch to another tab now.');
+    };
     if (button) {
       button.disabled = true;
     }
-    setTestMessage('Hourly break test scheduled in 30 seconds. Switch to another tab now.');
+    updateCountdown();
+    testCountdownTimer = window.setInterval(updateCountdown, 1000);
     testBreakTimer = window.setTimeout(function () {
       testBreakTimer = null;
+      if (testCountdownTimer) {
+        window.clearInterval(testCountdownTimer);
+        testCountdownTimer = null;
+      }
       if (button) {
         button.disabled = false;
+        button.textContent = 'Test hourly break after 30 sec';
       }
       testHourlyBreak(true);
     }, 30000);
@@ -1390,10 +1409,15 @@
     if (testBreakTimer) {
       window.clearTimeout(testBreakTimer);
       testBreakTimer = null;
-      const button = $('testBreakAfter30Btn');
-      if (button) {
-        button.disabled = false;
-      }
+    }
+    if (testCountdownTimer) {
+      window.clearInterval(testCountdownTimer);
+      testCountdownTimer = null;
+    }
+    const thirtyButton = $('testBreakAfter30Btn');
+    if (thirtyButton) {
+      thirtyButton.disabled = false;
+      thirtyButton.textContent = 'Test hourly break after 30 sec';
     }
     setTestMessage('');
     refresh();
