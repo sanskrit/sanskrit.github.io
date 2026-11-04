@@ -365,7 +365,7 @@ function getTodayHours(sheet, user) {
     }
     if (pendingColumn > 0) {
       const pending = String(row[pendingColumn - 1] || '').trim();
-      if (pending === 'Add' || pending === 'Delete') {
+      if (pending === 'Delete') {
         return;
       }
     }
