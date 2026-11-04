@@ -37,9 +37,11 @@ The manager reviews and clears the `Pending` column after processing the request
 
 A clock-out is rejected if the same user already has a shift with the same start or end time (for example, a row added manually by the admin). The failed write is not queued for retry; the user is prompted to open the Check shifts page instead. Resending the same Shift ID is treated as already saved, so it cannot create a duplicate row.
 
+Addition requests on the Check shifts page are limited to 1 hour. A request is also rejected if it would overlap or be less than 5 minutes away from an existing shift.
+
 ## Daily maximum and breaks
 
-The Personnel sheet may have a column whose header contains `Daily Max` or `Max hours` (matched case-insensitively). Its value is in hours. When the user's recorded hours for today plus any local pending shifts reach that value, the active shift ends automatically with an alert. `Pending = Add` rows are not counted until approved. Starting again after the day's maximum is refused with an alert.
+The Personnel sheet may have a column whose header contains `Daily Max` or `Max hours` (matched case-insensitively). Its value is in hours. When the user's recorded hours for today plus any local pending shifts reach that value, the active shift ends automatically with an alert. `Pending = Add` rows are not counted until approved, and `Pending = Delete` rows are not counted either. Starting again after the day's maximum is refused with an alert.
 
 A cumulative hour of work since the last break ends the current shift automatically and sets a 5-minute break. The cumulative total is kept per user across manual stops and restarts. Stopping for at least 5 minutes counts as the break and resets the total; restarting sooner continues it. When the cumulative hour is reached, the current shift is force-stopped at that point (or immediately on a manual end if the threshold is reached). The alert is:
 

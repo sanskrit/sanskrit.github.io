@@ -421,7 +421,30 @@
     return (text.length === 16 ? text + ':00' : text).replace('T', ' ');
   }
 
+  function violatesBreakRule(user, start, end) {
+    const startDate = new Date(String(start).replace(' ', 'T'));
+    const endDate = new Date(String(end).replace(' ', 'T'));
+    if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
+      return false;
+    }
+    const fiveMinutes = 5 * 60 * 1000;
+    return (shifts || []).some(function (other) {
+      if (other.user !== user || other.pending === 'Delete') {
+        return false;
+      }
+      const otherStart = new Date(String(other.start || '').replace(' ', 'T'));
+      const otherEnd = new Date(String(other.end || '').replace(' ', 'T'));
+      if (isNaN(otherStart.getTime()) || isNaN(otherEnd.getTime())) {
+        return false;
+      }
+      const gapAfter = startDate.getTime() - otherEnd.getTime();
+      const gapBefore = otherStart.getTime() - endDate.getTime();
+      return !(gapAfter >= fiveMinutes || gapBefore >= fiveMinutes);
+    });
+  }
+
   async function requestAddition() {
+
     if (!currentAuth || loadingAdd) {
       return;
     }
@@ -451,6 +474,18 @@
       return;
     }
     const hours = Math.round(((endDate.getTime() - startDate.getTime()) / 3600000) * 1000000) / 1000000;
+    if (hours > 1) {
+      if (message) {
+        message.textContent = 'Additions are limited to 1 hour per shift.';
+      }
+      return;
+    }
+    if (violatesBreakRule(user, startStamp, endStamp)) {
+      if (message) {
+        message.textContent = 'This shift would violate the 5-minute break rule.';
+      }
+      return;
+    }
 
     loadingAdd = true;
     $('csAddBtn').disabled = true;

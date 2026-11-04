@@ -253,6 +253,9 @@ function requestAddShift(data) {
   if (user !== String(auth.u || '').trim()) {
     return json({ ok: false, error: 'You can only request additions for yourself.' });
   }
+  if (!Number.isFinite(hours) || hours <= 0 || hours > 1) {
+    return json({ ok: false, error: 'Additions are limited to 1 hour per shift.' });
+  }
   if (!isLocalStamp(start) || !isLocalStamp(end)) {
     return json({ ok: false, error: 'Start and End must use YYYY-MM-DD HH:mm:ss.' });
   }
@@ -273,6 +276,9 @@ function requestAddShift(data) {
         code: 'COLLISION',
         error: 'A shift for this user with the same start or end time already exists.'
       });
+    }
+    if (shiftViolatesBreakRule(sheet, user, start, end)) {
+      return json({ ok: false, error: 'This shift would violate the 5-minute break rule.' });
     }
     const fields = {
       'Recorded at': Utilities.formatDate(new Date(), Session.getScriptTimeZone(), 'yyyy-MM-dd HH:mm:ss'),
@@ -357,8 +363,11 @@ function getTodayHours(sheet, user) {
     if (String(row[userColumn - 1] || '').trim() !== targetUser) {
       return;
     }
-    if (pendingColumn > 0 && String(row[pendingColumn - 1] || '').trim() === 'Add') {
-      return;
+    if (pendingColumn > 0) {
+      const pending = String(row[pendingColumn - 1] || '').trim();
+      if (pending === 'Add' || pending === 'Delete') {
+        return;
+      }
     }
     let shiftDate = startColumn > 0 ? datePart(row[startColumn - 1]) : '';
     if (!shiftDate && recordedColumn > 0) {
@@ -412,6 +421,49 @@ function findShiftCollision(sheet, headers, user, start, end, ignoreId) {
     }
   }
   return null;
+}
+
+function shiftViolatesBreakRule(sheet, user, start, end) {
+  const headers = getHeaders(sheet);
+  const userColumn = findColumn(headers, 'User');
+  const startColumn = findColumn(headers, 'Start');
+  const endColumn = findColumn(headers, 'End');
+  const pendingColumn = findColumn(headers, 'Pending');
+  if (userColumn < 1 || startColumn < 1 || endColumn < 1) {
+    return false;
+  }
+  const lastRow = sheet.getLastRow();
+  if (lastRow < 2) {
+    return false;
+  }
+  const lastColumn = sheet.getLastColumn();
+  const values = sheet.getRange(2, 1, lastRow - 1, lastColumn).getValues();
+  const newStart = new Date(String(start || '').trim().replace(' ', 'T'));
+  const newEnd = new Date(String(end || '').trim().replace(' ', 'T'));
+  if (isNaN(newStart.getTime()) || isNaN(newEnd.getTime())) {
+    return false;
+  }
+  const fiveMinutes = 5 * 60 * 1000;
+  for (let i = 0; i < values.length; i++) {
+    const row = values[i];
+    if (String(row[userColumn - 1] || '').trim() !== String(user || '').trim()) {
+      continue;
+    }
+    if (pendingColumn > 0 && String(row[pendingColumn - 1] || '').trim() === 'Delete') {
+      continue;
+    }
+    const otherStart = new Date(String(row[startColumn - 1] || '').trim().replace(' ', 'T'));
+    const otherEnd = new Date(String(row[endColumn - 1] || '').trim().replace(' ', 'T'));
+    if (isNaN(otherStart.getTime()) || isNaN(otherEnd.getTime())) {
+      continue;
+    }
+    const gapAfter = newStart.getTime() - otherEnd.getTime();
+    const gapBefore = otherStart.getTime() - newEnd.getTime();
+    if (!(gapAfter >= fiveMinutes || gapBefore >= fiveMinutes)) {
+      return true;
+    }
+  }
+  return false;
 }
 
 function insertShiftRow(sheet, values) {
