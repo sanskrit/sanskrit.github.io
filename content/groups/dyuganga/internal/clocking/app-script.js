@@ -330,48 +330,60 @@ function getDailyStatus(data) {
   const sheet = getShiftsSheet(spreadsheet);
   ensureShiftHeaders(sheet);
   const record = getUserRecord(auth.u);
+  const timezone = spreadsheet.getSpreadsheetTimeZone
+    ? spreadsheet.getSpreadsheetTimeZone()
+    : Session.getScriptTimeZone();
+  const today = getTodayHours(sheet, auth.u, timezone);
   return json({
     ok: true,
     user: auth.u,
     dailyMax: record ? record.dailyMax : 0,
-    todayHours: getTodayHours(sheet, auth.u),
-    date: Utilities.formatDate(new Date(), Session.getScriptTimeZone(), 'yyyy-MM-dd')
+    todayHours: today.hours,
+    todayAddHours: today.addHours,
+    todayIds: today.ids,
+    date: Utilities.formatDate(new Date(), timezone, 'yyyy-MM-dd'),
+    timezone: timezone
   });
 }
 
-function getTodayHours(sheet, user) {
+function getTodayHours(sheet, user, timezone) {
   const headers = getHeaders(sheet);
   const userColumn = findColumn(headers, 'User');
   const startColumn = findColumn(headers, 'Start');
   const recordedColumn = findColumn(headers, 'Recorded at');
   const hoursColumn = findColumn(headers, 'Hours');
+  const idColumn = findColumn(headers, 'Shift ID');
   const pendingColumn = findColumn(headers, 'Pending');
   if (userColumn < 1 || hoursColumn < 1) {
-    return 0;
+    return { hours: 0, addHours: 0, ids: [] };
   }
   const lastRow = sheet.getLastRow();
   if (lastRow < 2) {
-    return 0;
+    return { hours: 0, addHours: 0, ids: [] };
   }
   const lastColumn = sheet.getLastColumn();
   const values = sheet.getRange(2, 1, lastRow - 1, lastColumn).getValues();
-  const today = Utilities.formatDate(new Date(), Session.getScriptTimeZone(), 'yyyy-MM-dd');
+  const tz = timezone || Session.getScriptTimeZone();
+  const today = Utilities.formatDate(new Date(), tz, 'yyyy-MM-dd');
   const targetUser = String(user || '').trim();
   let total = 0;
+  let addHours = 0;
+  const ids = [];
 
   values.forEach(function (row) {
     if (String(row[userColumn - 1] || '').trim() !== targetUser) {
       return;
     }
+    let pending = '';
     if (pendingColumn > 0) {
-      const pending = String(row[pendingColumn - 1] || '').trim();
+      pending = String(row[pendingColumn - 1] || '').trim();
       if (pending === 'Delete') {
         return;
       }
     }
-    let shiftDate = startColumn > 0 ? datePart(row[startColumn - 1]) : '';
+    let shiftDate = startColumn > 0 ? datePart(row[startColumn - 1], tz) : '';
     if (!shiftDate && recordedColumn > 0) {
-      shiftDate = datePart(row[recordedColumn - 1]);
+      shiftDate = datePart(row[recordedColumn - 1], tz);
     }
     if (shiftDate !== today) {
       return;
@@ -379,10 +391,23 @@ function getTodayHours(sheet, user) {
     const hours = Number(row[hoursColumn - 1]);
     if (Number.isFinite(hours)) {
       total += hours;
+      if (pending === 'Add') {
+        addHours += hours;
+      }
+    }
+    if (idColumn > 0) {
+      const id = String(row[idColumn - 1] || '').trim();
+      if (id && ids.indexOf(id) === -1) {
+        ids.push(id);
+      }
     }
   });
 
-  return Math.round(total * 1000000) / 1000000;
+  return {
+    hours: Math.round(total * 1000000) / 1000000,
+    addHours: Math.round(addHours * 1000000) / 1000000,
+    ids: ids
+  };
 }
 
 function findShiftCollision(sheet, headers, user, start, end, ignoreId) {
@@ -508,9 +533,9 @@ function insertShiftRow(sheet, values) {
   return true;
 }
 
-function datePart(value) {
+function datePart(value, timezone) {
   if (value instanceof Date) {
-    return Utilities.formatDate(value, Session.getScriptTimeZone(), 'yyyy-MM-dd');
+    return Utilities.formatDate(value, timezone || Session.getScriptTimeZone(), 'yyyy-MM-dd');
   }
   const text = String(value || '').trim();
   if (/^\d{4}-\d{2}-\d{2}/.test(text)) {

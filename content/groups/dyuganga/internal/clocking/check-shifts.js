@@ -480,6 +480,8 @@
       }
       return;
     }
+    const startStamp = datetimeLocalToStamp(startValue);
+    const endStamp = datetimeLocalToStamp(endValue);
     if (violatesBreakRule(user, startStamp, endStamp)) {
       if (message) {
         message.textContent = 'This shift would violate the 5-minute break rule.';
@@ -497,8 +499,8 @@
         action: 'requestAdd',
         token: currentAuth.token,
         user: user,
-        start: datetimeLocalToStamp(startValue),
-        end: datetimeLocalToStamp(endValue),
+        start: startStamp,
+        end: endStamp,
         hours: hours,
         notes: notes,
         timezone: getTimezone()

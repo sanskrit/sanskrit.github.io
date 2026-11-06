@@ -43,6 +43,8 @@ Addition requests on the Check shifts page are limited to 1 hour. A request is a
 
 The Personnel sheet may have a column whose header contains `Daily Max` or `Max hours` (matched case-insensitively). Its value is in hours. When the user's recorded hours for today plus any local pending shifts reach that value, the active shift ends automatically with an alert. `Pending = Add` rows are counted toward the daily limit; `Pending = Delete` rows are not counted. Starting again after the day's maximum is refused with an alert.
 
+The clock refreshes the daily total when the page loads, when the user starts a shift, when a shift ends, and at least once a minute while the page is open. The hint and the refusal alert show the breakdown, for example `7h approved + 0.5h pending approval + 0.5h waiting to upload`. A pending upload whose `Shift ID` already appears in the sheet is not counted twice. If the refresh fails, the clock does not block on an old cached total; it allows the start and checks again when the endpoint is reachable.
+
 A cumulative hour of work since the last break ends the current shift automatically and sets a 5-minute break. The cumulative total is kept per user across manual stops and restarts. Stopping for at least 5 minutes counts as the break and resets the total; restarting sooner continues it. When the cumulative hour is reached, the current shift is force-stopped at that point (or immediately on a manual end if the threshold is reached). The alert is:
 
 `Take a break, walk away, look away. Shift ended. Start shift after HH:MM:SS.`

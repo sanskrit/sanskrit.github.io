@@ -14,6 +14,8 @@
   const TWO_HOURS = 2 * 60 * 60 * 1000;
   const HOURLY_MS = 60 * 60 * 1000;
   const BREAK_MS = 5 * 60 * 1000;
+  const DAILY_FRESH_MS = 2 * 60 * 1000;
+  const DAILY_REFRESH_MS = 60 * 1000;
   const COLUMNS = ['Recorded at', 'User', 'Start', 'End', 'Hours', 'Notes', 'Timezone', 'Shift ID'];
   const DEFAULT_ENDPOINT = window.DYUGANGA_CLOCK_ENDPOINT || 'https://script.google.com/macros/s/AKfycbw7LNoaHRJEktArmanWEN9XMYLC10GYeloiYXYh9RIAz1LELE2MTMxS4muiqPaGhogm6w/exec';
 
@@ -28,6 +30,8 @@
   let usersLoadError = false;
   let timerStarted = false;
   let dailyFetchStarted = false;
+  let dailyRefreshing = false;
+  let lastDailyAttempt = 0;
   let lastTickDate = localDate(new Date());
   let toastTimer = null;
   let audioContext = null;
@@ -146,11 +150,15 @@
     return getDailyMap()[user] || null;
   }
 
-  function getPendingTodayHours(user) {
+  function getPendingTodayHours(user, savedIds) {
     const today = localDate(new Date());
+    const saved = Array.isArray(savedIds) ? savedIds.map(String) : null;
     return getPendingList().reduce(function (sum, item) {
       const record = item.record;
       if (record.user !== user) {
+        return sum;
+      }
+      if (saved && record.id && saved.indexOf(String(record.id)) !== -1) {
         return sum;
       }
       const startDate = record.start ? String(record.start).slice(0, 10) : '';
@@ -162,15 +170,52 @@
     }, 0);
   }
 
+  function dailyStatusAge(status) {
+    if (!status || !status.fetchedAt) {
+      return Infinity;
+    }
+    return Math.max(0, Date.now() - Number(status.fetchedAt));
+  }
+
   function getDailyAllowance(user) {
     const status = getCachedDailyStatus(user);
     const max = status ? Number(status.dailyMax) || 0 : 0;
     const today = localDate(new Date());
-    const todayHours = status && status.date === today ? Number(status.todayHours) || 0 : 0;
+    if (!status || status.date !== today) {
+      return {
+        max: max,
+        used: 0,
+        recorded: 0,
+        pendingApproval: 0,
+        pendingUpload: 0,
+        fresh: false
+      };
+    }
+    const recordedTotal = Number(status.todayHours) || 0;
+    const pendingApproval = Number(status.todayAddHours) || 0;
+    const pendingUpload = getPendingTodayHours(user, status.shiftIds);
     return {
       max: max,
-      used: todayHours + getPendingTodayHours(user)
+      used: recordedTotal + pendingUpload,
+      recorded: Math.max(0, recordedTotal - pendingApproval),
+      pendingApproval: pendingApproval,
+      pendingUpload: pendingUpload,
+      fresh: dailyStatusAge(status) <= DAILY_FRESH_MS
     };
+  }
+
+  function dailyUsageText(allowance) {
+    const parts = [];
+    if (allowance.recorded > 0) {
+      parts.push((Math.round(allowance.recorded * 100) / 100) + 'h approved');
+    }
+    if (allowance.pendingApproval > 0) {
+      parts.push((Math.round(allowance.pendingApproval * 100) / 100) + 'h pending approval');
+    }
+    if (allowance.pendingUpload > 0) {
+      parts.push((Math.round(allowance.pendingUpload * 100) / 100) + 'h waiting to upload');
+    }
+    return parts.length ? parts.join(' + ') : '0h recorded';
   }
 
   function getWorkMap() {
@@ -213,6 +258,9 @@
       const status = {
         dailyMax: Number(body.dailyMax) || 0,
         todayHours: Number(body.todayHours) || 0,
+        todayAddHours: Number(body.todayAddHours) || 0,
+        shiftIds: Array.isArray(body.todayIds) ? body.todayIds.map(String) : null,
+        timezone: String(body.timezone || ''),
         date: String(body.date || ''),
         fetchedAt: Date.now()
       };
@@ -359,6 +407,18 @@
       }
     }
 
+    const refreshUser = selectedUser();
+    if (refreshUser && getAuth(refreshUser) && !dailyRefreshing &&
+        Date.now() - lastDailyAttempt > DAILY_REFRESH_MS) {
+      lastDailyAttempt = Date.now();
+      dailyRefreshing = true;
+      const done = function () {
+        dailyRefreshing = false;
+        refresh();
+      };
+      loadDailyStatus(refreshUser).then(done, done);
+    }
+
     const user = selectedUser();
     const breakUntil = user ? getBreakUntil(user) : 0;
     if (breakUntil && breakUntil <= now.getTime()) {
@@ -381,10 +441,10 @@
 
     if (!ending && !starting) {
       const allowance = getDailyAllowance(user);
-      const remainingMs = allowance.max > 0
+      const remainingMs = allowance.fresh && allowance.max > 0
         ? Math.max(0, (allowance.max - allowance.used) * 3600000)
         : Infinity;
-      if (allowance.max > 0 && elapsed >= remainingMs) {
+      if (allowance.fresh && allowance.max > 0 && elapsed >= remainingMs) {
         autoEndShift(user, shift, 'daily-max', allowance.max, new Date(startMs + remainingMs));
         return;
       }
@@ -412,8 +472,8 @@
     const shift = activeShift();
     const breakUntil = user ? getBreakUntil(user) : 0;
     const onBreak = breakUntil > Date.now();
-    const allowance = user ? getDailyAllowance(user) : { max: 0, used: 0 };
-    const dailyReached = allowance.max > 0 && allowance.used >= allowance.max;
+    const allowance = user ? getDailyAllowance(user) : { max: 0, used: 0, fresh: false };
+    const dailyReached = allowance.fresh && allowance.max > 0 && allowance.used >= allowance.max;
     $('startBtn').disabled = !user || !!shift || starting || ending || !!authPrompt || onBreak || dailyReached;
     $('endBtn').disabled = !user || !shift || ending || starting;
     $('activePanel').hidden = !shift;
@@ -427,7 +487,7 @@
         const nextMidnight = new Date();
         nextMidnight.setHours(24, 0, 0, 0);
         notice.hidden = false;
-        notice.textContent = 'Start disabled: daily maximum of ' + allowance.max + ' hours reached. It will be enabled after midnight at ' + localTime(nextMidnight) + '.';
+        notice.textContent = 'Start disabled: daily maximum of ' + allowance.max + ' hours reached (' + dailyUsageText(allowance) + '). It will be enabled after midnight at ' + localTime(nextMidnight) + '.';
       } else {
         notice.hidden = true;
         notice.textContent = '';
@@ -454,7 +514,7 @@
       $('userHint').textContent = 'Take a break. Start again after ' + localTime(new Date(breakUntil)) + '.';
       showOver2h(false);
     } else if (dailyReached) {
-      $('userHint').textContent = 'Daily maximum of ' + allowance.max + ' hours already reached.';
+      $('userHint').textContent = 'Daily maximum of ' + allowance.max + ' hours already reached (' + dailyUsageText(allowance) + ').';
       showOver2h(false);
     } else if (authPrompt && authPrompt.user === user) {
       $('userHint').textContent = 'Sign in to start the shift.';
@@ -465,7 +525,8 @@
         ? ' Since last break: ' + formatDuration(effectiveWork) + '.'
         : '';
       const usedText = allowance.max > 0
-        ? ' Daily max ' + allowance.max + 'h, used ' + (Math.round(allowance.used * 100) / 100) + 'h.'
+        ? ' Daily max ' + allowance.max + 'h, used ' + (Math.round(allowance.used * 100) / 100) + 'h' +
+          (allowance.fresh ? ' (' + dailyUsageText(allowance) + ')' : ' (checking current total...)') + '.'
         : '';
       $('userHint').textContent = 'Signed in on this browser. Ready to start.' + workText + usedText;
       showOver2h(false);
@@ -510,11 +571,13 @@
         return;
       }
       await loadDailyStatus(user);
+      lastDailyAttempt = Date.now();
       const allowance = getDailyAllowance(user);
-      if (allowance.max > 0 && allowance.used >= allowance.max) {
-        showCriticalAlert('Daily limit reached', 'Daily maximum of ' + allowance.max + ' hours already reached.');
+      if (allowance.fresh && allowance.max > 0 && allowance.used >= allowance.max) {
+        showCriticalAlert('Daily limit reached', 'Daily maximum of ' + allowance.max + ' hours already reached (' + dailyUsageText(allowance) + ').');
         return;
       }
+      const dailyWarning = allowance.max > 0 && !allowance.fresh;
       const now = new Date();
       const shift = {
         id: uuid(),
@@ -524,7 +587,7 @@
       };
       setActiveShift(shift);
       hideResult();
-      toast('Shift started');
+      toast(dailyWarning ? 'Shift started; daily limit could not be refreshed' : 'Shift started');
       $('endBtn').focus();
     } finally {
       starting = false;
@@ -1382,12 +1445,16 @@
       setTestMessage('Choose a shift start time.');
       return;
     }
-    if (!getCachedDailyStatus(user)) {
+    if (dailyStatusAge(getCachedDailyStatus(user)) > DAILY_FRESH_MS) {
       await loadDailyStatus(user);
     }
     const allowance = getDailyAllowance(user);
     if (allowance.max <= 0) {
       setTestMessage('No daily maximum found for this user. Check the Personnel sheet and sign in.');
+      return;
+    }
+    if (!allowance.fresh) {
+      setTestMessage('Could not refresh the daily limit. Sign in and check the endpoint.');
       return;
     }
     const elapsedHours = Math.max(0, Date.now() - start.getTime()) / 3600000;
@@ -1397,7 +1464,7 @@
       showCriticalAlert('Test: daily limit', 'Daily maximum of ' + allowance.max + ' hours reached. Shift ended. Test only; no shift was uploaded.');
       setTestMessage('Daily maximum reached: ' + usedText + ' of ' + allowance.max + ' h. No shift was uploaded.');
     } else {
-      setTestMessage('Daily maximum not reached: ' + usedText + ' of ' + allowance.max + ' h.');
+      setTestMessage('Daily maximum not reached: ' + usedText + ' of ' + allowance.max + ' h (' + dailyUsageText(allowance) + ').');
     }
   }
 
@@ -1450,6 +1517,7 @@
     const currentUser = selectedUser();
     if (!dailyFetchStarted && currentUser && getAuth(currentUser)) {
       dailyFetchStarted = true;
+      lastDailyAttempt = Date.now();
       loadDailyStatus(currentUser).then(function () {
         refresh();
       });
@@ -1476,6 +1544,7 @@
         refresh();
         const selected = event.target.value;
         if (selected && getAuth(selected)) {
+          lastDailyAttempt = Date.now();
           loadDailyStatus(selected).then(function () {
             refresh();
           });
@@ -1497,6 +1566,14 @@
     document.addEventListener('visibilitychange', function () {
       if (!document.hidden) {
         stopTitleFlash();
+        const current = selectedUser();
+        if (current && getAuth(current) &&
+            dailyStatusAge(getCachedDailyStatus(current)) > DAILY_REFRESH_MS) {
+          lastDailyAttempt = Date.now();
+          loadDailyStatus(current).then(function () {
+            refresh();
+          });
+        }
       }
     });
 
