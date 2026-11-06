@@ -7,9 +7,9 @@ You will be given some text and a translation or commentary.
 **Your Task:**
 1. Identify every `<details><summary>मूलम्</summary> ... </details>` block.
   - (Ignore `मूलम् (संयुक्तम्)` blocks).
-2. Insert the corresponding English translation segment directly **above** each identified tag, separated by two empty lines.
+2. Insert the corresponding translation segment directly **above** each identified tag, separated by two empty lines.
 3. Use the format:
-   <details><summary>English</summary>
+   <details><summary>Translation</summary>
 
    TRANSLATION_TEXT
    </details>
