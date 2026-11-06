@@ -3,6 +3,7 @@ const PERSONNEL_SHEET = 'Personnel';
 const SHIFTS_SHEET = 'Shifts';
 const SHIFT_HEADERS = ['Recorded at', 'User', 'Start', 'End', 'Hours', 'Notes', 'Timezone', 'Shift ID', 'Pending'];
 const TOKEN_TTL_MS = 1000 * 60 * 60 * 24 * 180;
+const SCRIPT_VERSION = '2026-11-06-daily';
 const MAX_FAILURES = 8;
 const FAILURE_WINDOW_SECONDS = 600;
 
@@ -15,7 +16,11 @@ function doGet(e) {
       return json({ ok: false, error: String(err) });
     }
   }
-  return json({ ok: true, message: 'Dyuganga shift clock endpoint is live.' });
+  return json({
+    ok: true,
+    message: 'Dyuganga shift clock endpoint is live.',
+    version: SCRIPT_VERSION
+  });
 }
 
 function doPost(e) {
@@ -336,6 +341,7 @@ function getDailyStatus(data) {
   const today = getTodayHours(sheet, auth.u, timezone);
   return json({
     ok: true,
+    version: SCRIPT_VERSION,
     user: auth.u,
     dailyMax: record ? record.dailyMax : 0,
     todayHours: today.hours,
