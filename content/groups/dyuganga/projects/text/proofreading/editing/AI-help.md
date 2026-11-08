@@ -22,7 +22,7 @@ Ctrl+H कृत्वा
 चित्रे दर्शितया रीत्या शीघ्रं परिष्कार-स्वीकारश् शक्यः। 
 
 ## Web interface
-See separate [page](../AI-prompt). 
+See separate [page](../AI-prompt).
 
 
 ## Inside editor
