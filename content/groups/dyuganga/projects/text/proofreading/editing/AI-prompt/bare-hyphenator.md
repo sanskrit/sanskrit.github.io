@@ -1,5 +1,5 @@
 +++
-title = "सहस्र-गीतिः"
+title = "Bare Hyphenator"
 +++
 
 ```markdown
