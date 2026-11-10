@@ -23,6 +23,9 @@ title = "Shift Clock"
 
     <div class="sc-clock-display" id="liveClock">--:--:--</div>
     <div class="sc-clock-date" id="liveDate"></div>
+    <div id="dailySummary" class="sc-daily-summary" hidden>
+      Current Day Max <span id="dailyMaxValue">--</span> &middot; used today <span id="dailyUsedValue">--</span>
+    </div>
 
     <div class="sc-actions">
       <button id="startBtn" class="sc-btn sc-btn-primary" type="button" disabled>Start shift</button>
@@ -227,6 +230,22 @@ title = "Shift Clock"
   .shift-clock-app .sc-clock-date {
     color: var(--sc-muted);
     font-size: 0.9rem;
+  }
+  .shift-clock-app .sc-daily-summary {
+    margin-top: 10px;
+    padding: 7px 11px;
+    border: 1px solid var(--sc-line);
+    border-radius: 9px;
+    background: rgba(15, 118, 110, 0.05);
+    color: var(--sc-muted);
+    font-size: 0.88rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .shift-clock-app .sc-daily-summary.sc-daily-reached {
+    border-color: rgba(154, 52, 18, 0.35);
+    background: var(--sc-warn-bg);
+    color: var(--sc-warn);
+    font-weight: 700;
   }
   .shift-clock-app .sc-actions {
     display: flex;
@@ -457,4 +476,4 @@ title = "Shift Clock"
     .shift-clock-app .sc-actions .sc-btn { flex: 1 1 100%; }
   }
 </style>
-<script src="/groups/dyuganga/internal/clocking/clock.js?v=20261106-daily"></script>
+<script src="/groups/dyuganga/internal/clocking/clock.js?v=20261110-dailymax"></script>

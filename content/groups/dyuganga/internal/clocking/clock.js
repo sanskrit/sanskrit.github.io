@@ -218,6 +218,28 @@
     return parts.length ? parts.join(' + ') : '0h recorded';
   }
 
+  function formatHours(hours) {
+    return (Math.round((Number(hours) || 0) * 100) / 100) + 'h';
+  }
+
+  function renderDailySummary(user, allowance) {
+    const dailySummary = $('dailySummary');
+    if (!dailySummary || user !== selectedUser()) {
+      return;
+    }
+    const hasLimit = !!user && allowance.max > 0;
+    const reached = hasLimit && allowance.fresh && allowance.used >= allowance.max;
+    dailySummary.hidden = !hasLimit;
+    dailySummary.classList.toggle('sc-daily-reached', reached);
+    if (!hasLimit) {
+      return;
+    }
+    $('dailyMaxValue').textContent = formatHours(allowance.max);
+    $('dailyUsedValue').textContent = allowance.fresh
+      ? formatHours(allowance.used) + (allowance.used > 0 ? ' (' + dailyUsageText(allowance) + ')' : '')
+      : 'checking...';
+  }
+
   function getWorkMap() {
     const map = read(KEYS.work, {});
     return map && typeof map === 'object' && !Array.isArray(map) ? map : {};
@@ -267,6 +289,7 @@
       const map = getDailyMap();
       map[user] = status;
       write(KEYS.daily, map);
+      renderDailySummary(user, getDailyAllowance(user));
       return status;
     } catch (err) {
       return getCachedDailyStatus(user);
@@ -474,6 +497,9 @@
     const onBreak = breakUntil > Date.now();
     const allowance = user ? getDailyAllowance(user) : { max: 0, used: 0, fresh: false };
     const dailyReached = allowance.fresh && allowance.max > 0 && allowance.used >= allowance.max;
+
+    renderDailySummary(user, allowance);
+
     $('startBtn').disabled = !user || !!shift || starting || ending || !!authPrompt || onBreak || dailyReached;
     $('endBtn').disabled = !user || !shift || ending || starting;
     $('activePanel').hidden = !shift;
@@ -573,6 +599,7 @@
       await loadDailyStatus(user);
       lastDailyAttempt = Date.now();
       const allowance = getDailyAllowance(user);
+      renderDailySummary(user, allowance);
       if (allowance.fresh && allowance.max > 0 && allowance.used >= allowance.max) {
         showCriticalAlert('Daily limit reached', 'Daily maximum of ' + allowance.max + ' hours already reached (' + dailyUsageText(allowance) + ').');
         return;
