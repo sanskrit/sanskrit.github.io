@@ -259,7 +259,7 @@
 
       const end = document.createElement('td');
       end.className = 'cs-time';
-      end.textContent = shift.end || '';
+      end.textContent = shift.end || 'in progress';
       row.appendChild(end);
 
       const hours = document.createElement('td');
@@ -433,7 +433,8 @@
         return false;
       }
       const otherStart = new Date(String(other.start || '').replace(' ', 'T'));
-      const otherEnd = new Date(String(other.end || '').replace(' ', 'T'));
+      // A row created at clock start has no End yet; treat it as still running.
+      const otherEnd = other.end ? new Date(String(other.end).replace(' ', 'T')) : new Date();
       if (isNaN(otherStart.getTime()) || isNaN(otherEnd.getTime())) {
         return false;
       }

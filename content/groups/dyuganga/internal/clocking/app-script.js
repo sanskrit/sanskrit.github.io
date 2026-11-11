@@ -3,9 +3,10 @@ const PERSONNEL_SHEET = 'Personnel';
 const SHIFTS_SHEET = 'Shifts';
 const SHIFT_HEADERS = ['Recorded at', 'User', 'Start', 'End', 'Hours', 'Notes', 'Timezone', 'Shift ID', 'Pending'];
 const TOKEN_TTL_MS = 1000 * 60 * 60 * 24 * 180;
-const SCRIPT_VERSION = '2026-11-06-daily';
+const SCRIPT_VERSION = '2026-11-11-zero';
 const MAX_FAILURES = 8;
 const FAILURE_WINDOW_SECONDS = 600;
+const NO_SHIFT_TODAY = "You can't start any shift today. Contact admin for details.";
 
 function doGet(e) {
   const action = e && e.parameter && e.parameter.action;
@@ -29,6 +30,9 @@ function doPost(e) {
     const action = data.action || 'shift';
     if (action === 'login') {
       return login(data);
+    }
+    if (action === 'start') {
+      return startShiftRow(data);
     }
     if (action === 'shift') {
       return appendShift(data);
@@ -57,15 +61,10 @@ function login(data) {
   if (!user || !password) {
     return json({ ok: false, code: 'AUTH', error: 'User and password are required.' });
   }
-  if (tooManyFailures(user)) {
-    return json({ ok: false, code: 'AUTH', error: 'Too many failed attempts. Try again in a few minutes.' });
+  const checked = checkPassword(user, password);
+  if (checked.error) {
+    return json({ ok: false, code: 'AUTH', error: checked.error });
   }
-  const record = getUserRecord(user);
-  if (!record || record.password !== password) {
-    recordFailure(user);
-    return json({ ok: false, code: 'AUTH', error: 'Wrong user or password.' });
-  }
-  clearFailures(user);
   return json({
     ok: true,
     token: issueToken(user),
@@ -74,10 +73,117 @@ function login(data) {
   });
 }
 
+function checkPassword(user, password) {
+  if (tooManyFailures(user)) {
+    return { error: 'Too many failed attempts. Try again in a few minutes.' };
+  }
+  const record = getUserRecord(user);
+  if (!record || record.password !== password) {
+    recordFailure(user);
+    return { error: 'Wrong user or password.' };
+  }
+  clearFailures(user);
+  return { ok: true };
+}
+
+// Accepts either a session token or a password, so that one request can both
+// sign in and do the work (start/stop) without a separate login round trip.
+function authenticate(data) {
+  const tokenAuth = verifyToken(data.token);
+  if (tokenAuth) {
+    const requested = String(data.user || '').trim();
+    if (requested && requested !== tokenAuth.u) {
+      return { error: json({ ok: false, code: 'AUTH', error: 'This sign-in belongs to another user.' }) };
+    }
+    return { user: tokenAuth.u };
+  }
+  const user = String(data.user || '').trim();
+  const password = String(data.password || '').trim();
+  if (!user || !password) {
+    return { error: json({ ok: false, code: 'AUTH', error: 'Sign-in expired. Please sign in again.' }) };
+  }
+  const checked = checkPassword(user, password);
+  if (checked.error) {
+    return { error: json({ ok: false, code: 'AUTH', error: checked.error }) };
+  }
+  return {
+    user: user,
+    token: issueToken(user),
+    expiresAt: Date.now() + TOKEN_TTL_MS
+  };
+}
+
+function tokenFields(auth) {
+  const fields = {};
+  if (auth.token) {
+    fields.token = auth.token;
+    fields.expiresAt = auth.expiresAt;
+  }
+  return fields;
+}
+
+// Clock start: create the row right away with the start time only. The row is
+// completed by appendShift (action "shift") when the clock stops, matched by Shift ID.
+function startShiftRow(data) {
+  const auth = authenticate(data);
+  if (auth.error) {
+    return auth.error;
+  }
+  if (!data.start || !data.id) {
+    return json({ ok: false, error: 'Missing required shift fields.' });
+  }
+
+  const spreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID);
+  const sheet = getShiftsSheet(spreadsheet);
+  const lock = LockService.getScriptLock();
+  lock.waitLock(15000);
+  let status = null;
+
+  try {
+    ensureShiftHeaders(sheet);
+    const headers = getHeaders(sheet);
+    status = dailyStatusFor(sheet, spreadsheet, auth.user);
+    if (status.dailyMaxSet && status.todayHours >= status.dailyMax) {
+      return json(Object.assign({
+        ok: false,
+        code: 'DAILY_MAX',
+        error: status.dailyMax <= 0
+          ? NO_SHIFT_TODAY
+          : 'Daily maximum of ' + status.dailyMax + ' hours already reached.'
+      }, status));
+    }
+    if (findShiftRow(sheet, headers, data.id) > 0) {
+      return json(Object.assign({ ok: true, duplicate: true }, tokenFields(auth), status));
+    }
+    const collision = findShiftCollision(sheet, headers, auth.user, data.start, '', data.id);
+    if (collision) {
+      return json(Object.assign({
+        ok: false,
+        code: 'COLLISION',
+        error: 'A shift for this user with the same start time already exists.'
+      }, tokenFields(auth), status));
+    }
+    insertShiftRow(sheet, {
+      'Recorded at': data.recordedAt || Utilities.formatDate(new Date(), Session.getScriptTimeZone(), 'yyyy-MM-dd HH:mm:ss'),
+      'User': auth.user,
+      'Start': data.start,
+      'End': '',
+      'Hours': '',
+      'Notes': data.notes || '',
+      'Timezone': data.timezone || Session.getScriptTimeZone(),
+      'Shift ID': data.id
+    });
+  } finally {
+    lock.releaseLock();
+  }
+
+  return json(Object.assign({ ok: true }, tokenFields(auth), status));
+}
+
 function appendShift(data) {
-  const auth = verifyToken(data.token);
-  if (!auth || auth.u !== data.user) {
-    return json({ ok: false, code: 'AUTH', error: 'Sign-in expired. Please sign in again.' });
+  const auth = authenticate(data);
+  if (auth.error) {
+    return auth.error;
   }
   if (!data.start || !data.end) {
     return json({ ok: false, error: 'Missing required shift fields.' });
@@ -87,35 +193,52 @@ function appendShift(data) {
   const sheet = getShiftsSheet(spreadsheet);
   const lock = LockService.getScriptLock();
   lock.waitLock(15000);
+  let status = null;
 
   try {
     ensureShiftHeaders(sheet);
-    const collision = findShiftCollision(sheet, getHeaders(sheet), auth.u, data.start, data.end, data.id);
+    const headers = getHeaders(sheet);
+    const collision = findShiftCollision(sheet, headers, auth.user, data.start, data.end, data.id);
     if (collision) {
-      return json({
+      return json(Object.assign({
         ok: false,
         code: 'COLLISION',
         error: 'A shift for this user with the same start or end time already exists.'
-      });
+      }, tokenFields(auth)));
     }
-    const inserted = insertShiftRow(sheet, {
+    const fields = {
       'Recorded at': data.recordedAt || Utilities.formatDate(new Date(), Session.getScriptTimeZone(), 'yyyy-MM-dd HH:mm:ss'),
-      'User': auth.u,
+      'User': auth.user,
       'Start': data.start,
       'End': data.end,
       'Hours': data.hours,
       'Notes': data.notes || '',
       'Timezone': data.timezone || Session.getScriptTimeZone(),
       'Shift ID': data.id || ''
-    });
-    if (!inserted) {
-      return json({ ok: true, duplicate: true });
+    };
+    const row = data.id ? findShiftRow(sheet, headers, data.id) : 0;
+    if (row > 0) {
+      // Complete the row that the clock created when the shift started.
+      updateShiftRow(sheet, headers, row, {
+        'End': fields['End'],
+        'Hours': fields['Hours'],
+        'Notes': fields['Notes'],
+        'Timezone': fields['Timezone']
+      });
+    } else {
+      const inserted = insertShiftRow(sheet, fields);
+      if (!inserted) {
+        return json(Object.assign({ ok: true, duplicate: true }, tokenFields(auth)));
+      }
     }
+    // The shift is saved, so the response can carry the refreshed daily total
+    // instead of making the clock ask for it in a second call.
+    status = dailyStatusFor(sheet, spreadsheet, auth.user);
   } finally {
     lock.releaseLock();
   }
 
-  return json({ ok: true });
+  return json(Object.assign({ ok: true }, tokenFields(auth), status));
 }
 
 function listShifts(data) {
@@ -167,7 +290,7 @@ function listShifts(data) {
       user: rowUser,
       start: columns.start > 0 ? displayValue(row[columns.start - 1]) : '',
       end: columns.end > 0 ? displayValue(row[columns.end - 1]) : '',
-      hours: Number.isFinite(hours) ? hours : String(hoursValue || ''),
+      hours: String(hoursValue).trim() === '' || !Number.isFinite(hours) ? String(hoursValue || '') : hours,
       notes: columns.notes > 0 ? String(row[columns.notes - 1] || '') : '',
       timezone: columns.timezone > 0 ? String(row[columns.timezone - 1] || '') : '',
       id: columns.id > 0 ? String(row[columns.id - 1] || '') : '',
@@ -334,22 +457,29 @@ function getDailyStatus(data) {
   const spreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID);
   const sheet = getShiftsSheet(spreadsheet);
   ensureShiftHeaders(sheet);
-  const record = getUserRecord(auth.u);
+  return json(Object.assign(
+    { ok: true, version: SCRIPT_VERSION, user: auth.u },
+    dailyStatusFor(sheet, spreadsheet, auth.u)
+  ));
+}
+
+// Shared by the dailyStatus action and by the start/shift responses, so the clock
+// never needs a second request just to learn the daily total.
+function dailyStatusFor(sheet, spreadsheet, user) {
+  const record = getUserRecord(user, spreadsheet);
   const timezone = spreadsheet.getSpreadsheetTimeZone
     ? spreadsheet.getSpreadsheetTimeZone()
     : Session.getScriptTimeZone();
-  const today = getTodayHours(sheet, auth.u, timezone);
-  return json({
-    ok: true,
-    version: SCRIPT_VERSION,
-    user: auth.u,
+  const today = getTodayHours(sheet, user, timezone);
+  return {
     dailyMax: record ? record.dailyMax : 0,
+    dailyMaxSet: !!(record && record.dailyMaxSet),
     todayHours: today.hours,
     todayAddHours: today.addHours,
     todayIds: today.ids,
     date: Utilities.formatDate(new Date(), timezone, 'yyyy-MM-dd'),
     timezone: timezone
-  });
+  };
 }
 
 function getTodayHours(sheet, user, timezone) {
@@ -394,14 +524,18 @@ function getTodayHours(sheet, user, timezone) {
     if (shiftDate !== today) {
       return;
     }
-    const hours = Number(row[hoursColumn - 1]);
-    if (Number.isFinite(hours)) {
+    const rawHours = row[hoursColumn - 1];
+    const hours = Number(rawHours);
+    const completed = String(rawHours).trim() !== '' && Number.isFinite(hours);
+    if (completed) {
       total += hours;
       if (pending === 'Add') {
         addHours += hours;
       }
     }
-    if (idColumn > 0) {
+    // Only completed rows count as "already in the sheet"; a row created at clock
+    // start has no hours yet, so a pending upload of the same shift is still counted.
+    if (completed && idColumn > 0) {
       const id = String(row[idColumn - 1] || '').trim();
       if (id && ids.indexOf(id) === -1) {
         ids.push(id);
@@ -484,7 +618,9 @@ function shiftViolatesBreakRule(sheet, user, start, end) {
       continue;
     }
     const otherStart = new Date(String(row[startColumn - 1] || '').trim().replace(' ', 'T'));
-    const otherEnd = new Date(String(row[endColumn - 1] || '').trim().replace(' ', 'T'));
+    // A row created at clock start has no End yet; treat it as still running.
+    const otherEndText = String(row[endColumn - 1] || '').trim();
+    const otherEnd = otherEndText ? new Date(otherEndText.replace(' ', 'T')) : new Date();
     if (isNaN(otherStart.getTime()) || isNaN(otherEnd.getTime())) {
       continue;
     }
@@ -495,6 +631,45 @@ function shiftViolatesBreakRule(sheet, user, start, end) {
     }
   }
   return false;
+}
+
+function findShiftRow(sheet, headers, shiftId) {
+  const id = String(shiftId || '').trim();
+  if (!id) {
+    return 0;
+  }
+  const idColumn = findColumn(headers, 'Shift ID');
+  if (idColumn < 1) {
+    return 0;
+  }
+  const lastRow = sheet.getLastRow();
+  if (lastRow < 2) {
+    return 0;
+  }
+  const ids = sheet.getRange(2, idColumn, lastRow - 1, 1).getValues();
+  for (let i = 0; i < ids.length; i++) {
+    if (String(ids[i][0] || '').trim() === id) {
+      return i + 2;
+    }
+  }
+  return 0;
+}
+
+function updateShiftRow(sheet, headers, row, values) {
+  Object.keys(values).forEach(function (key) {
+    const column = findColumn(headers, key);
+    if (column > 0) {
+      sheet.getRange(row, column).setValue(values[key]);
+    }
+  });
+  const endColumn = findColumn(headers, 'End');
+  const hoursColumn = findColumn(headers, 'Hours');
+  if (endColumn > 0) {
+    sheet.getRange(row, endColumn).setNumberFormat('yyyy-mm-dd hh:mm:ss');
+  }
+  if (hoursColumn > 0) {
+    sheet.getRange(row, hoursColumn).setNumberFormat('0.000000');
+  }
 }
 
 function insertShiftRow(sheet, values) {
@@ -592,9 +767,9 @@ function listUsers() {
   return users;
 }
 
-function getUserRecord(user) {
-  const spreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID);
-  const sheet = getPersonnelSheet(spreadsheet);
+function getUserRecord(user, spreadsheet) {
+  const book = spreadsheet || SpreadsheetApp.openById(SPREADSHEET_ID);
+  const sheet = getPersonnelSheet(book);
   if (!sheet) {
     return null;
   }
@@ -608,10 +783,16 @@ function getUserRecord(user) {
   for (let i = 0; i < values.length; i++) {
     const name = String(values[i][columns.name - 1] || '').trim();
     if (name === user) {
+      const rawMax = columns.dailyMax > 0 ? values[i][columns.dailyMax - 1] : '';
+      const maxText = String(rawMax === null || rawMax === undefined ? '' : rawMax).trim();
+      const maxNumber = Number(maxText);
+      const maxSet = maxText !== '' && Number.isFinite(maxNumber);
       return {
         user: name,
         password: String(values[i][columns.pw - 1] || '').trim(),
-        dailyMax: columns.dailyMax > 0 ? (Number(values[i][columns.dailyMax - 1]) || 0) : 0
+        // An empty cell means "no daily limit". An explicit 0 means "no shift today".
+        dailyMax: maxSet ? maxNumber : 0,
+        dailyMaxSet: maxSet
       };
     }
   }

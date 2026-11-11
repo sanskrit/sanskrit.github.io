@@ -10,7 +10,7 @@ The browser clock is at [Shift Clock](../clock/).
 - The `Name` and `pw` columns are found by header name.
 - The value of the `pw` cell is the password.
 - Clear a `pw` cell to disable that user.
-- The browser stores a signed session token for 180 days. It does not store the password.
+- The browser stores a signed session token for 180 days. It does not store the password; the password is sent once, with the start or stop request, when this browser has no session yet.
 
 Passwords are managed by editing the `pw` column, or by running `createUserFromPrompt()` in the Apps Script editor.
 
@@ -19,6 +19,10 @@ Passwords are managed by editing the `pw` column, or by running `createUserFromP
 New shift rows are added at the top of the sheet named `Shifts`, directly below the header (newest first), or the first non-Personnel sheet. Change `SHIFTS_SHEET` at the top of [app-script.js](../app-script.js) if the shift sheet has another name.
 
 The columns are: `Recorded at`, `User`, `Start`, `End`, `Hours`, `Notes`, `Timezone`, `Shift ID`, `Pending`.
+
+A row is created as soon as the clock is started, with `Start` filled in and `End` and `Hours` left empty. When the clock is stopped, the same row is completed: `End` and `Hours` are filled in and `Pending` is left blank. The row is matched by `Shift ID`, so the clock updates it instead of adding a second row.
+
+If the start row could not be saved (offline, endpoint error), the clock keeps running and the row is created when the shift ends. If a shift is never ended (browser closed, user forgot), the row stays in the sheet with an empty `End` and shows as `in progress` on the Check shifts page, so the manager can see and correct it.
 
 `Start` and `End` include the full local date and time (`YYYY-MM-DD HH:mm:ss`), so shifts that cross midnight are unambiguous.
 
@@ -43,9 +47,11 @@ Addition requests on the Check shifts page are limited to 1 hour. A request is a
 
 The Personnel sheet may have a column whose header contains `Daily Max` or `Max hours` (matched case-insensitively). Its value is in hours. When the user's recorded hours for today plus any local pending shifts reach that value, the active shift ends automatically with an alert. `Pending = Add` rows are counted toward the daily limit; `Pending = Delete` rows are not counted. Starting again after the day's maximum is refused with an alert.
 
-The clock refreshes the daily total when the page loads, when the user starts a shift, when a shift ends, and at least once a minute while the page is open. The hint and the refusal alert show the breakdown, for example `7h approved + 0.5h pending approval + 0.5h waiting to upload`. A pending upload whose `Shift ID` already appears in the sheet is not counted twice. If the refresh fails, the clock does not block on an old cached total; it allows the start and checks again when the endpoint is reachable.
+An **empty** `Daily Max` cell means no daily limit. An explicit **`0`** means the user cannot start any shift that day: the Start button stays disabled, the clock shows `You can't start any shift today. Contact admin for details.`, and the Apps Script refuses the start even if the browser has no cached limit.
 
-For a selected user whose daily maximum is known, the clock shows a line below the clock time with the daily maximum and the hours used today (with the same breakdown). It turns orange when the maximum is reached. The maximum appears after that user has signed in once on the browser, because it comes from the `dailyStatus` action. The line refreshes with the daily total: on page load, when a user is selected, when a shift starts or ends, and at least once a minute while the page is open.
+The clock does not poll. The daily total comes back with the start and stop responses, so it is refreshed exactly when a shift starts or ends. A separate `dailyStatus` request is made only when this browser has no total for today yet (for example, the first time the page is opened on a new day). The hint and the refusal alert show the breakdown, for example `7h approved + 0.5h pending approval + 0.5h waiting to upload`. A pending upload whose `Shift ID` already appears in the sheet is not counted twice. If the refresh fails, the clock does not block on an old cached total; it allows the start and checks again when the endpoint is reachable.
+
+For a selected user whose daily maximum is known, the clock shows a line below the clock time with the daily maximum and the hours used today (with the same breakdown). It turns orange when the maximum is reached. The line refreshes with the daily total: on page load, when a user is selected, when a shift starts or ends.
 
 A cumulative hour of work since the last break ends the current shift automatically and sets a 5-minute break. The cumulative total is kept per user across manual stops and restarts. Stopping for at least 5 minutes counts as the break and resets the total; restarting sooner continues it. When the cumulative hour is reached, the current shift is force-stopped at that point (or immediately on a manual end if the threshold is reached). The alert is:
 
@@ -57,7 +63,18 @@ Break and daily-limit alerts use a browser notification (allow notifications whe
 
 The Test details block in the clock page only simulates the alerts; it does not set a real break or upload a shift. **Reset test** clears a break left by an earlier test.
 
-The daily maximum requires the `dailyStatus` action, so redeploy the Apps Script after updating it.
+The start row requires the `start` action and the daily total is returned with `start`/`shift`, so redeploy the Apps Script after updating it.
+
+## Requests and quotas
+
+The Apps Script free quota is limited, so the clock keeps requests to a minimum:
+
+- **Start shift**: exactly one request (`action: start`). It signs in with the password if this browser has no session yet, refuses the start when the daily maximum is reached, creates the row, and returns the refreshed daily total and a session token.
+- **End shift**: exactly one request (`action: shift`). It completes the row and returns the refreshed daily total and a session token.
+- **Page load**: at most one `dailyStatus` request, and only when this browser has no total for today. The user list is cached for one hour.
+- There is no polling, no per-minute refresh, and no request on tab focus.
+
+If the endpoint is not reachable, the clock still runs; the start row is created when the shift ends and the shift is queued for retry as before.
 
 ## Deploying the Apps Script endpoint
 
@@ -78,7 +95,7 @@ Saving the script in the editor does **not** update the live web app.
 
 Same project/deployment: **Deploy → Manage deployments → Edit → Version: New version → Deploy**.
 
-After deploying, open the `/exec` URL in a browser. The JSON should include `"version": "2026-11-06-daily"`. If it does not, the old version is still live.
+After deploying, open the `/exec` URL in a browser. The JSON should include `"version": "2026-11-11-zero"`. If it does not, the old version is still live.
 
 The current deployed endpoint is:
 
@@ -90,4 +107,8 @@ https://script.google.com/macros/s/AKfycbw7LNoaHRJEktArmanWEN9XMYLC10GYeloiYXYh9
 
 Use **Execute as: Me** with **Who has access: Anyone**. The script then runs with the owner's access to the private spreadsheet, so the sheet stays private. Choosing **Execute as: User accessing the web app** would require every user to have access to the private spreadsheet, and the page's requests would need Google authentication.
 
+### Apps Script quotas and limits
 
+Google's published quotas do not specify a general daily limit of 100 script executions. Each request to this web app runs a script execution. Current documented limits include 6 minutes per execution, 30 simultaneous executions per user, and 1,000 per script. Daily quotas for individual services vary between consumer and Google Workspace accounts and reset 24 hours after the first request.
+
+Because this web app is deployed to **Execute as: Me**, its Apps Script quotas apply to the deployment owner's account, not separately to each clock user. The clock's periodic status checks and other requests use that capacity. Limits may change; review the [current quotas and limitations](https://developers.google.com/apps-script/guides/services/quotas#current_limitations) and the Apps Script dashboard's **My Executions** when troubleshooting.
