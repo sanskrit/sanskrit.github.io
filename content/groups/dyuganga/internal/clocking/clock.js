@@ -17,7 +17,7 @@
   const CACHE_TTL_MS = 60 * 60 * 1000;
   const NO_SHIFT_TODAY = "You can't start any shift today. Contact admin for details.";
   const COLUMNS = ['Recorded at', 'User', 'Start', 'End', 'Hours', 'Notes', 'Timezone', 'Shift ID'];
-  const DEFAULT_ENDPOINT = window.DYUGANGA_CLOCK_ENDPOINT || 'https://script.google.com/macros/s/AKfycbw7LNoaHRJEktArmanWEN9XMYLC10GYeloiYXYh9RIAz1LELE2MTMxS4muiqPaGhogm6w/exec';
+  const DEFAULT_ENDPOINT = window.DYUGANGA_CLOCK_ENDPOINT || 'https://script.google.com/macros/s/AKfycbzw7S2068932Jm3LOABbV-IU4oy43FTi6HuMrYTJmx8qspIJv13biVpFAMXdivSzWuwVA/exec';
 
   const $ = function (id) { return document.getElementById(id); };
   let currentRecord = null;
