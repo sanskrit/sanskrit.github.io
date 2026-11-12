@@ -95,13 +95,9 @@ Saving the script in the editor does **not** update the live web app.
 
 Same project/deployment: **Deploy → Manage deployments → Edit → Version: New version → Deploy**.
 
-After deploying, open the `/exec` URL in a browser. The JSON should include `"version": "2026-11-11-zero"`. If it does not, the old version is still live.
+The current deployed endpoint is the one pointed by DYUGANGA_CLOCK_ENDPOINT .  
+Client and remote versions should match.
 
-The current deployed endpoint is:
-
-```
-https://script.google.com/macros/s/AKfycbw7LNoaHRJEktArmanWEN9XMYLC10GYeloiYXYh9RIAz1LELE2MTMxS4muiqPaGhogm6w/exec
-```
 
 ### Deployment note
 

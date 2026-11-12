@@ -11,6 +11,7 @@
     daily: 'dyuganga_clock_daily_v1',
     work: 'dyuganga_clock_work_v1'
   };
+  const CLIENT_VERSION = '2026-11-12-v1';
   const TWO_HOURS = 2 * 60 * 60 * 1000;
   const HOURLY_MS = 60 * 60 * 1000;
   const BREAK_MS = 5 * 60 * 1000;
@@ -666,6 +667,10 @@
           clearActiveShift(user);
           applyResponseMeta(user, err.body);
           showCriticalAlert('Shift not started', err.message || 'A row with this start time already exists.');
+        } else if (err && err.code === 'VERSION_MISMATCH') {
+          clearActiveShift(user);
+          showCriticalAlert('Update required', 'A new version of the shift clock is available. The page will reload.');
+          window.setTimeout(function () { window.location.reload(); }, 1500);
         } else if (err && err.body) {
           applyResponseMeta(user, err.body);
         }
@@ -1029,7 +1034,8 @@
     }
     try {
       const body = await postJson(Object.assign({}, startRecord(shift), fields, {
-        action: 'start'
+        action: 'start',
+        clientVersion: CLIENT_VERSION
       }));
       applyResponseMeta(shift.user, body);
       return body;
