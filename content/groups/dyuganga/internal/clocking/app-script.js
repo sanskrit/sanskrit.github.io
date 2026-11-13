@@ -1022,5 +1022,6 @@ function removeDateColumn() {
 function json(value) {
   return ContentService
     .createTextOutput(JSON.stringify(value))
-    .setMimeType(ContentService.MimeType.JSON);
+    .setMimeType(ContentService.MimeType.JSON)
+    .setHeaders({ 'Access-Control-Allow-Origin': '*' });
 }
