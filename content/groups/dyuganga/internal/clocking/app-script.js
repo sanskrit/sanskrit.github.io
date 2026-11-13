@@ -3,21 +3,32 @@ const PERSONNEL_SHEET = 'Personnel';
 const SHIFTS_SHEET = 'Shifts';
 const SHIFT_HEADERS = ['Recorded at', 'User', 'Start', 'End', 'Hours', 'Notes', 'Timezone', 'Shift ID', 'Pending'];
 const TOKEN_TTL_MS = 1000 * 60 * 60 * 24 * 180;
-const SCRIPT_VERSION = '2026-11-12-v1';
+const SCRIPT_VERSION = '2026-11-13-jsonp-v1';
 const MAX_FAILURES = 8;
 const FAILURE_WINDOW_SECONDS = 600;
 const NO_SHIFT_TODAY = "You can't start any shift today. Contact admin for details.";
+
+function jsonpOrJson(e, value) {
+  const callback = e && e.parameter && e.parameter.callback;
+  // Only allow a safe JS identifier as callback, to avoid script injection.
+  if (callback && /^[A-Za-z_$][A-Za-z0-9_$]*$/.test(callback)) {
+    return ContentService
+        .createTextOutput(callback + '(' + JSON.stringify(value) + ');')
+        .setMimeType(ContentService.MimeType.JAVASCRIPT);
+  }
+  return json(value);
+}
 
 function doGet(e) {
   const action = e && e.parameter && e.parameter.action;
   if (action === 'users') {
     try {
-      return json({ ok: true, users: listUsers() });
+      return jsonpOrJson(e, { ok: true, users: listUsers() });
     } catch (err) {
-      return json({ ok: false, error: String(err) });
+      return jsonpOrJson(e, { ok: false, error: String(err) });
     }
   }
-  return json({
+  return jsonpOrJson(e, {
     ok: true,
     message: 'Dyuganga shift clock endpoint is live.',
     version: SCRIPT_VERSION
@@ -153,8 +164,8 @@ function startShiftRow(data) {
         ok: false,
         code: 'DAILY_MAX',
         error: status.dailyMax <= 0
-          ? NO_SHIFT_TODAY
-          : 'Daily maximum of ' + status.dailyMax + ' hours already reached.'
+            ? NO_SHIFT_TODAY
+            : 'Daily maximum of ' + status.dailyMax + ' hours already reached.'
       }, status));
     }
     if (findShiftRow(sheet, headers, data.id) > 0) {
@@ -463,8 +474,8 @@ function getDailyStatus(data) {
   const sheet = getShiftsSheet(spreadsheet);
   ensureShiftHeaders(sheet);
   return json(Object.assign(
-    { ok: true, version: SCRIPT_VERSION, user: auth.u },
-    dailyStatusFor(sheet, spreadsheet, auth.u)
+      { ok: true, version: SCRIPT_VERSION, user: auth.u },
+      dailyStatusFor(sheet, spreadsheet, auth.u)
   ));
 }
 
@@ -473,8 +484,8 @@ function getDailyStatus(data) {
 function dailyStatusFor(sheet, spreadsheet, user) {
   const record = getUserRecord(user, spreadsheet);
   const timezone = spreadsheet.getSpreadsheetTimeZone
-    ? spreadsheet.getSpreadsheetTimeZone()
-    : Session.getScriptTimeZone();
+      ? spreadsheet.getSpreadsheetTimeZone()
+      : Session.getScriptTimeZone();
   const today = getTodayHours(sheet, user, timezone);
   return {
     dailyMax: record ? record.dailyMax : 0,
@@ -872,7 +883,7 @@ function issueToken(user) {
   const payload = JSON.stringify({ u: user, exp: Date.now() + TOKEN_TTL_MS });
   const payloadB64 = Utilities.base64EncodeWebSafe(Utilities.newBlob(payload).getBytes());
   const signature = Utilities.base64EncodeWebSafe(
-    Utilities.computeHmacSha256Signature(payloadB64, getTokenSecret())
+      Utilities.computeHmacSha256Signature(payloadB64, getTokenSecret())
   );
   return payloadB64 + '.' + signature;
 }
@@ -886,7 +897,7 @@ function verifyToken(token) {
     return null;
   }
   const expected = Utilities.base64EncodeWebSafe(
-    Utilities.computeHmacSha256Signature(parts[0], getTokenSecret())
+      Utilities.computeHmacSha256Signature(parts[0], getTokenSecret())
   );
   if (parts[1] !== expected) {
     return null;
@@ -894,7 +905,7 @@ function verifyToken(token) {
   let payload = null;
   try {
     payload = JSON.parse(
-      Utilities.newBlob(Utilities.base64DecodeWebSafe(parts[0])).getDataAsString()
+        Utilities.newBlob(Utilities.base64DecodeWebSafe(parts[0])).getDataAsString()
     );
   } catch (err) {
     return null;
@@ -1021,7 +1032,6 @@ function removeDateColumn() {
 
 function json(value) {
   return ContentService
-    .createTextOutput(JSON.stringify(value))
-    .setMimeType(ContentService.MimeType.JSON)
-    .setHeaders({ 'Access-Control-Allow-Origin': '*' });
+      .createTextOutput(JSON.stringify(value))
+      .setMimeType(ContentService.MimeType.JSON);
 }

@@ -1,26 +1,31 @@
 (function () {
   'use strict';
 
-  const KEYS = {
-    users: 'dyuganga_clock_users_v1',
-    active: 'dyuganga_clock_active_v1',
-    selectedUser: 'dyuganga_clock_selected_user_v1',
-    pending: 'dyuganga_clock_pending_v1',
-    auth: 'dyuganga_clock_auth_v1',
-    breakUntil: 'dyuganga_clock_break_v1',
-    daily: 'dyuganga_clock_daily_v1',
-    work: 'dyuganga_clock_work_v1'
-  };
-  const CLIENT_VERSION = '2026-11-12-v1';
+  const KEYS = window.DyugangaShared ? window.DyugangaShared.KEYS : null;
+  const CLIENT_VERSION = '2026-11-13-jsonp-v1';
   const TWO_HOURS = 2 * 60 * 60 * 1000;
   const HOURLY_MS = 60 * 60 * 1000;
   const BREAK_MS = 5 * 60 * 1000;
   const CACHE_TTL_MS = 60 * 60 * 1000;
   const NO_SHIFT_TODAY = "You can't start any shift today. Contact admin for details.";
   const COLUMNS = ['Recorded at', 'User', 'Start', 'End', 'Hours', 'Notes', 'Timezone', 'Shift ID'];
-  const DEFAULT_ENDPOINT = window.DYUGANGA_CLOCK_ENDPOINT || 'https://script.google.com/macros/s/AKfycbzw7S2068932Jm3LOABbV-IU4oy43FTi6HuMrYTJmx8qspIJv13biVpFAMXdivSzWuwVA/exec';
 
-  const $ = function (id) { return document.getElementById(id); };
+  const Shared = window.DyugangaShared;
+  if (!Shared) { throw new Error('DyugangaShared not loaded. Load dyuganga-shared.js before clock.js.'); }
+  const $ = Shared.$;
+  const read = Shared.read;
+  const write = Shared.write;
+  const remove = Shared.remove;
+  const getEndpoint = Shared.getEndpoint;
+  const getTimezone = Shared.getTimezone;
+  const getUsers = Shared.getUsers;
+  const getUsersCache = Shared.getUsersCache;
+  const postJson = Shared.postJson;
+  const getAuth = Shared.getAuth;
+  const setAuth = Shared.setAuth;
+  const clearAuth = Shared.clearAuth;
+  const getAuthMap = Shared.getAuthMap;
+  const toast = Shared.makeToast(function () { return $('toast'); }, 'sc-show');
   let currentRecord = null;
   let currentPending = null;
   let ending = false;
@@ -29,6 +34,7 @@
   let usersFetchStarted = false;
   let usersLoaded = false;
   let usersLoadError = false;
+  let usersLoadErrorMessage = '';
   let timerStarted = false;
   let lastTickDate = localDate(new Date());
   let toastTimer = null;
@@ -39,31 +45,6 @@
   let titleFlashOn = false;
   let testBreakTimer = null;
   let testCountdownTimer = null;
-
-  function read(key, fallback) {
-    try {
-      const raw = window.localStorage.getItem(key);
-      return raw === null ? fallback : JSON.parse(raw);
-    } catch (err) {
-      return fallback;
-    }
-  }
-
-  function write(key, value) {
-    try {
-      window.localStorage.setItem(key, JSON.stringify(value));
-    } catch (err) {
-      // Storage can be unavailable in private mode; the app still works for this session.
-    }
-  }
-
-  function remove(key) {
-    try {
-      window.localStorage.removeItem(key);
-    } catch (err) {
-      // Ignore.
-    }
-  }
 
   function getPendingList() {
     const value = read(KEYS.pending, null);
@@ -173,8 +154,8 @@
     const max = status ? Number(status.dailyMax) || 0 : 0;
     // Older cached statuses have no dailyMaxSet flag; fall back to the old rule.
     const hasLimit = !!status && (status.dailyMaxSet !== undefined
-      ? !!status.dailyMaxSet
-      : max > 0);
+        ? !!status.dailyMaxSet
+        : max > 0);
     const today = localDate(new Date());
     if (!status || status.date !== today) {
       return {
@@ -242,8 +223,8 @@
     }
     $('dailyMaxValue').textContent = formatHours(allowance.max);
     $('dailyUsedValue').textContent = allowance.fresh
-      ? formatHours(allowance.used) + (allowance.used > 0 ? ' (' + dailyUsageText(allowance) + ')' : '')
-      : 'checking...';
+        ? formatHours(allowance.used) + (allowance.used > 0 ? ' (' + dailyUsageText(allowance) + ')' : '')
+        : 'checking...';
   }
 
   function getWorkMap() {
@@ -283,8 +264,8 @@
     const status = {
       dailyMax: Number(body.dailyMax) || 0,
       dailyMaxSet: body.dailyMaxSet !== undefined
-        ? !!body.dailyMaxSet
-        : Number(body.dailyMax) > 0,
+          ? !!body.dailyMaxSet
+          : Number(body.dailyMax) > 0,
       todayHours: Number(body.todayHours) || 0,
       todayAddHours: Number(body.todayAddHours) || 0,
       shiftIds: Array.isArray(body.todayIds) ? body.todayIds.map(String) : null,
@@ -354,14 +335,6 @@
     return minutes + 'm ' + pad(seconds) + 's';
   }
 
-  function getTimezone() {
-    try {
-      return Intl.DateTimeFormat().resolvedOptions().timeZone || '';
-    } catch (err) {
-      return '';
-    }
-  }
-
   function uuid() {
     if (window.crypto && typeof window.crypto.randomUUID === 'function') {
       return window.crypto.randomUUID();
@@ -373,47 +346,8 @@
     });
   }
 
-  function getUsersCache() {
-    const stored = read(KEYS.users, null);
-    if (Array.isArray(stored)) {
-      return { users: stored, fetchedAt: 0 };
-    }
-    if (stored && Array.isArray(stored.users)) {
-      return { users: stored.users, fetchedAt: Number(stored.fetchedAt) || 0 };
-    }
-    return { users: [], fetchedAt: 0 };
-  }
-
-  function getUsers() {
-    const list = getUsersCache().users;
-    const clean = [];
-    list.forEach(function (name) {
-      const value = String(name).trim();
-      if (value && clean.indexOf(value) === -1) {
-        clean.push(value);
-      }
-    });
-    return clean;
-  }
-
   function renderUsers() {
-    const select = $('userSelect');
-    const previous = select.value || String(read(KEYS.selectedUser, '') || '');
-    const users = getUsers();
-    select.innerHTML = '';
-    const placeholder = document.createElement('option');
-    placeholder.value = '';
-    placeholder.textContent = 'Select user...';
-    select.appendChild(placeholder);
-    users.forEach(function (name) {
-      const option = document.createElement('option');
-      option.value = name;
-      option.textContent = name;
-      select.appendChild(option);
-    });
-    if (users.indexOf(previous) !== -1) {
-      select.value = previous;
-    }
+    Shared.fillUserSelect($('userSelect'), Shared.getUsers(), String(read(KEYS.selectedUser, '') || ''), 'Select user...');
   }
 
   function getActiveMap() {
@@ -488,8 +422,8 @@
     if (!ending && !starting) {
       const allowance = getDailyAllowance(user);
       const remainingMs = allowance.fresh && allowance.hasLimit
-        ? Math.max(0, (allowance.max - allowance.used) * 3600000)
-        : Infinity;
+          ? Math.max(0, (allowance.max - allowance.used) * 3600000)
+          : Infinity;
       if (allowance.fresh && allowance.hasLimit && elapsed >= remainingMs) {
         autoEndShift(user, shift, 'daily-max', allowance.max, new Date(startMs + remainingMs));
         return;
@@ -519,8 +453,8 @@
     const breakUntil = user ? getBreakUntil(user) : 0;
     const onBreak = breakUntil > Date.now();
     const allowance = user
-      ? getDailyAllowance(user)
-      : { max: 0, hasLimit: false, used: 0, fresh: false };
+        ? getDailyAllowance(user)
+        : { max: 0, hasLimit: false, used: 0, fresh: false };
     const dailyReached = allowance.hasLimit && allowance.fresh && allowance.used >= allowance.max;
 
     renderDailySummary(user, allowance);
@@ -539,8 +473,8 @@
         nextMidnight.setHours(24, 0, 0, 0);
         notice.hidden = false;
         notice.textContent = allowance.max <= 0
-          ? NO_SHIFT_TODAY
-          : 'Start disabled: daily maximum of ' + allowance.max + ' hours reached (' + dailyUsageText(allowance) + '). It will be enabled after midnight at ' + localTime(nextMidnight) + '.';
+            ? NO_SHIFT_TODAY
+            : 'Start disabled: daily maximum of ' + allowance.max + ' hours reached (' + dailyUsageText(allowance) + '). It will be enabled after midnight at ' + localTime(nextMidnight) + '.';
       } else {
         notice.hidden = true;
         notice.textContent = '';
@@ -556,7 +490,7 @@
       if (!usersLoaded) {
         $('userHint').textContent = 'Loading users from the Personnel sheet...';
       } else if (usersLoadError) {
-        $('userHint').textContent = 'Could not load users. Check the endpoint and reload.';
+        $('userHint').textContent = 'Could not load users. ' + (usersLoadErrorMessage || 'Check the endpoint and reload.');
       } else if (users.length === 0) {
         $('userHint').textContent = 'No users with a pw value found in the Personnel sheet.';
       } else {
@@ -575,12 +509,12 @@
     } else if (getAuth(user)) {
       const effectiveWork = getEffectiveWorkMs(user);
       const workText = effectiveWork > 0
-        ? ' Since last break: ' + formatDuration(effectiveWork) + '.'
-        : '';
+          ? ' Since last break: ' + formatDuration(effectiveWork) + '.'
+          : '';
       const usedText = allowance.max > 0
-        ? ' Daily max ' + allowance.max + 'h, used ' + (Math.round(allowance.used * 100) / 100) + 'h' +
+          ? ' Daily max ' + allowance.max + 'h, used ' + (Math.round(allowance.used * 100) / 100) + 'h' +
           (allowance.fresh ? ' (' + dailyUsageText(allowance) + ')' : ' (checking current total...)') + '.'
-        : '';
+          : '';
       $('userHint').textContent = 'Signed in on this browser. Ready to start.' + workText + usedText;
       showOver2h(false);
     } else {
@@ -629,8 +563,8 @@
       renderDailySummary(user, allowance);
       if (allowance.hasLimit && allowance.fresh && allowance.used >= allowance.max) {
         showCriticalAlert(
-          allowance.max <= 0 ? 'Cannot start shift' : 'Daily limit reached',
-          dailyBlockMessage(allowance)
+            allowance.max <= 0 ? 'Cannot start shift' : 'Daily limit reached',
+            dailyBlockMessage(allowance)
         );
         return;
       }
@@ -660,8 +594,8 @@
           applyResponseMeta(user, err.body);
           const blocked = getDailyAllowance(user);
           showCriticalAlert(
-            blocked.hasLimit && blocked.max <= 0 ? 'Cannot start shift' : 'Daily limit reached',
-            err.message || dailyBlockMessage(blocked)
+              blocked.hasLimit && blocked.max <= 0 ? 'Cannot start shift' : 'Daily limit reached',
+              err.message || dailyBlockMessage(blocked)
           );
         } else if (err && err.code === 'COLLISION') {
           clearActiveShift(user);
@@ -824,7 +758,7 @@
     lines.push('');
     list.forEach(function (record) {
       lines.push('User: ' + record.user + ' | Start: ' + record.start + ' | End: ' + record.end +
-        ' | Duration: ' + record.durationText + ' (' + record.hours + ' h) | Shift ID: ' + record.id);
+          ' | Duration: ' + record.durationText + ' (' + record.hours + ' h) | Shift ID: ' + record.id);
     });
     return lines.join('\n');
   }
@@ -852,8 +786,8 @@
     $('dismissBtn').hidden = true;
     $('resultWarn').hidden = !record.over2h;
     $('resultWarn').textContent = record.over2h
-      ? 'Warning: this shift is longer than 2 hours (' + record.durationText + ').'
-      : '';
+        ? 'Warning: this shift is longer than 2 hours (' + record.durationText + ').'
+        : '';
     $('dataBlock').textContent = tsvHeader() + '\n' + tsvRow(record);
 
     if (state.kind === 'saving') {
@@ -862,7 +796,7 @@
     } else {
       $('resultTitle').textContent = state.title || 'Shift recorded in the spreadsheet';
       $('resultMsg').textContent = state.message || (record.user + ': ' + record.start +
-        ' to ' + record.end + ' (' + record.durationText + ', ' + record.hours + ' h).');
+          ' to ' + record.end + ' (' + record.durationText + ', ' + record.hours + ' h).');
     }
   }
 
@@ -881,16 +815,16 @@
     const over2h = list.some(function (item) { return item.record.over2h; });
     $('resultWarn').hidden = !over2h;
     $('resultWarn').textContent = over2h
-      ? 'Warning: at least one pending shift is longer than 2 hours.'
-      : '';
+        ? 'Warning: at least one pending shift is longer than 2 hours.'
+        : '';
     $('dataBlock').textContent = tsvHeader() + '\n' + list.map(function (item) {
       return tsvRow(item.record);
     }).join('\n');
     $('resultTitle').textContent = 'Could not save ' + list.length + ' shift' +
-      (list.length === 1 ? '' : 's') + ' to the spreadsheet';
+        (list.length === 1 ? '' : 's') + ' to the spreadsheet';
     $('resultMsg').textContent = (message || 'The upload failed.') + ' ' + list.length +
-      ' shift' + (list.length === 1 ? '' : 's') +
-      ' waiting. "Retry upload" sends all of them. Copy the rows below and send them to your manager by email, or paste them into the spreadsheet.';
+        ' shift' + (list.length === 1 ? '' : 's') +
+        ' waiting. "Retry upload" sends all of them. Copy the rows below and send them to your manager by email, or paste them into the spreadsheet.';
     card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
@@ -909,13 +843,13 @@
     $('dismissBtn').hidden = true;
     $('resultWarn').hidden = !record.over2h;
     $('resultWarn').textContent = record.over2h
-      ? 'Warning: this shift is longer than 2 hours (' + record.durationText + ').'
-      : '';
+        ? 'Warning: this shift is longer than 2 hours (' + record.durationText + ').'
+        : '';
     $('dataBlock').textContent = tsvHeader() + '\n' + tsvRow(record);
     $('resultTitle').textContent = 'Shift already exists in the spreadsheet';
     $('resultMsg').textContent = (message || 'A shift with the same start or end time already exists.') +
-      ' This write was not saved and will not be retried. Open Check shifts to request a correction.' +
-      (pendingCount ? ' ' + pendingCount + ' other pending shift(s) can be retried below.' : '');
+        ' This write was not saved and will not be retried. Open Check shifts to request a correction.' +
+        (pendingCount ? ' ' + pendingCount + ' other pending shift(s) can be retried below.' : '');
     card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
@@ -928,72 +862,16 @@
     $('dismissBtn').hidden = true;
   }
 
-  function getEndpoint() {
-    return String(DEFAULT_ENDPOINT || '').trim();
-  }
-
   function updateConnectionStatus() {
     const connected = !!getEndpoint();
     const pill = $('connStatus');
     pill.textContent = connected ? 'Spreadsheet connected' : 'Spreadsheet setup needed';
     pill.classList.toggle('sc-ok', connected);
     pill.title = connected
-      ? 'Shift rows are sent to the configured Google Apps Script web app.'
-      : 'The built-in Google Apps Script endpoint is not configured.';
+        ? 'Shift rows are sent to the configured Google Apps Script web app.'
+        : 'The built-in Google Apps Script endpoint is not configured.';
   }
 
-  async function postJson(payload) {
-    const endpoint = getEndpoint();
-    if (!endpoint) {
-      throw new Error('The spreadsheet endpoint is not configured.');
-    }
-    if (navigator.onLine === false) {
-      throw new Error('You appear to be offline.');
-    }
-
-    const controller = new AbortController();
-    const timeout = window.setTimeout(function () { controller.abort(); }, 15000);
-    let response;
-
-    try {
-      response = await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(payload),
-        redirect: 'follow',
-        signal: controller.signal
-      });
-    } catch (err) {
-      if (err && err.name === 'AbortError') {
-        throw new Error('The request timed out after 15 seconds.');
-      }
-      throw new Error('Could not reach Google (network or CORS problem).');
-    } finally {
-      window.clearTimeout(timeout);
-    }
-
-    const text = await response.text();
-    let body = null;
-    try {
-      body = JSON.parse(text);
-    } catch (err) {
-      body = null;
-    }
-
-    if (!response.ok) {
-      throw new Error('Google returned HTTP ' + response.status + '.');
-    }
-    if (!body || body.ok !== true) {
-      const error = new Error(body && body.error ? String(body.error) : 'The spreadsheet endpoint returned an unexpected response.');
-      error.code = body && body.code;
-      error.body = body || null;
-      throw error;
-    }
-    return body;
-  }
-
-  // Returns { token } or { password } for the next request, so a single request
-  // can carry the sign-in and the shift itself.
   async function getAuthFields(user) {
     const auth = getAuth(user);
     if (auth) {
@@ -1110,13 +988,13 @@
     const remaining = getPendingList();
     if (collisionRecord) {
       const message = collisionError + (successCount > 0
-        ? ' ' + successCount + ' other shift(s) were uploaded.'
-        : '');
+          ? ' ' + successCount + ' other shift(s) were uploaded.'
+          : '');
       renderCollision(collisionRecord, message, remaining);
     } else if (remaining.length) {
       const message = successCount > 0
-        ? successCount + ' shift(s) uploaded; ' + remaining.length + ' still pending. ' + lastError
-        : (lastError || 'The upload failed.');
+          ? successCount + ' shift(s) uploaded; ' + remaining.length + ' still pending. ' + lastError
+          : (lastError || 'The upload failed.');
       renderPendingError(remaining, message);
     } else {
       renderResult(lastRecord, {
@@ -1132,16 +1010,6 @@
     remove(KEYS.pending);
     hideResult();
     toast('Dismissed');
-  }
-
-  function toast(text) {
-    const element = $('toast');
-    element.textContent = text;
-    element.classList.add('sc-show');
-    window.clearTimeout(toastTimer);
-    toastTimer = window.setTimeout(function () {
-      element.classList.remove('sc-show');
-    }, 2200);
   }
 
   async function copyText(text) {
@@ -1174,75 +1042,28 @@
     if (!endpoint) {
       usersLoaded = true;
       usersLoadError = true;
+      usersLoadErrorMessage = 'No endpoint configured.';
       usersFetchStarted = false;
       refresh();
       return;
     }
     try {
-      const separator = endpoint.indexOf('?') === -1 ? '?' : '&';
-      const response = await fetch(endpoint + separator + 'action=users&t=' + Date.now(), {
-        redirect: 'follow'
-      });
-      if (!response.ok) {
-        throw new Error('Google returned HTTP ' + response.status + '.');
-      }
-      const body = await response.json();
-      if (!body || body.ok !== true || !Array.isArray(body.users)) {
-        throw new Error(body && body.error ? String(body.error) : 'Unexpected response.');
-      }
-      write(KEYS.users, { users: body.users, fetchedAt: Date.now() });
+      await Shared.loadUsers();
       usersLoaded = true;
       usersLoadError = false;
+      usersLoadErrorMessage = '';
       renderUsers();
       refresh();
     } catch (err) {
       usersLoaded = true;
       usersLoadError = true;
+      usersLoadErrorMessage = (err && err.message) ? String(err.message) : String(err);
       usersFetchStarted = false;
+      try { console.error('[clock] loadUsers failed:', err); } catch (e) {}
       refresh();
     }
   }
 
-  function getAuthMap() {
-    const map = read(KEYS.auth, {});
-    return map && typeof map === 'object' && !Array.isArray(map) ? map : {};
-  }
-
-  function getAuth(user) {
-    const map = getAuthMap();
-    const entry = map[user];
-    if (!entry || !entry.token) {
-      return null;
-    }
-    if (entry.expiresAt && entry.expiresAt <= Date.now() + 60000) {
-      delete map[user];
-      write(KEYS.auth, map);
-      return null;
-    }
-    return entry;
-  }
-
-  function setAuth(user, token, expiresAt) {
-    const map = getAuthMap();
-    map[user] = {
-      token: token,
-      expiresAt: Number(expiresAt) || (Date.now() + 1000 * 60 * 60 * 24 * 30)
-    };
-    write(KEYS.auth, map);
-  }
-
-  function clearAuth(user) {
-    const map = getAuthMap();
-    delete map[user];
-    if (Object.keys(map).length === 0) {
-      remove(KEYS.auth);
-    } else {
-      write(KEYS.auth, map);
-    }
-  }
-
-  // Asks for the password and hands it to the caller, which sends it with the
-  // start/stop request itself. The server returns a session token with that reply.
   function requestPassword(user) {
     return new Promise(function (resolve) {
       authPrompt = { user: user, resolve: resolve };
@@ -1583,8 +1404,8 @@
     const usedText = Math.round(used * 100) / 100;
     if (used >= allowance.max) {
       showCriticalAlert('Test: daily limit', allowance.max <= 0
-        ? NO_SHIFT_TODAY + ' Test only; no shift was uploaded.'
-        : 'Daily maximum of ' + allowance.max + ' hours reached. Shift ended. Test only; no shift was uploaded.');
+          ? NO_SHIFT_TODAY + ' Test only; no shift was uploaded.'
+          : 'Daily maximum of ' + allowance.max + ' hours reached. Shift ended. Test only; no shift was uploaded.');
       setTestMessage('Daily maximum reached: ' + usedText + ' of ' + allowance.max + ' h. No shift was uploaded.');
     } else {
       setTestMessage('Daily maximum not reached: ' + usedText + ' of ' + allowance.max + ' h (' + dailyUsageText(allowance) + ').');
@@ -1626,8 +1447,8 @@
     if (testTime && !testTime.value) {
       const shift = activeShift();
       testTime.value = shift
-        ? localTime(new Date(shift.startISO)).slice(0, 5)
-        : localTime(new Date(Date.now() - HOURLY_MS)).slice(0, 5);
+          ? localTime(new Date(shift.startISO)).slice(0, 5)
+          : localTime(new Date(Date.now() - HOURLY_MS)).slice(0, 5);
     }
 
     refresh();
@@ -1644,7 +1465,7 @@
 
     if (!usersFetchStarted && getEndpoint()) {
       usersFetchStarted = true;
-      const cache = getUsersCache();
+      const cache = Shared.getUsersCache();
       if (cache.users.length && Date.now() - cache.fetchedAt < CACHE_TTL_MS) {
         usersLoaded = true;
         usersLoadError = false;

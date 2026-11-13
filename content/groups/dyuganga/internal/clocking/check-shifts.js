@@ -1,13 +1,25 @@
 (function () {
   'use strict';
 
-  const ENDPOINT = window.DYUGANGA_CLOCK_ENDPOINT ||
-    'https://script.google.com/macros/s/AKfycbzw7S2068932Jm3LOABbV-IU4oy43FTi6HuMrYTJmx8qspIJv13biVpFAMXdivSzWuwVA/exec';
-  const AUTH_KEY = 'dyuganga_clock_auth_v1';
-  const USERS_KEY = 'dyuganga_clock_users_v1';
-  const SELECTED_USER_KEY = 'dyuganga_clock_selected_user_v1';
 
-  const $ = function (id) { return document.getElementById(id); };
+  const Shared = window.DyugangaShared;
+  if (!Shared) { throw new Error('DyugangaShared not loaded. Load dyuganga-shared.js before check-shifts.js.'); }
+  const $ = Shared.$;
+  const read = Shared.read;
+  const write = Shared.write;
+  const remove = Shared.remove;
+  const getEndpoint = Shared.getEndpoint;
+  const getTimezone = Shared.getTimezone;
+  const postJson = Shared.postJson;
+  const getAuthMap = Shared.getAuthMap;
+  const findAuth = Shared.findAuth;
+  const setAuth = Shared.setAuth;
+  const clearAuth = Shared.clearAuth;
+  const toast = Shared.makeToast(function () { return $('csToast'); }, 'cs-show');
+  const AUTH_KEY = Shared.KEYS.auth;
+  const USERS_KEY = Shared.KEYS.users;
+  const SELECTED_USER_KEY = Shared.KEYS.selectedUser;
+  const ENDPOINT = Shared.getEndpoint();
   let currentAuth = null;
   let loadingShifts = false;
   let loadingLogin = false;
@@ -16,178 +28,18 @@
   let shiftsFetchStarted = false;
   let toastTimer = null;
 
-  function read(key, fallback) {
-    try {
-      const raw = window.localStorage.getItem(key);
-      return raw === null ? fallback : JSON.parse(raw);
-    } catch (err) {
-      return fallback;
-    }
-  }
-
-  function write(key, value) {
-    try {
-      window.localStorage.setItem(key, JSON.stringify(value));
-    } catch (err) {
-      // Ignore storage failures; the page still works for this session.
-    }
-  }
-
-  function remove(key) {
-    try {
-      window.localStorage.removeItem(key);
-    } catch (err) {
-      // Ignore.
-    }
-  }
-
-  function getAuthMap() {
-    const map = read(AUTH_KEY, {});
-    return map && typeof map === 'object' && !Array.isArray(map) ? map : {};
-  }
-
-  function findAuth() {
-    const map = getAuthMap();
-    const now = Date.now();
-    const names = Object.keys(map);
-    for (let i = 0; i < names.length; i++) {
-      const name = names[i];
-      const entry = map[name];
-      if (entry && entry.token && (!entry.expiresAt || entry.expiresAt > now + 60000)) {
-        return { user: name, token: entry.token };
-      }
-    }
-    return null;
-  }
-
-  function setAuth(user, token, expiresAt) {
-    const map = getAuthMap();
-    map[user] = {
-      token: token,
-      expiresAt: Number(expiresAt) || (Date.now() + 1000 * 60 * 60 * 24 * 30)
-    };
-    write(AUTH_KEY, map);
-  }
-
-  function clearAuth(user) {
-    const map = getAuthMap();
-    delete map[user];
-    if (Object.keys(map).length === 0) {
-      remove(AUTH_KEY);
-    } else {
-      write(AUTH_KEY, map);
-    }
-  }
-
-  function toast(text) {
-    const element = $('csToast');
-    if (!element) {
-      return;
-    }
-    element.textContent = text;
-    element.classList.add('cs-show');
-    window.clearTimeout(toastTimer);
-    toastTimer = window.setTimeout(function () {
-      element.classList.remove('cs-show');
-    }, 2200);
-  }
-
-  function getTimezone() {
-    try {
-      return Intl.DateTimeFormat().resolvedOptions().timeZone || '';
-    } catch (err) {
-      return '';
-    }
-  }
-
-  async function postJson(payload) {
-    if (navigator.onLine === false) {
-      throw new Error('You appear to be offline.');
-    }
-    const controller = new AbortController();
-    const timeout = window.setTimeout(function () { controller.abort(); }, 15000);
-    let response;
-    try {
-      response = await fetch(ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(payload),
-        redirect: 'follow',
-        signal: controller.signal
-      });
-    } catch (err) {
-      if (err && err.name === 'AbortError') {
-        throw new Error('The request timed out after 15 seconds.');
-      }
-      throw new Error('Could not reach Google (network or CORS problem).');
-    } finally {
-      window.clearTimeout(timeout);
-    }
-
-    const text = await response.text();
-    let body = null;
-    try {
-      body = JSON.parse(text);
-    } catch (err) {
-      body = null;
-    }
-    if (!response.ok) {
-      throw new Error('Google returned HTTP ' + response.status + '.');
-    }
-    if (!body || body.ok !== true) {
-      const error = new Error(body && body.error ? String(body.error) : 'The spreadsheet endpoint returned an unexpected response.');
-      error.code = body && body.code;
-      throw error;
-    }
-    return body;
-  }
-
   async function fetchUsers() {
     try {
-      const separator = ENDPOINT.indexOf('?') === -1 ? '?' : '&';
-      const response = await fetch(ENDPOINT + separator + 'action=users&t=' + Date.now(), {
-        redirect: 'follow'
-      });
-      if (!response.ok) {
-        throw new Error('Google returned HTTP ' + response.status + '.');
-      }
-      const body = await response.json();
-      if (!body || body.ok !== true || !Array.isArray(body.users)) {
-        throw new Error(body && body.error ? String(body.error) : 'Unexpected response.');
-      }
-      write(USERS_KEY, body.users);
-      return body.users;
+      return await Shared.loadUsers();
     } catch (err) {
+      try { console.error('[check-shifts] fetchUsers failed:', err); } catch (e) {}
       usersFetchStarted = false;
-      const cached = read(USERS_KEY, []);
-      return Array.isArray(cached) ? cached : [];
-    }
-  }
-
-  function fillSelect(select, users, preferred, placeholder) {
-    if (!select) {
-      return;
-    }
-    const previous = select.value || preferred || '';
-    select.innerHTML = '';
-    const first = document.createElement('option');
-    first.value = '';
-    first.textContent = placeholder;
-    select.appendChild(first);
-    users.forEach(function (name) {
-      const option = document.createElement('option');
-      option.value = name;
-      option.textContent = name;
-      select.appendChild(option);
-    });
-    if (users.indexOf(previous) !== -1) {
-      select.value = previous;
+      return Shared.getUsers();
     }
   }
 
   function renderUserSelects(users) {
-    const stored = String(read(SELECTED_USER_KEY, '') || '');
-    fillSelect($('csLoginUser'), users, stored, 'Select user...');
+    Shared.fillUserSelect($('csLoginUser'), users, String(read(SELECTED_USER_KEY, '') || ''), 'Select user...');
   }
 
   function updateAuthUi() {
@@ -209,8 +61,8 @@
     }
     if ($('csViewerMsg')) {
       $('csViewerMsg').textContent = loggedIn
-        ? 'Signed in as ' + currentAuth.user + '. Showing your shifts from the last 32 days.'
-        : '';
+          ? 'Signed in as ' + currentAuth.user + '. Showing your shifts from the last 32 days.'
+          : '';
     }
     if ($('csAddUserLabel')) {
       $('csAddUserLabel').textContent = loggedIn ? currentAuth.user : '';
@@ -266,8 +118,8 @@
       const hours = document.createElement('td');
       hours.className = 'cs-hours';
       hours.textContent = shift.hours === '' || shift.hours === null || shift.hours === undefined
-        ? ''
-        : String(shift.hours);
+          ? ''
+          : String(shift.hours);
       row.appendChild(hours);
 
       const notes = document.createElement('td');
@@ -279,7 +131,7 @@
       if (shift.pending === 'Delete' || shift.pending === 'Add') {
         const badge = document.createElement('span');
         badge.className = 'cs-pending ' +
-          (shift.pending === 'Delete' ? 'cs-pending-delete' : 'cs-pending-add');
+            (shift.pending === 'Delete' ? 'cs-pending-delete' : 'cs-pending-add');
         badge.textContent = shift.pending;
         pending.appendChild(badge);
       } else {
@@ -563,9 +415,9 @@
       if (button.classList.contains('cs-delete-btn')) {
         event.preventDefault();
         requestDelete(
-          button.getAttribute('data-id') || '',
-          Number(button.getAttribute('data-row')),
-          button
+            button.getAttribute('data-id') || '',
+            Number(button.getAttribute('data-row')),
+            button
         );
       }
     });
@@ -580,8 +432,8 @@
 
   async function hydrate() {
     updateAuthUi();
-    const cached = read(USERS_KEY, []);
-    if (Array.isArray(cached) && cached.length) {
+    const cached = Shared.getUsers();
+    if (cached.length) {
       renderUserSelects(cached);
     }
     if (!usersFetchStarted) {
