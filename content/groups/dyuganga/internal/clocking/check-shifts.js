@@ -1,8 +1,8 @@
 (function () {
   'use strict';
 
-  const ENDPOINT = window.DYUGANGA_CHECK_SHIFTS_ENDPOINT ||
-    'https://script.google.com/macros/s/AKfycbw7LNoaHRJEktArmanWEN9XMYLC10GYeloiYXYh9RIAz1LELE2MTMxS4muiqPaGhogm6w/exec';
+  const ENDPOINT = window.DYUGANGA_CLOCK_ENDPOINT ||
+    'https://script.google.com/macros/s/AKfycbzw7S2068932Jm3LOABbV-IU4oy43FTi6HuMrYTJmx8qspIJv13biVpFAMXdivSzWuwVA/exec';
   const AUTH_KEY = 'dyuganga_clock_auth_v1';
   const USERS_KEY = 'dyuganga_clock_users_v1';
   const SELECTED_USER_KEY = 'dyuganga_clock_selected_user_v1';
