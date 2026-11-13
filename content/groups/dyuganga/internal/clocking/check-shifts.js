@@ -158,6 +158,7 @@
       write(USERS_KEY, body.users);
       return body.users;
     } catch (err) {
+      usersFetchStarted = false;
       const cached = read(USERS_KEY, []);
       return Array.isArray(cached) ? cached : [];
     }

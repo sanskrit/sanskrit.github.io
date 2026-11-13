@@ -1174,6 +1174,7 @@
     if (!endpoint) {
       usersLoaded = true;
       usersLoadError = true;
+      usersFetchStarted = false;
       refresh();
       return;
     }
@@ -1197,6 +1198,7 @@
     } catch (err) {
       usersLoaded = true;
       usersLoadError = true;
+      usersFetchStarted = false;
       refresh();
     }
   }
