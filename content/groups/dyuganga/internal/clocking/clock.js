@@ -11,7 +11,7 @@
   const COLUMNS = ['Recorded at', 'User', 'Start', 'End', 'Hours', 'Notes', 'Timezone', 'Shift ID'];
 
   const Shared = window.DyugangaShared;
-  if (!Shared) { throw new Error('DyugangaShared not loaded. Load dyuganga-shared.js before clock.js.'); }
+  if (!Shared) { throw new Error('DyugangaShared not loaded. Load clock-shared.js before clock.js.'); }
   const $ = Shared.$;
   const read = Shared.read;
   const write = Shared.write;

@@ -396,7 +396,7 @@ title = "Check shifts"
             }
             next();
         }
-        loadOne(['./dyuganga-shared.js', '../dyuganga-shared.js', '/groups/dyuganga/internal/clocking/dyuganga-shared.js'], function (err) {
+        loadOne(['./clock-shared.js', '../clock-shared.js', '/groups/dyuganga/internal/clocking/clock-shared.js'], function (err) {
             if (err) { console.error(err); return; }
             loadOne(['./check-shifts.js', '../check-shifts.js', '/groups/dyuganga/internal/clocking/check-shifts.js'], function (err2) {
                 if (err2) { console.error(err2); }

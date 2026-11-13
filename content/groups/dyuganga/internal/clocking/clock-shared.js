@@ -1,6 +1,6 @@
-// dyuganga-shared.js — shared helpers for clock + check-shifts.
+// clock-shared.js — shared helpers for clock + check-shifts.
 // Load this BEFORE clock.js / check-shifts.js:
-//   <script src="/groups/dyuganga/internal/clocking/dyuganga-shared.js?v=20261113-shared"></script>
+//   <script src="/groups/dyuganga/internal/clocking/clock-shared.js?v=20261113-shared"></script>
 //   <script src="/groups/dyuganga/internal/clocking/clock.js?v=20261113-shared"></script>
 // No bundler, no modules — plain <script> tags, same style as the other files.
 (function () {
