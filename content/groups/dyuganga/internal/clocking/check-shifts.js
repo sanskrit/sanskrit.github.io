@@ -2,8 +2,8 @@
   'use strict';
 
 
-  const Shared = window.DyugangaShared;
-  if (!Shared) { throw new Error('DyugangaShared not loaded. Load clock-shared.js before check-shifts.js.'); }
+  const Shared = window.ClockShared;
+  if (!Shared) { throw new Error('Shared helpers not loaded. Load the shared helpers file (clock-shared.js) before check-shifts.js.'); }
   const $ = Shared.$;
   const read = Shared.read;
   const write = Shared.write;

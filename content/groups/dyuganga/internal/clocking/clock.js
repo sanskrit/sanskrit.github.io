@@ -1,7 +1,16 @@
 (function () {
   'use strict';
 
-  const KEYS = window.DyugangaShared ? window.DyugangaShared.KEYS : null;
+  const KEYS = {
+    users: 'dyuganga_clock_users_v1',
+    active: 'dyuganga_clock_active_v1',
+    selectedUser: 'dyuganga_clock_selected_user_v1',
+    pending: 'dyuganga_clock_pending_v1',
+    auth: 'dyuganga_clock_auth_v1',
+    breakUntil: 'dyuganga_clock_break_v1',
+    daily: 'dyuganga_clock_daily_v1',
+    work: 'dyuganga_clock_work_v1'
+  };
   const CLIENT_VERSION = '2026-11-13-jsonp-v1';
   const TWO_HOURS = 2 * 60 * 60 * 1000;
   const HOURLY_MS = 60 * 60 * 1000;
@@ -9,23 +18,9 @@
   const CACHE_TTL_MS = 60 * 60 * 1000;
   const NO_SHIFT_TODAY = "You can't start any shift today. Contact admin for details.";
   const COLUMNS = ['Recorded at', 'User', 'Start', 'End', 'Hours', 'Notes', 'Timezone', 'Shift ID'];
+  const DEFAULT_ENDPOINT = window.DYUGANGA_CLOCK_ENDPOINT || 'https://script.google.com/macros/s/AKfycbzw7S2068932Jm3LOABbV-IU4oy43FTi6HuMrYTJmx8qspIJv13biVpFAMXdivSzWuwVA/exec';
 
-  const Shared = window.DyugangaShared;
-  if (!Shared) { throw new Error('DyugangaShared not loaded. Load clock-shared.js before clock.js.'); }
-  const $ = Shared.$;
-  const read = Shared.read;
-  const write = Shared.write;
-  const remove = Shared.remove;
-  const getEndpoint = Shared.getEndpoint;
-  const getTimezone = Shared.getTimezone;
-  const getUsers = Shared.getUsers;
-  const getUsersCache = Shared.getUsersCache;
-  const postJson = Shared.postJson;
-  const getAuth = Shared.getAuth;
-  const setAuth = Shared.setAuth;
-  const clearAuth = Shared.clearAuth;
-  const getAuthMap = Shared.getAuthMap;
-  const toast = Shared.makeToast(function () { return $('toast'); }, 'sc-show');
+  const $ = function (id) { return document.getElementById(id); };
   let currentRecord = null;
   let currentPending = null;
   let ending = false;
@@ -34,7 +29,6 @@
   let usersFetchStarted = false;
   let usersLoaded = false;
   let usersLoadError = false;
-  let usersLoadErrorMessage = '';
   let timerStarted = false;
   let lastTickDate = localDate(new Date());
   let toastTimer = null;
@@ -45,6 +39,36 @@
   let titleFlashOn = false;
   let testBreakTimer = null;
   let testCountdownTimer = null;
+  // Daily-status refresh guard: prevents overlapping dailyStatus requests
+  // and stops a failed refresh from retrying every tick.
+  let dailyStatusInFlight = null;
+  let dailyStatusLastAttemptByUser = {};
+  const DAILY_STATUS_RETRY_MS = 30 * 1000;
+
+  function read(key, fallback) {
+    try {
+      const raw = window.localStorage.getItem(key);
+      return raw === null ? fallback : JSON.parse(raw);
+    } catch (err) {
+      return fallback;
+    }
+  }
+
+  function write(key, value) {
+    try {
+      window.localStorage.setItem(key, JSON.stringify(value));
+    } catch (err) {
+      // Storage can be unavailable in private mode; the app still works for this session.
+    }
+  }
+
+  function remove(key) {
+    try {
+      window.localStorage.removeItem(key);
+    } catch (err) {
+      // Ignore.
+    }
+  }
 
   function getPendingList() {
     const value = read(KEYS.pending, null);
@@ -149,6 +173,21 @@
     }, 0);
   }
 
+  // A cached status is fresh only if it is for today AND was fetched within
+  // CACHE_TTL_MS. Previously any status dated today counted as fresh
+  // forever, so an admin edit to Daily Max in the Personnel sheet never
+  // showed up until the next day.
+  function isDailyStatusFresh(status) {
+    if (!status || status.date !== localDate(new Date())) {
+      return false;
+    }
+    const fetchedAt = Number(status.fetchedAt || 0);
+    if (!Number.isFinite(fetchedAt) || fetchedAt <= 0) {
+      return false;
+    }
+    return Date.now() - fetchedAt < CACHE_TTL_MS;
+  }
+
   function getDailyAllowance(user) {
     const status = getCachedDailyStatus(user);
     const max = status ? Number(status.dailyMax) || 0 : 0;
@@ -157,7 +196,9 @@
         ? !!status.dailyMaxSet
         : max > 0);
     const today = localDate(new Date());
-    if (!status || status.date !== today) {
+    const hasTodayStatus = !!status && status.date === today;
+    const fresh = isDailyStatusFresh(status);
+    if (!hasTodayStatus) {
       return {
         max: max,
         hasLimit: hasLimit,
@@ -165,7 +206,9 @@
         recorded: 0,
         pendingApproval: 0,
         pendingUpload: 0,
-        fresh: false
+        fresh: false,
+        stale: false,
+        hasTodayStatus: false
       };
     }
     const recordedTotal = Number(status.todayHours) || 0;
@@ -178,9 +221,13 @@
       recorded: Math.max(0, recordedTotal - pendingApproval),
       pendingApproval: pendingApproval,
       pendingUpload: pendingUpload,
-      // The total is refreshed with every start and stop, so a status for today
-      // is the best available number; there is no polling to keep it warmer.
-      fresh: true
+      // fresh = fetched within CACHE_TTL_MS. stale = a today value that is
+      // too old to trust on its own; callers must trigger a background
+      // refresh (maybeLoadDailyStatus) or a forced refresh (startShift)
+      // instead of treating it as current.
+      fresh: fresh,
+      stale: !fresh,
+      hasTodayStatus: true
     };
   }
 
@@ -215,16 +262,20 @@
       return;
     }
     const hasLimit = !!user && allowance.hasLimit;
-    const reached = hasLimit && allowance.fresh && allowance.used >= allowance.max;
+    // Display only: keep showing the cached today value as reached while a
+    // background refresh runs, so the line does not flicker. startShift()
+    // is the gate that must use a fresh value, so this cannot deadlock a start.
+    const reached = hasLimit && !!allowance.hasTodayStatus && allowance.used >= allowance.max;
     dailySummary.hidden = !hasLimit;
     dailySummary.classList.toggle('sc-daily-reached', reached);
     if (!hasLimit) {
       return;
     }
     $('dailyMaxValue').textContent = formatHours(allowance.max);
-    $('dailyUsedValue').textContent = allowance.fresh
-        ? formatHours(allowance.used) + (allowance.used > 0 ? ' (' + dailyUsageText(allowance) + ')' : '')
-        : 'checking...';
+    $('dailyUsedValue').textContent = !allowance.hasTodayStatus
+        ? 'checking...'
+        : formatHours(allowance.used) + (allowance.used > 0 ? ' (' + dailyUsageText(allowance) + ')' : '') +
+        (allowance.stale ? ' (checking...)' : '');
   }
 
   function getWorkMap() {
@@ -295,16 +346,45 @@
 
   // The start and stop responses already carry the daily total, so a separate
   // request is only made when this browser has no recent status for today.
+  // BUG FIX: the old guard was `date === today || fresh`, so ANY status dated
+  // today skipped the refresh for the whole day, even hours after an admin
+  // changed Daily Max. It must be AND: skip only when the status is both for
+  // today and fetched within CACHE_TTL_MS.
   function maybeLoadDailyStatus(user) {
-    const status = getCachedDailyStatus(user);
-    if (status) {
-      const fresh = Date.now() - Number(status.fetchedAt || 0) < CACHE_TTL_MS;
-      if (status.date === localDate(new Date()) || fresh) {
-        return;
-      }
+    if (!user || !getAuth(user)) {
+      return;
     }
-    loadDailyStatus(user).then(function () {
+    // A cached value that blocks Start is never treated as fresh: the
+    // user cannot work until the server says otherwise, so keep
+    // re-checking on the 30s throttle below. A non-blocking value uses
+    // the 1h TTL, so a successful fetch is not repeated every 30s for a
+    // user who can start. Without this, a successful fetch that
+    // returned dailyMax 0 (admin had not fixed the sheet yet) blocked
+    // Start for the full 1h TTL even after the admin fixed it.
+    const allowance = getDailyAllowance(user);
+    const blocked = allowance.hasLimit && allowance.hasTodayStatus && allowance.used >= allowance.max;
+    if (!blocked && isDailyStatusFresh(getCachedDailyStatus(user))) {
+      return;
+    }
+    if (dailyStatusInFlight && dailyStatusInFlight.user === user) {
+      return;
+    }
+    // A failed refresh leaves fetchedAt stale, so without this throttle a
+    // caller running on every tick / refresh would retry every second
+    // while offline. startShift() bypasses this throttle with a direct
+    // loadDailyStatus() call, so a user action is never throttled.
+    if (Date.now() - Number(dailyStatusLastAttemptByUser[user] || 0) < DAILY_STATUS_RETRY_MS) {
+      return;
+    }
+    dailyStatusLastAttemptByUser[user] = Date.now();
+    const promise = loadDailyStatus(user).then(function () {
       refresh();
+    });
+    dailyStatusInFlight = { user: user, promise: promise };
+    promise.then(function () {
+      if (dailyStatusInFlight && dailyStatusInFlight.promise === promise) {
+        dailyStatusInFlight = null;
+      }
     });
   }
 
@@ -335,6 +415,14 @@
     return minutes + 'm ' + pad(seconds) + 's';
   }
 
+  function getTimezone() {
+    try {
+      return Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    } catch (err) {
+      return '';
+    }
+  }
+
   function uuid() {
     if (window.crypto && typeof window.crypto.randomUUID === 'function') {
       return window.crypto.randomUUID();
@@ -346,8 +434,47 @@
     });
   }
 
+  function getUsersCache() {
+    const stored = read(KEYS.users, null);
+    if (Array.isArray(stored)) {
+      return { users: stored, fetchedAt: 0 };
+    }
+    if (stored && Array.isArray(stored.users)) {
+      return { users: stored.users, fetchedAt: Number(stored.fetchedAt) || 0 };
+    }
+    return { users: [], fetchedAt: 0 };
+  }
+
+  function getUsers() {
+    const list = getUsersCache().users;
+    const clean = [];
+    list.forEach(function (name) {
+      const value = String(name).trim();
+      if (value && clean.indexOf(value) === -1) {
+        clean.push(value);
+      }
+    });
+    return clean;
+  }
+
   function renderUsers() {
-    Shared.fillUserSelect($('userSelect'), Shared.getUsers(), String(read(KEYS.selectedUser, '') || ''), 'Select user...');
+    const select = $('userSelect');
+    const previous = select.value || String(read(KEYS.selectedUser, '') || '');
+    const users = getUsers();
+    select.innerHTML = '';
+    const placeholder = document.createElement('option');
+    placeholder.value = '';
+    placeholder.textContent = 'Select user...';
+    select.appendChild(placeholder);
+    users.forEach(function (name) {
+      const option = document.createElement('option');
+      option.value = name;
+      option.textContent = name;
+      select.appendChild(option);
+    });
+    if (users.indexOf(previous) !== -1) {
+      select.value = previous;
+    }
   }
 
   function getActiveMap() {
@@ -410,6 +537,16 @@
     const shift = activeShift();
     if (!shift) {
       showOver2h(false);
+      // No shift running: this is exactly when a blocked Start button
+      // needs a retry. tick() runs every second; maybeLoadDailyStatus()
+      // itself throttles to one attempt per 30s and guards in-flight
+      // requests, so calling it here is safe. Without this, a failed
+      // refresh never retried while idle — refresh() only runs on user
+      // interaction — so Start stayed disabled forever after the first
+      // failed fetch, not just 30s.
+      if (user && !starting && !ending) {
+        maybeLoadDailyStatus(user);
+      }
       return;
     }
 
@@ -421,6 +558,12 @@
 
     if (!ending && !starting) {
       const allowance = getDailyAllowance(user);
+      // Refresh a stale limit in the background so a mid-shift admin edit
+      // is picked up. Do not auto-end on a stale value alone: the auto-end
+      // below still requires a fresh value.
+      if (allowance.stale && getAuth(user)) {
+        maybeLoadDailyStatus(user);
+      }
       const remainingMs = allowance.fresh && allowance.hasLimit
           ? Math.max(0, (allowance.max - allowance.used) * 3600000)
           : Infinity;
@@ -454,12 +597,30 @@
     const onBreak = breakUntil > Date.now();
     const allowance = user
         ? getDailyAllowance(user)
-        : { max: 0, hasLimit: false, used: 0, fresh: false };
-    const dailyReached = allowance.hasLimit && allowance.fresh && allowance.used >= allowance.max;
+        : { max: 0, hasLimit: false, used: 0, fresh: false, stale: false, hasTodayStatus: false };
+    // Block on the cached today value while a background refresh runs, so
+    // the button does not flicker enabled during the fetch. The stale value
+    // cannot deadlock a start: startShift() forces a fresh fetch (below)
+    // and only blocks on a fresh value, and the server re-checks on start.
+    const dailyReached = allowance.hasLimit && allowance.hasTodayStatus && allowance.used >= allowance.max;
+    // Do not let a stale cached limit disable Start when this browser is
+    // not signed in: there is no way to refresh it without signing in,
+    // and Start is the sign-in entry point (it prompts for the password,
+    // then forces a fresh fetch / lets the server decide). A fresh cached
+    // limit still blocks, because it was fetched from the server within
+    // the TTL.
+    const blockStart = dailyReached && (!!getAuth(user) || allowance.fresh);
+    // Kick off a background refresh when the cached value is stale. This is
+    // what makes an admin edit to Daily Max show up without a manual
+    // localStorage clear. maybeLoadDailyStatus() itself guards against
+    // duplicate / too-frequent requests.
+    if (user && allowance.stale && getAuth(user) && !starting && !ending) {
+      maybeLoadDailyStatus(user);
+    }
 
     renderDailySummary(user, allowance);
 
-    $('startBtn').disabled = !user || !!shift || starting || ending || !!authPrompt || onBreak || dailyReached;
+    $('startBtn').disabled = !user || !!shift || starting || ending || !!authPrompt || onBreak || blockStart;
     $('endBtn').disabled = !user || !shift || ending || starting;
     $('activePanel').hidden = !shift;
 
@@ -468,7 +629,7 @@
       if (onBreak) {
         notice.hidden = false;
         notice.textContent = 'Start disabled for a mandatory 5-minute break. It will be enabled at ' + localTime(new Date(breakUntil)) + '.';
-      } else if (dailyReached) {
+      } else if (blockStart) {
         const nextMidnight = new Date();
         nextMidnight.setHours(24, 0, 0, 0);
         notice.hidden = false;
@@ -490,7 +651,7 @@
       if (!usersLoaded) {
         $('userHint').textContent = 'Loading users from the Personnel sheet...';
       } else if (usersLoadError) {
-        $('userHint').textContent = 'Could not load users. ' + (usersLoadErrorMessage || 'Check the endpoint and reload.');
+        $('userHint').textContent = 'Could not load users. Check the endpoint and reload.';
       } else if (users.length === 0) {
         $('userHint').textContent = 'No users with a pw value found in the Personnel sheet.';
       } else {
@@ -500,7 +661,7 @@
     } else if (onBreak) {
       $('userHint').textContent = 'Take a break. Start again after ' + localTime(new Date(breakUntil)) + '.';
       showOver2h(false);
-    } else if (dailyReached) {
+    } else if (blockStart) {
       $('userHint').textContent = dailyBlockMessage(allowance);
       showOver2h(false);
     } else if (authPrompt && authPrompt.user === user) {
@@ -559,7 +720,17 @@
       if (!authFields) {
         return;
       }
-      const allowance = getDailyAllowance(user);
+      // FIX: never block a start on a cached limit. If the user is signed
+      // in, fetch the current limit from the sheet first. This breaks the
+      // old deadlock where a stale `dailyMax: 0` blocked the very request
+      // that would have refreshed it. If the fetch fails (offline / no
+      // auth yet), fresh is false and we let the server decide in
+      // uploadStart(), which re-checks DAILY_MAX against the live sheet.
+      let allowance = getDailyAllowance(user);
+      if (authFields.token) {
+        await loadDailyStatus(user);
+        allowance = getDailyAllowance(user);
+      }
       renderDailySummary(user, allowance);
       if (allowance.hasLimit && allowance.fresh && allowance.used >= allowance.max) {
         showCriticalAlert(
@@ -862,6 +1033,10 @@
     $('dismissBtn').hidden = true;
   }
 
+  function getEndpoint() {
+    return String(DEFAULT_ENDPOINT || '').trim();
+  }
+
   function updateConnectionStatus() {
     const connected = !!getEndpoint();
     const pill = $('connStatus');
@@ -872,6 +1047,58 @@
         : 'The built-in Google Apps Script endpoint is not configured.';
   }
 
+  async function postJson(payload) {
+    const endpoint = getEndpoint();
+    if (!endpoint) {
+      throw new Error('The spreadsheet endpoint is not configured.');
+    }
+    if (navigator.onLine === false) {
+      throw new Error('You appear to be offline.');
+    }
+
+    const controller = new AbortController();
+    const timeout = window.setTimeout(function () { controller.abort(); }, 15000);
+    let response;
+
+    try {
+      response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload),
+        redirect: 'follow',
+        signal: controller.signal
+      });
+    } catch (err) {
+      if (err && err.name === 'AbortError') {
+        throw new Error('The request timed out after 15 seconds.');
+      }
+      throw new Error('Could not reach Google (network or CORS problem).');
+    } finally {
+      window.clearTimeout(timeout);
+    }
+
+    const text = await response.text();
+    let body = null;
+    try {
+      body = JSON.parse(text);
+    } catch (err) {
+      body = null;
+    }
+
+    if (!response.ok) {
+      throw new Error('Google returned HTTP ' + response.status + '.');
+    }
+    if (!body || body.ok !== true) {
+      const error = new Error(body && body.error ? String(body.error) : 'The spreadsheet endpoint returned an unexpected response.');
+      error.code = body && body.code;
+      error.body = body || null;
+      throw error;
+    }
+    return body;
+  }
+
+  // Returns { token } or { password } for the next request, so a single request
+  // can carry the sign-in and the shift itself.
   async function getAuthFields(user) {
     const auth = getAuth(user);
     if (auth) {
@@ -1012,6 +1239,16 @@
     toast('Dismissed');
   }
 
+  function toast(text) {
+    const element = $('toast');
+    element.textContent = text;
+    element.classList.add('sc-show');
+    window.clearTimeout(toastTimer);
+    toastTimer = window.setTimeout(function () {
+      element.classList.remove('sc-show');
+    }, 2200);
+  }
+
   async function copyText(text) {
     try {
       if (navigator.clipboard && window.isSecureContext) {
@@ -1037,33 +1274,118 @@
     toast('Copied to clipboard');
   }
 
+  function jsonpRequest(endpoint, params) {
+    return new Promise(function (resolve, reject) {
+      const query = Object.keys(params || {}).map(function (k) {
+        return encodeURIComponent(k) + '=' + encodeURIComponent(params[k]);
+      }).join('&');
+      const separator = endpoint.indexOf('?') === -1 ? '?' : '&';
+      const cbName = 'dyugangaCb_' + Date.now() + '_' + Math.floor(Math.random() * 100000);
+      let done = false;
+      const script = document.createElement('script');
+      function cleanup() {
+        try { window.clearTimeout(timer); } catch (e) {}
+        try { delete window[cbName]; } catch (e) { try { window[cbName] = undefined; } catch (e2) {} }
+        if (script.parentNode) { script.parentNode.removeChild(script); }
+      }
+      const timer = window.setTimeout(function () {
+        if (done) { return; }
+        done = true;
+        cleanup();
+        reject(new Error('Request timed out after 15 seconds.'));
+      }, 15000);
+      window[cbName] = function (body) {
+        if (done) { return; }
+        done = true;
+        cleanup();
+        resolve(body);
+      };
+      script.onerror = function () {
+        if (done) { return; }
+        done = true;
+        cleanup();
+        reject(new Error('Could not reach Google (script failed to load).'));
+      };
+      script.src = endpoint + separator + query + (query ? '&' : '') + 'callback=' + cbName + '&t=' + Date.now();
+      document.head.appendChild(script);
+    });
+  }
+
   async function loadUsersFromServer() {
     const endpoint = getEndpoint();
     if (!endpoint) {
       usersLoaded = true;
       usersLoadError = true;
-      usersLoadErrorMessage = 'No endpoint configured.';
       usersFetchStarted = false;
       refresh();
       return;
     }
     try {
-      await Shared.loadUsers();
+      const body = await jsonpRequest(endpoint, { action: 'users' });
+      if (!body || body.ok !== true || !Array.isArray(body.users)) {
+        throw new Error(body && body.error ? String(body.error) : 'Unexpected response.');
+      }
+      // Use the shared clean logic: trim and dedupe
+      const clean = [];
+      body.users.forEach(function (name) {
+        const value = String(name).trim();
+        if (value && clean.indexOf(value) === -1) {
+          clean.push(value);
+        }
+      });
+      write(KEYS.users, { users: clean, fetchedAt: Date.now() });
       usersLoaded = true;
       usersLoadError = false;
-      usersLoadErrorMessage = '';
       renderUsers();
       refresh();
     } catch (err) {
       usersLoaded = true;
       usersLoadError = true;
-      usersLoadErrorMessage = (err && err.message) ? String(err.message) : String(err);
       usersFetchStarted = false;
-      try { console.error('[clock] loadUsers failed:', err); } catch (e) {}
       refresh();
     }
   }
 
+  function getAuthMap() {
+    const map = read(KEYS.auth, {});
+    return map && typeof map === 'object' && !Array.isArray(map) ? map : {};
+  }
+
+  function getAuth(user) {
+    const map = getAuthMap();
+    const entry = map[user];
+    if (!entry || !entry.token) {
+      return null;
+    }
+    if (entry.expiresAt && entry.expiresAt <= Date.now() + 60000) {
+      delete map[user];
+      write(KEYS.auth, map);
+      return null;
+    }
+    return entry;
+  }
+
+  function setAuth(user, token, expiresAt) {
+    const map = getAuthMap();
+    map[user] = {
+      token: token,
+      expiresAt: Number(expiresAt) || (Date.now() + 1000 * 60 * 60 * 24 * 30)
+    };
+    write(KEYS.auth, map);
+  }
+
+  function clearAuth(user) {
+    const map = getAuthMap();
+    delete map[user];
+    if (Object.keys(map).length === 0) {
+      remove(KEYS.auth);
+    } else {
+      write(KEYS.auth, map);
+    }
+  }
+
+  // Asks for the password and hands it to the caller, which sends it with the
+  // start/stop request itself. The server returns a session token with that reply.
   function requestPassword(user) {
     return new Promise(function (resolve) {
       authPrompt = { user: user, resolve: resolve };
@@ -1465,7 +1787,7 @@
 
     if (!usersFetchStarted && getEndpoint()) {
       usersFetchStarted = true;
-      const cache = Shared.getUsersCache();
+      const cache = getUsersCache();
       if (cache.users.length && Date.now() - cache.fetchedAt < CACHE_TTL_MS) {
         usersLoaded = true;
         usersLoadError = false;
@@ -1510,6 +1832,19 @@
     document.addEventListener('visibilitychange', function () {
       if (!document.hidden) {
         stopTitleFlash();
+        // The tab may have been in the background when an admin changed
+        // Daily Max. Re-check on return instead of trusting the cache.
+        const currentUser = selectedUser();
+        if (currentUser && getAuth(currentUser)) {
+          maybeLoadDailyStatus(currentUser);
+        }
+      }
+    });
+
+    window.addEventListener('focus', function () {
+      const currentUser = selectedUser();
+      if (currentUser && getAuth(currentUser)) {
+        maybeLoadDailyStatus(currentUser);
       }
     });
 

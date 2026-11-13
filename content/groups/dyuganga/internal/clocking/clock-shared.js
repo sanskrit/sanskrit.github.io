@@ -6,18 +6,127 @@
 (function () {
     'use strict';
 
-    const SHARED_VERSION = '2026-11-13-shared-v1';
-    const DEFAULT_ENDPOINT = window.DYUGANGA_CLOCK_ENDPOINT || 'https://script.google.com/macros/s/AKfycbzw7S2068932Jm3LOABbV-IU4oy43FTi6HuMrYTJmx8qspIJv13biVpFAMXdivSzWuwVA/exec';
-    const KEYS = {
-        users: 'dyuganga_clock_users_v1',
-        active: 'dyuganga_clock_active_v1',
-        selectedUser: 'dyuganga_clock_selected_user_v1',
-        pending: 'dyuganga_clock_pending_v1',
-        auth: 'dyuganga_clock_auth_v1',
-        breakUntil: 'dyuganga_clock_break_v1',
-        daily: 'dyuganga_clock_daily_v1',
-        work: 'dyuganga_clock_work_v1'
+
+
+    // *** The app name. Change this ONE string to rebrand. ***
+
+    // Every storage key, JSONP callback prefix, notification tag and
+
+    // endpoint-override name below is derived from it. No other file
+
+    // may hardcode 'dyuganga' / 'Dyuganga' — consumers read the name
+
+    // from Shared.APP_NAME / Shared.APP_DISPLAY_NAME instead.
+
+    // APP_NAME must stay lowercase, one word, [a-z0-9_-].
+
+    // Branding: read from HTML <div class="sc-brand" id="dyuganga">Dyuganga</div> if present,
+    // without expecting it to be set. Falls back to dyuganga/Dyuganga.
+    function getBrandingFromDom() {
+        try {
+            const el = document.getElementById('dyuganga');
+            if (el) {
+                const text = (el.textContent || el.innerText || '').trim();
+                const idName = (el.id || '').trim().toLowerCase();
+                const validId = /^[a-z0-9_-]+$/.test(idName) ? idName : '';
+                if (text) {
+                    let name = validId;
+                    if (!name) {
+                        name = text.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_-]/g, '') || 'dyuganga';
+                    }
+                    return { name, display: text };
+                }
+                if (validId) {
+                    const display = validId.charAt(0).toUpperCase() + validId.slice(1);
+                    return { name: validId, display };
+                }
+            }
+            const brandEl = document.querySelector('.sc-brand, .cs-brand');
+            if (brandEl) {
+                const text = (brandEl.textContent || brandEl.innerText || '').trim();
+                if (text) {
+                    const name = text.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_-]/g, '') || 'dyuganga';
+                    return { name, display: text };
+                }
+            }
+        } catch (e) {}
+        return { name: 'dyuganga', display: 'Dyuganga' };
+    }
+
+    let _brandingCache = null;
+    let _brandingCachedReady = false;
+    function getBranding() {
+        // If already cached after DOM ready, return it
+        if (_brandingCache && _brandingCachedReady) return _brandingCache;
+        const fromDom = getBrandingFromDom();
+        try {
+            const hasEl = !!document.getElementById('dyuganga') || !!document.querySelector('.sc-brand, .cs-brand');
+            const domReady = document.readyState !== 'loading';
+            if (hasEl || domReady) {
+                _brandingCache = fromDom;
+                _brandingCachedReady = true;
+            }
+            // If DOM not ready and no element yet, don't cache – re-read next time
+        } catch (e) {
+            _brandingCache = fromDom;
+            _brandingCachedReady = true;
+        }
+        return fromDom;
+    }
+
+    // Re-evaluate after DOM is ready to lock in the correct branding
+    try {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() { getBranding(); });
+        }
+    } catch (e) {}
+
+    // Backwards-compatible constants for immediate use, but getters below will be dynamic
+    const _DEFAULT_BRANDING = getBranding();
+    const APP_NAME_FALLBACK = _DEFAULT_BRANDING.name;
+    const APP_DISPLAY_NAME_FALLBACK = _DEFAULT_BRANDING.display;
+    // Keep these for internal use at load time, but Shared properties will be getters
+    const APP_NAME = APP_NAME_FALLBACK;
+    const APP_DISPLAY_NAME = APP_DISPLAY_NAME_FALLBACK;
+    const APP_SHARED_GLOBAL = APP_DISPLAY_NAME + 'Shared'; // 'DyugangaShared'
+    const SHARED_VERSION = '2026-11-13-shared-v2';
+    // DEFAULT_ENDPOINT is now computed dynamically in getEndpoint() – keep a fallback for old code
+    const DEFAULT_ENDPOINT = (function() {
+        try {
+            const b = getBranding();
+            return window[b.name.toUpperCase() + '_CLOCK_ENDPOINT'] || window[APP_NAME.toUpperCase() + '_CLOCK_ENDPOINT'] || 'https://script.google.com/macros/s/AKfycbzw7S2068932Jm3LOABbV-IU4oy43FTi6HuMrYTJmx8qspIJv13biVpFAMXdivSzWuwVA/exec';
+        } catch (e) {
+            return 'https://script.google.com/macros/s/AKfycbzw7S2068932Jm3LOABbV-IU4oy43FTi6HuMrYTJmx8qspIJv13biVpFAMXdivSzWuwVA/exec';
+        }
+    })();
+    // KEYS is now a getter object – see Shared definition below for dynamic version
+    const KEYS_STATIC = {
+        users: APP_NAME + '_clock_users_v1',
+        active: APP_NAME + '_clock_active_v1',
+        selectedUser: APP_NAME + '_clock_selected_user_v1',
+        pending: APP_NAME + '_clock_pending_v1',
+        auth: APP_NAME + '_clock_auth_v1',
+        breakUntil: APP_NAME + '_clock_break_v1',
+        daily: APP_NAME + '_clock_daily_v1',
+        work: APP_NAME + '_clock_work_v1'
     };
+    // For internal helpers that captured KEYS at load time, expose a function to get current keys
+    function getKeys() {
+        const b = getBranding();
+        const n = b.name;
+        return {
+            users: n + '_clock_users_v1',
+            active: n + '_clock_active_v1',
+            selectedUser: n + '_clock_selected_user_v1',
+            pending: n + '_clock_pending_v1',
+            auth: n + '_clock_auth_v1',
+            breakUntil: n + '_clock_break_v1',
+            daily: n + '_clock_daily_v1',
+            work: n + '_clock_work_v1'
+        };
+    }
+    // Keep KEYS for backwards compat but also make it dynamic via getter later
+    const KEYS = KEYS_STATIC;
     const CACHE_TTL_MS = 60 * 60 * 1000;
 
     function $(id) { return document.getElementById(id); }
@@ -48,7 +157,14 @@
     }
 
     function getEndpoint() {
-        return String(DEFAULT_ENDPOINT || '').trim();
+        try {
+            const b = getBranding();
+            const key = b.name.toUpperCase() + '_CLOCK_ENDPOINT';
+            const val = window[key] || window[APP_NAME.toUpperCase() + '_CLOCK_ENDPOINT'] || DEFAULT_ENDPOINT;
+            return String(val || '').trim();
+        } catch (e) {
+            return String(DEFAULT_ENDPOINT || '').trim();
+        }
     }
 
     function getTimezone() {
@@ -69,7 +185,8 @@
                 return encodeURIComponent(k) + '=' + encodeURIComponent(params[k]);
             }).join('&');
             const separator = endpoint.indexOf('?') === -1 ? '?' : '&';
-            const cbName = 'dyugangaCb_' + Date.now() + '_' + Math.floor(Math.random() * 100000);
+            const bName = getBranding().name;
+            const cbName = bName + 'Cb_' + Date.now() + '_' + Math.floor(Math.random() * 100000);
             let done = false;
             const script = document.createElement('script');
             function cleanup() {
@@ -253,7 +370,7 @@
     // --- UI helpers ---
 
     // Toasts differ only by element + show-class. Factory keeps one copy.
-    // Usage: const toast = DyugangaShared.makeToast(function () { return $('toast'); }, 'sc-show');
+    // Usage: const toast = Shared.makeToast(function () { return $('toast'); }, 'sc-show');
     function makeToast(getElement, showClass) {
         let timer = null;
         return function (text) {
@@ -290,9 +407,9 @@
         }
     }
 
-    window.DyugangaShared = {
+    // Build Shared with getters so branding stays in sync with HTML
+    const _sharedBase = {
         VERSION: SHARED_VERSION,
-        KEYS: KEYS,
         CACHE_TTL_MS: CACHE_TTL_MS,
         $: $,
         read: read,
@@ -312,6 +429,34 @@
         clearAuth: clearAuth,
         postJson: postJson,
         makeToast: makeToast,
-        fillUserSelect: fillUserSelect
+        fillUserSelect: fillUserSelect,
+        getBranding: getBranding,
+        getKeys: getKeys
     };
+    // Define dynamic properties for branding
+    Object.defineProperties(_sharedBase, {
+        APP_NAME: { get: function() { return getBranding().name; }, enumerable: true },
+        APP_DISPLAY_NAME: { get: function() { return getBranding().display; }, enumerable: true },
+        KEYS: { get: function() { return getKeys(); }, enumerable: true }
+    });
+    window[APP_SHARED_GLOBAL] = _sharedBase;
+
+    // Stable, brand-independent entry point. Consumers use
+
+    // window.ClockShared so a rebrand never touches them.
+
+    // The brand-specific global above stays for old pages.
+
+    // ClockShared points to the same dynamic object
+    try {
+        window.ClockShared = window[APP_SHARED_GLOBAL] || _sharedBase;
+    } catch (e) { window.ClockShared = _sharedBase; }
+    // Also ensure the brand-specific global stays in sync if branding changes
+    try {
+        const b = getBranding();
+        const dynGlobal = b.display + 'Shared';
+        if (dynGlobal !== APP_SHARED_GLOBAL) {
+            window[dynGlobal] = _sharedBase;
+        }
+    } catch (e) {}
 })();
