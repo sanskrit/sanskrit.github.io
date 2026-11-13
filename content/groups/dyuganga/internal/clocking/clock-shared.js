@@ -1,68 +1,55 @@
 // clock-shared.js — shared helpers for clock + check-shifts.
 // Load this BEFORE clock.js / check-shifts.js:
-//   <script src="/groups/dyuganga/internal/clocking/clock-shared.js?v=20261113-shared"></script>
-//   <script src="/groups/dyuganga/internal/clocking/clock.js?v=20261113-shared"></script>
+//   <script src="/groups/dyuganga/internal/clocking/clock-shared.js"></script>
+//   <script src="/groups/dyuganga/internal/clocking/clock.js"></script>
 // No bundler, no modules — plain <script> tags, same style as the other files.
 (function () {
     'use strict';
 
 
 
-    // *** The app name. Change this ONE string to rebrand. ***
+    // *** App identity lives here. ***
+    // The id and display name below drive every storage key, JSONP
+    // callback prefix, notification tag and message in this file via
+    // getBranding() — consumers read Shared.APP_NAME /
+    // Shared.APP_DISPLAY_NAME instead. Each may be overridden by setting
+    // window.RECORD_APP_ID / window.RECORD_APP_DISPLAY_NAME before load.
+    // The id must stay lowercase, one word, [a-z0-9_-].
 
-    // Every storage key, JSONP callback prefix, notification tag and
-
-    // endpoint-override name below is derived from it. No other file
-
-    // may hardcode 'dyuganga' / 'Dyuganga' — consumers read the name
-
-    // from Shared.APP_NAME / Shared.APP_DISPLAY_NAME instead.
-
-    // APP_NAME must stay lowercase, one word, [a-z0-9_-].
-
-    // Branding: read from HTML <div class="sc-brand" id="brand">Dyuganga</div> if present,
-    // without expecting it to be set. Falls back to dyuganga/Dyuganga.
-    // The id is only a DOM hook; the app name is derived from the displayed
-    // text, so editing the text rebrands the app without touching the JS.
-    function getBrandingFromDom() {
+    // Branding is defined here, each value overridable via the
+    // same-named window.RECORD_* global set before load.
+    const RECORD_APP_ID = 'dyuganga';
+    const RECORD_APP_DISPLAY_NAME = 'Dyuganga';
+    function getBranding() {
+        let name = RECORD_APP_ID;
+        let display = RECORD_APP_DISPLAY_NAME;
         try {
-            const el = document.getElementById('brand') || document.querySelector('.sc-brand, .cs-brand');
-            if (el) {
-                const text = (el.textContent || el.innerText || '').trim();
-                if (text) {
-                    const name = text.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_-]/g, '') || 'dyuganga';
-                    return { name, display: text };
-                }
+            const id = String(window.RECORD_APP_ID || RECORD_APP_ID).trim().toLowerCase()
+                .replace(/\s+/g, '_').replace(/[^a-z0-9_-]/g, '');
+            if (id) {
+                name = id;
+            }
+            const disp = String(window.RECORD_APP_DISPLAY_NAME || RECORD_APP_DISPLAY_NAME).trim();
+            if (disp) {
+                display = disp;
             }
         } catch (e) {}
-        return { name: 'dyuganga', display: 'Dyuganga' };
+        return { name: name, display: display };
     }
 
-    let _brandingCache = null;
-    let _brandingCachedReady = false;
-    function getBranding() {
-        // If already cached after DOM ready, return it
-        if (_brandingCache && _brandingCachedReady) return _brandingCache;
-        const fromDom = getBrandingFromDom();
+    // Show the configured display name in the page brand element, if any.
+    function syncBrandElement() {
         try {
-            const hasEl = !!document.getElementById('brand') || !!document.querySelector('.sc-brand, .cs-brand');
-            const domReady = document.readyState !== 'loading';
-            if (hasEl || domReady) {
-                _brandingCache = fromDom;
-                _brandingCachedReady = true;
+            const el = document.getElementById('brand');
+            if (el) {
+                el.textContent = getBranding().display;
             }
-            // If DOM not ready and no element yet, don't cache – re-read next time
-        } catch (e) {
-            _brandingCache = fromDom;
-            _brandingCachedReady = true;
-        }
-        return fromDom;
+        } catch (e) {}
     }
-
-    // Re-evaluate after DOM is ready to lock in the correct branding
+    syncBrandElement();
     try {
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', function() { getBranding(); });
+            document.addEventListener('DOMContentLoaded', function() { syncBrandElement(); });
         }
     } catch (e) {}
 
@@ -74,7 +61,6 @@
     const APP_NAME = APP_NAME_FALLBACK;
     const APP_DISPLAY_NAME = APP_DISPLAY_NAME_FALLBACK;
     const APP_SHARED_GLOBAL = APP_DISPLAY_NAME + 'Shared'; // 'DyugangaShared'
-    const SHARED_VERSION = '2026-11-13-shared-v2';
     // Overridable via window.RECORD_SERVER_ENDPOINT (set before load).
     const DEFAULT_ENDPOINT = (function() {
         try {
@@ -390,7 +376,6 @@
 
     // Build Shared with getters so branding stays in sync with HTML
     const _sharedBase = {
-        VERSION: SHARED_VERSION,
         CACHE_TTL_MS: CACHE_TTL_MS,
         $: $,
         read: read,

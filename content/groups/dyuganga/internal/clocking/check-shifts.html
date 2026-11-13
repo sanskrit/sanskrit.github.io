@@ -82,17 +82,16 @@ title = "Check shifts"
 </div>
 
 <script>
-  // For local development, set your Apps Script deployment URL here:
-  window.RECORD_SERVER_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzw7S2068932Jm3LOABbV-IU4oy43FTi6HuMrYTJmx8qspIJv13biVpFAMXdivSzWuwVA/exec';
-</script>
-<script>
     (function () {
-        var V = '20261113-shared';
+        // Fresh JS/CSS on every page load: a per-load stamp makes each URL
+        // unique, so the browser never serves a stale cached copy. No manual
+        // version to bump.
+        var LOAD_STAMP = Date.now();
         function loadOne(urls, onDone) {
             var i = 0;
             function next() {
                 if (i >= urls.length) { onDone(new Error('Failed to load ' + urls[0])); return; }
-                var src = urls[i++] + '?v=' + V;
+                var src = urls[i++] + '?t=' + LOAD_STAMP;
                 var s = document.createElement('script');
                 s.src = src;
                 s.async = false;
@@ -109,7 +108,7 @@ title = "Check shifts"
             var i = 0;
             function next() {
                 if (i >= urls.length) { onDone(new Error('Failed to load ' + urls[0])); return; }
-                var href = urls[i++] + '?v=' + V;
+                var href = urls[i++] + '?t=' + LOAD_STAMP;
                 var l = document.createElement('link');
                 l.rel = 'stylesheet';
                 l.href = href;

@@ -1,80 +1,12 @@
 (function () {
   'use strict';
 
-  // Branding from HTML <div class="sc-brand" id="brand">Dyuganga</div> – without expecting it to be set.
-  // The id is only a DOM hook; the app name is derived from the displayed
-  // text, so editing the text rebrands the app (storage keys, endpoint
-  // override, notification tag) without touching the JS.
-  function getBrandingFromDom() {
-    try {
-      const el = document.getElementById('brand') || document.querySelector('.sc-brand, .cs-brand');
-      if (el) {
-        const text = (el.textContent || el.innerText || '').trim();
-        if (text) {
-          const name = text.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_-]/g, '') || 'dyuganga';
-          return { name, display: text };
-        }
-      }
-    } catch (e) {}
-    return { name: 'dyuganga', display: 'Dyuganga' };
-  }
-  let _brandingCache = null;
-  let _brandingCachedReady = false;
-  function getBranding() {
-    if (_brandingCache && _brandingCachedReady) return _brandingCache;
-    const fromDom = getBrandingFromDom();
-    try {
-      const hasEl = !!document.getElementById('brand') || !!document.querySelector('.sc-brand, .cs-brand');
-      const domReady = document.readyState !== 'loading';
-      if (hasEl || domReady) {
-        _brandingCache = fromDom;
-        _brandingCachedReady = true;
-      }
-    } catch (e) {
-      _brandingCache = fromDom;
-      _brandingCachedReady = true;
-    }
-    return fromDom;
-  }
-  try {
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function() { getBranding(); });
-    }
-  } catch (e) {}
-  function getKeys() {
-    const n = getBranding().name;
-    return {
-      users: n + '_clock_users_v1',
-      active: n + '_clock_active_v1',
-      selectedUser: n + '_clock_selected_user_v1',
-      pending: n + '_clock_pending_v1',
-      auth: n + '_clock_auth_v1',
-      breakUntil: n + '_clock_break_v1',
-      daily: n + '_clock_daily_v1',
-      work: n + '_clock_work_v1'
-    };
-  }
-  const KEYS_STATIC = {
-    users: 'dyuganga_clock_users_v1',
-    active: 'dyuganga_clock_active_v1',
-    selectedUser: 'dyuganga_clock_selected_user_v1',
-    pending: 'dyuganga_clock_pending_v1',
-    auth: 'dyuganga_clock_auth_v1',
-    breakUntil: 'dyuganga_clock_break_v1',
-    daily: 'dyuganga_clock_daily_v1',
-    work: 'dyuganga_clock_work_v1'
-  };
-  const KEYS = new Proxy(KEYS_STATIC, {
-    get: function(target, prop) {
-      try {
-        const cur = getKeys()[prop];
-        return cur || target[prop];
-      } catch (e) {
-        return target[prop];
-      }
-    }
-  });
-  const CLIENT_VERSION = '2026-11-13-jsonp-v1';
+  // clock-shared.js always loads first (each page loader fetches its
+  // page script only after shared succeeds), so branding and storage keys
+  // come straight from it — clock.js keeps no local copies.
+  const Shared = window.ClockShared;
+  if (!Shared) { throw new Error('Shared helpers not loaded. Load clock-shared.js before clock.js.'); }
+  const KEYS = Shared.KEYS;
   const TWO_HOURS = 2 * 60 * 60 * 1000;
   const HOURLY_MS = 60 * 60 * 1000;
   const BREAK_MS = 5 * 60 * 1000;
@@ -733,10 +665,6 @@
           clearActiveShift(user);
           applyResponseMeta(user, err.body);
           showCriticalAlert('Shift not started', err.message || 'A row with this start time already exists.');
-        } else if (err && err.code === 'VERSION_MISMATCH') {
-          clearActiveShift(user);
-          showCriticalAlert('Update required', 'A new version of the shift clock is available. The page will reload.');
-          window.setTimeout(function () { window.location.reload(); }, 1500);
         } else if (err && err.body) {
           applyResponseMeta(user, err.body);
         }
@@ -877,7 +805,7 @@
   function emailText(records) {
     const list = Array.isArray(records) ? records : [records];
     const lines = [
-      'Subject: ' + getBranding().display + ' shift record' + (list.length === 1 ? '' : 's'),
+      'Subject: ' + Shared.getBranding().display + ' shift record' + (list.length === 1 ? '' : 's'),
       '',
       'Please add the following row' + (list.length === 1 ? '' : 's') + ' to the shift sheet:',
       tsvHeader()
@@ -1098,8 +1026,7 @@
     }
     try {
       const body = await postJson(Object.assign({}, startRecord(shift), fields, {
-        action: 'start',
-        clientVersion: CLIENT_VERSION
+        action: 'start'
       }));
       applyResponseMeta(shift.user, body);
       return body;
@@ -1241,7 +1168,7 @@
         return encodeURIComponent(k) + '=' + encodeURIComponent(params[k]);
       }).join('&');
       const separator = endpoint.indexOf('?') === -1 ? '?' : '&';
-      const bName = getBranding().name;
+      const bName = Shared.getBranding().name;
       const cbName = bName + 'Cb_' + Date.now() + '_' + Math.floor(Math.random() * 100000);
       let done = false;
       const script = document.createElement('script');
@@ -1471,9 +1398,9 @@
       currentNotification = null;
     }
     try {
-      currentNotification = new Notification(getBranding().display + ': ' + title, {
+      currentNotification = new Notification(Shared.getBranding().display + ': ' + title, {
         body: message,
-        tag: getBranding().name + '-shift-alert',
+        tag: Shared.getBranding().name + '-shift-alert',
         renotify: true,
         requireInteraction: true,
         silent: true

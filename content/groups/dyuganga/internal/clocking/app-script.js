@@ -3,7 +3,6 @@ const PERSONNEL_SHEET = 'Personnel';
 const SHIFTS_SHEET = 'Shifts';
 const SHIFT_HEADERS = ['Recorded at', 'User', 'Start', 'End', 'Hours', 'Notes', 'Timezone', 'Shift ID', 'Pending'];
 const TOKEN_TTL_MS = 1000 * 60 * 60 * 24 * 180;
-const SCRIPT_VERSION = '2026-11-13-jsonp-v1';
 const MAX_FAILURES = 8;
 const FAILURE_WINDOW_SECONDS = 600;
 const NO_SHIFT_TODAY = "You can't start any shift today. Contact admin for details.";
@@ -30,8 +29,7 @@ function doGet(e) {
   }
   return jsonpOrJson(e, {
     ok: true,
-    message: 'Dyuganga shift clock endpoint is live.',
-    version: SCRIPT_VERSION
+    message: 'Dyuganga shift clock endpoint is live.'
   });
 }
 
@@ -143,12 +141,6 @@ function startShiftRow(data) {
   if (!data.start || !data.id) {
     return json({ ok: false, error: 'Missing required shift fields.' });
   }
-  // Check client version
-  const clientVersion = String(data.clientVersion || '').trim();
-  if (clientVersion && clientVersion !== SCRIPT_VERSION) {
-    return json({ ok: false, code: 'VERSION_MISMATCH', error: 'Client version outdated. Please reload.' });
-  }
-
   const spreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID);
   const sheet = getShiftsSheet(spreadsheet);
   const lock = LockService.getScriptLock();
@@ -474,7 +466,7 @@ function getDailyStatus(data) {
   const sheet = getShiftsSheet(spreadsheet);
   ensureShiftHeaders(sheet);
   return json(Object.assign(
-      { ok: true, version: SCRIPT_VERSION, user: auth.u },
+      { ok: true, user: auth.u },
       dailyStatusFor(sheet, spreadsheet, auth.u)
   ));
 }
