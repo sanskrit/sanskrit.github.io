@@ -45,13 +45,13 @@ Addition requests on the Check shifts page are limited to 1 hour. A request is a
 
 ## Daily maximum and breaks
 
-The Personnel sheet may have a column whose header contains `Daily Max` or `Max hours` (matched case-insensitively). Its value is in hours. The limit is enforced only when a shift is started: pressing Start fetches the current total first and refuses with an alert once the user's recorded hours for today plus any local pending shifts reach that value, and the Apps Script re-checks against the live sheet. `Pending = Add` rows are counted toward the daily limit; `Pending = Delete` rows are not counted. Nothing is checked while a shift runs — a shift that crosses the limit keeps running (to save Apps Script quota there is no mid-shift polling or auto-end) and the next Start is refused instead.
+The Personnel sheet may have a column whose header contains `Daily Max` or `Max hours` (matched case-insensitively). Its value is in hours. The limit is enforced only when a shift is started: pressing Try shift start sends one `start` request, and the Apps Script refuses it with an alert when that day's maximum is reached. The browser never blocks the button on the limit — the cached total is shown for information only. `Pending = Add` rows are counted toward the daily limit; `Pending = Delete` rows are not counted. Nothing is checked while a shift runs — a shift that crosses the limit keeps running (to save Apps Script quota there is no mid-shift polling or auto-end) and the next Start is refused instead.
 
-An **empty** `Daily Max` cell means no daily limit. An explicit **`0`** means the user cannot start any shift that day: the Start button stays disabled, the clock shows `You can't start any shift today. Contact admin for details.`, and the Apps Script refuses the start even if the browser has no cached limit.
+An **empty** `Daily Max` cell means no daily limit. An explicit **`0`** means the user cannot start any shift that day: the Try shift start button stays enabled (the browser does not enforce), and pressing it shows the server's refusal `You can't start any shift today. Contact admin for details.`.
 
-The daily total comes back with the start and stop responses, so it is refreshed exactly when a shift starts or ends. A separate `dailyStatus` request is also made when this browser has no total for today yet (for example, the first time the page is opened on a new day), while idle when the cached value blocks Start (at most once per 30s), and whenever Check again is pressed. Nothing is requested while a shift runs. The hint and the refusal alert show the breakdown, for example `7h approved + 0.5h pending approval + 0.5h waiting to upload`. A pending upload whose `Shift ID` already appears in the sheet is not counted twice. If the refresh fails, the clock does not block on an old cached total; it allows the start and checks again when the endpoint is reachable.
+The daily total comes back with the start and stop responses, and only there — the page makes no separate `dailyStatus` request at all. The hint and the refusal alert show the breakdown, for example `7h approved + 0.5h pending approval + 0.5h waiting to upload`. A pending upload whose `Shift ID` already appears in the sheet is not counted twice.
 
-For a selected user whose daily maximum is known, the clock shows a line below the clock time with the daily maximum and the hours used today (with the same breakdown). It turns orange when the maximum is reached. The line refreshes with the daily total: on page load, when a user is selected, when a shift starts or ends, while idle when blocked, and when Check again is pressed.
+For a selected user whose daily maximum is known, the clock shows a line below the clock time with the daily maximum and the hours used today (with the same breakdown). It turns orange when the maximum is reached. The line refreshes with the daily total whenever a shift starts or ends. Between those moments it may be outdated, which the line says.
 
 A cumulative hour of work since the last break ends the current shift automatically and sets a 5-minute break. The cumulative total is kept per user across manual stops and restarts. Stopping for at least 5 minutes counts as the break and resets the total; restarting sooner continues it. When the cumulative hour is reached, the current shift is force-stopped at that point (or immediately on a manual end if the threshold is reached). The alert is:
 
@@ -69,12 +69,13 @@ The start row requires the `start` action and the daily total is returned with `
 
 The Apps Script free quota is limited, so the clock keeps requests to a minimum:
 
-- **Start shift**: exactly one request (`action: start`). It signs in with the password if this browser has no session yet, refuses the start when the daily maximum is reached, creates the row, and returns the refreshed daily total and a session token.
+- **Try shift start**: exactly one request (`action: start`). It signs in with the password if this browser has no session yet, refuses the start when the daily maximum is reached, creates the row, and returns the refreshed daily total and a session token.
 - **End shift**: exactly one request (`action: shift`). It completes the row and returns the refreshed daily total and a session token.
-- **Page load**: at most one `dailyStatus` request, and only when this browser has no total for today. The user list is cached for one hour.
-- There is no polling, no per-minute refresh, and no request on tab focus.
+- **Page load**: exactly one request, repopulating the user dropdown (the cached list stays as fallback if it fails). No daily-limit check happens on load.
+- There is no other communication: no polling, no per-minute refresh, no request on tab focus, tab return, or user change, and no test request. The Retry upload button re-sends queued shifts when pressed.
+- **Retry upload**: one request per queued shift (`action: shift`), only when pressed.
 
-If the endpoint is not reachable, the clock still runs; the start row is created when the shift ends and the shift is queued for retry as before.
+If the endpoint is not reachable, the clock still runs; the start row is created when the shift ends and the shift is queued for Retry upload, with its rows also shown for copy-paste.
 
 ## Deploying the Apps Script endpoint
 

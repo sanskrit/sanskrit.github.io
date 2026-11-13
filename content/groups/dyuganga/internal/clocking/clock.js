@@ -112,11 +112,6 @@
   let titleFlashOn = false;
   let testBreakTimer = null;
   let testCountdownTimer = null;
-  // Daily-status refresh guard: prevents overlapping dailyStatus requests
-  // and stops a failed refresh from retrying every tick.
-  let dailyStatusInFlight = null;
-  let dailyStatusLastAttemptByUser = {};
-  const DAILY_STATUS_RETRY_MS = 30 * 1000;
 
   function read(key, fallback) {
     try {
@@ -295,9 +290,7 @@
       pendingApproval: pendingApproval,
       pendingUpload: pendingUpload,
       // fresh = fetched within CACHE_TTL_MS. stale = a today value that is
-      // too old to trust on its own; callers must trigger a background
-      // refresh (maybeLoadDailyStatus) or a forced refresh (startShift)
-      // instead of treating it as current.
+      // shown as outdated; it refreshes with the next start/stop response.
       fresh: fresh,
       stale: !fresh,
       hasTodayStatus: true
@@ -335,9 +328,8 @@
       return;
     }
     const hasLimit = !!user && allowance.hasLimit;
-    // Display only: keep showing the cached today value as reached while a
-    // background refresh runs, so the line does not flicker. startShift()
-    // is the gate that must use a fresh value, so this cannot deadlock a start.
+    // Display only: the cached today value, refreshed by start/stop
+    // responses. It never gates Start; only the server refuses a start.
     const reached = hasLimit && !!allowance.hasTodayStatus && allowance.used >= allowance.max;
     dailySummary.hidden = !hasLimit;
     dailySummary.classList.toggle('sc-daily-reached', reached);
@@ -346,9 +338,9 @@
     }
     $('dailyMaxValue').textContent = formatHours(allowance.max);
     $('dailyUsedValue').textContent = !allowance.hasTodayStatus
-        ? 'checking...'
+        ? 'will update on start/stop'
         : formatHours(allowance.used) + (allowance.used > 0 ? ' (' + dailyUsageText(allowance) + ')' : '') +
-        (allowance.stale ? ' (checking...)' : '');
+        (allowance.stale ? ' (outdated)' : '');
   }
 
   function getWorkMap() {
@@ -404,89 +396,11 @@
     return status;
   }
 
-  async function loadDailyStatus(user) {
-    const auth = getAuth(user);
-    if (!auth) {
-      return getCachedDailyStatus(user);
-    }
-    try {
-      const body = await postJson({ action: 'dailyStatus', token: auth.token });
-      return applyDailyStatus(user, body);
-    } catch (err) {
-      return getCachedDailyStatus(user);
-    }
-  }
-
-  // The start and stop responses already carry the daily total, so a separate
-  // request is only made when this browser has no recent status for today.
-  // BUG FIX: the old guard was `date === today || fresh`, so ANY status dated
-  // today skipped the refresh for the whole day, even hours after an admin
-  // changed Daily Max. It must be AND: skip only when the status is both for
-  // today and fetched within CACHE_TTL_MS.
-  function maybeLoadDailyStatus(user) {
-    if (!user || !getAuth(user)) {
-      return;
-    }
-    // A cached value that blocks Start is never treated as fresh: the
-    // user cannot work until the server says otherwise, so keep
-    // re-checking on the 30s throttle below. A non-blocking value uses
-    // the 1h TTL, so a successful fetch is not repeated every 30s for a
-    // user who can start. Without this, a successful fetch that
-    // returned dailyMax 0 (admin had not fixed the sheet yet) blocked
-    // Start for the full 1h TTL even after the admin fixed it.
-    const allowance = getDailyAllowance(user);
-    const blocked = allowance.hasLimit && allowance.hasTodayStatus && allowance.used >= allowance.max;
-    if (!blocked && isDailyStatusFresh(getCachedDailyStatus(user))) {
-      return;
-    }
-    if (dailyStatusInFlight && dailyStatusInFlight.user === user) {
-      return;
-    }
-    // A failed refresh leaves fetchedAt stale, so without this throttle a
-    // caller running on every tick / refresh would retry every second
-    // while offline. startShift() bypasses this throttle with a direct
-    // loadDailyStatus() call, so a user action is never throttled.
-    if (Date.now() - Number(dailyStatusLastAttemptByUser[user] || 0) < DAILY_STATUS_RETRY_MS) {
-      return;
-    }
-    refreshDailyStatusNow(user);
-  }
-
-  // Launches one dailyStatus request with the inflight guard, shared by the
-  // throttled background path (maybeLoadDailyStatus) and the manual retry
-  // button (retryDailyStatus). The trailing refresh() after clearing the
-  // inflight flag is what re-enables the retry button.
-  function refreshDailyStatusNow(user) {
-    dailyStatusLastAttemptByUser[user] = Date.now();
-    const promise = loadDailyStatus(user).then(function () {
-      refresh();
-    });
-    dailyStatusInFlight = { user: user, promise: promise };
-    refresh();
-    promise.then(function () {
-      if (dailyStatusInFlight && dailyStatusInFlight.promise === promise) {
-        dailyStatusInFlight = null;
-      }
-      refresh();
-    });
-  }
-
-  // Manual retry for a Start button blocked by the daily limit. The
-  // background refresh is throttled to one attempt per 30s, so without this
-  // the user can only wait. A user action is never throttled: this bypasses
-  // DAILY_STATUS_RETRY_MS. The only guard is the inflight request — while
-  // one runs for this user the click is a no-op and the button stays
-  // disabled until it settles.
-  function retryDailyStatus() {
-    const user = selectedUser();
-    if (!user || !getAuth(user)) {
-      return;
-    }
-    if (dailyStatusInFlight && dailyStatusInFlight.user === user) {
-      return;
-    }
-    refreshDailyStatusNow(user);
-  }
+  // NOTE: there is deliberately no standalone dailyStatus fetch on this
+  // page. Server communication happens only on Start/End presses (whose
+  // responses carry fresh daily totals), the users-list load, and the
+  // manual Retry upload button. The cached total is display-only; only
+  // the server refuses a start.
 
   function pad(value) {
     return String(value).padStart(2, '0');
@@ -637,16 +551,7 @@
     const shift = activeShift();
     if (!shift) {
       showOver2h(false);
-      // No shift running: this is exactly when a blocked Start button
-      // needs a retry. tick() runs every second; maybeLoadDailyStatus()
-      // itself throttles to one attempt per 30s and guards in-flight
-      // requests, so calling it here is safe. Without this, a failed
-      // refresh never retried while idle — refresh() only runs on user
-      // interaction — so Start stayed disabled forever after the first
-      // failed fetch, not just 30s.
-      if (user && !starting && !ending) {
-        maybeLoadDailyStatus(user);
-      }
+      // No requests here: idle ticks never touch the server (quota).
       return;
     }
 
@@ -690,57 +595,23 @@
     const allowance = user
         ? getDailyAllowance(user)
         : { max: 0, hasLimit: false, used: 0, fresh: false, stale: false, hasTodayStatus: false };
-    // Block on the cached today value while a background refresh runs, so
-    // the button does not flicker enabled during the fetch. The stale value
-    // cannot deadlock a start: startShift() forces a fresh fetch (below)
-    // and only blocks on a fresh value, and the server re-checks on start.
+    // Info only: the cached daily total is shown (summary line + hint) but
+    // never disables Start. Only the server refuses a start, when the
+    // Try shift start button is pressed. No refresh is kicked off here:
+    // totals arrive with start/stop responses.
     const dailyReached = allowance.hasLimit && allowance.hasTodayStatus && allowance.used >= allowance.max;
-    // Do not let a stale cached limit disable Start when this browser is
-    // not signed in: there is no way to refresh it without signing in,
-    // and Start is the sign-in entry point (it prompts for the password,
-    // then forces a fresh fetch / lets the server decide). A fresh cached
-    // limit still blocks, because it was fetched from the server within
-    // the TTL.
-    const blockStart = dailyReached && (!!getAuth(user) || allowance.fresh);
-    // Kick off a background refresh when the cached value is stale. This is
-    // what makes an admin edit to Daily Max show up without a manual
-    // localStorage clear. maybeLoadDailyStatus() itself guards against
-    // duplicate / too-frequent requests.
-    if (user && allowance.stale && getAuth(user) && !starting && !ending) {
-      maybeLoadDailyStatus(user);
-    }
 
     renderDailySummary(user, allowance);
 
-    $('startBtn').disabled = !user || !!shift || starting || ending || !!authPrompt || onBreak || blockStart;
+    $('startBtn').disabled = !user || !!shift || starting || ending || !!authPrompt || onBreak;
     $('endBtn').disabled = !user || !shift || ending || starting;
     $('activePanel').hidden = !shift;
-
-    // Manual retry next to the disabled Start button. Shown only while the
-    // daily limit blocks Start for a signed-in user (dailyStatus needs a
-    // session token, so there is nothing to retry without one). Enabled
-    // unless a request for this user is already inflight.
-    const retryBtn = $('checkAgainBtn');
-    if (retryBtn) {
-      const inflightForUser = !!(user && dailyStatusInFlight && dailyStatusInFlight.user === user);
-      const showRetry = !!user && !shift && !starting && !ending && !authPrompt && !onBreak && blockStart && !!getAuth(user);
-      retryBtn.hidden = !showRetry;
-      retryBtn.disabled = !showRetry || inflightForUser;
-      retryBtn.textContent = inflightForUser && showRetry ? 'Checking...' : 'Check again';
-    }
 
     const notice = $('startNotice');
     if (notice) {
       if (onBreak) {
         notice.hidden = false;
         notice.textContent = 'Start disabled for a mandatory 5-minute break. It will be enabled at ' + localTime(new Date(breakUntil)) + '.';
-      } else if (blockStart) {
-        const nextMidnight = new Date();
-        nextMidnight.setHours(24, 0, 0, 0);
-        notice.hidden = false;
-        notice.textContent = allowance.max <= 0
-            ? NO_SHIFT_TODAY
-            : 'Start disabled: daily maximum of ' + allowance.max + ' hours reached (' + dailyUsageText(allowance) + '). It will be enabled after midnight at ' + localTime(nextMidnight) + '.';
       } else {
         notice.hidden = true;
         notice.textContent = '';
@@ -766,8 +637,9 @@
     } else if (onBreak) {
       $('userHint').textContent = 'Take a break. Start again after ' + localTime(new Date(breakUntil)) + '.';
       showOver2h(false);
-    } else if (blockStart) {
-      $('userHint').textContent = dailyBlockMessage(allowance);
+    } else if (dailyReached) {
+      // Info only: Start stays enabled; the server decides on press.
+      $('userHint').textContent = dailyBlockMessage(allowance) + ' The server decides when you press Try shift start.';
       showOver2h(false);
     } else if (authPrompt && authPrompt.user === user) {
       $('userHint').textContent = 'Sign in to start the shift.';
@@ -779,7 +651,7 @@
           : '';
       const usedText = allowance.max > 0
           ? ' Daily max ' + allowance.max + 'h, used ' + (Math.round(allowance.used * 100) / 100) + 'h' +
-          (allowance.fresh ? ' (' + dailyUsageText(allowance) + ')' : ' (checking current total...)') + '.'
+          (allowance.fresh ? ' (' + dailyUsageText(allowance) + ')' : ' (total may be outdated)') + '.'
           : '';
       $('userHint').textContent = 'Signed in on this browser. Ready to start.' + workText + usedText;
       showOver2h(false);
@@ -825,25 +697,9 @@
       if (!authFields) {
         return;
       }
-      // FIX: never block a start on a cached limit. If the user is signed
-      // in, fetch the current limit from the sheet first. This breaks the
-      // old deadlock where a stale `dailyMax: 0` blocked the very request
-      // that would have refreshed it. If the fetch fails (offline / no
-      // auth yet), fresh is false and we let the server decide in
-      // uploadStart(), which re-checks DAILY_MAX against the live sheet.
-      let allowance = getDailyAllowance(user);
-      if (authFields.token) {
-        await loadDailyStatus(user);
-        allowance = getDailyAllowance(user);
-      }
-      renderDailySummary(user, allowance);
-      if (allowance.hasLimit && allowance.fresh && allowance.used >= allowance.max) {
-        showCriticalAlert(
-            allowance.max <= 0 ? 'Cannot start shift' : 'Daily limit reached',
-            dailyBlockMessage(allowance)
-        );
-        return;
-      }
+      // No client-side limit check and no prefetch: one Start press costs
+      // exactly one request, and the server verdict (DAILY_MAX or ok) in
+      // uploadStart() below is the only enforcement.
       const now = new Date();
       const shift = {
         id: uuid(),
@@ -1274,6 +1130,8 @@
     }
   }
 
+  // Manual re-send of queued failed uploads. The only server contact on
+  // this page besides Start/End presses and the users-list load.
   async function retryPending() {
     const list = getPendingList();
     if (!list.length) {
@@ -1798,40 +1656,6 @@
     }, 30000);
   }
 
-  // Previews what pressing Start right now would do about the daily
-  // limit (same alert Start shows when refused). There is no mid-shift
-  // auto-end anymore, so this no longer simulates one.
-  async function testDailyLimit() {
-    ensureAudio();
-    ensureNotificationPermission();
-    const user = selectedUser();
-    if (!user) {
-      setTestMessage('Choose a user first.');
-      return;
-    }
-    if (activeShift()) {
-      setTestMessage('End the active shift before testing.');
-      return;
-    }
-    await loadDailyStatus(user);
-    const allowance = getDailyAllowance(user);
-    if (!allowance.hasLimit) {
-      setTestMessage('No daily maximum found for this user. Check the Personnel sheet and sign in.');
-      return;
-    }
-    if (!allowance.fresh) {
-      setTestMessage('Could not refresh the daily limit. Sign in and check the endpoint.');
-      return;
-    }
-    const usedText = Math.round(allowance.used * 100) / 100;
-    if (allowance.used >= allowance.max) {
-      showCriticalAlert('Test: daily limit', dailyBlockMessage(allowance) + ' Test only; Start was not pressed.');
-      setTestMessage('Start would be refused: ' + usedText + ' of ' + allowance.max + ' h used. Start was not pressed.');
-    } else {
-      setTestMessage('Start would be allowed: ' + usedText + ' of ' + allowance.max + ' h used (' + dailyUsageText(allowance) + ').');
-    }
-  }
-
   function resetTest() {
     const user = selectedUser();
     if (user) {
@@ -1878,21 +1702,12 @@
       renderPendingError(pending, pending[pending.length - 1].error || 'This shift has not been uploaded yet.');
     }
 
-    const currentUser = selectedUser();
-    if (currentUser && getAuth(currentUser)) {
-      maybeLoadDailyStatus(currentUser);
-    }
-
+    // No daily-limit fetch on load: totals arrive with start/stop
+    // responses. The users dropdown IS repopulated on every page load;
+    // on failure the cached list stays in place (see loadUsersFromServer).
     if (!usersFetchStarted && getEndpoint()) {
       usersFetchStarted = true;
-      const cache = getUsersCache();
-      if (cache.users.length && Date.now() - cache.fetchedAt < CACHE_TTL_MS) {
-        usersLoaded = true;
-        usersLoadError = false;
-        refresh();
-      } else {
-        loadUsersFromServer();
-      }
+      loadUsersFromServer();
     }
 
     if (!timerStarted) {
@@ -1909,10 +1724,6 @@
         }
         write(KEYS.selectedUser, event.target.value);
         refresh();
-        const selected = event.target.value;
-        if (selected && getAuth(selected)) {
-          maybeLoadDailyStatus(selected);
-        }
       }
     });
 
@@ -1930,19 +1741,6 @@
     document.addEventListener('visibilitychange', function () {
       if (!document.hidden) {
         stopTitleFlash();
-        // The tab may have been in the background when an admin changed
-        // Daily Max. Re-check on return instead of trusting the cache.
-        const currentUser = selectedUser();
-        if (currentUser && getAuth(currentUser)) {
-          maybeLoadDailyStatus(currentUser);
-        }
-      }
-    });
-
-    window.addEventListener('focus', function () {
-      const currentUser = selectedUser();
-      if (currentUser && getAuth(currentUser)) {
-        maybeLoadDailyStatus(currentUser);
       }
     });
 
@@ -1958,7 +1756,6 @@
       const actions = {
         startBtn: startShift,
         endBtn: endShift,
-        checkAgainBtn: retryDailyStatus,
         copyRowBtn: function () {
           const records = recordsForCopy();
           if (records.length) {
@@ -1983,7 +1780,6 @@
         cancelAuthBtn: cancelAuth,
         testBreakBtn: testHourlyBreak,
         testBreakAfter30Btn: scheduleTestHourlyBreak,
-        testDailyBtn: testDailyLimit,
         testResetBtn: resetTest,
         criticalAlertDismiss: dismissCriticalAlert
       };
