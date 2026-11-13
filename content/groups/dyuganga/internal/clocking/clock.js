@@ -657,20 +657,12 @@
     $('cumulativeWork').textContent = formatDuration(work.workMs + elapsed);
 
     if (!ending && !starting) {
-      const allowance = getDailyAllowance(user);
-      // Refresh a stale limit in the background so a mid-shift admin edit
-      // is picked up. Do not auto-end on a stale value alone: the auto-end
-      // below still requires a fresh value.
-      if (allowance.stale && getAuth(user)) {
-        maybeLoadDailyStatus(user);
-      }
-      const remainingMs = allowance.fresh && allowance.hasLimit
-          ? Math.max(0, (allowance.max - allowance.used) * 3600000)
-          : Infinity;
-      if (allowance.fresh && allowance.hasLimit && elapsed >= remainingMs) {
-        autoEndShift(user, shift, 'daily-max', allowance.max, new Date(startMs + remainingMs));
-        return;
-      }
+      // Deliberately no daily-limit check while a shift runs: the limit is
+      // enforced at Start (fresh fetch plus a server re-check), and polling
+      // the sheet from every tick would burn the free Apps Script quota. A
+      // shift that crosses the limit keeps running; the next Start is
+      // refused instead. The hourly break below is purely local storage
+      // math and costs no requests.
       const hourlyRemainingMs = Math.max(0, HOURLY_MS - work.workMs);
       if (elapsed >= hourlyRemainingMs) {
         autoEndShift(user, shift, 'hourly', 0, new Date(startMs + hourlyRemainingMs));
@@ -1005,8 +997,6 @@
       const breakUntil = Date.now() + BREAK_MS;
       setBreakUntil(user, breakUntil);
       showCriticalAlert('Mandatory break', 'Take a break, walk away, look away. Shift ended. Start shift after ' + localTime(new Date(breakUntil)) + '.');
-    } else if (reason === 'daily-max') {
-      showCriticalAlert('Daily limit reached', 'Daily maximum of ' + dailyMax + ' hours reached. Shift ended.');
     }
     finishShift(user, shift, reason, endTime);
   }
@@ -1808,6 +1798,9 @@
     }, 30000);
   }
 
+  // Previews what pressing Start right now would do about the daily
+  // limit (same alert Start shows when refused). There is no mid-shift
+  // auto-end anymore, so this no longer simulates one.
   async function testDailyLimit() {
     ensureAudio();
     ensureNotificationPermission();
@@ -1820,11 +1813,6 @@
       setTestMessage('End the active shift before testing.');
       return;
     }
-    const start = testStartDate();
-    if (!start) {
-      setTestMessage('Choose a shift start time.');
-      return;
-    }
     await loadDailyStatus(user);
     const allowance = getDailyAllowance(user);
     if (!allowance.hasLimit) {
@@ -1835,16 +1823,12 @@
       setTestMessage('Could not refresh the daily limit. Sign in and check the endpoint.');
       return;
     }
-    const elapsedHours = Math.max(0, Date.now() - start.getTime()) / 3600000;
-    const used = allowance.used + elapsedHours;
-    const usedText = Math.round(used * 100) / 100;
-    if (used >= allowance.max) {
-      showCriticalAlert('Test: daily limit', allowance.max <= 0
-          ? NO_SHIFT_TODAY + ' Test only; no shift was uploaded.'
-          : 'Daily maximum of ' + allowance.max + ' hours reached. Shift ended. Test only; no shift was uploaded.');
-      setTestMessage('Daily maximum reached: ' + usedText + ' of ' + allowance.max + ' h. No shift was uploaded.');
+    const usedText = Math.round(allowance.used * 100) / 100;
+    if (allowance.used >= allowance.max) {
+      showCriticalAlert('Test: daily limit', dailyBlockMessage(allowance) + ' Test only; Start was not pressed.');
+      setTestMessage('Start would be refused: ' + usedText + ' of ' + allowance.max + ' h used. Start was not pressed.');
     } else {
-      setTestMessage('Daily maximum not reached: ' + usedText + ' of ' + allowance.max + ' h (' + dailyUsageText(allowance) + ').');
+      setTestMessage('Start would be allowed: ' + usedText + ' of ' + allowance.max + ' h used (' + dailyUsageText(allowance) + ').');
     }
   }
 
