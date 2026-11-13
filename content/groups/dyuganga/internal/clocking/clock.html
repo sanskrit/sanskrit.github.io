@@ -479,5 +479,27 @@ title = "Shift Clock"
 <script>
   window.DYUGANGA_CLOCK_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzw7S2068932Jm3LOABbV-IU4oy43FTi6HuMrYTJmx8qspIJv13biVpFAMXdivSzWuwVA/exec';
 </script>
-<script src="/groups/dyuganga/internal/clocking/dyuganga-shared.js?v=20261113-shared"></script>
-<script src="/groups/dyuganga/internal/clocking/clock.js?v=20261113-shared"></script>
+<script>
+  (function () {
+    var V = '20261113-shared';
+    function loadOne(urls, onDone) {
+      var i = 0;
+      function next() {
+        if (i >= urls.length) { onDone(new Error('Failed to load ' + urls[0])); return; }
+        var s = document.createElement('script');
+        s.src = urls[i++] + '?v=' + V;
+        s.async = false;
+        s.onload = function () { onDone(null); };
+        s.onerror = function () { s.remove(); next(); };
+        document.head.appendChild(s);
+      }
+      next();
+    }
+    loadOne(['./dyuganga-shared.js', '../dyuganga-shared.js', '/groups/dyuganga/internal/clocking/dyuganga-shared.js'], function (err) {
+      if (err) { console.error(err); return; }
+      loadOne(['./clock.js', '../clock.js', '/groups/dyuganga/internal/clocking/clock.js'], function (err2) {
+        if (err2) { console.error(err2); }
+      });
+    });
+  })();
+</script>
