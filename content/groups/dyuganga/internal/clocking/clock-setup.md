@@ -95,7 +95,7 @@ Saving the script in the editor does **not** update the live web app.
 
 Same project/deployment: **Deploy → Manage deployments → Edit → Version: New version → Deploy**.
 
-The current deployed endpoint is the one pointed by DYUGANGA_CLOCK_ENDPOINT .  
+The current deployed endpoint is the one pointed by RECORD_SERVER_ENDPOINT .  
 Client and remote versions should match.
 
 

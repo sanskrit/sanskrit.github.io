@@ -1,7 +1,60 @@
 (function () {
   'use strict';
 
-  const KEYS = {
+  // Branding from HTML <div class="sc-brand" id="brand">Dyuganga</div> – without expecting it to be set.
+  // The id is only a DOM hook; the app name is derived from the displayed
+  // text, so editing the text rebrands the app (storage keys, endpoint
+  // override, notification tag) without touching the JS.
+  function getBrandingFromDom() {
+    try {
+      const el = document.getElementById('brand') || document.querySelector('.sc-brand, .cs-brand');
+      if (el) {
+        const text = (el.textContent || el.innerText || '').trim();
+        if (text) {
+          const name = text.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_-]/g, '') || 'dyuganga';
+          return { name, display: text };
+        }
+      }
+    } catch (e) {}
+    return { name: 'dyuganga', display: 'Dyuganga' };
+  }
+  let _brandingCache = null;
+  let _brandingCachedReady = false;
+  function getBranding() {
+    if (_brandingCache && _brandingCachedReady) return _brandingCache;
+    const fromDom = getBrandingFromDom();
+    try {
+      const hasEl = !!document.getElementById('brand') || !!document.querySelector('.sc-brand, .cs-brand');
+      const domReady = document.readyState !== 'loading';
+      if (hasEl || domReady) {
+        _brandingCache = fromDom;
+        _brandingCachedReady = true;
+      }
+    } catch (e) {
+      _brandingCache = fromDom;
+      _brandingCachedReady = true;
+    }
+    return fromDom;
+  }
+  try {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() { getBranding(); });
+    }
+  } catch (e) {}
+  function getKeys() {
+    const n = getBranding().name;
+    return {
+      users: n + '_clock_users_v1',
+      active: n + '_clock_active_v1',
+      selectedUser: n + '_clock_selected_user_v1',
+      pending: n + '_clock_pending_v1',
+      auth: n + '_clock_auth_v1',
+      breakUntil: n + '_clock_break_v1',
+      daily: n + '_clock_daily_v1',
+      work: n + '_clock_work_v1'
+    };
+  }
+  const KEYS_STATIC = {
     users: 'dyuganga_clock_users_v1',
     active: 'dyuganga_clock_active_v1',
     selectedUser: 'dyuganga_clock_selected_user_v1',
@@ -11,6 +64,16 @@
     daily: 'dyuganga_clock_daily_v1',
     work: 'dyuganga_clock_work_v1'
   };
+  const KEYS = new Proxy(KEYS_STATIC, {
+    get: function(target, prop) {
+      try {
+        const cur = getKeys()[prop];
+        return cur || target[prop];
+      } catch (e) {
+        return target[prop];
+      }
+    }
+  });
   const CLIENT_VERSION = '2026-11-13-jsonp-v1';
   const TWO_HOURS = 2 * 60 * 60 * 1000;
   const HOURLY_MS = 60 * 60 * 1000;
@@ -18,7 +81,17 @@
   const CACHE_TTL_MS = 60 * 60 * 1000;
   const NO_SHIFT_TODAY = "You can't start any shift today. Contact admin for details.";
   const COLUMNS = ['Recorded at', 'User', 'Start', 'End', 'Hours', 'Notes', 'Timezone', 'Shift ID'];
-  const DEFAULT_ENDPOINT = window.DYUGANGA_CLOCK_ENDPOINT || 'https://script.google.com/macros/s/AKfycbzw7S2068932Jm3LOABbV-IU4oy43FTi6HuMrYTJmx8qspIJv13biVpFAMXdivSzWuwVA/exec';
+  // Record-server endpoint override. Set window.RECORD_SERVER_ENDPOINT
+  // before the scripts load to point at another Apps Script deployment
+  // (local development); otherwise the built-in deployment URL is used.
+  function getDefaultEndpoint() {
+    try {
+      return window.RECORD_SERVER_ENDPOINT || 'https://script.google.com/macros/s/AKfycbzw7S2068932Jm3LOABbV-IU4oy43FTi6HuMrYTJmx8qspIJv13biVpFAMXdivSzWuwVA/exec';
+    } catch (e) {
+      return 'https://script.google.com/macros/s/AKfycbzw7S2068932Jm3LOABbV-IU4oy43FTi6HuMrYTJmx8qspIJv13biVpFAMXdivSzWuwVA/exec';
+    }
+  }
+  const DEFAULT_ENDPOINT = getDefaultEndpoint();
 
   const $ = function (id) { return document.getElementById(id); };
   let currentRecord = null;
@@ -376,16 +449,43 @@
     if (Date.now() - Number(dailyStatusLastAttemptByUser[user] || 0) < DAILY_STATUS_RETRY_MS) {
       return;
     }
+    refreshDailyStatusNow(user);
+  }
+
+  // Launches one dailyStatus request with the inflight guard, shared by the
+  // throttled background path (maybeLoadDailyStatus) and the manual retry
+  // button (retryDailyStatus). The trailing refresh() after clearing the
+  // inflight flag is what re-enables the retry button.
+  function refreshDailyStatusNow(user) {
     dailyStatusLastAttemptByUser[user] = Date.now();
     const promise = loadDailyStatus(user).then(function () {
       refresh();
     });
     dailyStatusInFlight = { user: user, promise: promise };
+    refresh();
     promise.then(function () {
       if (dailyStatusInFlight && dailyStatusInFlight.promise === promise) {
         dailyStatusInFlight = null;
       }
+      refresh();
     });
+  }
+
+  // Manual retry for a Start button blocked by the daily limit. The
+  // background refresh is throttled to one attempt per 30s, so without this
+  // the user can only wait. A user action is never throttled: this bypasses
+  // DAILY_STATUS_RETRY_MS. The only guard is the inflight request — while
+  // one runs for this user the click is a no-op and the button stays
+  // disabled until it settles.
+  function retryDailyStatus() {
+    const user = selectedUser();
+    if (!user || !getAuth(user)) {
+      return;
+    }
+    if (dailyStatusInFlight && dailyStatusInFlight.user === user) {
+      return;
+    }
+    refreshDailyStatusNow(user);
   }
 
   function pad(value) {
@@ -623,6 +723,19 @@
     $('startBtn').disabled = !user || !!shift || starting || ending || !!authPrompt || onBreak || blockStart;
     $('endBtn').disabled = !user || !shift || ending || starting;
     $('activePanel').hidden = !shift;
+
+    // Manual retry next to the disabled Start button. Shown only while the
+    // daily limit blocks Start for a signed-in user (dailyStatus needs a
+    // session token, so there is nothing to retry without one). Enabled
+    // unless a request for this user is already inflight.
+    const retryBtn = $('checkAgainBtn');
+    if (retryBtn) {
+      const inflightForUser = !!(user && dailyStatusInFlight && dailyStatusInFlight.user === user);
+      const showRetry = !!user && !shift && !starting && !ending && !authPrompt && !onBreak && blockStart && !!getAuth(user);
+      retryBtn.hidden = !showRetry;
+      retryBtn.disabled = !showRetry || inflightForUser;
+      retryBtn.textContent = inflightForUser && showRetry ? 'Checking...' : 'Check again';
+    }
 
     const notice = $('startNotice');
     if (notice) {
@@ -918,7 +1031,7 @@
   function emailText(records) {
     const list = Array.isArray(records) ? records : [records];
     const lines = [
-      'Subject: Dyuganga shift record' + (list.length === 1 ? '' : 's'),
+      'Subject: ' + getBranding().display + ' shift record' + (list.length === 1 ? '' : 's'),
       '',
       'Please add the following row' + (list.length === 1 ? '' : 's') + ' to the shift sheet:',
       tsvHeader()
@@ -1280,7 +1393,8 @@
         return encodeURIComponent(k) + '=' + encodeURIComponent(params[k]);
       }).join('&');
       const separator = endpoint.indexOf('?') === -1 ? '?' : '&';
-      const cbName = 'dyugangaCb_' + Date.now() + '_' + Math.floor(Math.random() * 100000);
+      const bName = getBranding().name;
+      const cbName = bName + 'Cb_' + Date.now() + '_' + Math.floor(Math.random() * 100000);
       let done = false;
       const script = document.createElement('script');
       function cleanup() {
@@ -1509,9 +1623,9 @@
       currentNotification = null;
     }
     try {
-      currentNotification = new Notification('Dyuganga: ' + title, {
+      currentNotification = new Notification(getBranding().display + ': ' + title, {
         body: message,
-        tag: 'dyuganga-shift-alert',
+        tag: getBranding().name + '-shift-alert',
         renotify: true,
         requireInteraction: true,
         silent: true
@@ -1860,6 +1974,7 @@
       const actions = {
         startBtn: startShift,
         endBtn: endShift,
+        checkAgainBtn: retryDailyStatus,
         copyRowBtn: function () {
           const records = recordsForCopy();
           if (records.length) {

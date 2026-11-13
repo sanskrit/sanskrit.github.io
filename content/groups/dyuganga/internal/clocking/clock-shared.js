@@ -20,30 +20,15 @@
 
     // APP_NAME must stay lowercase, one word, [a-z0-9_-].
 
-    // Branding: read from HTML <div class="sc-brand" id="dyuganga">Dyuganga</div> if present,
+    // Branding: read from HTML <div class="sc-brand" id="brand">Dyuganga</div> if present,
     // without expecting it to be set. Falls back to dyuganga/Dyuganga.
+    // The id is only a DOM hook; the app name is derived from the displayed
+    // text, so editing the text rebrands the app without touching the JS.
     function getBrandingFromDom() {
         try {
-            const el = document.getElementById('dyuganga');
+            const el = document.getElementById('brand') || document.querySelector('.sc-brand, .cs-brand');
             if (el) {
                 const text = (el.textContent || el.innerText || '').trim();
-                const idName = (el.id || '').trim().toLowerCase();
-                const validId = /^[a-z0-9_-]+$/.test(idName) ? idName : '';
-                if (text) {
-                    let name = validId;
-                    if (!name) {
-                        name = text.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_-]/g, '') || 'dyuganga';
-                    }
-                    return { name, display: text };
-                }
-                if (validId) {
-                    const display = validId.charAt(0).toUpperCase() + validId.slice(1);
-                    return { name: validId, display };
-                }
-            }
-            const brandEl = document.querySelector('.sc-brand, .cs-brand');
-            if (brandEl) {
-                const text = (brandEl.textContent || brandEl.innerText || '').trim();
                 if (text) {
                     const name = text.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_-]/g, '') || 'dyuganga';
                     return { name, display: text };
@@ -60,7 +45,7 @@
         if (_brandingCache && _brandingCachedReady) return _brandingCache;
         const fromDom = getBrandingFromDom();
         try {
-            const hasEl = !!document.getElementById('dyuganga') || !!document.querySelector('.sc-brand, .cs-brand');
+            const hasEl = !!document.getElementById('brand') || !!document.querySelector('.sc-brand, .cs-brand');
             const domReady = document.readyState !== 'loading';
             if (hasEl || domReady) {
                 _brandingCache = fromDom;
@@ -90,11 +75,10 @@
     const APP_DISPLAY_NAME = APP_DISPLAY_NAME_FALLBACK;
     const APP_SHARED_GLOBAL = APP_DISPLAY_NAME + 'Shared'; // 'DyugangaShared'
     const SHARED_VERSION = '2026-11-13-shared-v2';
-    // DEFAULT_ENDPOINT is now computed dynamically in getEndpoint() – keep a fallback for old code
+    // Overridable via window.RECORD_SERVER_ENDPOINT (set before load).
     const DEFAULT_ENDPOINT = (function() {
         try {
-            const b = getBranding();
-            return window[b.name.toUpperCase() + '_CLOCK_ENDPOINT'] || window[APP_NAME.toUpperCase() + '_CLOCK_ENDPOINT'] || 'https://script.google.com/macros/s/AKfycbzw7S2068932Jm3LOABbV-IU4oy43FTi6HuMrYTJmx8qspIJv13biVpFAMXdivSzWuwVA/exec';
+            return window.RECORD_SERVER_ENDPOINT || 'https://script.google.com/macros/s/AKfycbzw7S2068932Jm3LOABbV-IU4oy43FTi6HuMrYTJmx8qspIJv13biVpFAMXdivSzWuwVA/exec';
         } catch (e) {
             return 'https://script.google.com/macros/s/AKfycbzw7S2068932Jm3LOABbV-IU4oy43FTi6HuMrYTJmx8qspIJv13biVpFAMXdivSzWuwVA/exec';
         }
@@ -158,10 +142,7 @@
 
     function getEndpoint() {
         try {
-            const b = getBranding();
-            const key = b.name.toUpperCase() + '_CLOCK_ENDPOINT';
-            const val = window[key] || window[APP_NAME.toUpperCase() + '_CLOCK_ENDPOINT'] || DEFAULT_ENDPOINT;
-            return String(val || '').trim();
+            return String(window.RECORD_SERVER_ENDPOINT || DEFAULT_ENDPOINT || '').trim();
         } catch (e) {
             return String(DEFAULT_ENDPOINT || '').trim();
         }

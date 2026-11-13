@@ -2,13 +2,13 @@
 title = "Shift Clock"
 +++
 <div id="shiftClockApp" class="shift-clock-app">
-  <div class="sc-brand" id="dyuganga">Dyuganga</div>
+  <div class="sc-brand" id="brand">Dyuganga</div>
   <p class="sc-subtitle">Start a shift, end it, and record the hours in the private spreadsheet.</p>
   <div class="sc-topline">
     <span id="connStatus" class="sc-status-pill">Spreadsheet setup needed</span>
     <span class="sc-private-note">Private sheet &middot; Personnel-managed users</span>
-    <a href="../check-shifts/">Check shifts</a>
-    <a href="../clock-setup/">Setup</a>
+    <a id="checkShiftsLink" href="../check-shifts/">Check shifts</a>
+    <a id="clockSetupLink" href="../clock-setup/">Setup</a>
   </div>
 
   <section class="sc-card" aria-labelledby="controlsTitle">
@@ -30,6 +30,7 @@ title = "Shift Clock"
     <div class="sc-actions">
       <button id="startBtn" class="sc-btn sc-btn-primary" type="button" disabled>Start shift</button>
       <button id="endBtn" class="sc-btn sc-btn-danger" type="button" disabled>End shift</button>
+      <button id="checkAgainBtn" class="sc-btn sc-btn-secondary" type="button" hidden>Check again</button>
     </div>
     <div id="startNotice" class="sc-start-notice" hidden></div>
 
@@ -105,9 +106,8 @@ title = "Shift Clock"
   <div id="toast" class="sc-toast" role="status"></div>
 </div>
 
-<link rel="stylesheet" href="./clock.css?v=20261113-shared">
 <script>
-  window.DYUGANGA_CLOCK_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzw7S2068932Jm3LOABbV-IU4oy43FTi6HuMrYTJmx8qspIJv13biVpFAMXdivSzWuwVA/exec';
+  window.RECORD_SERVER_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzw7S2068932Jm3LOABbV-IU4oy43FTi6HuMrYTJmx8qspIJv13biVpFAMXdivSzWuwVA/exec';
 </script>
 <script>
   (function () {
@@ -116,19 +116,73 @@ title = "Shift Clock"
       var i = 0;
       function next() {
         if (i >= urls.length) { onDone(new Error('Failed to load ' + urls[0])); return; }
+        var src = urls[i++] + '?v=' + V;
         var s = document.createElement('script');
-        s.src = urls[i++] + '?v=' + V;
+        s.src = src;
         s.async = false;
-        s.onload = function () { onDone(null); };
+        s.onload = function () { onDone(null, src); };
         s.onerror = function () { s.remove(); next(); };
         document.head.appendChild(s);
       }
       next();
     }
-    loadOne(['./clock-shared.js', '../clock-shared.js', '/groups/dyuganga/internal/clocking/clock-shared.js'], function (err) {
+    // CSS uses the same candidate-path fallback as the JS: the deployed path
+    // varies (temp local server, Hugo build, GitHub Pages), so a static
+    // <link> breaks on some of them. The data-dyn-css marker identifies the
+    // loader-created element.
+    function loadCss(urls, onDone) {
+      var i = 0;
+      function next() {
+        if (i >= urls.length) { onDone(new Error('Failed to load ' + urls[0])); return; }
+        var href = urls[i++] + '?v=' + V;
+        var l = document.createElement('link');
+        l.rel = 'stylesheet';
+        l.href = href;
+        l.setAttribute('data-dyn-css', '1');
+        l.onload = function () { onDone(null, href); };
+        l.onerror = function () { l.remove(); next(); };
+        document.head.appendChild(l);
+      }
+      next();
+    }
+    loadCss(['./clock.css', '../clock.css', '/groups/dyuganga/internal/clocking/clock.css'], function (err) {
+      if (err) { console.error(err); }
+    });
+    function setNavLinksFromJsPath(jsPath) {
+      try {
+        // Resolve jsPath to absolute URL, then get its directory
+        var abs = new URL(jsPath, location.href).href;
+        var base = abs.substring(0, abs.lastIndexOf('/') + 1);
+        // For clock.html, the two links should point to siblings of the clock directory
+        // jsPath is like /groups/dyuganga/internal/clocking/clock.js -> base is /groups/dyuganga/internal/clocking/
+        // Targets are base + 'check-shifts/' and base + 'clock-setup/'
+        var checkEl = document.getElementById('checkShiftsLink');
+        var setupEl = document.getElementById('clockSetupLink');
+        if (checkEl) {
+          var target = new URL('check-shifts/', base).href;
+          // Use pathname for href to keep it clean
+          checkEl.setAttribute('href', new URL(target).pathname);
+        }
+        if (setupEl) {
+          var target2 = new URL('clock-setup/', base).href;
+          setupEl.setAttribute('href', new URL(target2).pathname);
+        }
+        // Also handle the editShiftLink inside the result card (if present)
+        var editEl = document.getElementById('editShiftLink');
+        if (editEl) {
+          var target3 = new URL('check-shifts/', base).href;
+          editEl.setAttribute('href', new URL(target3).pathname);
+        }
+      } catch (e) { console.error('setNavLinks', e); }
+    }
+    loadOne(['./clock-shared.js', '../clock-shared.js', '/groups/dyuganga/internal/clocking/clock-shared.js'], function (err, src) {
       if (err) { console.error(err); return; }
-      loadOne(['./clock.js', '../clock.js', '/groups/dyuganga/internal/clocking/clock.js'], function (err2) {
-        if (err2) { console.error(err2); }
+      // Set nav links based on where the shared JS was found
+      setNavLinksFromJsPath(src);
+      loadOne(['./clock.js', '../clock.js', '/groups/dyuganga/internal/clocking/clock.js'], function (err2, src2) {
+        if (err2) { console.error(err2); return; }
+        // Update again based on clock.js path (more specific)
+        setNavLinksFromJsPath(src2);
       });
     });
   })();

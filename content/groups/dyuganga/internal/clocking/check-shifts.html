@@ -2,11 +2,11 @@
 title = "Check shifts"
 +++
 <div id="checkShiftsApp" class="check-shifts-app">
-  <div class="cs-brand" id="dyuganga">Dyuganga</div>
+  <div class="cs-brand" id="brand">Dyuganga</div>
   <p class="cs-subtitle">Review your shifts from the last 32 days and request a correction.</p>
   <div class="cs-topline">
     <span id="csStatus" class="cs-status-pill">Sign in to continue</span>
-    <a href="../clock/">Back to Shift Clock</a>
+    <a id="clockLink" href="../clock/">Back to Shift Clock</a>
   </div>
 
   <section id="csLoginCard" class="cs-card" hidden>
@@ -81,10 +81,9 @@ title = "Check shifts"
   <div id="csToast" class="cs-toast" role="status"></div>
 </div>
 
-<link rel="stylesheet" href="./check-shifts.css?v=20261113-shared">
 <script>
   // For local development, set your Apps Script deployment URL here:
-  window.DYUGANGA_CLOCK_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzw7S2068932Jm3LOABbV-IU4oy43FTi6HuMrYTJmx8qspIJv13biVpFAMXdivSzWuwVA/exec';
+  window.RECORD_SERVER_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzw7S2068932Jm3LOABbV-IU4oy43FTi6HuMrYTJmx8qspIJv13biVpFAMXdivSzWuwVA/exec';
 </script>
 <script>
     (function () {
@@ -93,19 +92,54 @@ title = "Check shifts"
             var i = 0;
             function next() {
                 if (i >= urls.length) { onDone(new Error('Failed to load ' + urls[0])); return; }
+                var src = urls[i++] + '?v=' + V;
                 var s = document.createElement('script');
-                s.src = urls[i++] + '?v=' + V;
+                s.src = src;
                 s.async = false;
-                s.onload = function () { onDone(null); };
+                s.onload = function () { onDone(null, src); };
                 s.onerror = function () { s.remove(); next(); };
                 document.head.appendChild(s);
             }
             next();
         }
-        loadOne(['./clock-shared.js', '../clock-shared.js', '/groups/dyuganga/internal/clocking/clock-shared.js'], function (err) {
+        // CSS uses the same candidate-path fallback as the JS: the deployed
+        // path varies (temp local server, Hugo build, GitHub Pages), so a
+        // static <link> breaks on some of them.
+        function loadCss(urls, onDone) {
+            var i = 0;
+            function next() {
+                if (i >= urls.length) { onDone(new Error('Failed to load ' + urls[0])); return; }
+                var href = urls[i++] + '?v=' + V;
+                var l = document.createElement('link');
+                l.rel = 'stylesheet';
+                l.href = href;
+                l.setAttribute('data-dyn-css', '1');
+                l.onload = function () { onDone(null, href); };
+                l.onerror = function () { l.remove(); next(); };
+                document.head.appendChild(l);
+            }
+            next();
+        }
+        loadCss(['./check-shifts.css', '../check-shifts.css', '/groups/dyuganga/internal/clocking/check-shifts.css'], function (err) {
+            if (err) { console.error(err); }
+        });
+        function setNavLinksFromJsPath(jsPath) {
+            try {
+                var abs = new URL(jsPath, location.href).href;
+                var base = abs.substring(0, abs.lastIndexOf('/') + 1);
+                var clockEl = document.getElementById('clockLink');
+                if (clockEl) {
+                    var target = new URL('clock/', base).href;
+                    clockEl.setAttribute('href', new URL(target).pathname);
+                }
+            } catch (e) { console.error('setNavLinks', e); }
+        }
+        loadOne(['./clock-shared.js', '../clock-shared.js', '/groups/dyuganga/internal/clocking/clock-shared.js'], function (err, src) {
             if (err) { console.error(err); return; }
-            loadOne(['./check-shifts.js', '../check-shifts.js', '/groups/dyuganga/internal/clocking/check-shifts.js'], function (err2) {
-                if (err2) { console.error(err2); }
+            setNavLinksFromJsPath(src);
+            loadOne(['./check-shifts.js', '../check-shifts.js', '/groups/dyuganga/internal/clocking/check-shifts.js'], function (err2, src2) {
+                if (err2) { console.error(err2); return; }
+                setNavLinksFromJsPath(src2);
             });
         });
     })();
