@@ -22,7 +22,7 @@ The columns are: `Recorded at`, `User`, `Start`, `End`, `Hours`, `Notes`, `Timez
 
 A row is created as soon as the clock is started, with `Start` filled in and `End` and `Hours` left empty. When the clock is stopped, the same row is completed: `End` and `Hours` are filled in and `Pending` is left blank. The row is matched by `Shift ID`, so the clock updates it instead of adding a second row.
 
-If the start row could not be saved (offline, endpoint error), the clock keeps running and the row is created when the shift ends. If a shift is never ended (browser closed, user forgot), the row stays in the sheet with an empty `End` and shows as `in progress` on the Check shifts page, so the manager can see and correct it.
+If the start row could not be saved (offline, endpoint error, daily-max refusal), no shift starts — the clock runs only after the server confirms the row. If a shift is never ended (browser closed, user forgot), the row stays in the sheet with an empty `End` and shows as `in progress` on the Check shifts page, so the manager can see and correct it.
 
 `Start` and `End` include the full local date and time (`YYYY-MM-DD HH:mm:ss`), so shifts that cross midnight are unambiguous.
 
@@ -45,7 +45,7 @@ Addition requests on the Check shifts page are limited to 1 hour. A request is a
 
 ## Daily maximum and breaks
 
-The Personnel sheet may have a column whose header contains `Daily Max` or `Max hours` (matched case-insensitively). Its value is in hours. The limit is enforced only when a shift is started: pressing Try shift start sends one `start` request, and the Apps Script refuses it with an alert when that day's maximum is reached. The browser never blocks the button on the limit — the cached total is shown for information only. `Pending = Add` rows are counted toward the daily limit; `Pending = Delete` rows are not counted. Nothing is checked while a shift runs — a shift that crosses the limit keeps running (to save Apps Script quota there is no mid-shift polling or auto-end) and the next Start is refused instead.
+The Personnel sheet may have a column whose header contains `Daily Max` or `Max hours` (matched case-insensitively). Its value is in hours. The limit is enforced only when a shift is started: pressing Try shift start sends one `start` request, and the Apps Script refuses it with an alert when that day's maximum is reached. The clock runs only after a positive server reply — a refusal, an unreachable endpoint, or a timeout starts no shift, so press Start again when back online. The browser never blocks the button on the limit — the cached total is shown for information only. `Pending = Add` rows are counted toward the daily limit; `Pending = Delete` rows are not counted. Nothing is checked while a shift runs — a shift that crosses the limit keeps running (to save Apps Script quota there is no mid-shift polling or auto-end) and the next Start is refused instead.
 
 An **empty** `Daily Max` cell means no daily limit. An explicit **`0`** means the user cannot start any shift that day: the Try shift start button stays enabled (the browser does not enforce), and pressing it shows the server's refusal `You can't start any shift today. Contact admin for details.`.
 
@@ -63,19 +63,19 @@ Break and daily-limit alerts use a browser notification (allow notifications whe
 
 The Test details block in the clock page only simulates the alerts; it does not set a real break or upload a shift. **Reset test** clears a break left by an earlier test.
 
-The start row requires the `start` action and the daily total is returned with `start`/`shift`, so redeploy the Apps Script after updating it.
+The start row requires the `start` action and the daily total is returned with `start`/`shift`, so redeploy the Apps Script after updating it. The client sends every action through `doGet` (JSONP) and rejects the generic ping of a deployment predating that as outdated, so the redeploy is required for Start/End to work at all.
 
 ## Requests and quotas
 
-The Apps Script free quota is limited, so the clock keeps requests to a minimum:
+The Apps Script free quota is limited, so the clock keeps requests to a minimum. Every request below is a JSONP `<script>` request, reads and writes alike: the `/exec` redirect strips CORS headers, so `fetch()` POST is blocked even when the deployment is alive, while script tags are not subject to CORS.
 
-- **Try shift start**: exactly one request (`action: start`). It signs in with the password if this browser has no session yet, refuses the start when the daily maximum is reached, creates the row, and returns the refreshed daily total and a session token.
+- **Try shift start**: exactly one request (`action: start`). It signs in with the password if this browser has no session yet, refuses the start when the daily maximum is reached, creates the row, and returns the refreshed daily total and a session token. The clock starts only on a positive reply; any refusal or transport failure starts nothing.
 - **End shift**: exactly one request (`action: shift`). It completes the row and returns the refreshed daily total and a session token.
 - **Page load**: exactly one request, repopulating the user dropdown (the cached list stays as fallback if it fails). No daily-limit check happens on load.
 - There is no other communication: no polling, no per-minute refresh, no request on tab focus, tab return, or user change, and no test request. The Retry upload button re-sends queued shifts when pressed.
 - **Retry upload**: one request per queued shift (`action: shift`), only when pressed.
 
-If the endpoint is not reachable, the clock still runs; the start row is created when the shift ends and the shift is queued for Retry upload, with its rows also shown for copy-paste.
+If the endpoint is not reachable, Start shows an alert and no shift runs — press Start again once back online. A running shift whose End upload fails is queued for Retry upload, with its rows also shown for copy-paste.
 
 ## Deploying the Apps Script endpoint
 

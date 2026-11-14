@@ -9,6 +9,9 @@
 //     locally within seconds, sets the 5-minute break, and costs exactly the
 //     one unavoidable shift-upload request (zero dailyStatus polls).
 //
+// All server traffic is JSONP <script> requests (CORS-immune); window.fetch
+// is blocked outright, so any fetch regression fails loudly.
+//
 // Run: node test-shift-quota.js (needs playwright; see test-clock-page.js).
 'use strict';
 const http = require('http');
@@ -39,20 +42,55 @@ const server = http.createServer((req, res) => {
   });
 });
 
-const FETCH_STUB = `
+const FETCH_GUARD = `
 window.__fetchCalls = [];
-window.fetch = function (url, opts) {
-  let payload = {};
-  try { payload = JSON.parse((opts && opts.body) || '{}'); } catch (e) {}
-  window.__fetchCalls.push({ url: String(url), action: payload.action || '' });
-  const d = new Date();
-  const today = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
-  const body = payload.action === 'shift'
-    ? { ok: true, dailyMax: 8, dailyMaxSet: true, todayHours: 0.5, todayAddHours: 0, todayIds: [], date: today, timezone: 'Asia/Kolkata' }
-    : { ok: true, dailyMax: 1, dailyMaxSet: true, todayHours: 1, todayAddHours: 0, todayIds: [], date: today, timezone: 'Asia/Kolkata' };
-  return Promise.resolve(new Response(JSON.stringify(body), { status: 200 }));
+window.fetch = function () {
+  window.__fetchCalls.push(Array.prototype.map.call(arguments, String).join(' '));
+  return Promise.reject(new TypeError('fetch is blocked in tests: use JSONP.'));
 };
 `;
+
+function todayStamp() {
+  const d = new Date();
+  return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+}
+
+function endpointHandler(stub) {
+  return async (route) => {
+    const reqUrl = new URL(route.request().url());
+    const action = reqUrl.searchParams.get('action') || '';
+    const cb = reqUrl.searchParams.get('callback');
+    stub.calls.push({ action: action, url: route.request().url() });
+    const today = todayStamp();
+    let body;
+    if (action === 'users') {
+      body = { ok: true, users: ['mrunaldatar'] };
+    } else if (action === 'shift') {
+      body = { ok: true, dailyMax: 8, dailyMaxSet: true, todayHours: 0.5, todayAddHours: 0, todayIds: [], date: today, timezone: 'Asia/Kolkata' };
+    } else if (action === 'dailyStatus') {
+      body = { ok: true, user: 'mrunaldatar', dailyMax: 1, dailyMaxSet: true, todayHours: 1, todayAddHours: 0, todayIds: [], date: today, timezone: 'Asia/Kolkata' };
+    } else {
+      body = { ok: false, error: 'Unknown action: ' + action };
+    }
+    const text = cb ? `${cb}(${JSON.stringify(body)});` : JSON.stringify(body);
+    await route.fulfill({ status: 200, contentType: 'application/javascript', body: text });
+  };
+}
+
+async function routeEndpoint(browser, stub) {
+  const ctx = await browser.newContext();
+  await ctx.route('**/script.google.com/**', endpointHandler(stub));
+  return ctx;
+}
+
+function countCalls(stub, action) {
+  return stub.calls.filter((c) => c.action === action).length;
+}
+
+// Requests other than the load-time users repopulate.
+function serverCalls(stub) {
+  return stub.calls.filter((c) => c.action !== 'users');
+}
 
 function seedBase() {
   return `
@@ -73,21 +111,11 @@ server.listen(PORT, async () => {
   };
   const browser = await chromium.launch({ headless: true, args: ['--no-sandbox'] });
 
-  const routeUsers = async (ctx) => {
-    await ctx.route('**/script.google.com/**', async (route) => {
-      const cb = new URL(route.request().url()).searchParams.get('callback');
-      const body = cb
-        ? `${cb}(${JSON.stringify({ ok: true, users: ['mrunaldatar'] })});`
-        : JSON.stringify({ ok: true, users: ['mrunaldatar'] });
-      await route.fulfill({ status: 200, contentType: 'application/javascript', body });
-    });
-  };
-
   try {
     // ---- 1. Exceeded limit + active shift: no polls, no auto-end ----
-    const ctx = await browser.newContext();
-    await routeUsers(ctx);
-    await ctx.addInitScript({ content: FETCH_STUB });
+    const stub = { calls: [] };
+    const ctx = await routeEndpoint(browser, stub);
+    await ctx.addInitScript({ content: FETCH_GUARD });
     const page = await ctx.newPage();
     await page.goto(`http://localhost:${PORT}/clock.html`, { waitUntil: 'domcontentloaded' });
     await page.evaluate(() => localStorage.clear());
@@ -108,26 +136,25 @@ server.listen(PORT, async () => {
     // Load must fire no dailyStatus at all; then 3.5s of ticks (old code
     // auto-ended on the first tick here) must add none either.
     await page.waitForTimeout(1000);
-    const settled = await page.evaluate(() => ({
-      daily: window.__fetchCalls.filter(c => c.action === 'dailyStatus').length,
-      total: window.__fetchCalls.length,
-    }));
-    check('load: zero dailyStatus requests', settled.daily === 0, settled);
+    check('load: zero dailyStatus requests', countCalls(stub, 'dailyStatus') === 0,
+      { daily: countCalls(stub, 'dailyStatus'), total: serverCalls(stub).length });
     await page.waitForTimeout(3500);
     const after = await page.evaluate(() => ({
-      daily: window.__fetchCalls.filter(c => c.action === 'dailyStatus').length,
-      total: window.__fetchCalls.length,
       active: !!JSON.parse(localStorage.getItem('dyuganga_clock_active_v1') || '{}').mrunaldatar,
       panelHidden: document.getElementById('activePanel').hidden,
+      fetchCalls: window.__fetchCalls.length,
     }));
-    check('mid-shift: still zero requests', after.daily === 0 && after.total === 0, after);
+    check('mid-shift: still zero requests',
+      countCalls(stub, 'dailyStatus') === 0 && serverCalls(stub).length === 0,
+      { daily: countCalls(stub, 'dailyStatus'), total: serverCalls(stub).length });
     check('mid-shift: exceeded shift NOT auto-ended', after.active === true && after.panelHidden === false, after);
+    check('no fetch() calls: all server traffic is JSONP', after.fetchCalls === 0, after.fetchCalls);
     await ctx.close();
 
     // ---- 2. Hourly break still auto-ends locally ----
-    const ctx2 = await browser.newContext();
-    await routeUsers(ctx2);
-    await ctx2.addInitScript({ content: FETCH_STUB });
+    const stub2 = { calls: [] };
+    const ctx2 = await routeEndpoint(browser, stub2);
+    await ctx2.addInitScript({ content: FETCH_GUARD });
     const p2 = await ctx2.newPage();
     await p2.goto(`http://localhost:${PORT}/clock.html`, { waitUntil: 'domcontentloaded' });
     await p2.evaluate(() => localStorage.clear());
@@ -155,9 +182,9 @@ server.listen(PORT, async () => {
       active: !!JSON.parse(localStorage.getItem('dyuganga_clock_active_v1') || '{}').mrunaldatar,
       startDisabled: document.getElementById('startBtn').disabled,
       notice: document.getElementById('startNotice').textContent,
-      daily: window.__fetchCalls.filter(c => c.action === 'dailyStatus').length,
-      uploads: window.__fetchCalls.filter(c => c.action === 'shift').length,
     }));
+    h.daily = countCalls(stub2, 'dailyStatus');
+    h.uploads = countCalls(stub2, 'shift');
     check('hourly: shift auto-ended', h.active === false, h.active);
     check('hourly: 5-min break set', h.startDisabled === true && /break/.test(h.notice), h.notice);
     check('hourly: zero dailyStatus polls', h.daily === 0, h.daily);

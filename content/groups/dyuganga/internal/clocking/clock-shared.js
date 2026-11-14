@@ -283,12 +283,15 @@
         }
     }
 
-    // --- POST (still fetch — same as before, shared so it only lives once) ---
-    // Note: POST goes through the same Apps Script redirect as GET did.
-    // If POST ever hits the same CORS block, it will need the same treatment
-    // as users (e.g. a form / JSONP-style path). For now keep one copy.
+    // --- Server requests (JSONP GET — immune to the Apps Script CORS redirect) ---
+    // The /exec endpoint answers through a redirect to script.googleusercontent.com
+    // without CORS headers, so fetch() POST is blocked even when the deployment
+    // is alive. <script> tags are not subject to CORS, so every action — reads
+    // and writes alike — goes through jsonpRequest. Payloads are small flat
+    // objects, so they travel fine as query params (over HTTPS; the password
+    // is sent once per browser, then a session token is used).
 
-    async function postJson(payload) {
+    async function requestJson(payload) {
         const endpoint = getEndpoint();
         if (!endpoint) {
             throw new Error('The spreadsheet endpoint is not configured.');
@@ -296,40 +299,43 @@
         if (navigator.onLine === false) {
             throw new Error('You appear to be offline.');
         }
-        const controller = new AbortController();
-        const timeout = window.setTimeout(function () { controller.abort(); }, 15000);
-        let response;
-        try {
-            response = await fetch(endpoint, {
-                method: 'POST',
-                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-                body: JSON.stringify(payload),
-                redirect: 'follow',
-                signal: controller.signal
-            });
-        } catch (err) {
-            if (err && err.name === 'AbortError') {
-                throw new Error('The request timed out after 15 seconds.');
-            }
-            throw new Error('Could not reach Google (network or CORS problem).');
-        } finally {
-            window.clearTimeout(timeout);
-        }
-        const text = await response.text();
-        let body = null;
-        try {
-            body = JSON.parse(text);
-        } catch (err) {
-            body = null;
-        }
-        if (!response.ok) {
-            throw new Error('Google returned HTTP ' + response.status + '.');
-        }
+        const body = await jsonpRequest(endpoint, payload || {});
+        return checkActionBody(payload && payload.action, body);
+    }
+
+    // Backwards-compatible alias: same signature, same transport.
+    async function postJson(payload) {
+        return requestJson(payload);
+    }
+
+    // Throw for a server refusal (Error with .code/.body, as before) and for
+    // a reply that lacks the action's marker field — the generic "endpoint is
+    // live" ping of a deployment predating the JSONP actions must never count
+    // as a positive response. Returns the body when it is genuinely positive.
+    function checkActionBody(action, body) {
         if (!body || body.ok !== true) {
             const error = new Error(body && body.error ? String(body.error) : 'The spreadsheet endpoint returned an unexpected response.');
             error.code = body && body.code;
             error.body = body || null;
             throw error;
+        }
+        const name = String(action || '');
+        let valid = true;
+        if (name === 'start' || name === 'shift' || name === 'dailyStatus') {
+            valid = typeof body.date === 'string';
+        } else if (name === 'login') {
+            valid = !!body.token;
+        } else if (name === 'shifts') {
+            valid = Array.isArray(body.shifts);
+        } else if (name === 'requestDelete') {
+            valid = body.row !== undefined;
+        } else if (name === 'requestAdd') {
+            valid = body.requested === true;
+        } else if (name === 'users') {
+            valid = Array.isArray(body.users);
+        }
+        if (!valid) {
+            throw new Error('The server answered in an outdated format. Please ask the admin to redeploy the Apps Script.');
         }
         return body;
     }
@@ -393,6 +399,8 @@
         findAuth: findAuth,
         setAuth: setAuth,
         clearAuth: clearAuth,
+        requestJson: requestJson,
+        checkActionBody: checkActionBody,
         postJson: postJson,
         makeToast: makeToast,
         fillUserSelect: fillUserSelect,

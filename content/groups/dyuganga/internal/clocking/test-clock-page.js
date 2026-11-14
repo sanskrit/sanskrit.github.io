@@ -4,14 +4,18 @@
 //  1. Try-shift-start: with a cached explicit-0 block, Start stays ENABLED
 //     labeled "Try shift start"; pressing it costs exactly one `start`
 //     request; a server DAILY_MAX refusal shows the alert and starts no
-//     shift; a server ok starts the shift. No Check again / Test daily limit
+//     shift; a transport failure (no server answer at all) also starts no
+//     shift — the clock runs ONLY after a positive server response; a
+//     server ok starts the shift. No Check again / Test daily limit
 //     buttons exist; the manual Retry upload button re-sends queued failed
 //     uploads. No dailyStatus request fires outside Start/End presses.
-//  2. Users dropdown repopulates on every page load (stale cache is
+//  2. Transport: every server call is a JSONP <script> request
+//     (CORS-immune); window.fetch is never used.
+//  3. Users dropdown repopulates on every page load (stale cache is
 //     overwritten from the server).
-//  3. Endpoint override via window.RECORD_SERVER_ENDPOINT (old global
+//  4. Endpoint override via window.RECORD_SERVER_ENDPOINT (old global
 //     ignored).
-//  4. Dynamic CSS loading like the JS loader, incl. candidate fallback.
+//  5. Dynamic CSS loading like the JS loader, incl. candidate fallback.
 //
 // Run: node test-clock-page.js
 // Needs: playwright module + a Chromium build. It first tries
@@ -71,55 +75,70 @@ const server = http.createServer((req, res) => {
   res.end('not found');
 });
 
-// Stub window.fetch before any page script runs: canned start/shift replies
-// and a call log. dailyStatus is answered too (it must never be called).
-const FETCH_STUB = `
+// fetch() must never be used: the Apps Script /exec redirect strips CORS
+// headers, so every server call goes through JSONP <script> tags instead.
+// Block fetch outright so any regression fails loudly; the route stub below
+// answers the JSONP requests.
+const FETCH_GUARD = `
 window.__fetchCalls = [];
-window.__startMode = 'refuse';
-window.__shiftMode = 'ok';
-window.fetch = function (url, opts) {
-  let payload = {};
-  try { payload = JSON.parse((opts && opts.body) || '{}'); } catch (e) {}
-  window.__fetchCalls.push({ url: String(url), action: payload.action || '' });
-  const d = new Date();
-  const today = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
-  const ok = function (body) {
-    return Promise.resolve(new Response(JSON.stringify(body), { status: 200 }));
-  };
-  if (payload.action === 'start') {
-    if (window.__startMode === 'open') {
-      return ok({ ok: true, dailyMax: 8, dailyMaxSet: true, todayHours: 0, todayAddHours: 0, todayIds: [], date: today, timezone: 'Asia/Kolkata' });
-    }
-    return ok({ ok: false, code: 'DAILY_MAX', error: "You can't start any shift today. Contact admin for details.",
-      dailyMax: 0, dailyMaxSet: true, todayHours: 0, todayAddHours: 0, todayIds: [], date: today, timezone: 'Asia/Kolkata' });
-  }
-  if (payload.action === 'shift') {
-    if (window.__shiftMode === 'fail') {
-      return ok({ ok: false, error: 'boom' });
-    }
-    return ok({ ok: true, dailyMax: 8, dailyMaxSet: true, todayHours: 0.5, todayAddHours: 0, todayIds: [], date: today, timezone: 'Asia/Kolkata' });
-  }
-  return ok({ ok: true, dailyMax: 8, dailyMaxSet: true, todayHours: 0, todayAddHours: 0, todayIds: [], date: today, timezone: 'Asia/Kolkata' });
+window.fetch = function () {
+  window.__fetchCalls.push(Array.prototype.map.call(arguments, String).join(' '));
+  return Promise.reject(new TypeError('fetch is blocked in tests: use JSONP.'));
 };
 `;
 
-// Users JSONP goes to the real endpoint host via script tags; intercept it
-// so the tests are deterministic and offline-safe. Returns hit counter.
-async function routeUsers(browser) {
-  const ctx = await browser.newContext();
-  const hits = { n: 0 };
-  const handler = async (route) => {
+function todayStamp() {
+  const d = new Date();
+  return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+}
+
+// Node-side endpoint stub: answers the page's JSONP <script> requests.
+// stub = { startMode: 'refuse'|'open'|'fail', shiftMode: 'ok'|'fail',
+// calls: [{ action, url }] }. 'fail' aborts the request (transport
+// failure: no server answer at all).
+function endpointHandler(stub) {
+  return async (route) => {
     const reqUrl = new URL(route.request().url());
-    hits.n++;
+    const action = reqUrl.searchParams.get('action') || '';
     const cb = reqUrl.searchParams.get('callback');
-    const body = cb
-      ? `${cb}(${JSON.stringify({ ok: true, users: STUB_USERS })});`
-      : JSON.stringify({ ok: true, users: STUB_USERS });
-    await route.fulfill({ status: 200, contentType: 'application/javascript', body });
+    stub.calls.push({ action: action, url: route.request().url() });
+    if (action === 'start' && stub.startMode === 'fail') {
+      await route.abort('connectionrefused');
+      return;
+    }
+    const today = todayStamp();
+    let body;
+    if (action === 'users') {
+      body = { ok: true, users: STUB_USERS };
+    } else if (action === 'start') {
+      body = stub.startMode === 'open'
+        ? { ok: true, dailyMax: 8, dailyMaxSet: true, todayHours: 0, todayAddHours: 0, todayIds: [], date: today, timezone: 'Asia/Kolkata' }
+        : { ok: false, code: 'DAILY_MAX', error: "You can't start any shift today. Contact admin for details.",
+            dailyMax: 0, dailyMaxSet: true, todayHours: 0, todayAddHours: 0, todayIds: [], date: today, timezone: 'Asia/Kolkata' };
+    } else if (action === 'shift') {
+      body = stub.shiftMode === 'fail'
+        ? { ok: false, error: 'boom' }
+        : { ok: true, dailyMax: 8, dailyMaxSet: true, todayHours: 0.5, todayAddHours: 0, todayIds: [], date: today, timezone: 'Asia/Kolkata' };
+    } else if (action === 'dailyStatus') {
+      body = { ok: true, user: 'mrunaldatar', dailyMax: 8, dailyMaxSet: true, todayHours: 0, todayAddHours: 0, todayIds: [], date: today, timezone: 'Asia/Kolkata' };
+    } else {
+      body = { ok: false, error: 'Unknown action: ' + action };
+    }
+    const text = cb ? `${cb}(${JSON.stringify(body)});` : JSON.stringify(body);
+    await route.fulfill({ status: 200, contentType: 'application/javascript', body: text });
   };
+}
+
+async function routeEndpoint(browser, stub) {
+  const ctx = await browser.newContext();
+  const handler = endpointHandler(stub);
   await ctx.route('**/script.google.com/**', handler);
   await ctx.route('**/record.example.test/**', handler);
-  return { ctx, hits };
+  return ctx;
+}
+
+function countCalls(stub, action) {
+  return stub.calls.filter((c) => c.action === action).length;
 }
 
 function seedBlockedAuthed() {
@@ -140,10 +159,6 @@ function seedBlockedAuthed() {
   `;
 }
 
-async function calls(page, action) {
-  return page.evaluate((a) => (window.__fetchCalls || []).filter(c => c.action === a).length, action);
-}
-
 server.listen(PORT, async () => {
   console.log('test server on', PORT);
   let failures = 0;
@@ -155,8 +170,9 @@ server.listen(PORT, async () => {
 
   try {
     // ---- Try shift start: server refuses ----
-    const { ctx, hits } = await routeUsers(browser);
-    await ctx.addInitScript({ content: FETCH_STUB });
+    const stub = { startMode: 'refuse', shiftMode: 'ok', calls: [] };
+    const ctx = await routeEndpoint(browser, stub);
+    await ctx.addInitScript({ content: FETCH_GUARD });
     const page = await ctx.newPage();
     await page.goto(`http://localhost:${PORT}/clock.html`, { waitUntil: 'domcontentloaded' });
     await page.evaluate(() => localStorage.clear());
@@ -190,49 +206,67 @@ server.listen(PORT, async () => {
     check('no Test daily limit button', s.noTestDaily === true);
     check('daily line shown orange as info', s.dailyVisible && s.dailyOrange, s.dailyVisible);
     check('hint says server decides', /server decides/.test(s.hint), s.hint);
-    check('users repopulated on load', s.userOptions.includes('stub-user') && s.cacheAge < 60000 && hits.n >= 1,
-      { options: s.userOptions, hits: hits.n });
-    check('no dailyStatus on load', (await calls(page, 'dailyStatus')) === 0);
-    check('no start request before press', (await calls(page, 'start')) === 0);
+    check('users repopulated on load', s.userOptions.includes('stub-user') && s.cacheAge < 60000 && countCalls(stub, 'users') >= 1,
+      { options: s.userOptions, users: countCalls(stub, 'users') });
+    check('no dailyStatus on load', countCalls(stub, 'dailyStatus') === 0);
+    check('no start request before press', countCalls(stub, 'start') === 0);
 
     await page.click('#startBtn');
     await page.waitForFunction(() => !document.getElementById('criticalAlert').hidden, null, { timeout: 4000 });
     s = await page.evaluate(() => ({
-      starts: window.__fetchCalls.filter(c => c.action === 'start').length,
-      daily: window.__fetchCalls.filter(c => c.action === 'dailyStatus').length,
       title: document.getElementById('criticalAlertTitle').textContent,
       msg: document.getElementById('criticalAlertMsg').textContent,
       active: !!JSON.parse(localStorage.getItem('dyuganga_clock_active_v1') || '{}').mrunaldatar,
       startDisabled: document.getElementById('startBtn').disabled,
     }));
-    check('one Start press costs exactly one request', s.starts === 1, s.starts);
-    check('no dailyStatus prefetch on Start', s.daily === 0, s.daily);
+    check('one Start press costs exactly one request', countCalls(stub, 'start') === 1, countCalls(stub, 'start'));
+    check('no dailyStatus prefetch on Start', countCalls(stub, 'dailyStatus') === 0, countCalls(stub, 'dailyStatus'));
     check('server refusal shown', /Cannot start shift/.test(s.title) && /can't start any shift/.test(s.msg), s.title);
     check('refused start runs no shift', s.active === false, s.active);
     check('Start re-enabled after refusal', s.startDisabled === false, s.startDisabled);
     await page.click('#criticalAlertDismiss');
 
+    // ---- Try shift start: transport failure starts nothing ----
+    stub.startMode = 'fail';
+    await page.click('#startBtn');
+    await page.waitForFunction(() => !document.getElementById('criticalAlert').hidden, null, { timeout: 8000 });
+    s = await page.evaluate(() => ({
+      title: document.getElementById('criticalAlertTitle').textContent,
+      msg: document.getElementById('criticalAlertMsg').textContent,
+      active: !!JSON.parse(localStorage.getItem('dyuganga_clock_active_v1') || '{}').mrunaldatar,
+      startDisabled: document.getElementById('startBtn').disabled,
+    }));
+    check('failed press costs one request', countCalls(stub, 'start') === 2, countCalls(stub, 'start'));
+    check('failed start shows no-shift alert',
+      /Shift not started/.test(s.title) && /No shift was started/.test(s.msg), s);
+    check('failed start runs no shift', s.active === false, s.active);
+    check('Start re-enabled after failure', s.startDisabled === false, s.startDisabled);
+    await page.click('#criticalAlertDismiss');
+
     // ---- Try shift start: server allows ----
-    await page.evaluate(() => { window.__startMode = 'open'; });
+    stub.startMode = 'open';
     await page.click('#startBtn');
     await page.waitForFunction(() => !document.getElementById('activePanel').hidden, null, { timeout: 4000 });
     s = await page.evaluate(() => ({
-      starts: window.__fetchCalls.filter(c => c.action === 'start').length,
-      daily: window.__fetchCalls.filter(c => c.action === 'dailyStatus').length,
       endDisabled: document.getElementById('endBtn').disabled,
       active: !!JSON.parse(localStorage.getItem('dyuganga_clock_active_v1') || '{}').mrunaldatar,
+      fetchCalls: window.__fetchCalls.length,
     }));
     check('allowed start runs the shift', s.active === true && s.endDisabled === false, s);
-    check('second press costs one more request, still no dailyStatus', s.starts === 2 && s.daily === 0, s);
+    check('third press costs one more request, still no dailyStatus',
+      countCalls(stub, 'start') === 3 && countCalls(stub, 'dailyStatus') === 0,
+      { starts: countCalls(stub, 'start'), daily: countCalls(stub, 'dailyStatus') });
+    check('no fetch() calls: all server traffic is JSONP', s.fetchCalls === 0, s.fetchCalls);
     const shot1 = '/tmp/test-try-start.png';
     await page.screenshot({ path: shot1, fullPage: true });
     console.log('screenshot', shot1, fs.statSync(shot1).size);
     await ctx.close();
 
     // ---- Retry upload: failed End queues, Retry re-sends ----
-    const rt = await routeUsers(browser);
-    await rt.ctx.addInitScript({ content: FETCH_STUB });
-    const pR = await rt.ctx.newPage();
+    const stubR = { startMode: 'refuse', shiftMode: 'ok', calls: [] };
+    const ctxR = await routeEndpoint(browser, stubR);
+    await ctxR.addInitScript({ content: FETCH_GUARD });
+    const pR = await ctxR.newPage();
     await pR.goto(`http://localhost:${PORT}/clock.html`, { waitUntil: 'domcontentloaded' });
     await pR.evaluate(() => localStorage.clear());
     await pR.evaluate(seedBlockedAuthed() + `
@@ -250,7 +284,7 @@ server.listen(PORT, async () => {
     `);
     await pR.reload({ waitUntil: 'domcontentloaded' });
     await pR.waitForFunction(() => !document.getElementById('endBtn').disabled, null, { timeout: 8000 });
-    await pR.evaluate(() => { window.__shiftMode = 'fail'; });
+    stubR.shiftMode = 'fail';
     await pR.click('#endBtn');
     await pR.waitForFunction(
       () => !document.getElementById('result').hidden && !document.getElementById('retryBtn').hidden,
@@ -262,7 +296,7 @@ server.listen(PORT, async () => {
     }));
     check('failed End queues the shift', /Could not save/.test(r.title) && r.queued === 1, r);
     check('retry button shows the count', r.retryLabel === 'Retry upload (1)', r.retryLabel);
-    await pR.evaluate(() => { window.__shiftMode = 'ok'; });
+    stubR.shiftMode = 'ok';
     await pR.click('#retryBtn');
     await pR.waitForFunction(
       () => document.getElementById('resultTitle').textContent.includes('Pending shifts recorded'),
@@ -271,20 +305,20 @@ server.listen(PORT, async () => {
       title: document.getElementById('resultTitle').textContent,
       queued: localStorage.getItem('dyuganga_clock_pending_v1'),
       retryHidden: document.getElementById('retryBtn').hidden,
-      uploads: window.__fetchCalls.filter(c => c.action === 'shift').length,
     }));
     check('retry uploads the queue', /Pending shifts recorded/.test(r.title) && r.queued === null, r.title);
     check('retry button hides after success', r.retryHidden === true, r.retryHidden);
-    check('exactly two shift requests (fail + retry)', r.uploads === 2, r.uploads);
-    await rt.ctx.close();
+    check('exactly two shift requests (fail + retry)', countCalls(stubR, 'shift') === 2, countCalls(stubR, 'shift'));
+    await ctxR.close();
 
     // ---- Endpoint override via RECORD_SERVER_ENDPOINT ----
-    const ov = await routeUsers(browser);
-    await ov.ctx.addInitScript({ content: `
+    const stubO = { startMode: 'refuse', shiftMode: 'ok', calls: [] };
+    const ctxO = await routeEndpoint(browser, stubO);
+    await ctxO.addInitScript({ content: `
       window.RECORD_SERVER_ENDPOINT = 'https://record.example.test/exec';
       window.DYUGANGA_CLOCK_ENDPOINT = 'https://old.example.test/exec';
-    ` + FETCH_STUB });
-    const pOv = await ov.ctx.newPage();
+    ` + FETCH_GUARD });
+    const pOv = await ctxO.newPage();
     await pOv.goto(`http://localhost:${PORT}/clock-override.html`, { waitUntil: 'domcontentloaded' });
     await pOv.evaluate(() => localStorage.clear());
     await pOv.evaluate(seedBlockedAuthed());
@@ -294,19 +328,19 @@ server.listen(PORT, async () => {
       null, { timeout: 8000 });
     await pOv.click('#startBtn');
     await pOv.waitForFunction(
-      () => (window.__fetchCalls || []).some(c => c.action === 'start'),
+      () => !document.getElementById('criticalAlert').hidden,
       null, { timeout: 8000 });
-    const urls = await pOv.evaluate(() => ({
-      starts: (window.__fetchCalls || []).filter(c => c.action === 'start').map(c => c.url),
-      shared: window.ClockShared ? window.ClockShared.getEndpoint() : null,
-    }));
+    const urls = {
+      starts: stubO.calls.filter((c) => c.action === 'start').map((c) => c.url),
+      shared: await pOv.evaluate(() => (window.ClockShared ? window.ClockShared.getEndpoint() : null)),
+    };
     check('override: start posted to RECORD_SERVER_ENDPOINT',
       urls.starts.length > 0 && urls.starts.every(u => u.startsWith('https://record.example.test/exec')), urls.starts);
     check('override: old global ignored',
       urls.starts.every(u => !u.startsWith('https://old.example.test/exec')), urls.starts);
     check('override: Shared.getEndpoint() honors it',
       urls.shared === 'https://record.example.test/exec', urls.shared);
-    await ov.ctx.close();
+    await ctxO.close();
 
     // ---- Dynamic CSS: raw HTML has no static link ----
     for (const name of ['clock.html', 'check-shifts.html']) {
@@ -323,8 +357,9 @@ server.listen(PORT, async () => {
     }
 
     // ---- Dynamic CSS: DOM link created by loader ----
-    const css = await routeUsers(browser);
-    const p2 = await css.ctx.newPage();
+    const cssStub = { startMode: 'refuse', shiftMode: 'ok', calls: [] };
+    const cssCtx = await routeEndpoint(browser, cssStub);
+    const p2 = await cssCtx.newPage();
     await p2.goto(`http://localhost:${PORT}/clock.html`, { waitUntil: 'domcontentloaded' });
     await p2.waitForFunction(() => document.querySelectorAll('link[href*=".css"]').length === 1, null, { timeout: 4000 });
     const cssState = await p2.evaluate(() => {
@@ -338,10 +373,11 @@ server.listen(PORT, async () => {
     });
     check('clock.css: exactly one loader stylesheet', cssState.n === 1 && cssState.dyn === '1' && cssState.inHead === true, cssState);
     check('clock.css: rules loaded', cssState.rules > 10, cssState.rules);
-    await css.ctx.close();
+    await cssCtx.close();
 
     // ---- Dynamic CSS: candidate fallback (./ 404s, ../ loads) ----
-    const fbCtx = await browser.newContext();
+    const fbStub = { startMode: 'refuse', shiftMode: 'ok', calls: [] };
+    const fbCtx = await routeEndpoint(browser, fbStub);
     const p3 = await fbCtx.newPage();
     await p3.goto(`http://localhost:${PORT}/deep/deep.html`, { waitUntil: 'domcontentloaded' });
     await p3.waitForFunction(() => document.querySelectorAll('link[href*=".css"]').length === 1, null, { timeout: 6000 });
@@ -362,3 +398,4 @@ server.listen(PORT, async () => {
   console.log(failures === 0 ? '\nALL PASS' : `\n${failures} FAILURES`);
   process.exit(failures === 0 ? 0 : 1);
 });
+

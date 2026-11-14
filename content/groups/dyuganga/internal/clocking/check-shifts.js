@@ -10,7 +10,7 @@
   const remove = Shared.remove;
   const getEndpoint = Shared.getEndpoint;
   const getTimezone = Shared.getTimezone;
-  const postJson = Shared.postJson;
+  const requestJson = Shared.requestJson;
   const getAuthMap = Shared.getAuthMap;
   const findAuth = Shared.findAuth;
   const setAuth = Shared.setAuth;
@@ -27,6 +27,7 @@
   let usersFetchStarted = false;
   let shiftsFetchStarted = false;
   let toastTimer = null;
+  let cachedShifts = [];
 
   async function fetchUsers() {
     try {
@@ -82,6 +83,9 @@
   }
 
   function renderShifts(shifts) {
+    // Every displayed list funnels through here, so the break-gap check
+    // below always sees exactly what the table shows.
+    cachedShifts = Array.isArray(shifts) ? shifts : [];
     const body = $('csShiftsBody');
     if (!body) {
       return;
@@ -168,7 +172,7 @@
       message.textContent = 'Loading shifts...';
     }
     try {
-      const body = await postJson({ action: 'shifts', token: currentAuth.token });
+      const body = await requestJson({ action: 'shifts', token: currentAuth.token });
       const shifts = Array.isArray(body.shifts) ? body.shifts : [];
       renderShifts(shifts);
       if (message) {
@@ -211,7 +215,7 @@
       message.textContent = 'Signing in...';
     }
     try {
-      const body = await postJson({ action: 'login', user: user, password: password });
+      const body = await requestJson({ action: 'login', user: user, password: password });
       if (!body.token) {
         throw new Error('The endpoint did not return a session token.');
       }
@@ -246,7 +250,7 @@
     button.disabled = true;
     const message = $('csShiftsMsg');
     try {
-      await postJson({
+      await requestJson({
         action: 'requestDelete',
         token: currentAuth.token,
         id: id || '',
@@ -281,7 +285,7 @@
       return false;
     }
     const fiveMinutes = 5 * 60 * 1000;
-    return (shifts || []).some(function (other) {
+    return cachedShifts.some(function (other) {
       if (other.user !== user || other.pending === 'Delete') {
         return false;
       }
@@ -349,7 +353,7 @@
       message.textContent = 'Requesting addition...';
     }
     try {
-      await postJson({
+      await requestJson({
         action: 'requestAdd',
         token: currentAuth.token,
         user: user,

@@ -576,6 +576,9 @@
     } else if (authPrompt && authPrompt.user === user) {
       $('userHint').textContent = 'Sign in to start the shift.';
       showOver2h(false);
+    } else if (starting) {
+      $('userHint').textContent = 'Contacting the server to start the shift...';
+      showOver2h(false);
     } else if (getAuth(user)) {
       const effectiveWork = getEffectiveWorkMs(user);
       const workText = effectiveWork > 0
@@ -623,15 +626,17 @@
     starting = true;
     refresh();
     try {
-      // Ask for the password (if this browser is not signed in yet) before the
-      // shift starts, so the single start request can also sign in.
+      // Ask for the password (if this browser is not signed in yet) before
+      // contacting the server, so the single start request can also sign in.
       const authFields = await getAuthFields(user);
       if (!authFields) {
         return;
       }
       // No client-side limit check and no prefetch: one Start press costs
-      // exactly one request, and the server verdict (DAILY_MAX or ok) in
-      // uploadStart() below is the only enforcement.
+      // exactly one request, and the server verdict in uploadStart() below is
+      // the only enforcement. The shift starts ONLY after a positive server
+      // response — a refusal, a transport failure, or an outdated-server
+      // reply must never start a local-only shift.
       const now = new Date();
       const shift = {
         id: uuid(),
@@ -639,22 +644,13 @@
         startISO: now.toISOString(),
         alerted: false
       };
-      setActiveShift(shift);
-      hideResult();
-      // The shift is running locally; do not keep End disabled while the start row uploads.
-      starting = false;
-      refresh();
-      let rowSaved = true;
       try {
         await uploadStart(shift, authFields);
       } catch (err) {
-        rowSaved = false;
         if (err && err.code === 'AUTH') {
           clearAuth(user);
-          clearActiveShift(user);
           showCriticalAlert('Sign-in failed', err.message || 'Please start the shift again.');
         } else if (err && err.code === 'DAILY_MAX') {
-          clearActiveShift(user);
           applyResponseMeta(user, err.body);
           const blocked = getDailyAllowance(user);
           showCriticalAlert(
@@ -662,18 +658,22 @@
               err.message || dailyBlockMessage(blocked)
           );
         } else if (err && err.code === 'COLLISION') {
-          clearActiveShift(user);
           applyResponseMeta(user, err.body);
           showCriticalAlert('Shift not started', err.message || 'A row with this start time already exists.');
-        } else if (err && err.body) {
-          applyResponseMeta(user, err.body);
+        } else {
+          if (err && err.body) {
+            applyResponseMeta(user, err.body);
+          }
+          showCriticalAlert('Shift not started',
+              (err && err.message ? err.message : 'Could not reach the server.') +
+              ' No shift was started; try again.');
         }
+        return;
       }
-      if (!rowSaved) {
-        refresh();
-      } else {
-        toast('Shift started');
-      }
+      // Positive server response: the start row exists, so run the clock.
+      setActiveShift(shift);
+      hideResult();
+      toast('Shift started');
       $('endBtn').focus();
     } finally {
       starting = false;
@@ -934,7 +934,11 @@
         : 'The built-in Google Apps Script endpoint is not configured.';
   }
 
-  async function postJson(payload) {
+  // Server requests go through JSONP <script> tags, never fetch(): the Apps
+  // Script /exec redirect strips CORS headers, so fetch() POST is blocked
+  // even when the deployment is alive. Shape-checked by shared code, so an
+  // outdated deployment's generic ping never counts as a positive response.
+  async function requestJson(payload) {
     const endpoint = getEndpoint();
     if (!endpoint) {
       throw new Error('The spreadsheet endpoint is not configured.');
@@ -942,46 +946,8 @@
     if (navigator.onLine === false) {
       throw new Error('You appear to be offline.');
     }
-
-    const controller = new AbortController();
-    const timeout = window.setTimeout(function () { controller.abort(); }, 15000);
-    let response;
-
-    try {
-      response = await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(payload),
-        redirect: 'follow',
-        signal: controller.signal
-      });
-    } catch (err) {
-      if (err && err.name === 'AbortError') {
-        throw new Error('The request timed out after 15 seconds.');
-      }
-      throw new Error('Could not reach Google (network or CORS problem).');
-    } finally {
-      window.clearTimeout(timeout);
-    }
-
-    const text = await response.text();
-    let body = null;
-    try {
-      body = JSON.parse(text);
-    } catch (err) {
-      body = null;
-    }
-
-    if (!response.ok) {
-      throw new Error('Google returned HTTP ' + response.status + '.');
-    }
-    if (!body || body.ok !== true) {
-      const error = new Error(body && body.error ? String(body.error) : 'The spreadsheet endpoint returned an unexpected response.');
-      error.code = body && body.code;
-      error.body = body || null;
-      throw error;
-    }
-    return body;
+    const body = await jsonpRequest(endpoint, payload || {});
+    return Shared.checkActionBody(payload && payload.action, body);
   }
 
   // Returns { token } or { password } for the next request, so a single request
@@ -1025,7 +991,7 @@
       throw new Error('Sign-in is required to save this shift.');
     }
     try {
-      const body = await postJson(Object.assign({}, startRecord(shift), fields, {
+      const body = await requestJson(Object.assign({}, startRecord(shift), fields, {
         action: 'start'
       }));
       applyResponseMeta(shift.user, body);
@@ -1044,7 +1010,7 @@
       throw new Error('Sign-in is required to save this shift.');
     }
     try {
-      const body = await postJson(Object.assign({}, record, fields, {
+      const body = await requestJson(Object.assign({}, record, fields, {
         action: 'shift'
       }));
       applyResponseMeta(record.user, body);

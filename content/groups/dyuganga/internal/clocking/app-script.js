@@ -19,49 +19,80 @@ function jsonpOrJson(e, value) {
 }
 
 function doGet(e) {
-  const action = e && e.parameter && e.parameter.action;
-  if (action === 'users') {
-    try {
-      return jsonpOrJson(e, { ok: true, users: listUsers() });
-    } catch (err) {
-      return jsonpOrJson(e, { ok: false, error: String(err) });
-    }
+  const params = (e && e.parameter) || {};
+  const action = params.action;
+  if (!action) {
+    return jsonpOrJson(e, {
+      ok: true,
+      message: 'Dyuganga shift clock endpoint is live.'
+    });
   }
-  return jsonpOrJson(e, {
-    ok: true,
-    message: 'Dyuganga shift clock endpoint is live.'
-  });
+  try {
+    if (action === 'users') {
+      return jsonpOrJson(e, { ok: true, users: listUsers() });
+    }
+    // Every other action arrives as JSONP query params (<script> tags are
+    // not subject to CORS, unlike fetch POST through the /exec redirect).
+    // All payloads are small flat objects, so GET carries them fine.
+    const data = {};
+    Object.keys(params).forEach(function (k) {
+      if (k !== 'callback' && k !== 't') {
+        data[k] = params[k];
+      }
+    });
+    return jsonpText(e, dispatchAction(data));
+  } catch (err) {
+    return jsonpOrJson(e, { ok: false, error: String(err) });
+  }
 }
 
 function doPost(e) {
   try {
     const data = JSON.parse((e.postData && e.postData.contents) || '{}');
-    const action = data.action || 'shift';
-    if (action === 'login') {
-      return login(data);
-    }
-    if (action === 'start') {
-      return startShiftRow(data);
-    }
-    if (action === 'shift') {
-      return appendShift(data);
-    }
-    if (action === 'dailyStatus') {
-      return getDailyStatus(data);
-    }
-    if (action === 'shifts') {
-      return listShifts(data);
-    }
-    if (action === 'requestDelete') {
-      return requestDeleteShift(data);
-    }
-    if (action === 'requestAdd') {
-      return requestAddShift(data);
-    }
-    return json({ ok: false, error: 'Unknown action.' });
+    return dispatchAction(data);
   } catch (err) {
     return json({ ok: false, error: String(err) });
   }
+}
+
+// Shared by doGet (JSONP, CORS-immune) and doPost (kept so older clients
+// keep working). Handlers already coerce strings, so GET params need no
+// further conversion.
+function dispatchAction(data) {
+  const action = (data && data.action) || 'shift';
+  if (action === 'login') {
+    return login(data);
+  }
+  if (action === 'start') {
+    return startShiftRow(data);
+  }
+  if (action === 'shift') {
+    return appendShift(data);
+  }
+  if (action === 'dailyStatus') {
+    return getDailyStatus(data);
+  }
+  if (action === 'shifts') {
+    return listShifts(data);
+  }
+  if (action === 'requestDelete') {
+    return requestDeleteShift(data);
+  }
+  if (action === 'requestAdd') {
+    return requestAddShift(data);
+  }
+  return json({ ok: false, error: 'Unknown action.' });
+}
+
+// Rewrap a JSON TextOutput as JSONP when ?callback= names a safe identifier.
+function jsonpText(e, output) {
+  const callback = e && e.parameter && e.parameter.callback;
+  if (callback && /^[A-Za-z_$][A-Za-z0-9_$]*$/.test(callback)) {
+    return ContentService
+        .createTextOutput(callback + '(' + output.getContent() + ');')
+        .setMimeType(ContentService.MimeType.JAVASCRIPT);
+  }
+  return output;
 }
 
 function login(data) {
@@ -438,7 +469,9 @@ function requestAddShift(data) {
   } finally {
     lock.releaseLock();
   }
-  return json({ ok: true });
+  // `requested` marks a genuine addition reply, so clients can tell it from
+  // the generic ping of an outdated deployment.
+  return json({ ok: true, requested: true });
 }
 
 function ensureShiftHeaders(sheet) {
