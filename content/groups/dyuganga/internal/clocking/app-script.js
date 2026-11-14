@@ -1056,8 +1056,9 @@ function removeDateColumn() {
 }
 
 function json(value) {
+  // No custom headers: TextOutput has no setHeaders, and none is needed —
+  // every client call arrives as a JSONP <script> request, which ignores CORS.
   return ContentService
       .createTextOutput(JSON.stringify(value))
-      .setMimeType(ContentService.MimeType.JSON)
-      .setHeaders({ 'Access-Control-Allow-Origin': '*' });
+      .setMimeType(ContentService.MimeType.JSON);
 }
