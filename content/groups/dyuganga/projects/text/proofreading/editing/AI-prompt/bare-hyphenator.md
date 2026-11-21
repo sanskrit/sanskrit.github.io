@@ -71,7 +71,7 @@ Follow these steps in strict order. **This is not a set of guidelines; it is an 
 *   Correct obvious typographical errors (e.g., a space in the middle of a word).
 *   Insert an omitted sentence-ending daṇḍa (`।`) followed by `  \n` when syntax unmistakably shows two separate sentences or commentary glosses fused without punctuation (never add `।` mid-clause).
 *   Remove wasteful newlines, such as those before `</details>` or between half-verses.
-*   Preserve intentional styles like **bold** and *italic*, as well as existing headings and paragraphs.
+*   Preserve intentional styles like **bold** and *italic*, as well as existing titles, headings, and paragraphs (building around existing headings rather than dropping them when adding navigation headings in Step 4).
 
 **Step 2: Source Error Handling & Doubtful Readings**
 *   **This step is distinct from sandhi separation and must be settled before hyphenation** (word fixes change where boundaries fall). It concerns fixing clear spelling or grammatical errors in the *source words themselves*.
@@ -106,6 +106,7 @@ For each Sanskrit segment (Devanagari or non-Devanagari, outputting in the origi
             *   `guṇa` / `vṛddhi` broken across quote/`इति`/clause breaks: `अत्रौदनोपसेचनसूचितोऽत्ता ... उत परमात्मेति सन्दिह्यते` → `अत्र\n\n> ओदनोपसेचन-सूचितो ऽत्ता ...\nउत परमात्मा\n\nइति सन्दिह्यते ।`; `प्रधानस्याचेतनस्यैवंरूपो` → `प्रधानस्याचेतनस्य  \nएवं-रूपो`
             *   `visarga` restored at major clause breaks: `पृष्टो मृत्युस्तस्यार्थस्य` → `पृष्टो मृत्युः  \nतस्यार्थस्य`; `परस्य ब्रह्मणश्शरीरतया` → `परस्य ब्रह्मणः\n\nशरीरतया`
     *   **Keep intact (do not over-split):** Leave short single-clause sentences on one line; never break inside a compound unit (except at a major `--`/`–` seam in very long chains), across tight noun-modifier pairs, inside `[[OLD|NEW]]` / `+++(...)+++`, or so as to strand clitics (`च`, `वा`, `अपि`, `एव`, `हि`, `न`, `तु`) alone on a line.
+*   **Navigation Headings:** For long or multi-topic prose outside `<details>` blocks, insert concise, informative topic-level Markdown headings (`##`, `###`, `####`) for easy navigation (and `## A`–`## Z` letter headings for long indices). Respect existing titles and structural headings, normalize any out-of-order top heading levels so hierarchy stays strictly monotonic (no skipped levels like `##` → `####`), and nest new subheadings logically beneath existing headings. Never place a heading directly before an unrelated footnote definition (`[^id]:`), a mid-sentence continuation, or a trailing attribution line, and always keep blank lines (`\n\n`) around headings (including after `[[Pnnn]]`). Inside `<details>` blocks, never use `#` headings — format internal headings as bold lines (`**...**  `) instead.
 *   **Quotes & Mantras:** Enclose short quotes (under 5 words) in `"` and format longer quotes or mantras as blockquotes (`>`).
 *   **Verse Structure:** End verse/śloka pāda lines with two spaces (`  `) for a soft break.
 *   **Page Numbers:** Format page numbers (e.g., `६४`) as `[[P64]]` at the precise point of the page break, even within a paragraph which continues to the next page.
