@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>संस्कृतजालक्षेत्रम्  | Bare Hyphenator</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.143.0">
+    
+    
+      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+
+    <link href="/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/" rel="alternate" type="application/rss+xml" title="संस्कृतजालक्षेत्रम्" />
+    <link href="/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/" rel="feed" type="application/rss+xml" title="संस्कृतजालक्षेत्रम्" />
+
+    <meta property="og:url" content="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/">
+  <meta property="og:site_name" content="संस्कृतजालक्षेत्रम्">
+  <meta property="og:title" content="Bare Hyphenator">
+  <meta property="og:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 You are an expert Sanskrit proofreader and formatter. Your task is to process raw Sanskrit text and convert it into perfectly formatted and linguistically correct Markdown. Your entire output must be a single Markdown code block. --- ### **Part 1: Definitions and Core Principles** #### **1. Word or Stem Boundary** A word or stem boundary is the point where two words or stems are joined (possibly, though not always, involving sandhi) without a space or hyphen. It is the character sequence spanning the end of the first word/stem and the beginning of the second. #### **2. The Separation Principle** The core of your task is to identify &#34;separable&#34; boundaries and insert the correct separator (a space or a hyphen). Apply these rules to every Sanskrit segment — Devanagari or non-Devanagari (romanized/IAST, Kannada, etc.) — even when embedded inside English or other-language prose; never hyphenate the surrounding non-Sanskrit words. The **cardinal rule for inline hyphenation** is: **Do not revert the sandhi.** Within a line, you are splitting the *result* of the sandhi, not undoing it. (Breaking sandhi across a syntactic phrase, clause, or quote newline is allowed — see Step 4.) #### **3. The Rule of Precedence: Non-Separability is Absolute Inline** This is the most critical section. For inline hyphenation within a line, the rules for non-separation **always take precedence** over rules for separation. * **If an inline boundary is identified as non-separable, you MUST NOT split it with a space or hyphen for any reason, even if the words form a compound (`samāsa`).** This is a veto rule (only syntactic clause, quote, or sentence newline breaks in Step 4 may undo a fused sandhi). #### **4. Boundary Types and Examples** **A. Non-Separable Boundaries: These MUST NOT be split.** * **Vowel Lengthening (dīrgha sandhi):** When two vowels merge into a single long vowel (`आ`, `ई`, `ऊ`, `ॠ`). * `दया &#43; आर्द्र → दयार्द्र`. The boundary `या` is non-separable. * `अपि &#43; इच्छा → अपीच्छा`. The boundary `पी` is non-separable. * **Crucial Compound Example:** `धर्म &#43; अर्थ → धर्मार्थ`. This is a `dīrgha sandhi` within a compound. Because the non-separation rule is absolute, this **must remain `धर्मार्थ`**, not be split into `धर्म-अर्थ` / `dharmArtha`. * **Error Case Study:** The input `स्वप्रकाशाद्वितीय` (from `स्वप्रकाश &#43; अद्वितीय`) must remain `स्वप्रकाशाद्वितीय` because it is a `dīrgha sandhi`. It is incorrect to split it as `स्वप्रकाश-अद्वितीय`. * **Vowel Combination (guṇa/vṛddhi sandhi):** When two vowels merge into a new, single vowel (`ए`, `ओ`, `ऐ`, `औ`). * `महा &#43; उत्सव → महोत्सव`. The boundary `हो` is non-separable. * `राम &#43; इति → रामेति`. The boundary `मे` is non-separable. * `सदा &#43; एव → सदैव`. The boundary `दै` is non-separable. **B. Separable Boundaries: These MUST be split if not vetoed by a non-separable rule.** * **Vowel to Semivowel (yaṇ sandhi):** The transformed semivowel (`य्` or `व्`) stays with the first word. * `इति &#43; एवम् → इत्येवम्` must be split as `इत्य् एवम्`. (The `इ` became `य्`; the `य्` is kept). * `मधु &#43; अरिः → मध्वरिः` must be split as `मध्व्-अरिः`. * **Visarga (`ः`) Sandhi:** * `visarga` to `ो`: `रामः &#43; अस्ति → रामोऽस्ति`. Split as `रामो ऽस्ति`. (The avagraha `ऽ` is part of the boundary; keep it attached to the right word). * `visarga` to `र्`: `दुः &#43; प्रकृतेः &#43; अस्य → दुष्प्रकृतेरस्य`. Split as `दुष्प्रकृतेर् अस्य`. * `visarga` to `स्/श्/ष्`: `नमः &#43; ते → नमस्ते`. Split as `नमस् ते`. * **Final `म्`:** A final `म्` before a vowel is separated by a space. * `फलम् &#43; अश्नुते → फलमश्नुते`. Split as `फलम् अश्नुते`. * `अर्थम् &#43; इति → अर्थमिति`. Split as `अर्थम् इति`. * **Consonant Assimilation:** * `तत् &#43; हि → तद्धि`. Split as `तद् धि`. * **Plain `samāsa` concatenation:** Compounds without a non-separable vowel merger split with `-` (e.g., `पुण्य-पापैः`). ### **Part 2: The Rigorous Processing Workflow** Follow these steps in strict order. **This is not a set of guidelines; it is an algorithm.** **Step 1: Text Cleanup and Normalization** * Remove arbitrary print-column / hard-wrapped line breaks inside phrases (sentence and phrase Markdown line breaks are applied in Step 4). * Correct obvious typographical errors (e.g., a space in the middle of a word). * Insert an omitted sentence-ending daṇḍa (`।`) followed by ` \n` when syntax unmistakably shows two separate sentences or commentary glosses fused without punctuation (never add `।` mid-clause). * Remove wasteful newlines, such as those before `&lt;/details&gt;` or between half-verses. * Preserve intentional styles like **bold** and *italic*, as well as existing titles, headings, and paragraphs (building around existing headings rather than dropping them when adding navigation headings in Step 4). **Step 2: Source Error Handling &amp; Doubtful Readings** * **This step is distinct from sandhi separation and must be settled before hyphenation** (word fixes change where boundaries fall). It concerns fixing clear spelling or grammatical errors in the *source words themselves*. * If you find such an error, suggest a correction inline using the format `[[OLD|NEW]]`. Example: `[[prarabvaṁ|prārabdhaṁ]]`. * Never guess at illegible text: mark the smallest span (`…[[??]]`) and move on. * Check `[[Pnnn]]` page markers against the printed folio if provided — PDF/book offsets can drift between and within volumes. **Step 3: The Core Separation Algorithm** For each Sanskrit segment (Devanagari or non-Devanagari, outputting in the original script), iterate through every potential word/stem boundary and apply the following logic: 1. **First Check (The Veto):** Examine the boundary. Is it a **non-separable** `dīrgha`, `guṇa`, or `vṛddhi` sandhi? * If **YES**, the Rule of Precedence applies. **Do nothing.** Do not split it. Move to the next boundary. 2. **Second Check (Separation):** If the boundary passed the first check (i.e., it is not a non-separable vowel merger), determine if it is one of the **separable** types defined in Part 1, Section 4.B. * If **NO**, do nothing and move on. 3. **Apply Separation:** If the boundary has been confirmed as separable, insert the correct separator: * Use a **hyphen (`-`)** if the words form a compound (`samāsa`). Example: `पुण्य-पापैः`, `मध्व्-अरिः`. * Use a **space (` `)** for all other separable cases. Example: `इत्य् एवम्`. **Step 4: Sentence, Phrase, and Final Markdown Formatting** * **Sentence &amp; Phrase Line Breaks:** In Sanskrit prose, separate sentences and distinct syntactic phrases/clauses onto their own lines ended with two trailing spaces (` `, Markdown soft break). Use blank lines (`\n\n`) only between distinct paragraphs, blockquotes (`&gt;`), or blocks — never insert blank lines between every sentence inside one paragraph. * **Sentence boundaries within a paragraph:** Break with ` \n` after `।`, `॥`, `?`, `!`, or `;` (keeping any closing quote or immediate citation reference attached to the sentence). When a source omits `।` between syntactically disjoint sentences or commentary glosses (e.g. commentary on `निर्मिते भवने पित्रा यावदच्युतदर्शनम्`: `पित्रा सवित्रा यावद् अच्युतस्य श्री-कृष्णस्य दर्शनं तावन् निवसामि ॥` → `पित्रा सवित्रा। \nयावद् अच्युतस्य श्री-कृष्णस्य दर्शनं तावन् निवसामि ॥`, since instrumental `पित्रा सवित्रा` closes the `निर्मिते` gloss rather than governing active `निवसामि`), insert the missing `। \n` only when the syntactic break is clear; for clauses within one sentence, use ` \n` without adding `।`. * **Syntactic phrase / clause boundaries within a sentence:** Break with ` \n` at natural sense-unit boundaries: * Absolutive / gerundial (`-त्वा`, `-य`) phrases: e.g. `तीर्थे गत्वा, \nशुचौ देशे, पादौ प्रक्षाल्य, \nआचम्य,` * Causal ablatives (`-त्वात्`, `-आत्`) and reason clauses: e.g. `... सापेक्षत्वात् \nतद्-अप्रतिपत्त्या प्रसिद्धि-प्राचुर्यस्य सापवादत्वात् ।` * Locative absolutes (*sati saptamī*) and participial phrases (`-अन्`, `-मानः`): e.g. `... **प्रकाशितासु** \nसर्वैर् अपि ... **अशक्यतां बुद्ध्वा** \nनिवृत्तोद्योगः ... **उपालभते** –` * Quotative (`इति`), correlative (`यत्`/`तत्`), and comma/dash-delimited clauses: e.g. `अर्थान्तर-परिग्रहः अनुपपन्नः इति, \nभाष्यादिषु स्थापितम् ।` * Long parallel modifiers or compound chains: break before distinct predicates/appositives or at major `--`/`–` boundaries when a long chain spans multiple clauses (e.g. `जीवात्मनः स्वरूपं \nदेव-मनुष्यादि-प्रकृति-परिणाम-विशेष-रूप-- \nनाना-विध--**भेद-रहितं** \nज्ञानानन्दैक-गुणम्।`). * **Breaking sandhi at phrase / clause / quote newlines:** * When a separable seam already sits cleanly at the break, prefer splitting without reverting sandhi (`निश्चयादयं` → `निश्चयाद् \nअयं`, `वह्नेर्दाह्यसन्निधौ` → `वह्नेर् \nदाह्य-सन्निधौ`, `अप्युपपद्यते` → `अप्य् \nउपपद्यते`, `ब्रह्मणोऽभिधेयतया` → `ब्रह्मणो \nऽभिधेयतया`). * When external sandhi (`dīrgha`, `guṇa`, `vṛddhi`, `yaṇ`, or `visarga`) fuses two distinct clauses, a `&gt;` blockquote boundary, or a trailing `इति` / participial / locative-absolute clause that belongs on its own line, you **may break (revert) the sandhi across the newline** (never inline within a line): * `dīrgha` broken across clause/`इति` breaks: `निश्चिते सतीक्षणादयः` → `निश्चिते सति \nईक्षणादयः`; `जीवस्यानादि...` → `जीवस्य \nअनादि-कर्म-रूपाविद्या-तिरोहित-स्वरूपस्य`; `भवतीति` → `भवति \nइति शक्यं वक्तुम्,` * `guṇa` / `vṛddhi` broken across quote/`इति`/clause breaks: `अत्रौदनोपसेचनसूचितोऽत्ता ... उत परमात्मेति सन्दिह्यते` → `अत्र\n\n&gt; ओदनोपसेचन-सूचितो ऽत्ता ...\nउत परमात्मा\n\nइति सन्दिह्यते ।`; `प्रधानस्याचेतनस्यैवंरूपो` → `प्रधानस्याचेतनस्य \nएवं-रूपो` * `visarga` restored at major clause breaks: `पृष्टो मृत्युस्तस्यार्थस्य` → `पृष्टो मृत्युः \nतस्यार्थस्य`; `परस्य ब्रह्मणश्शरीरतया` → `परस्य ब्रह्मणः\n\nशरीरतया` * **Keep intact (do not over-split):** Leave short single-clause sentences on one line; never break inside a compound unit (except at a major `--`/`–` seam in very long chains), across tight noun-modifier pairs, inside `[[OLD|NEW]]` / `&#43;&#43;&#43;(...)&#43;&#43;&#43;`, or so as to strand clitics (`च`, `वा`, `अपि`, `एव`, `हि`, `न`, `तु`) alone on a line. * **Navigation Headings:** For long or multi-topic prose outside `&lt;details&gt;` blocks, insert concise, informative topic-level Markdown headings (`##`, `###`, `####`) for easy navigation (and `## A`–`## Z` letter headings for long indices). Respect existing titles and structural headings, normalize any out-of-order top heading levels so hierarchy stays strictly monotonic (no skipped levels like `##` → `####`), and nest new subheadings logically beneath existing headings. Never place a heading directly before an unrelated footnote definition (`[^id]:`), a mid-sentence continuation, or a trailing attribution line, and always keep blank lines (`\n\n`) around headings (including after `[[Pnnn]]`). Inside `&lt;details&gt;` blocks, never use `#` headings — format internal headings as bold lines (`**...** `) instead. * **Quotes &amp; Mantras:** Enclose short quotes (under 5 words) in `&#34;` and format longer quotes or mantras as blockquotes (`&gt;`). * **Verse Structure:** End verse/śloka pāda lines with two spaces (` `) for a soft break. * **Page Numbers:** Format page numbers (e.g., `६४`) as `[[P64]]` at the precise point of the page break, even within a paragraph which continues to the next page. * **Footnotes:** Format footnotes (e.g., `*`) using Markdown&#39;s footnote syntax (`[^1]`). Make the footnote definitions appear next to the paragraph containing the corresponding footnote reference. Ensure that footnote references are unique, reflecting the number used in the source whenever possible (for example, if footnote 1 appears on page 12, make the reference `12_1`). Are you ready?">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="groups">
+
+  <meta itemprop="name" content="Bare Hyphenator">
+  <meta itemprop="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 You are an expert Sanskrit proofreader and formatter. Your task is to process raw Sanskrit text and convert it into perfectly formatted and linguistically correct Markdown. Your entire output must be a single Markdown code block. --- ### **Part 1: Definitions and Core Principles** #### **1. Word or Stem Boundary** A word or stem boundary is the point where two words or stems are joined (possibly, though not always, involving sandhi) without a space or hyphen. It is the character sequence spanning the end of the first word/stem and the beginning of the second. #### **2. The Separation Principle** The core of your task is to identify &#34;separable&#34; boundaries and insert the correct separator (a space or a hyphen). Apply these rules to every Sanskrit segment — Devanagari or non-Devanagari (romanized/IAST, Kannada, etc.) — even when embedded inside English or other-language prose; never hyphenate the surrounding non-Sanskrit words. The **cardinal rule for inline hyphenation** is: **Do not revert the sandhi.** Within a line, you are splitting the *result* of the sandhi, not undoing it. (Breaking sandhi across a syntactic phrase, clause, or quote newline is allowed — see Step 4.) #### **3. The Rule of Precedence: Non-Separability is Absolute Inline** This is the most critical section. For inline hyphenation within a line, the rules for non-separation **always take precedence** over rules for separation. * **If an inline boundary is identified as non-separable, you MUST NOT split it with a space or hyphen for any reason, even if the words form a compound (`samāsa`).** This is a veto rule (only syntactic clause, quote, or sentence newline breaks in Step 4 may undo a fused sandhi). #### **4. Boundary Types and Examples** **A. Non-Separable Boundaries: These MUST NOT be split.** * **Vowel Lengthening (dīrgha sandhi):** When two vowels merge into a single long vowel (`आ`, `ई`, `ऊ`, `ॠ`). * `दया &#43; आर्द्र → दयार्द्र`. The boundary `या` is non-separable. * `अपि &#43; इच्छा → अपीच्छा`. The boundary `पी` is non-separable. * **Crucial Compound Example:** `धर्म &#43; अर्थ → धर्मार्थ`. This is a `dīrgha sandhi` within a compound. Because the non-separation rule is absolute, this **must remain `धर्मार्थ`**, not be split into `धर्म-अर्थ` / `dharmArtha`. * **Error Case Study:** The input `स्वप्रकाशाद्वितीय` (from `स्वप्रकाश &#43; अद्वितीय`) must remain `स्वप्रकाशाद्वितीय` because it is a `dīrgha sandhi`. It is incorrect to split it as `स्वप्रकाश-अद्वितीय`. * **Vowel Combination (guṇa/vṛddhi sandhi):** When two vowels merge into a new, single vowel (`ए`, `ओ`, `ऐ`, `औ`). * `महा &#43; उत्सव → महोत्सव`. The boundary `हो` is non-separable. * `राम &#43; इति → रामेति`. The boundary `मे` is non-separable. * `सदा &#43; एव → सदैव`. The boundary `दै` is non-separable. **B. Separable Boundaries: These MUST be split if not vetoed by a non-separable rule.** * **Vowel to Semivowel (yaṇ sandhi):** The transformed semivowel (`य्` or `व्`) stays with the first word. * `इति &#43; एवम् → इत्येवम्` must be split as `इत्य् एवम्`. (The `इ` became `य्`; the `य्` is kept). * `मधु &#43; अरिः → मध्वरिः` must be split as `मध्व्-अरिः`. * **Visarga (`ः`) Sandhi:** * `visarga` to `ो`: `रामः &#43; अस्ति → रामोऽस्ति`. Split as `रामो ऽस्ति`. (The avagraha `ऽ` is part of the boundary; keep it attached to the right word). * `visarga` to `र्`: `दुः &#43; प्रकृतेः &#43; अस्य → दुष्प्रकृतेरस्य`. Split as `दुष्प्रकृतेर् अस्य`. * `visarga` to `स्/श्/ष्`: `नमः &#43; ते → नमस्ते`. Split as `नमस् ते`. * **Final `म्`:** A final `म्` before a vowel is separated by a space. * `फलम् &#43; अश्नुते → फलमश्नुते`. Split as `फलम् अश्नुते`. * `अर्थम् &#43; इति → अर्थमिति`. Split as `अर्थम् इति`. * **Consonant Assimilation:** * `तत् &#43; हि → तद्धि`. Split as `तद् धि`. * **Plain `samāsa` concatenation:** Compounds without a non-separable vowel merger split with `-` (e.g., `पुण्य-पापैः`). ### **Part 2: The Rigorous Processing Workflow** Follow these steps in strict order. **This is not a set of guidelines; it is an algorithm.** **Step 1: Text Cleanup and Normalization** * Remove arbitrary print-column / hard-wrapped line breaks inside phrases (sentence and phrase Markdown line breaks are applied in Step 4). * Correct obvious typographical errors (e.g., a space in the middle of a word). * Insert an omitted sentence-ending daṇḍa (`।`) followed by ` \n` when syntax unmistakably shows two separate sentences or commentary glosses fused without punctuation (never add `।` mid-clause). * Remove wasteful newlines, such as those before `&lt;/details&gt;` or between half-verses. * Preserve intentional styles like **bold** and *italic*, as well as existing titles, headings, and paragraphs (building around existing headings rather than dropping them when adding navigation headings in Step 4). **Step 2: Source Error Handling &amp; Doubtful Readings** * **This step is distinct from sandhi separation and must be settled before hyphenation** (word fixes change where boundaries fall). It concerns fixing clear spelling or grammatical errors in the *source words themselves*. * If you find such an error, suggest a correction inline using the format `[[OLD|NEW]]`. Example: `[[prarabvaṁ|prārabdhaṁ]]`. * Never guess at illegible text: mark the smallest span (`…[[??]]`) and move on. * Check `[[Pnnn]]` page markers against the printed folio if provided — PDF/book offsets can drift between and within volumes. **Step 3: The Core Separation Algorithm** For each Sanskrit segment (Devanagari or non-Devanagari, outputting in the original script), iterate through every potential word/stem boundary and apply the following logic: 1. **First Check (The Veto):** Examine the boundary. Is it a **non-separable** `dīrgha`, `guṇa`, or `vṛddhi` sandhi? * If **YES**, the Rule of Precedence applies. **Do nothing.** Do not split it. Move to the next boundary. 2. **Second Check (Separation):** If the boundary passed the first check (i.e., it is not a non-separable vowel merger), determine if it is one of the **separable** types defined in Part 1, Section 4.B. * If **NO**, do nothing and move on. 3. **Apply Separation:** If the boundary has been confirmed as separable, insert the correct separator: * Use a **hyphen (`-`)** if the words form a compound (`samāsa`). Example: `पुण्य-पापैः`, `मध्व्-अरिः`. * Use a **space (` `)** for all other separable cases. Example: `इत्य् एवम्`. **Step 4: Sentence, Phrase, and Final Markdown Formatting** * **Sentence &amp; Phrase Line Breaks:** In Sanskrit prose, separate sentences and distinct syntactic phrases/clauses onto their own lines ended with two trailing spaces (` `, Markdown soft break). Use blank lines (`\n\n`) only between distinct paragraphs, blockquotes (`&gt;`), or blocks — never insert blank lines between every sentence inside one paragraph. * **Sentence boundaries within a paragraph:** Break with ` \n` after `।`, `॥`, `?`, `!`, or `;` (keeping any closing quote or immediate citation reference attached to the sentence). When a source omits `।` between syntactically disjoint sentences or commentary glosses (e.g. commentary on `निर्मिते भवने पित्रा यावदच्युतदर्शनम्`: `पित्रा सवित्रा यावद् अच्युतस्य श्री-कृष्णस्य दर्शनं तावन् निवसामि ॥` → `पित्रा सवित्रा। \nयावद् अच्युतस्य श्री-कृष्णस्य दर्शनं तावन् निवसामि ॥`, since instrumental `पित्रा सवित्रा` closes the `निर्मिते` gloss rather than governing active `निवसामि`), insert the missing `। \n` only when the syntactic break is clear; for clauses within one sentence, use ` \n` without adding `।`. * **Syntactic phrase / clause boundaries within a sentence:** Break with ` \n` at natural sense-unit boundaries: * Absolutive / gerundial (`-त्वा`, `-य`) phrases: e.g. `तीर्थे गत्वा, \nशुचौ देशे, पादौ प्रक्षाल्य, \nआचम्य,` * Causal ablatives (`-त्वात्`, `-आत्`) and reason clauses: e.g. `... सापेक्षत्वात् \nतद्-अप्रतिपत्त्या प्रसिद्धि-प्राचुर्यस्य सापवादत्वात् ।` * Locative absolutes (*sati saptamī*) and participial phrases (`-अन्`, `-मानः`): e.g. `... **प्रकाशितासु** \nसर्वैर् अपि ... **अशक्यतां बुद्ध्वा** \nनिवृत्तोद्योगः ... **उपालभते** –` * Quotative (`इति`), correlative (`यत्`/`तत्`), and comma/dash-delimited clauses: e.g. `अर्थान्तर-परिग्रहः अनुपपन्नः इति, \nभाष्यादिषु स्थापितम् ।` * Long parallel modifiers or compound chains: break before distinct predicates/appositives or at major `--`/`–` boundaries when a long chain spans multiple clauses (e.g. `जीवात्मनः स्वरूपं \nदेव-मनुष्यादि-प्रकृति-परिणाम-विशेष-रूप-- \nनाना-विध--**भेद-रहितं** \nज्ञानानन्दैक-गुणम्।`). * **Breaking sandhi at phrase / clause / quote newlines:** * When a separable seam already sits cleanly at the break, prefer splitting without reverting sandhi (`निश्चयादयं` → `निश्चयाद् \nअयं`, `वह्नेर्दाह्यसन्निधौ` → `वह्नेर् \nदाह्य-सन्निधौ`, `अप्युपपद्यते` → `अप्य् \nउपपद्यते`, `ब्रह्मणोऽभिधेयतया` → `ब्रह्मणो \nऽभिधेयतया`). * When external sandhi (`dīrgha`, `guṇa`, `vṛddhi`, `yaṇ`, or `visarga`) fuses two distinct clauses, a `&gt;` blockquote boundary, or a trailing `इति` / participial / locative-absolute clause that belongs on its own line, you **may break (revert) the sandhi across the newline** (never inline within a line): * `dīrgha` broken across clause/`इति` breaks: `निश्चिते सतीक्षणादयः` → `निश्चिते सति \nईक्षणादयः`; `जीवस्यानादि...` → `जीवस्य \nअनादि-कर्म-रूपाविद्या-तिरोहित-स्वरूपस्य`; `भवतीति` → `भवति \nइति शक्यं वक्तुम्,` * `guṇa` / `vṛddhi` broken across quote/`इति`/clause breaks: `अत्रौदनोपसेचनसूचितोऽत्ता ... उत परमात्मेति सन्दिह्यते` → `अत्र\n\n&gt; ओदनोपसेचन-सूचितो ऽत्ता ...\nउत परमात्मा\n\nइति सन्दिह्यते ।`; `प्रधानस्याचेतनस्यैवंरूपो` → `प्रधानस्याचेतनस्य \nएवं-रूपो` * `visarga` restored at major clause breaks: `पृष्टो मृत्युस्तस्यार्थस्य` → `पृष्टो मृत्युः \nतस्यार्थस्य`; `परस्य ब्रह्मणश्शरीरतया` → `परस्य ब्रह्मणः\n\nशरीरतया` * **Keep intact (do not over-split):** Leave short single-clause sentences on one line; never break inside a compound unit (except at a major `--`/`–` seam in very long chains), across tight noun-modifier pairs, inside `[[OLD|NEW]]` / `&#43;&#43;&#43;(...)&#43;&#43;&#43;`, or so as to strand clitics (`च`, `वा`, `अपि`, `एव`, `हि`, `न`, `तु`) alone on a line. * **Navigation Headings:** For long or multi-topic prose outside `&lt;details&gt;` blocks, insert concise, informative topic-level Markdown headings (`##`, `###`, `####`) for easy navigation (and `## A`–`## Z` letter headings for long indices). Respect existing titles and structural headings, normalize any out-of-order top heading levels so hierarchy stays strictly monotonic (no skipped levels like `##` → `####`), and nest new subheadings logically beneath existing headings. Never place a heading directly before an unrelated footnote definition (`[^id]:`), a mid-sentence continuation, or a trailing attribution line, and always keep blank lines (`\n\n`) around headings (including after `[[Pnnn]]`). Inside `&lt;details&gt;` blocks, never use `#` headings — format internal headings as bold lines (`**...** `) instead. * **Quotes &amp; Mantras:** Enclose short quotes (under 5 words) in `&#34;` and format longer quotes or mantras as blockquotes (`&gt;`). * **Verse Structure:** End verse/śloka pāda lines with two spaces (` `) for a soft break. * **Page Numbers:** Format page numbers (e.g., `६४`) as `[[P64]]` at the precise point of the page break, even within a paragraph which continues to the next page. * **Footnotes:** Format footnotes (e.g., `*`) using Markdown&#39;s footnote syntax (`[^1]`). Make the footnote definitions appear next to the paragraph containing the corresponding footnote reference. Ensure that footnote references are unique, reflecting the number used in the source whenever possible (for example, if footnote 1 appears on page 12, make the reference `12_1`). Are you ready?">
+  <meta itemprop="wordCount" content="1830">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Bare Hyphenator">
+  <meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 You are an expert Sanskrit proofreader and formatter. Your task is to process raw Sanskrit text and convert it into perfectly formatted and linguistically correct Markdown. Your entire output must be a single Markdown code block. --- ### **Part 1: Definitions and Core Principles** #### **1. Word or Stem Boundary** A word or stem boundary is the point where two words or stems are joined (possibly, though not always, involving sandhi) without a space or hyphen. It is the character sequence spanning the end of the first word/stem and the beginning of the second. #### **2. The Separation Principle** The core of your task is to identify &#34;separable&#34; boundaries and insert the correct separator (a space or a hyphen). Apply these rules to every Sanskrit segment — Devanagari or non-Devanagari (romanized/IAST, Kannada, etc.) — even when embedded inside English or other-language prose; never hyphenate the surrounding non-Sanskrit words. The **cardinal rule for inline hyphenation** is: **Do not revert the sandhi.** Within a line, you are splitting the *result* of the sandhi, not undoing it. (Breaking sandhi across a syntactic phrase, clause, or quote newline is allowed — see Step 4.) #### **3. The Rule of Precedence: Non-Separability is Absolute Inline** This is the most critical section. For inline hyphenation within a line, the rules for non-separation **always take precedence** over rules for separation. * **If an inline boundary is identified as non-separable, you MUST NOT split it with a space or hyphen for any reason, even if the words form a compound (`samāsa`).** This is a veto rule (only syntactic clause, quote, or sentence newline breaks in Step 4 may undo a fused sandhi). #### **4. Boundary Types and Examples** **A. Non-Separable Boundaries: These MUST NOT be split.** * **Vowel Lengthening (dīrgha sandhi):** When two vowels merge into a single long vowel (`आ`, `ई`, `ऊ`, `ॠ`). * `दया &#43; आर्द्र → दयार्द्र`. The boundary `या` is non-separable. * `अपि &#43; इच्छा → अपीच्छा`. The boundary `पी` is non-separable. * **Crucial Compound Example:** `धर्म &#43; अर्थ → धर्मार्थ`. This is a `dīrgha sandhi` within a compound. Because the non-separation rule is absolute, this **must remain `धर्मार्थ`**, not be split into `धर्म-अर्थ` / `dharmArtha`. * **Error Case Study:** The input `स्वप्रकाशाद्वितीय` (from `स्वप्रकाश &#43; अद्वितीय`) must remain `स्वप्रकाशाद्वितीय` because it is a `dīrgha sandhi`. It is incorrect to split it as `स्वप्रकाश-अद्वितीय`. * **Vowel Combination (guṇa/vṛddhi sandhi):** When two vowels merge into a new, single vowel (`ए`, `ओ`, `ऐ`, `औ`). * `महा &#43; उत्सव → महोत्सव`. The boundary `हो` is non-separable. * `राम &#43; इति → रामेति`. The boundary `मे` is non-separable. * `सदा &#43; एव → सदैव`. The boundary `दै` is non-separable. **B. Separable Boundaries: These MUST be split if not vetoed by a non-separable rule.** * **Vowel to Semivowel (yaṇ sandhi):** The transformed semivowel (`य्` or `व्`) stays with the first word. * `इति &#43; एवम् → इत्येवम्` must be split as `इत्य् एवम्`. (The `इ` became `य्`; the `य्` is kept). * `मधु &#43; अरिः → मध्वरिः` must be split as `मध्व्-अरिः`. * **Visarga (`ः`) Sandhi:** * `visarga` to `ो`: `रामः &#43; अस्ति → रामोऽस्ति`. Split as `रामो ऽस्ति`. (The avagraha `ऽ` is part of the boundary; keep it attached to the right word). * `visarga` to `र्`: `दुः &#43; प्रकृतेः &#43; अस्य → दुष्प्रकृतेरस्य`. Split as `दुष्प्रकृतेर् अस्य`. * `visarga` to `स्/श्/ष्`: `नमः &#43; ते → नमस्ते`. Split as `नमस् ते`. * **Final `म्`:** A final `म्` before a vowel is separated by a space. * `फलम् &#43; अश्नुते → फलमश्नुते`. Split as `फलम् अश्नुते`. * `अर्थम् &#43; इति → अर्थमिति`. Split as `अर्थम् इति`. * **Consonant Assimilation:** * `तत् &#43; हि → तद्धि`. Split as `तद् धि`. * **Plain `samāsa` concatenation:** Compounds without a non-separable vowel merger split with `-` (e.g., `पुण्य-पापैः`). ### **Part 2: The Rigorous Processing Workflow** Follow these steps in strict order. **This is not a set of guidelines; it is an algorithm.** **Step 1: Text Cleanup and Normalization** * Remove arbitrary print-column / hard-wrapped line breaks inside phrases (sentence and phrase Markdown line breaks are applied in Step 4). * Correct obvious typographical errors (e.g., a space in the middle of a word). * Insert an omitted sentence-ending daṇḍa (`।`) followed by ` \n` when syntax unmistakably shows two separate sentences or commentary glosses fused without punctuation (never add `।` mid-clause). * Remove wasteful newlines, such as those before `&lt;/details&gt;` or between half-verses. * Preserve intentional styles like **bold** and *italic*, as well as existing titles, headings, and paragraphs (building around existing headings rather than dropping them when adding navigation headings in Step 4). **Step 2: Source Error Handling &amp; Doubtful Readings** * **This step is distinct from sandhi separation and must be settled before hyphenation** (word fixes change where boundaries fall). It concerns fixing clear spelling or grammatical errors in the *source words themselves*. * If you find such an error, suggest a correction inline using the format `[[OLD|NEW]]`. Example: `[[prarabvaṁ|prārabdhaṁ]]`. * Never guess at illegible text: mark the smallest span (`…[[??]]`) and move on. * Check `[[Pnnn]]` page markers against the printed folio if provided — PDF/book offsets can drift between and within volumes. **Step 3: The Core Separation Algorithm** For each Sanskrit segment (Devanagari or non-Devanagari, outputting in the original script), iterate through every potential word/stem boundary and apply the following logic: 1. **First Check (The Veto):** Examine the boundary. Is it a **non-separable** `dīrgha`, `guṇa`, or `vṛddhi` sandhi? * If **YES**, the Rule of Precedence applies. **Do nothing.** Do not split it. Move to the next boundary. 2. **Second Check (Separation):** If the boundary passed the first check (i.e., it is not a non-separable vowel merger), determine if it is one of the **separable** types defined in Part 1, Section 4.B. * If **NO**, do nothing and move on. 3. **Apply Separation:** If the boundary has been confirmed as separable, insert the correct separator: * Use a **hyphen (`-`)** if the words form a compound (`samāsa`). Example: `पुण्य-पापैः`, `मध्व्-अरिः`. * Use a **space (` `)** for all other separable cases. Example: `इत्य् एवम्`. **Step 4: Sentence, Phrase, and Final Markdown Formatting** * **Sentence &amp; Phrase Line Breaks:** In Sanskrit prose, separate sentences and distinct syntactic phrases/clauses onto their own lines ended with two trailing spaces (` `, Markdown soft break). Use blank lines (`\n\n`) only between distinct paragraphs, blockquotes (`&gt;`), or blocks — never insert blank lines between every sentence inside one paragraph. * **Sentence boundaries within a paragraph:** Break with ` \n` after `।`, `॥`, `?`, `!`, or `;` (keeping any closing quote or immediate citation reference attached to the sentence). When a source omits `।` between syntactically disjoint sentences or commentary glosses (e.g. commentary on `निर्मिते भवने पित्रा यावदच्युतदर्शनम्`: `पित्रा सवित्रा यावद् अच्युतस्य श्री-कृष्णस्य दर्शनं तावन् निवसामि ॥` → `पित्रा सवित्रा। \nयावद् अच्युतस्य श्री-कृष्णस्य दर्शनं तावन् निवसामि ॥`, since instrumental `पित्रा सवित्रा` closes the `निर्मिते` gloss rather than governing active `निवसामि`), insert the missing `। \n` only when the syntactic break is clear; for clauses within one sentence, use ` \n` without adding `।`. * **Syntactic phrase / clause boundaries within a sentence:** Break with ` \n` at natural sense-unit boundaries: * Absolutive / gerundial (`-त्वा`, `-य`) phrases: e.g. `तीर्थे गत्वा, \nशुचौ देशे, पादौ प्रक्षाल्य, \nआचम्य,` * Causal ablatives (`-त्वात्`, `-आत्`) and reason clauses: e.g. `... सापेक्षत्वात् \nतद्-अप्रतिपत्त्या प्रसिद्धि-प्राचुर्यस्य सापवादत्वात् ।` * Locative absolutes (*sati saptamī*) and participial phrases (`-अन्`, `-मानः`): e.g. `... **प्रकाशितासु** \nसर्वैर् अपि ... **अशक्यतां बुद्ध्वा** \nनिवृत्तोद्योगः ... **उपालभते** –` * Quotative (`इति`), correlative (`यत्`/`तत्`), and comma/dash-delimited clauses: e.g. `अर्थान्तर-परिग्रहः अनुपपन्नः इति, \nभाष्यादिषु स्थापितम् ।` * Long parallel modifiers or compound chains: break before distinct predicates/appositives or at major `--`/`–` boundaries when a long chain spans multiple clauses (e.g. `जीवात्मनः स्वरूपं \nदेव-मनुष्यादि-प्रकृति-परिणाम-विशेष-रूप-- \nनाना-विध--**भेद-रहितं** \nज्ञानानन्दैक-गुणम्।`). * **Breaking sandhi at phrase / clause / quote newlines:** * When a separable seam already sits cleanly at the break, prefer splitting without reverting sandhi (`निश्चयादयं` → `निश्चयाद् \nअयं`, `वह्नेर्दाह्यसन्निधौ` → `वह्नेर् \nदाह्य-सन्निधौ`, `अप्युपपद्यते` → `अप्य् \nउपपद्यते`, `ब्रह्मणोऽभिधेयतया` → `ब्रह्मणो \nऽभिधेयतया`). * When external sandhi (`dīrgha`, `guṇa`, `vṛddhi`, `yaṇ`, or `visarga`) fuses two distinct clauses, a `&gt;` blockquote boundary, or a trailing `इति` / participial / locative-absolute clause that belongs on its own line, you **may break (revert) the sandhi across the newline** (never inline within a line): * `dīrgha` broken across clause/`इति` breaks: `निश्चिते सतीक्षणादयः` → `निश्चिते सति \nईक्षणादयः`; `जीवस्यानादि...` → `जीवस्य \nअनादि-कर्म-रूपाविद्या-तिरोहित-स्वरूपस्य`; `भवतीति` → `भवति \nइति शक्यं वक्तुम्,` * `guṇa` / `vṛddhi` broken across quote/`इति`/clause breaks: `अत्रौदनोपसेचनसूचितोऽत्ता ... उत परमात्मेति सन्दिह्यते` → `अत्र\n\n&gt; ओदनोपसेचन-सूचितो ऽत्ता ...\nउत परमात्मा\n\nइति सन्दिह्यते ।`; `प्रधानस्याचेतनस्यैवंरूपो` → `प्रधानस्याचेतनस्य \nएवं-रूपो` * `visarga` restored at major clause breaks: `पृष्टो मृत्युस्तस्यार्थस्य` → `पृष्टो मृत्युः \nतस्यार्थस्य`; `परस्य ब्रह्मणश्शरीरतया` → `परस्य ब्रह्मणः\n\nशरीरतया` * **Keep intact (do not over-split):** Leave short single-clause sentences on one line; never break inside a compound unit (except at a major `--`/`–` seam in very long chains), across tight noun-modifier pairs, inside `[[OLD|NEW]]` / `&#43;&#43;&#43;(...)&#43;&#43;&#43;`, or so as to strand clitics (`च`, `वा`, `अपि`, `एव`, `हि`, `न`, `तु`) alone on a line. * **Navigation Headings:** For long or multi-topic prose outside `&lt;details&gt;` blocks, insert concise, informative topic-level Markdown headings (`##`, `###`, `####`) for easy navigation (and `## A`–`## Z` letter headings for long indices). Respect existing titles and structural headings, normalize any out-of-order top heading levels so hierarchy stays strictly monotonic (no skipped levels like `##` → `####`), and nest new subheadings logically beneath existing headings. Never place a heading directly before an unrelated footnote definition (`[^id]:`), a mid-sentence continuation, or a trailing attribution line, and always keep blank lines (`\n\n`) around headings (including after `[[Pnnn]]`). Inside `&lt;details&gt;` blocks, never use `#` headings — format internal headings as bold lines (`**...** `) instead. * **Quotes &amp; Mantras:** Enclose short quotes (under 5 words) in `&#34;` and format longer quotes or mantras as blockquotes (`&gt;`). * **Verse Structure:** End verse/śloka pāda lines with two spaces (` `) for a soft break. * **Page Numbers:** Format page numbers (e.g., `६४`) as `[[P64]]` at the precise point of the page break, even within a paragraph which continues to the next page. * **Footnotes:** Format footnotes (e.g., `*`) using Markdown&#39;s footnote syntax (`[^1]`). Make the footnote definitions appear next to the paragraph containing the corresponding footnote reference. Ensure that footnote references are unique, reflecting the number used in the source whenever possible (for example, if footnote 1 appears on page 12, make the reference `12_1`). Are you ready?">
+<script type="text/javascript">
+    
+    let baseURL = "https:\/\/sanskrit.github.io\/";
+    let basePath = "/" + baseURL.split("/").slice(3).join("/");
+    let siteParams = JSON.parse("{\u0022contactlink\u0022:\u0022https:\/\/github.com\/sanskrit\/sanskrit.github.io\/issues\/new\u0022,\u0022env\u0022:\u0022production\u0022,\u0022githubeditmepathbase\u0022:\u0022https:\/\/github.com\/sanskrit\/sanskrit.github.io\/edit\/master\/content\/\u0022}");
+    let pageDefaultsList = JSON.parse("[{\u0022scope\u0022:{\u0022pathPrefix\u0022:\u0022\u0022},\u0022values\u0022:{\u0022comments\u0022:true,\u0022layout\u0022:\u0022page\u0022,\u0022search\u0022:true,\u0022sidebar\u0022:\u0022home_sidebar\u0022}},{\u0022scope\u0022:{\u0022pathPrefix\u0022:\u0022groups\/dyuganga\u0022},\u0022values\u0022:{\u0022comments\u0022:true,\u0022layout\u0022:\u0022page\u0022,\u0022search\u0022:true,\u0022sidebar\u0022:\u0022dyuganga_sidebar\u0022}}]");
+    let sidebarsData = JSON.parse("{\u0022dyuganga_sidebar\u0022:{\u0022contents\u0022:[{\u0022url\u0022:\u0022recdir:\/\/groups\/dyuganga\/\u0022},{\u0022title\u0022:\u0022Code\u0022,\u0022url\u0022:\u0022https:\/\/sanskrit-coders.github.io\/\u0022}],\u0022title\u0022:\u0022Parts\u0022},\u0022home_sidebar\u0022:{\u0022contents\u0022:[{\u0022title\u0022:\u0022Home - Intro\u0022,\u0022url\u0022:\u0022recdir:\/\/\u0022},{\u0022title\u0022:\u0022Blog\u0022,\u0022url\u0022:\u0022\/assets\/blog\/index.html\u0022}],\u0022title\u0022:\u0022Parts\u0022}}");
+    
+    var pageRelUrlTree = {};
+</script>
+
+    
+    <script type="text/javascript">
+  let pageVars = {};
+  pageVars.pageUrlMinusBasePath = "\/groups\/dyuganga\/projects\/text\/proofreading\/editing\/AI-prompt\/bare-hyphenator\/".replace(basePath, "/");
+  pageVars.pageParams = {};
+  pageVars.pageSource = "groups\/dyuganga\/projects\/text\/proofreading\/editing\/AI-prompt\/bare-hyphenator.md";
+  console.log(pageVars.pageSource);
+  var pageDefaults;
+  for (let possiblePageDefaults of pageDefaultsList) {
+    if (pageVars.pageSource.startsWith(possiblePageDefaults.scope.pathPrefix)) {
+      pageDefaults = possiblePageDefaults.values
+    }
+  }
+    
+</script>
+
+
+    <script src="/webpack_dist/uiLib-bundle.js"></script>
+
+
+
+
+
+
+
+
+
+
+    <link rel="stylesheet" href="/webpack_dist/uiLib.css">
+<link rel="stylesheet" href="/css/uiLibPrint.css" media="print" >
+<link rel="stylesheet" href="/css/fonts.css" >
+<link rel="stylesheet" href="/css/@fortawesome/fontawesome-free/css/solid.min.css">
+<link rel="stylesheet" href="/css/@fortawesome/fontawesome-free/css/fontawesome.min.css">
+
+
+<link rel="alternate" hreflang="sa-Deva" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/" />
+<link rel="alternate" hreflang="sa-Deva" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=devanagari" />
+
+<link rel="alternate" hreflang="sa-Knda" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=kannada" />
+<link rel="alternate" hreflang="sa-Mlym" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=malayalam" />
+<link rel="alternate" hreflang="sa-Telu" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=telugu" />
+<link rel="alternate" hreflang="sa-Taml-t-sa-Taml-m0-superscript" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=tamil_superscripted" />
+<link rel="alternate" hreflang="sa-Taml" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=tamil" />
+<link rel="alternate" hreflang="sa-Gran" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=grantha" />
+
+<link rel="alternate" hreflang="sa-Gujr" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=gujarati" />
+<link rel="alternate" hreflang="sa-Guru" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=gurmukhi" />
+<link rel="alternate" hreflang="sa-Shar" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=sharada" />
+<link rel="alternate" hreflang="sa-Dogr" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=dogra" />
+<link rel="alternate" hreflang="sa-Phag" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=phags_pa" />
+<link rel="alternate" hreflang="sa-Tibt" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=tibetan" />
+<link rel="alternate" hreflang="sa-Sidd" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=siddham" />
+<link rel="alternate" hreflang="sa-Newa" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=newa" />
+<link rel="alternate" hreflang="sa-Modi" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=modi" />
+<link rel="alternate" hreflang="sa-Tirh" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=tirhuta_maithili" />
+<link rel="alternate" hreflang="sa-Gong" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=gondi_gujala" />
+<link rel="alternate" hreflang="sa-Gonm" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=gondi_masaram" />
+
+
+<link rel="alternate" hreflang="sa-Orya" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=oriya" />
+<link rel="alternate" hreflang="sa-Beng-t-sa-Beng-m0-assamese" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=assamese" />
+<link rel="alternate" hreflang="sa-Beng" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=bengali" />
+<link rel="alternate" hreflang="sa-Mtei" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=manipuri" />
+<link rel="alternate" hreflang="sa-Sinh" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=sinhala" />
+<link rel="alternate" hreflang="sa-Limb" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=limbu" />
+<link rel="alternate" hreflang="sa-Lepc" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=lepcha" />
+
+
+<link rel="alternate" hreflang="sa-Cyrl" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=cyrillic" />
+<link rel="alternate" hreflang="sa-Latn-t-sa-Zyyy-m0-iso" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=iso" />
+<link rel="alternate" hreflang="sa-Latn-t-sa-Zyyy-m0-iast" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=iast" />
+<link rel="alternate" hreflang="sa-Aran" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=urdu" />
+<link rel="alternate" hreflang="sa-Avst" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=avestan" />
+
+<link rel="alternate" hreflang="sa-Brah" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=brahmi" />
+<link rel="alternate" hreflang="sa-Khar" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=kharoshthi" />
+<link rel="alternate" hreflang="sa-Zanb" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=zanbazar_square" />
+<link rel="alternate" hreflang="sa-Bhks" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=bhaiksuki" />
+
+<link rel="alternate" hreflang="sa-Bali" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=balinese" />
+<link rel="alternate" hreflang="sa-Java" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=javanese" />
+<link rel="alternate" hreflang="sa-Laoo" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=lao" />
+<link rel="alternate" hreflang="sa-Laoo-t-sa-Laoo-m0-Laopali" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=lao_pali" />
+<link rel="alternate" hreflang="sa-Mymr" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=burmese" />
+<link rel="alternate" hreflang="sa-Mymr-t-sa-Mymr-m0-Mon" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=mon" />
+<link rel="alternate" hreflang="sa-Cham" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=cham" />
+<link rel="alternate" hreflang="sa-Khmr" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=khmer" />
+<link rel="alternate" hreflang="sa-Thai" href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/?transliteration_target=thai" />
+
+  </head>
+
+  <body class="ma0 bg-near-white">
+    
+
+
+    
+<header class="p-1 bg-yellow noPrint">
+    <nav role="navigation" class="col">
+      <div id="div_top_bar" class="row">
+        <div class="col-md-3 justify-content-start">
+          <a  href="/" class="btn col border">
+            <i class="fas fa-gopuram ">संस्कृतजालक्षेत्रम् <br/> Bare Hyphenator</i>
+          </a>
+        </div>
+        <div id="div_top_bar_right" class="col-md-auto d-flex justify-content-center">
+          <button class="btn btn-light"  href="#transliterationDropdown" data-toggle="collapse">
+            ✍
+          </button>
+          <select id="transliterationDropdown" size="1" class="collapse" onchange="module_uiLib.default.content.updateTransliteration()">
+            <optgroup label="🌍">
+              <option value="iso">āISO</option>
+              <option value="iso_vedic">āi-āu</option>
+              <option value="cyrillic">пу</option>
+              <option value="urdu">نس</option>
+              <option value="??">🌍??</option>
+            </optgroup>
+            <optgroup label="🛕🧭S">
+              <option value="kannada">ಅ</option>
+              <option value="malayalam">അ</option>
+              <option value="telugu">క</option>
+              <option value="tamil_superscripted">க²</option>
+              <option value="tamil_extended">க</option>
+              <option value="grantha">𑌅</option>
+            </optgroup>
+            <optgroup label="🛕🧭N">
+              <option value="devanagari" selected="">स</option>
+              <option value="gujarati">અ</option>
+              <option value="gurmukhi">ਅ</option>
+            </optgroup>
+            <optgroup label="🛕🧭E">
+              <option value="oriya">ଅ</option>
+              <option value="assamese">অস</option>
+              <option value="bengali">অ</option>
+            </optgroup>
+            <optgroup label="🛕🏺📜">
+              <option value="sharada">𑆑𑇀𑆰</option>
+              <option value="brahmi">𑀅</option>
+            </optgroup>
+            <optgroup label="🛕🌋">
+              <option value="balinese">ᬩᬮᬶ</option>
+            </optgroup>
+          </select>
+          <div>
+          <button class="btn btn-outline-secondary btn-sm"  href="#transliterationDropdownAlt" data-toggle="collapse">
+          (✍)
+          </button>
+          <select id="transliterationDropdownAlt" size="1"  style="font-size:12px" class="bg-light-yellow collapse" onchange="module_uiLib.default.content.updateTransliteration()">
+            <optgroup label="🌍">
+              <option value="iso">āISO</option>
+              <option value="iso_vedic">āi-āu</option>
+              <option value="cyrillic">пу</option>
+              <option value="urdu">نس</option>
+              <option value="??">🌍??</option>
+            </optgroup>
+            <optgroup label="🛕🧭S">
+              <option value="kannada">ಅ</option>
+              <option value="malayalam">അ</option>
+              <option value="telugu">క</option>
+              <option value="tamil_superscripted">க²</option>
+              <option value="tamil_extended">க</option>
+              <option value="grantha">𑌅</option>
+            </optgroup>
+            <optgroup label="🛕🧭N">
+              <option value="devanagari" selected="">स</option>
+              <option value="gujarati">અ</option>
+              <option value="gurmukhi">ਅ</option>
+            </optgroup>
+            <optgroup label="🛕🧭E">
+              <option value="oriya">ଅ</option>
+              <option value="assamese">অস</option>
+              <option value="bengali">অ</option>
+            </optgroup>
+            <optgroup label="🛕🏺📜">
+              <option value="sharada">𑆑𑇀𑆰</option>
+              <option value="brahmi">𑀅</option>
+            </optgroup>
+            <optgroup label="🛕🌋">
+              <option value="balinese">ᬩᬮᬶ</option>
+            </optgroup>
+          </select>
+          </div>
+          <div class="row col d-flex  dropdown">
+            <button class="btn btn-secondary-outline btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              A±
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="btn btn-secondary btn-sm" onclick="module_uiLib.changeTextSize(2)">A+</a>
+            <a class="btn btn-secondary btn-sm" onclick="module_uiLib.changeTextSize(-2)">A-</a>
+            </div>
+          </div>
+          <button class="btn btn-light btn-sm"  href="#commentStyleDropdown" data-toggle="collapse">
+            🗨
+          </button>
+          <select id="commentStyleDropdown" class="collapse" size="1" onchange="module_uiLib.default.content.updateCommentStyleFromDropdown()">
+            <option value="on">✔</option>
+            <option value="hidden">✗</option>
+          </select>
+          <div><a id="expandAllButton" class="btn btn-secondary" onclick="module_uiLib.default.query.setParamsAndGo({'expandDetails': '.*'})">↕️️</a></div>
+          <div id="printStyleDiv" class="row col d-flex  dropdown">
+          <button class="btn btn-light btn-sm dropdown-toggle"  href="#printStyleDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          🖨
+          </button>
+            <div class="dropdown-menu col" aria-labelledby="printStyleDropdown">
+              <div class="row justify-content-center">
+                <p>Cols:</p>
+                <input type="number" min="1" max="10" value="2" step="1" id="tbColumns" style="width: 3ch;"  accesskey="c"/>
+              </div>
+              <div class="row justify-content-center">
+                <p>A±:</p> <input type="text" id="tbBodyFontSize" value="0.4cm" style="width: 6ch;"  accesskey="f"></input>
+              </div>
+              <div class="row justify-content-center">
+                <p>Incl:</p> <input checked type="checkbox" id="tbIncludeStyle" value="on"></input>
+                <button id="btnPrintStyle" onclick="module_uiLib.default.content.updatePrintStyle()">🖨
+                </button>
+              </div>
+            </div>
+        </div>
+        </div>
+        <div id="audioDiv" class="row col d-flex  dropdown">
+          <button class="btn btn-secondary-outline btn-sm dropdown-toggle" type="button" id="audioDropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            🎧
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a id="speakerButton" class="btn btn-outline-secondary btn-sm" onclick="module_uiLib.default.content.handleSpeakToggle()">⏯</a>
+          <button id="speakerPauseButton" class="btn btn-outline-secondary btn-sm" onclick="module_uiLib.default.content.handlePauseToggle()">⏸</button>
+            <div id="audioOptionsDiv" class="row justify-content-center" >
+              <div>
+                <p class="lead">Vol</p>
+                <input type="range" min="0" max="1" value="1" step="0.1" id="volume" />
+                <span id="volume-label" class="ms-2">1</span>
+              </div>
+              <div class="mx-5">
+                <p class="lead">Rate</p>
+                <input type="range" min="0.1" max="10" value="1" id="rate" step="0.1" />
+                <span id="rate-label" class="ms-2">1</span>
+              </div>
+              <div>
+                <p class="lead">Pitch</p>
+                <input type="range" min="0" max="2" value="1" step="0.1" id="pitch" />
+                <span id="pitch-label" class="ms-2">1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="https://sanskrit.github.io/search"  class="btn btn-light btn-sm">🥽🔦</a>
+        <div class="row col  d-flex justify-content-center">
+          <div><a id="previousPage" href="" class="btn btn-secondary">###<i class="fas fa-caret-left"></i></a></div>
+          <div ><a id="nextPage" href="" class="btn btn-secondary"><i class="fas fa-caret-right"></i> ### </a></div>
+        </div>
+        <ul id="top-bar-right-custom" class="list-group list-group-horizontal">
+        </ul>
+      </div>
+    </nav>
+</header>
+
+    
+    <div class="row" name="contentRow">
+      
+      <aside class="col-md-3 card border noPrint " id="sidebar">
+          <div id="fastSearch">
+              <datalist id="pageDataList"></datalist>
+              <input id="searchInput" placeholder="शीर्षिकान्विष्यताम्" list="pageDataList" onchange="module_uiLib.default.navigation.pageLoader()">
+          </div>
+          <details open  class="bg-light-gray" >
+              <summary id="sidebarToggleLink" onclick="module_uiLib.default.navigation.sidebarToggleHandler()">
+            Menu
+              </summary>
+              <ul id="sidebarBody" class="list pl2 p-0 bg-yellow">
+              </ul>
+          </details>
+      </aside>
+      <main class="col p-3" role="main" data-pagefind-body>
+        
+<header class='border d-flex justify-content-between'>
+    <h1 id="Bare Hyphenator">Bare Hyphenator</h1>
+    
+    <a id="editLink" class="btn btn-primary noPrint"  href="https://github.com/sanskrit/sanskrit.github.io/edit/master/content/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator.md"><i class="fas fa-edit"></i></a>
+    
+</header>
+<article>
+  <aside id="toc_card" class="card border noPrint ">
+    <details id="toc_header">
+        <summary>What's in this page?</summary>
+      <div id="toc_body" class="p-0">
+        
+        <ul id="toc_ul" class="list p-0">
+        </ul>
+      </div>
+    </details>
+    <div id="progressBarDiv" class="row d-flex justify-content-center">
+      🐎💪<progress id="progressLoading" value="0" max="100"> 32% </progress>
+    </div>
+  </aside>
+  <div id="post_content">
+  <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>You are an expert Sanskrit proofreader and formatter. Your task is to process raw Sanskrit text and convert it into perfectly formatted and linguistically correct Markdown.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Your entire output must be a single Markdown code block.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold">### **Part 1: Definitions and Core Principles**
+</span></span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold">#### **1. Word or Stem Boundary**
+</span></span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span>A word or stem boundary is the point where two words or stems are joined (possibly, though not always, involving sandhi) without a space or hyphen. It is the character sequence spanning the end of the first word/stem and the beginning of the second.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold">#### **2. The Separation Principle**
+</span></span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span>The core of your task is to identify &#34;separable&#34; boundaries and insert the correct separator (a space or a hyphen). Apply these rules to every Sanskrit segment — Devanagari or non-Devanagari (romanized/IAST, Kannada, etc.) — even when embedded inside English or other-language prose; never hyphenate the surrounding non-Sanskrit words.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>The <span style="font-weight:bold">**cardinal rule for inline hyphenation**</span> is: <span style="font-weight:bold">**Do not revert the sandhi.**</span> Within a line, you are splitting the <span style="font-style:italic">*result*</span> of the sandhi, not undoing it. (Breaking sandhi across a syntactic phrase, clause, or quote newline is allowed — see Step 4.)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold">#### **3. The Rule of Precedence: Non-Separability is Absolute Inline**
+</span></span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span>This is the most critical section. For inline hyphenation within a line, the rules for non-separation <span style="font-weight:bold">**always take precedence**</span> over rules for separation.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   <span style="font-weight:bold">**If an inline boundary is identified as non-separable, you MUST NOT split it with a space or hyphen for any reason, even if the words form a compound (`samāsa`).**</span> This is a veto rule (only syntactic clause, quote, or sentence newline breaks in Step 4 may undo a fused sandhi).
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold">#### **4. Boundary Types and Examples**
+</span></span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">**A. Non-Separable Boundaries: These MUST NOT be split.**</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   <span style="font-weight:bold">**Vowel Lengthening (dīrgha sandhi):**</span> When two vowels merge into a single long vowel (<span style="color:#4070a0">`आ`</span>, <span style="color:#4070a0">`ई`</span>, <span style="color:#4070a0">`ऊ`</span>, <span style="color:#4070a0">`ॠ`</span>).
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   <span style="color:#4070a0">`दया + आर्द्र → दयार्द्र`</span>. The boundary <span style="color:#4070a0">`या`</span> is non-separable.
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   <span style="color:#4070a0">`अपि + इच्छा → अपीच्छा`</span>. The boundary <span style="color:#4070a0">`पी`</span> is non-separable.
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   <span style="font-weight:bold">**Crucial Compound Example:**</span> <span style="color:#4070a0">`धर्म + अर्थ → धर्मार्थ`</span>. This is a <span style="color:#4070a0">`dīrgha sandhi`</span> within a compound. Because the non-separation rule is absolute, this <span style="font-weight:bold">**must remain `धर्मार्थ`**</span>, not be split into <span style="color:#4070a0">`धर्म-अर्थ`</span> / <span style="color:#4070a0">`dharmArtha`</span>.
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   <span style="font-weight:bold">**Error Case Study:**</span> The input <span style="color:#4070a0">`स्वप्रकाशाद्वितीय`</span> (from <span style="color:#4070a0">`स्वप्रकाश + अद्वितीय`</span>) must remain <span style="color:#4070a0">`स्वप्रकाशाद्वितीय`</span> because it is a <span style="color:#4070a0">`dīrgha sandhi`</span>. It is incorrect to split it as <span style="color:#4070a0">`स्वप्रकाश-अद्वितीय`</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   <span style="font-weight:bold">**Vowel Combination (guṇa/vṛddhi sandhi):**</span> When two vowels merge into a new, single vowel (<span style="color:#4070a0">`ए`</span>, <span style="color:#4070a0">`ओ`</span>, <span style="color:#4070a0">`ऐ`</span>, <span style="color:#4070a0">`औ`</span>).
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   <span style="color:#4070a0">`महा + उत्सव → महोत्सव`</span>. The boundary <span style="color:#4070a0">`हो`</span> is non-separable.
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   <span style="color:#4070a0">`राम + इति → रामेति`</span>. The boundary <span style="color:#4070a0">`मे`</span> is non-separable.
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   <span style="color:#4070a0">`सदा + एव → सदैव`</span>. The boundary <span style="color:#4070a0">`दै`</span> is non-separable.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">**B. Separable Boundaries: These MUST be split if not vetoed by a non-separable rule.**</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   <span style="font-weight:bold">**Vowel to Semivowel (yaṇ sandhi):**</span> The transformed semivowel (<span style="color:#4070a0">`य्`</span> or <span style="color:#4070a0">`व्`</span>) stays with the first word.
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   <span style="color:#4070a0">`इति + एवम् → इत्येवम्`</span> must be split as <span style="color:#4070a0">`इत्य् एवम्`</span>. (The <span style="color:#4070a0">`इ`</span> became <span style="color:#4070a0">`य्`</span>; the <span style="color:#4070a0">`य्`</span> is kept).
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   <span style="color:#4070a0">`मधु + अरिः → मध्वरिः`</span> must be split as <span style="color:#4070a0">`मध्व्-अरिः`</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   <span style="font-weight:bold">**Visarga (`ः`) Sandhi:**</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   <span style="color:#4070a0">`visarga`</span> to <span style="color:#4070a0">`ो`</span>: <span style="color:#4070a0">`रामः + अस्ति → रामोऽस्ति`</span>. Split as <span style="color:#4070a0">`रामो ऽस्ति`</span>. (The avagraha <span style="color:#4070a0">`ऽ`</span> is part of the boundary; keep it attached to the right word).
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   <span style="color:#4070a0">`visarga`</span> to <span style="color:#4070a0">`र्`</span>: <span style="color:#4070a0">`दुः + प्रकृतेः + अस्य → दुष्प्रकृतेरस्य`</span>. Split as <span style="color:#4070a0">`दुष्प्रकृतेर् अस्य`</span>.
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   <span style="color:#4070a0">`visarga`</span> to <span style="color:#4070a0">`स्/श्/ष्`</span>: <span style="color:#4070a0">`नमः + ते → नमस्ते`</span>. Split as <span style="color:#4070a0">`नमस् ते`</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   <span style="font-weight:bold">**Final `म्`:**</span> A final <span style="color:#4070a0">`म्`</span> before a vowel is separated by a space.
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   <span style="color:#4070a0">`फलम् + अश्नुते → फलमश्नुते`</span>. Split as <span style="color:#4070a0">`फलम् अश्नुते`</span>.
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   <span style="color:#4070a0">`अर्थम् + इति → अर्थमिति`</span>. Split as <span style="color:#4070a0">`अर्थम् इति`</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   <span style="font-weight:bold">**Consonant Assimilation:**</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   <span style="color:#4070a0">`तत् + हि → तद्धि`</span>. Split as <span style="color:#4070a0">`तद् धि`</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   <span style="font-weight:bold">**Plain `samāsa` concatenation:**</span> Compounds without a non-separable vowel merger split with <span style="color:#4070a0">`-`</span> (e.g., <span style="color:#4070a0">`पुण्य-पापैः`</span>).
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold">### **Part 2: The Rigorous Processing Workflow**
+</span></span></span><span style="display:flex;"><span><span style="color:#800080;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span>Follow these steps in strict order. <span style="font-weight:bold">**This is not a set of guidelines; it is an algorithm.**</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">**Step 1: Text Cleanup and Normalization**</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   Remove arbitrary print-column / hard-wrapped line breaks inside phrases (sentence and phrase Markdown line breaks are applied in Step 4).
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   Correct obvious typographical errors (e.g., a space in the middle of a word).
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   Insert an omitted sentence-ending daṇḍa (<span style="color:#4070a0">`।`</span>) followed by <span style="color:#4070a0">`  \n`</span> when syntax unmistakably shows two separate sentences or commentary glosses fused without punctuation (never add <span style="color:#4070a0">`।`</span> mid-clause).
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   Remove wasteful newlines, such as those before <span style="color:#4070a0">`&lt;/details&gt;`</span> or between half-verses.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   Preserve intentional styles like <span style="font-weight:bold">**bold**</span> and <span style="font-style:italic">*italic*</span>, as well as existing titles, headings, and paragraphs (building around existing headings rather than dropping them when adding navigation headings in Step 4).
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">**Step 2: Source Error Handling &amp; Doubtful Readings**</span>
+</span></span><span style="display:flex;"><span><span style="font-style:italic">*   *</span>*This step is distinct from sandhi separation and must be settled before hyphenation** (word fixes change where boundaries fall). It concerns fixing clear spelling or grammatical errors in the <span style="font-style:italic">*source words themselves*</span>.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   If you find such an error, suggest a correction inline using the format <span style="color:#4070a0">`[[OLD|NEW]]`</span>. Example: <span style="color:#4070a0">`[[prarabvaṁ|prārabdhaṁ]]`</span>.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   Never guess at illegible text: mark the smallest span (<span style="color:#4070a0">`…[[??]]`</span>) and move on.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   Check <span style="color:#4070a0">`[[Pnnn]]`</span> page markers against the printed folio if provided — PDF/book offsets can drift between and within volumes.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">**Step 3: The Core Separation Algorithm**</span>
+</span></span><span style="display:flex;"><span>For each Sanskrit segment (Devanagari or non-Devanagari, outputting in the original script), iterate through every potential word/stem boundary and apply the following logic:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">1.</span>  <span style="font-weight:bold">**First Check (The Veto):**</span> Examine the boundary. Is it a <span style="font-weight:bold">**non-separable**</span> <span style="color:#4070a0">`dīrgha`</span>, <span style="color:#4070a0">`guṇa`</span>, or <span style="color:#4070a0">`vṛddhi`</span> sandhi?
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   If <span style="font-weight:bold">**YES**</span>, the Rule of Precedence applies. <span style="font-weight:bold">**Do nothing.**</span> Do not split it. Move to the next boundary.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">2.</span>  <span style="font-weight:bold">**Second Check (Separation):**</span> If the boundary passed the first check (i.e., it is not a non-separable vowel merger), determine if it is one of the <span style="font-weight:bold">**separable**</span> types defined in Part 1, Section 4.B.
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   If <span style="font-weight:bold">**NO**</span>, do nothing and move on.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">3.</span>  <span style="font-weight:bold">**Apply Separation:**</span> If the boundary has been confirmed as separable, insert the correct separator:
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   Use a <span style="font-weight:bold">**hyphen (`-`)**</span> if the words form a compound (<span style="color:#4070a0">`samāsa`</span>). Example: <span style="color:#4070a0">`पुण्य-पापैः`</span>, <span style="color:#4070a0">`मध्व्-अरिः`</span>.
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   Use a <span style="font-weight:bold">**space (` `)**</span> for all other separable cases. Example: <span style="color:#4070a0">`इत्य् एवम्`</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">**Step 4: Sentence, Phrase, and Final Markdown Formatting**</span>
+</span></span><span style="display:flex;"><span><span style="font-style:italic">*   *</span>*Sentence <span style="">&amp;</span> Phrase Line Breaks:** In Sanskrit prose, separate sentences and distinct syntactic phrases/clauses onto their own lines ended with two trailing spaces (<span style="color:#4070a0">`  `</span>, Markdown soft break). Use blank lines (<span style="color:#4070a0">`\n\n`</span>) only between distinct paragraphs, blockquotes (<span style="color:#4070a0">`&gt;`</span>), or blocks — never insert blank lines between every sentence inside one paragraph.
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   <span style="font-weight:bold">**Sentence boundaries within a paragraph:**</span> Break with <span style="color:#4070a0">`  \n`</span> after <span style="color:#4070a0">`।`</span>, <span style="color:#4070a0">`॥`</span>, <span style="color:#4070a0">`?`</span>, <span style="color:#4070a0">`!`</span>, or <span style="color:#4070a0">`;`</span> (keeping any closing quote or immediate citation reference attached to the sentence). When a source omits <span style="color:#4070a0">`।`</span> between syntactically disjoint sentences or commentary glosses (e.g. commentary on <span style="color:#4070a0">`निर्मिते भवने पित्रा यावदच्युतदर्शनम्`</span>: <span style="color:#4070a0">`पित्रा सवित्रा यावद् अच्युतस्य श्री-कृष्णस्य दर्शनं तावन् निवसामि ॥`</span> → <span style="color:#4070a0">`पित्रा सवित्रा।  \nयावद् अच्युतस्य श्री-कृष्णस्य दर्शनं तावन् निवसामि ॥`</span>, since instrumental <span style="color:#4070a0">`पित्रा सवित्रा`</span> closes the <span style="color:#4070a0">`निर्मिते`</span> gloss rather than governing active <span style="color:#4070a0">`निवसामि`</span>), insert the missing <span style="color:#4070a0">`।  \n`</span> only when the syntactic break is clear; for clauses within one sentence, use <span style="color:#4070a0">`  \n`</span> without adding <span style="color:#4070a0">`।`</span>.
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   <span style="font-weight:bold">**Syntactic phrase / clause boundaries within a sentence:**</span> Break with <span style="color:#4070a0">`  \n`</span> at natural sense-unit boundaries:
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">*</span>   Absolutive / gerundial (<span style="color:#4070a0">`-त्वा`</span>, <span style="color:#4070a0">`-य`</span>) phrases: e.g. <span style="color:#4070a0">`तीर्थे गत्वा,  \nशुचौ देशे, पादौ प्रक्षाल्य,  \nआचम्य,`</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">*</span>   Causal ablatives (<span style="color:#4070a0">`-त्वात्`</span>, <span style="color:#4070a0">`-आत्`</span>) and reason clauses: e.g. <span style="color:#4070a0">`... सापेक्षत्वात्  \nतद्-अप्रतिपत्त्या प्रसिद्धि-प्राचुर्यस्य सापवादत्वात् ।`</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">*</span>   Locative absolutes (*sati saptamī*) and participial phrases (<span style="color:#4070a0">`-अन्`</span>, <span style="color:#4070a0">`-मानः`</span>): e.g. <span style="color:#4070a0">`... **प्रकाशितासु**  \nसर्वैर् अपि ... **अशक्यतां बुद्ध्वा**  \nनिवृत्तोद्योगः ... **उपालभते** –`</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">*</span>   Quotative (<span style="color:#4070a0">`इति`</span>), correlative (<span style="color:#4070a0">`यत्`</span>/<span style="color:#4070a0">`तत्`</span>), and comma/dash-delimited clauses: e.g. <span style="color:#4070a0">`अर्थान्तर-परिग्रहः अनुपपन्नः इति,  \nभाष्यादिषु स्थापितम् ।`</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">*</span>   Long parallel modifiers or compound chains: break before distinct predicates/appositives or at major <span style="color:#4070a0">`--`</span>/<span style="color:#4070a0">`–`</span> boundaries when a long chain spans multiple clauses (e.g. <span style="color:#4070a0">`जीवात्मनः स्वरूपं  \nदेव-मनुष्यादि-प्रकृति-परिणाम-विशेष-रूप--  \nनाना-विध--**भेद-रहितं**  \nज्ञानानन्दैक-गुणम्।`</span>).
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   <span style="font-weight:bold">**Breaking sandhi at phrase / clause / quote newlines:**</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">*</span>   When a separable seam already sits cleanly at the break, prefer splitting without reverting sandhi (<span style="color:#4070a0">`निश्चयादयं`</span> → <span style="color:#4070a0">`निश्चयाद्  \nअयं`</span>, <span style="color:#4070a0">`वह्नेर्दाह्यसन्निधौ`</span> → <span style="color:#4070a0">`वह्नेर्  \nदाह्य-सन्निधौ`</span>, <span style="color:#4070a0">`अप्युपपद्यते`</span> → <span style="color:#4070a0">`अप्य्  \nउपपद्यते`</span>, <span style="color:#4070a0">`ब्रह्मणोऽभिधेयतया`</span> → <span style="color:#4070a0">`ब्रह्मणो  \nऽभिधेयतया`</span>).
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">*</span>   When external sandhi (<span style="color:#4070a0">`dīrgha`</span>, <span style="color:#4070a0">`guṇa`</span>, <span style="color:#4070a0">`vṛddhi`</span>, <span style="color:#4070a0">`yaṇ`</span>, or <span style="color:#4070a0">`visarga`</span>) fuses two distinct clauses, a <span style="color:#4070a0">`&gt;`</span> blockquote boundary, or a trailing <span style="color:#4070a0">`इति`</span> / participial / locative-absolute clause that belongs on its own line, you <span style="font-weight:bold">**may break (revert) the sandhi across the newline**</span> (never inline within a line):
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">*</span>   <span style="color:#4070a0">`dīrgha`</span> broken across clause/<span style="color:#4070a0">`इति`</span> breaks: <span style="color:#4070a0">`निश्चिते सतीक्षणादयः`</span> → <span style="color:#4070a0">`निश्चिते सति  \nईक्षणादयः`</span>; <span style="color:#4070a0">`जीवस्यानादि...`</span> → <span style="color:#4070a0">`जीवस्य  \nअनादि-कर्म-रूपाविद्या-तिरोहित-स्वरूपस्य`</span>; <span style="color:#4070a0">`भवतीति`</span> → <span style="color:#4070a0">`भवति  \nइति शक्यं वक्तुम्,`</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">*</span>   <span style="color:#4070a0">`guṇa`</span> / <span style="color:#4070a0">`vṛddhi`</span> broken across quote/<span style="color:#4070a0">`इति`</span>/clause breaks: <span style="color:#4070a0">`अत्रौदनोपसेचनसूचितोऽत्ता ... उत परमात्मेति सन्दिह्यते`</span> → <span style="color:#4070a0">`अत्र\n\n&gt; ओदनोपसेचन-सूचितो ऽत्ता ...\nउत परमात्मा\n\nइति सन्दिह्यते ।`</span>; <span style="color:#4070a0">`प्रधानस्याचेतनस्यैवंरूपो`</span> → <span style="color:#4070a0">`प्रधानस्याचेतनस्य  \nएवं-रूपो`</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">*</span>   <span style="color:#4070a0">`visarga`</span> restored at major clause breaks: <span style="color:#4070a0">`पृष्टो मृत्युस्तस्यार्थस्य`</span> → <span style="color:#4070a0">`पृष्टो मृत्युः  \nतस्यार्थस्य`</span>; <span style="color:#4070a0">`परस्य ब्रह्मणश्शरीरतया`</span> → <span style="color:#4070a0">`परस्य ब्रह्मणः\n\nशरीरतया`</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">*</span>   <span style="font-weight:bold">**Keep intact (do not over-split):**</span> Leave short single-clause sentences on one line; never break inside a compound unit (except at a major <span style="color:#4070a0">`--`</span>/<span style="color:#4070a0">`–`</span> seam in very long chains), across tight noun-modifier pairs, inside <span style="color:#4070a0">`[[OLD|NEW]]`</span> / <span style="color:#4070a0">`+++(...)+++`</span>, or so as to strand clitics (<span style="color:#4070a0">`च`</span>, <span style="color:#4070a0">`वा`</span>, <span style="color:#4070a0">`अपि`</span>, <span style="color:#4070a0">`एव`</span>, <span style="color:#4070a0">`हि`</span>, <span style="color:#4070a0">`न`</span>, <span style="color:#4070a0">`तु`</span>) alone on a line.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   <span style="font-weight:bold">**Navigation Headings:**</span> For long or multi-topic prose outside <span style="color:#4070a0">`&lt;details&gt;`</span> blocks, insert concise, informative topic-level Markdown headings (<span style="color:#4070a0">`##`</span>, <span style="color:#4070a0">`###`</span>, <span style="color:#4070a0">`####`</span>) for easy navigation (and <span style="color:#4070a0">`## A`</span>–<span style="color:#4070a0">`## Z`</span> letter headings for long indices). Respect existing titles and structural headings, normalize any out-of-order top heading levels so hierarchy stays strictly monotonic (no skipped levels like <span style="color:#4070a0">`##`</span> → <span style="color:#4070a0">`####`</span>), and nest new subheadings logically beneath existing headings. Never place a heading directly before an unrelated footnote definition (<span style="color:#4070a0">`[^id]:`</span>), a mid-sentence continuation, or a trailing attribution line, and always keep blank lines (<span style="color:#4070a0">`\n\n`</span>) around headings (including after <span style="color:#4070a0">`[[Pnnn]]`</span>). Inside <span style="color:#4070a0">`&lt;details&gt;`</span> blocks, never use <span style="color:#4070a0">`#`</span> headings — format internal headings as bold lines (<span style="color:#4070a0">`**...**  `</span>) instead.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   <span style="font-weight:bold">**Quotes &amp; Mantras:**</span> Enclose short quotes (under 5 words) in <span style="color:#4070a0">`&#34;`</span> and format longer quotes or mantras as blockquotes (<span style="color:#4070a0">`&gt;`</span>).
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   <span style="font-weight:bold">**Verse Structure:**</span> End verse/śloka pāda lines with two spaces (<span style="color:#4070a0">`  `</span>) for a soft break.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   <span style="font-weight:bold">**Page Numbers:**</span> Format page numbers (e.g., <span style="color:#4070a0">`६४`</span>) as <span style="color:#4070a0">`[[P64]]`</span> at the precise point of the page break, even within a paragraph which continues to the next page.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">*</span>   <span style="font-weight:bold">**Footnotes:**</span> Format footnotes (e.g., <span style="color:#4070a0">`*`</span>) using Markdown&#39;s footnote syntax (<span style="color:#4070a0">`[^1]`</span>). Make the footnote definitions appear next to the paragraph containing the corresponding footnote reference. Ensure that footnote references are unique, reflecting the number used in the source whenever possible (for example, if footnote 1 appears on page 12, make the reference <span style="color:#4070a0">`12_1`</span>).
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Are you ready?
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+  </div>
+</article>
+
+
+        
+
+        
+
+
+
+    <aside class="card border noPrint" id="section-tree-item-groups_dyuganga_projects_text_proofreading_editing_AI-prompt_bare-hyphenator_md">
+        <div class="card-title bg-light-gray border d-flex justify-content-between">
+            <a href="https://sanskrit.github.io/groups/dyuganga/projects/text/proofreading/editing/AI-prompt/bare-hyphenator/">Bare Hyphenator </a>
+            <a data-toggle="collapse" href="#section-tree-item-body-groups_dyuganga_projects_text_proofreading_editing_AI-prompt_bare-hyphenator_md" role="button" aria-expanded="false" aria-controls="section-tree-item-body-groups_dyuganga_projects_text_proofreading_editing_AI-prompt_bare-hyphenator_md" >…<i class="fas fa-caret-down" class="collapsed"></i> </a>
+        </div>
+        <nav id="section-tree-item-body-groups_dyuganga_projects_text_proofreading_editing_AI-prompt_bare-hyphenator_md" class="card-body p-0 collapse">
+            
+            <li>draft: false</li>
+            
+            <li>iscjklanguage: false</li>
+            
+            <li>title: Bare Hyphenator</li>
+            
+        </nav>
+    </aside>
+
+
+      </main>
+    </div>
+    <footer class="bg-yellow  p-1 noPrint" role="contentinfo">
+  
+
+  <div id="div_foot_nav_bar" class="row">
+    <a href="https://sanskrit.github.io/search"  class="btn btn-light btn-sm">🥽🔦</a>
+    <div class="row col  d-flex justify-content-center">
+      <div><a id="previousPageFoot" href="" class="btn btn-secondary">###<i class="fas fa-caret-left"></i></a></div>
+      <div ><a id="nextPageFoot" href="" class="btn btn-secondary"><i class="fas fa-caret-right"></i> ### </a></div>
+    </div>
+      <ul id="footer-bar-right-custom" class="list-group list-group-horizontal">
+      </ul>
+  </div>
+  <div id="div_footer_bar" class="container-fluid d-flex justify-content-between">
+    <a class="btn btn-secondary" href="https://github.com/sanskrit/sanskrit.github.io/issues/new" >
+      ✉️Contact
+    </a>
+    <a class="btn btn-secondary" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
+    <div class="btn small border">
+      
+      <a href="https://github.com/sanskrit/sanskrit.github.io/actions"><img src=""> Built </a> on 2026 Nov 21 10:53:23 UTC. (<a href="http://google.com/search?q=10%3a53%3a23%20UTC to IST">IST</a>)
+    </div>
+  </div>
+</footer>
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33H08JSLQR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33H08JSLQR');
+</script>
+
+  </body>
+  <script type='text/javascript'>
+    
+    
+    
+    module_uiLib.onDocumentReadyTasks();
+  </script>
+  
+</html>

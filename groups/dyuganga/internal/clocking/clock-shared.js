@@ -1,0 +1,436 @@
+// clock-shared.js — shared helpers for clock + check-shifts.
+// Load this BEFORE clock.js / check-shifts.js:
+//   <script src="/groups/dyuganga/internal/clocking/clock-shared.js"></script>
+//   <script src="/groups/dyuganga/internal/clocking/clock.js"></script>
+// No bundler, no modules — plain <script> tags, same style as the other files.
+(function () {
+    'use strict';
+
+
+
+    // *** App identity lives here. ***
+    // The id and display name below drive every storage key, JSONP
+    // callback prefix, notification tag and message in this file via
+    // getBranding() — consumers read Shared.APP_NAME /
+    // Shared.APP_DISPLAY_NAME instead. Each may be overridden by setting
+    // window.RECORD_APP_ID / window.RECORD_APP_DISPLAY_NAME before load.
+    // The id must stay lowercase, one word, [a-z0-9_-].
+
+    // Branding is defined here, each value overridable via the
+    // same-named window.RECORD_* global set before load.
+    const RECORD_APP_ID = 'dyuganga';
+    const RECORD_APP_DISPLAY_NAME = 'Dyuganga';
+    function getBranding() {
+        let name = RECORD_APP_ID;
+        let display = RECORD_APP_DISPLAY_NAME;
+        try {
+            const id = String(window.RECORD_APP_ID || RECORD_APP_ID).trim().toLowerCase()
+                .replace(/\s+/g, '_').replace(/[^a-z0-9_-]/g, '');
+            if (id) {
+                name = id;
+            }
+            const disp = String(window.RECORD_APP_DISPLAY_NAME || RECORD_APP_DISPLAY_NAME).trim();
+            if (disp) {
+                display = disp;
+            }
+        } catch (e) {}
+        return { name: name, display: display };
+    }
+
+    // Show the configured display name in the page brand element, if any.
+    function syncBrandElement() {
+        try {
+            const el = document.getElementById('brand');
+            if (el) {
+                el.textContent = getBranding().display;
+            }
+        } catch (e) {}
+    }
+    syncBrandElement();
+    try {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() { syncBrandElement(); });
+        }
+    } catch (e) {}
+
+    // Backwards-compatible constants for immediate use, but getters below will be dynamic
+    const _DEFAULT_BRANDING = getBranding();
+    const APP_NAME_FALLBACK = _DEFAULT_BRANDING.name;
+    const APP_DISPLAY_NAME_FALLBACK = _DEFAULT_BRANDING.display;
+    // Keep these for internal use at load time, but Shared properties will be getters
+    const APP_NAME = APP_NAME_FALLBACK;
+    const APP_DISPLAY_NAME = APP_DISPLAY_NAME_FALLBACK;
+    const APP_SHARED_GLOBAL = APP_DISPLAY_NAME + 'Shared'; // 'DyugangaShared'
+    // Overridable via window.RECORD_SERVER_ENDPOINT (set before load).
+    const DEFAULT_ENDPOINT = (function() {
+        try {
+            return window.RECORD_SERVER_ENDPOINT || 'https://script.google.com/macros/s/AKfycbzw7S2068932Jm3LOABbV-IU4oy43FTi6HuMrYTJmx8qspIJv13biVpFAMXdivSzWuwVA/exec';
+        } catch (e) {
+            return 'https://script.google.com/macros/s/AKfycbzw7S2068932Jm3LOABbV-IU4oy43FTi6HuMrYTJmx8qspIJv13biVpFAMXdivSzWuwVA/exec';
+        }
+    })();
+    // KEYS is now a getter object – see Shared definition below for dynamic version
+    const KEYS_STATIC = {
+        users: APP_NAME + '_clock_users_v1',
+        active: APP_NAME + '_clock_active_v1',
+        selectedUser: APP_NAME + '_clock_selected_user_v1',
+        pending: APP_NAME + '_clock_pending_v1',
+        auth: APP_NAME + '_clock_auth_v1',
+        breakUntil: APP_NAME + '_clock_break_v1',
+        daily: APP_NAME + '_clock_daily_v1',
+        work: APP_NAME + '_clock_work_v1'
+    };
+    // For internal helpers that captured KEYS at load time, expose a function to get current keys
+    function getKeys() {
+        const b = getBranding();
+        const n = b.name;
+        return {
+            users: n + '_clock_users_v1',
+            active: n + '_clock_active_v1',
+            selectedUser: n + '_clock_selected_user_v1',
+            pending: n + '_clock_pending_v1',
+            auth: n + '_clock_auth_v1',
+            breakUntil: n + '_clock_break_v1',
+            daily: n + '_clock_daily_v1',
+            work: n + '_clock_work_v1'
+        };
+    }
+    // Keep KEYS for backwards compat but also make it dynamic via getter later
+    const KEYS = KEYS_STATIC;
+    const CACHE_TTL_MS = 60 * 60 * 1000;
+
+    function $(id) { return document.getElementById(id); }
+
+    function read(key, fallback) {
+        try {
+            const raw = window.localStorage.getItem(key);
+            return raw === null ? fallback : JSON.parse(raw);
+        } catch (err) {
+            return fallback;
+        }
+    }
+
+    function write(key, value) {
+        try {
+            window.localStorage.setItem(key, JSON.stringify(value));
+        } catch (err) {
+            // Storage can be unavailable in private mode; the app still works for this session.
+        }
+    }
+
+    function remove(key) {
+        try {
+            window.localStorage.removeItem(key);
+        } catch (err) {
+            // Ignore.
+        }
+    }
+
+    function getEndpoint() {
+        try {
+            return String(window.RECORD_SERVER_ENDPOINT || DEFAULT_ENDPOINT || '').trim();
+        } catch (e) {
+            return String(DEFAULT_ENDPOINT || '').trim();
+        }
+    }
+
+    function getTimezone() {
+        try {
+            return Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+        } catch (err) {
+            return '';
+        }
+    }
+
+    // Generic JSONP: <script> tags are not subject to CORS, unlike fetch().
+    // Apps Script /exec redirects to script.googleusercontent.com without CORS
+    // headers, so fetch() gets blocked even when the deployment is alive.
+    // params is e.g. { action: 'users' }. Returns the parsed JSONP body.
+    function jsonpRequest(endpoint, params) {
+        return new Promise(function (resolve, reject) {
+            const query = Object.keys(params || {}).map(function (k) {
+                return encodeURIComponent(k) + '=' + encodeURIComponent(params[k]);
+            }).join('&');
+            const separator = endpoint.indexOf('?') === -1 ? '?' : '&';
+            const bName = getBranding().name;
+            const cbName = bName + 'Cb_' + Date.now() + '_' + Math.floor(Math.random() * 100000);
+            let done = false;
+            const script = document.createElement('script');
+            function cleanup() {
+                try { window.clearTimeout(timer); } catch (e) {}
+                try { delete window[cbName]; } catch (e) { try { window[cbName] = undefined; } catch (e2) {} }
+                if (script.parentNode) { script.parentNode.removeChild(script); }
+            }
+            const timer = window.setTimeout(function () {
+                if (done) { return; }
+                done = true;
+                cleanup();
+                reject(new Error('Request timed out after 15 seconds.'));
+            }, 15000);
+            window[cbName] = function (body) {
+                if (done) { return; }
+                done = true;
+                cleanup();
+                resolve(body);
+            };
+            script.onerror = function () {
+                if (done) { return; }
+                done = true;
+                cleanup();
+                reject(new Error('Could not reach Google (script failed to load).'));
+            };
+            script.src = endpoint + separator + query + (query ? '&' : '') + 'callback=' + cbName + '&t=' + Date.now();
+            document.head.appendChild(script);
+        });
+    }
+
+    // --- Users (shared cache format: { users: [...], fetchedAt: ms }) ---
+    // Both pages used to disagree here: clock wrote { users, fetchedAt },
+    // check-shifts wrote a bare array. This one format is now canonical.
+
+    function getUsersCache() {
+        const stored = read(KEYS.users, null);
+        if (Array.isArray(stored)) {
+            return { users: stored, fetchedAt: 0 };
+        }
+        if (stored && Array.isArray(stored.users)) {
+            return { users: stored.users, fetchedAt: Number(stored.fetchedAt) || 0 };
+        }
+        return { users: [], fetchedAt: 0 };
+    }
+
+    function cleanUsers(list) {
+        const clean = [];
+        (list || []).forEach(function (name) {
+            const value = String(name).trim();
+            if (value && clean.indexOf(value) === -1) {
+                clean.push(value);
+            }
+        });
+        return clean;
+    }
+
+    function getUsers() {
+        return cleanUsers(getUsersCache().users);
+    }
+
+    async function loadUsers() {
+        const endpoint = getEndpoint();
+        if (!endpoint) {
+            throw new Error('No endpoint configured.');
+        }
+        const body = await jsonpRequest(endpoint, { action: 'users' });
+        if (!body || body.ok !== true || !Array.isArray(body.users)) {
+            throw new Error(body && body.error ? String(body.error) : 'Unexpected response, no users array. Got: ' + JSON.stringify(body).slice(0, 200));
+        }
+        const users = cleanUsers(body.users);
+        write(KEYS.users, { users: users, fetchedAt: Date.now() });
+        return users;
+    }
+
+    // --- Auth (shared map: { user: { token, expiresAt } }) ---
+
+    function getAuthMap() {
+        const map = read(KEYS.auth, {});
+        return map && typeof map === 'object' && !Array.isArray(map) ? map : {};
+    }
+
+    function getAuth(user) {
+        const map = getAuthMap();
+        const entry = map[user];
+        if (!entry || !entry.token) {
+            return null;
+        }
+        if (entry.expiresAt && entry.expiresAt <= Date.now() + 60000) {
+            delete map[user];
+            write(KEYS.auth, map);
+            return null;
+        }
+        return entry;
+    }
+
+    // check-shifts used to scan the whole map for any valid login.
+    function findAuth() {
+        const map = getAuthMap();
+        const now = Date.now();
+        const names = Object.keys(map);
+        for (let i = 0; i < names.length; i++) {
+            const name = names[i];
+            const entry = map[name];
+            if (entry && entry.token && (!entry.expiresAt || entry.expiresAt > now + 60000)) {
+                return { user: name, token: entry.token };
+            }
+        }
+        return null;
+    }
+
+    function setAuth(user, token, expiresAt) {
+        const map = getAuthMap();
+        map[user] = {
+            token: token,
+            expiresAt: Number(expiresAt) || (Date.now() + 1000 * 60 * 60 * 24 * 30)
+        };
+        write(KEYS.auth, map);
+    }
+
+    function clearAuth(user) {
+        const map = getAuthMap();
+        delete map[user];
+        if (Object.keys(map).length === 0) {
+            remove(KEYS.auth);
+        } else {
+            write(KEYS.auth, map);
+        }
+    }
+
+    // --- Server requests (JSONP GET — immune to the Apps Script CORS redirect) ---
+    // The /exec endpoint answers through a redirect to script.googleusercontent.com
+    // without CORS headers, so fetch() POST is blocked even when the deployment
+    // is alive. <script> tags are not subject to CORS, so every action — reads
+    // and writes alike — goes through jsonpRequest. Payloads are small flat
+    // objects, so they travel fine as query params (over HTTPS; the password
+    // is sent once per browser, then a session token is used).
+
+    async function requestJson(payload) {
+        const endpoint = getEndpoint();
+        if (!endpoint) {
+            throw new Error('The spreadsheet endpoint is not configured.');
+        }
+        if (navigator.onLine === false) {
+            throw new Error('You appear to be offline.');
+        }
+        const body = await jsonpRequest(endpoint, payload || {});
+        return checkActionBody(payload && payload.action, body);
+    }
+
+    // Backwards-compatible alias: same signature, same transport.
+    async function postJson(payload) {
+        return requestJson(payload);
+    }
+
+    // Throw for a server refusal (Error with .code/.body, as before) and for
+    // a reply that lacks the action's marker field — the generic "endpoint is
+    // live" ping of a deployment predating the JSONP actions must never count
+    // as a positive response. Returns the body when it is genuinely positive.
+    function checkActionBody(action, body) {
+        if (!body || body.ok !== true) {
+            const error = new Error(body && body.error ? String(body.error) : 'The spreadsheet endpoint returned an unexpected response.');
+            error.code = body && body.code;
+            error.body = body || null;
+            throw error;
+        }
+        const name = String(action || '');
+        let valid = true;
+        if (name === 'start' || name === 'shift' || name === 'dailyStatus') {
+            valid = typeof body.date === 'string';
+        } else if (name === 'login') {
+            valid = !!body.token;
+        } else if (name === 'shifts') {
+            valid = Array.isArray(body.shifts);
+        } else if (name === 'requestDelete') {
+            valid = body.row !== undefined;
+        } else if (name === 'requestAdd') {
+            valid = body.requested === true;
+        } else if (name === 'users') {
+            valid = Array.isArray(body.users);
+        }
+        if (!valid) {
+            throw new Error('The server answered in an outdated format. Please ask the admin to redeploy the Apps Script.');
+        }
+        return body;
+    }
+
+    // --- UI helpers ---
+
+    // Toasts differ only by element + show-class. Factory keeps one copy.
+    // Usage: const toast = Shared.makeToast(function () { return $('toast'); }, 'sc-show');
+    function makeToast(getElement, showClass) {
+        let timer = null;
+        return function (text) {
+            const element = getElement();
+            if (!element) { return; }
+            element.textContent = text;
+            element.classList.add(showClass);
+            window.clearTimeout(timer);
+            timer = window.setTimeout(function () {
+                element.classList.remove(showClass);
+            }, 2200);
+        };
+    }
+
+    // Fill any user <select>: clear, placeholder, options, restore previous.
+    // select may be null (page without that dropdown) — then it is a no-op.
+    function fillUserSelect(select, users, preferred, placeholderText) {
+        if (!select) { return; }
+        const previous = select.value || String(preferred || '');
+        const clean = cleanUsers(users);
+        select.innerHTML = '';
+        const placeholder = document.createElement('option');
+        placeholder.value = '';
+        placeholder.textContent = placeholderText || 'Select user...';
+        select.appendChild(placeholder);
+        clean.forEach(function (name) {
+            const option = document.createElement('option');
+            option.value = name;
+            option.textContent = name;
+            select.appendChild(option);
+        });
+        if (clean.indexOf(previous) !== -1) {
+            select.value = previous;
+        }
+    }
+
+    // Build Shared with getters so branding stays in sync with HTML
+    const _sharedBase = {
+        CACHE_TTL_MS: CACHE_TTL_MS,
+        $: $,
+        read: read,
+        write: write,
+        remove: remove,
+        getEndpoint: getEndpoint,
+        getTimezone: getTimezone,
+        jsonpRequest: jsonpRequest,
+        getUsersCache: getUsersCache,
+        cleanUsers: cleanUsers,
+        getUsers: getUsers,
+        loadUsers: loadUsers,
+        getAuthMap: getAuthMap,
+        getAuth: getAuth,
+        findAuth: findAuth,
+        setAuth: setAuth,
+        clearAuth: clearAuth,
+        requestJson: requestJson,
+        checkActionBody: checkActionBody,
+        postJson: postJson,
+        makeToast: makeToast,
+        fillUserSelect: fillUserSelect,
+        getBranding: getBranding,
+        getKeys: getKeys
+    };
+    // Define dynamic properties for branding
+    Object.defineProperties(_sharedBase, {
+        APP_NAME: { get: function() { return getBranding().name; }, enumerable: true },
+        APP_DISPLAY_NAME: { get: function() { return getBranding().display; }, enumerable: true },
+        KEYS: { get: function() { return getKeys(); }, enumerable: true }
+    });
+    window[APP_SHARED_GLOBAL] = _sharedBase;
+
+    // Stable, brand-independent entry point. Consumers use
+
+    // window.ClockShared so a rebrand never touches them.
+
+    // The brand-specific global above stays for old pages.
+
+    // ClockShared points to the same dynamic object
+    try {
+        window.ClockShared = window[APP_SHARED_GLOBAL] || _sharedBase;
+    } catch (e) { window.ClockShared = _sharedBase; }
+    // Also ensure the brand-specific global stays in sync if branding changes
+    try {
+        const b = getBranding();
+        const dynGlobal = b.display + 'Shared';
+        if (dynGlobal !== APP_SHARED_GLOBAL) {
+            window[dynGlobal] = _sharedBase;
+        }
+    } catch (e) {}
+})();
